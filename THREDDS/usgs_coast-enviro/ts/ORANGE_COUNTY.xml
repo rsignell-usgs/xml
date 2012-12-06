@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog   name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  
+  <service name="all4services" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+   <dataset name="Monterey Canyon Experiment (8/93-5/95)">
+    <metadata inherited="true">
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/"
+          email="emontgomery@usgs.gov" />
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/"
+          email="emontgomery@usgs.gov" />
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>33.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-117.5</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>100</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/orange_county.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+
+  <dataset name="6501mc-a.nc" ID="ORANGE_COUNTY/6501mc-a.nc" urlPath="ORANGE_COUNTY/6501mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6501mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499200320000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-650"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-14 01:52:00Z" />
+<attribute name="stop_time" value="2001-10-12 19:58:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6502mc-a.nc" ID="ORANGE_COUNTY/6502mc-a.nc" urlPath="ORANGE_COUNTY/6502mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6502mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499200320000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-650"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-14 01:52:00Z" />
+<attribute name="stop_time" value="2001-10-12 19:58:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6512sc-a.nc" ID="ORANGE_COUNTY/6512sc-a.nc" urlPath="ORANGE_COUNTY/6512sc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6512sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499201850000" increment="150000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-651"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-14 02:17:30Z" />
+<attribute name="stop_time" value="2001-10-12 19:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6521mc-a.nc" ID="ORANGE_COUNTY/6521mc-a.nc" urlPath="ORANGE_COUNTY/6521mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6521mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499191200000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-652"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-13 23:20:00Z" />
+<attribute name="stop_time" value="2001-10-12 22:16:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6541mc-a.nc" ID="ORANGE_COUNTY/6541mc-a.nc" urlPath="ORANGE_COUNTY/6541mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6541mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499193600000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-654"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-14 00:00:00Z" />
+<attribute name="stop_time" value="2001-10-12 20:48:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6542mc-a.nc" ID="ORANGE_COUNTY/6542mc-a.nc" urlPath="ORANGE_COUNTY/6542mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6542mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499193600000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-654"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-14 00:00:00Z" />
+<attribute name="stop_time" value="2001-10-12 20:48:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6551adc-a.nc" ID="ORANGE_COUNTY/6551adc-a.nc" urlPath="ORANGE_COUNTY/6551adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6551adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499187480000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-655"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-13 22:18:00Z" />
+<attribute name="stop_time" value="2001-10-30 19:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6552sc-a.nc" ID="ORANGE_COUNTY/6552sc-a.nc" urlPath="ORANGE_COUNTY/6552sc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6552sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499187600000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-655"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-13 22:20:00Z" />
+<attribute name="stop_time" value="2001-10-30 19:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6554sc-a.nc" ID="ORANGE_COUNTY/6554sc-a.nc" urlPath="ORANGE_COUNTY/6554sc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6554sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499187600000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-655"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-13 22:20:00Z" />
+<attribute name="stop_time" value="2001-10-30 19:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6566mc-a.nc" ID="ORANGE_COUNTY/6566mc-a.nc" urlPath="ORANGE_COUNTY/6566mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6566mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499184720000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-656"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-13 21:32:00Z" />
+<attribute name="stop_time" value="2001-10-12 17:14:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6572mc-a.nc" ID="ORANGE_COUNTY/6572mc-a.nc" urlPath="ORANGE_COUNTY/6572mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6572mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499163600000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-657"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-13 15:40:00Z" />
+<attribute name="stop_time" value="2001-10-30 23:24:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6582sc-a.nc" ID="ORANGE_COUNTY/6582sc-a.nc" urlPath="ORANGE_COUNTY/6582sc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6582sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499156700000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-658"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-13 13:45:00Z" />
+<attribute name="stop_time" value="2001-10-30 22:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6583sc-a.nc" ID="ORANGE_COUNTY/6583sc-a.nc" urlPath="ORANGE_COUNTY/6583sc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6583sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499156700000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-658"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-13 13:45:00Z" />
+<attribute name="stop_time" value="2001-10-30 22:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6592mc-a.nc" ID="ORANGE_COUNTY/6592mc-a.nc" urlPath="ORANGE_COUNTY/6592mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6592mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499169360000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-659"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-13 17:16:00Z" />
+<attribute name="stop_time" value="2001-10-12 13:56:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6594mc-a.nc" ID="ORANGE_COUNTY/6594mc-a.nc" urlPath="ORANGE_COUNTY/6594mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6594mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499169360000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-659"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-13 17:16:00Z" />
+<attribute name="stop_time" value="2001-10-12 13:56:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6596mc-a.nc" ID="ORANGE_COUNTY/6596mc-a.nc" urlPath="ORANGE_COUNTY/6596mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6596mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499169360000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-659"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-13 17:16:00Z" />
+<attribute name="stop_time" value="2001-07-04 18:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6598mc-a.nc" ID="ORANGE_COUNTY/6598mc-a.nc" urlPath="ORANGE_COUNTY/6598mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6598mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499169360000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-659"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2001-06-13 17:16:00Z" />
+<attribute name="stop_time" value="2001-07-10 17:54:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6683mc-a.nc" ID="ORANGE_COUNTY/6683mc-a.nc" urlPath="ORANGE_COUNTY/6683mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6683mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517995800000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-668"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-17 14:50:00Z" />
+<attribute name="stop_time" value="2002-02-05 02:20:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6691mc-a.nc" ID="ORANGE_COUNTY/6691mc-a.nc" urlPath="ORANGE_COUNTY/6691mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6691mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517916480000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-669"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 16:48:00Z" />
+<attribute name="stop_time" value="2002-05-15 23:12:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6692mc-a.nc" ID="ORANGE_COUNTY/6692mc-a.nc" urlPath="ORANGE_COUNTY/6692mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6692mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517916480000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-669"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 16:48:00Z" />
+<attribute name="stop_time" value="2002-05-15 23:12:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6702sc-a.nc" ID="ORANGE_COUNTY/6702sc-a.nc" urlPath="ORANGE_COUNTY/6702sc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6702sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517919766000" increment="150000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-670"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 17:42:46Z" />
+<attribute name="stop_time" value="2002-04-24 04:17:46Z" />
+</netcdf>
+</dataset>
+<dataset name="6711mc-a.nc" ID="ORANGE_COUNTY/6711mc-a.nc" urlPath="ORANGE_COUNTY/6711mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6711mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517912400000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-671"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 15:40:00Z" />
+<attribute name="stop_time" value="2002-05-15 22:12:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6712mc-a.nc" ID="ORANGE_COUNTY/6712mc-a.nc" urlPath="ORANGE_COUNTY/6712mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6712mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517913240000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-671"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 15:54:00Z" />
+<attribute name="stop_time" value="2002-05-15 22:06:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6721mc-a.nc" ID="ORANGE_COUNTY/6721mc-a.nc" urlPath="ORANGE_COUNTY/6721mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6721mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517932680000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-672"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 21:18:00Z" />
+<attribute name="stop_time" value="2002-05-15 20:02:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6722mc-a.nc" ID="ORANGE_COUNTY/6722mc-a.nc" urlPath="ORANGE_COUNTY/6722mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6722mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517932680000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-672"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 21:18:00Z" />
+<attribute name="stop_time" value="2002-05-15 20:02:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6726mc-a.nc" ID="ORANGE_COUNTY/6726mc-a.nc" urlPath="ORANGE_COUNTY/6726mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6726mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517932680000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-672"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 21:18:00Z" />
+<attribute name="stop_time" value="2002-05-15 20:02:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6728mc-a.nc" ID="ORANGE_COUNTY/6728mc-a.nc" urlPath="ORANGE_COUNTY/6728mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6728mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517932680000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-672"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 21:18:00Z" />
+<attribute name="stop_time" value="2002-05-15 20:02:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6729mc-a.nc" ID="ORANGE_COUNTY/6729mc-a.nc" urlPath="ORANGE_COUNTY/6729mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6729mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517932680000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-672"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 21:18:00Z" />
+<attribute name="stop_time" value="2002-05-15 20:02:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6731adc-a.nc" ID="ORANGE_COUNTY/6731adc-a.nc" urlPath="ORANGE_COUNTY/6731adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6731adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517935201000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-673"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 22:00:01Z" />
+<attribute name="stop_time" value="2002-05-15 21:03:01Z" />
+</netcdf>
+</dataset>
+<dataset name="6733sc-a.nc" ID="ORANGE_COUNTY/6733sc-a.nc" urlPath="ORANGE_COUNTY/6733sc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6733sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517936416000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-673"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 22:20:16Z" />
+<attribute name="stop_time" value="2002-05-15 21:00:16Z" />
+</netcdf>
+</dataset>
+<dataset name="6742mc-a.nc" ID="ORANGE_COUNTY/6742mc-a.nc" urlPath="ORANGE_COUNTY/6742mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6742mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517925120000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-674"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 19:12:00Z" />
+<attribute name="stop_time" value="2002-05-15 19:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6743mc-a.nc" ID="ORANGE_COUNTY/6743mc-a.nc" urlPath="ORANGE_COUNTY/6743mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6743mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517924400000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-674"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 19:00:00Z" />
+<attribute name="stop_time" value="2002-05-15 19:04:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6752mc-a.nc" ID="ORANGE_COUNTY/6752mc-a.nc" urlPath="ORANGE_COUNTY/6752mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6752mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517945640000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-675"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-17 00:54:00Z" />
+<attribute name="stop_time" value="2002-05-15 17:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6754mc-a.nc" ID="ORANGE_COUNTY/6754mc-a.nc" urlPath="ORANGE_COUNTY/6754mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6754mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517945640000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-675"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-17 00:54:00Z" />
+<attribute name="stop_time" value="2002-05-15 17:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6756mc-a.nc" ID="ORANGE_COUNTY/6756mc-a.nc" urlPath="ORANGE_COUNTY/6756mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6756mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517945640000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-675"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-17 00:54:00Z" />
+<attribute name="stop_time" value="2002-05-15 17:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6758mc-a.nc" ID="ORANGE_COUNTY/6758mc-a.nc" urlPath="ORANGE_COUNTY/6758mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6758mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517945640000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-675"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-17 00:54:00Z" />
+<attribute name="stop_time" value="2002-05-15 17:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6763sc-a.nc" ID="ORANGE_COUNTY/6763sc-a.nc" urlPath="ORANGE_COUNTY/6763sc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6763sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517961117000" increment="11265000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-676"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-17 05:11:57Z" />
+<attribute name="stop_time" value="2002-05-15 17:36:42Z" />
+</netcdf>
+</dataset>
+<dataset name="6771mc-a.nc" ID="ORANGE_COUNTY/6771mc-a.nc" urlPath="ORANGE_COUNTY/6771mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6771mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517940120000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-677"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 23:22:00Z" />
+<attribute name="stop_time" value="2002-05-15 16:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6772mc-a.nc" ID="ORANGE_COUNTY/6772mc-a.nc" urlPath="ORANGE_COUNTY/6772mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6772mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517939880000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-677"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-01-16 23:18:00Z" />
+<attribute name="stop_time" value="2002-05-15 16:02:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6941mc-a.nc" ID="ORANGE_COUNTY/6941mc-a.nc" urlPath="ORANGE_COUNTY/6941mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6941mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4540622400000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-694"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-10-06 12:00:00Z" />
+<attribute name="stop_time" value="2003-01-22 16:32:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6942mc-a.nc" ID="ORANGE_COUNTY/6942mc-a.nc" urlPath="ORANGE_COUNTY/6942mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6942mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4539776880000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-694"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-09-26 17:08:00Z" />
+<attribute name="stop_time" value="2002-10-26 18:52:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6943mc-a.nc" ID="ORANGE_COUNTY/6943mc-a.nc" urlPath="ORANGE_COUNTY/6943mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6943mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4539776880000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-694"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-09-26 17:08:00Z" />
+<attribute name="stop_time" value="2003-01-22 16:32:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6945mc-a.nc" ID="ORANGE_COUNTY/6945mc-a.nc" urlPath="ORANGE_COUNTY/6945mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6945mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4539776880000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-694"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-09-26 17:08:00Z" />
+<attribute name="stop_time" value="2003-01-22 16:32:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6946mc-a.nc" ID="ORANGE_COUNTY/6946mc-a.nc" urlPath="ORANGE_COUNTY/6946mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6946mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4540622400000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-694"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-10-06 12:00:00Z" />
+<attribute name="stop_time" value="2003-01-22 16:32:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6948mc-a.nc" ID="ORANGE_COUNTY/6948mc-a.nc" urlPath="ORANGE_COUNTY/6948mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6948mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4540622400000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-694"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="2002-10-06 12:00:00Z" />
+<attribute name="stop_time" value="2003-01-22 16:32:00Z" />
+</netcdf>
+</dataset>
+     </dataset>
+</catalog>

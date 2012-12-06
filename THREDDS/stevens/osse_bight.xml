@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  name="NYHOPS Bight Historic OSSE File Catalog" version="1.0.1">
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/" />
+    <service name="httpService" serviceType="HTTPServer" base="/thredds/fileServer/" />
+    <!--service name="wcsService" serviceType="WCS" base="/thredds/wcs/" /-->
+    <!--service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" /-->
+  </service>
+
+  <dataset name="NYHOPS New York Bight Subdomain">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+
+      <creator>
+        <name vocabulary="DIF">Dr. Alan F. Blumberg, Nickitas Georgas</name>
+        <contact url="http://www.stevens.edu/ses/about_soe/faculty/faculty_profile.php?faculty_id=84"
+                      email="alan.blumberg@stevens.edu,       nickitas.georgas@stevens.edu"/>
+      </creator>
+
+      <documentation xlink:href="http://www.stevens.edu/maritimeforecast/"
+        xlink:title="NYHOPS System Website"/>
+
+      <documentation type="Summary"> 3D Marine Hindcasts for the New York Bight NYHOPS subdomain.
+        Currents, waves, surface meteorology, and water conditions.</documentation>
+
+      <documentation type="Rights"> The NYHOPS model, presently at its 3rd generation,  has been the culmination of a multiyear Stevens Institute
+        of Technology project funded by multiple federal and local agencies. Please contact the people referenced below if you
+        are planning to use this data for any purpose. The data is provided without warranty of any kind. </documentation>
+
+    </metadata>
+
+  <datasetScan name="NYHOPS Historic Model Run Collection for the New York Bight" ID="osse_bight" path="files/OSSE_NYBight"
+    location="/netcdf/osse/Bight">
+   <metadata inherited="true">
+     <serviceName>allServices</serviceName>
+   </metadata>
+    <filter>
+      <include wildcard="*.nc"/>
+      <include wildcard="*.cdf"/>
+    </filter>
+   <sort>
+     <lexigraphicByName increasing="true"/>
+   </sort>
+   <addDatasetSize/>
+  </datasetScan>
+
+  </dataset>
+</catalog>

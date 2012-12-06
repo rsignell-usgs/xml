@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="TGLO/TABS THREDDS Server"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="latest" serviceType="Resolver" base="" />
+  <service name="all" serviceType="Compound" base="" >
+     <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
+     <service name="wcs" serviceType="WCS" base="/thredds/wcs/" />
+     <service name="subsetServer" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" suffix="/dataset.html"/>
+     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/" />
+  </service>
+
+  <catalogRef xlink:title="USF IMaRS MODIS SST and Chlorophyll Fields" xlink:href="gcoos_seadas.xml" name=""/>
+  <catalogRef xlink:title="LSU ESL POES SST Fields" xlink:href="gcoos_lsu.xml" name=""/>
+  <catalogRef xlink:title="Northern Gulf of Mexico MCH Shelf Model - small grid" xlink:href="gcoos_sura.xml" name=""/>
+  <catalogRef xlink:title="NRL Test" xlink:href="nrl.xml" name=""/>
+  <catalogRef xlink:title="SAIC Time Series" xlink:href="saic.xml" name=""/>
+  <catalogRef xlink:title="MCH Inputs and Outputs" xlink:href="mch_inputs.xml" name=""/>
+  <catalogRef xlink:title="GOM ADCP" xlink:href="adcp.xml" name=""/>
+
+</catalog>

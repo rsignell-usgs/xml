@@ -1,0 +1,67 @@
+
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+  <aggregation type="union">
+
+    <!--Time aggregate min temp-->
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="time" type="joinNew" recheckEvery="1 day">
+        <variableAgg name="temp_min"/>
+        <scan location="/usgs/data0/prism/tmn" dateFormatMark="tmn#yyyyMM"
+          regExp=".*tmn[0-9]{6}\.nc$" subdirs="true"/>
+        <variable name="temp_min" orgName="Band1">
+          <attribute name="units" value="Celcius"/>
+          <attribute name="long_name" value="Minimum monthly temperature"/>
+          <attribute name="scale_factor" type="float" value="0.01"/>
+          <attribute name="add_offset" type="float" value="0.00"/>
+        </variable>
+      </aggregation>
+    </netcdf>
+
+    <!--Time aggregate max temp-->
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="time" type="joinNew" recheckEvery="1 day">
+        <variableAgg name="temp_max"/>
+        <scan location="/usgs/data0/prism/tmx" dateFormatMark="tmx#yyyyMM"
+          regExp=".*tmx[0-9]{6}\.nc$" subdirs="true"/>
+        <variable name="temp_max" orgName="Band1">
+          <attribute name="units" value="Celcius"/>
+          <attribute name="scale_factor" type="float" value="0.01"/>
+          <attribute name="add_offset" type="float" value="0.00"/>
+          <attribute name="long_name" value="Maximum monthly temperature"/>
+        </variable>
+      </aggregation>
+    </netcdf>
+
+<!--Time aggregate mean precip-->
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="time" type="joinNew" recheckEvery="1 day">
+        <variableAgg name="precip_mean"/>
+        <scan location="/usgs/data0/prism/ppt" dateFormatMark="ppt#yyyyMM"
+          regExp=".*ppt[0-9]{6}\.nc$" subdirs="true"/>
+        <variable name="precip_mean" orgName="Band1">
+          <attribute name="units" value="mm/month"/>
+          <attribute name="long_name" value="Mean monthly precipitation"/>
+          <attribute name="scale_factor" type="float" value="0.01"/>
+          <attribute name="add_offset" type="float" value="0.00"/>
+        </variable>
+      </aggregation>
+    </netcdf>
+
+  </aggregation>
+
+  <!-- Rename dimensions to "lon", "lat" and create lon and lat variables-->
+  <dimension name="lon" orgName="x"/>
+  <dimension name="lat" orgName="y"/>
+
+  <variable name="lon" shape="lon" type="double">
+    <attribute name="units" value="degrees_east"/>
+    <values start="-125.021" increment="0.0416666667"/>
+  </variable>
+
+  <variable name="lat" shape="lat" type="double">
+    <attribute name="units" value="degrees_north"/>
+    <values start="49.9375" increment="-0.0416666667"/>
+  </variable>
+
+  <attribute name="Conventions" value="CF-1.0"/>
+</netcdf>

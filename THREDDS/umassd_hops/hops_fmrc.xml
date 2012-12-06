@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="SMAST PE_SHELF Catalog"
+    xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <service name="allServices" base="" serviceType="compound">
+        <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+        <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+        <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    </service>
+
+    <dataset name="PE_SHELF Catalog">
+        <metadata inherited="true">
+            <serviceName>allServices</serviceName>
+            <authority>edu.umassd.smast</authority>
+            <dataType>Grid</dataType>
+            <dataFormat>NetCDF</dataFormat>
+            <creator>
+                <name vocabulary="DIF">Dr. Andre Schmidt</name>
+                <contact url="http://www.smast.umassd.edu/modeling/" email="aschmidt@umass.edu"/>
+            </creator>
+            <documentation xlink:href="http://www.smast.umassd.edu/modeling/"
+                xlink:title="SMAST Oceanographic Modeling and Analysis Laboratory Home Page"/>
+        </metadata>
+
+        <datasetFmrc name="HOPS PE_SHELF_ASS Forecast Model Run Collection" path="pe_shelf_ass/fmrc">
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                <aggregation dimName="runtime" type="forecastModelRunCollection"
+                    recheckEvery="10min" timeUnitsChange="true">
+                    <scan location="c:/RPS/cf/hops/" regExp=".*PE_SHELF_ASS_[0-9]{7}.*\.nc$"
+                        dateFormatMark="PE_SHELF_ASS_#yyyyDDD" olderThan="5 min" subdirs="false"/>
+                </aggregation>
+            </netcdf>
+        </datasetFmrc>
+    </dataset>
+</catalog>

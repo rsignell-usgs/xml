@@ -1,0 +1,72 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.1">
+  <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <dataset name="Carolinas Coastal Change Project" ID="carolinas">
+    <metadata inherited="true">
+      <serviceName>ncdods</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="jcwarner@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="jcwarner@usgs.gov"/>
+      </publisher>
+      <documentation xlink:href="http://woodshole.er.usgs.gov/project-pages/cccp/index.html"
+        xlink:title="Carolinas Coastal Change Program"/>
+    </metadata>
+    <dataset name="Isabel Coupled runs">
+      <dataset name="Run 144">
+        <dataset name="roms" ID="Carolinas/Isabel/run144/roms"
+          urlPath="Carolinas/Isabel/run144/roms">
+          <metadata>
+            <documentation type="summary">ROMS output from Run144</documentation>
+          </metadata>
+          <serviceName>ncdods</serviceName>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="ocean_time" type="joinExisting">
+              <scan location="/usgs/data0/Carolinas/Isabel/run144" regExp=".*his.*\.nc$"/>
+            </aggregation>
+          </netcdf>
+        </dataset>
+        <dataset name="wrf" ID="carolinas2/Isabel/r144/wrf" urlPath="Carolinas2/Isabel/run144/wrf">
+          <metadata>
+            <documentation type="summary">WRF output from run144</documentation>
+          </metadata>
+          <serviceName>ncdods</serviceName>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="Time" type="joinExisting">
+              <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"
+                regExp=".*wrfout_d01.*"/>
+              <!--                     <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>-->
+            </aggregation>
+          </netcdf>
+        </dataset>
+      </dataset>
+    </dataset>
+    <dataset name="Isabel WRF runs">
+      <dataset name="Run 136">
+        <dataset name="wrf" ID="carolinas2/Isabel/r136/wrf" urlPath="Carolinas2/Isabel/run136/wrf">
+          <metadata>
+            <documentation type="summary">WRF output from run136</documentation>
+          </metadata>
+          <serviceName>ncdods</serviceName>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="Time" type="joinExisting">
+              <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"
+                regExp=".*wrfout_d01.*"/>
+            </aggregation>
+          </netcdf>
+        </dataset>
+      </dataset>
+    </dataset>
+  </dataset>
+</catalog>

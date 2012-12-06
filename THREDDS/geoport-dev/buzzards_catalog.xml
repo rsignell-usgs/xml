@@ -1,0 +1,97 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+
+<dataset name="Buzzards Bay Runs" ID="BB/ROMS">
+  <metadata inherited="true">
+
+    <authority>gov.usgs.er.whsc</authority>
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <creator>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="nganju@usgs.gov" />
+    </creator>
+    <publisher>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="nganju@usgs.gov" />
+    </publisher>
+    <geospatialCoverage zpositive="down">
+      <northsouth>
+        <start>41.4024</start>
+        <size>0.404</size>
+        <units>degrees_north</units>
+      </northsouth>
+      <eastwest>
+        <start> -70.481</start>
+        <size>0.611</size>
+        <units>degrees_east</units>
+      </eastwest>
+      <updown>
+        <start>0</start>
+        <size>36</size>
+        <units>meters</units>
+      </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://www.cstms.org/index.php" 
+      xlink:title="CSTM website"/>
+  </metadata>
+    <dataset name="test case, summer 2007" ID="buzzards/output" urlPath="buzzards/output">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/buzzards/output/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+ <dataset name="test case, wind from SW at 5 m/s" ID="buzzards/output_wind5ms" urlPath="buzzards/output_wind5ms">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/buzzards/output_wind5ms/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+ <dataset name="wfh test case" ID="buzzards/wfh" urlPath="buzzards/wfh">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/buzzards/wfh/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="test case, summer 2007 extended" ID="buzzards/output_extended" urlPath="buzzards/output_extended">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/buzzards/output_extended/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+   <dataset name="cblasht high-res, summer 2009, tides only" ID="buzzards/cblast_hr_2009" urlPath="buzzards/cblast_hr_2009">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/buzzards/cblast_hr_2009/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+   <dataset name="test case, summer 2007 extended with temp forcing" ID="buzzards/output_temp" urlPath="buzzards/output_temp">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/buzzards/output_temp/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+ </dataset>   
+</catalog>

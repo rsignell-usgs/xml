@@ -1,0 +1,2534 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="Monterey Canyon Experiment (8/93-5/95)" ID="MontCan">
+    <metadata inherited="true">
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>36.5</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-122.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>500</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/monterey_can.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="4221-a.cdf" ID="MONTEREY_CAN/4221-a.cdf" urlPath="MONTEREY_CAN/4221-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.723331 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.035004 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 17:37:30 </start>
+<end> 1994-08-17 16:07:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4221-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251116250000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-422"</values>
+ </variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4221-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4221-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:31:58" />
+<attribute name="start_time" value="1993-08-03 17:37:30Z" />
+<attribute name="stop_time" value="1994-08-17 16:07:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4231-a.cdf" ID="MONTEREY_CAN/4231-a.cdf" urlPath="MONTEREY_CAN/4231-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.719501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.012497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 20:37:30 </start>
+<end> 1994-08-17 17:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4231-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251127050000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-423"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4231-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4231-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:31:59" />
+<attribute name="start_time" value="1993-08-03 20:37:30Z" />
+<attribute name="stop_time" value="1994-08-17 17:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4231att-a.cdf" ID="MONTEREY_CAN/4231att-a.cdf" urlPath="MONTEREY_CAN/4231att-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.719501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.012497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 20:37:30 </start>
+<end> 1994-08-17 17:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4231att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251127050000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-423"</values>
+ </variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4231att-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4231att-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:01" />
+<attribute name="start_time" value="1993-08-03 20:37:30Z" />
+<attribute name="stop_time" value="1994-08-17 17:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4231cs-a.cdf" ID="MONTEREY_CAN/4231cs-a.cdf" urlPath="MONTEREY_CAN/4231cs-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.719501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.012497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-06 16:37:30 </start>
+<end> 1994-08-17 17:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4231cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251371850000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-423"</values>
+ </variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4231cs-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4231cs-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:04" />
+<attribute name="start_time" value="1993-08-06 16:37:30Z" />
+<attribute name="stop_time" value="1994-08-17 17:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4232-a.cdf" ID="MONTEREY_CAN/4232-a.cdf" urlPath="MONTEREY_CAN/4232-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.719501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.012497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 20:37:30 </start>
+<end> 1994-08-17 17:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4232-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251127050000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-423"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4232-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4232-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:05" />
+<attribute name="start_time" value="1993-08-03 20:37:30Z" />
+<attribute name="stop_time" value="1994-08-17 17:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4233-a.cdf" ID="MONTEREY_CAN/4233-a.cdf" urlPath="MONTEREY_CAN/4233-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.719501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.012497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 20:37:30 </start>
+<end> 1994-06-24 04:07:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4233-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251127050000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-423"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4233-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4233-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:09" />
+<attribute name="start_time" value="1993-08-03 20:37:30Z" />
+<attribute name="stop_time" value="1994-06-24 04:07:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4233-q.cdf" ID="MONTEREY_CAN/4233-q.cdf" urlPath="MONTEREY_CAN/4233-q.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.719501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.012497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-06-24 04:07:30 </start>
+<end> 1994-08-17 17:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4233-q.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4279147650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-423"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4233-q.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4233-q.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:10" />
+<attribute name="start_time" value="1994-06-24 04:07:30Z" />
+<attribute name="stop_time" value="1994-08-17 17:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4233att-a.cdf" ID="MONTEREY_CAN/4233att-a.cdf" urlPath="MONTEREY_CAN/4233att-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.719501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.012497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 20:37:30 </start>
+<end> 1994-06-24 04:07:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4233att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251127050000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-423"</values>
+ </variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4233att-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4233att-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:11" />
+<attribute name="start_time" value="1993-08-03 20:37:30Z" />
+<attribute name="stop_time" value="1994-06-24 04:07:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4233att-q.cdf" ID="MONTEREY_CAN/4233att-q.cdf" urlPath="MONTEREY_CAN/4233att-q.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.719501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.012497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-06-24 04:07:30 </start>
+<end> 1994-08-17 17:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4233att-q.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4279147650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-423"</values>
+ </variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4233att-q.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4233att-q.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:11" />
+<attribute name="start_time" value="1994-06-24 04:07:30Z" />
+<attribute name="stop_time" value="1994-08-17 17:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4233cs-a.cdf" ID="MONTEREY_CAN/4233cs-a.cdf" urlPath="MONTEREY_CAN/4233cs-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.719501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.012497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 20:37:30 </start>
+<end> 1994-06-24 04:07:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4233cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251127050000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-423"</values>
+ </variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4233cs-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4233cs-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:12" />
+<attribute name="start_time" value="1993-08-03 20:37:30Z" />
+<attribute name="stop_time" value="1994-06-24 04:07:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4233cs-q.cdf" ID="MONTEREY_CAN/4233cs-q.cdf" urlPath="MONTEREY_CAN/4233cs-q.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.719501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.012497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-06-24 04:07:30 </start>
+<end> 1994-08-17 17:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4233cs-q.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4279147650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-423"</values>
+ </variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4233cs-q.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4233cs-q.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:13" />
+<attribute name="start_time" value="1994-06-24 04:07:30Z" />
+<attribute name="stop_time" value="1994-08-17 17:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4241-a.cdf" ID="MONTEREY_CAN/4241-a.cdf" urlPath="MONTEREY_CAN/4241-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.633335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.412834 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 06:37:30 </start>
+<end> 1994-08-18 14:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4241-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251076650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-424"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4241-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4241-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:14" />
+<attribute name="start_time" value="1993-08-03 06:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 14:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4241at1-a.cdf" ID="MONTEREY_CAN/4241at1-a.cdf" urlPath="MONTEREY_CAN/4241at1-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.633335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.412834 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 06:37:30 </start>
+<end> 1993-10-22 08:07:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4241at1-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251076650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-424"</values>
+ </variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4241at1-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4241at1-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:15" />
+<attribute name="start_time" value="1993-08-03 06:37:30Z" />
+<attribute name="stop_time" value="1993-10-22 08:07:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4241at2-a.cdf" ID="MONTEREY_CAN/4241at2-a.cdf" urlPath="MONTEREY_CAN/4241at2-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.633335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.412834 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-10-24 06:37:30 </start>
+<end> 1994-08-18 14:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4241at2-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4258161450000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-424"</values>
+ </variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4241at2-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4241at2-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:17" />
+<attribute name="start_time" value="1993-10-24 06:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 14:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4241cs-a.cdf" ID="MONTEREY_CAN/4241cs-a.cdf" urlPath="MONTEREY_CAN/4241cs-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.633335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.412834 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 06:37:30 </start>
+<end> 1994-08-18 14:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4241cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251076650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-424"</values>
+ </variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4241cs-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4241cs-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:18" />
+<attribute name="start_time" value="1993-08-03 06:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 14:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4242-a.cdf" ID="MONTEREY_CAN/4242-a.cdf" urlPath="MONTEREY_CAN/4242-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.633335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.412834 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 08:37:30 </start>
+<end> 1994-08-18 14:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4242-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251083850000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-424"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4242-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4242-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:20" />
+<attribute name="start_time" value="1993-08-03 08:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 14:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4242att-a.cdf" ID="MONTEREY_CAN/4242att-a.cdf" urlPath="MONTEREY_CAN/4242att-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.633335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.412834 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 08:37:30 </start>
+<end> 1994-08-18 14:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4242att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251083850000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-424"</values>
+ </variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4242att-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4242att-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:23" />
+<attribute name="start_time" value="1993-08-03 08:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 14:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4242cs-a.cdf" ID="MONTEREY_CAN/4242cs-a.cdf" urlPath="MONTEREY_CAN/4242cs-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.633335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.412834 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 08:37:30 </start>
+<end> 1994-08-18 14:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4242cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251083850000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-424"</values>
+ </variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4242cs-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4242cs-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:24" />
+<attribute name="start_time" value="1993-08-03 08:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 14:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4251-a.cdf" ID="MONTEREY_CAN/4251-a.cdf" urlPath="MONTEREY_CAN/4251-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.595001 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.348335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 11:37:30 </start>
+<end> 1994-08-18 21:37:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4251-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251094650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-425"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4251-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4251-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:27" />
+<attribute name="start_time" value="1993-08-03 11:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 21:37:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4251att-a.cdf" ID="MONTEREY_CAN/4251att-a.cdf" urlPath="MONTEREY_CAN/4251att-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.595001 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.348335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 11:37:30 </start>
+<end> 1994-08-18 21:37:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4251att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251094650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-425"</values>
+ </variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4251att-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4251att-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:28" />
+<attribute name="start_time" value="1993-08-03 11:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 21:37:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4251cs1-a.cdf" ID="MONTEREY_CAN/4251cs1-a.cdf" urlPath="MONTEREY_CAN/4251cs1-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.595001 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.348335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 11:37:30 </start>
+<end> 1993-11-26 17:37:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4251cs1-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251094650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-425"</values>
+ </variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4251cs1-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4251cs1-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:30" />
+<attribute name="start_time" value="1993-08-03 11:37:30Z" />
+<attribute name="stop_time" value="1993-11-26 17:37:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4251cs2-a.cdf" ID="MONTEREY_CAN/4251cs2-a.cdf" urlPath="MONTEREY_CAN/4251cs2-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.595001 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.348335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-12-16 02:37:30 </start>
+<end> 1994-08-18 21:37:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4251cs2-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4262726250000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-425"</values>
+ </variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4251cs2-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4251cs2-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:30" />
+<attribute name="start_time" value="1993-12-16 02:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 21:37:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4252-a.cdf" ID="MONTEREY_CAN/4252-a.cdf" urlPath="MONTEREY_CAN/4252-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.595001 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.348335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 09:37:30 </start>
+<end> 1994-08-18 22:37:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4252-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251087450000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-425"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4252-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4252-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:34" />
+<attribute name="start_time" value="1993-08-03 09:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 22:37:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4261-a.cdf" ID="MONTEREY_CAN/4261-a.cdf" urlPath="MONTEREY_CAN/4261-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.607834 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.368835 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 03:37:30 </start>
+<end> 1994-08-18 18:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4261-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251065850000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-426"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4261-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4261-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:36" />
+<attribute name="start_time" value="1993-08-03 03:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 18:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4262-a.cdf" ID="MONTEREY_CAN/4262-a.cdf" urlPath="MONTEREY_CAN/4262-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.607834 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.368835 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 03:37:30 </start>
+<end> 1994-08-18 18:37:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4262-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251065850000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-426"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4262-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4262-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:38" />
+<attribute name="start_time" value="1993-08-03 03:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 18:37:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4262att-a.cdf" ID="MONTEREY_CAN/4262att-a.cdf" urlPath="MONTEREY_CAN/4262att-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.607834 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.368835 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 03:37:30 </start>
+<end> 1994-08-18 18:37:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4262att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251065850000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-426"</values>
+ </variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4262att-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4262att-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:40" />
+<attribute name="start_time" value="1993-08-03 03:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 18:37:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4262cs-a.cdf" ID="MONTEREY_CAN/4262cs-a.cdf" urlPath="MONTEREY_CAN/4262cs-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.607834 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.368835 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 03:37:30 </start>
+<end> 1994-08-18 18:37:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4262cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251065850000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-426"</values>
+ </variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4262cs-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4262cs-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:41" />
+<attribute name="start_time" value="1993-08-03 03:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 18:37:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4263-a.cdf" ID="MONTEREY_CAN/4263-a.cdf" urlPath="MONTEREY_CAN/4263-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.607834 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.368835 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 05:37:30 </start>
+<end> 1994-08-18 18:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4263-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251073050000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-426"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4263-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4263-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:42" />
+<attribute name="start_time" value="1993-08-03 05:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 18:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4264-a.cdf" ID="MONTEREY_CAN/4264-a.cdf" urlPath="MONTEREY_CAN/4264-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.607834 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.368835 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-03 03:37:30 </start>
+<end> 1994-08-18 18:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4264-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251065850000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-426"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4264-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4264-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:45" />
+<attribute name="start_time" value="1993-08-03 03:37:30Z" />
+<attribute name="stop_time" value="1994-08-18 18:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4271-a.cdf" ID="MONTEREY_CAN/4271-a.cdf" urlPath="MONTEREY_CAN/4271-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 36.457832 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.625504 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1993-08-05 08:37:30 </start>
+<end> 1994-08-20 13:07:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4271-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4251256650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-427"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4271-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4271-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:49" />
+<attribute name="start_time" value="1993-08-05 08:37:30Z" />
+<attribute name="stop_time" value="1994-08-20 13:07:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4441-a.cdf" ID="MONTEREY_CAN/4441-a.cdf" urlPath="MONTEREY_CAN/4441-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.457832 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.625168 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-08-21 09:37:30 </start>
+<end> 1995-05-15 13:22:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4441-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4284178650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-444"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4441-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4441-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:50" />
+<attribute name="start_time" value="1994-08-21 09:37:30Z" />
+<attribute name="stop_time" value="1995-05-15 13:22:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4442-a.cdf" ID="MONTEREY_CAN/4442-a.cdf" urlPath="MONTEREY_CAN/4442-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.457832 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.625168 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-08-21 09:37:30 </start>
+<end> 1995-05-15 13:22:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4442-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4284178650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-444"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4442-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4442-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:52" />
+<attribute name="start_time" value="1994-08-21 09:37:30Z" />
+<attribute name="stop_time" value="1995-05-15 13:22:30Z" />
+</netcdf>
+</dataset>
+<dataset name="4442cs-a.cdf" ID="MONTEREY_CAN/4442cs-a.cdf" urlPath="MONTEREY_CAN/4442cs-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.457832 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.625168 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-08-21 09:37:30 </start>
+<end> 1995-05-15 13:22:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MONTEREY_CAN/4442cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4284178650000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-444"</values>
+ </variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="MONTEREY_CAN/4442cs-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="4442cs-a.cdf - Monterey Canyon Experiment" />
+<attribute name="summary" value="A program to determine the mechanisms that govern the circulation within and the transport of sediment and water through Monterey Submarine Canyon." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:32:54" />
+<attribute name="start_time" value="1994-08-21 09:37:30Z" />
+<attribute name="stop_time" value="1995-05-15 13:22:30Z" />
+</netcdf>
+</dataset>
+ </dataset>
+</catalog>

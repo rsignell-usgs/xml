@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="MABGOM Catalog"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+
+  <dataset name="SABGOM Runs">
+   
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <creator>
+        <name vocabulary="DIF">Dr. Ruoying He</name>
+        <contact url="http://www.meas.ncsu.edu/faculty/he/he.html" email="ruoying_he@ncsu.edu"/>
+      </creator>
+       <documentation xlink:href="http://omglnx6.meas.ncsu.edu/sabgom_nfcast/"
+        xlink:title="SABGOM Nowcast/Forecast System Project Page"/>
+      <documentation type="Summary"> SABGOM Hindcast Runs for Spring-Summer 2010 </documentation>
+      <documentation type="Rights"> This model data was generated as part of an academic research
+        project, and the principal investigators: Ruoying He (rhe@ncsu.edu) ask to be informed of
+        intent for scientific use and appropriate acknowledgment given in any publications arising
+        therefrom. The data is provided free of charge, without warranty of any kind.
+      </documentation>
+    </metadata>
+
+    <dataset name="Spring-Summer 2010 Hindcast Simulations">
+      <dataset name="Run01 Full Domain" ID="sabgom/hindcasts/run01"
+        urlPath="sabgom/hindcasts/run01">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="ocean_time" type="joinExisting" timeUnitsChange="true">
+            <scan location="/usgs/data1/csherwood/sabgom"
+              regExp=".*sabgom_his_[0-9]{4}\.nc$"/>
+          </aggregation>
+        </netcdf>
+      </dataset>
+      <dataset name="Run01 Small Domain" ID="sabgom/hindcasts/run01/small"
+        urlPath="sabgom/hindcasts/run01/small">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="ocean_time" type="joinExisting" timeUnitsChange="true">
+            <scan location="/usgs/data1/csherwood/sabgomx"
+              regExp=".*sabgomXhisX[0-9]{4}\.nc$"/>
+          </aggregation>
+        </netcdf>
+      </dataset>
+    </dataset>
+   
+
+  </dataset>
+</catalog>

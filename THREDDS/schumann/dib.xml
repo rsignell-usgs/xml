@@ -1,0 +1,43 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+ 
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+ </service>
+ 
+ <dataset name="Delaware Inland Bays">
+ 
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <documentation xlink:href="http://www.udel.edu" xlink:title="UDEL Web Page"/>
+   <documentation xlink:href="http://www.umaine.edu/marine/people/profile/damian_c_brady"
+    xlink:title="Damian Brady Web Page"/>
+  </metadata>
+
+  <dataset name="Test 2" ID="dib/test2" urlPath="dib/test2">
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/home/damian/ROMS_Inland_Bays/roms_inland/Output/inland_his_test2_0001.nc">
+    <variable name="h">
+      <attribute name="missing_value" type="float" value="0.457408283776726"/>
+    </variable>
+    <variable name="temp">
+     <attribute name="missing_value" type="float" value="0.0"/>
+    </variable>
+    <variable name="salt">
+     <attribute name="missing_value" type="float" value="0.0"/>
+    </variable>
+    <variable name="ocean_time">
+     <attribute name="units" value="seconds since 2010-01-01 00:00 +00:00"/>
+    </variable>
+   </netcdf>
+  </dataset>
+  
+ </dataset>
+</catalog>

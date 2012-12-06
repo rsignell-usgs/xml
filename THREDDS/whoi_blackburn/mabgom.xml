@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="MABGOM Model Runs"
+    xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <service name="Compound" serviceType="Compound" base="">
+        <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    </service>
+    <dataset name="MABGOM Data">
+        <metadata inherited="true">
+            <creator>
+                <name vocabulary="DIF">Dr. Ruoying He</name>
+                <contact url="http://www.meas.ncsu.edu/faculty/he/he.html" email="ruoying_he@ncsu.edu"/>
+            </creator>
+            <geospatialCoverage zpositive="up">
+                <northsouth>
+                    <start>31.3485</start>
+                    <size>15.5701</size>
+                    <units>degrees_north</units>
+                </northsouth>
+                <eastwest>
+                    <start>-80.6445</start>
+                    <size>20.5529</size>
+                    <units>degrees_east</units>
+                </eastwest>
+            </geospatialCoverage>
+            
+            <documentation xlink:href="http://www4.ncsu.edu/~rhe/project_files/muri.htm"
+                xlink:title="MABGOM Circulation"/>   
+            <documentation type="Summary"> Hydrodynamic simulations for the Mid-Atlantic Bight and Gulf of Maine </documentation>
+            
+            <documentation type="Rights"> This model data was generated as part of an academic research
+                project, and the principal investigators: Ruoying He (rhe@ncsu.edu) and Dennis McGillicuddy (dmcgillicuddy@whoi.edu)
+                ask to be informed of intent for scientific use and
+                appropriate acknowledgment given in any publications arising therefrom. The data is
+                provided free of charge, without warranty of any kind. </documentation>
+            
+        </metadata>
+        <dataset name="MABGOM Test 1" ID="kestons/mabgom/test1" serviceName="Compound"
+            urlPath="kestons/mabgom/test1">
+
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                <aggregation dimName="ocean_time" type="joinExisting">
+                    <scan location="/blackburn/d1/kestons/MABGOM2_BK/OUT_2003_f"
+                        regExp=".*avg_mabgom_[0-9]{4}\.nc$"/>
+                </aggregation>
+            </netcdf>
+        </dataset>
+    </dataset>
+</catalog>

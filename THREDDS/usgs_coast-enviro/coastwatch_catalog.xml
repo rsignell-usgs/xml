@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="NOAA Coastwatch East Coast"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+
+  <dataset name="NOAA Coastwatch East Coast">
+    <metadata inherited="true">
+      <documentation xlink:href="http://coastwatch.chesapeakebay.noaa.gov"
+        xlink:title="NOAA 16,17,18 AVHRR "/>
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">EC/COASTWATCH/NOAA</name>
+        <contact url="http://coastwatch.chesapeakebay.noaa.gov" email="coastwatch.info@noaa.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">EC/COASTWATCH/NOAA</name>
+        <contact url="http://coastwatch.chesapeakebay.noaa.gov" email="coastwatch.info@noaa.gov"/>
+      </publisher>
+      <geospatialCoverage>
+        <northsouth>
+          <start>18.91</start>
+          <size>27.9</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-88.84</start>
+          <size>33.68</size>
+          <units>degrees_east</units>
+        </eastwest>
+      </geospatialCoverage>
+      <timeCoverage>
+        <start>2008-05-03T14:20:26</start>
+        <end>present</end>
+      </timeCoverage>
+    </metadata>
+  
+  <dataset name="NOAA 16,17,18 AVHRR" ID="remote_sensing/avhrr" serviceName="gridServices"
+    urlPath="remote_sensing/avhrr">
+    <documentation type="summary">1.1 km AVHRR data from NOAA 16,17,18 (NOAA 15 not used)</documentation>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+<aggregation type="union">
+        <netcdf location="http://coast-enviro.er.usgs.gov/models/gom_interop/coastwatch_northeast_lonlat.nc"/>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+<variable name="time" shape="time" type="double">
+<attribute name="units" value="seconds since 1970-01-01 00:00:00 UTC"/>
+<attribute name="_CoordinateAxisType" value="Time"/>
+<values>1210085431 1210091486 1210094163 1210100264 1210110840 1210126198 1210132305 1210138860 1210144857 1210161523 1210170464 1210176466 1210186053 1210211208 1210217278 1210224651 1210230621 1210235143 1210236787 1210255497 1210261471 1210265760 1210271828 1210296249 1210302273 1210310464 1210316388 1210320897 1210322537 1210340565 1210346456 1210351563 1210357535 1210374116 1210381339 1210387223 1210396275 1210402155 1210408290 1210412438 1210431468 1210437377 1210437544 1210443301 1210453535 1210459721 1210466437 1210472217 1210478379 1210487926 1210494034 1210498147 1210516494 1210522500 1210523190 1210529070 1210539225 1210545371 1210557243 1210563333 1210573708 1210579792 1210583850 1210589884 1210601522 1210607514 1210609024 1210614840 1210621009 1210624912 1210642284 1210648303 1210659487 1210665538 1210669566 1210675578 1210686575 1210692498 1210694835 1210698634 1210700609 1210706758 1210710634 1210716711 1210727341 1210733321 1210745272 1210751336 1210755280 1210761280 1210771667 1210777495 1210783590 1210786383 1210792516 1210812445 1210818264 1210824451 1210831058 1210837073 1210862519 1210868561 1210872160 1210878247 1210897558 1210903274 1210909374 1210916841 1210922839 1210926714 1210947554 1210953557 1210957931 1210964040 1210988312 1210994356 1211002632 1211008602 1211012457 1211014812 1211032603 1211038539 1211043728 1211049841 1211053537 1211073366 1211079369 1211088432 1211094386 1211100535 1211104095 1211110144 1211117677 1211123548 1211129519 1211129697 1211135581 1211139274 1211145126 1211158455 1211164307 1211174234 1211180155 1211189731 1211195789 1211208580 1211214615 1211215364 1211221295 1211225020 1211230820 1211236993 1211243567 1211249332 1211255434 1211260066 1211265925 1211272040 1211275439 1211293605 1211301159 1211307069 1211310770 1211313355 1211322634 1211334360 1211334571 1211340408 1211351709 1211357822 1211361146 1211367160 1211378633 1211384601 1211386992 1211392853 1211399062 1211402213 1211408315 1211419396 1211425401 1211437480 1211443569 1211446858 1211452871 1211463696 1211469588 1211472815 1211475694 1211478613 1211484769 1211487899 1211504473 1211510352 1211523263 1211529313 1211554599 1211560661 1211564396 1211570542 1211589565 1211595350 1211601508 1211609046 1211615086 1211618294 1211639622 1211645650 1211650159 1211656274 1211680374 1211686449 1211694838 1211700860 1211704025 1211724662 1211730643 1211735942 1211742034 1211745100 1211765387 1211771433 1211780620 1211786626 1211795719 1211809715 1211815629 1211821712 1211821765 1211827811 1211850481 1211856426 1211866408 1211872400 1211881318 1211894808 1211900637 1211907549 1211913589 1211916580 1211928580 1211935575 1211941397 1211947594 1211952212 1211958143 1211967022 1211973068 1211985753 1211991698 1211993320 1211999323 1212002320 1212020687 1212026405 1212032514 1212038035 1212043914 1212050074 1212052725 1212058755 1212070691 1212076697 1212079144 1212085061 1212093783 1212111443 1212117491 1212129704 1212135811 1212138436 1212144445 1212155734 1212161682 1212164951 1212170854 1212177103 1212179510 1212185594 1212196502 1212202511 1212215477 1212221580 1212224151 1212230141 1212240821 1212246687 1212250787 1212252775 1212256611 1212262799 1212281595 1212287445 1212301273 1212307352 1212321986 1212331690 1212337742 1212342392 1212348561 1212366710 1212372441 1212378582 1212387045 1212393163 1212395595 1212407654 1212416726 1212422736 1212428153 1212434299 1212457479 1212463538 1212472820 1212478843 1212481334 1212501768 1212507841 1212514073 1212522389 1212528317 1212542521 1212548547 1212558612 1212564649 1212572899 1212578984 1212586834 1212592723 1212598824 1212599750 1212605882 1212627631 1212633505 1212644414 1212650404 1212677750 1212683800 1212685539 1212691619 1212718492 1212724646 1212730204 1212736174 1212742324 1212762765 1212768785 1212771324 1212803515 1212809605 1212816004 1212821954 1212828084 1212847795 1212853785 1212857124 1212863104 1212888555 1212894574 1212901814 1212907714 1212913834 1212932854 1212938774 1212942934 1212944895 1212948844 1212955156 1212973614 1212979565 1212993484 1212999594 1213017949 1213023775 1213028744 1213029855 1213034614 1213040861 1213058713 1213064527 1213070731 1213079245 1213085316 1213108799 1213114563 1213114835 1213120354 1213126565 1213128209 1213149529 1213155638 1213165031 1213171074 1213172884 1213193826 1213199815 1213206128 1213212305 1213213969 1213234573 1213240628 1213250811 1213256999 1213264492 1213278869 1213284812 1213291928 1213298045 1213311823 1213319637 1213325640 1213336595 1213342611 1213350197 1213363951 1213369809 1213375894 1213377706 1213383777 1213391251 1213397453 1213404723 1213410573 1213422384 1213428461 1213435898 1213441939 1213454821 1213460861 1213463473 1213469548 1213489840 1213495570 1213501710 1213508159 1213514146 1213520311 1213527626 1213539855 1213545851 1213549264 1213555366 1213562674 1213568775 1213580606 1213586669 1213593960 1213599920 1213606102 1213613305 1213624899 1213630854 1213635071 1213641300 1213665655 1213671677 1213679785 1213685702 1213691820 1213709960 1213715848 1213720877 1213726809 1213750729 1213756623 1213765584 1213771456 1213777564 1213800859 1213806698 1213807144 1213812573 1213818865 1213835839 1213841604 1213857311 1213863318 1213870377 1213885885 1213891890 1213898336 1213904576 1213926631 1213932729 1213943010 1213949075 1213956067 </values>
+</variable>
+         <aggregation dimName="time" type="joinNew">
+                <variableAgg name="avhrr_ch1"/>
+                <variableAgg name="avhrr_ch2"/>
+                <variableAgg name="avhrr_ch3"/>
+                <variableAgg name="avhrr_ch3a"/>
+                <variableAgg name="avhrr_ch4"/>
+                <variableAgg name="avhrr_ch5"/>
+               <variableAgg name="cloud"/>
+               <variableAgg name="rel_azimuth"/>
+               <variableAgg name="sat_zenith"/>
+                <variableAgg name="sun_zenith"/>
+                <variableAgg name="sst_byte"/>
+                <variableAgg name="sst"/>
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_127_1450_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_127_1631_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_127_1716_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_127_1857_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_127_2154_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_128_0209_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_128_0351_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_128_0541_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_128_0720_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_128_1158_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_128_1427_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_128_1607_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_128_1847_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_129_0146_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_129_0327_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_129_0530_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_129_0710_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_129_0825_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_129_0853_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_129_1404_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_129_1544_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_129_1656_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_129_1837_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_130_0124_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_130_0304_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_130_0521_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_130_0659_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_130_0814_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_130_0842_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_130_1342_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_130_1520_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_130_1646_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_130_1825_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_130_2301_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_131_0102_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_131_0240_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_131_0511_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_131_0649_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_131_0831_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_131_0940_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_131_1457_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_131_1636_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_131_1639_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_131_1815_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_131_2105_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_131_2248_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_132_0040_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_132_0216_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_132_0359_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_132_0638_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_132_0820_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_132_0929_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_132_1434_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_132_1615_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_132_1626_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_132_1804_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_132_2053_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_132_2236_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_133_0154_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_133_0335_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_133_0628_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_133_0809_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_133_0917_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_133_1058_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_133_1412_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_133_1551_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_133_1617_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_133_1754_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_133_1936_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_133_2041_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_0131_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_0311_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_0618_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_0758_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_0906_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_1046_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_1349_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_1528_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_1607_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_1710_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_1743_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_1925_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_2030_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_134_2211_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_135_0109_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_135_0248_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_135_0607_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_135_0748_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_135_0854_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_135_1034_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_135_1327_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_135_1504_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_135_1646_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_135_1733_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_135_1915_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_136_0047_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_136_0224_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_136_0407_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_136_0557_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_136_0737_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_136_1441_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_136_1622_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_136_1722_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_136_1904_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_137_0025_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_137_0201_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_137_0342_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_137_0547_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_137_0727_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_137_0831_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_137_1419_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_137_1559_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_137_1712_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_137_1854_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_138_0138_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_138_0319_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_138_0537_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_138_0716_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_138_0820_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_138_0900_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_138_1356_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_138_1535_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_138_1702_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_138_1844_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_138_1945_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_0116_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_0256_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_0527_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_0706_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_0848_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_0948_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_1129_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_1334_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_1512_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_1651_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_1654_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_1833_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_1934_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_139_2112_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_0054_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_0231_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_0517_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_0655_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_0935_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_1116_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_1449_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_1630_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_1642_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_1821_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_1923_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_2100_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_140_2243_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_0032_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_0208_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_0350_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_0507_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_0645_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_0827_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_0923_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_1426_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_1632_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_1811_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_1912_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_1955_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_141_2230_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_0146_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_0149_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_0326_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_0635_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_0817_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_0912_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_1052_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_1403_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_1543_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_1623_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_1800_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_1944_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_2036_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_142_2218_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_0123_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_0303_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_0624_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_0806_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_0900_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_1041_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_1341_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_1519_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_1613_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_1701_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_1750_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_1932_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_143_2024_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_144_0101_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_144_0239_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_144_0614_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_144_0755_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_144_1456_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_144_1637_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_144_1739_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_144_1922_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_145_0039_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_145_0215_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_145_0358_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_145_0604_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_145_0744_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_145_0838_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_145_1433_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_145_1614_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_145_1729_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_145_1911_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_146_0152_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_146_0334_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_146_0553_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_146_0734_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_146_0827_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_146_1411_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_146_1550_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_146_1719_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_146_1900_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_146_1951_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_147_0129_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_147_0310_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_147_0543_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_147_0723_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_147_0955_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_147_1348_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_147_1527_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_147_1708_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_147_1709_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_147_1850_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_148_0108_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_148_0247_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_148_0533_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_148_0713_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_148_0941_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_148_1326_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_148_1503_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_148_1659_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_148_1839_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_148_1929_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_148_2249_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_149_0046_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_149_0223_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_149_0406_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_149_0523_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_149_0702_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_149_0930_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_149_1111_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_149_1442_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_149_1621_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_149_1648_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_149_1828_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_149_1918_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_0024_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_0200_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_0341_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_0513_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_0651_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_0834_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_0918_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_1059_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_1418_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_1558_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_1639_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_1817_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_150_2043_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_0137_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_0318_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_0641_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_0823_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_0907_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_1047_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_1355_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_1534_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_1629_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_1807_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_1951_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_2031_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_151_2213_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_152_0115_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_152_0255_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_152_0631_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_152_0813_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_152_0855_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_152_1035_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_152_1333_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_152_1511_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_152_1619_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_152_1652_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_152_1756_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_152_1939_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_153_0053_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_153_0230_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_153_0621_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_153_0802_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_153_1206_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_153_1448_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_153_1629_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_153_1746_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_153_1929_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_154_0031_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_154_0207_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_154_0349_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_154_0610_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_154_0752_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_154_0833_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_154_1154_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_154_1425_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_154_1605_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_154_1735_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_154_1918_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_155_0144_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_155_0325_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_155_0600_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_155_0740_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_155_0822_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_155_1402_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_155_1544_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_155_1727_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_155_1946_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_155_2125_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_156_0122_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_156_0302_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_156_0550_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_156_0730_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_156_0948_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_156_1129_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_156_1340_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_156_1518_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_156_1700_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_156_1715_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_156_1858_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_157_0100_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_157_0238_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_157_0540_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_157_0720_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_157_1455_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_157_1636_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_157_1705_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_157_1846_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_158_0214_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_158_0357_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_158_0530_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_158_0709_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_158_0852_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_158_1432_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_158_1613_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_158_1655_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_159_0151_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_159_0333_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_159_0520_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_159_0659_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_159_0841_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_159_1409_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_159_1549_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_159_1645_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_159_1825_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_160_0129_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_160_0309_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_160_0510_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_160_0648_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_160_0830_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_160_1347_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_160_1526_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_160_1635_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_160_1708_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_160_1814_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_160_1959_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_161_0106_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_161_0246_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_161_0638_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_161_0819_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_161_1325_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_161_1502_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_161_1625_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_161_1644_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_161_1803_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_161_1947_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_162_0045_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_162_0222_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_162_0405_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_162_0627_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_162_0808_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_162_1439_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_162_1616_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_162_1620_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_162_1752_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_162_1936_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_162_2003_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_163_0158_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_163_0340_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_163_0617_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_163_0757_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_163_0828_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_163_1417_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_163_1556_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_163_1742_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_163_1925_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_163_1952_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_164_0136_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_164_0317_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_164_0606_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_164_0749_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_164_0954_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_164_1354_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_164_1533_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_164_1732_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_164_1914_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_164_2303_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_165_0113_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_165_0254_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_165_0556_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_165_0736_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_165_0943_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_165_1332_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_165_1510_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_165_1651_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_165_1721_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_165_1902_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_165_2107_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_165_2250_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_166_0052_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_166_0229_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_166_0546_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_166_0727_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_166_0931_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_166_1112_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_166_1447_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_166_1627_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_166_1711_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_166_1852_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_0030_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_0206_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_0348_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_0535_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_0715_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_0858_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_1100_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_1424_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_1604_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_1701_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_1842_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_2044_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_167_2226_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_168_0143_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_168_0324_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_168_0526_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_168_0705_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_168_0848_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_168_1048_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_168_1401_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_168_1540_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_168_1651_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_168_1835_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_169_0120_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_169_0301_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_169_0516_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_169_0655_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_169_0837_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_169_1339_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_169_1517_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_169_1641_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_169_1820_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_170_0058_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_170_0237_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_170_0506_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_170_0644_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_170_0826_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_170_1454_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_170_1631_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_170_1639_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_170_1809_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_170_1954_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_171_0037_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_171_0213_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_171_0635_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_171_0815_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_171_1012_noaa16_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_171_1431_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_171_1611_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_171_1758_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_171_1942_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_172_0150_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_172_0332_noaa17_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_172_0623_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_172_0804_noaa18_ex1_sst.hdf"  />
+<netcdf location="http://coastwatch.chesapeakebay.noaa.gov/dap/edac/avhrr/data/2008_172_1001_noaa16_ex1_sst.hdf"  />
+          </aggregation>
+       </netcdf>
+   </aggregation>
+   <variable name="sst">
+      <attribute name="coordinates" value="lon lat"/>
+   </variable>
+   <variable name="sst_byte">
+       <attribute name="long_name"  value="sst_byte"/>
+   </variable>
+   <attribute name="Conventions"  value="CF-1.0"/>
+</netcdf>
+
+  </dataset>
+  </dataset>
+</catalog>

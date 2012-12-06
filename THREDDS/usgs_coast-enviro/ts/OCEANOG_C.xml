@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog   name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  
+  <service name="all4services" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+   <dataset name="Oceanographer Canyon Dynamics Experiment (1/82-7/82)">
+    <metadata inherited="true">
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/"
+          email="emontgomery@usgs.gov" />
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/"
+          email="emontgomery@usgs.gov" />
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>40.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-68.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>3000</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/oceanog_c.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+  <dataset name="2481-A1H.cdf" ID="OCEANOG_C/2481-A1H.cdf" urlPath="OCEANOG_C/2481-A1H.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2481-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887726400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-248"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-27 20:00:00Z" />
+<attribute name="stop_time" value="1982-03-20 01:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="2481-AA.cdf" ID="OCEANOG_C/2481-AA.cdf" urlPath="OCEANOG_C/2481-AA.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2481-AA.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887724825000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-248"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-27 19:33:45Z" />
+<attribute name="stop_time" value="1982-03-20 01:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2481ATT-A.cdf" ID="OCEANOG_C/2481ATT-A.cdf" urlPath="OCEANOG_C/2481ATT-A.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2481ATT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887724825000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-248"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-27 19:33:45Z" />
+<attribute name="stop_time" value="1982-03-20 02:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2481ATT-A1H.cdf" ID="OCEANOG_C/2481ATT-A1H.cdf" urlPath="OCEANOG_C/2481ATT-A1H.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2481ATT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887726400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-248"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-27 20:00:00Z" />
+<attribute name="stop_time" value="1982-03-20 02:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="2492-A.cdf" ID="OCEANOG_C/2492-A.cdf" urlPath="OCEANOG_C/2492-A.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2492-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887800425000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-249"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-28 16:33:45Z" />
+<attribute name="stop_time" value="1982-07-09 13:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2492-A1H.cdf" ID="OCEANOG_C/2492-A1H.cdf" urlPath="OCEANOG_C/2492-A1H.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2492-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887802000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-249"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-28 17:00:00Z" />
+<attribute name="stop_time" value="1982-07-09 12:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="2492ATT-A.cdf" ID="OCEANOG_C/2492ATT-A.cdf" urlPath="OCEANOG_C/2492ATT-A.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2492ATT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887800425000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-249"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-28 16:33:45Z" />
+<attribute name="stop_time" value="1982-07-09 13:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2492ATT-A1H.cdf" ID="OCEANOG_C/2492ATT-A1H.cdf" urlPath="OCEANOG_C/2492ATT-A1H.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2492ATT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887802000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-249"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-28 17:00:00Z" />
+<attribute name="stop_time" value="1982-07-09 13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="2492TCT-A.cdf" ID="OCEANOG_C/2492TCT-A.cdf" urlPath="OCEANOG_C/2492TCT-A.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2492TCT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887800425000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-249"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-28 16:33:45Z" />
+<attribute name="stop_time" value="1982-07-09 13:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2492TCT-A1H.cdf" ID="OCEANOG_C/2492TCT-A1H.cdf" urlPath="OCEANOG_C/2492TCT-A1H.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2492TCT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887802000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-249"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-28 17:00:00Z" />
+<attribute name="stop_time" value="1982-07-09 12:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="2501-A1H.cdf" ID="OCEANOG_C/2501-A1H.cdf" urlPath="OCEANOG_C/2501-A1H.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2501-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887748000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-250"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-28 02:00:00Z" />
+<attribute name="stop_time" value="1982-07-09 09:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="2501-AA.cdf" ID="OCEANOG_C/2501-AA.cdf" urlPath="OCEANOG_C/2501-AA.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2501-AA.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887746425000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-250"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-28 01:33:45Z" />
+<attribute name="stop_time" value="1982-07-09 11:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2501TCT-A.cdf" ID="OCEANOG_C/2501TCT-A.cdf" urlPath="OCEANOG_C/2501TCT-A.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2501TCT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887746425000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-250"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-28 01:33:45Z" />
+<attribute name="stop_time" value="1982-07-09 11:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2501TCT-A1H.cdf" ID="OCEANOG_C/2501TCT-A1H.cdf" urlPath="OCEANOG_C/2501TCT-A1H.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/OCEANOG_C/2501TCT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887748000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-250"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1982-01-28 02:00:00Z" />
+<attribute name="stop_time" value="1982-07-09 11:00:00Z" />
+</netcdf>
+</dataset>
+   </dataset>
+</catalog>

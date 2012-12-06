@@ -1,0 +1,44 @@
+<!--inundation catalog header -->
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="NOAA IOOS Testbed THREDDS Server">
+ 
+ <service name="all" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+ 
+ <service name="agg" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+ 
+ <service name="points" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="sos" serviceType="SOS" base="/thredds/sos/"/>
+ </service>
+ 
+ 
+ <dataset name="Inundation">
+  <datasetScan name="Inundation Observations" path="inundation/observations"
+   location="/data/ftp/upload/Inundation/observations/tropical/netcdf">
+   <serviceName>all</serviceName>
+   <filter>
+    <include wildcard="*.nc"/>
+   </filter>
+   <addDatasetSize/>
+  </datasetScan>

@@ -1,0 +1,43 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.2.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.2">
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+  <dataset name="FVCOM GOM3 Results">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">Dr. Changsheng Chen </name>
+        <contact url="http://fvcom.smast.umassd.edu" email="c1chen@umassd.edu"/>
+      </creator>
+      <documentation xlink:href="http://fvcom.smast.umassd.edu/" xlink:title="FVCOM Project Page"/>
+      <documentation type="Summary"> FVCOM Simulations of the Gulf of Maine, GOM3 Grid, forced by
+        MM5. </documentation>
+      <documentation type="Rights"> This model data was generated as part of an academic research
+        project, and the principal investigator, Changsheng Chen (c1chen@umassd.edu), asks to be
+        informed of intent for scientific use and appropriate acknowledgment given in any
+        publications arising therefrom. The data is provided free of charge, without warranty of any
+        kind. </documentation>
+    </metadata>
+
+    <dataset name="Jan 1, 2009 - Jan 1, 2010" ID="fvcom/gom3/2009" urlPath="fvcom/gom3/2009">
+      <serviceName>allServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <variable name="siglev">
+          <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+        </variable>
+        <variable name="siglay" shape="siglay" type="float">
+          <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+        </variable>
+        <aggregation dimName="time" type="joinExisting">
+          <scan location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive" regExp=".*gom[0-9]{6}_01\.nc$"
+            subdirs="false" olderThan="15 min"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+  </dataset>
+</catalog>

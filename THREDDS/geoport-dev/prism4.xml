@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="PRISM Catalog" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+
+  <dataset name="PRISM Climate Group Data" harvest="true">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <dataType>Grid</dataType>
+      <dataFormatType>NetCDF</dataFormatType>
+      <authority>usgs.gov</authority>
+      <creator>
+        <name vocabulary="DIF">PRISM Climate Group</name>
+        <contact url="http://www.prism.oregonstate.edu/" email="gibson@nacse.org"/>
+      </creator>
+
+      <documentation xlink:href="http://www.prism.oregonstate.edu/"
+        xlink:title="PRISM Climate Group home page"/>
+
+      <documentation type="Summary"> PRISM is a unique knowledge-based system that uses point
+        measurements of precipitation, temperature, and other climatic factors to produce
+        continuous, digital grid estimates of monthly, yearly, and event-based climatic parameters.
+        Continuously updated, this unique analytical tool incorporates point data, a digital
+        elevation model, and expert knowledge of complex climatic extremes, including rain shadows,
+        coastal effects, and temperature inversions. PRISM data sets are recognized world-wide as
+        the highest-quality spatial climate data sets currently available. PRISM is the USDA's
+        official climatological data. </documentation>
+
+      <documentation type="Rights">
+Data may be freely reproduced and distributed for non-commercial purposes. When referring to the data, the source must be clearly and prominently stated, and include at a minimum, our name, URL, and data of data creation, for example:
+
+    “PRISM Climate Group, Oregon State University, http://prism.oregonstate.edu, created 4 Feb 2004.”
+
+Sale or other commercial use of the data must be arranged by contacting the PRISM Climate Group.
+
+Copyright and Ownership. All of the data and information presented in this web site are protected by United States copyright laws and applicable international copyright treaties. The PRISM Climate Group, Oregon State University retains rights to ownership of the data and information.
+
+No Warranty. All content on this web site is provided “as is,” without warranty of any kind, either express or implied.        
+
+ </documentation>
+
+    </metadata>
+
+    <dataset name="PRISM Monthly Stats (4km grid)" ID="prism4/monthly" urlPath="prism4/monthly">
+
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+   <variable name="temp_min" orgName="tmn">
+<!--       <attribute name="standard_name" value="air_temperature"/> -->
+    </variable>
+    <variable name="temp_max" orgName="tmx">
+<!--       <attribute name="standard_name" value="air_temperature"/>  -->
+    </variable>
+    <variable name="precip_mean" orgName="ppt">
+<!--       <attribute name="standard_name" value="lwe_precipitation_rate"/> -->
+    </variable>
+
+    <aggregation dimName="time" type="joinExisting">
+     <scan location="/usgs/data0/prism/nochunk/" regExp=".*prism_[0-9]{4}-[0-9]{4}\.nc$"/>
+    </aggregation>
+   </netcdf>
+
+ 
+    </dataset>
+  </dataset>
+</catalog>

@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog   name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  
+  <service name="all4services" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+   <metadata inherited="true">
+      <serviceName>all4services</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Station</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/"
+          email="emontgomery@usgs.gov" />
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/"
+          email="emontgomery@usgs.gov" />
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>41.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-67.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>3000</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/globec_gb.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+
+  <dataset name="5551tcp-a.nc" ID="GLOBEC_GB/5551tcp-a.nc" urlPath="GLOBEC_GB/5551tcp-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5551tcp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428592649000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-555"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-03-19 20:37:29Z" />
+<attribute name="stop_time" value="1999-06-17 19:12:29Z" />
+</netcdf>
+</dataset>
+<dataset name="5552adc-a.nc" ID="GLOBEC_GB/5552adc-a.nc" urlPath="GLOBEC_GB/5552adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5552adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428602957000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-555"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-03-19 23:29:17Z" />
+<attribute name="stop_time" value="1999-06-17 20:59:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5591tcp-a.nc" ID="GLOBEC_GB/5591tcp-a.nc" urlPath="GLOBEC_GB/5591tcp-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5591tcp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428583349000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-559"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-03-19 18:02:29Z" />
+<attribute name="stop_time" value="1999-06-14 18:52:29Z" />
+</netcdf>
+</dataset>
+<dataset name="5592adc-a.nc" ID="GLOBEC_GB/5592adc-a.nc" urlPath="GLOBEC_GB/5592adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5592adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428584057000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-559"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-03-19 18:14:17Z" />
+<attribute name="stop_time" value="1999-06-14 22:44:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5622adc-a.nc" ID="GLOBEC_GB/5622adc-a.nc" urlPath="GLOBEC_GB/5622adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5622adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428567857000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-562"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-03-19 13:44:17Z" />
+<attribute name="stop_time" value="1999-06-20 20:29:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5631tcp-a.nc" ID="GLOBEC_GB/5631tcp-a.nc" urlPath="GLOBEC_GB/5631tcp-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5631tcp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428578249000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-563"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-03-19 16:37:29Z" />
+<attribute name="stop_time" value="1999-06-16 13:52:29Z" />
+</netcdf>
+</dataset>
+<dataset name="5632adc-a.nc" ID="GLOBEC_GB/5632adc-a.nc" urlPath="GLOBEC_GB/5632adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5632adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428579557000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-563"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-03-19 16:59:17Z" />
+<attribute name="stop_time" value="1999-06-16 12:29:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5663adc-a.nc" ID="GLOBEC_GB/5663adc-a.nc" urlPath="GLOBEC_GB/5663adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5663adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428571457000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-566"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-03-19 14:44:17Z" />
+<attribute name="stop_time" value="1999-06-21 01:14:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5671tcp-a.nc" ID="GLOBEC_GB/5671tcp-a.nc" urlPath="GLOBEC_GB/5671tcp-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5671tcp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428574650000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-567"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-03-19 15:37:30Z" />
+<attribute name="stop_time" value="1999-06-16 18:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="5672adc-a.nc" ID="GLOBEC_GB/5672adc-a.nc" urlPath="GLOBEC_GB/5672adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5672adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428581357000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-567"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-03-19 17:29:17Z" />
+<attribute name="stop_time" value="1999-06-16 18:44:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5731cp-a.nc" ID="GLOBEC_GB/5731cp-a.nc" urlPath="GLOBEC_GB/5731cp-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5731cp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436428049000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-573"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-18 13:07:29Z" />
+<attribute name="stop_time" value="1999-07-18 03:27:29Z" />
+</netcdf>
+</dataset>
+<dataset name="5732adc-a.nc" ID="GLOBEC_GB/5732adc-a.nc" urlPath="GLOBEC_GB/5732adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5732adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436428457000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-573"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-18 13:14:17Z" />
+<attribute name="stop_time" value="1999-08-26 03:14:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5751adc-a.nc" ID="GLOBEC_GB/5751adc-a.nc" urlPath="GLOBEC_GB/5751adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5751adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436711957000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-575"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-21 19:59:17Z" />
+<attribute name="stop_time" value="1999-08-26 14:14:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5752mc-a.nc" ID="GLOBEC_GB/5752mc-a.nc" urlPath="GLOBEC_GB/5752mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5752mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436711700000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-575"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-21 19:55:00Z" />
+<attribute name="stop_time" value="1999-08-26 15:20:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5753pt-a.nc" ID="GLOBEC_GB/5753pt-a.nc" urlPath="GLOBEC_GB/5753pt-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5753pt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436712000000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-575"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-21 20:00:00Z" />
+<attribute name="stop_time" value="1999-08-26 15:10:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5781adc-a.nc" ID="GLOBEC_GB/5781adc-a.nc" urlPath="GLOBEC_GB/5781adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5781adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436599457000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-578"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-20 12:44:17Z" />
+<attribute name="stop_time" value="1999-08-26 18:14:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5782mc-a.nc" ID="GLOBEC_GB/5782mc-a.nc" urlPath="GLOBEC_GB/5782mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5782mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436599500000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-578"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-20 12:45:00Z" />
+<attribute name="stop_time" value="1999-08-26 18:20:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5831adc-a.nc" ID="GLOBEC_GB/5831adc-a.nc" urlPath="GLOBEC_GB/5831adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5831adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436602111000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-583"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-20 13:28:31Z" />
+<attribute name="stop_time" value="1999-08-26 20:43:31Z" />
+</netcdf>
+</dataset>
+<dataset name="5832cp-a.nc" ID="GLOBEC_GB/5832cp-a.nc" urlPath="GLOBEC_GB/5832cp-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5832cp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436602050000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-583"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-20 13:27:30Z" />
+<attribute name="stop_time" value="1999-08-01 18:27:30Z" />
+</netcdf>
+</dataset>
+<dataset name="5851adc-a.nc" ID="GLOBEC_GB/5851adc-a.nc" urlPath="GLOBEC_GB/5851adc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5851adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436718257000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-585"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-21 21:44:17Z" />
+<attribute name="stop_time" value="1999-08-29 10:14:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5852mc-a.nc" ID="GLOBEC_GB/5852mc-a.nc" urlPath="GLOBEC_GB/5852mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5852mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436718900000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-585"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-21 21:55:00Z" />
+<attribute name="stop_time" value="1999-08-29 11:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5853pt-a.nc" ID="GLOBEC_GB/5853pt-a.nc" urlPath="GLOBEC_GB/5853pt-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5853pt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436736000000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-585"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-22 02:40:00Z" />
+<attribute name="stop_time" value="1999-08-29 14:50:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5882mc-a.nc" ID="GLOBEC_GB/5882mc-a.nc" urlPath="GLOBEC_GB/5882mc-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5882mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436294400000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-588"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-17 00:00:00Z" />
+<attribute name="stop_time" value="1999-08-27 12:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5883pt-a.nc" ID="GLOBEC_GB/5883pt-a.nc" urlPath="GLOBEC_GB/5883pt-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5883pt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436294400000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-588"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1999-06-17 00:00:00Z" />
+<attribute name="stop_time" value="1999-08-27 12:20:00Z" />
+</netcdf>
+</dataset>
+</catalog>

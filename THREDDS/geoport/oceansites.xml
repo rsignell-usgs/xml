@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS Catalog for NetCDF Files" version="1.0.1">
+
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+ </service>
+
+<!--You can only set cache="false" on a DatasetRoot, so we need to make one -->
+ <datasetRoot path="oceansites" location="/usgs/data0/rsignell/data/oceansites/" cache="false"/>
+
+ <dataset name="OS_NTAS_2010_R_M-1.nc" ID="NTASRM1_nocache" serviceName="allServices"
+  urlPath="oceansites/OS_NTAS_2010_R_M-1.nc" dataType="Grid"/>
+ <dataset name="OS_NTAS_2010_R_M-2.nc" ID="NTASRM2_nocache" serviceName="allServices"
+  urlPath="oceansites/OS_NTAS_2010_R_M-2.nc" dataType="Grid"/>
+ <dataset name="OS_WHOTS_2010_R_M-1.nc" ID="WHOTSRM1_nocache" serviceName="allServices"
+  urlPath="oceansites/OS_WHOTS_2010_R_M-1.nc" dataType="Grid"/>
+ <dataset name="OS_WHOTS_2010_R_M-2.nc" ID="WHOTSRM2_nocache" serviceName="allServices"
+  urlPath="oceansites/OS_WHOTS_2010_R_M-2.nc" dataType="Grid"/>
+ <dataset name="OS_Stratus_2011_MR-1.nc" ID="StratusM1_nocache" serviceName="allServices"
+  urlPath="oceansites/OS_Stratus_2011_MR-1.nc" dataType="Grid"/>
+ <dataset name="OS_Stratus_2011_MR-2.nc" ID="StratusM2_nocache" serviceName="allServices"
+  urlPath="oceansites/OS_Stratus_2011_MR-2.nc" dataType="Grid"/>
+
+</catalog>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="C:/RPS/cf/leo/1992_SURF_GOM27_05.nc">
+  <dimension name="x" length="200" />
+  <dimension name="y" length="200" />
+  <dimension name="time" length="480" isUnlimited="true" />
+  <attribute name="grid_type" value="curvilinear" />
+  <variable name="time" shape="time" type="float">
+    <attribute name="units" value="days since 1993-01-01 0:00:00 00:00" />
+    <attribute name="long_name" value="Time" />
+    <attribute name="standard_name" value="time" />
+    <attribute name="base_date" value="1993, 1, 1, 0" />
+  </variable>
+  <variable name="lon" shape="y x" type="float" >
+  	<attribute name="units" value="degrees_east"/>
+  	</variable> 
+  <variable name="lat" shape="y x" type="float" >
+    	<attribute name="units" value="degrees_north"/>
+  	</variable> 
+  <variable name="water_u" shape="time y x" type="float">
+    <attribute name="units" value="m/s" />
+    <attribute name="long_name" value="Eastward Water Velocity" />
+    <attribute name="standard_name" value="eastward_sea_water_velocity" />
+    <attribute name="missing_value" value="-99.f" />
+    <attribute name="coordinates" value="lon lat"/>
+    <attribute name="FillValue" value="-99.f" />
+  </variable>
+  <variable name="water_v" shape="time y x" type="float">
+    <attribute name="units" value="m/s" />
+    <attribute name="long_name" value="Northward Water Velocity" />
+    <attribute name="standard_name" value="northward_sea_water_velocity" />    
+    <attribute name="coordinates" value="lon lat"/>
+    <attribute name="missing_value" value="-99.f" />
+    <attribute name="FillValue" value="-99.f" />
+  </variable>
+  <attribute name="Conventions" value="CF-1.0"/>
+</netcdf>
+

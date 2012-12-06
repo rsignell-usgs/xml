@@ -1,0 +1,264 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+<dataset name="MVCO ROMS-SWAN Model Runs" ID="VS/ROMS">
+  <metadata inherited="true">
+
+    <authority>gov.usgs.er.whsc</authority>
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <creator>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="nganju@usgs.gov" />
+    </creator>
+    <publisher>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="nganju@usgs.gov" />
+    </publisher>
+    <geospatialCoverage zpositive="down">
+      <northsouth>
+        <start>41.2911</start>
+        <size>0.06</size>
+        <units>degrees_north</units>
+      </northsouth>
+      <eastwest>
+        <start> -70.6091</start>
+        <size>0.1089</size>
+        <units>degrees_east</units>
+      </eastwest>
+      <updown>
+        <start>0</start>
+        <size>40</size>
+        <units>meters</units>
+      </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://www.cstms.org/index.php/Martha%27s_Vineyard_Coastal_Observatory" 
+      xlink:title="MVCO ROMS-SWAN Model Runs"/>
+  </metadata>
+    <dataset name="uniform case1: MVCO 40 m grid, uniform zo=0.001, 1-Sep-2007 30 day run" ID="mvco_output/uniform" urlPath="mvco_output/uniform">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/uniform/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="uniform case5: MVCO 40 m grid, uniform zo=0.0001, UV_VIS2, 1-Sep-2007 30 day run" ID="mvco_output/uniform0001" urlPath="mvco_output/uniform0001">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/uniform0001/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="uniform case5_sens: case 5 with modified BC, 1-Sep-2007 30 day run" ID="mvco_output/uniform0001_sens" urlPath="mvco_output/uniform0001_sens">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/uniform0001_sens/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="spatial case7_sens: ar =0, no form drag correction, 1-Sep-2007 30 day run" ID="mvco_output/spatial_7_ar0fd" urlPath="mvco_output/spatial_7_ar0fd">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/spatial_7_ar0fd/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="spatial case8_sens: ar =0.267, form drag correction, 1-Sep-2007 30 day run" ID="mvco_output/spatial_8_ar267fdcor" urlPath="mvco_output/spatial_8_ar267fdcor">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/spatial_8_ar267fdcor/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="spatial case9_sens: ar =0.100, form drag correction, 1-Sep-2007 30 day run" ID="mvco_output/spatial_9_ar100fdcor" urlPath="mvco_output/spatial_9_ar100fdcor">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/spatial_9_ar100fdcor/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="1000m grid:not to be used" ID="mvco_output/cblast_rough" urlPath="mvco_output/cblast_rough">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/cblast_rough/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="diagnostics ar267" ID="mvco_output/diag" urlPath="mvco_output/diag">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/diag/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="diagnostics UR" ID="mvco_output/diag0" urlPath="mvco_output/diag0">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/diag0/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="sgfs idealized, mf1" ID="mvco_output/sgfs_mf1" urlPath="mvco_output/sgfs_mf1">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/sgfs_mf1/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="sgfs idealized, mf50" ID="mvco_output/sgfs_mf50" urlPath="mvco_output/sgfs_mf50">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/sgfs_mf50/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="sgfs idealized, mf50 10/20" ID="mvco_output/sgfs_mf50_1020" urlPath="mvco_output/sgfs_mf50_1020">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/sgfs_mf50_1020/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="sgfs idealized, mf50 45/55" ID="mvco_output/sgfs_mf50_4555" urlPath="mvco_output/sgfs_mf50_4555">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/sgfs_mf50_4555/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="mvco 40m tidal only" ID="mvco_output/tidal_40m" urlPath="mvco_output/tidal_40m">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/tidal_40m/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="mvco 200m tidal only" ID="mvco_output/tidal_200m" urlPath="mvco_output/tidal_200m">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/tidal_200m/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="mvco 1000m tidal only" ID="mvco_output/tidal_1000m" urlPath="mvco_output/tidal_1000m">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/tidal_1000m/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+
+<dataset name="mvco 200m all forcings" ID="mvco_output/mvco_200m" urlPath="mvco_output/mvco_200m">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/mvco_200m/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="mvco 1000m all forcings" ID="mvco_output/mvco_1000m" urlPath="mvco_output/mvco_1000m">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/mvco_1000m/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="mvco 40m tidal, with w-c interaction" ID="mvco_output/mvco_40m_tidalwc" urlPath="mvco_output/mvco_40m_tidalwc">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/mvco_40m_tidalwc/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="mvco 1000m tidal, with enhanced roughness" ID="mvco_output/tidal_1000m_zo" urlPath="mvco_output/tidal_1000m_zo">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/tidal_1000m_zo/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="mvco 200m tidal, with enhanced roughness" ID="mvco_output/tidal_200m_zo" urlPath="mvco_output/tidal_200m_zo">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/tidal_200m_zo/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="mvco 40m tidal, with enhanced roughness" ID="mvco_output/tidal_40m_zo" urlPath="mvco_output/tidal_40m_zo">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/tidal_40m_zo/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="mvco 40m tidal diagnostic, with enhanced roughness" ID="mvco_output/tidal_40m_zo_dia" urlPath="mvco_output/tidal_40m_zo_dia">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/tidal_40m_zo_dia/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="mvco 200m tidal diagnostic, with enhanced roughness" ID="mvco_output/tidal_200m_zo_dia" urlPath="mvco_output/tidal_200m_zo_dia">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/tidal_200m_zo_dia/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="mvco 1000m tidal, with temp, sal" ID="mvco_output/tidal_1000m_TS" urlPath="mvco_output/tidal_1000m_TS">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/tidal_1000m_TS/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="mvco 200m tidal, with temp, sal" ID="mvco_output/tidal_200m_TS" urlPath="mvco_output/tidal_200m_TS">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/tidal_200m_TS/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>   
+<dataset name="mvco 200m tidal diagnostic, with temp, sal" ID="mvco_output/tidal_200m_TS_dia" urlPath="mvco_output/tidal_200m_TS_dia">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/mvco_output/tidal_200m_TS_dia/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+ </dataset>   
+</catalog>

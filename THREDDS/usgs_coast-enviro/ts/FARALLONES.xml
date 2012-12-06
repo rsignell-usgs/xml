@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog   name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  
+  <service name="all4services" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+   <dataset name="Gulf of Farallones Monitoring (May-Oct 1989; Jul-Aug 1990; 11/97-11/98)">
+    <metadata inherited="true">
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/"
+          email="emontgomery@usgs.gov" />
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/"
+          email="emontgomery@usgs.gov" />
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>37</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-122.5</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>2500</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/farallones.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+  <dataset name="5103-a.nc" ID="FARALLONES/5103-a.nc" urlPath="FARALLONES/5103-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5103-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386042000000" increment="1200000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-510"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-12 09:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5104-a.nc" ID="FARALLONES/5104-a.nc" urlPath="FARALLONES/5104-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5104-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386042000000" increment="1200000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-510"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-12 09:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5105-a.nc" ID="FARALLONES/5105-a.nc" urlPath="FARALLONES/5105-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5105-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386042000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-510"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-12 09:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5106-a.nc" ID="FARALLONES/5106-a.nc" urlPath="FARALLONES/5106-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5106-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386042000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-510"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-12 09:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5107-a.nc" ID="FARALLONES/5107-a.nc" urlPath="FARALLONES/5107-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5107-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386042000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-510"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-12 09:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5108-a.nc" ID="FARALLONES/5108-a.nc" urlPath="FARALLONES/5108-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5108-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386042000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-510"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-12 09:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5112-a.nc" ID="FARALLONES/5112-a.nc" urlPath="FARALLONES/5112-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5112-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386074400000" increment="1200000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-511"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-12 18:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5113-a.nc" ID="FARALLONES/5113-a.nc" urlPath="FARALLONES/5113-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5113-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386074400000" increment="1200000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-511"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-12 18:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5114-a.nc" ID="FARALLONES/5114-a.nc" urlPath="FARALLONES/5114-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5114-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386074400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-511"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-12 18:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5115-a.nc" ID="FARALLONES/5115-a.nc" urlPath="FARALLONES/5115-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5115-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386074400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-511"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-12 18:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5123-a.nc" ID="FARALLONES/5123-a.nc" urlPath="FARALLONES/5123-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5123-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386096000000" increment="1200000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-512"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-13 00:00:00Z" />
+<attribute name="stop_time" value="1998-11-05 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5124-q.nc" ID="FARALLONES/5124-q.nc" urlPath="FARALLONES/5124-q.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5124-q.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386096000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-512"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-13 00:00:00Z" />
+<attribute name="stop_time" value="1998-11-05 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5125-a.nc" ID="FARALLONES/5125-a.nc" urlPath="FARALLONES/5125-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5125-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386096000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-512"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-13 00:00:00Z" />
+<attribute name="stop_time" value="1998-11-05 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5126-a.nc" ID="FARALLONES/5126-a.nc" urlPath="FARALLONES/5126-a.nc">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5126-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386096000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-512"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1997-11-13 00:00:00Z" />
+<attribute name="stop_time" value="1998-11-05 14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3341-a.cdf" ID="FARALLONES/3341-a.cdf" urlPath="FARALLONES/3341-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3341-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117044712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-04 23:31:52Z" />
+<attribute name="stop_time" value="1989-10-13 17:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3341-a1h.cdf" ID="FARALLONES/3341-a1h.cdf" urlPath="FARALLONES/3341-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3341-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117046400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-05 00:00:00Z" />
+<attribute name="stop_time" value="1989-10-13 17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3342-a.cdf" ID="FARALLONES/3342-a.cdf" urlPath="FARALLONES/3342-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117044712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-04 23:31:52Z" />
+<attribute name="stop_time" value="1989-10-11 07:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3342-a1h.cdf" ID="FARALLONES/3342-a1h.cdf" urlPath="FARALLONES/3342-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117046400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-05 00:00:00Z" />
+<attribute name="stop_time" value="1989-10-11 07:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3342att-a.cdf" ID="FARALLONES/3342att-a.cdf" urlPath="FARALLONES/3342att-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117044712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-04 23:31:52Z" />
+<attribute name="stop_time" value="1989-10-11 07:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3342att-a1h.cdf" ID="FARALLONES/3342att-a1h.cdf" urlPath="FARALLONES/3342att-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117046400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-05 00:00:00Z" />
+<attribute name="stop_time" value="1989-10-11 07:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3342tct-a.cdf" ID="FARALLONES/3342tct-a.cdf" urlPath="FARALLONES/3342tct-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342tct-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117131112000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-05 23:31:52Z" />
+<attribute name="stop_time" value="1989-09-18 17:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3342tct-a1h.cdf" ID="FARALLONES/3342tct-a1h.cdf" urlPath="FARALLONES/3342tct-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342tct-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117132800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-06 00:00:00Z" />
+<attribute name="stop_time" value="1989-09-18 17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3342tct-aq.cdf" ID="FARALLONES/3342tct-aq.cdf" urlPath="FARALLONES/3342tct-aq.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342tct-aq.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117044712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-04 23:31:52Z" />
+<attribute name="stop_time" value="1989-10-11 07:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3351-a.cdf" ID="FARALLONES/3351-a.cdf" urlPath="FARALLONES/3351-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3351-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117055512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-05 02:31:52Z" />
+<attribute name="stop_time" value="1989-10-13 20:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3351-a1h.cdf" ID="FARALLONES/3351-a1h.cdf" urlPath="FARALLONES/3351-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3351-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117057200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-05 03:00:00Z" />
+<attribute name="stop_time" value="1989-10-13 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3352-a.cdf" ID="FARALLONES/3352-a.cdf" urlPath="FARALLONES/3352-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3352-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117055512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-05 02:31:52Z" />
+<attribute name="stop_time" value="1989-10-10 01:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3352-a1h.cdf" ID="FARALLONES/3352-a1h.cdf" urlPath="FARALLONES/3352-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3352-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117057200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-05 03:00:00Z" />
+<attribute name="stop_time" value="1989-10-10 01:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3352att-a.cdf" ID="FARALLONES/3352att-a.cdf" urlPath="FARALLONES/3352att-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3352att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117055512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-05 02:31:52Z" />
+<attribute name="stop_time" value="1989-10-10 01:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3352att-a1h.cdf" ID="FARALLONES/3352att-a1h.cdf" urlPath="FARALLONES/3352att-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3352att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117057200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-05 03:00:00Z" />
+<attribute name="stop_time" value="1989-10-10 01:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3352tct-a.cdf" ID="FARALLONES/3352tct-a.cdf" urlPath="FARALLONES/3352tct-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3352tct-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117055512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-05 02:31:52Z" />
+<attribute name="stop_time" value="1989-10-10 01:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3352tct-a1h.cdf" ID="FARALLONES/3352tct-a1h.cdf" urlPath="FARALLONES/3352tct-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3352tct-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117057200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1989-05-05 03:00:00Z" />
+<attribute name="stop_time" value="1989-10-10 01:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3461-a.cdf" ID="FARALLONES/3461-a.cdf" urlPath="FARALLONES/3461-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3461-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4154043712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-346"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1990-07-07 05:01:52Z" />
+<attribute name="stop_time" value="1990-08-21 15:01:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3462-a.cdf" ID="FARALLONES/3462-a.cdf" urlPath="FARALLONES/3462-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3462-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4154043712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-346"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1990-07-07 05:01:52Z" />
+<attribute name="stop_time" value="1990-08-21 15:05:37Z" />
+</netcdf>
+</dataset>
+<dataset name="3463-a.cdf" ID="FARALLONES/3463-a.cdf" urlPath="FARALLONES/3463-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3463-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4154043712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-346"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1990-07-07 05:01:52Z" />
+<attribute name="stop_time" value="1990-08-21 15:01:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3464-a.cdf" ID="FARALLONES/3464-a.cdf" urlPath="FARALLONES/3464-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3464-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4154086912000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-346"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1990-07-07 17:01:52Z" />
+<attribute name="stop_time" value="1990-08-21 15:01:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3465-q.cdf" ID="FARALLONES/3465-q.cdf" urlPath="FARALLONES/3465-q.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3465-q.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4154043712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-346"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1990-07-07 05:01:52Z" />
+<attribute name="stop_time" value="1990-08-21 15:05:37Z" />
+</netcdf>
+</dataset>
+<dataset name="3465t-a.cdf" ID="FARALLONES/3465t-a.cdf" urlPath="FARALLONES/3465t-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3465t-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4154076112000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-346"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1990-07-07 14:01:52Z" />
+<attribute name="stop_time" value="1990-08-21 15:05:37Z" />
+</netcdf>
+</dataset>
+     </dataset>
+</catalog>

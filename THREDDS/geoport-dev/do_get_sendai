@@ -1,0 +1,31 @@
+day=`date +%Y%m%d`
+tarfile=ncom_relo_sendai_${day}00.tar.gz
+
+cd /usgs/data1/rsignell/models/navo
+
+if [ -f $tarfile ];
+then
+  echo "Already have ${tarfile}"
+else
+  ncftpget ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional/$tarfile
+fi
+ 
+if [ -f $tarfile ];
+then
+  echo "unpacking..."
+  tar xvfz $tarfile
+  mkdir ./sendai/daily/${day}00
+  chmod 775 ./sendai/daily/${day}00
+  echo "converting to NetCDF4..."
+  for file in *.nc
+  do
+    echo $file
+    ncks -4 -L 1 -O $file ./sendai/daily/${day}00/$file
+    rm $file 
+  done
+  rm ./sendai/latest/*.nc
+  cp ./sendai/daily/${day}00/$file ./sendai/latest
+# rm $tarfile
+else
+  echo "File ${tarfile} does not exist"
+fi

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.2.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="Tsunami Inundation DEM Grids" version="1.0.1">
+  
+ 
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="fileServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  
+  <dataset name="Tsunami Inundation DEM Grids">
+    
+   <!--   Metadata specified in the following block will be inherited by all datasets in this catalog-->
+   <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>gov.noaa.ngdc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">National Geophysical Data Center (NGDC)</name>
+        <contact url="http://www.ngdc.noaa.gov/mgg/global/global.html" email="barry.eakins@noaa.gov" />
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">National Geophysical Data Center (NGDC)</name>
+        <contact url="http://www.ngdc.noaa.gov/mgg/global/global.html" email="barry.eakins@noaa.gov"  />
+      </publisher>
+    </metadata>
+    
+    <!-- Begin datasets -->
+   
+    <dataset name="Nantucket  (1/3 arc minute)" ID="inundation/nantucket"
+      urlPath="inundation/nantucket">
+      <metadata>
+        <documentation type="Summary"> The Nantucket 1/3 arc-second MHW Tsunami Inundation DEM spans
+          the coastal region surrounding the town of Nantucket, Massachusetts on Nantucket Island.
+          It spans Nantucket Sound, from Marthas Vineyard on the west to Nantucket Island on the
+          east, and north to Cape Cod, and extends into the Atlantic Ocean. The coordinate
+          boundaries are 69.49 to 70.67W and 40.81 to 41.71N. </documentation>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/usgs/data0/bathy/ngdc/nantucket_ma.nc">
+        <variable name="topo" orgName="Band1">
+          <attribute name="units" value="m"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <dimension name="lon" orgName="x"/>
+        <dimension name="lat" orgName="y"/>
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-70.67" increment="9.25926e-05"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="41.71" increment="-9.25926e-05"/>
+        </variable>
+        <attribute name="Conventions" value="COARDS"/>
+        <attribute name="id" value="LMHchlaS8day_20100129000000"/>
+        <attribute name="naming_authority" value="gov.noaa.ngdc"/>
+        <attribute name="Metadata_Convention" value="Unidata Dataset Discovery v1.0"/>
+        <attribute name="Metadata_Link" value="URL for full metadata record"/>
+        
+        <!-- Text Search -->
+        <attribute name="title"
+          value="Chlorophyll-a, Aqua MODIS, NPP, 0.05 degrees, Global, Science Quality"/>
+        <attribute name="summary"
+          value="NOAA CoastWatch distributes chlorophyll-a concentration data from NASA&apos;s Aqua Spacecraft.  
+          Measurements are gathered by the Moderate Resolution Imaging Spectroradiometer (MODIS) carried aboard the spacecraft.
+          This is Science Quality data."/>
+        <attribute name="keywords" value="EARTH SCIENCE > Oceans > Ocean Chemistry > Chlorophyll"/>
+        <attribute name="keywords_vocabulary" value="GCMD Science Keywords"/>
+        <attribute name="standard_name_vocabulary" value="CF-1.0"/>
+        <attribute name="history"
+          value="NASA GSFC (G. Feldman): 2010-02-22T22:48:46Z NOAA CoastWatch (West Coast Node) and NOAA SFSC ERD"/>
+        <attribute name="comment" value="Text comment"/>
+        
+        <!-- Extent Search -->
+        <attribute name="geospatial_lat_min" value="-90.0 " type="double"/>
+        <attribute name="geospatial_lat_max" value="90.0 " type="double"/>
+        <attribute name="geospatial_lon_min" value="0.0 " type="double"/>
+        <attribute name="geospatial_lon_max" value="360.0 " type="double"/>
+        <attribute name="geospatial_vertical_min" value="0.0 " type="double"/>
+        <attribute name="geospatial_vertical_max" value="0.0 " type="double"/>
+        <attribute name="geospatial_vertical_positive" value="up"/>
+        <attribute name="time_coverage_end" value="2010-02-02T00:00:00Z"/>
+        <attribute name="time_coverage_start" value="2010-01-25T00:00:00Z"/>
+        
+        <!-- Other Extent Information -->
+        <attribute name="geospatial_lat_units" value="degrees_north"/>
+        <attribute name="geospatial_lat_resolution" value="0.041676313961565174" type="double"/>
+        <attribute name="geospatial_lon_units" value="degrees_east"/>
+        <attribute name="geospatial_lon_resolution" value="0.04167148975575877" type="double"/>
+        <attribute name="geospatial_vertical_units" value="m"/>
+        <attribute name="geospatial_vertical_resolution" value="1.0" type="double"/>
+        <attribute name="time_coverage_duration" value="P1D"/>
+        <attribute name="time_coverage_resolution" value="PT1M"/>
+        
+        <!-- Creator Search -->
+        <attribute name="acknowledgement" value="NOAA NESDIS COASTWATCH, NOAA SWFSC ERD"/>
+        <attribute name="creator_email" value="dave.foley@noaa.gov"/>
+        <attribute name="creator_name" value="NOAA CoastWatch, West Coast Node"/>
+        <attribute name="creator_url" value="http://coastwatch.pfel.noaa.gov"/>
+        <attribute name="date_created" value="2010-02-22Z"/>
+        <attribute name="date_modified" value="2010-03-22Z"/>
+        <attribute name="date_issued" value="2010-02-22Z"/>
+        <attribute name="institution" value="NOAA CoastWatch, West Coast Node"/>
+        <attribute name="project" value="CoastWatch (http://coastwatch.noaa.gov/)"/>
+        
+        <!-- Contributor Search -->
+        <attribute name="contributor_name" value="NASA GSFC (G. Feldman)"/>
+        <attribute name="contributor_role" value="Source of level 2 data."/>
+        
+        <!-- Publisher Search -->
+        <attribute name="publisher_email" value="dave.foley@noaa.gov"/>
+        <attribute name="publisher_name" value="NOAA CoastWatch, West Coast Node"/>
+        <attribute name="publisher_url" value="http://coastwatch.pfel.noaa.gov"/>
+        
+        <!-- Other Attributes -->
+        <attribute name="processing_level" value="3"/>
+        <attribute name="license"
+          value="The data may be used and redistributed for free but is not intended for legal use, since it may contain inaccuracies. Neither the data Contributor, CoastWatch, NOAA, nor the United States Government, nor any of their employees or contractors, makes any warranty, express or implied, including warranties of merchantability and fitness for a particular purpose, or assumes any legal liability for the accuracy, completeness, or usefulness, of this information."/>
+        <attribute name="cdm_data_type" value="Grid"/>
+      </netcdf>
+    </dataset>
+  </dataset>
+</catalog>

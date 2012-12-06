@@ -1,0 +1,138 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.1">
+
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <dataset name="Carolinas Coastal Change Project" ID="carolinas">
+        <metadata inherited="true">
+            <serviceName>gridServices</serviceName>
+            <authority>gov.usgs.er.whsc</authority>
+            <dataType>Grid</dataType>
+            <dataFormat>NetCDF</dataFormat>
+            <creator>
+                <name vocabulary="DIF">OM/WHSC/USGS</name>
+                <contact url="http://www.usgs.gov/" email="jcwarner@usgs.gov"/>
+            </creator>
+            <publisher>
+                <name vocabulary="DIF">OM/WHSC/USGS</name>
+                <contact url="http://www.usgs.gov/" email="jcwarner@usgs.gov"/>
+            </publisher>
+
+            <documentation xlink:href="http://stellwagen.er.usgs.gov/rps/pubs/2004_oceanography.pdf"
+                xlink:title="Carolinas Coastal Change Program"/>
+        </metadata>
+
+        <dataset name="Isabel" ID="carolinas/Isabel">
+            <dataset name="Isabel SWAN runs" ID="carolinas/Isabel/SWAN">
+                <dataset name="Run 13" ID="carolinas/Isabel/SWAN/run13"
+                    urlPath="carolinas/Isabel/SWAN/run13">
+                    <documentation type="summary">Run 13 has some funny flags turned on, use run 114</documentation>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation type="union">
+                            <!--Too bad scan doesn't work yet for type="union".  If it did, we could just do:
+                                <scan location="/Volumes/models/carolinas/Isabel/SWAN/run13/" suffix=".nc"/>-->
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/xp.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/yp.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/depth.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/dissip.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/force.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/hsig.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/qb.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/rtp.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/setup.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/tmbot.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/ubot.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/wdir.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/wind.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run13/wlen.nc"/>
+                        </aggregation>
+                        <variable name="Hwave">
+                            <attribute name="coordinates" value="xp yp"/>
+                        </variable>
+                        <variable name="wave_time">
+                            <attribute name="units" value="days since 1968-5-23 00:00 UTC"/>
+                        </variable>
+                        <variable name="xp">
+                            <attribute name="units" value="degrees_east"/>
+                        </variable>
+                        <variable name="yp">
+                            <attribute name="units" value="degrees_north"/>
+                        </variable>
+                        <attribute name="Conventions" type="String" value="CF-1.0"/>
+                    </netcdf>
+                </dataset>
+                <dataset name="Run 16" ID="carolinas/Isabel/SWAN/run16"
+                    urlPath="carolinas/Isabel/SWAN/run16">
+                    <metadata>
+                        <documentation type="summary">Run 16 is an old run, use run
+                        114.</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation type="union">
+                            <!--Too bad scan doesn't work yet for type="union".  If it did, we could just do:
+                                <scan location="/Volumes/models/carolinas/Isabel/SWAN/run13/" suffix=".nc"/>-->
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/xp.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/yp.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/depth.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/dissip.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/force.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/hsig.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/qb.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/rtp.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/setup.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/tmbot.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/ubot.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/wdir.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/wind.nc"/>
+                            <netcdf location="/Volumes/models/carolinas/Isabel/SWAN/run16/wlen.nc"/>
+                        </aggregation>
+                        <variable name="Hwave">
+                            <attribute name="coordinates" value="xp yp"/>
+                        </variable>
+                        <variable name="wave_time">
+                            <attribute name="units" value="days since 1968-5-23 00:00 UTC"/>
+                        </variable>
+                        <variable name="xp">
+                            <attribute name="units" value="degrees_east"/>
+                        </variable>
+                        <variable name="yp">
+                            <attribute name="units" value="degrees_north"/>
+                        </variable>
+                        <attribute name="Conventions" type="String" value="CF-1.0"/>
+                    </netcdf>
+                </dataset>
+                <dataset name="Run 114">
+                    <dataset name="outbnks" ID="carolinas/Isabel/SWAN/run114/outbnks"
+                    urlPath="carolinas/Isabel/SWAN/run114/outbnks">
+                    <metadata>
+                        <documentation type="summary">run114 has output for two grids, the entire US
+                            east coast and the Outerbanks of NC</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/Volumes/models/carolinas/Isabel/SWAN/run114/outbnks/"
+                                suffix=".nc"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="useast" ID="carolinas/Isabel/SWAN/run114/useast"
+                    urlPath="carolinas/Isabel/SWAN/run114/useast">
+                    <metadata>
+                        <documentation type="summary">run114 has output for two grids, the entire US
+                            east coast and the Outerbanks of NC</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/Volumes/models/carolinas/Isabel/SWAN/run114/useast/"
+                                suffix=".nc"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                    </dataset>
+            </dataset>
+        </dataset>
+    </dataset>
+</catalog>

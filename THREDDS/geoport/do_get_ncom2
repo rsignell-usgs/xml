@@ -1,0 +1,16 @@
+day=`date +%Y%m%d`
+day=20110331
+cd /usgs/data1/rsignell/models/navo
+
+ncftpget ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional/ncom_relo_sendai_${day}00.tar.gz
+
+tar xvfz ncom_relo_sendai_${day}00.tar.gz
+rm ncom_relo_sendai_${day}00.tar.gz
+rm  ./yesterday/*.nc
+mv  ./ncom_relo_sendai/*.nc ./yesterday
+for file in *.nc
+do
+ echo $file
+ ncks -4 -L 1 -O $file ./ncom_relo_sendai/$file
+ rm $file 
+done

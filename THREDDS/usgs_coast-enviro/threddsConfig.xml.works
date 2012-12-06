@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<threddsConfig>
+
+  <!--
+  The <catalogRoot> element:
+  For catalogs you don't want visible from the /thredds/catalog.xml chain
+  of catalogs, you can use catalogRoot elements. Each catalog root config
+  catalog is crawled and used in configuring the TDS.
+  -->
+  <catalogRoot>signell.xml</catalogRoot>
+   <catalogRoot>gom_interop_catalog.xml</catalogRoot>
+   <catalogRoot>adria_catalog.xml</catalogRoot>
+     <catalogRoot>tseries_catalog.xml</catalogRoot>
+   <catalogRoot>wcs_test_catalog.xml</catalogRoot>
+<!--
+  The <NetcdfFileCache> element:
+  -->
+  <NetcdfFileCache>
+    <minFiles>100</minFiles>
+    <maxFiles>200</maxFiles>
+    <scour>10 min</scour>
+  </NetcdfFileCache>
+
+  <!--
+  The <NetcdfDatasetCache> element:
+  -->
+  <NetcdfDatasetCache>
+    <minFiles>100</minFiles>
+    <maxFiles>200</maxFiles>
+    <scour>10 min</scour>
+  </NetcdfDatasetCache>
+
+  <!--
+  The <HTTPFileCache> element:
+  -->
+  <HTTPFileCache>
+    <minFiles>25</minFiles>
+    <maxFiles>40</maxFiles>
+    <scour>10 min</scour>
+  </HTTPFileCache>
+
+  <!--
+  The <CdmValidatorService> element:
+  -->
+  <CdmValidatorService>
+    <allow>false</allow>
+    <dir>/data/tmp/thredds/cdmValidateCache/</dir>
+    <maxFileUploadSize>1 Gb</maxFileUploadSize>
+    <scour>24 hours</scour>
+    <maxAge>30 days</maxAge>
+  </CdmValidatorService>
+
+  <!--
+  The <NetcdfSubsetService> element:
+  -->
+  <NetcdfSubsetService>
+    <allow>true</allow>
+    <dir>/data/tmp/thredds/ncSubsetCache/</dir>
+    <scour>15 min</scour>
+    <maxAge>30 min</maxAge>
+  </NetcdfSubsetService>
+
+  <!--
+  The <WCS> element:
+  -->
+  <WCS>
+    <allow>true</allow>
+    <dir>/data/tmp/thredds/wcsCache/</dir>
+    <scour>15 min</scour>
+    <maxAge>30 min</maxAge>
+  </WCS>
+
+  <!--
+  The <Viewer> element:
+  -->
+  <!-- Viewer>my.package.MyViewer</Viewer -->
+
+  <!--
+  The <FmrcInventory> element:
+  -->
+  <FmrcInventory>
+    <openType>XML_ONLY</openType>
+  </FmrcInventory>
+
+  <!--
+  The <nj22Config> element:
+  -->
+  <!-- nj22Config
+    <ioServiceProvider class="edu.univ.ny.stuff.FooFiles"/>
+    <coordSysBuilder convention="foo" class="test.Foo"/>
+    <coordTransBuilder name="atmos_ln_sigma_coordinates" type="vertical" class="my.stuff.atmosSigmaLog"/>
+    <typedDatasetFactory datatype="Point" class="gov.noaa.obscure.file.Flabulate"/>
+    <table type="GRIB1" filename="/home/rkambic/grib/tables/userlookup.lst"/>
+    <table type="GRIB2" filename="/home/rkambic/grib/tables/grib2userparameters"/>
+  </nj22Config -->
+
+  <!--
+  The <DiskCache> element:
+
+  <DiskCache>
+    <alwaysUse>false</alwaysUse>
+    <dir>/data/tmp/thredds/cache/</dir>
+    <scour>1 hour</scour>
+    <maxSize>1 Gb</maxSize>
+  </DiskCache>    -->
+
+  <!--
+  The <GribIndexing> element:
+  -->
+  <GribIndexing>
+    <setExtendIndex>false</setExtendIndex>
+    <alwaysUseCache>false</alwaysUseCache>
+  </GribIndexing>
+
+  <!--
+  The <AggregationCache> element:
+
+  <AggregationCache>
+    <dir>/data/tmp/thredds/aggcache/</dir>
+    <scour>24 hours</scour>
+    <maxAge>90 days</maxAge>
+  </AggregationCache>     -->
+
+</threddsConfig>

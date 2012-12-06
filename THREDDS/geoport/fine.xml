@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="BIO-WW3 Catalog"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+ 
+ <datasetRoot path="WW3" location="/usgs/data0/rsignell/models/bio_ww3/efine_nc_last/" cache="false"/>  
+  
+<dataset name="BIO-WW3">
+
+    <metadata inherited="true">
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <serviceName>allServices</serviceName>
+      <creator>
+        <name vocabulary="DIF">Will Perrie</name>
+        <contact url="http://www.dfo-mpo.gc.ca" email="PerrieW@mar.dfo-mpo.gc.ca"/>
+        <name vocabulary="DIF">Bechara Toulany</name>
+        <contact url="http://www.dfo-mpo.gc.ca" email="ToulanyB@mar.dfo-mpo.gc.ca"/>
+      </creator>
+      <documentation type="summary"> WaveWatch III ocean wave model products from Will Perry and
+        Bechara Toulany, Bedford Institute of Oceanography, Canada. </documentation>
+    </metadata>
+
+
+    <datasetFmrc name="WaveWatch III Forecast Collection (Gulf of Maine)" path="bio/ww3/fmrc">
+      <metadata inherited="true">
+        <documentation xlink:href="http://scoop.sura.org/Catalog/details.pl?collectionid=sbioww3f"
+          xlink:title="SCOOP Catalog Details"/>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" enhance="true">
+        <variable name="hs">
+          <attribute name="_FillValue" type="float" value="-999."/>
+        </variable>
+        <variable name="swp">
+          <attribute name="_FillValue" type="float" value="-999."/>
+        </variable>
+        <variable name="dir">
+          <attribute name="_FillValue" type="float" value="-999."/>
+        </variable>
+        <aggregation dimName="runtime" type="forecastModelRunCollection" timeUnitsChange="true" recheckEvery="20min">
+          <scan location="/usgs/data0/rsignell/models/bio_ww3/efine_nc" suffix=".nc" dateFormatMark="#yyyyMMddHH"
+            subdirs="false" olderThan="5 min" enhance="true"/>
+        </aggregation>
+      </netcdf>
+    </datasetFmrc>
+
+    <datasetFmrc name="WaveWatch III Forecast last 3 days (Gulf of Maine)" path="bio/ww3/fmrc3">
+      <metadata inherited="true">
+        <documentation xlink:href="http://scoop.sura.org/Catalog/details.pl?collectionid=sbioww3f"
+          xlink:title="SCOOP Catalog Details"/>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" enhance="true">
+        <variable name="hs">
+          <attribute name="_FillValue" type="float" value="-999."/>
+        </variable>
+        <variable name="swp">
+          <attribute name="_FillValue" type="float" value="-999."/>
+        </variable>
+        <variable name="dir">
+          <attribute name="_FillValue" type="float" value="-999."/>
+        </variable>
+        <aggregation dimName="runtime" type="forecastModelRunCollection" timeUnitsChange="true" recheckEvery="20min">
+          <scan location="/usgs/data0/rsignell/models/bio_ww3/efine_nc_latest" suffix=".nc" dateFormatMark="#yyyyMMddHH"
+            subdirs="false" olderThan="5 min" enhance="true"/>
+        </aggregation>
+      </netcdf>
+
+    </datasetFmrc>
+
+<dataset name="WaveWatch III Forecast latest forecast (Gulf of Maine)" ID="ww3/fine" urlPath="WW3/fine.nc" dataType="Grid"/>
+
+  </dataset>
+</catalog>

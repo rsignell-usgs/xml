@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="MABGOM Catalog"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+
+       <dataset name="MABGOM Runs">
+      <metadata inherited="true">
+        <creator>
+          <name vocabulary="DIF">Dr. Ruoying He</name>
+          <contact url="http://www.meas.ncsu.edu/faculty/he/he.html" email="ruoying_he@ncsu.edu"/>
+        </creator>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>31.3485</start>
+            <size>15.6</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-80.6445</start>
+            <size>20</size>
+            <units>degrees_east</units>
+          </eastwest>
+        </geospatialCoverage>
+       
+        <documentation xlink:href="http://www4.ncsu.edu/~rhe/project_files/muri.htm"
+          xlink:title="MABGOM Circulation"/>   
+        <documentation type="Summary"> Hydrodynamic simulations for the Mid-Atlantic Bight and Gulf of Maine </documentation>
+     
+        <documentation type="Rights"> This model data was generated as part of an academic research
+          project, and the principal investigators: Ruoying He (rhe@ncsu.edu)
+ask to be informed of intent for scientific use and
+          appropriate acknowledgment given in any publications arising therefrom. The data is
+          provided free of charge, without warranty of any kind. </documentation>
+      
+      </metadata>
+         <dataset name="Tide-Averaged Data" >
+         <dataset name="Jun292008_Feb282009" ID="MABGOM/Jun292008_Feb282009/avg" urlPath="MABGOM/Jun292008_Feb282009/avg">
+           <serviceName>allServices</serviceName>
+           <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+             <aggregation dimName="ocean_time" type="joinExisting">
+               <scan location="/media/1tb/MABGOM/Jun292008_Feb282009/avg/" suffix=".nc"/>
+             </aggregation>
+           </netcdf>
+      </dataset>
+       </dataset>
+         <dataset name="History Data" >
+           <dataset name="Jun292008_Feb282009" ID="MABGOM/Jun292008_Feb282009/his" urlPath="MABGOM/Jun292008_Feb282009/his">
+             <serviceName>allServices</serviceName>
+             <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+               <aggregation dimName="ocean_time" type="joinExisting">
+                 <scan location="/media/1tb/MABGOM/2004/his/" suffix=".nc"/>
+               </aggregation>
+             </netcdf>
+         </dataset>
+    </dataset>
+</catalog>

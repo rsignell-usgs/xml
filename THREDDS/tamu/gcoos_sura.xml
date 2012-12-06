@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<catalog name="GCOOS Tests" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
+    <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
+  </service>
+  
+  <dataset name="Hypoxia Simulations" ID="gcoos/hypoxia" serviceName="allServices" urlPath="gcoos/hypoxia">
+    
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+      <aggregation dimName="ocean_time" type="joinExisting" recheckEvery="60 min">
+        <scan location="/d3/sura" suffix=".nc" subdirs="false"/>
+      </aggregation>
+
+    </netcdf>
+
+  </dataset>
+
+</catalog>

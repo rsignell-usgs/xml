@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="SABGOM Catalog"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+
+  <dataset name="SABGOM Nowcast/Forecast">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+
+      <creator>
+        <name vocabulary="DIF">Dr. Ruoying He</name>
+        <contact url="http://www.meas.ncsu.edu/faculty/he/he.html" email="ruoying_he@ncsu.edu"/>
+        <name vocabulary="DIF">Dr. Dennis McGillicuddy</name>
+        <contact url="http://www.whoi.edu/hpb/Site.do?id=933" email="dmcgillicuddy@whoi.edu"/>
+      </creator>
+
+      <documentation xlink:href="http://omglnx6.meas.ncsu.edu/sabgom_nfcast/"
+        xlink:title="SABGOM Nowcast/Forecast System Project Page"/>
+
+      <documentation type="Summary"> Coastal Circulation Nowcast/Forecast System for the South
+        Atlantic Bight and Gulf of Mexico</documentation>
+
+      <documentation type="Rights"> This model data was generated as part of an academic research
+        project, and the principal investigators: Ruoying He (rhe@ncsu.edu) ask to be informed of
+        intent for scientific use and appropriate acknowledgment given in any publications arising
+        therefrom. The data is provided free of charge, without warranty of any kind. </documentation>
+
+    </metadata>
+
+    <datasetFmrc name="SABGOM Forecast Model Run Collection" path="fmrc/sabgom/archive">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="60min">
+          <variable name="temp">
+            <attribute name="long_name" value="jon_fixed_temp"/>
+          </variable>
+          <variable name="h">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+          </variable>
+          <variable name="f">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+          </variable>
+          <variable name="pm">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+          </variable>
+          <variable name="pn">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+          </variable>
+          <variable name="angle">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+          </variable>
+          <variable name="mask_rho">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+          </variable>
+          <variable name="zeta">
+            <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+          </variable>
+          <scan location="/media/1tb/SABGOM/2009/his/" suffix=".nc" dateFormatMark="his_#yyyyMMdd"
+            subdirs="false" olderThan="10 min"/>
+        </aggregation>
+      </netcdf>
+    </datasetFmrc>
+
+  </dataset>
+</catalog>

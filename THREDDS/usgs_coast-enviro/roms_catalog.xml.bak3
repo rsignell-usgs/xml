@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ROMS Operational Models"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="rectilinear_services" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+  <service name="curvilinear_services" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  </service>
+  <dataset name="ROMS Nowcast/Forecast Models">
+    <dataset name="Rectilinear Models">
+      <dataset name="IRD:EEZ of New Caledonia">
+        <metadata inherited="true">
+          <authority>gov.usgs.er.whsc</authority>
+          <dataType>Grid</dataType>
+          <dataFormat>NetCDF</dataFormat>
+          <creator>
+            <name vocabulary="DIF">NC/IRD/NOUMEA/Dr. Patrick Marchesiello</name>
+            <contact url="http://www.ird.nc" email="Patrick.Marchesiello@noumea.ird.nc"/>
+          </creator>
+          <geospatialCoverage zpositive="up">
+            <northsouth>
+              <start>-30.0</start>
+              <size>22.0</size>
+              <units>degrees_north</units>
+            </northsouth>
+            <eastwest>
+              <start>143.0</start>
+              <size>47.0</size>
+              <units>degrees_east</units>
+            </eastwest>
+            <updown>
+              <start>-4600.0</start>
+              <size>4600.0</size>
+              <units>meters</units>
+            </updown>
+          </geospatialCoverage>
+          <documentation xlink:href="http://www.ird.nc/UR65/Marchesiello/roms_forecast_eeznc.html"
+            xlink:title="Experimental Forecast Homepage at IRD"/>
+        </metadata>
+        <dataset name="Forecast" ID="roms/rect/ird/forecast" urlPath="roms/rect/ird/forecast">
+          <serviceName>rectilinear_services</serviceName>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="time" type="joinExisting">
+              <netcdf location="http://www.ird.nc/UR65/Marchesiello/latest_forecast.nc"/>
+            </aggregation>
+            <variable name="theta_s" shape="" type="double">
+              <values>6.0</values>
+            </variable>
+            <variable name="theta_b" shape="" type="double">
+              <values>0.0</values>
+            </variable>
+            <variable name="Tcline" shape="" type="double">
+              <values>5.0</values>
+            </variable>
+            <variable name="s_rho" shape="s_rho" type="double">
+              <values> -0.98571426 -0.95714283 -0.9285714 -0.9 -0.87142855 -0.8428571 -0.8142857
+                -0.78571427 -0.75714284 -0.7285714 -0.7 -0.67142856 -0.64285713 -0.6142857
+                -0.5857143 -0.55714285 -0.5285714 -0.5 -0.47142857 -0.44285715 -0.41428572
+                -0.3857143 -0.35714287 -0.32857144 -0.3 -0.27142859 -0.24285714 -0.21428572
+                -0.18571429 -0.15714286 -0.12857144 -0.1 -0.071428575 -0.042857144 -0.014285714 </values>
+              <attribute name="standard_name" value="ocean_s_coordinate"/>
+              <attribute name="formula_terms"
+                value="s: s_rho eta: zeta depth: h a: theta_s b: theta_b depth_c: Tcline"/>
+            </variable>
+            <variable name="temp">
+              <attribute name="coordinates" type="String" value="scrum_time s_rho lat_rho lon_rho"/>
+            </variable>
+            <variable name="scrum_time">
+              <attribute name="units" type="String" value="seconds since 1900-01-01 00:00 UTC"/>
+            </variable>
+            <attribute name="Conventions" type="String" value="CF-1.0"/>
+          </netcdf>
+        </dataset>
+      </dataset>
+    </dataset>
+    <dataset name="Curvilinear Models">
+
+      <dataset name="NOAA:ChesROMS">
+        <metadata inherited="true">
+          <authority>gov.usgs.er.whsc</authority>
+          <dataType>Grid</dataType>
+          <dataFormat>NetCDF</dataFormat>
+          <creator>
+            <name vocabulary="DIF">EDU/UMCES/HPL/Dr. Wen Long</name>
+            <contact url="http://www.umces.edu" email="wenlong@hpl.umces.edu"/>
+          </creator>
+          <geospatialCoverage zpositive="up">
+            <northsouth>
+              <start>36.06</start>
+              <size>3.91</size>
+              <units>degrees_north</units>
+            </northsouth>
+            <eastwest>
+              <start>-77.15</start>
+              <size>2.03</size>
+              <units>degrees_east</units>
+            </eastwest>
+            <updown>
+              <start>-40.0</start>
+              <size>40.0</size>
+              <units>meters</units>
+            </updown>
+          </geospatialCoverage>
+          <documentation xlink:href="http://ches.communitymodeling.org/models/ChesROMS/index.php"
+            xlink:title="ChesROMS Home Page at CCMP"/>
+        </metadata>
+        <dataset name="Forecast" ID="roms/curv/ChesROMS/forecast" urlPath="roms/curv/ChesROMS">
+          <serviceName>curvilinear_services</serviceName>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+            location="http://155.206.18.162/ChesROMS/ChesROMS_his_forecast.nc"/>
+        </dataset>
+      </dataset>
+    </dataset>
+  </dataset>
+</catalog>

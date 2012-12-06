@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="FVCOM 2006 Catalog"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+
+  <dataset name="FVCOM 2006 Results">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <creator>
+        <name vocabulary="DIF">Dr. Changsheng Chen </name>
+        <contact url="http://fvcom.smast.umassd.edu" email="c1chen@umassd.edu"/>
+      </creator>
+
+      <documentation xlink:href="http://fvcom.smast.umassd.edu/"
+        xlink:title="FVCOM Project Page"/>
+
+      <documentation type="Summary"> 
+            FVCOM 2006 Simulation of the Gulf of Maine, GOM2 Grid, forced by MM5.  
+      </documentation>
+
+      <documentation type="Rights"> 
+         This model data was generated as part of an academic research
+         project, and the principal investigator, Changsheng Chen 
+         (c1chen@umassd.edu), asks to be informed of intent for scientific 
+         use and appropriate acknowledgment given in any publications arising
+         therefrom. The data is provided free of charge, without warranty of 
+         any kind. </documentation>
+
+    </metadata>
+    <dataset name="FVCOM: 2006" ID="fvcom/2006" urlPath="fvcom/2006">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation type="union">
+        <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/fvcom_lonlat.nc"/>
+     
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting">
+          <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/re-gom-jan/netcdf/gom_20060101_0100.nc"/>
+          <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/re-gom-feb/netcdf/gom_20060201_0100.nc"/>
+          <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/re-gom-mar/netcdf/gom_20060301_0100.nc"/>
+          <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/re-gom-apr/netcdf/gom_20060401_0100.nc"/>      
+          <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/re-gom-may/netcdf/gom_20060501_0100.nc"/>
+          <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/re-gom-jun/netcdf/gom_20060601_0100.nc"/>
+          <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/re-gom-jul/netcdf/gom_20060701_0100.nc"/>
+          <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/re-gom-aug/netcdf/gom_20060801_0100.nc"/>
+          <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/re-gom-sep/netcdf/gom_20060901_0100.nc"/>
+          <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/re-gom-oct/netcdf/gom_20061001_0100.nc"/>
+          <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/re-gom-nov/netcdf/gom_20061101_0100.nc"/>
+          <netcdf location="/Volumes/models//fvcom/GOM2_2006/FVCOM_results/re-gom-dec/netcdf/gom_20061201_0100.nc"/>
+          
+        </aggregation>
+          <remove type="variable" value="lon"/>
+          <remove type="variable" value="lat"/>
+         <variable name="siglev">
+          <attribute name="standard_name" value="ocean_sigma_coordinate" />
+          <attribute name="positive" value="up" />
+          <attribute name="formula_terms" type="String" value="sigma: siglev eta: zeta depth: h" />
+        </variable>
+        <variable name="siglay" shape="siglay" type="float">
+          <attribute name="standard_name" value="ocean_sigma_coordinate" />
+          <attribute name="positive" value="up" />
+          <attribute name="formula_terms" value="sigma: siglay eta: zeta depth: h" />
+        </variable>
+        <variable name="time">
+          <attribute name="units" value="seconds since 2006-01-01 00:00"/>
+        </variable>
+      </netcdf>
+        
+      </aggregation>
+        </netcdf>
+    </dataset>
+  
+
+  </dataset>
+</catalog>

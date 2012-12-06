@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="Coastwatch Tests"
+    xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <service name="allServices" serviceType="Compound" base="">
+        <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+        <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+        <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+        <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    </service>
+
+    <dataset name="Albers Test 1: with lon/lat and coordinates attribute" ID="coastwatch/albers1"
+        serviceName="allServices" urlPath="coastwatch/albers1">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+            location="http://coast-enviro.er.usgs.gov/models/share/MODSCW_P2009168_C4_1805_1810_1940_1945_GM03_closest_chlora.hdf">
+            <variable name="chlor_a">
+                <attribute name="coordinates" value="longitude latitude"/>
+            </variable>
+        </netcdf>
+    </dataset>
+
+     <dataset name="Albers Test 3: without lon/lat and coordinates attribute" ID="coastwatch/albers3"
+        serviceName="allServices" urlPath="coastwatch/albers3">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+            location="http://coast-enviro.er.usgs.gov/models/share/MODSCW_P2009168_C4_1805_1810_1940_1945_GM03_closest_chlora.hdf"
+            enhance="true">
+
+            <variable name="chlor_a">
+                <attribute name="grid_mapping" value="myMapping"/>
+                <attribute name="coordinates" value="xc yc"/>
+            </variable>
+
+            <remove type="variable" name="longitude"/>
+            <remove type="variable" name="latitude"/>
+
+            <variable name="myMapping" shape="" type="int">
+                <attribute name="grid_mapping_name" value="albers_conical_equal_area"/>
+                <attribute name="standard_parallel" type="double" value="20.5  27.5"/>
+                <attribute name="longitude_of_central_meridian" type="double" value="-89.0"/>
+                <attribute name="latitude_of_projection_origin" type="double" value="24.0"/>
+                <attribute name="units" value="m"/>
+                <attribute name="false_easting" type="double" value="0.0"/>
+                <attribute name="false_northing" type="double" value="0.0"/>
+            </variable>
+
+            <variable name="xc" shape="cols" type="double">
+                <attribute name="units" value="m"/>
+                <attribute name="long_name" value="x-coordinate of albers projection"/>
+                <attribute name="standard_name" value="projection_x_coordinate"/>
+                <attribute name="axis" value="X"/>
+                <!-- X values from the "et_affine" attribute in the HDF4 file: 
+                    start=et_affine(5)   increment=et_affine(2)  -->
+                <values start="-1070786" increment="1008.748"/>
+            </variable>
+
+            <variable name="yc" shape="rows" type="double">
+                <attribute name="units" value="m"/>
+                <attribute name="long_name" value="y-coordinate of albers projection"/>
+                <attribute name="standard_name" value="projection_y_coordinate"/>
+                <attribute name="axis" value="Y"/>
+                <!-- Y values from the "et_affine" attribute in the HDF4 file: 
+                    start=et_affine(6)   increment=et_affine(3)  -->
+                 <values start="810529.0" increment="-1008.748"/>
+            </variable>
+            <attribute name="Conventions" value="CF-1.0"/>
+        </netcdf>
+    </dataset>
+
+</catalog>

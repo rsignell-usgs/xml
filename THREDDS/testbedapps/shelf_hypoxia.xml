@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="NOAA IOOS Testbed THREDDS Server">
+
+ <service name="all" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+
+ <service name="agg" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+
+ <service name="points" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="sos" serviceType="SOS" base="/thredds/sos/"/>
+ </service>
+
+ 
+
+
+ <dataset name="Shelf Hypoxia">
+  <catalogRef xlink:title="TAMU ROMS (remote)"
+   xlink:href="http://megara.tamu.edu:8080/thredds/gcoos_sura.xml" name=""/>
+
+  <dataset name="TAMU ROMS (remote)  Masked" ID="shelf_hypoxia/tamu/masked"
+   urlPath="shelf_hypoxia/tamu/masked.nc">
+   <serviceName>all</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/var/www/tomcat/content/las/conf/server/data/dynamic/tamuRomsRotated.jnl">
+    <variable name="urot">
+     <attribute name="units" value="m/s"/>
+     <attribute name="coordinates" value="ocean_time s_rho lat_rho_p lon_rho_p"/>
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     <attribute name="missing_value" type="float" value="-1.0e34"/>
+     <attribute name="wms-layer" value="chesroms-vectors/sea_water_velocity"/>
+    </variable>
+    <variable name="vrot">
+     <attribute name="coordinates" value="ocean_time s_rho lat_rho_p lon_rho_p"/>
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     <attribute name="missing_value" type="float" value="-1.0e34"/>
+     <attribute name="units" value="m/s"/>
+     <attribute name="wms-layer" value="chesroms-vectors/sea_water_velocity"/>
+    </variable>
+    <variable name="urot_rect">
+     <attribute name="units" value="m/s"/>
+     <attribute name="coordinates" value="ocean_time s_rho XAX YAX"/>
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     <attribute name="missing_value" type="float" value="-1.0e34"/>
+     <attribute name="wms-layer" value="chesroms-vectors/sea_water_velocity"/>
+    </variable>
+    <variable name="vrot_rect">
+     <attribute name="coordinates" value="ocean_time s_rho XAX YAX"/>
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     <attribute name="missing_value" type="float" value="-1.0e34"/>
+     <attribute name="units" value="m/s"/>
+     <attribute name="wms-layer" value="chesroms-vectors/sea_water_velocity"/>
+    </variable>
+    <variable name="ubarrot">
+     <attribute name="coordinates" value="ocean_time lat_rho_p lon_rho_p"/>
+     <attribute name="missing_value" type="float" value="-1.0e34"/>
+     <attribute name="standard_name" value="barotropic_eastward_sea_water_velocity"/>
+     <attribute name="units" value="m/s"/>
+     <attribute name="wms-layer" value="chesroms-vectors/barotropic_sea_water_velocity"/>
+    </variable>
+    <variable name="vbarrot">
+     <attribute name="coordinates" value="ocean_time lat_rho_p lon_rho_p"/>
+     <attribute name="missing_value" type="float" value="-1.0e34"/>
+     <attribute name="standard_name" value="barotropic_northward_sea_water_velocity"/>
+     <attribute name="units" value="m/s"/>
+     <attribute name="wms-layer" value="chesroms-vectors/barotropic_sea_water_velocity"/>
+    </variable>
+    <!--
+    <variable name="s_rho">
+     <attribute name="formula_terms" value="s: s_rho eta: ZETA_P depth: H_P a: THETA_S b: THETA_B depth_c: HC"/>
+    </variable>
+	-->
+    <attribute name="Conventions" value="CF-1.0"/>
+   </netcdf>
+  </dataset>
+
+  <catalogRef
+   xlink:title="HYCOM/NCODA 1/25 Degree Analysis GOMl0.04/expt_20.1 (Jan-2003 to Jul-2010) (remote)"
+   xlink:href="http://tds.hycom.org/thredds/GOMl0.04/expt_20.1.xml" name=""/>
+  <catalogRef
+   xlink:title="HYCOM/NCODA 1/25 Degree Analysis GOMl0.04/expt_30.1 (Jun 2010 to Present) (remote)"
+   xlink:href="http://tds.hycom.org/thredds/GOMl0.04/expt_30.1.xml" name=""/>
+  <catalogRef xlink:title="NCSU SABGOM ROMS ~1/25 Degree Forecast (remote)"
+   xlink:href="http://omglnx1.meas.ncsu.edu:8080/thredds/catalog/fmrc/sabgom/catalog.xml" name=""/>
+  <catalogRef xlink:title="NRL.IASNFS.Archive.3-D Aggregation"
+   xlink:href="http://edac-dap3.northerngulfinstitute.org/thredds/catalog/ncom_archive_iasnfs3d_agg/catalog.xml"
+   name=""/>
+  <catalogRef xlink:title="NRL.IASNFS.Archive.SSH Aggregation"
+   xlink:href="http://edac-dap3.northerngulfinstitute.org/thredds/catalog/ncom_archive_iasnfs2d_agg/catalog.xml"
+   name=""/>
+  <catalogRef xlink:title="NAVO.NCOM.Gulf_of_Mexico Aggregation"
+   xlink:href="http://edac-dap.northerngulfinstitute.org/thredds2/catalog/ncom_gomex_agg/catalog.xml"
+   name=""/>
+  <catalogRef xlink:title="NAVO.NCOM.Mid_Atlantic_Bight Aggregation"
+   xlink:href="http://edac-dap.northerngulfinstitute.org/thredds2/catalog/ncom_mid_atl_bight_agg/catalog.xml"
+   name=""/>
+  <catalogRef xlink:title="NAVO.NCOM.Region_1 Aggregation"
+   xlink:href="http://edac-dap.northerngulfinstitute.org/thredds2/catalog/ncom_reg1_agg/catalog.xml"
+   name=""/>
+  <catalogRef xlink:title="NAVO.NCOM.Region_2 Aggregation"
+   xlink:href="http://edac-dap.northerngulfinstitute.org/thredds2/catalog/ncom_reg2_agg/catalog.xml"
+   name=""/>
+  <catalogRef xlink:title="NAVO.NCOM.Region_5 Aggregation"
+   xlink:href="http://edac-dap.northerngulfinstitute.org/thredds2/catalog/ncom_reg5_agg/catalog.xml"
+   name=""/>
+  <catalogRef xlink:title="NAVO.NCOM.Region_6 Aggregation"
+   xlink:href="http://edac-dap.northerngulfinstitute.org/thredds2/catalog/ncom_reg6_agg/catalog.xml"
+   name=""/>
+  <catalogRef xlink:title="NAVO.NCOM.Region_7 Aggregation"
+   xlink:href="http://edac-dap.northerngulfinstitute.org/thredds2/catalog/ncom_reg7_agg/catalog.xml"
+   name=""/>
+  <catalogRef xlink:title="NAVO.NCOM.Region_10 Aggregation"
+   xlink:href="http://edac-dap.northerngulfinstitute.org/thredds2/catalog/ncom_reg10_agg/catalog.xml"
+   name=""/>
+  <catalogRef xlink:title="NAVO.NCOM.Region_1.pre_depth_change Aggregation"
+   xlink:href="http://edac-dap.northerngulfinstitute.org/thredds2/catalog/ncom_reg1_old_agg/catalog.xml"
+   name=""/>
+
+  <dataset name="NOAA.NGOM">
+   <dataset name="NOAA.NGOM Aggregation" ID="noaa_ngom2" urlPath="noaa/NGOM.nc">
+    <serviceName>agg</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+     <variable name="zeta" shape="time ny nx" type="float">
+      <attribute name="coordinates" value="time lon lat"/>
+      <remove type="attribute" name="positive"/>
+     </variable>
+     <variable name="sigma">
+
+      <attribute name="positive" value="up"/>
+      <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+      <attribute name="formula_terms" value="sigma: sigma eta: zeta depth: depth"/>
+      <values> 0 -0.0007 -0.0014 -0.0027 -0.0054 -0.0109 -0.0217 -0.0435 -0.0870 -0.1304 -0.1739
+       -0.2174 -0.2609 -0.3043 -0.3478 -0.3913 -0.4348 -0.4783 -0.5217 -0.5652 -0.6087 -0.6522
+       -0.6957 -0.7391 -0.7826 -0.8261 -0.8696 -0.9130 -0.9565 -0.9783 -0.9891 -0.9946 -0.9973
+       -0.9986 -0.9993 -0.9997 -1.0000 </values>
+     </variable>
+     <variable name="temp">
+      <attribute name="missing_value" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="missing_value" type="float" value="0.0"/>
+     </variable>
+     <attribute name="Conventions" value="CF-1.0"/>
+     <aggregation dimName="time" type="joinExisting" timeUnitsChange="true">
+      <scan location="/data/ftp/upload/Shelf_Hypoxia/noaa/NGOM/"
+       regExp=".*GOMUD-[0-9]{4}\.[0-9]{1}\.[0-9]{3}\.3D\.nc$"/>
+     </aggregation>
+    </netcdf>
+   </dataset>
+  </dataset>
+
+  <dataset name="Katja ROMS - b_clm_001 - Agg" ID="shelf_hypoxia/roms/agg"
+   urlPath="shelf_hypoxia/roms/agg.nc">
+   <serviceName>agg</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+    <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+    <attribute name="wms-layer-prefix" value="katja_roms"/>
+    <attribute name="title" value="ROMS (TAMU) - ROMS-3.0"/>
+    <attribute name="id" value="sh.tamu.roms.b_clm_001"/>
+    <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+    <attribute name="summary" value=""/>
+    <attribute name="creator_name" value="Katja Fennel"/>
+    <attribute name="creator_email" value="Katja.Fennel@dal.ca"/>
+    <attribute name="creator_url" value="http://www.dal.ca/"/>
+    <attribute name="cdm_data_type" value="Grid"/>
+
+    <variable name="temp">
+     <attribute name="wms-layer" value="katja_roms/temp"/>
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="standard_name" value="sea_water_temperature"/>
+    </variable>
+    <variable name="salt">
+     <attribute name="wms-layer" value="katja_roms/salt"/>
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="standard_name" value="sea_water_salinity"/>
+    </variable>
+    <variable name="NO3">
+     <attribute name="wms-layer" value="katja_roms/NO3"/>
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="standard_name" value="mole_concentration_of_nitrate_in_sea_water"/>
+    </variable>
+    <variable name="NH4">
+     <attribute name="wms-layer" value="katja_roms/NH4"/>
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="standard_name" value="mole_concentration_of_ammonium_in_sea_water"/>
+    </variable>
+    <variable name="chlorophyll">
+     <attribute name="wms-layer" value="katja_roms/chlorophyll"/>
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="standard_name" value="mass_concentration_of_chlorophyll_in_sea_water"/>
+    </variable>
+    <variable name="phytoplankton">
+     <attribute name="wms-layer" value="katja_roms/phytoplankton"/>
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="standard_name"
+      value="mole_concentration_of_phytoplankton_expressed_as_nitrogen_in_sea_water"/>
+    </variable>
+    <variable name="zooplankton">
+     <attribute name="wms-layer" value="katja_roms/zooplankton"/>
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="standard_name"
+      value="mole_concentration_of_zooplankton_expressed_as_nitrogen_in_sea_water"/>
+    </variable>
+    <variable name="SdetritusN">
+     <attribute name="wms-layer" value="katja_roms/SdetritusN"/>
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="standard_name"
+      value="mole_concentration_of_organic_detritus_expressed_as_nitrogen_in_sea_water_with_small_fraction"
+     />
+    </variable>
+    <variable name="oxygen">
+     <attribute name="wms-layer" value="katja_roms/oxygen"/>
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="standard_name"
+      value="mole_concentration_of_dissolved_molecular_oxygen_in_sea_water"/>
+    </variable>
+    <variable name="LdetritusN">
+     <attribute name="wms-layer" value="katja_roms/LdetritusN"/>
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="standard_name"
+      value="mole_concentration_of_organic_detritus_expressed_as_nitrogen_in_sea_water_with_large_fraction"
+     />
+    </variable>
+
+    <aggregation dimName="ocean_time" type="joinExisting" timeUnitsChange="true">
+     <scan location="/data/ftp/upload/Shelf_Hypoxia/dal/roms/b_clm_001/" suffix=".nc"
+      subdirs="false"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+  <dataset name="EPACOM-GEM3D - Agg" ID="shelf_hypoxia/gem3d/agg"
+   urlPath="shelf_hypoxia/gem3d/agg.nc">
+   <serviceName>agg</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+    <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+    <attribute name="wms-layer-prefix" value="gem3d"/>
+    <attribute name="title" value="EPACOM-GEM3D - 2004-2005"/>
+    <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+    <attribute name="summary"
+     value="GEM3D biogeochemistry run seperately from EPA hydrodynamics model"/>
+    <attribute name="creator_name" value="Dong-Shan Ko"/>
+    <attribute name="creator_email" value="ko@nrlssc.navy.mil"/>
+    <attribute name="cdm_data_type" value="Grid"/>
+
+    <variable name="Temperature">
+     <attribute name="wms-layer" value="gem3d/"/>
+     <attribute name="standard_name" value="potential_temperature"/>
+    </variable>
+
+    <variable name="Time">
+     <attribute name="wms-layer" value="gem3d/"/>
+     <attribute name="standard_name" value="time"/>
+     <attribute name="units" value="days since 2004-01-01 00:00:00"/>
+    </variable>
+
+    <variable name="Bathymetry">
+     <attribute name="wms-layer" value="gem3d/"/>
+     <attribute name="standard_name" value="bathymetry"/>
+     <attribute name="coordinates" value="Latitude Longitude"/>
+    </variable>
+
+    <variable name="Grid_Depth">
+     <attribute name="wms-layer" value="gem3d/"/>
+     <attribute name="standard_name" value="potential_temperature"/>
+     <attribute name="coordinates" value="Layer Latitude Longitude"/>
+    </variable>
+
+    <variable name="Salinity">
+     <attribute name="wms-layer" value="gem3d/"/>
+     <attribute name="standard_name" value="sea_water_salinity"/>
+     <attribute name="coordinates" value="Time Grid_Depth Latitude Longitude"/>
+    </variable>
+
+    <variable name="Phytoplankton">
+     <attribute name="wms-layer" value="gem3d/"/>
+     <attribute name="standard_name" value="concentration_of_phytoplankton"/>
+     <attribute name="coordinates" value="Time Grid_Depth Latitude Longitude"/>
+    </variable>
+
+    <variable name="DIN">
+     <attribute name="wms-layer" value="gem3d/"/>
+     <attribute name="standard_name" value="concentration_of_dissolved_inorganic_nitrogen"/>
+     <attribute name="coordinates" value="Time Grid_Depth Latitude Longitude"/>
+    </variable>
+
+    <variable name="DIP">
+     <attribute name="wms-layer" value="gem3d/"/>
+     <attribute name="standard_name" value="concentration_of_dissolved_inorganic_phosphorus"/>
+     <attribute name="coordinates" value="Time Grid_Depth Latitude Longitude"/>
+    </variable>
+
+    <variable name="DO">
+     <attribute name="wms-layer" value="gem3d/"/>
+     <attribute name="standard_name" value="concentration_of_dissolved_oxygen"/>
+     <attribute name="coordinates" value="Time Grid_Depth Latitude Longitude"/>
+    </variable>
+
+
+    <aggregation dimName="Time" type="joinExisting">
+     <scan location="/data/ftp/upload/Shelf_Hypoxia/ssc/" suffix=".nc" subdirs="false"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+
+  <dataset name="Observations">
+   <datasetScan name="SEAMAP CTD" path="shelf_hypoxia/observations/seamap"
+    location="/data/ftp/upload/Shelf_Hypoxia/Observations/SEAMAP_CTD/NetCDF/">
+    <serviceName>points</serviceName>
+    <filter>
+     <include wildcard="*.nc"/>
+    </filter>
+    <addDatasetSize/>
+   </datasetScan>
+   <datasetScan name="EPA CTD" path="shelf_hypoxia/observations/epa"
+    location="/data/ftp/upload/Shelf_Hypoxia/Observations/EPA_CTD/NetCDF/">
+    <serviceName>points</serviceName>
+    <filter>
+     <include wildcard="*.nc"/>
+    </filter>
+    <addDatasetSize/>
+   </datasetScan>
+   <datasetScan name="LUMCON CTD" path="shelf_hypoxia/observations/lumcon"
+    location="/data/ftp/upload/Shelf_Hypoxia/Observations/LUMCON_CTD/NetCDF/">
+    <serviceName>points</serviceName>
+    <filter>
+     <include wildcard="*.nc"/>
+    </filter>
+    <addDatasetSize/>
+   </datasetScan>
+   <datasetScan name="MCH CTD" path="shelf_hypoxia/observations/mch"
+    location="/data/ftp/upload/Shelf_Hypoxia/Observations/MCH_CTD/NetCDF/">
+    <serviceName>points</serviceName>
+    <filter>
+     <include wildcard="*.nc"/>
+    </filter>
+    <addDatasetSize/>
+   </datasetScan>
+   <datasetScan name="MAGMIX CTD" path="shelf_hypoxia/observations/magmix"
+    location="/data/ftp/upload/Shelf_Hypoxia/Observations/MAGMIX_CTD/NetCDF/">
+    <serviceName>points</serviceName>
+    <filter>
+     <include wildcard="*.nc"/>
+    </filter>
+    <addDatasetSize/>
+   </datasetScan>
+  </dataset>
+</dataset>
+
+ 
+
+</catalog>

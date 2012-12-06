@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="Digital Terrain Models"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="Compound" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+  <dataset name="Bathymetry">  
+    <dataset name="NOAA Coastal Relief Model (3 arc sec),  (Great Lakes)"
+      ID="bathy/crm_vol1.nc" serviceName="Compound" urlPath="bathy/crm_great_lakes">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/var/local/glos/thredds/Bathymetry/crm_great_lakes.nc">
+        <dimension name="lon" orgName="x"/>
+        <dimension name="lat" orgName="y"/>
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-93.00" increment="0.0008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="50.00" increment="-0.0008333333333333333"/>
+        </variable>
+        <variable name="topo" orgName="Band1">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="COARDS"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">NGDC/NOAA/GOV</name>
+          <contact url="http://www.ngdc.noaa.gov" email="Barry.Eakins@noaa.gov"/>
+        </creator>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>41.0</start>
+            <size>9.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-93.0</start>
+            <size>18.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-500</start>
+            <size>10000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/coastal/coastal.html"
+        xlink:title="NOAA Coastal Relief Model"/>
+        <documentation type="Summary">This Coastal Relief Gridded database provides the first comprehensive view of the US Coastal Zone; one that extends from the coastal state boundaries to as far offshore as the NOS hydrographic data will support a continuous view of the seafloor. In many cases, this seaward limit reaches out to, and in places even beyond the continental slope. 
+          The gridded database contains data for the entire coastal zone of the conterminous US, including Hawaii and Puerto Rico. The next area to be included will be Alaska and the Aleutian Islands. The database will eventually include the Great Lakes and surrounding state coastal areas. 
+        </documentation>
+        <document type="Citation">Divins, D.L., and D. Metzger, NGDC Coastal Relief Model, Retrieved date goes here, http://www.ngdc.noaa.gov/mgg/coastal/coastal.html 
+        </document>
+      </metadata>
+    </dataset>
+    
+  </dataset>
+</catalog>

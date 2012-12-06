@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="NOAA IOOS Testbed THREDDS Server"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="all" base="" serviceType="compound">
+    <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
+    <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/" />
+    <service name="wms" serviceType="WMS" base="/thredds/wms/" />
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/" />
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
+    <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+  </service>
+
+  <service name="agg" base="" serviceType="compound">
+    <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/" />
+    <service name="wms" serviceType="WMS" base="/thredds/wms/" />
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/" />
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
+    <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+  </service>
+
+  <dataset name="Raw Model Output">
+    <dataset name="Estuarine Hypoxia" ID="estuarine_hypoxia"> 
+      <dataset name="CH3D" ID="estuarine_hypoxia/ch3d">
+        <datasetScan name="CH3D Files" path="estuarine_hypoxia/ch3d/files" location="/data/ftp/upload/Final/estuarine_hypoxia/usace/ch3d/">
+          <serviceName>all</serviceName>
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <addDatasetSize/>
+        </datasetScan>
+
+        <dataset name="CH3D Agg" ID="estuarine_hypoxia/ch3d/agg" urlPath="estuarine_hypoxia/ch3d/agg.nc">
+          <serviceName>agg</serviceName>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <variable name="time" shape="time" type="float">
+              <attribute name="units" value="hours since 1985-01-01" />
+            </variable>   
+            <variable name="u">
+	      <attribute name="standard_name" value="eastward_sea_water_velocity" />
+	    </variable>
+            <variable name="v">
+	      <attribute name="standard_name" value="northward_sea_water_velocity" />
+	    </variable>
+            <aggregation dimName="time" type="joinExisting" timeUnitsChange="true">
+              <scan location="/data/ftp/upload/Final/estuarine_hypoxia/usace/ch3d/" suffix=".nc" subdirs="false" />
+            </aggregation>
+          </netcdf>
+        </dataset>
+      </dataset>
+
+      <dataset name="CBOFS2" ID="estuarine_hypoxia/cbofs2">
+        <datasetScan name="CBOFS2 Files" path="estuarine_hypoxia/cbofs2/files" location="/data/ftp/upload/Final/estuarine_hypoxia/noaa/cbofs2/">
+          <serviceName>all</serviceName>
+          <addDatasetSize/>
+        </datasetScan>
+
+	<dataset name="CBOFS2 Agg" ID="estuarine_hypoxia/cbofs2/agg" urlPath="estuarine_hypoxia/cbofs2/agg.nc">
+          <serviceName>agg</serviceName>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <variable name="u">
+              <attribute name="standard_name" value="eastward_sea_water_velocity" />
+            </variable>
+            <variable name="v">
+              <attribute name="standard_name" value="northward_sea_water_velocity" />
+            </variable>
+            <aggregation dimName="ocean_time" type="joinExisting" timeUnitsChange="true">
+              <scan location="/data/ftp/upload/Final/estuarine_hypoxia/noaa/cbofs2/Output_Avg" suffix=".nc" subdirs="false" />
+            </aggregation>
+          </netcdf>
+        </dataset> 
+      </dataset>
+
+      <dataset name="ChesROMS" ID="estuarine_hypoxia/chesroms">
+        <datasetScan name="ChesROMS Files" path="estuarine_hypoxia/chesroms/files" location="/data/ftp/upload/Final/estuarine_hypoxia/umces/chesroms/">
+          <serviceName>all</serviceName>
+          <addDatasetSize/>
+        </datasetScan>
+
+        <dataset name="ChesROMS Agg" ID="estuarine_hypoxia/chesroms/agg" urlPath="estuarine_hypoxia/chesroms/agg.nc">
+          <serviceName>agg</serviceName>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <variable name="u">
+	      <attribute name="standard_name" value="eastward_sea_water_velocity" />
+	    </variable>
+            <variable name="v">
+	      <attribute name="standard_name" value="northward_sea_water_velocity" />
+	    </variable>
+            <aggregation dimName="ocean_time" type="joinExisting" timeUnitsChange="true">
+              <scan location="/data/ftp/upload/Final/estuarine_hypoxia/umces/chesroms/output/history_output" suffix=".nc" subdirs="true" />
+            </aggregation>
+          </netcdf>
+        </dataset>
+      </dataset>
+ 
+      <dataset name="EFDC" ID="estuarine_hypoxia/efdc">
+        <datasetScan name="EFDC Files" path="estuarine_hypoxia/efdc/files" location="/data/ftp/upload/Final/estuarine_hypoxia/vims/efdc/">
+          <serviceName>all</serviceName>
+          <addDatasetSize/>
+        </datasetScan>
+      </dataset>
+      
+      <dataset name="ROMS" ID="estuarine_hypoxia/roms">
+        <datasetScan name="EFDC Files" path="estuarine_hypoxia/efdc/files" location="/data/ftp/upload/Final/estuarine_hypoxia/vims/efdc/">
+          <serviceName>all</serviceName>
+          <addDatasetSize/>
+        </datasetScan>
+      </dataset>
+
+
+    </dataset>
+
+    <dataset name="Shelf Hypoxia" ID="shelf_hypoxia">
+      <dataset name="TAMU ROMS" ID="shelf_hypoxia/tamu_roms">
+        <datasetScan name="TAMU ROMS Files" path="shelf_hypoxia/tamu_roms/files" location="/data/ftp/upload/ExampleOutput/shelf_hypoxia/tamu/roms">
+          <serviceName>all</serviceName>
+          <addDatasetSize/>
+        </datasetScan>
+      </dataset> 
+      <dataset name="NRL HYCOM" ID="shelf_hypoxia/nrl_hycom">  
+        <datasetScan name="NRL HYCOM Files" path="shelf_hypoxia/nrl_hycom/files" location="/data/ftp/upload/ExampleOutput/shelf_hypoxia/nrl/hycom_gom">
+          <serviceName>all</serviceName>
+          <addDatasetSize/>
+        </datasetScan>
+      </dataset>
+      <dataset name="NAVOCEAN NCOM AMSEAS" ID="shelf_hypoxia/ncom_amseas">  
+        <datasetScan name="NAVOCEAN NCOM AMSEAS Files" path="shelf_hypoxia/ncom_amseas/files" location="/data/ftp/upload/ExampleOutput/shelf_hypoxia/navocean/ncom_amseas">
+          <serviceName>all</serviceName>
+          <addDatasetSize/>
+        </datasetScan>
+      </dataset> 
+      <dataset name="NRL NCOM IASNFS" ID="shelf_hypoxia/ncom_iasnfs">  
+        <datasetScan name="NRL NCOM IASNFS Files" path="shelf_hypoxia/ncom_iasnfs/files" location="/data/ftp/upload/ExampleOutput/shelf_hypoxia/nrl/ncom_iasnfs">
+          <serviceName>all</serviceName>
+          <addDatasetSize/>
+        </datasetScan>
+      </dataset>
+      <dataset name="NRL NCOM GOM" ID="shelf_hypoxia/ncom_gom">  
+        <datasetScan name="NRL NCOM GOM Files" path="shelf_hypoxia/ncom_gom/files" location="/data/ftp/upload/ExampleOutput/shelf_hypoxia/nrl/ncom_gom">
+          <serviceName>all</serviceName>
+          <addDatasetSize/>
+        </datasetScan>
+      </dataset>
+    </dataset>
+
+    <dataset name="Inundation" ID="inundation">
+
+
+      <datasetScan name="ELCIRC Files" path="inundation/elcirc/files" location="/data/ftp/upload/ExampleOutput/inundation/vims/elcirc/">
+        <serviceName>all</serviceName>
+        <addDatasetSize/>
+      </datasetScan>
+
+      <datasetScan name="UMASS FVCOM Files" path="inundation/umass_fvcom/files" location="/data/ftp/upload/ExampleOutput/inundation/umass">
+        <serviceName>all</serviceName>
+        <addDatasetSize/>
+      </datasetScan>
+      
+      <datasetScan name="UND ADCIRC Files" path="inundation/und_adcirc/files" location="/data/ftp/upload/ExampleOutput/inundation/und">
+        <serviceName>all</serviceName>
+        <addDatasetSize/>
+      </datasetScan>
+      
+      <datasetScan name="UF SLOSH Files" path="inundation/uf_slosh/files" location="/data/ftp/upload/ExampleOutput/inundation/uf">
+        <serviceName>all</serviceName>
+        <addDatasetSize/>
+      </datasetScan>
+      
+      <datasetScan name="BIO WW3 Files" path="inundation/bio_ww3/files" location="/data/ftp/upload/ExampleOutput/inundation/bio">
+        <serviceName>all</serviceName>
+        <addDatasetSize/>
+      </datasetScan>
+      
+      <datasetScan name="USF FVCOM Files" path="inundation/usf_fvcom/files" location="/data/ftp/upload/ExampleOutput/inundation/usf">
+        <serviceName>all</serviceName>
+        <addDatasetSize/>
+      </datasetScan>
+      
+      <datasetScan name="LSU Bathymetry Files" path="inundation/lsu_bathymetry/files" location="/data/ftp/upload/ExampleOutput/inundation/lsu">
+        <serviceName>all</serviceName>
+        <addDatasetSize/>
+      </datasetScan>
+
+    </dataset>
+
+  </dataset>
+
+  <datasetScan name="Samples of NetCDF Output" path="samples" location="/data/ftp/upload/SampleFiles/">
+    <serviceName>all</serviceName>
+    <addDatasetSize/>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+  </datasetScan>
+
+</catalog>

@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name=" Chandeleur Islands Oceanographic Measurements (July - Nov.  2010)" ID="CIberm">
+    <metadata inherited="true">
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>29.5</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-89.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>3000</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/CI.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="8891wh-a.nc" ID="CHANDELEUR/8891wh-a.nc" urlPath="CHANDELEUR/8891wh-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 29.843901 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.516800 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-10 14:14:59 </start>
+<end> 2010-09-11 19:19:27 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="platform_orientation" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CHANDELEUR/8891wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4785488099000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-889"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="brange">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_1294">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CHANDELEUR/8891wh-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="8891wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:51:00" />
+<attribute name="start_time" value="2010-07-10 14:14:59Z" />
+<attribute name="stop_time" value="2010-09-11 19:19:27Z" />
+</netcdf>
+</dataset>
+<dataset name="8901wh-a.nc" ID="CHANDELEUR/8901wh-a.nc" urlPath="CHANDELEUR/8901wh-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 29.969801 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.760696 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-10 15:50:00 </start>
+<end> 2010-09-13 18:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="platform_orientation" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CHANDELEUR/8901wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4785493800000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-890"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="brange">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_1294">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CHANDELEUR/8901wh-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="8901wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:51:03" />
+<attribute name="start_time" value="2010-07-10 15:50:00Z" />
+<attribute name="stop_time" value="2010-09-13 18:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8911wh-part1-a.nc" ID="CHANDELEUR/8911wh-part1-a.nc" urlPath="CHANDELEUR/8911wh-part1-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 29.739100 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.776299 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-10 11:20:00 </start>
+<end> 2010-07-18 22:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="platform_orientation" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CHANDELEUR/8911wh-part1-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4785477600000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-891"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="brange">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_1294">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CHANDELEUR/8911wh-part1-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="8911wh-part1-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:51:04" />
+<attribute name="start_time" value="2010-07-10 11:20:00Z" />
+<attribute name="stop_time" value="2010-07-18 22:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8911wh-part2-a.nc" ID="CHANDELEUR/8911wh-part2-a.nc" urlPath="CHANDELEUR/8911wh-part2-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 29.739100 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.776299 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-18 23:07:58 </start>
+<end> 2010-07-27 07:27:58 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="platform_orientation" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CHANDELEUR/8911wh-part2-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4786211278000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-891"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="brange">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_1294">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CHANDELEUR/8911wh-part2-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="8911wh-part2-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:51:05" />
+<attribute name="start_time" value="2010-07-18 23:07:58Z" />
+<attribute name="stop_time" value="2010-07-27 07:27:58Z" />
+</netcdf>
+</dataset>
+<dataset name="8911wh-part3-a.nc" ID="CHANDELEUR/8911wh-part3-a.nc" urlPath="CHANDELEUR/8911wh-part3-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 29.739100 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.776299 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-30 01:43:35 </start>
+<end> 2010-08-14 06:03:35 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="platform_orientation" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CHANDELEUR/8911wh-part3-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4787171015000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-891"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="brange">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_1294">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CHANDELEUR/8911wh-part3-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="8911wh-part3-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:51:07" />
+<attribute name="start_time" value="2010-07-30 01:43:35Z" />
+<attribute name="stop_time" value="2010-08-14 06:03:35Z" />
+</netcdf>
+</dataset>
+<dataset name="8921wh-a.nc" ID="CHANDELEUR/8921wh-a.nc" urlPath="CHANDELEUR/8921wh-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 29.958500 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.860901 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-10 17:40:00 </start>
+<end> 2010-09-12 21:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="platform_orientation" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CHANDELEUR/8921wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4785500400000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-892"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="brange">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_1294">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CHANDELEUR/8921wh-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="8921wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:51:09" />
+<attribute name="start_time" value="2010-07-10 17:40:00Z" />
+<attribute name="stop_time" value="2010-09-12 21:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8931wh-a.nc" ID="CHANDELEUR/8931wh-a.nc" urlPath="CHANDELEUR/8931wh-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 29.842199 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.514603 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-09-12 15:25:00 </start>
+<end> 2010-11-07 15:54:46 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="platform_orientation" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CHANDELEUR/8931wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4791021900000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-893"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="brange">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_1294">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CHANDELEUR/8931wh-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="8931wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:51:12" />
+<attribute name="start_time" value="2010-09-12 15:25:00Z" />
+<attribute name="stop_time" value="2010-11-07 15:54:46Z" />
+</netcdf>
+</dataset>
+<dataset name="8951wh-a.nc" ID="CHANDELEUR/8951wh-a.nc" urlPath="CHANDELEUR/8951wh-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 29.969700 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.760696 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-09-14 18:10:00 </start>
+<end> 2010-11-08 13:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="platform_orientation" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CHANDELEUR/8951wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4791204600000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-895"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="brange">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_1294">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CHANDELEUR/8951wh-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="8951wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:51:15" />
+<attribute name="start_time" value="2010-09-14 18:10:00Z" />
+<attribute name="stop_time" value="2010-11-08 13:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8971wh-a.nc" ID="CHANDELEUR/8971wh-a.nc" urlPath="CHANDELEUR/8971wh-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 29.739799 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.777802 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-09-12 13:30:00 </start>
+<end> 2010-11-07 12:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="platform_orientation" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CHANDELEUR/8971wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4791015000000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-897"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="brange">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_1294">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CHANDELEUR/8971wh-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="8971wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:51:19" />
+<attribute name="start_time" value="2010-09-12 13:30:00Z" />
+<attribute name="stop_time" value="2010-11-07 12:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8991wh-a.nc" ID="CHANDELEUR/8991wh-a.nc" urlPath="CHANDELEUR/8991wh-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 29.958200 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.860497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-09-13 00:40:06 </start>
+<end> 2010-11-06 01:00:05 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="platform_orientation" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CHANDELEUR/8991wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4791055206000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-899"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="brange">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_1294">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CHANDELEUR/8991wh-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="8991wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:51:21" />
+<attribute name="start_time" value="2010-09-13 00:40:06Z" />
+<attribute name="stop_time" value="2010-11-06 01:00:05Z" />
+</netcdf>
+</dataset>
+ </dataset>
+</catalog>

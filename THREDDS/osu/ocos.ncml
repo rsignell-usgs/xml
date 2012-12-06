@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="ocean_time" type="joinExisting" recheckEvery="10min">
+        <netcdf location="http://agate.coas.oregonstate.edu:8080/thredds/dodsC/osu/all/ocean_his_1156.nc"/>
+        <netcdf location="http://agate.coas.oregonstate.edu:8080/thredds/dodsC/osu/all/ocean_his_1157.nc"/>
+    </aggregation>
+    <!--        Modify units for ocean_time as the value in the NetCDF files puts the forecasts in Jan 2010-->
+    <variable name="ocean_time" >
+        <attribute name="units" value="seconds since 2005-06-24 00:00:00" />
+    </variable>
+    <variable name="xi_rho" shape="xi_rho" type="double">
+        <attribute name="units" value="degrees_east"/>
+        <values start="-129.00000000000000" increment="0.03906250000000"/>
+    </variable>
+    <variable name="eta_rho" shape="eta_rho" type="double">
+        <attribute name="units" value="degrees_north"/>
+        <values start="40.58332845433661" increment="0.02777776845316"/>
+    </variable>
+    <variable name="xi_u" shape="xi_u" type="double">
+        <attribute name="units" value="degrees_east"/>
+        <values start="-128.98046875000000" increment="0.03906250000000"/>
+    </variable>
+    <variable name="eta_u" shape="eta_u" type="double">
+        <attribute name="units" value="degrees_north"/>
+        <values start="40.58332845433661" increment="0.02777776845316"/>
+    </variable>
+    <variable name="xi_v" shape="xi_v" type="double">
+        <attribute name="units" value="degrees_east"/>
+        <values start="-129.00000000000000" increment="0.03906250000000"/>
+    </variable>
+    <variable name="eta_v" shape="eta_v" type="double">
+        <attribute name="units" value="degrees_north"/>
+        <values start="40.59721733856319" increment="0.02777776845316"/>
+    </variable>
+    <variable name="xi_psi" shape="xi_psi" type="double">
+        <attribute name="units" value="degrees_east"/>
+        <values start="-128.98046875000000" increment="0.03906250000000"/>
+    </variable>
+    <variable name="eta_psi" shape="eta_psi" type="double">
+        <attribute name="units" value="degrees_north"/>
+        <values start="40.59721733856319" increment="0.02777776845316"/>
+    </variable>
+    
+</netcdf>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.1">
+
+    <service name="Compound" serviceType="Compound" base="">
+        <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+        <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+        <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    </service>
+    <dataset name="ECOM  Forecast Elevation at Scituate" ID="umassb/scituate" urlPath="umassb/scituate" >
+        <serviceName>Compound</serviceName>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="time" type="joinExisting">
+                <netcdf location="http://coast-enviro.er.usgs.gov/models/gom_interop/umassb_scituate.nc"/>
+            </aggregation>
+        </netcdf>
+    </dataset>
+    <dataset name="FVCOM Generation 3 Forecast Elevation at Scituate" ID="fvcom/scituate" urlPath="fvcom/scituate">
+        <serviceName>Compound</serviceName>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="time" type="joinExisting">
+                <netcdf location="http://fvcom.smast.umassd.edu/research_projects/NECOFS/Forecast_Hindcast/siebnmzx8y23mbs8y32op4m/NECOFS_ARCHIVES/scituate_elevation_fvcom.nc"/>
+            </aggregation>
+            <variable name="lon" shape="node" type="double">
+                <attribute name="units" value="degrees_east"/>
+                <values>-70.7196</values>
+            </variable>
+            <variable name="lat" shape="node" type="double">
+                <attribute name="units" value="degrees_north"/>
+                <values>42.1794</values>
+            </variable>
+            <variable name="zeta">
+                <attribute name="standard_name" value="sea_surface_height_above_sea_level"/>
+                <attribute name="coordinates" value="time lat lon"/>
+            </variable>
+            <attribute name="Conventions" value="CF-1.0"/>
+        </netcdf>
+    </dataset>
+   
+</catalog>

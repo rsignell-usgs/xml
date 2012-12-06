@@ -1,0 +1,183 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+
+ </service>
+ <dataset name="SCB" ID="scb">
+
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <authority>gov.nasa.jpl</authority>
+   <dataType>Grid</dataType>
+   <dataFormat>NetCDF</dataFormat>
+   <creator>
+    <name vocabulary="DIF">GOV/NASA/JPL/Dr. Yi Chao</name>
+    <contact url="http://www.jpl.nasa.gov" email="Yi.Chao@jpl.nasa.gov"/>
+   </creator>
+   <publisher>
+    <name vocabulary="DIF">GOV/NASA/JPL/Dr. Yi Chao</name>
+    <contact url="http://www.jpl.nasa.gov" email="Yi.Chao@jpl.nasa.gov"/>
+   </publisher>
+   <documentation xlink:href="http://www.sccoos.org/data/roms"
+    xlink:title="SCCOOS ROMS Model Output Home Page"/>
+  </metadata>
+  
+   <dataset name="SCB Forecast Model Aggregation" ID="scb/fmrc">
+   <featureCollection name="scb" featureType="FMRC" harvest="true" path="scb/fmrc">
+    <metadata inherited="true">
+     <documentation type="summary">ROMS Output from SCB</documentation>
+     <serviceName>allServices</serviceName>
+    </metadata>
+    <collection spec="/myocean/SCB/data/history/scb_us_#yyyyMMdd_HH#_his\.nc$"
+     olderThan="10 min"/>
+    <!-- Cron style: Update every hour -->
+    <update startup="true" rescan="0 0 * * * ? *" trigger="allow"/>
+
+    <protoDataset choice="Penultimate">
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <attribute name="Conventions" type="String" value="CF-1.0"/>
+     </netcdf>
+    </protoDataset>
+    <fmrcConfig regularize="false" datasetTypes="Best"/>
+    <!-- 
+     Inside the featureCollection, but outside the protoDataset, we define the NcML that happens
+     before the aggregation.  To get aggregated, we must have grids, so we turn the bed params
+     into grids by giving them a psuedo coordinate in Z.  If we don't do this, they will not be 
+     aggregated. 
+    -->
+
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <variable name="theta_s" shape="" type="double">
+      <values>5.0</values>
+     </variable>
+     <variable name="theta_b" shape="" type="double">
+      <values>0.0</values>
+     </variable>
+     <variable name="Tcline" shape="" type="double">
+      <values>10.0</values>
+     </variable>
+     <variable name="s_rho" shape="s_rho" type="double">
+      <values start="-0.9875" increment="0.025"/>
+      <attribute name="positive" value="up"/>
+      <attribute name="standard_name" value="ocean_s_coordinate"/>
+      <attribute name="formula_terms"
+       value="s: s_rho eta: zeta depth: h a: theta_s b: theta_b depth_c: Tcline"/>
+     </variable>
+     <variable name="s_w" shape="s_w" type="double">
+      <values start="-1" increment="0.025"/>
+      <attribute name="standard_name" value="ocean_s_coordinate"/>
+      <attribute name="positive" value="up"/>
+      <attribute name="formula_terms"
+       value="s: s_w eta: zeta depth: h a: theta_s b: theta_b depth_c: Tcline"/>
+     </variable>
+     <variable name="temp">
+      <attribute name="coordinates" value="time s_rho eta_rho xi_rho"/>
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="coordinates" value="time s_rho eta_rho xi_rho"/>
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="u">
+      <attribute name="coordinates" value="time s_rho eta_rho xi_u"/>
+     </variable>
+     <variable name="ubar">
+      <attribute name="coordinates" value="time  eta_rho xi_u"/>
+     </variable>
+     <variable name="v">
+      <attribute name="coordinates" value="time s_rho eta_v xi_rho"/>
+     </variable>
+     <variable name="omega">
+      <attribute name="coordinates" value="time s_w eta_rho xi_rho"/>
+     </variable>
+     <variable name="AKv">
+      <attribute name="coordinates" value="time s_w eta_rho xi_rho"/>
+     </variable>
+     <variable name="vbar">
+      <attribute name="coordinates" value="time  eta_v xi_rho"/>
+     </variable>
+     <variable name="zeta">
+      <attribute name="coordinates" value="time  eta_rho xi_rho"/>
+     </variable>
+     <variable name="time" orgName="scrum_time">
+      <attribute name="units" value="seconds since 2002-01-01 00:00 UTC"/>
+     </variable>
+     <variable name="eta_rho" shape="eta_rho" type="double">
+      <attribute name="units" value="degrees_north"/>
+      <values start="32.45" increment="0.0089946"/>
+     </variable>
+     <variable name="eta_v" shape="eta_v" type="double">
+      <attribute name="units" value="degrees_north"/>
+      <values start="32.5044973" increment="0.0089946"/>
+     </variable>
+     <variable name="xi_rho" shape="xi_rho" type="double">
+      <attribute name="units" value="degrees_east"/>
+      <values start="-121.2" increment="0.0106589"/>
+     </variable>
+     <variable name="xi_u" shape="xi_u" type="double">
+      <attribute name="units" value="degrees_east"/>
+      <values start="-121.1194671" increment="0.0106589"/>
+     </variable>
+    </netcdf>
+
+
+   </featureCollection>
+
+   <featureCollection name="scb_3_car" featureType="FMRC" harvest="true" path="scb_3/car/fmrc">
+    <metadata inherited="true">
+     <documentation type="summary">ROMS Output from COAWST</documentation>
+     <serviceName>allServices</serviceName>
+    </metadata>
+    <collection spec="/usgs/vault0/scb/scb_3/Output/car/scb_car_#yyyyMMdd_HH#.nc$"
+     olderThan="10 min"/>
+    <update startup="true" rescan="0 30 4 * * ? *" trigger="allow"/>
+
+    <protoDataset choice="Penultimate">
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <variable name="temp">
+       <attribute name="_FillValue" type="float" value="0.0"/>
+      </variable>
+      <variable name="salt">
+       <attribute name="_FillValue" type="float" value="0.0"/>
+      </variable>
+      <variable name="Hwave">
+       <attribute name="_FillValue" type="float" value="0.0"/>
+      </variable>
+      <variable name="zeta">
+       <attribute name="_FillValue" type="float" value="0.0"/>
+      </variable>
+     </netcdf>
+    </protoDataset>
+    <fmrcConfig regularize="false" datasetTypes="Best"/>
+    <!-- 
+     Inside the featureCollection, but outside the protoDataset, we define the NcML that happens
+     before the aggregation.  To get aggregated, we must have grids, so we turn the bed params
+     into grids by giving them a psuedo coordinate in Z.  If we don't do this, they will not be 
+     aggregated. 
+    -->
+
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <variable name="Nbed" shape="Nbed" type="double">
+      <values start="-1.0" increment="-0.01"/>
+      <attribute name="long_name" value="pseudo coordinate at seabed points"/>
+      <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+      <attribute name="positive" value="up"/>
+      <attribute name="formula_terms" value="sigma: Nbed eta: zeta depth: h"/>
+     </variable>
+     <attribute name="Conventions" value="CF-1.0"/>
+    </netcdf>
+
+
+   </featureCollection>
+
+  </dataset>
+ </dataset>
+</catalog>

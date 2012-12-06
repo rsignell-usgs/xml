@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="GOMTOX Catalog"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <service name="allServices" base="" serviceType="compound">
+  <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+ </service>
+ <dataset name="GOMTOX Runs">
+  <metadata inherited="true">
+   <creator>
+    <name vocabulary="DIF">Dr. Ruoying He</name>
+    <contact url="http://www.meas.ncsu.edu/faculty/he/he.html" email="ruoying_he@ncsu.edu"/>
+    <name vocabulary="DIF">Dr. Dennis McGillicuddy</name>
+    <contact url="http://www.whoi.edu/hpb/Site.do?id=933" email="dmcgillicuddy@whoi.edu"/>
+   </creator>
+   <geospatialCoverage zpositive="up">
+    <northsouth>
+     <start>38.666</start>
+     <size>46.6378</size>
+     <units>degrees_north</units>
+    </northsouth>
+    <eastwest>
+     <start>-72.9181</start>
+     <size>10.9387</size>
+     <units>degrees_east</units>
+    </eastwest>
+   </geospatialCoverage>
+   <documentation xlink:href="http://www4.ncsu.edu/~rhe/project_files/noaa.htm"
+    xlink:title="Dynamics of Alexandrium fundyense Project Page"/>
+   <documentation type="Summary"> Hydrodynamic simulations to support Alexandrium fundyense research
+    in the Gulf of Maine </documentation>
+   <documentation type="Rights"> This model data was generated as part of an academic research
+    project, and the principal investigators: Ruoying He (rhe@ncsu.edu) and Dennis McGillicuddy
+    (dmcgillicuddy@whoi.edu) ask to be informed of intent for scientific use and appropriate
+    acknowledgment given in any publications arising therefrom. The data is provided free of charge,
+    without warranty of any kind. </documentation>
+  </metadata>
+  <dataset name="Tide-Averaged Data">
+   <dataset name="2004 " ID="gomtox/2004/avg" urlPath="gomtox/2004/avg">
+    <serviceName>allServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/media/1tb/GOMTOX/2004/avg/" suffix=".nc"/>
+     </aggregation>
+     <remove type="variable" name="DINO01"/>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+     </variable>
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </dataset>
+   <dataset name="2005 " ID="gomtox/2005/avg" urlPath="gomtox/2005/avg">
+    <serviceName>allServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/media/1tb/GOMTOX/2005/avg/" suffix=".nc"/>
+     </aggregation>
+     <remove type="variable" name="DINO01"/>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+     </variable>
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </dataset>
+   <dataset name="2006 " ID="gomtox/2006/avg" urlPath="gomtox/2006/avg">
+    <serviceName>allServices</serviceName>
+    <metadata inherited="true">
+     <timeCoverage>
+      <start>2006-02-01 06:13:00Z</start>
+      <end>2006-08-01 15:03:00Z</end>
+     </timeCoverage>
+    </metadata>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/media/1tb/GOMTOX/2006/avg/" suffix=".nc"/>
+     </aggregation>
+     <remove type="variable" name="DINO01"/>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+     </variable>
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </dataset>
+   <dataset name="2007 " ID="gomtox/2007/avg" urlPath="gomtox/2007/avg">
+    <serviceName>allServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/media/1tb/GOMTOX/2007/avg/" suffix=".nc"/>
+     </aggregation>
+     <remove type="variable" name="DINO01"/>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+     </variable>
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </dataset>
+   <dataset name="2008 " ID="gomtox/2008/avg" urlPath="gomtox/2008/avg">
+    <serviceName>allServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/media/1tb/GOMTOX/2008/avg/" suffix=".nc"/>
+     </aggregation>
+     <remove type="variable" name="DINO01"/>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+     </variable>
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </dataset>
+  </dataset>
+  <dataset name="Three-Hourly Snapshot Data">
+   <dataset name="2004 " ID="gomtox/2004/his" urlPath="gomtox/2004/his">
+    <serviceName>allServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/media/1tb/GOMTOX/2004/his/" suffix=".nc"/>
+     </aggregation>
+     <remove type="variable" name="DINO01"/>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+     </variable>
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </dataset>
+   <dataset name="2005 " ID="gomtox/2005/his" urlPath="gomtox/2005/his">
+    <serviceName>allServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/media/1tb/GOMTOX/2005/his/" suffix=".nc"/>
+     </aggregation>
+     <remove type="variable" name="DINO01"/>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+     </variable>
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </dataset>
+   <dataset name="2006 " ID="gomtox/2006/his" urlPath="gomtox/2006/his">
+    <serviceName>allServices</serviceName>
+    <metadata inherited="true">
+     <timeCoverage>
+      <start>2006-02-01 06:13:00Z</start>
+      <end>2006-08-01 15:03:00Z</end>
+     </timeCoverage>
+    </metadata>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/media/1tb/GOMTOX/2006/his/" suffix=".nc"/>
+     </aggregation>
+     <remove type="variable" name="DINO01"/>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+     </variable>
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </dataset>
+   <dataset name="2007 " ID="gomtox/2007/his" urlPath="gomtox/2007/his">
+    <serviceName>allServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/media/1tb/GOMTOX/2007/his/" suffix=".nc"/>
+     </aggregation>
+     <remove type="variable" name="DINO01"/>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+     </variable>
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </dataset>
+   <dataset name="2008 " ID="gomtox/2008/his" urlPath="gomtox/2008/his">
+    <serviceName>allServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/media/1tb/GOMTOX/2008/his/" suffix=".nc"/>
+     </aggregation>
+     <remove type="variable" name="DINO01"/>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+     </variable>
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </dataset>
+  </dataset>
+ </dataset>
+</catalog>

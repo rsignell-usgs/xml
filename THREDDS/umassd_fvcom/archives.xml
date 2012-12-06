@@ -1,0 +1,251 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <!--
+  <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
+   -->
+ </service>
+ <dataset name="FVCOM Archives" ID="fvcom/archives">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <dataType>Grid</dataType>
+   <dataFormat>NetCDF</dataFormat>
+   <creator>
+    <name vocabulary="DIF">SMAST/UMASSD</name>
+    <contact url="http://fvcom.smast.umassd.edu/FVCOM/index.html" email="c1chen@umassd.edu"/>
+   </creator>
+   <documentation xlink:href="http://fvcom.smast.umassd.edu/FVCOM/index.html"/>
+  </metadata>
+  <dataset name="FVCOM GOM3 NECOFS Forecast Archive" ID="fvcom/archives/necofs_gom3"
+   urlPath="fvcom/archives/necofs_gom3">
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <variable name="zeta">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="node"/>
+     <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+     <remove type="attribute" name="positive"/>
+    </variable>
+    <variable name="uwind_stress">
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="face"/>
+    </variable>    
+    <variable name="vwind_stress">
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="short_wave">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="net_heat_flux">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="icing_0kts">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="icing_10kts">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="icing_wndx">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="icing_wndy">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="icing_satmp">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="temp">
+     <attribute name="coordinates" value="time siglay lat lon"/>
+     <attribute name="mesh" value="nv"/>
+    </variable>
+    <variable name="salinity">
+     <attribute name="coordinates" value="time siglay lat lon"/>
+    </variable>
+    <variable name="kh">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+    </variable>
+    <variable name="km">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+    </variable>
+    <variable name="kq">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+    </variable>    
+    <variable name="q2">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+    </variable>
+    <variable name="q2l">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+    </variable>
+    <variable name="l">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+    </variable>
+    <variable name="u">
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="v">
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="ww">
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="omega">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="ua">
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="va">
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="h">
+     <attribute name="mesh" value="nv"/>
+     <attribute name="coordinates" value="lat lon"/>
+     <attribute name="location" value="node"/>
+     <attribute name="standard_name" value="depth_below_geoid"/>
+     <remove type="attribute" name="positive"/>
+    </variable>
+    <variable name="siglay">
+     <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+    </variable>
+    <variable name="siglev">
+     <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+    </variable>
+    <variable name="nv" >
+     <attribute name="standard_name" value="mesh_topology"/>
+     <attribute name="long_name" value="Topology of 2D unstructured mesh"/>
+     <attribute name="node_coordinates" value="lat lon"/>
+     <attribute name="start_index" type="short" value="1"/>
+    </variable>
+    <aggregation dimName="time" type="joinExisting" recheckEvery="60min">
+     <scan location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive" regExp=".*gom3v11_[0-9]{6}\.nc$"
+      olderThan="30min" subdirs="true"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+  
+  <dataset name="FVCOM MASSBAY NECOFS Forecast Archive" ID="fvcom/archives/necofs_mb"
+   urlPath="fvcom/archives/necofs_mb">
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <variable name="zeta">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="node"/>
+     <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+     <remove type="attribute" name="positive"/>
+    </variable>
+     <variable name="temp">
+     <attribute name="coordinates" value="time siglay lat lon"/>
+     <attribute name="mesh" value="nv"/>
+    </variable>
+    <variable name="salinity">
+     <attribute name="coordinates" value="time siglay lat lon"/>
+    </variable>
+    <variable name="kh">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+    </variable>
+    <variable name="km">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+    </variable>
+    <variable name="kq">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+    </variable>    
+    <variable name="q2">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+    </variable>
+    <variable name="q2l">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+    </variable>
+    <variable name="l">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+    </variable>
+    <variable name="u">
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="v">
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="ww">
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="omega">
+     <attribute name="coordinates" value="time siglev lat lon"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="ua">
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="va">
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="nv"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="h">
+     <attribute name="mesh" value="nv"/>
+     <attribute name="coordinates" value="lat lon"/>
+     <attribute name="location" value="node"/>
+     <attribute name="standard_name" value="depth_below_geoid"/>
+     <remove type="attribute" name="positive"/>
+    </variable>
+    <variable name="siglay">
+     <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+    </variable>
+    <variable name="siglev">
+     <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+    </variable>
+    <variable name="nv" >
+     <attribute name="standard_name" value="mesh_topology"/>
+     <attribute name="long_name" value="Topology of 2D unstructured mesh"/>
+     <attribute name="node_coordinates" value="lat lon"/>
+     <attribute name="start_index" type="short" value="1"/>
+    </variable>
+    <aggregation dimName="time" type="joinExisting" recheckEvery="60min">
+     <scan location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive" regExp=".*mbn_[0-9]{6}\.nc$"
+      olderThan="30min" subdirs="true"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+ </dataset>
+</catalog>

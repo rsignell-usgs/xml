@@ -1,0 +1,2141 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="U.S. GLOBEC Georges Bank Experiment (3-8/99)" ID="GBC-GB">
+    <metadata inherited="true">
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>41.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-67.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>3000</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/globec_gb.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="5551tcp-a.nc" ID="GLOBEC_GB/5551tcp-a.nc" urlPath="GLOBEC_GB/5551tcp-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.169682 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.308464 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-03-19 20:37:29 </start>
+<end> 1999-06-17 19:12:29 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5551tcp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428592649000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-555"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="P_4023">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5551tcp-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5551tcp-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:10" />
+<attribute name="start_time" value="1999-03-19 20:37:29Z" />
+<attribute name="stop_time" value="1999-06-17 19:12:29Z" />
+</netcdf>
+</dataset>
+<dataset name="5552adc-a.nc" ID="GLOBEC_GB/5552adc-a.nc" urlPath="GLOBEC_GB/5552adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.169701 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.308502 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-03-19 23:29:17 </start>
+<end> 1999-06-17 20:59:17 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5552adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428602957000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-555"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5552adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5552adc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:11" />
+<attribute name="start_time" value="1999-03-19 23:29:17Z" />
+<attribute name="stop_time" value="1999-06-17 20:59:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5581adc-a.nc" ID="GLOBEC_GB/5581adc-a.nc" urlPath="GLOBEC_GB/5581adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.144299 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.295601 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-03-19 18:59:17 </start>
+<end> 1999-06-18 23:59:18 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5581adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428586757000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-558"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5581adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5581adc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:13" />
+<attribute name="start_time" value="1999-03-19 18:59:17Z" />
+<attribute name="stop_time" value="1999-06-18 23:59:18Z" />
+</netcdf>
+</dataset>
+<dataset name="5591tcp-a.nc" ID="GLOBEC_GB/5591tcp-a.nc" urlPath="GLOBEC_GB/5591tcp-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.122883 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.280251 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-03-19 18:02:29 </start>
+<end> 1999-06-14 18:52:29 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5591tcp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428583349000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-559"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="P_4023">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5591tcp-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5591tcp-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:17" />
+<attribute name="start_time" value="1999-03-19 18:02:29Z" />
+<attribute name="stop_time" value="1999-06-14 18:52:29Z" />
+</netcdf>
+</dataset>
+<dataset name="5592adc-a.nc" ID="GLOBEC_GB/5592adc-a.nc" urlPath="GLOBEC_GB/5592adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.122898 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.280251 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-03-19 18:14:17 </start>
+<end> 1999-06-14 22:44:17 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5592adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428584057000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-559"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5592adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5592adc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:18" />
+<attribute name="start_time" value="1999-03-19 18:14:17Z" />
+<attribute name="stop_time" value="1999-06-14 22:44:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5622adc-a.nc" ID="GLOBEC_GB/5622adc-a.nc" urlPath="GLOBEC_GB/5622adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.108398 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.271400 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-03-19 13:44:17 </start>
+<end> 1999-06-20 20:29:17 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5622adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428567857000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-562"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5622adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5622adc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:20" />
+<attribute name="start_time" value="1999-03-19 13:44:17Z" />
+<attribute name="stop_time" value="1999-06-20 20:29:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5631tcp-a.nc" ID="GLOBEC_GB/5631tcp-a.nc" urlPath="GLOBEC_GB/5631tcp-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.091717 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.261597 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-03-19 16:37:29 </start>
+<end> 1999-06-16 13:52:29 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5631tcp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428578249000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-563"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="P_4023">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5631tcp-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5631tcp-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:24" />
+<attribute name="start_time" value="1999-03-19 16:37:29Z" />
+<attribute name="stop_time" value="1999-06-16 13:52:29Z" />
+</netcdf>
+</dataset>
+<dataset name="5632adc-a.nc" ID="GLOBEC_GB/5632adc-a.nc" urlPath="GLOBEC_GB/5632adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.091702 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.261597 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-03-19 16:59:17 </start>
+<end> 1999-06-16 12:29:17 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5632adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428579557000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-563"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5632adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5632adc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:25" />
+<attribute name="start_time" value="1999-03-19 16:59:17Z" />
+<attribute name="stop_time" value="1999-06-16 12:29:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5661pt-a.nc" ID="GLOBEC_GB/5661pt-a.nc" urlPath="GLOBEC_GB/5661pt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.070835 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.249336 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-03-19 14:40:01 </start>
+<end> 1999-04-27 23:20:01 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5661pt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428571201000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-566"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5661pt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5661pt-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:26" />
+<attribute name="start_time" value="1999-03-19 14:40:01Z" />
+<attribute name="stop_time" value="1999-04-27 23:20:01Z" />
+</netcdf>
+</dataset>
+<dataset name="5663adc-a.nc" ID="GLOBEC_GB/5663adc-a.nc" urlPath="GLOBEC_GB/5663adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.070801 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.249298 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-03-19 14:44:17 </start>
+<end> 1999-06-21 01:14:17 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5663adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428571457000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-566"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5663adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5663adc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:30" />
+<attribute name="start_time" value="1999-03-19 14:44:17Z" />
+<attribute name="stop_time" value="1999-06-21 01:14:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5671tcp-a.nc" ID="GLOBEC_GB/5671tcp-a.nc" urlPath="GLOBEC_GB/5671tcp-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.046600 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.233414 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-03-19 15:37:30 </start>
+<end> 1999-06-16 18:52:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5671tcp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428574650000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-567"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="P_4023">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5671tcp-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5671tcp-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:33" />
+<attribute name="start_time" value="1999-03-19 15:37:30Z" />
+<attribute name="stop_time" value="1999-06-16 18:52:30Z" />
+</netcdf>
+</dataset>
+<dataset name="5672adc-a.nc" ID="GLOBEC_GB/5672adc-a.nc" urlPath="GLOBEC_GB/5672adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.046600 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.233398 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-03-19 17:29:17 </start>
+<end> 1999-06-16 18:44:17 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5672adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4428581357000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-567"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5672adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5672adc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:34" />
+<attribute name="start_time" value="1999-03-19 17:29:17Z" />
+<attribute name="stop_time" value="1999-06-16 18:44:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5731cp-a.nc" ID="GLOBEC_GB/5731cp-a.nc" urlPath="GLOBEC_GB/5731cp-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.147167 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.442337 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-18 13:07:29 </start>
+<end> 1999-07-18 03:27:29 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5731cp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436428049000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-573"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="P_4023">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5731cp-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5731cp-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:34" />
+<attribute name="start_time" value="1999-06-18 13:07:29Z" />
+<attribute name="stop_time" value="1999-07-18 03:27:29Z" />
+</netcdf>
+</dataset>
+<dataset name="5732adc-a.nc" ID="GLOBEC_GB/5732adc-a.nc" urlPath="GLOBEC_GB/5732adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.147202 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.442299 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-18 13:14:17 </start>
+<end> 1999-08-26 03:14:17 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5732adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436428457000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-573"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5732adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5732adc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:35" />
+<attribute name="start_time" value="1999-06-18 13:14:17Z" />
+<attribute name="stop_time" value="1999-08-26 03:14:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5751adc-a.nc" ID="GLOBEC_GB/5751adc-a.nc" urlPath="GLOBEC_GB/5751adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.119499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.430000 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-21 19:59:17 </start>
+<end> 1999-08-26 14:14:17 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5751adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436711957000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-575"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5751adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5751adc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:36" />
+<attribute name="start_time" value="1999-06-21 19:59:17Z" />
+<attribute name="stop_time" value="1999-08-26 14:14:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5752mc-a.nc" ID="GLOBEC_GB/5752mc-a.nc" urlPath="GLOBEC_GB/5752mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.119499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.430000 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-21 19:55:00 </start>
+<end> 1999-08-26 15:20:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5752mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436711700000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-575"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5752mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5752mc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:37" />
+<attribute name="start_time" value="1999-06-21 19:55:00Z" />
+<attribute name="stop_time" value="1999-08-26 15:20:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5753pt-a.nc" ID="GLOBEC_GB/5753pt-a.nc" urlPath="GLOBEC_GB/5753pt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.119499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.430000 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-21 20:00:00 </start>
+<end> 1999-08-26 15:10:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5753pt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436712000000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-575"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5753pt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5753pt-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:37" />
+<attribute name="start_time" value="1999-06-21 20:00:00Z" />
+<attribute name="stop_time" value="1999-08-26 15:10:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5781adc-a.nc" ID="GLOBEC_GB/5781adc-a.nc" urlPath="GLOBEC_GB/5781adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.098000 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.416801 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-20 12:44:17 </start>
+<end> 1999-08-26 18:14:17 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5781adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436599457000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-578"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5781adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5781adc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:38" />
+<attribute name="start_time" value="1999-06-20 12:44:17Z" />
+<attribute name="stop_time" value="1999-08-26 18:14:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5782mc-a.nc" ID="GLOBEC_GB/5782mc-a.nc" urlPath="GLOBEC_GB/5782mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.098167 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.416832 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-20 12:45:00 </start>
+<end> 1999-08-26 18:20:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5782mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436599500000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-578"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5782mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5782mc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:39" />
+<attribute name="start_time" value="1999-06-20 12:45:00Z" />
+<attribute name="stop_time" value="1999-08-26 18:20:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5831adc-a.nc" ID="GLOBEC_GB/5831adc-a.nc" urlPath="GLOBEC_GB/5831adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.064499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.401497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-20 13:28:31 </start>
+<end> 1999-08-26 20:43:31 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5831adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436602111000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-583"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5831adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5831adc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:40" />
+<attribute name="start_time" value="1999-06-20 13:28:31Z" />
+<attribute name="stop_time" value="1999-08-26 20:43:31Z" />
+</netcdf>
+</dataset>
+<dataset name="5832cp-a.nc" ID="GLOBEC_GB/5832cp-a.nc" urlPath="GLOBEC_GB/5832cp-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.064499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.401497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-20 13:27:30 </start>
+<end> 1999-08-01 18:27:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5832cp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436602050000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-583"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="P_4023">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5832cp-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5832cp-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:40" />
+<attribute name="start_time" value="1999-06-20 13:27:30Z" />
+<attribute name="stop_time" value="1999-08-01 18:27:30Z" />
+</netcdf>
+</dataset>
+<dataset name="5851adc-a.nc" ID="GLOBEC_GB/5851adc-a.nc" urlPath="GLOBEC_GB/5851adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.043301 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.390198 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-21 21:44:17 </start>
+<end> 1999-08-29 10:14:17 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5851adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436718257000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-585"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5851adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5851adc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:43" />
+<attribute name="start_time" value="1999-06-21 21:44:17Z" />
+<attribute name="stop_time" value="1999-08-29 10:14:17Z" />
+</netcdf>
+</dataset>
+<dataset name="5852mc-a.nc" ID="GLOBEC_GB/5852mc-a.nc" urlPath="GLOBEC_GB/5852mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.043335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.390167 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-21 21:55:00 </start>
+<end> 1999-08-29 11:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5852mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436718900000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-585"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5852mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5852mc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:44" />
+<attribute name="start_time" value="1999-06-21 21:55:00Z" />
+<attribute name="stop_time" value="1999-08-29 11:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5853pt-a.nc" ID="GLOBEC_GB/5853pt-a.nc" urlPath="GLOBEC_GB/5853pt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.043335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.390167 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-22 02:40:00 </start>
+<end> 1999-08-29 14:50:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5853pt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436736000000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-585"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5853pt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5853pt-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:44" />
+<attribute name="start_time" value="1999-06-22 02:40:00Z" />
+<attribute name="stop_time" value="1999-08-29 14:50:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5882mc-a.nc" ID="GLOBEC_GB/5882mc-a.nc" urlPath="GLOBEC_GB/5882mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.007168 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.381668 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-17 00:00:00 </start>
+<end> 1999-08-27 12:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5882mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436294400000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-588"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5882mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5882mc-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:45" />
+<attribute name="start_time" value="1999-06-17 00:00:00Z" />
+<attribute name="stop_time" value="1999-08-27 12:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5883pt-a.nc" ID="GLOBEC_GB/5883pt-a.nc" urlPath="GLOBEC_GB/5883pt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 41.007168 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -67.381668 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1999-06-17 00:00:00 </start>
+<end> 1999-08-27 12:20:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/GLOBEC_GB/5883pt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4436294400000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-588"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="GLOBEC_GB/5883pt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Schlitz" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5883pt-a.nc - GLOBEC Georges Bank Program" />
+<attribute name="summary" value="A moored array program to investigate the circulation and mixing of plankton on Georges Bank." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:43:46" />
+<attribute name="start_time" value="1999-06-17 00:00:00Z" />
+<attribute name="stop_time" value="1999-08-27 12:20:00Z" />
+</netcdf>
+</dataset>
+ </dataset>
+</catalog>

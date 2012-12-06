@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="All Keston Smith netcdf files on /blackburn/d1"
+ version="1.0.1">
+ <service name="multiple" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+ </service>
+ <!-- If you want to have THREDDS automatically scan some directory tree for NetCDF files, here 
+  is how to do it:-->
+ <datasetScan name="Keston's NetCDF files on /blackburn/d1" ID="kestons/d1" path="kestons/d1"
+  location="/blackburn/d1/kestons">
+  <metadata inherited="true">
+   <serviceName>multiple</serviceName>
+   <creator>
+    <name vocabulary="DIF">WHOI/Keston W. Smith</name>
+    <contact url="http://www.whoi.edu/dept/profile.go?id=10203" email="kwsmith@whoi.edu"/>
+   </creator>
+  </metadata>
+  <filter>
+   <include wildcard="*.nc"/>
+  </filter>
+ </datasetScan>
+
+</catalog>

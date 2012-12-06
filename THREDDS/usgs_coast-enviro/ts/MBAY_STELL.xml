@@ -1,0 +1,1058 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog   name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  
+  <service name="all4services" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+   <dataset name="Stellwagen Bank Observations (2/94-10/95)">
+    <metadata inherited="true">
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/"
+          email="emontgomery@usgs.gov" />
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/"
+          email="emontgomery@usgs.gov" />
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>42.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-70.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>3000</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/mbay_stell.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+  <dataset name="4321-a.cdf" ID="MBAY_STELL/4321-a.cdf" urlPath="MBAY_STELL/4321-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4321-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268223112000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-432"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-02-17 17:31:52Z" />
+<attribute name="stop_time" value="1994-07-11 14:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="4321-a1h.cdf" ID="MBAY_STELL/4321-a1h.cdf" urlPath="MBAY_STELL/4321-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4321-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268224800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-432"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-02-17 18:00:00Z" />
+<attribute name="stop_time" value="1994-07-11 14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4321sc-a.cdf" ID="MBAY_STELL/4321sc-a.cdf" urlPath="MBAY_STELL/4321sc-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4321sc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268248425000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-432"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-02-18 00:33:45Z" />
+<attribute name="stop_time" value="1994-07-01 20:18:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4321sc-a1h.cdf" ID="MBAY_STELL/4321sc-a1h.cdf" urlPath="MBAY_STELL/4321sc-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4321sc-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268250000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-432"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-02-18 01:00:00Z" />
+<attribute name="stop_time" value="1994-07-01 19:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4322-a.cdf" ID="MBAY_STELL/4322-a.cdf" urlPath="MBAY_STELL/4322-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4322-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268230425000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-432"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-02-17 19:33:45Z" />
+<attribute name="stop_time" value="1994-07-11 12:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4322-a1h.cdf" ID="MBAY_STELL/4322-a1h.cdf" urlPath="MBAY_STELL/4322-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4322-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268232000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-432"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-02-17 20:00:00Z" />
+<attribute name="stop_time" value="1994-07-11 11:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4323-a.cdf" ID="MBAY_STELL/4323-a.cdf" urlPath="MBAY_STELL/4323-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4323-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268226825000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-432"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-02-17 18:33:45Z" />
+<attribute name="stop_time" value="1994-07-11 14:56:15Z" />
+</netcdf>
+</dataset>
+<dataset name="4323-a1h.cdf" ID="MBAY_STELL/4323-a1h.cdf" urlPath="MBAY_STELL/4323-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4323-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268228400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-432"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-02-17 19:00:00Z" />
+<attribute name="stop_time" value="1994-07-11 14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4323att-a.cdf" ID="MBAY_STELL/4323att-a.cdf" urlPath="MBAY_STELL/4323att-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4323att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268226825000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-432"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-02-17 18:33:45Z" />
+<attribute name="stop_time" value="1994-07-11 14:56:15Z" />
+</netcdf>
+</dataset>
+<dataset name="4323att-a1h.cdf" ID="MBAY_STELL/4323att-a1h.cdf" urlPath="MBAY_STELL/4323att-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4323att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268228400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-432"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-02-17 19:00:00Z" />
+<attribute name="stop_time" value="1994-07-11 14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4323cs-a.cdf" ID="MBAY_STELL/4323cs-a.cdf" urlPath="MBAY_STELL/4323cs-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4323cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268226825000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-432"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-02-17 18:33:45Z" />
+<attribute name="stop_time" value="1994-07-11 14:56:15Z" />
+</netcdf>
+</dataset>
+<dataset name="4323cs-a1h.cdf" ID="MBAY_STELL/4323cs-a1h.cdf" urlPath="MBAY_STELL/4323cs-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4323cs-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268228400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-432"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-02-17 19:00:00Z" />
+<attribute name="stop_time" value="1994-07-11 14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4391-a.cdf" ID="MBAY_STELL/4391-a.cdf" urlPath="MBAY_STELL/4391-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4391-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280668312000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-439"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-07-11 18:31:52Z" />
+<attribute name="stop_time" value="1994-10-25 14:05:37Z" />
+</netcdf>
+</dataset>
+<dataset name="4391-a1h.cdf" ID="MBAY_STELL/4391-a1h.cdf" urlPath="MBAY_STELL/4391-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4391-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280670000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-439"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-07-11 19:00:00Z" />
+<attribute name="stop_time" value="1994-10-25 13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4391sc-a.cdf" ID="MBAY_STELL/4391sc-a.cdf" urlPath="MBAY_STELL/4391sc-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4391sc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280668425000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-439"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-07-11 18:33:45Z" />
+<attribute name="stop_time" value="1994-10-25 14:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4391sc-a1h.cdf" ID="MBAY_STELL/4391sc-a1h.cdf" urlPath="MBAY_STELL/4391sc-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4391sc-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280670000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-439"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-07-11 19:00:00Z" />
+<attribute name="stop_time" value="1994-10-25 13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4392-a.cdf" ID="MBAY_STELL/4392-a.cdf" urlPath="MBAY_STELL/4392-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4392-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280672025000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-439"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-07-11 19:33:45Z" />
+<attribute name="stop_time" value="1994-10-25 14:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4392-a1h.cdf" ID="MBAY_STELL/4392-a1h.cdf" urlPath="MBAY_STELL/4392-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4392-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280673600000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-439"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-07-11 20:00:00Z" />
+<attribute name="stop_time" value="1994-10-25 13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4393-a.cdf" ID="MBAY_STELL/4393-a.cdf" urlPath="MBAY_STELL/4393-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4393-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280672025000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-439"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-07-11 19:33:45Z" />
+<attribute name="stop_time" value="1994-10-25 14:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4393-a1h.cdf" ID="MBAY_STELL/4393-a1h.cdf" urlPath="MBAY_STELL/4393-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4393-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280673600000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-439"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-07-11 20:00:00Z" />
+<attribute name="stop_time" value="1994-10-25 13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4393att-a.cdf" ID="MBAY_STELL/4393att-a.cdf" urlPath="MBAY_STELL/4393att-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4393att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280672025000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-439"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-07-11 19:33:45Z" />
+<attribute name="stop_time" value="1994-10-25 14:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4393att-a1h.cdf" ID="MBAY_STELL/4393att-a1h.cdf" urlPath="MBAY_STELL/4393att-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4393att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280673600000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-439"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-07-11 20:00:00Z" />
+<attribute name="stop_time" value="1994-10-25 13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4393cs-a.cdf" ID="MBAY_STELL/4393cs-a.cdf" urlPath="MBAY_STELL/4393cs-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4393cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280672025000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-439"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-07-11 19:33:45Z" />
+<attribute name="stop_time" value="1994-10-25 14:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4393cs-a1h.cdf" ID="MBAY_STELL/4393cs-a1h.cdf" urlPath="MBAY_STELL/4393cs-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4393cs-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280673600000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-439"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-07-11 20:00:00Z" />
+<attribute name="stop_time" value="1994-10-25 13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4481-a.cdf" ID="MBAY_STELL/4481-a.cdf" urlPath="MBAY_STELL/4481-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4481-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289819512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-448"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-10-25 16:31:52Z" />
+<attribute name="stop_time" value="1995-04-10 15:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="4481-a1h.cdf" ID="MBAY_STELL/4481-a1h.cdf" urlPath="MBAY_STELL/4481-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4481-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289821200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-448"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-10-25 17:00:00Z" />
+<attribute name="stop_time" value="1995-04-10 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4481sc-a.cdf" ID="MBAY_STELL/4481sc-a.cdf" urlPath="MBAY_STELL/4481sc-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4481sc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289934825000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-448"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-10-27 00:33:45Z" />
+<attribute name="stop_time" value="1995-04-10 15:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="4481sc-a1h.cdf" ID="MBAY_STELL/4481sc-a1h.cdf" urlPath="MBAY_STELL/4481sc-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4481sc-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289936400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-448"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-10-27 01:00:00Z" />
+<attribute name="stop_time" value="1995-04-10 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4482-a.cdf" ID="MBAY_STELL/4482-a.cdf" urlPath="MBAY_STELL/4482-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4482-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289826825000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-448"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-10-25 18:33:45Z" />
+<attribute name="stop_time" value="1995-04-10 15:18:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4482-a1h.cdf" ID="MBAY_STELL/4482-a1h.cdf" urlPath="MBAY_STELL/4482-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4482-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289828400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-448"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-10-25 19:00:00Z" />
+<attribute name="stop_time" value="1995-04-10 14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4483-a.cdf" ID="MBAY_STELL/4483-a.cdf" urlPath="MBAY_STELL/4483-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4483-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289826825000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-448"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-10-25 18:33:45Z" />
+<attribute name="stop_time" value="1995-04-10 15:18:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4483-a1h.cdf" ID="MBAY_STELL/4483-a1h.cdf" urlPath="MBAY_STELL/4483-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4483-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289828400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-448"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-10-25 19:00:00Z" />
+<attribute name="stop_time" value="1995-04-10 14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4483att-a.cdf" ID="MBAY_STELL/4483att-a.cdf" urlPath="MBAY_STELL/4483att-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4483att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289826825000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-448"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-10-25 18:33:45Z" />
+<attribute name="stop_time" value="1995-04-10 15:18:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4483att-a1h.cdf" ID="MBAY_STELL/4483att-a1h.cdf" urlPath="MBAY_STELL/4483att-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4483att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289828400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-448"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-10-25 19:00:00Z" />
+<attribute name="stop_time" value="1995-04-10 14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4483cs-a.cdf" ID="MBAY_STELL/4483cs-a.cdf" urlPath="MBAY_STELL/4483cs-a.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4483cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289826825000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-448"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-10-25 18:33:45Z" />
+<attribute name="stop_time" value="1995-04-10 15:18:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4483cs-a1h.cdf" ID="MBAY_STELL/4483cs-a1h.cdf" urlPath="MBAY_STELL/4483cs-a1h.cdf">
+<serviceName>all4services</serviceName>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/MBAY_STELL/4483cs-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289828400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+</variable>
+<variable name="lon" shape="">
+  <attribute name="units" value="degrees_east"/>
+</variable>
+<variable name="lat" shape="">
+  <attribute name="units" value="degrees_north"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-448"</values>
+ </variable>
+<attribute name="Conventions" value="PMEL/EPIC, CF-1.5" />
+<attribute name="CF:FeatureType" value="station" />
+<attribute name="start_time" value="1994-10-25 19:00:00Z" />
+<attribute name="stop_time" value="1995-04-10 14:00:00Z" />
+</netcdf>
+</dataset>
+   </dataset>
+</catalog>

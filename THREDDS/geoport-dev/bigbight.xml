@@ -1,0 +1,53 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="OPeNDAP Data Server" version="1.0.1">
+
+ <service name="gridServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+
+ <dataset name="bigbight NetCDF3 files" ID="bigbight/netcdf3" urlPath="bigbight/netcdf3">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting">
+          <scan location="/usgs/data1/rsignell/bigbight/netcdf3" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+ </dataset>
+
+
+ <dataset name="bigbight NetCDF4 no-chunk files" ID="bigbight/netcdf4a" urlPath="bigbight/netcdf4a">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting">
+          <scan location="/usgs/data1/rsignell/bigbight/netcdf4a" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+ </dataset>
+
+
+ <dataset name="bigbight NetCDF4 chunked 50x50" ID="bigbight/netcdf4b" urlPath="bigbight/netcdf4b">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting">
+          <scan location="/usgs/data1/rsignell/bigbight/netcdf4b" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+ </dataset>
+
+
+ <dataset name="bigbight NetCDF4 no-deflation" ID="bigbight/netcdf4c" urlPath="bigbight/netcdf4c">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting">
+          <scan location="/usgs/data1/rsignell/bigbight/netcdf4c" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+ </dataset>
+</catalog>

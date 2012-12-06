@@ -1,0 +1,211 @@
+
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.1">
+  <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+
+
+  <dataset name="Mass Bay Hindcast Archive" ID="umb/ecom/archive" urlPath="umb/ecom/archive">
+    <metadata inherited="true">
+      <serviceName>ncdods</serviceName>
+      <creator>
+        <name vocabulary="DIF">Dr. Mingshun Jiang</name>
+        <contact url="http://alpha.es.umb.edu/faculty/mji/jiang.htm" email="mingshun.jiang@umb.edu"
+        />
+      </creator>
+      <documentation type="summary"> Hindcast simulations of Massachusetts Bay using same model code
+        as the MBEFS: Massachusetts Bay Environmental Forecast System, based on ECOM-si
+        (semi-implicit Estuarine and Coastal Ocean Model). </documentation>
+      <documentation xlink:href="http://www.harbor1.umb.edu/forecast/model.html"
+        xlink:title="MBEFS page at U. Mass Boston"/>
+    </metadata>
+
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation type="union">
+        <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom_lonlat.nc"/>
+
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation type="joinExisting" dimName="time" timeUnitsChange="true">
+
+            <!-- 2000 -->
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+              <aggregation type="joinExisting" dimName="time">
+                <variable name="time">
+                  <attribute name="units" type="String" value="days since 2000-01-01 00:00 UTC"/>
+                </variable>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2000.01.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2000.02.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2000.03.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2000.04.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2000.05.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2000.06.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2000.07.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2000.08.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2000.09.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2000.10.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2000.11.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2000.12.cdf"/>
+              </aggregation>
+            </netcdf>
+
+            <!-- 2001 -->
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+              <aggregation type="joinExisting" dimName="time">
+                <variable name="time">
+                  <attribute name="units" type="String" value="days since 2001-01-01 00:00 UTC"/>
+                </variable>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2001.01.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2001.02.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2001.03.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2001.04.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2001.05.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2001.06.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2001.07.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2001.08.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2001.09.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2001.10.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2001.11.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2001.12.cdf"/>
+              </aggregation>
+            </netcdf>
+
+            <!-- 2002 -->
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+              <aggregation type="joinExisting" dimName="time">
+                <variable name="time">
+                  <attribute name="units" type="String" value="days since 2002-01-01 00:00 UTC"/>
+                </variable>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2002.01.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2002.02.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2002.03.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2002.04.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2002.05.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2002.06.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2002.07.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2002.08.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2002.09.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2002.10.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2002.11.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2002.12.cdf"/>
+              </aggregation>
+            </netcdf>
+
+
+            <!-- 2003 -->
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+              <aggregation type="joinExisting" dimName="time">
+                <variable name="time">
+                  <attribute name="units" type="String" value="days since 2003-01-01 00:00 UTC"/>
+                </variable>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2003.01.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2003.02.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2003.03.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2003.04.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2003.05.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2003.06.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2003.07.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2003.08.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2003.09.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2003.10.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2003.11.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2003.12.cdf"/>
+              </aggregation>
+            </netcdf>
+
+
+            <!-- 2004 -->
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+              <aggregation type="joinExisting" dimName="time">
+                <variable name="time">
+                  <attribute name="units" type="String" value="days since 2004-01-01 00:00 UTC"/>
+                </variable>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2004.01.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2004.02.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2004.03.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2004.04.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2004.05.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2004.06.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2004.07.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2004.08.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2004.09.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2004.10.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2004.11.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2004.12.cdf"/>
+              </aggregation>
+            </netcdf>
+
+
+            <!-- 2005 -->
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+              <aggregation type="joinExisting" dimName="time">
+                <variable name="time">
+                  <attribute name="units" type="String" value="days since 2005-01-01 00:00 UTC"/>
+                </variable>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2005.01.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2005.02.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2005.03.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2005.04.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2005.05.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2005.06.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2005.07.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2005.08.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2005.09.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2005.10.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2005.11.cdf"/>
+                <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom2005.12.cdf"/>
+              </aggregation>
+            </netcdf>
+
+          </aggregation>
+          <variable name="elev">
+            <attribute name="standard_name" value="sea_surface_height"/>
+            <attribute name="coordinates" type="String" value="lon lat"/>
+            <attribute name="_FillValue" type="short" value="0"/>
+          </variable>
+          <variable name="heat_flux">
+            <attribute name="coordinates" type="String" value="lon lat"/>
+          </variable>
+          <variable name="cd">
+            <attribute name="coordinates" type="String" value="lon lat"/>
+          </variable>
+          <variable name="depth">
+            <attribute name="coordinates" type="String" value="lon lat"/>
+            <attribute name="_FillValue" type="short" value="-99999"/>
+          </variable>
+          <variable name="temp">
+            <attribute name="coordinates" type="String" value="lon lat zpos"/>
+            <attribute name="_FillValue" type="short" value="-23405"/>
+          </variable>
+          <variable name="salt">
+            <attribute name="coordinates" type="String" value="lon lat zpos"/>
+            <attribute name="_FillValue" type="short" value="-32767"/>
+          </variable>
+          <variable name="conc">
+            <attribute name="coordinates" type="String" value="lon lat zpos"/>
+          </variable>
+          <variable name="u">
+            <attribute name="coordinates" type="String" value="lon lat zpos"/>
+            <remove type="attribute" name="long_name"/>
+            <attribute name="standard_name" value="x_grid_directed_sea_water_velocity"/>
+            <attribute name="_FillValue" type="short" value="0"/>
+          </variable>
+          <variable name="v">
+            <attribute name="coordinates" type="String" value="lon lat zpos"/>
+            <remove type="attribute" name="long_name"/>
+            <attribute name="standard_name" value="y_grid_directed_sea_water_velocity"/>
+            <attribute name="_FillValue" type="short" value="0"/>
+          </variable>
+          <variable name="zpos" orgName="sigma">
+            <attribute name="standard_name" type="String" value="ocean_sigma_coordinate"/>
+            <attribute name="formula_terms" type="String" value="sigma: zpos eta: elev depth: depth"/>
+            <attribute name="positive" type="String" value="up"/>
+            <attribute name="axis" type="String" value="Z"/>
+            <attribute name="units" type="String" value="1"/>
+          </variable>
+          <attribute name="Conventions" type="String" value="CF-1.0"/>
+
+        </netcdf>
+      </aggregation>
+
+    </netcdf>
+  </dataset>
+</catalog>

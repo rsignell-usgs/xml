@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS Catalog for NetCDF Files" version="1.0.1">
+  
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+  <datasetRoot path="FVCOM" location="/http/www/CODFISH/Data/FVCOM/" cache="false"/>
+
+  <dataset name="NECOFS GOM2 Forecast" ID="gom2_nocache" serviceName="allServices"
+    urlPath="FVCOM/NECOFS/Forecasts/NECOFS_GOM2_FORECAST.nc" dataType="Grid"/>
+  
+  <dataset name="NECOFS GOM3 Forecast" ID="gom3_nocache" serviceName="allServices"
+        urlPath="FVCOM/NECOFS/Forecasts/NECOFS_GOM3_FORECAST.nc" dataType="Grid"/>
+
+  <dataset name="NECOFS MET Forecast" ID="necofs_met" serviceName="allServices"
+    urlPath="FVCOM/NECOFS/Forecasts/NECOFS_MET_FORECAST.nc" dataType="Grid"/>
+
+  <dataset name="NECOFS GOM3 Wave Forecast" ID="necofs_gom3_wave" serviceName="allServices"
+    urlPath="FVCOM/NECOFS/Forecasts/NECOFS_WAVE_FORECAST.nc" dataType="Grid"/>
+
+  <dataset name="NECOFS MASSBAY Forecast" ID="massbay_nocache" serviceName="allServices"
+    urlPath="FVCOM/NECOFS/Forecasts/NECOFS_FVCOM_OCEAN_MASSBAY_FORECAST.nc" dataType="Grid"/>
+
+</catalog>

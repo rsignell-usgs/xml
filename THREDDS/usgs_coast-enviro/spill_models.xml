@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="IOOS THREDDS Data Server Top Level Catalogs">
+  
+  <service name="allservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  
+  <dataset name="Circulation Models including the Gulf of Mexico">
+           <catalogRef xlink:title="NAVO:NCOM Region 1 (East Coast, Gulf Coast and Carribean) 1/8 deg"
+          xlink:href="http://edac-dap.northerngulfinstitute.org/thredds/catalog/ncom_reg1_agg/catalog.xml"
+          name=""/>
+        <catalogRef xlink:title="NAVO:NCOM Intra Americas Sea NFS 3D fields Forecast Collection 2010"
+          xlink:href="http://edac-dap.northerngulfinstitute.org/thredds/catalog/iasnfs_agg_2010/catalog.xml"
+          name=""/>
+        <!--  server problems to:     "Scott Cross" <Scott.Cross@noaa.gov> -->
+           <catalogRef xlink:title="NRL: HYCOM + NCODA SE US 1/25 deg"
+          xlink:href="http://tds.hycom.org/thredds/GOMl0.04/expt_20.1.xml"
+          name=""/>        
+        <!--  server problems to:   "Mike McDonald" <mmcdonald@coaps.fsu.edu> -->
+  
+    <catalogRef xlink:title="NCSU: South Atlantic Bight and Gulf Coast Forecast"
+      xlink:href="http://omglnx1.meas.ncsu.edu:8080/thredds/catalog/fmrc/sabgom/catalog.xml"
+      name=""/>
+    <!--  server problems to: Ruoying He <rhe@ncsu.edu> -->
+    <catalogRef
+      xlink:title="USGS: COAWST East and Gulf Coast Forecast (current, wave and sediment)"
+      xlink:href="http://geoport.whoi.edu:8081/thredds/COAWST_catalog.xml" name=""/>
+    <!-- server problems to:  Rich Signell <rsignell@usgs.gov> -->
+    <catalogRef
+      xlink:title="TAMU: TGLO ROMS"
+      xlink:href="http://csanady.tamu.edu:8080/thredds/tglo_agg.xml" name=""/>
+    <!-- server problems to:  Steve Baum <baum@stommel.tamu.edu> -->
+  
+    </dataset>
+</catalog>
+
+  
+    
+   

@@ -1,0 +1,50 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="rectGridServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  </service>
+
+  <dataset name="NCOM Forecast Model Run Collections">
+    <metadata inherited="true">
+      <serviceName>rectGridServices</serviceName>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">USA/NAVY/NAVO</name>
+        <contact url="http://www.navo.navy.mil/" email="Frank.Bub@navy.mil"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">USA/NOAA/NESDIS/NCDDC</name>
+        <contact url="http://www.ncddc.noaa.gov/" email="Scott.Cross@noaa.gov"/>
+      </publisher>
+      <documentation type="summary">These forecasts are from an operational, data assimilating
+        nowcast-forecast system run by the Naval Oceanographic Office using the Navy Coastal Ocean
+        Model (NCOM). The output files contain temperature, salinity, east and north components of
+        current, and surface elevation, interpolated to a 1/8 degree Cartesian grid in the
+        horizontal and to standard depth levels in the vertical, and written at three-hour intervals
+        out to 72 hours. The Navy global atmospheric model, NOGAPS, provides atmospheric forcing. A
+        tidal component is not included in the model output. </documentation>
+      <documentation
+        xlink:href="http://edac-dap2.northerngulfinstitute.org/ocean_nomads/NCOM_index_map.html"
+        xlink:title="NCOM Regional Index Map"/>
+    </metadata>
+
+    <datasetFmrc name="Region 7" path="ncom_reg7">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min"
+          timeUnitsChange="true">
+          <variable name="surf_el">
+            <remove type="attribute" name="positive"/>
+          </variable>
+          <scan location="/usgs/data0/rsignell/models/ncom" regExp=".*ncom_glb_reg7_[0-9]{10}\.nc$"
+            dateFormatMark="ncom_glb_reg7_#yyyyMMdd" subdirs="false" olderThan="5 min"/>
+        </aggregation>
+      </netcdf>
+    </datasetFmrc>
+
+  </dataset>
+</catalog>

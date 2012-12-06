@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="HFRNET" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="allServices" base="" serviceType="compound">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="wms" serviceType="WMS" base="/usr/local/tomcat/content/ncWMS"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+
+  <metadata inherited="true">
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <serviceName>allServices</serviceName>
+    <creator>
+      <name vocabulary="DIF">Mark Otero</name>
+      <contact url="http://www.coas.oregonstate.edu/faculty/kurapov.html" email="motero@ucsd.edu"/>
+    </creator>
+
+    <documentation xlink:href="http://agate.coas.oregonstate.edu/ocs_index.html"
+      xlink:title="Oregon Coastal Ocean Simulation"/>
+    
+
+    <documentation type="Rights"> This model data was generated as part of an academic research
+      project, and the principal investigators: Dr. Alexander Kurapov (kurapov@coas.oregonstate.edu)
+      asks to be informed of intent for scientific use and appropriate acknowledgment given in any
+      publications arising therefrom. The data is provided free of charge, without warranty of any
+      kind. </documentation>
+
+  </metadata>
+
+  <dataset name="HFRNET">
+    <dataset name="USWC_2km" ID="HFRNET/USWC_2km" urlPath="HFRNET/USWC_2km">
+      <metadata>
+        <documentation type="Summary"> 2km HF Radar Data </documentation>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting">
+          <scan location="C:/RPS/cf/sccoos/USWC" 
+            regExp=".*[0-9]{12}_HFRadar_USWC_2km_rtv_SIO\.nc$"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    
+    <dataset name="USWC_6km" ID="HFRNET/USWC_6km" urlPath="HFRNET/USWC_6km">
+      <metadata>
+        <documentation type="Summary"> 6km HF Radar Data </documentation>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting">
+          <scan location="C:/RPS/cf/sccoos/USWC" 
+            regExp=".*[0-9]{12}_HFRadar_USWC_6km_rtv_SIO\.nc$"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+
+
+  </dataset>
+</catalog>

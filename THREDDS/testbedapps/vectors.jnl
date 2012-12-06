@@ -1,0 +1,50 @@
+!use "http://testbedapps.sura.org/thredds/dodsC/estuarine_hypoxia/chesroms/agg.nc"
+!use "http://testbedapps.sura.org/thredds/dodsC/samples/estuarine_hypoxia/chesroms_1998_test.nc"
+use "http://testbedapps.sura.org/thredds/dodsC/estuarine_hypoxia/chesroms/files/output/clean.ncml"
+
+define axis/x=1:98:1 xrho
+define axis/y=1:148:1 yrho
+
+! Define masked variables  if mask eq 1 then var
+! Then u_masked will be used in place of u below, etc.
+
+let u_masked = if mask_u eq 1 then u
+let v_masked = if mask_v eq 1 then v
+let ubar_masked = if mask_u eq 1 then ubar
+let vbar_masked = if mask_v eq 1 then vbar
+
+let/d=1/units="`lon_rho,return=units`" lon_rho_p_0 = lon_rho[i=@shf:+1, j=@shf:+1]
+let/d=1/units="`lon_rho,return=units`" lon_rho_p = lon_rho_p_0[gx=xrho@asn,gy=yrho@asn]
+let/d=1/units="`lat_rho,return=units`" lat_rho_p_0 = lat_rho[i=@shf:+1, j=@shf:+1]
+let/d=1/units="`lat_rho,return=units`" lat_rho_p = lat_rho_p_0[gx=xrho@asn,gy=yrho@asn]
+
+let/d=1 angle_p_0 = angle[i=@shf:+1, j=@shf:+1]
+let/title="angle centered" angle_p = angle_p_0[gx=xrho@asn,gy=yrho@asn]
+
+let/d=1 mask_p_0 = mask_rho[i=@shf:+1, j=@shf:+1]
+let/d=1 mask_p = mask_p_0[gx=xrho@asn,gy=yrho@asn]
+
+let/d=1/units="`h,return=units`" h_p_0 = h[i=@shf:+1, j=@shf:+1]
+let/d=1/units="`h,return=units`" h_p = h_p_0[gx=xrho@asn,gy=yrho@asn]
+
+let/d=1/units="`zeta,return=units`" zeta_p_0 = zeta[i=@shf:+1, j=@shf:+1]
+let/d=1/units="`zeta,return=units`" zeta_p = zeta_p_0[gx=xrho@asn,gy=yrho@asn]
+
+let/d=1/units="`u,return=units`" u_p_0 = 0.5*(u_masked[j=@shf:+1]+u_masked[i=@shf:+1,j=@shf:+1])
+let/title="U centered"/units="`u,return=units`" u_p = u_p_0[gx=xrho@asn,gy=yrho@asn]
+let/d=1/units="`v,return=units`" v_p_0 = 0.5*(v_masked[i=@shf:+1]+v_masked[i=@shf:+1,j=@shf:+1])
+let/title="V centered"/units="`v,return=units`" v_p = v_p_0[gx=xrho@asn,gy=yrho@asn]
+
+let/d=1/units="`ubar,return=units`" ubar_p_0 = 0.5*(ubar_masked[j=@shf:+1]+ubar_masked[i=@shf:+1,j=@shf:+1])
+let/title="UBAR centered"/units="`ubar,return=units`" ubar_p = ubar_p_0[gx=xrho@asn,gy=yrho@asn]
+let/d=1/units="`vbar,return=units`" vbar_p_0 = 0.5*(vbar_masked[i=@shf:+1]+vbar_masked[i=@shf:+1,j=@shf:+1])
+let/title="VBAR centered"/units="`vbar,return=units`" vbar_p = vbar_p_0[gx=xrho@asn,gy=yrho@asn]
+
+! ==========
+
+LET/d=1 urot = u_p*COS(angle_p) - v_p*SIN(angle_p)
+LET/d=1 vrot = u_p*SIN(angle_p) + v_p*COS(angle_p)
+
+LET/d=1 ubarrot = ubar_p*COS(angle_p) - vbar_p*SIN(angle_p)
+LET/d=1 vbarrot = ubar_p*SIN(angle_p) + vbar_p*COS(angle_p)
+

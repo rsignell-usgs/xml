@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  name="THREDDS catalog for all netcdf files on /usr4/GoMOOS" version="1.0.1">
+  <service name="multiple" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+  <!-- It's pretty handy to have one catalog like this that allows you to access any NetCDF file on your system via OpenDAP without 
+     you doing a thing.   The catalogs are dynamically generated as you enter each directory, so they are always up-to-date  -->
+ <datasetScan name="/usr4/GoMOOS netcdf files" ID="/usr4/GoMOOS" path="/usr4/GoMOOS"
+   location="/usr4/GoMOOS">
+   <metadata inherited="true">
+     <serviceName>multiple</serviceName>
+     <creator>
+       <name vocabulary="DIF">Steve Cousins</name>
+       <contact url="http://www.maine.edu/" email="steve.cousins@maine.edu"/>
+       </creator>
+   </metadata>
+    <filter>
+      <include wildcard="*.nc"/>  
+      <include wildcard="*.cdf"/>
+    </filter>
+  </datasetScan>
+
+</catalog>

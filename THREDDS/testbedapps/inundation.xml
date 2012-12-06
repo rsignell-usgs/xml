@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="NOAA IOOS Testbed THREDDS Server">
+<!--
+ <service name="all" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+
+ <service name="agg" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+
+ <service name="points" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="sos" serviceType="SOS" base="/thredds/sos/"/>
+ </service>
+-->
+ <service name="all" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/threddsdev/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/threddsdev/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/threddsdev/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/threddsdev/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/threddsdev/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/threddsdev/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/threddsdev/iso/"/>
+ </service>
+ 
+ <service name="agg" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/threddsdev/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/threddsdev/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/threddsdev/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/threddsdev/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/threddsdev/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/threddsdev/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/threddsdev/iso/"/>
+ </service>
+ 
+ <service name="points" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/threddsdev/dodsC/"/>
+  <service name="ncml" serviceType="NCML" base="/threddsdev/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/threddsdev/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/threddsdev/iso/"/>
+  <service name="sos" serviceType="SOS" base="/threddsdev/sos/"/>
+ </service>
+ 
+
+ <dataset name="Inundation">
+  <datasetScan name="Inundation Observations" path="inundation/observations"
+   location="/data/ftp/upload/Inundation/observations/tropical/netcdf">
+   <serviceName>all</serviceName>
+   <filter>
+    <include wildcard="*.nc"/>
+   </filter>
+   <addDatasetSize/>
+  </datasetScan>
+
+  <dataset name="Slosh (UF)">
+
+   <dataset name="SLOSH - Ike - Galveston OWI Wind Only"
+    ID="inundation/slosh/ike/galveston/owi_wind_only"
+    urlPath="inundation/slosh/ike/galveston/owi_wind_only.nc">
+    <serviceName>all</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+     location="/data/ftp/upload/Inundation/uf/slosh_tropical/runs/Ike/galveston/OWI.wind.only/slosh-spatial-netcdf.nc">
+     <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+     <attribute name="wms-layer-prefix" value="slosh_ike_galveston_owi_wind_only"/>
+     <attribute name="title" value="SLOSH - IKE - Galveston - OWI Wind Only"/>
+     <attribute name="id" value="in.uf.slosh.ike.galveston.owi_wind_only"/>
+     <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+     <attribute name="summary" value="Slosh for Ike in Galveston using OWI Wind Only"/>
+     <attribute name="creator_name" value="Justin Davis"/>
+     <attribute name="creator_email" value="davis@coastal.ufl.edu"/>
+     <attribute name="creator_url" value="http://www.coastal.ufl.edu"/>
+     <attribute name="cdm_data_type" value="Grid"/>
+    </netcdf>
+   </dataset>
+
+   <dataset name="SLOSH - Ike - Galveston OWI Wind Wave"
+    ID="inundation/slosh/ike/galveston/owi_wind_wave"
+    urlPath="inundation/slosh/ike/galveston/owi_wind_wave.nc">
+    <serviceName>all</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+     location="/data/ftp/upload/Inundation/uf/slosh_tropical/runs/Ike/galveston/OWI.wind.wave/slosh-spatial-netcdf.nc">
+     <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+     <attribute name="wms-layer-prefix" value="slosh_ike_galveston_owi_wind_wave"/>
+     <attribute name="title" value="SLOSH - IKE - Galveston - OWI Wind Wave"/>
+     <attribute name="id" value="in.uf.slosh.ike.galveston.owi_wind_wave"/>
+     <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+     <attribute name="summary" value="Slosh for Ike in Galveston using OWI Wind Wave"/>
+     <attribute name="creator_name" value="Justin Davis"/>
+     <attribute name="creator_email" value="davis@coastal.ufl.edu"/>
+     <attribute name="creator_url" value="http://www.coastal.ufl.edu"/>
+     <attribute name="cdm_data_type" value="Grid"/>
+    </netcdf>
+   </dataset>
+
+   <dataset name="SLOSH - Ike - Galveston OWI Wind Wave MF"
+    ID="inundation/slosh/ike/galveston/owi_wind_wave_mf"
+    urlPath="inundation/slosh/ike/galveston/owi_wind_wave_mf.nc">
+    <serviceName>all</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+     location="/data/ftp/upload/Inundation/uf/slosh_tropical/runs/Ike/galveston/OWI.wind.wave.mf/slosh-spatial-netcdf.nc">
+     <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+     <attribute name="wms-layer-prefix" value="slosh_ike_galveston_owi_wind_wave_mf"/>
+     <attribute name="title" value="SLOSH - IKE - Galveston - OWI Wind Wave MF"/>
+     <attribute name="id" value="in.uf.slosh.ike.galveston.owi_wind_wave_mf"/>
+     <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+     <attribute name="summary" value="Slosh for Ike in Galveston using OWI Wind Wave MF"/>
+     <attribute name="creator_name" value="Justin Davis"/>
+     <attribute name="creator_email" value="davis@coastal.ufl.edu"/>
+     <attribute name="creator_url" value="http://www.coastal.ufl.edu"/>
+     <attribute name="cdm_data_type" value="Grid"/>
+    </netcdf>
+   </dataset>
+
+   <dataset name="SLOSH - Ike - Galveston Wind Only" ID="inundation/slosh/ike/galveston/wind_only"
+    urlPath="inundation/slosh/ike/galveston/wind_only.nc">
+    <serviceName>all</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+     location="/data/ftp/upload/Inundation/uf/slosh_tropical/runs/Ike/galveston/wind.only/slosh-spatial-netcdf.nc">
+     <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+     <attribute name="wms-layer-prefix" value="slosh_ike_galveston_wind_only"/>
+     <attribute name="title" value="SLOSH - IKE - Galveston - Wind Only"/>
+     <attribute name="id" value="in.uf.slosh.ike.galveston.wind_only"/>
+     <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+     <attribute name="summary" value="Slosh for Ike in Galveston using Wind Only"/>
+     <attribute name="creator_name" value="Justin Davis"/>
+     <attribute name="creator_email" value="davis@coastal.ufl.edu"/>
+     <attribute name="creator_url" value="http://www.coastal.ufl.edu"/>
+     <attribute name="cdm_data_type" value="Grid"/>
+    </netcdf>
+   </dataset>
+
+   <dataset name="SLOSH - Ike - Galveston Wind Only Garrat"
+    ID="inundation/slosh/ike/galveston/wind_only_garrat"
+    urlPath="inundation/slosh/ike/galveston/wind_only_garrat.nc">
+    <serviceName>all</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+     location="/data/ftp/upload/Inundation/uf/slosh_tropical/runs/Ike/galveston/wind.only.garrat/slosh-spatial-netcdf.nc">
+     <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+     <attribute name="wms-layer-prefix" value="slosh_ike_galveston_wind_only_garrat"/>
+     <attribute name="title" value="SLOSH - IKE - Galveston - Wind Only Garrat"/>
+     <attribute name="id" value="in.uf.slosh.ike.galveston.wind_only_garrat"/>
+     <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+     <attribute name="summary" value="Slosh for Ike in Galveston using Wind Only Garrat"/>
+     <attribute name="creator_name" value="Justin Davis"/>
+     <attribute name="creator_email" value="davis@coastal.ufl.edu"/>
+     <attribute name="creator_url" value="http://www.coastal.ufl.edu"/>
+     <attribute name="cdm_data_type" value="Grid"/>
+    </netcdf>
+   </dataset>
+
+
+
+  </dataset>
+  <dataset name="ADCIRC (UND)">
+
+   <dataset name="ADCIRC - Ike - 3D_varied_roughness_windstress_with_wave"
+    ID="inundation/ADCIRC/ike/3Dvrwww" urlPath="inundation/ADCIRC/ike/3Dvrwww">
+    <serviceName>all</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <variable name="adcirc_mesh" shape="" type="int">
+      <attribute name="standard_name" value="mesh_topology"/>
+      <attribute name="dimension" type="int" value="2"/>
+      <attribute name="node_coordinates" value="x y"/>
+      <attribute name="face_node_connectivity" value="element"/>
+     </variable>
+     <variable name="u-vel">
+      <attribute name="coordinates" value="time y x"/>
+      <attribute name="mesh" value="adcirc_mesh"/>
+      <attribute name="location" value="node"/>
+     </variable>
+     <variable name="v-vel">
+      <attribute name="coordinates" value="time y x"/>
+      <attribute name="mesh" value="adcirc_mesh"/>
+      <attribute name="location" value="node"/>
+     </variable>
+     <variable name="zeta">
+      <attribute name="coordinates" value="time y x"/>
+      <attribute name="mesh" value="adcirc_mesh"/>
+      <attribute name="location" value="node"/>
+      <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+      <remove type="attribute" name="positive"/>
+     </variable>
+     <variable name="depth">
+      <attribute name="coordinates" value="y x"/>
+      <attribute name="mesh" value="adcirc_mesh"/>
+      <attribute name="location" value="node"/>
+      <attribute name="standard_name" value="depth_below_geoid"/>
+      <remove type="attribute" name="positive"/>
+     </variable>
+     <variable name="element" shape="nele nvertex" type="int">
+      <attribute name="standard_name" value="face_node_connectivity"/>
+      <attribute name="start_index" type="short" value="1"/>
+     </variable>
+     <variable name="time">
+      <attribute name="units" value="seconds since 2008-07-31 12:00:00 +00:00"/>
+     </variable>
+     <attribute name="Conventions" value="CF-1.0"/>
+     <aggregation type="union">
+      <netcdf location="/data/ftp/upload/Inundation/und/adcirc_tropical/runs/Ike.UL3D.wv/fort.63.nc"/>
+      <netcdf location="/data/ftp/upload/Inundation/und/adcirc_tropical/runs/Ike.UL3D.wv/fort.64.nc"
+      />
+     </aggregation>
+    </netcdf>
+
+   </dataset>
+
+  </dataset>
+  <dataset name="FVCOM (USF)">
+
+   <dataset name="FVCOM - Ike - 3D_varied_roughness_windstress_with_wave"
+    ID="inundation/FVCOM/ike/3Dvrwww" urlPath="inundation/FVCOM/ike/3Dvrwww">
+    <serviceName>all</serviceName>
+    <netcdf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+     xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+     location="/data/ftp/upload/Inundation/usf/fvcom_tropical/runs/Ike/3D_varied_roughness_windstress_wave/GLOBAL_USFFVCOM_IKE3DWITHWAVE.nc">
+     <variable name="siglay" shape="siglay node" type="float">
+      <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+      <attribute name="positive" value="up"/>
+      <attribute name="formula_terms" value="sigma: siglay eta: zeta depth: h"/>
+     </variable>
+     <variable name="h" shape="node" type="float">
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="coordinates" value="lat lon"/>
+      <attribute name="location" value="node"/>
+      <remove type="attribute" name="positive"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="nv" shape="three nele" type="int">
+      <attribute name="standard_name" value="face_node_connectivity"/>
+      <attribute name="start_index" type="int" value="1"/>
+     </variable>
+     <variable name="fvcom_mesh" shape="" type="int">
+      <attribute name="standard_name" value="mesh_topology"/>
+      <attribute name="dimension" type="int" value="2"/>
+      <attribute name="node_coordinates" value="lon lat"/>
+      <attribute name="face_coordinates" value="lonc latc"/>
+      <attribute name="face_node_connectivity" value="nv"/>
+     </variable>
+     <variable name="zeta" shape="time node" type="float">
+      <attribute name="coordinates" value="time lat lon"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="node"/>
+      <remove type="attribute" name="positive"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="u" shape="time siglay nele" type="float">
+      <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+      <attribute name="coordinates" value="time siglay latc lonc"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="face"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="v" shape="time siglay nele" type="float">
+      <attribute name="standard_name" value="northward_sea_water_velocity"/>
+      <attribute name="coordinates" value="time siglay latc lonc"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="face"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="ua" shape="time nele" type="float">
+      <attribute name="standard_name" value="barotropic_eastward_sea_water_velocity"/>
+      <attribute name="coordinates" value="time latc lonc"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="face"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="va" shape="time nele" type="float">
+      <attribute name="standard_name" value="barotropic_northward_sea_water_velocity"/>
+      <attribute name="coordinates" value="time latc lonc"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="face"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+    </netcdf>
+   </dataset>
+
+  </dataset>
+
+  <dataset name="SELFE (VIMS)">
+   <dataset name="SELFE - Ike - 2D_varied_roughness_windstress_with_wave"
+    ID="inundation/selfe/ike/2Dvrwww" urlPath="inundation/selfe/ike/2Dvrwww">
+    <serviceName>all</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <variable name="selfe_mesh" shape="" type="int">
+      <attribute name="standard_name" value="mesh_topology"/>
+      <attribute name="dimension" type="int" value="2"/>
+      <attribute name="node_coordinates" value="x y"/>
+      <attribute name="face_node_connectivity" value="ele"/>
+     </variable>
+     <variable name="time">
+      <attribute name="units" value="seconds since 2008-09-08 00:00:00"/>
+      <attribute name="standard_name" value="time"/>
+     </variable>
+     <variable name="ele" shape="nface nele" type="int">
+      <attribute name="standard_name" value="face_node_connectivity"/>
+      <attribute name="start_index" type="short" value="1"/>
+     </variable>
+     <variable name="x" shape="node" type="float">
+      <attribute name="units" value="degrees_east"/>
+     </variable>
+     <variable name="y" shape="node" type="float">
+      <attribute name="units" value="degrees_north"/>
+     </variable>
+     <variable name="depth" shape="node" type="float">
+      <attribute name="mesh" value="selfe_mesh"/>
+      <attribute name="location" value="node"/>
+      <attribute name="coordinates" value="y x"/>
+      <attribute name="units" value="m"/>
+      <attribute name="standard_name" value="depth_below_geoid"/>
+      <remove type="attribute" name="positive"/>
+     </variable>
+     <variable name="sigma" shape="sigma" type="float">
+      <attribute name="long_name" value="S coordinates at whole levels"/>
+      <attribute name="units" value="non-dimensional"/>
+      <attribute name="positive" value="up"/>
+     </variable>
+     <variable name="Cs" shape="sigma" type="float">
+      <attribute name="long_name" value="Function C(s) at whole levels"/>
+      <attribute name="units" value="non-dimensional"/>
+      <attribute name="positive" value="up"/>
+     </variable>
+     <variable name="elev" shape="time node" type="float">
+      <attribute name="long_name" value="free_surface_elevation"/>
+      <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+      <attribute name="missing_value" type="float" value="-9999.00"/>
+      <attribute name="mesh" value="selfe_mesh"/>
+      <attribute name="location" value="node"/>
+      <attribute name="coordinates" value="y x"/>
+      <attribute name="units" value="m"/>
+     </variable>
+     <variable name="wwm_1" shape="time node" type="float">
+      <attribute name="long_name" value="significant_wave_height"/>
+      <attribute name="standard_name" value="sea_surface_wave_significant_height"/>
+      <attribute name="missing_value" type="float" value="-9999.00"/>
+      <attribute name="mesh" value="selfe_mesh"/>
+      <attribute name="location" value="node"/>
+      <attribute name="coordinates" value="y x"/>
+      <attribute name="units" value="m"/>
+     </variable>
+     <variable name="wwm_9" shape="time node" type="float">
+      <attribute name="long_name" value="peak_period"/>
+      <attribute name="standard_name"
+       value="sea_surface_wave_period_at_variance_spectral_density_maximum"/>
+      <attribute name="missing_value" type="float" value="-9999.00"/>
+      <attribute name="mesh" value="selfe_mesh"/>
+      <attribute name="location" value="node"/>
+      <attribute name="coordinates" value="y x"/>
+      <attribute name="units" value="s"/>
+     </variable>
+     <aggregation type="union">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+       <aggregation dimName="time" type="joinExisting">
+        <scan
+         location="/data/ftp/upload/Inundation/vims/selfe_tropical/runs/Ike/2D_varied_manning_windstress_with_wave/whole_domain/"
+         regExp=".*[0-9]{1}_WaterLevel\.nc$"/>
+       </aggregation>
+      </netcdf>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+       <aggregation dimName="time" type="joinExisting">
+        <scan
+         location="/data/ftp/upload/Inundation/vims/selfe_tropical/runs/Ike/2D_varied_manning_windstress_with_wave/whole_domain/"
+         regExp=".*[0-9]{1}_SigWaveHeight\.nc$"/>
+       </aggregation>
+      </netcdf>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+       <aggregation dimName="time" type="joinExisting">
+        <scan
+         location="/data/ftp/upload/Inundation/vims/selfe_tropical/runs/Ike/2D_varied_manning_windstress_with_wave/whole_domain/"
+         regExp=".*[0-9]{1}_PeakPeriod\.nc$"/>
+       </aggregation>
+      </netcdf>
+     </aggregation>
+    </netcdf>
+   </dataset>
+   <dataset name="SELFE - Ike - 3D_varied_roughness_windstress_with_wave"
+    ID="inundation/selfe/ike/3Dvrwww" urlPath="inundation/selfe/ike/3Dvrwww">
+    <serviceName>all</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <variable name="selfe_mesh" shape="" type="int">
+      <attribute name="standard_name" value="mesh_topology"/>
+      <attribute name="dimension" type="int" value="2"/>
+      <attribute name="node_coordinates" value="x y"/>
+      <attribute name="face_node_connectivity" value="ele"/>
+     </variable>
+     <variable name="time">
+      <attribute name="units" value="seconds since 2008-09-08 00:00:00"/>
+      <attribute name="standard_name" value="time"/>
+     </variable>
+     <variable name="ele" shape="nface nele" type="int">
+      <attribute name="start_index" type="short" value="1"/>
+     </variable>
+     <variable name="x" shape="node" type="float">
+      <attribute name="units" value="degrees_east"/>
+     </variable>
+     <variable name="y" shape="node" type="float">
+      <attribute name="units" value="degrees_north"/>
+     </variable>
+     <variable name="depth" shape="node" type="float">
+      <attribute name="mesh" value="selfe_mesh"/>
+      <attribute name="location" value="node"/>
+      <attribute name="coordinates" value="y x"/>
+      <attribute name="units" value="m"/>
+      <attribute name="standard_name" value="depth_below_geoid"/>
+      <remove type="attribute" name="positive"/>
+     </variable>
+     <variable name="sigma" shape="sigma" type="float">
+      <attribute name="long_name" value="S coordinates at whole levels"/>
+      <attribute name="units" value="non-dimensional"/>
+      <attribute name="positive" value="up"/>
+     </variable>
+     <variable name="Cs" shape="sigma" type="float">
+      <attribute name="long_name" value="Function C(s) at whole levels"/>
+      <attribute name="units" value="non-dimensional"/>
+      <attribute name="positive" value="up"/>
+     </variable>
+     <variable name="elev" shape="time node" type="float">
+      <attribute name="long_name" value="free_surface_elevation"/>
+      <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+      <attribute name="missing_value" type="float" value="-9999.00"/>
+      <attribute name="mesh" value="selfe_mesh"/>
+      <attribute name="location" value="node"/>
+      <attribute name="coordinates" value="y x"/>
+      <attribute name="units" value="m"/>
+     </variable>
+     <aggregation dimName="time" type="joinExisting">
+      <scan
+       location="/data/ftp/upload/Inundation/vims/selfe_tropical/runs/Ike/3D_varied_roughness_windstress_with_wave/whole_domain/"
+       regExp=".*[0-9]{1}_WaterLevel\.nc$"/>
+     </aggregation>
+    </netcdf>
+   </dataset>
+
+  </dataset>
+
+  <dataset name="Observations">
+   <datasetScan name="NOAA NOS" path="inundation/observations/noaa_nos"
+    location="/data/ftp/upload/Inundation/observations/tropical/netcdf/Ike/NOAA/">
+    <serviceName>points</serviceName>
+    <filter>
+     <include wildcard="*.nc"/>
+    </filter>
+    <addDatasetSize/>
+   </datasetScan>
+  </dataset>
+
+  <dataset name="Inundation Observation NCML Test Dataset" ID="vimsselfe-obsncml"
+   urlPath="inundation/observations/vims-obs.nc">
+   <serviceName>all</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/data/ftp/upload/Inundation/Observations/netcdf/VIMS_Selfe_2Dtide_predictions.nc">
+    <attribute name="erddap-link"
+     value="http://testbedapps.sura.org/erddap/tabledap/VIMS_tideModelResults_MSL.das"/>
+   </netcdf>
+  </dataset>
+ </dataset>
+
+</catalog>

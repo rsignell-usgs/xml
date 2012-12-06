@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+ </service>
+
+ <dataset name="NCOM Relocatable Runs" ID="NCOM">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <creator>
+    <name vocabulary="DIF">NAVO/NAVY/MIL/US</name>
+    <contact url="http://www.navy.mil" email="frank.bub@navy.mil"/>
+   </creator>
+   <documentation
+    xlink:href="ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional/ReadMe_Japan.txt"
+    xlink:title="ReadMe.txt"/>
+  </metadata>
+
+  <dataset name="Fukushima Latest Forecast" ID="ncom_relo/fukushima" urlPath="ncom_relo/fukushima">
+   <metadata inherited="true">
+    <documentation type="Summary"> Preliminary NCOM Relocatable 1km forecast model for Fukushima
+     Region. The data here was obtained from the site
+     (ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional), untarred, unzipped, converted to
+     NetCDF4 to save space. </documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <attribute name="title" value="NAVO NCOM Relocatable Model: Fukushima Regional Forecast"/>
+    <attribute name="summary"
+     value="Preliminary NCOM Relocatable 1km forecast model for Fukushima Region.  The data here was obtained from the site (ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional), untarred, unzipped, converted to NetCDF4 to save space, and then aggregated to facilitate access by Rich Signell (rsignell@usgs.gov) in the hopes that this will make the forecast data more accessible to scientists who are trying to adaptively sample the plume."/>
+    <variable name="water_u">
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+    </variable>
+    <variable name="water_v">
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+    </variable>
+    <remove type="attribute" name="field"/>
+    <aggregation dimName="time" type="joinExisting" recheckEvery="1 hour">
+     <scan location="/usgs/data1/rsignell/models/navo/fukushima/latest"
+      regExp=".*ncom_relo_fuku.*\.nc$" olderThan="5 min"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+  
+  
+<!--  <dataset name="Fukushima Archive and Forecast Aggregation">-->
+   <featureCollection name="Fukushima Archive and Forecast Aggregation" featureType="FMRC" harvest="true"
+    path="ncom_fukushima_agg">
+    <collection spec="/usgs/data1/rsignell/models/navo/fukushima/daily/**/ncom_relo_fukushima_1km_tmp_#yyyyMMddHH#_.*\.nc$"
+     recheckAfter="5 min" olderThan="5 min"/>
+    <fmrcConfig regularize="true" datasetTypes="Best"/>
+    <protoDataset >
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <attribute name="title" value="NAVO NCOM Relocatable Model: Fukushima Regional Forecast"/>
+      <attribute name="summary"
+       value="Preliminary NCOM Relocatable 1km forecast model for Fukushima Region. USERS ARE REMINDED TO USE THE FUKUSHIMA 1KM NCOM DATA WITH CAUTION.  THE MODEL WAS INITIATED ON 18 MARCH SO IT HAS NOT TOTALLY SPUN UP, NOR HAS IT BEEN FULLYEVALUATED FOR STRENGTHS AND WEAKNESSES.  THESE FORECASTS ARE BEING PROVIDED AS PRELIMINARY GUIDANCE TO SUPPORT EMERGENCY REQUESTS FOR HIGH-RESOLUTION OCEAN INFORMATION.  NAVOCEANO EXPECTS TO CONTINUE TO MAKE CHANGES AND IMPROVEMENTS OVER THE NEXT FEW WEEKS."/>
+      <variable name="water_u">
+       <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+      </variable>
+      <variable name="water_v">
+       <attribute name="standard_name" value="northward_sea_water_velocity"/>
+      </variable>
+     </netcdf>
+    </protoDataset>
+    
+   </featureCollection>
+  <!--</dataset>
+-->
+
+  <dataset name="Sendai Latest Forecast" ID="ncom_relo/sendai" urlPath="ncom_relo/sendai">
+   <metadata inherited="true">
+    <documentation type="Summary"> Cutout of 3.5km WPAC NAVO NCOM for Sendai Region </documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <attribute name="title" value="Cutout of 3.5km WPAC NAVO NCOM for Sendai Region"/>
+    <attribute name="summary"
+     value="Cutout of 3.5km WPAC NCOM for Sendai Region."/>
+    <remove type="attribute" name="field"/>
+    <variable name="water_u">
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+    </variable>
+    <variable name="water_v">
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+    </variable>
+    <aggregation dimName="time" type="joinExisting" recheckEvery="1 hour">
+     <scan location="/usgs/data1/rsignell/models/navo/sendai/latest"
+      regExp=".*ncom_relo_sendai.*\.nc$" olderThan="5 min"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+  
+<!--  <dataset name="Sendai Archive and Forecast Aggregation">-->
+   <featureCollection name="Sendai Archive and Forecast Aggregation" featureType="FMRC" harvest="true"
+    path="ncom_sendai_agg">
+    <collection spec="/usgs/data1/rsignell/models/navo/sendai/daily/**/ncom_relo_sendai_#yyyyMMddHH#_.*\.nc$"
+     recheckAfter="5 min" olderThan="5 min"/>
+    <fmrcConfig regularize="true" datasetTypes="Best"/>
+    <protoDataset >
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <attribute name="title" value="Cutout of 3.5km WPAC NAVO NCOM for Sendai Region"/>
+      <attribute name="summary"
+       value="Cutout of 3.5km WPAC NCOM for Sendai Region."/>
+      <variable name="water_u">
+       <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+      </variable>
+      <variable name="water_v">
+       <attribute name="standard_name" value="northward_sea_water_velocity"/>
+      </variable>
+     </netcdf>
+    </protoDataset>
+    
+   </featureCollection>
+<!--  </dataset>-->
+
+ </dataset>
+</catalog>

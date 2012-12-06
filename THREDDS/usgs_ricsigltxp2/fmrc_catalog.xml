@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="IOOS Regional Models"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="curvilinear_services" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  </service>
+
+  <dataset name="UMAINE:GomPOM">
+    <metadata inherited="true">
+      <serviceName>curvilinear_services</serviceName>
+    </metadata>
+
+    <datasetFmrc name="FMRC test" path="gomoos/fmrc_test">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+        <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min">
+          <scan location="c:/RPS/cf/gomoos/2009/" suffix=".cdf" dateFormatMark="gomoos.#yyyyMMdd"
+            olderThan="5 min"/>
+
+          <!--          <variable name="coordSysVar4D" type="int" shape="">
+            <attribute name="_CoordinateAxes" value="x y zpos time"/>
+            <attribute name="_CoordinateTransforms" value="zpos"/>
+            <attribute name="_CoordinateSystemFor" value="xpos ypos zpos time"/>
+          </variable>
+          <variable name="coordSysVar3D" type="int" shape="">
+            <attribute name="_CoordinateAxes" value="x y time"/>
+            <attribute name="_CoordinateSystemFor" value="xpos ypos time"/>
+          </variable>-->
+          <variable name="elev">
+            <attribute name="coordinates" type="String" value="x y"/>
+            <attribute name="_FillValue" type="short" value="16608"/>
+          </variable>
+          <variable name="ua">
+            <attribute name="coordinates" type="String" value="x y"/>
+            <attribute name="standard_name" type="String"
+              value="barotropic_eastward_sea_water_velocity"/>
+          </variable>
+          <variable name="va">
+            <attribute name="coordinates" type="String" value="x y"/>
+            <attribute name="standard_name" type="String"
+              value="barotropic_northward_sea_water_velocity"/>
+          </variable>
+          <variable name="heat_flux">
+            <attribute name="coordinates" type="String" value="x y"/>
+          </variable>
+          <variable name="depth">
+            <attribute name="coordinates" type="String" value="x y"/>
+          </variable>
+          <variable name="temp">
+            <attribute name="coordinates" type="String" value="x y zpos"/>
+            <attribute name="_FillValue" type="short" value="-25184"/>
+          </variable>
+          <variable name="am">
+            <attribute name="coordinates" type="String" value="x y zpos"/>
+          </variable>
+          <variable name="vv">
+            <attribute name="coordinates" type="String" value="x y zpos"/>
+          </variable>
+          <variable name="u">
+            <attribute name="coordinates" type="String" value="x y zpos"/>
+            <attribute name="standard_name" type="String" value="eastward_sea_water_velocity"/>
+          </variable>
+          <variable name="v">
+            <attribute name="coordinates" type="String" value="x y zpos"/>
+            <attribute name="standard_name" type="String" value="northward_sea_water_velocity"/>
+          </variable>
+          <variable name="w">
+            <attribute name="coordinates" type="String" value="x y zpos"/>
+          </variable>
+          <variable name="time">
+            <attribute name="units" type="String" value="days since 2006-11-02 00:00 UTC"/>
+          </variable>
+          <variable name="salt">
+            <attribute name="coordinates" type="String" value="x y zpos"/>
+            <attribute name="_FillValue" type="short" value="-26128"/>
+            <attribute name="units" type="String" value="0.001"/>
+          </variable>
+          <variable name="zpos">
+            <attribute name="standard_name" type="String" value="ocean_sigma_coordinate"/>
+            <attribute name="formula_terms" type="String" value="sigma: zpos eta: elev depth: depth"/>
+            <attribute name="positive" type="String" value="up"/>
+            <attribute name="units" type="String" value="1"/>
+            <attribute name="axis" type="String" value="Z"/>
+            <values> 0 -0.002 -0.004 -0.008 -0.016 -0.024 -0.032 -0.04 -0.06 -0.08 -0.10 -0.12 -0.14
+              -0.16 -0.18 -0.2 -0.3 -0.4 -0.5 -0.6 -0.8 -1.0 </values>
+          </variable>
+          <attribute name="Conventions" type="String" value="CF-1.0"/>
+        </aggregation>
+      </netcdf>
+    </datasetFmrc>
+  </dataset>
+</catalog>

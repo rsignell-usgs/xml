@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="GLOS Catalog" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+
+  <dataset name="GLOS Lake Erie">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+
+      <creator>
+        <name vocabulary="DIF">Dr. Dave Schwab</name>
+        <contact url="http://www.glerl.noaa.gov/about/pers/profiles/schwab.html" email="david.schwab@noaa.gov"/>
+      </creator>
+
+      <documentation xlink:href="http://www.glerl.noaa.gov/res/glcfs/"
+        xlink:title="Great Lakes Coastal Forecasting System Page"/>
+
+      <documentation type="Summary"> Great Lakes Coastal Forecasting System Page: Lake Erie</documentation>
+
+      <documentation type="Rights"> The data is provided free of charge, without warranty of any kind. </documentation>
+
+    </metadata>
+    <dataset name="Lake Erie Test" ID="glos/erie/test" serviceName="allServices"
+      urlPath="glos/erie/test">
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" 
+      location="http://coast-enviro.er.usgs.gov/models/share/e200913300.out3.nc">
+      <variable name="depth">
+        <attribute name="coordinates" value="lat lon"/>
+      </variable>
+      <variable name="eta">
+        <attribute name="coordinates" value="time lat lon"/>
+      </variable>
+      <variable name="temp">
+        <attribute name="coordinates" value="time sigma lat lon"/>
+      </variable>
+      <variable name="u">
+        <attribute name="coordinates" value="time sigma lat lon"/>
+      </variable>
+      <variable name="v">
+        <attribute name="coordinates" value="time sigma lat lon"/>
+      </variable>
+      <variable name="sigma">
+        <attribute name="formula_terms" value="sigma: sigma depth: depth eta: eta"/>
+        <attribute name="axis" value="Z"/>
+        <attribute name="positive" value="up"/>
+        <values start="-.025" increment="-.05"/>
+        <attribute name="units" value="1"/>
+      </variable>
+      <attribute name="Conventions" type="String" value="CF-1.0"/>
+    </netcdf>
+    </dataset>
+    
+    <!--<dataset name="Lake Erie Nowcast History 3D" ID="glos/erie/ncas_his3d" serviceName="allServices"
+      urlPath="glos/erie/ncas_his3d">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting" recheckEvery="10min">
+          <scan location="/var/local/glos/thredds/GLCFS/Nowcast" regExp=".*e[0-9]{9}\.out3\.nc$"/>
+          <variable name="depth">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+          <variable name="temp">
+            <attribute name="coordinates" value="sigma lon lat"/>
+          </variable>
+          <variable name="u">
+            <attribute name="coordinates" value="sigma lon lat"/>
+          </variable>
+          <variable name="v">
+            <attribute name="coordinates" value="sigma lon lat"/>
+          </variable>
+          <variable name="zeta" shape="time ny nx" type="float">
+            <attribute name="coordinates" value="time lon lat"/>
+            <attribute name="units" value="m"/>
+            <values start="0.00" increment="0.0"/>
+          </variable>
+        </aggregation>
+      </netcdf>
+    </dataset>-->
+    <!--<dataset name="Lake Erie Nowcast HIstory 2D" ID="glos/erie/ncas_his2d" serviceName="allServices"
+      urlPath="glos/erie/ncas_his2d">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting" recheckEvery="10min">
+          <scan location="/var/local/glos/thredds/GLCFS/Nowcast" regExp=".*e[0-9]{9}\.out1\.nc$"/>
+          <variable name="depth">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+          <variable name="wvh">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+        </aggregation>
+      </netcdf>
+    </dataset>-->
+  </dataset>
+</catalog>

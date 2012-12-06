@@ -1,0 +1,349 @@
+<!--inundation catalog header -->
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="NOAA IOOS Testbed THREDDS Server">
+
+ <service name="all" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+
+ <service name="agg" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+
+ <service name="points" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="sos" serviceType="SOS" base="/thredds/sos/"/>
+ </service>
+
+
+ <dataset name="Inundation">
+  <datasetScan name="Inundation Observations" path="inundation/observations"
+   location="/data/ftp/upload/Inundation/observations/tropical/netcdf">
+   <serviceName>all</serviceName>
+   <filter>
+    <include wildcard="*.nc"/>
+   </filter>
+   <addDatasetSize/>
+  </datasetScan>
+  <dataset name="ADCIRC - IKE - Ultralite - Variable Drag - Waves - 2D"
+   ID="in.und.adcirc.ike.ultralite.vardrag.wave.2d"
+   urlPath="in/und/adcirc/ike/ultralite/vardrag/wave/2d">
+   <serviceName>all</serviceName>
+   <ns0:netcdf xmlns:ns0="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <ns0:variable name="adcirc_mesh" shape="" type="int">
+     <ns0:attribute name="standard_name" value="mesh_topology"/>
+     <ns0:attribute name="dimension" type="int" value="2"/>
+     <ns0:attribute name="node_coordinates" value="x y"/>
+     <ns0:attribute name="face_node_connectivity" value="element"/>
+    </ns0:variable>
+    <ns0:variable name="u-vel">
+     <ns0:attribute name="coordinates" value="time y x"/>
+     <ns0:attribute name="standard_name" value="barotropic_eastward_sea_water_velocity"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+    </ns0:variable>
+    <ns0:variable name="v-vel">
+     <ns0:attribute name="coordinates" value="time y x"/>
+     <ns0:attribute name="standard_name" value="barotropic_northward_sea_water_velocity"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+    </ns0:variable>
+    <ns0:variable name="windx">
+     <ns0:attribute name="coordinates" value="time y x"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+    </ns0:variable>
+    <ns0:variable name="windy">
+     <ns0:attribute name="coordinates" value="time y x"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+    </ns0:variable>
+    <ns0:variable name="zeta">
+     <ns0:attribute name="coordinates" value="time y x"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+     <ns0:attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+     <ns0:remove name="positive" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="pressure">
+     <ns0:attribute name="coordinates" value="time y x"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+     <ns0:attribute name="standard_name" value="air_pressure"/>
+     <ns0:remove name="positive" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="depth">
+     <ns0:attribute name="coordinates" value="y x"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+     <ns0:attribute name="standard_name" value="depth_below_geoid"/>
+     <ns0:remove name="positive" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="element" shape="nele nvertex" type="int">
+     <ns0:attribute name="standard_name" value="face_node_connectivity"/>
+     <ns0:attribute name="start_index" type="short" value="1"/>
+    </ns0:variable>
+    <ns0:variable name="time">
+     <ns0:attribute name="units" value="seconds since 2008-07-31 12:00:00 +00:00"/>
+    </ns0:variable>
+    <ns0:attribute name="Conventions" value="CF-1.0"/>
+    <ns0:attribute name="id" value="in.und.adcirc.ike.ultralite.vardrag.wave.2d"/>
+    <ns0:aggregation type="union">
+     <ns0:netcdf
+      location="/data/ftp/upload/Inundation/und/adcirc_tropical/runs/Ike.UL2D.wv/fort.63.nc"/>
+     <ns0:netcdf
+      location="/data/ftp/upload/Inundation/und/adcirc_tropical/runs/Ike.UL2D.wv/fort.64.nc"/>
+     <ns0:netcdf
+      location="/data/ftp/upload/Inundation/und/adcirc_tropical/runs/Ike.UL2D.wv/fort.73.nc"/>
+     <ns0:netcdf
+      location="/data/ftp/upload/Inundation/und/adcirc_tropical/runs/Ike.UL2D.wv/fort.74.nc"/>
+    </ns0:aggregation>
+    
+   </ns0:netcdf>
+  </dataset>
+  <dataset name="ADCIRC - IKE - Ultralite - Variable Drag - Waves - 3D"
+   ID="in.und.adcirc.ike.ultralite.vardrag.wave.3d"
+   urlPath="in/und/adcirc/ike/ultralite/vardrag/wave/3d">
+   <serviceName>all</serviceName>
+   <ns0:netcdf xmlns:ns0="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <ns0:variable name="adcirc_mesh" shape="" type="int">
+     <ns0:attribute name="standard_name" value="mesh_topology"/>
+     <ns0:attribute name="dimension" type="int" value="2"/>
+     <ns0:attribute name="node_coordinates" value="x y"/>
+     <ns0:attribute name="face_node_connectivity" value="element"/>
+    </ns0:variable>
+    <ns0:variable name="u-vel">
+     <ns0:attribute name="coordinates" value="time y x"/>
+     <ns0:attribute name="standard_name" value="barotropic_eastward_sea_water_velocity"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+    </ns0:variable>
+    <ns0:variable name="v-vel">
+     <ns0:attribute name="coordinates" value="time y x"/>
+     <ns0:attribute name="standard_name" value="barotropic_northward_sea_water_velocity"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+    </ns0:variable>
+    <ns0:variable name="windx">
+     <ns0:attribute name="coordinates" value="time y x"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+    </ns0:variable>
+    <ns0:variable name="windy">
+     <ns0:attribute name="coordinates" value="time y x"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+    </ns0:variable>
+    <ns0:variable name="zeta">
+     <ns0:attribute name="coordinates" value="time y x"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+     <ns0:attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+     <ns0:remove name="positive" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="pressure">
+     <ns0:attribute name="coordinates" value="time y x"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+     <ns0:attribute name="standard_name" value="air_pressure"/>
+     <ns0:remove name="positive" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="depth">
+     <ns0:attribute name="coordinates" value="y x"/>
+     <ns0:attribute name="mesh" value="adcirc_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+     <ns0:attribute name="standard_name" value="depth_below_geoid"/>
+     <ns0:remove name="positive" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="element" shape="nele nvertex" type="int">
+     <ns0:attribute name="standard_name" value="face_node_connectivity"/>
+     <ns0:attribute name="start_index" type="short" value="1"/>
+    </ns0:variable>
+    <ns0:variable name="time">
+     <ns0:attribute name="units" value="seconds since 2008-07-31 12:00:00 +00:00"/>
+    </ns0:variable>
+    <ns0:attribute name="Conventions" value="CF-1.0"/>
+    <ns0:attribute name="id" value="in.und.adcirc.ike.ultralite.vardrag.wave.3d"/>
+    <ns0:aggregation type="union">
+     <ns0:netcdf
+      location="/data/ftp/upload/Inundation/und/adcirc_tropical/runs/Ike.UL3D.wv/fort.63.nc"/>
+     <ns0:netcdf
+      location="/data/ftp/upload/Inundation/und/adcirc_tropical/runs/Ike.UL3D.wv/fort.64.nc"/>
+     <ns0:netcdf
+      location="/data/ftp/upload/Inundation/und/adcirc_tropical/runs/Ike.UL2D.wv/fort.73.nc"/>
+     <ns0:netcdf
+      location="/data/ftp/upload/Inundation/und/adcirc_tropical/runs/Ike.UL2D.wv/fort.74.nc"/>
+    </ns0:aggregation>
+    
+   </ns0:netcdf>
+  </dataset>
+  <dataset name="FVCOM - IKE - Ultralite - Variable Drag - Waves - 2D"
+   ID="in.usf.fvcom.ike.ultralite.vardrag.wave.2d"
+   urlPath="in/usf/fvcom/ike/ultralite/vardrag/wave/2d">
+   <serviceName>all</serviceName>
+   <ns0:netcdf xmlns:ns0="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd">
+    <ns0:variable name="h" shape="node" type="float">
+     <ns0:attribute name="mesh" value="fvcom_mesh"/>
+     <ns0:attribute name="coordinates" value="lat lon"/>
+     <ns0:attribute name="location" value="node"/>
+     <ns0:remove name="positive" type="attribute"/>
+     <ns0:remove name="grid" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="nv">
+     <ns0:attribute name="standard_name" value="face_node_connectivity"/>
+     <ns0:attribute name="start_index" type="int" value="1"/>
+    </ns0:variable>
+    <ns0:variable name="fvcom_mesh" shape="" type="int">
+     <ns0:attribute name="standard_name" value="mesh_topology"/>
+     <ns0:attribute name="dimension" type="int" value="2"/>
+     <ns0:attribute name="node_coordinates" value="lon lat"/>
+     <ns0:attribute name="face_coordinates" value="lonc latc"/>
+     <ns0:attribute name="face_node_connectivity" value="nv"/>
+    </ns0:variable>
+    <ns0:variable name="zeta" shape="time node" type="float">
+     <ns0:attribute name="coordinates" value="time lat lon"/>
+     <ns0:attribute name="mesh" value="fvcom_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+     <ns0:remove name="positive" type="attribute"/>
+     <ns0:remove name="grid" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="ua" shape="time nele" type="float">
+     <ns0:attribute name="standard_name" value="barotropic_eastward_sea_water_velocity"/>
+     <ns0:attribute name="coordinates" value="time latc lonc"/>
+     <ns0:attribute name="mesh" value="fvcom_mesh"/>
+     <ns0:attribute name="location" value="face"/>
+     <ns0:remove name="grid" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="va" shape="time nele" type="float">
+     <ns0:attribute name="standard_name" value="barotropic_northward_sea_water_velocity"/>
+     <ns0:attribute name="coordinates" value="time latc lonc"/>
+     <ns0:attribute name="mesh" value="fvcom_mesh"/>
+     <ns0:attribute name="location" value="face"/>
+     <ns0:remove name="grid" type="attribute"/>
+    </ns0:variable>
+    <ns0:attribute name="id" value="in.usf.fvcom.ike.ultralite.vardrag.wave.2d"/>
+    <ns0:aggregation type="union">
+     <ns0:netcdf
+      location="/data/ftp/upload/Inundation/usf/fvcom_tropical/runs/Ike/2D_varied_manning_windstress_wave/GLOBAL_USFFVCOM_IKE2DWITHWAVE.nc"/>
+     <ns0:netcdf
+      location="/data/ftp/upload/Inundation/usf/fvcom_tropical/runs/Ike/3D_varied_roughness_windstress_wave/nv_and_depth.nc"
+     />
+    </ns0:aggregation>
+    
+   </ns0:netcdf>
+  </dataset>
+  <dataset name="FVCOM - IKE - Ultralite - Variable Drag - Waves - 3D"
+   ID="in.usf.fvcom.ike.ultralite.vardrag.wave.3d"
+   urlPath="in/usf/fvcom/ike/ultralite/vardrag/wave/3d">
+   <serviceName>all</serviceName>
+   <ns0:netcdf xmlns:ns0="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    location="/data/ftp/upload/Inundation/usf/fvcom_tropical/runs/Ike/3D_varied_roughness_windstress_wave/GLOBAL_USFFVCOM_IKE3DWITHWAVE.nc"
+    xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd">
+    <ns0:variable name="siglay" shape="siglay node" type="float">
+     <ns0:attribute name="standard_name" value="ocean_sigma_coordinate"/>
+     <ns0:attribute name="positive" value="up"/>
+     <ns0:attribute name="formula_terms" value="sigma: siglay eta: zeta depth: h"/>
+    </ns0:variable>
+    <ns0:variable name="h" shape="node" type="float">
+     <ns0:attribute name="mesh" value="fvcom_mesh"/>
+     <ns0:attribute name="coordinates" value="lat lon"/>
+     <ns0:attribute name="location" value="node"/>
+     <ns0:remove name="positive" type="attribute"/>
+     <ns0:remove name="grid" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="nv">
+     <ns0:attribute name="standard_name" value="face_node_connectivity"/>
+     <ns0:attribute name="start_index" type="int" value="1"/>
+    </ns0:variable>
+    <ns0:variable name="fvcom_mesh" shape="" type="int">
+     <ns0:attribute name="standard_name" value="mesh_topology"/>
+     <ns0:attribute name="dimension" type="int" value="2"/>
+     <ns0:attribute name="node_coordinates" value="lon lat"/>
+     <ns0:attribute name="face_coordinates" value="lonc latc"/>
+     <ns0:attribute name="face_node_connectivity" value="nv"/>
+    </ns0:variable>
+    <ns0:variable name="zeta" shape="time node" type="float">
+     <ns0:attribute name="coordinates" value="time lat lon"/>
+     <ns0:attribute name="mesh" value="fvcom_mesh"/>
+     <ns0:attribute name="location" value="node"/>
+     <ns0:remove name="positive" type="attribute"/>
+     <ns0:remove name="grid" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="u" shape="time siglay nele" type="float">
+     <ns0:attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     <ns0:attribute name="coordinates" value="time siglay latc lonc"/>
+     <ns0:attribute name="mesh" value="fvcom_mesh"/>
+     <ns0:attribute name="location" value="face"/>
+     <ns0:remove name="grid" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="v" shape="time siglay nele" type="float">
+     <ns0:attribute name="standard_name" value="northward_sea_water_velocity"/>
+     <ns0:attribute name="coordinates" value="time siglay latc lonc"/>
+     <ns0:attribute name="mesh" value="fvcom_mesh"/>
+     <ns0:attribute name="location" value="face"/>
+     <ns0:remove name="grid" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="ua" shape="time nele" type="float">
+     <ns0:attribute name="standard_name" value="barotropic_eastward_sea_water_velocity"/>
+     <ns0:attribute name="coordinates" value="time latc lonc"/>
+     <ns0:attribute name="mesh" value="fvcom_mesh"/>
+     <ns0:attribute name="location" value="face"/>
+     <ns0:remove name="grid" type="attribute"/>
+    </ns0:variable>
+    <ns0:variable name="va" shape="time nele" type="float">
+     <ns0:attribute name="standard_name" value="barotropic_northward_sea_water_velocity"/>
+     <ns0:attribute name="coordinates" value="time latc lonc"/>
+     <ns0:attribute name="mesh" value="fvcom_mesh"/>
+     <ns0:attribute name="location" value="face"/>
+     <ns0:remove name="grid" type="attribute"/>
+    </ns0:variable>
+    <ns0:attribute name="id" value="in.usf.fvcom.ike.ultralite.vardrag.wave.3d"/>
+   </ns0:netcdf>
+  </dataset>
+  <!-- inundation catalog footer-->
+
+ </dataset>
+
+ <dataset name="Observations">
+  <datasetScan name="NOAA NOS" path="inundation/observations/noaa_nos"
+   location="/data/ftp/upload/Inundation/observations/tropical/netcdf/Ike/NOAA/">
+   <serviceName>points</serviceName>
+   <filter>
+    <include wildcard="*.nc"/>
+   </filter>
+   <addDatasetSize/>
+  </datasetScan>
+ </dataset>
+
+ <dataset name="Inundation Observation NCML Test Dataset" ID="vimsselfe-obsncml"
+  urlPath="inundation/observations/vims-obs.nc">
+  <serviceName>all</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+   location="/data/ftp/upload/Inundation/Observations/netcdf/VIMS_Selfe_2Dtide_predictions.nc">
+   <attribute name="erddap-link"
+    value="http://testbedapps.sura.org/erddap/tabledap/VIMS_tideModelResults_MSL.das"/>
+  </netcdf>
+ </dataset>
+
+
+</catalog>

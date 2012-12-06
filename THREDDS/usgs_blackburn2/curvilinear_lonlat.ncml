@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+  <aggregation type="union">
+    <!--    The file "ecom_lonlat.nc" contains 2D variables "lon" and "lat"-->
+    <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom_lonlat.nc"/>
+    <!--    The files "ecom2004.01.cdf ", "ecom2004.02.cdf", etc are the monthly output files with no lon/lat-->
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <variable name="time">
+        <attribute name="units" type="String" value="days since 2000-01-01 00:00 UTC"/>
+      </variable>
+      <aggregation dimName="time" type="joinExisting" timeUnitsChange="true">
+        <!--   aggregate all files matching ecomYYYY.HH.cdf   (e.g. "ecom2004.01.cdf" )-->
+        <scan location="/usgs/data0/rsignell/models/umb_massbay/"
+          regExp=".*ecom[0-9]{4}\.[0-9]{2}\.cdf$"/>
+      </aggregation>
+      <variable name="elev">
+        <attribute name="standard_name" value="sea_surface_height"/>
+        <!-- for each variable, need to add the "coordinates" attribute, pointing to coordinate variables "lon lat"-->
+        <attribute name="coordinates" type="String" value="lon lat"/>
+        <attribute name="_FillValue" type="short" value="0"/>
+      </variable>
+      <variable name="heat_flux">
+        <attribute name="coordinates" type="String" value="lon lat"/>
+      </variable>
+      <variable name="cd">
+        <attribute name="coordinates" type="String" value="lon lat"/>
+      </variable>
+      <variable name="depth">
+        <attribute name="coordinates" type="String" value="lon lat"/>
+        <attribute name="_FillValue" type="short" value="-99999"/>
+      </variable>
+      <variable name="temp">
+        <attribute name="coordinates" type="String" value="lon lat zpos"/>
+        <attribute name="_FillValue" type="short" value="-23405"/>
+      </variable>
+      <variable name="salt">
+        <attribute name="coordinates" type="String" value="lon lat zpos"/>
+        <attribute name="_FillValue" type="short" value="-32767"/>
+      </variable>
+      <variable name="conc">
+        <attribute name="coordinates" type="String" value="lon lat zpos"/>
+      </variable>
+      <variable name="u">
+        <attribute name="coordinates" type="String" value="lon lat zpos"/>
+        <remove type="attribute" name="long_name"/>
+        <attribute name="standard_name" value="x_grid_directed_sea_water_velocity"/>
+        <attribute name="_FillValue" type="short" value="0"/>
+      </variable>
+      <variable name="v">
+        <attribute name="coordinates" type="String" value="lon lat zpos"/>
+        <remove type="attribute" name="long_name"/>
+        <attribute name="standard_name" value="y_grid_directed_sea_water_velocity"/>
+        <attribute name="_FillValue" type="short" value="0"/>
+      </variable>
+      <variable name="zpos" orgName="sigma">
+        <attribute name="standard_name" type="String" value="ocean_sigma_coordinate"/>
+        <attribute name="formula_terms" type="String" value="sigma: zpos eta: elev depth: depth"/>
+        <attribute name="positive" type="String" value="up"/>
+        <attribute name="axis" type="String" value="Z"/>
+        <attribute name="units" type="String" value="1"/>
+      </variable>
+      <attribute name="Conventions" type="String" value="CF-1.0"/>
+    </netcdf>
+  </aggregation>
+</netcdf>

@@ -1,0 +1,1125 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="Karin Ridge Experiment (10/90-5/91)" ID="Kridge">
+    <metadata inherited="true">
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>16.5</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-168.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>500</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/karin_ridge.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="3561-a.cdf" ID="KARIN_RIDGE/3561-a.cdf" urlPath="KARIN_RIDGE/3561-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 17.144167 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.503830 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-04 17:26:15 </start>
+<end> 1991-05-12 00:18:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3561-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161777975000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-356"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3561-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3561-a.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:47:59" />
+<attribute name="start_time" value="1990-10-04 17:26:15Z" />
+<attribute name="stop_time" value="1991-05-12 00:18:45Z" />
+</netcdf>
+</dataset>
+<dataset name="3561-a1h.cdf" ID="KARIN_RIDGE/3561-a1h.cdf" urlPath="KARIN_RIDGE/3561-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 17.144167 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.503830 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-04 18:00:00 </start>
+<end> 1991-05-11 23:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3561-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161780000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-356"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3561-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3561-a1h.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:47:59" />
+<attribute name="start_time" value="1990-10-04 18:00:00Z" />
+<attribute name="stop_time" value="1991-05-11 23:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3562-a.cdf" ID="KARIN_RIDGE/3562-a.cdf" urlPath="KARIN_RIDGE/3562-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 17.144167 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.503830 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-04 17:26:15 </start>
+<end> 1991-05-12 00:33:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3562-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161777975000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-356"</values>
+ </variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3562-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3562-a.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:48:02" />
+<attribute name="start_time" value="1990-10-04 17:26:15Z" />
+<attribute name="stop_time" value="1991-05-12 00:33:45Z" />
+</netcdf>
+</dataset>
+<dataset name="3562-a1h.cdf" ID="KARIN_RIDGE/3562-a1h.cdf" urlPath="KARIN_RIDGE/3562-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 17.144167 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.503830 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-04 18:00:00 </start>
+<end> 1991-05-12 00:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3562-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161780000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-356"</values>
+ </variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3562-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3562-a1h.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:48:02" />
+<attribute name="start_time" value="1990-10-04 18:00:00Z" />
+<attribute name="stop_time" value="1991-05-12 00:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3562v-a.cdf" ID="KARIN_RIDGE/3562v-a.cdf" urlPath="KARIN_RIDGE/3562v-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 17.144167 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.503830 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-04 17:26:15 </start>
+<end> 1991-04-27 00:33:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3562v-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161777975000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-356"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3562v-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3562v-a.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:48:05" />
+<attribute name="start_time" value="1990-10-04 17:26:15Z" />
+<attribute name="stop_time" value="1991-04-27 00:33:45Z" />
+</netcdf>
+</dataset>
+<dataset name="3562v-a1h.cdf" ID="KARIN_RIDGE/3562v-a1h.cdf" urlPath="KARIN_RIDGE/3562v-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 17.144167 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.503830 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-04 18:00:00 </start>
+<end> 1991-04-27 00:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3562v-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161780000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-356"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3562v-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3562v-a1h.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:48:05" />
+<attribute name="start_time" value="1990-10-04 18:00:00Z" />
+<attribute name="stop_time" value="1991-04-27 00:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3563-a.cdf" ID="KARIN_RIDGE/3563-a.cdf" urlPath="KARIN_RIDGE/3563-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 17.144167 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.503830 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-05 03:26:15 </start>
+<end> 1991-05-12 00:18:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3563-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161813975000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-356"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3563-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3563-a.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:48:07" />
+<attribute name="start_time" value="1990-10-05 03:26:15Z" />
+<attribute name="stop_time" value="1991-05-12 00:18:45Z" />
+</netcdf>
+</dataset>
+<dataset name="3563-a1h.cdf" ID="KARIN_RIDGE/3563-a1h.cdf" urlPath="KARIN_RIDGE/3563-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 17.144167 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.503830 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-05 04:00:00 </start>
+<end> 1991-05-11 23:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3563-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161816000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-356"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3563-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3563-a1h.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:48:07" />
+<attribute name="start_time" value="1990-10-05 04:00:00Z" />
+<attribute name="stop_time" value="1991-05-11 23:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3571-a.cdf" ID="KARIN_RIDGE/3571-a.cdf" urlPath="KARIN_RIDGE/3571-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 16.626333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.263504 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-05 14:26:15 </start>
+<end> 1991-05-12 20:56:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3571-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161853575000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-357"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3571-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3571-a.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:48:11" />
+<attribute name="start_time" value="1990-10-05 14:26:15Z" />
+<attribute name="stop_time" value="1991-05-12 20:56:15Z" />
+</netcdf>
+</dataset>
+<dataset name="3571-a1h.cdf" ID="KARIN_RIDGE/3571-a1h.cdf" urlPath="KARIN_RIDGE/3571-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 16.626333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.263504 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-05 15:00:00 </start>
+<end> 1991-05-12 20:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3571-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161855600000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-357"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3571-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3571-a1h.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:48:11" />
+<attribute name="start_time" value="1990-10-05 15:00:00Z" />
+<attribute name="stop_time" value="1991-05-12 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3572-a.cdf" ID="KARIN_RIDGE/3572-a.cdf" urlPath="KARIN_RIDGE/3572-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 16.626333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.263504 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-05 14:26:15 </start>
+<end> 1991-05-12 20:48:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3572-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161853575000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-357"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3572-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3572-a.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:48:13" />
+<attribute name="start_time" value="1990-10-05 14:26:15Z" />
+<attribute name="stop_time" value="1991-05-12 20:48:45Z" />
+</netcdf>
+</dataset>
+<dataset name="3572-a1h.cdf" ID="KARIN_RIDGE/3572-a1h.cdf" urlPath="KARIN_RIDGE/3572-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 16.626333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.263504 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-05 15:00:00 </start>
+<end> 1991-05-12 20:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3572-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161855600000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-357"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3572-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3572-a1h.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:48:13" />
+<attribute name="start_time" value="1990-10-05 15:00:00Z" />
+<attribute name="stop_time" value="1991-05-12 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3573-a.cdf" ID="KARIN_RIDGE/3573-a.cdf" urlPath="KARIN_RIDGE/3573-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 16.626333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.263504 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-05 04:26:15 </start>
+<end> 1991-05-12 20:56:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3573-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161817575000" increment="450000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-357"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3573-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3573-a.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:48:15" />
+<attribute name="start_time" value="1990-10-05 04:26:15Z" />
+<attribute name="stop_time" value="1991-05-12 20:56:15Z" />
+</netcdf>
+</dataset>
+<dataset name="3573-a1h.cdf" ID="KARIN_RIDGE/3573-a1h.cdf" urlPath="KARIN_RIDGE/3573-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 16.626333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -168.263504 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-10-05 05:00:00 </start>
+<end> 1991-05-12 20:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/KARIN_RIDGE/3573-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4161819600000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-357"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="KARIN_RIDGE/3573-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3573-a1h.cdf - Karin Ridge Experiment" />
+<attribute name="summary" value="Current measurements collected at 2 sites in Karin Ridge Seamount." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:48:15" />
+<attribute name="start_time" value="1990-10-05 05:00:00Z" />
+<attribute name="stop_time" value="1991-05-12 20:00:00Z" />
+</netcdf>
+</dataset>
+ </dataset>
+</catalog>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  name="THREDDS Catalog for Coast-Enviro NetCDF Files" version="1.0.1">
+  <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+ 
+  <!-- If you want to have THREDDS automatically scan some directory tree for NetCDF files, here 
+  is how to do it:-->
+ <datasetScan name="USGS Model Data" ID="models" path="models"
+    location="/Volumes/models/">
+   <metadata inherited="true">
+     <serviceName>ncdods</serviceName>
+   </metadata>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+  </datasetScan>
+
+</catalog>

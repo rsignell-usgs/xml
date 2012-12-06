@@ -1,0 +1,3779 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="Monitoring outflows of Orange County Sanitation District (6/01-1/03)" ID="OCSD">
+    <metadata inherited="true">
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>33.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-117.5</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>100</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/orange_county.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="6501mc-a.nc" ID="ORANGE_COUNTY/6501mc-a.nc" urlPath="ORANGE_COUNTY/6501mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.625999 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.986763 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-14 01:52:00 </start>
+<end> 2001-10-12 19:58:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6501mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499200320000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-650"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6501mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6501mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:36:46" />
+<attribute name="start_time" value="2001-06-14 01:52:00Z" />
+<attribute name="stop_time" value="2001-10-12 19:58:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6502mc-a.nc" ID="ORANGE_COUNTY/6502mc-a.nc" urlPath="ORANGE_COUNTY/6502mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.625999 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.986763 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-14 01:52:00 </start>
+<end> 2001-10-12 19:58:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6502mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499200320000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-650"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6502mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6502mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:36:49" />
+<attribute name="start_time" value="2001-06-14 01:52:00Z" />
+<attribute name="stop_time" value="2001-10-12 19:58:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6512sc-a.nc" ID="ORANGE_COUNTY/6512sc-a.nc" urlPath="ORANGE_COUNTY/6512sc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.626633 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.987114 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-14 02:17:30 </start>
+<end> 2001-10-12 19:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6512sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499201850000" increment="150000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-651"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6512sc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6512sc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:36:58" />
+<attribute name="start_time" value="2001-06-14 02:17:30Z" />
+<attribute name="stop_time" value="2001-10-12 19:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6521mc-a.nc" ID="ORANGE_COUNTY/6521mc-a.nc" urlPath="ORANGE_COUNTY/6521mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.611832 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.996696 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 23:20:00 </start>
+<end> 2001-10-12 22:16:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6521mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499191200000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-652"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6521mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6521mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:37:00" />
+<attribute name="start_time" value="2001-06-13 23:20:00Z" />
+<attribute name="stop_time" value="2001-10-12 22:16:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6541mc-a.nc" ID="ORANGE_COUNTY/6541mc-a.nc" urlPath="ORANGE_COUNTY/6541mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.611984 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.995064 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-14 00:00:00 </start>
+<end> 2001-10-12 20:48:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6541mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499193600000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-654"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6541mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6541mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:37:14" />
+<attribute name="start_time" value="2001-06-14 00:00:00Z" />
+<attribute name="stop_time" value="2001-10-12 20:48:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6542mc-a.nc" ID="ORANGE_COUNTY/6542mc-a.nc" urlPath="ORANGE_COUNTY/6542mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.611984 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.995064 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-14 00:00:00 </start>
+<end> 2001-10-12 20:48:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6542mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499193600000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-654"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6542mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6542mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:37:19" />
+<attribute name="start_time" value="2001-06-14 00:00:00Z" />
+<attribute name="stop_time" value="2001-10-12 20:48:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6551adc-a.nc" ID="ORANGE_COUNTY/6551adc-a.nc" urlPath="ORANGE_COUNTY/6551adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.577499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.018997 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 22:18:00 </start>
+<end> 2001-10-30 19:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6551adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499187480000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-655"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6551adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6551adc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:37:23" />
+<attribute name="start_time" value="2001-06-13 22:18:00Z" />
+<attribute name="stop_time" value="2001-10-30 19:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6552sc-a.nc" ID="ORANGE_COUNTY/6552sc-a.nc" urlPath="ORANGE_COUNTY/6552sc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.577534 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.018951 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 22:20:00 </start>
+<end> 2001-10-30 19:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="TRN_107" vocabulary_name="TRANSMISSOMETER VOLTAGE 7" units="volts">TRANSMISSOMETER VOLTAGE 7</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6552sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499187600000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-655"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6552sc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6552sc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:37:27" />
+<attribute name="start_time" value="2001-06-13 22:20:00Z" />
+<attribute name="stop_time" value="2001-10-30 19:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6554sc-a.nc" ID="ORANGE_COUNTY/6554sc-a.nc" urlPath="ORANGE_COUNTY/6554sc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.577534 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.018951 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 22:20:00 </start>
+<end> 2001-10-30 19:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="TRN_107" vocabulary_name="TRANSMISSOMETER VOLTAGE 7" units="volts">TRANSMISSOMETER VOLTAGE 7</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6554sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499187600000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-655"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6554sc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6554sc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:37:31" />
+<attribute name="start_time" value="2001-06-13 22:20:00Z" />
+<attribute name="stop_time" value="2001-10-30 19:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6566mc-a.nc" ID="ORANGE_COUNTY/6566mc-a.nc" urlPath="ORANGE_COUNTY/6566mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576767 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.019264 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 21:32:00 </start>
+<end> 2001-10-12 17:14:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6566mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499184720000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-656"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6566mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6566mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:37:34" />
+<attribute name="start_time" value="2001-06-13 21:32:00Z" />
+<attribute name="stop_time" value="2001-10-12 17:14:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6569mc-a.nc" ID="ORANGE_COUNTY/6569mc-a.nc" urlPath="ORANGE_COUNTY/6569mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576767 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.019264 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 21:32:00 </start>
+<end> 2001-10-12 17:14:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6569mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499184720000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-656"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6569mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6569mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:37:38" />
+<attribute name="start_time" value="2001-06-13 21:32:00Z" />
+<attribute name="stop_time" value="2001-10-12 17:14:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6572mc-a.nc" ID="ORANGE_COUNTY/6572mc-a.nc" urlPath="ORANGE_COUNTY/6572mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.579868 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.960251 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 15:40:00 </start>
+<end> 2001-10-30 23:24:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6572mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499163600000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-657"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6572mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6572mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:37:42" />
+<attribute name="start_time" value="2001-06-13 15:40:00Z" />
+<attribute name="stop_time" value="2001-10-30 23:24:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6582sc-a.nc" ID="ORANGE_COUNTY/6582sc-a.nc" urlPath="ORANGE_COUNTY/6582sc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.580200 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.959183 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 13:45:00 </start>
+<end> 2001-10-30 22:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="TRN_107" vocabulary_name="TRANSMISSOMETER VOLTAGE 7" units="volts">TRANSMISSOMETER VOLTAGE 7</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6582sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499156700000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-658"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6582sc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6582sc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:37:50" />
+<attribute name="start_time" value="2001-06-13 13:45:00Z" />
+<attribute name="stop_time" value="2001-10-30 22:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6583sc-a.nc" ID="ORANGE_COUNTY/6583sc-a.nc" urlPath="ORANGE_COUNTY/6583sc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.580200 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.959183 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 13:45:00 </start>
+<end> 2001-10-30 22:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="TRN_107" vocabulary_name="TRANSMISSOMETER VOLTAGE 7" units="volts">TRANSMISSOMETER VOLTAGE 7</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6583sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499156700000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-658"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6583sc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6583sc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:37:53" />
+<attribute name="start_time" value="2001-06-13 13:45:00Z" />
+<attribute name="stop_time" value="2001-10-30 22:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6592mc-a.nc" ID="ORANGE_COUNTY/6592mc-a.nc" urlPath="ORANGE_COUNTY/6592mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.579735 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.960999 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 17:16:00 </start>
+<end> 2001-10-12 13:56:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6592mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499169360000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-659"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6592mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6592mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:37:56" />
+<attribute name="start_time" value="2001-06-13 17:16:00Z" />
+<attribute name="stop_time" value="2001-10-12 13:56:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6594mc-a.nc" ID="ORANGE_COUNTY/6594mc-a.nc" urlPath="ORANGE_COUNTY/6594mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.579735 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.960999 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 17:16:00 </start>
+<end> 2001-10-12 13:56:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6594mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499169360000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-659"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6594mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6594mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:00" />
+<attribute name="start_time" value="2001-06-13 17:16:00Z" />
+<attribute name="stop_time" value="2001-10-12 13:56:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6596mc-a.nc" ID="ORANGE_COUNTY/6596mc-a.nc" urlPath="ORANGE_COUNTY/6596mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.579735 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.960999 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 17:16:00 </start>
+<end> 2001-07-04 18:08:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6596mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499169360000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-659"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6596mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6596mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:01" />
+<attribute name="start_time" value="2001-06-13 17:16:00Z" />
+<attribute name="stop_time" value="2001-07-04 18:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6598mc-a.nc" ID="ORANGE_COUNTY/6598mc-a.nc" urlPath="ORANGE_COUNTY/6598mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.579735 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.960999 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2001-06-13 17:16:00 </start>
+<end> 2001-07-10 17:54:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6598mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4499169360000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-659"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6598mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6598mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:03" />
+<attribute name="start_time" value="2001-06-13 17:16:00Z" />
+<attribute name="stop_time" value="2001-07-10 17:54:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6683mc-a.nc" ID="ORANGE_COUNTY/6683mc-a.nc" urlPath="ORANGE_COUNTY/6683mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.626484 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.986015 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-17 14:50:00 </start>
+<end> 2002-02-05 02:20:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6683mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517995800000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-668"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6683mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6683mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:08" />
+<attribute name="start_time" value="2002-01-17 14:50:00Z" />
+<attribute name="stop_time" value="2002-02-05 02:20:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6691mc-a.nc" ID="ORANGE_COUNTY/6691mc-a.nc" urlPath="ORANGE_COUNTY/6691mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.611332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.997253 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 16:48:00 </start>
+<end> 2002-05-15 23:12:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6691mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517916480000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-669"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6691mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6691mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:11" />
+<attribute name="start_time" value="2002-01-16 16:48:00Z" />
+<attribute name="stop_time" value="2002-05-15 23:12:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6692mc-a.nc" ID="ORANGE_COUNTY/6692mc-a.nc" urlPath="ORANGE_COUNTY/6692mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.611332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.997253 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 16:48:00 </start>
+<end> 2002-05-15 23:12:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6692mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517916480000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-669"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6692mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6692mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:15" />
+<attribute name="start_time" value="2002-01-16 16:48:00Z" />
+<attribute name="stop_time" value="2002-05-15 23:12:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6702sc-a.nc" ID="ORANGE_COUNTY/6702sc-a.nc" urlPath="ORANGE_COUNTY/6702sc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.612148 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.995453 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 17:42:46 </start>
+<end> 2002-04-24 04:17:46 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6702sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517919766000" increment="150000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-670"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6702sc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6702sc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:24" />
+<attribute name="start_time" value="2002-01-16 17:42:46Z" />
+<attribute name="stop_time" value="2002-04-24 04:17:46Z" />
+</netcdf>
+</dataset>
+<dataset name="6711mc-a.nc" ID="ORANGE_COUNTY/6711mc-a.nc" urlPath="ORANGE_COUNTY/6711mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.611832 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.996696 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 15:40:00 </start>
+<end> 2002-05-15 22:12:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6711mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517912400000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-671"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6711mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6711mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:27" />
+<attribute name="start_time" value="2002-01-16 15:40:00Z" />
+<attribute name="stop_time" value="2002-05-15 22:12:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6712mc-a.nc" ID="ORANGE_COUNTY/6712mc-a.nc" urlPath="ORANGE_COUNTY/6712mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.611832 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.996696 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 15:54:00 </start>
+<end> 2002-05-15 22:06:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6712mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517913240000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-671"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6712mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6712mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:31" />
+<attribute name="start_time" value="2002-01-16 15:54:00Z" />
+<attribute name="stop_time" value="2002-05-15 22:06:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6721mc-a.nc" ID="ORANGE_COUNTY/6721mc-a.nc" urlPath="ORANGE_COUNTY/6721mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576534 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.020164 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 21:18:00 </start>
+<end> 2002-05-15 20:02:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6721mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517932680000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-672"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6721mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6721mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:35" />
+<attribute name="start_time" value="2002-01-16 21:18:00Z" />
+<attribute name="stop_time" value="2002-05-15 20:02:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6722mc-a.nc" ID="ORANGE_COUNTY/6722mc-a.nc" urlPath="ORANGE_COUNTY/6722mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576534 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.020164 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 21:18:00 </start>
+<end> 2002-05-15 20:02:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6722mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517932680000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-672"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6722mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6722mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:39" />
+<attribute name="start_time" value="2002-01-16 21:18:00Z" />
+<attribute name="stop_time" value="2002-05-15 20:02:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6726mc-a.nc" ID="ORANGE_COUNTY/6726mc-a.nc" urlPath="ORANGE_COUNTY/6726mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576534 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.020164 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 21:18:00 </start>
+<end> 2002-05-15 20:02:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6726mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517932680000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-672"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6726mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6726mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:44" />
+<attribute name="start_time" value="2002-01-16 21:18:00Z" />
+<attribute name="stop_time" value="2002-05-15 20:02:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6728mc-a.nc" ID="ORANGE_COUNTY/6728mc-a.nc" urlPath="ORANGE_COUNTY/6728mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576534 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.020164 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 21:18:00 </start>
+<end> 2002-05-15 20:02:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6728mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517932680000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-672"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6728mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6728mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:48" />
+<attribute name="start_time" value="2002-01-16 21:18:00Z" />
+<attribute name="stop_time" value="2002-05-15 20:02:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6729mc-a.nc" ID="ORANGE_COUNTY/6729mc-a.nc" urlPath="ORANGE_COUNTY/6729mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576534 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.020164 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 21:18:00 </start>
+<end> 2002-05-15 20:02:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6729mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517932680000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-672"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6729mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6729mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:51" />
+<attribute name="start_time" value="2002-01-16 21:18:00Z" />
+<attribute name="stop_time" value="2002-05-15 20:02:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6731adc-a.nc" ID="ORANGE_COUNTY/6731adc-a.nc" urlPath="ORANGE_COUNTY/6731adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576900 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.019203 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 22:00:01 </start>
+<end> 2002-05-15 21:03:01 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6731adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517935201000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-673"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6731adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6731adc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:57" />
+<attribute name="start_time" value="2002-01-16 22:00:01Z" />
+<attribute name="stop_time" value="2002-05-15 21:03:01Z" />
+</netcdf>
+</dataset>
+<dataset name="6733sc-a.nc" ID="ORANGE_COUNTY/6733sc-a.nc" urlPath="ORANGE_COUNTY/6733sc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.580448 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.959747 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 22:20:16 </start>
+<end> 2002-05-15 21:00:16 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="TRN_107" vocabulary_name="TRANSMISSOMETER VOLTAGE 7" units="volts">TRANSMISSOMETER VOLTAGE 7</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6733sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517936416000" increment="300000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-673"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6733sc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6733sc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:38:59" />
+<attribute name="start_time" value="2002-01-16 22:20:16Z" />
+<attribute name="stop_time" value="2002-05-15 21:00:16Z" />
+</netcdf>
+</dataset>
+<dataset name="6742mc-a.nc" ID="ORANGE_COUNTY/6742mc-a.nc" urlPath="ORANGE_COUNTY/6742mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.577068 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.019417 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 19:12:00 </start>
+<end> 2002-05-15 19:08:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6742mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517925120000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-674"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6742mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6742mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:02" />
+<attribute name="start_time" value="2002-01-16 19:12:00Z" />
+<attribute name="stop_time" value="2002-05-15 19:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6743mc-a.nc" ID="ORANGE_COUNTY/6743mc-a.nc" urlPath="ORANGE_COUNTY/6743mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.577068 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.019417 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 19:00:00 </start>
+<end> 2002-05-15 19:04:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6743mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517924400000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-674"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6743mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6743mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:07" />
+<attribute name="start_time" value="2002-01-16 19:00:00Z" />
+<attribute name="stop_time" value="2002-05-15 19:04:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6752mc-a.nc" ID="ORANGE_COUNTY/6752mc-a.nc" urlPath="ORANGE_COUNTY/6752mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.579617 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.960732 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-17 00:54:00 </start>
+<end> 2002-05-15 17:08:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6752mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517945640000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-675"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6752mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6752mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:11" />
+<attribute name="start_time" value="2002-01-17 00:54:00Z" />
+<attribute name="stop_time" value="2002-05-15 17:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6754mc-a.nc" ID="ORANGE_COUNTY/6754mc-a.nc" urlPath="ORANGE_COUNTY/6754mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.579617 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.960732 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-17 00:54:00 </start>
+<end> 2002-05-15 17:08:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6754mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517945640000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-675"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6754mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6754mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:14" />
+<attribute name="start_time" value="2002-01-17 00:54:00Z" />
+<attribute name="stop_time" value="2002-05-15 17:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6756mc-a.nc" ID="ORANGE_COUNTY/6756mc-a.nc" urlPath="ORANGE_COUNTY/6756mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.579617 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.960732 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-17 00:54:00 </start>
+<end> 2002-05-15 17:08:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6756mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517945640000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-675"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6756mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6756mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:18" />
+<attribute name="start_time" value="2002-01-17 00:54:00Z" />
+<attribute name="stop_time" value="2002-05-15 17:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6758mc-a.nc" ID="ORANGE_COUNTY/6758mc-a.nc" urlPath="ORANGE_COUNTY/6758mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.579617 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.960732 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-17 00:54:00 </start>
+<end> 2002-05-15 17:08:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6758mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517945640000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-675"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6758mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6758mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:20" />
+<attribute name="start_time" value="2002-01-17 00:54:00Z" />
+<attribute name="stop_time" value="2002-05-15 17:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6763sc-a.nc" ID="ORANGE_COUNTY/6763sc-a.nc" urlPath="ORANGE_COUNTY/6763sc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.580448 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.959747 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-17 05:11:57 </start>
+<end> 2002-05-15 17:36:42 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3 ">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6763sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517961117000" increment="11265000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-676"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6763sc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6763sc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:25" />
+<attribute name="start_time" value="2002-01-17 05:11:57Z" />
+<attribute name="stop_time" value="2002-05-15 17:36:42Z" />
+</netcdf>
+</dataset>
+<dataset name="6771mc-a.nc" ID="ORANGE_COUNTY/6771mc-a.nc" urlPath="ORANGE_COUNTY/6771mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.579750 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.960136 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 23:22:00 </start>
+<end> 2002-05-15 16:08:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6771mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517940120000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-677"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6771mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6771mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:29" />
+<attribute name="start_time" value="2002-01-16 23:22:00Z" />
+<attribute name="stop_time" value="2002-05-15 16:08:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6772mc-a.nc" ID="ORANGE_COUNTY/6772mc-a.nc" urlPath="ORANGE_COUNTY/6772mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.579750 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -117.960136 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-01-16 23:18:00 </start>
+<end> 2002-05-15 16:02:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6772mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4517939880000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-677"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6772mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6772mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:33" />
+<attribute name="start_time" value="2002-01-16 23:18:00Z" />
+<attribute name="stop_time" value="2002-05-15 16:02:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6941mc-a.nc" ID="ORANGE_COUNTY/6941mc-a.nc" urlPath="ORANGE_COUNTY/6941mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576382 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.017319 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-10-06 12:00:00 </start>
+<end> 2003-01-22 16:32:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6941mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4540622400000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-694"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6941mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6941mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:38" />
+<attribute name="start_time" value="2002-10-06 12:00:00Z" />
+<attribute name="stop_time" value="2003-01-22 16:32:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6942mc-a.nc" ID="ORANGE_COUNTY/6942mc-a.nc" urlPath="ORANGE_COUNTY/6942mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576382 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.017319 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-09-26 17:08:00 </start>
+<end> 2002-10-26 18:52:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6942mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4539776880000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-694"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6942mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6942mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:39" />
+<attribute name="start_time" value="2002-09-26 17:08:00Z" />
+<attribute name="stop_time" value="2002-10-26 18:52:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6943mc-a.nc" ID="ORANGE_COUNTY/6943mc-a.nc" urlPath="ORANGE_COUNTY/6943mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576382 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.017319 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-09-26 17:08:00 </start>
+<end> 2003-01-22 16:32:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6943mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4539776880000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-694"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6943mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6943mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:41" />
+<attribute name="start_time" value="2002-09-26 17:08:00Z" />
+<attribute name="stop_time" value="2003-01-22 16:32:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6945mc-a.nc" ID="ORANGE_COUNTY/6945mc-a.nc" urlPath="ORANGE_COUNTY/6945mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576382 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.017319 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-09-26 17:08:00 </start>
+<end> 2003-01-22 16:32:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6945mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4539776880000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-694"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6945mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6945mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:44" />
+<attribute name="start_time" value="2002-09-26 17:08:00Z" />
+<attribute name="stop_time" value="2003-01-22 16:32:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6946mc-a.nc" ID="ORANGE_COUNTY/6946mc-a.nc" urlPath="ORANGE_COUNTY/6946mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576382 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.017319 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-10-06 12:00:00 </start>
+<end> 2003-01-22 16:32:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6946mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4540622400000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-694"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6946mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6946mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:49" />
+<attribute name="start_time" value="2002-10-06 12:00:00Z" />
+<attribute name="stop_time" value="2003-01-22 16:32:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6948mc-a.nc" ID="ORANGE_COUNTY/6948mc-a.nc" urlPath="ORANGE_COUNTY/6948mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.576382 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.017319 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2002-10-06 12:00:00 </start>
+<end> 2003-01-22 16:32:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/ORANGE_COUNTY/6948mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4540622400000" increment="120000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-694"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="ORANGE_COUNTY/6948mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="6948mc-a.nc - Orange County Sanitation District Studies" />
+<attribute name="summary" value="Observations to monitor coastal ocean process that transport suspended material and associated comtaminants across the shelf" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:39:53" />
+<attribute name="start_time" value="2002-10-06 12:00:00Z" />
+<attribute name="stop_time" value="2003-01-22 16:32:00Z" />
+</netcdf>
+</dataset>
+ </dataset>
+</catalog>

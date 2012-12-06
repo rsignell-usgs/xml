@@ -1,0 +1,3306 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="California Area Monitoring Program (May-Jun 1987, 12/88-2/89)" ID="Camp">
+    <metadata inherited="true">
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>34</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-120.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>500</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/camp.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="3241-AA.cdf" ID="CAMP/3241-AA.cdf" urlPath="CAMP/3241-AA.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.943333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.786003 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:31:52 </start>
+<end> 1987-09-15 16:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="comp_1404" vocabulary_name="COMPASS (m)" units="degreeM">COMPASS (m)</variable>
+<variable name="van_1403" vocabulary_name="VANE ANGLE" units="degrees">VANE ANGLE</variable>
+<variable name="bear_1411" vocabulary_name="bearing (m)" units="degreeM">bearing (m)</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3241-AA.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053990712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-324"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3241-AA.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3241-AA.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:30:59" />
+<attribute name="start_time" value="1987-05-06 04:31:52Z" />
+<attribute name="stop_time" value="1987-09-15 16:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3241ATT-A.cdf" ID="CAMP/3241ATT-A.cdf" urlPath="CAMP/3241ATT-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.943333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.786003 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:31:52 </start>
+<end> 1987-09-15 16:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3241ATT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053990712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-324"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3241ATT-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3241ATT-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:30:59" />
+<attribute name="start_time" value="1987-05-06 04:31:52Z" />
+<attribute name="stop_time" value="1987-09-15 16:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3241ATT-A1H.cdf" ID="CAMP/3241ATT-A1H.cdf" urlPath="CAMP/3241ATT-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.943333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.786003 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 05:00:00 </start>
+<end> 1987-09-15 16:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3241ATT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053992400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-324"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3241ATT-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3241ATT-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:00" />
+<attribute name="start_time" value="1987-05-06 05:00:00Z" />
+<attribute name="stop_time" value="1987-09-15 16:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3241TCT-A.cdf" ID="CAMP/3241TCT-A.cdf" urlPath="CAMP/3241TCT-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.943333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.786003 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:31:52 </start>
+<end> 1987-09-15 16:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3241TCT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053990712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-324"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3241TCT-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3241TCT-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:03" />
+<attribute name="start_time" value="1987-05-06 04:31:52Z" />
+<attribute name="stop_time" value="1987-09-15 16:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3241TCT-A1H.cdf" ID="CAMP/3241TCT-A1H.cdf" urlPath="CAMP/3241TCT-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.943333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.786003 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 05:00:00 </start>
+<end> 1987-09-15 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3241TCT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053992400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-324"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3241TCT-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3241TCT-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:03" />
+<attribute name="start_time" value="1987-05-06 05:00:00Z" />
+<attribute name="stop_time" value="1987-09-15 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3242-A.cdf" ID="CAMP/3242-A.cdf" urlPath="CAMP/3242-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.943333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.786003 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:31:52 </start>
+<end> 1987-09-15 16:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="comp_1404" vocabulary_name="COMPASS (m)" units="degreeM">COMPASS (m)</variable>
+<variable name="van_1403" vocabulary_name="VANE ANGLE" units="degrees">VANE ANGLE</variable>
+<variable name="bear_1411" vocabulary_name="bearing (m)" units="degreeM">bearing (m)</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3242-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053990712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-324"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3242-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3242-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:08" />
+<attribute name="start_time" value="1987-05-06 04:31:52Z" />
+<attribute name="stop_time" value="1987-09-15 16:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3242-A1H.cdf" ID="CAMP/3242-A1H.cdf" urlPath="CAMP/3242-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.943333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.786003 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 05:00:00 </start>
+<end> 1987-09-15 16:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3242-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053992400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-324"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3242-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3242-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:09" />
+<attribute name="start_time" value="1987-05-06 05:00:00Z" />
+<attribute name="stop_time" value="1987-09-15 16:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3242ATT-A.cdf" ID="CAMP/3242ATT-A.cdf" urlPath="CAMP/3242ATT-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.943333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.786003 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:31:52 </start>
+<end> 1987-09-15 16:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3242ATT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053990712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-324"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3242ATT-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3242ATT-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:11" />
+<attribute name="start_time" value="1987-05-06 04:31:52Z" />
+<attribute name="stop_time" value="1987-09-15 16:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3242ATT-A1H.cdf" ID="CAMP/3242ATT-A1H.cdf" urlPath="CAMP/3242ATT-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.943333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.786003 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 05:00:00 </start>
+<end> 1987-09-15 16:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3242ATT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053992400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-324"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3242ATT-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3242ATT-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:12" />
+<attribute name="start_time" value="1987-05-06 05:00:00Z" />
+<attribute name="stop_time" value="1987-09-15 16:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3242TCT-A.cdf" ID="CAMP/3242TCT-A.cdf" urlPath="CAMP/3242TCT-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.943333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.786003 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:31:52 </start>
+<end> 1987-09-15 16:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3242TCT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053990712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-324"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3242TCT-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3242TCT-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:14" />
+<attribute name="start_time" value="1987-05-06 04:31:52Z" />
+<attribute name="stop_time" value="1987-09-15 16:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3242TCT-A1H.cdf" ID="CAMP/3242TCT-A1H.cdf" urlPath="CAMP/3242TCT-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.943333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.786003 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 05:00:00 </start>
+<end> 1987-09-15 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3242TCT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053992400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-324"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3242TCT-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3242TCT-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:15" />
+<attribute name="start_time" value="1987-05-06 05:00:00Z" />
+<attribute name="stop_time" value="1987-09-15 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3251-A.cdf" ID="CAMP/3251-A.cdf" urlPath="CAMP/3251-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 03:31:52 </start>
+<end> 1987-06-26 04:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="comp_1404" vocabulary_name="COMPASS (m)" units="degreeM">COMPASS (m)</variable>
+<variable name="van_1403" vocabulary_name="VANE ANGLE" units="degrees">VANE ANGLE</variable>
+<variable name="bear_1411" vocabulary_name="bearing (m)" units="degreeM">bearing (m)</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3251-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053987112000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3251-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3251-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:16" />
+<attribute name="start_time" value="1987-05-06 03:31:52Z" />
+<attribute name="stop_time" value="1987-06-26 04:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3251-A1H.cdf" ID="CAMP/3251-A1H.cdf" urlPath="CAMP/3251-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:00:00 </start>
+<end> 1987-06-26 04:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3251-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053988800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3251-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3251-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:16" />
+<attribute name="start_time" value="1987-05-06 04:00:00Z" />
+<attribute name="stop_time" value="1987-06-26 04:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3251ATT-A1H.cdf" ID="CAMP/3251ATT-A1H.cdf" urlPath="CAMP/3251ATT-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:00:00 </start>
+<end> 1987-06-26 04:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3251ATT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053988800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3251ATT-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3251ATT-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:16" />
+<attribute name="start_time" value="1987-05-06 04:00:00Z" />
+<attribute name="stop_time" value="1987-06-26 04:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3251ATT-AA.cdf" ID="CAMP/3251ATT-AA.cdf" urlPath="CAMP/3251ATT-AA.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 03:31:52 </start>
+<end> 1987-06-26 04:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3251ATT-AA.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053987112000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3251ATT-AA.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3251ATT-AA.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:19" />
+<attribute name="start_time" value="1987-05-06 03:31:52Z" />
+<attribute name="stop_time" value="1987-06-26 04:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3251DS-A1H.cdf" ID="CAMP/3251DS-A1H.cdf" urlPath="CAMP/3251DS-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:00:00 </start>
+<end> 1987-05-24 01:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3251DS-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053988800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3251DS-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3251DS-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:19" />
+<attribute name="start_time" value="1987-05-06 04:00:00Z" />
+<attribute name="stop_time" value="1987-05-24 01:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3251S-A.cdf" ID="CAMP/3251S-A.cdf" urlPath="CAMP/3251S-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 03:31:52 </start>
+<end> 1987-05-24 01:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3251S-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053987112000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3251S-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3251S-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:20" />
+<attribute name="start_time" value="1987-05-06 03:31:52Z" />
+<attribute name="stop_time" value="1987-05-24 01:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3251TC-A.cdf" ID="CAMP/3251TC-A.cdf" urlPath="CAMP/3251TC-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 03:31:52 </start>
+<end> 1987-06-26 04:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3251TC-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053987112000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3251TC-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3251TC-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:20" />
+<attribute name="start_time" value="1987-05-06 03:31:52Z" />
+<attribute name="stop_time" value="1987-06-26 04:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3251TCT-A1H.cdf" ID="CAMP/3251TCT-A1H.cdf" urlPath="CAMP/3251TCT-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:00:00 </start>
+<end> 1987-06-26 04:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3251TCT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053988800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3251TCT-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3251TCT-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:20" />
+<attribute name="start_time" value="1987-05-06 04:00:00Z" />
+<attribute name="stop_time" value="1987-06-26 04:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3252-A1H.cdf" ID="CAMP/3252-A1H.cdf" urlPath="CAMP/3252-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:00:00 </start>
+<end> 1987-06-26 04:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3252-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053988800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3252-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3252-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:22" />
+<attribute name="start_time" value="1987-05-06 04:00:00Z" />
+<attribute name="stop_time" value="1987-06-26 04:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3252-AA.cdf" ID="CAMP/3252-AA.cdf" urlPath="CAMP/3252-AA.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 03:31:52 </start>
+<end> 1987-06-26 04:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="comp_1404" vocabulary_name="COMPASS (m)" units="degreeM">COMPASS (m)</variable>
+<variable name="van_1403" vocabulary_name="VANE ANGLE" units="degrees">VANE ANGLE</variable>
+<variable name="bear_1411" vocabulary_name="bearing (m)" units="degreeM">bearing (m)</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3252-AA.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053987112000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3252-AA.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3252-AA.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:24" />
+<attribute name="start_time" value="1987-05-06 03:31:52Z" />
+<attribute name="stop_time" value="1987-06-26 04:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3252ATT-A1H.cdf" ID="CAMP/3252ATT-A1H.cdf" urlPath="CAMP/3252ATT-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:00:00 </start>
+<end> 1987-06-26 04:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3252ATT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053988800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3252ATT-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3252ATT-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:24" />
+<attribute name="start_time" value="1987-05-06 04:00:00Z" />
+<attribute name="stop_time" value="1987-06-26 04:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3252ATT-AA.cdf" ID="CAMP/3252ATT-AA.cdf" urlPath="CAMP/3252ATT-AA.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 03:31:52 </start>
+<end> 1987-06-26 04:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3252ATT-AA.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053987112000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3252ATT-AA.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3252ATT-AA.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:25" />
+<attribute name="start_time" value="1987-05-06 03:31:52Z" />
+<attribute name="stop_time" value="1987-06-26 04:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3252TC-A.cdf" ID="CAMP/3252TC-A.cdf" urlPath="CAMP/3252TC-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 03:31:52 </start>
+<end> 1987-06-26 04:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3252TC-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053987112000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3252TC-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3252TC-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:25" />
+<attribute name="start_time" value="1987-05-06 03:31:52Z" />
+<attribute name="stop_time" value="1987-06-26 04:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3252TCT-A1H.cdf" ID="CAMP/3252TCT-A1H.cdf" urlPath="CAMP/3252TCT-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942223 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.851334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1987-05-06 04:00:00 </start>
+<end> 1987-06-26 04:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3252TCT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4053988800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-325"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3252TCT-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3252TCT-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:25" />
+<attribute name="start_time" value="1987-05-06 04:00:00Z" />
+<attribute name="stop_time" value="1987-06-26 04:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3301-A.cdf" ID="CAMP/3301-A.cdf" urlPath="CAMP/3301-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942890 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.785553 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-08 19:31:52 </start>
+<end> 1989-02-22 13:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="comp_1404" vocabulary_name="COMPASS (m)" units="degreeM">COMPASS (m)</variable>
+<variable name="van_1403" vocabulary_name="VANE ANGLE" units="degrees">VANE ANGLE</variable>
+<variable name="bear_1411" vocabulary_name="bearing (m)" units="degreeM">bearing (m)</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3301-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104329512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-330"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3301-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3301-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:29" />
+<attribute name="start_time" value="1988-12-08 19:31:52Z" />
+<attribute name="stop_time" value="1989-02-22 13:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3301-A1H.cdf" ID="CAMP/3301-A1H.cdf" urlPath="CAMP/3301-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942890 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.785553 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-08 20:00:00 </start>
+<end> 1989-02-22 13:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3301-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104331200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-330"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3301-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3301-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:29" />
+<attribute name="start_time" value="1988-12-08 20:00:00Z" />
+<attribute name="stop_time" value="1989-02-22 13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3301TCT-A.cdf" ID="CAMP/3301TCT-A.cdf" urlPath="CAMP/3301TCT-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942890 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.785553 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-08 19:31:52 </start>
+<end> 1989-02-22 13:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3301TCT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104329512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-330"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3301TCT-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3301TCT-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:31" />
+<attribute name="start_time" value="1988-12-08 19:31:52Z" />
+<attribute name="stop_time" value="1989-02-22 13:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3302-A.cdf" ID="CAMP/3302-A.cdf" urlPath="CAMP/3302-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942890 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.785553 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-08 19:31:52 </start>
+<end> 1989-02-22 13:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="comp_1404" vocabulary_name="COMPASS (m)" units="degreeM">COMPASS (m)</variable>
+<variable name="van_1403" vocabulary_name="VANE ANGLE" units="degrees">VANE ANGLE</variable>
+<variable name="bear_1411" vocabulary_name="bearing (m)" units="degreeM">bearing (m)</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3302-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104329512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-330"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3302-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3302-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:33" />
+<attribute name="start_time" value="1988-12-08 19:31:52Z" />
+<attribute name="stop_time" value="1989-02-22 13:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3302-A1H.cdf" ID="CAMP/3302-A1H.cdf" urlPath="CAMP/3302-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942890 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.785553 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-08 20:00:00 </start>
+<end> 1989-02-22 13:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3302-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104331200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-330"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3302-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3302-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:34" />
+<attribute name="start_time" value="1988-12-08 20:00:00Z" />
+<attribute name="stop_time" value="1989-02-22 13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3302TCT-A.cdf" ID="CAMP/3302TCT-A.cdf" urlPath="CAMP/3302TCT-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.942890 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.785553 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-08 19:31:52 </start>
+<end> 1989-02-22 13:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3302TCT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104329512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-330"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3302TCT-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3302TCT-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:34" />
+<attribute name="start_time" value="1988-12-08 19:31:52Z" />
+<attribute name="stop_time" value="1989-02-22 13:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3311-A.cdf" ID="CAMP/3311-A.cdf" urlPath="CAMP/3311-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.918446 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.855782 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-09 00:31:52 </start>
+<end> 1989-02-22 17:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="comp_1404" vocabulary_name="COMPASS (m)" units="degreeM">COMPASS (m)</variable>
+<variable name="van_1403" vocabulary_name="VANE ANGLE" units="degrees">VANE ANGLE</variable>
+<variable name="bear_1411" vocabulary_name="bearing (m)" units="degreeM">bearing (m)</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3311-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104347512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-331"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3311-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3311-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:38" />
+<attribute name="start_time" value="1988-12-09 00:31:52Z" />
+<attribute name="stop_time" value="1989-02-22 17:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3311-A1H.cdf" ID="CAMP/3311-A1H.cdf" urlPath="CAMP/3311-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.918446 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.855782 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-09 01:00:00 </start>
+<end> 1989-02-22 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3311-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104349200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-331"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3311-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3311-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:38" />
+<attribute name="start_time" value="1988-12-09 01:00:00Z" />
+<attribute name="stop_time" value="1989-02-22 17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3312-A.cdf" ID="CAMP/3312-A.cdf" urlPath="CAMP/3312-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.918446 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.855782 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-09 00:31:52 </start>
+<end> 1989-02-22 17:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="comp_1404" vocabulary_name="COMPASS (m)" units="degreeM">COMPASS (m)</variable>
+<variable name="van_1403" vocabulary_name="VANE ANGLE" units="degrees">VANE ANGLE</variable>
+<variable name="bear_1411" vocabulary_name="bearing (m)" units="degreeM">bearing (m)</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3312-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104347512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-331"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3312-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3312-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:41" />
+<attribute name="start_time" value="1988-12-09 00:31:52Z" />
+<attribute name="stop_time" value="1989-02-22 17:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3312-A1H.cdf" ID="CAMP/3312-A1H.cdf" urlPath="CAMP/3312-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.918446 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.855782 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-09 01:00:00 </start>
+<end> 1989-02-22 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3312-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104349200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-331"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3312-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3312-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:41" />
+<attribute name="start_time" value="1988-12-09 01:00:00Z" />
+<attribute name="stop_time" value="1989-02-22 17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3312TCT-A.cdf" ID="CAMP/3312TCT-A.cdf" urlPath="CAMP/3312TCT-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.918446 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.855782 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-09 00:31:52 </start>
+<end> 1989-02-22 17:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3312TCT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104347512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-331"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3312TCT-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3312TCT-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:42" />
+<attribute name="start_time" value="1988-12-09 00:31:52Z" />
+<attribute name="stop_time" value="1989-02-22 17:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3321-A.cdf" ID="CAMP/3321-A.cdf" urlPath="CAMP/3321-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.916668 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.986443 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-09 20:31:52 </start>
+<end> 1989-02-22 19:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="comp_1404" vocabulary_name="COMPASS (m)" units="degreeM">COMPASS (m)</variable>
+<variable name="van_1403" vocabulary_name="VANE ANGLE" units="degrees">VANE ANGLE</variable>
+<variable name="bear_1411" vocabulary_name="bearing (m)" units="degreeM">bearing (m)</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3321-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104419512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-332"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3321-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3321-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:45" />
+<attribute name="start_time" value="1988-12-09 20:31:52Z" />
+<attribute name="stop_time" value="1989-02-22 19:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3321-A1H.cdf" ID="CAMP/3321-A1H.cdf" urlPath="CAMP/3321-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.916668 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.986443 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-09 21:00:00 </start>
+<end> 1989-02-22 19:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3321-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104421200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-332"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3321-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3321-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:46" />
+<attribute name="start_time" value="1988-12-09 21:00:00Z" />
+<attribute name="stop_time" value="1989-02-22 19:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3321TCT-A.cdf" ID="CAMP/3321TCT-A.cdf" urlPath="CAMP/3321TCT-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.916668 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.986443 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-09 20:31:52 </start>
+<end> 1989-02-22 19:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3321TCT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104419512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-332"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3321TCT-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3321TCT-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:47" />
+<attribute name="start_time" value="1988-12-09 20:31:52Z" />
+<attribute name="stop_time" value="1989-02-22 19:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3322-A.cdf" ID="CAMP/3322-A.cdf" urlPath="CAMP/3322-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.916668 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.986443 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-09 20:31:52 </start>
+<end> 1989-02-22 19:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="comp_1404" vocabulary_name="COMPASS (m)" units="degreeM">COMPASS (m)</variable>
+<variable name="van_1403" vocabulary_name="VANE ANGLE" units="degrees">VANE ANGLE</variable>
+<variable name="bear_1411" vocabulary_name="bearing (m)" units="degreeM">bearing (m)</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3322-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104419512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-332"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3322-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3322-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:51" />
+<attribute name="start_time" value="1988-12-09 20:31:52Z" />
+<attribute name="stop_time" value="1989-02-22 19:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3322-A1H.cdf" ID="CAMP/3322-A1H.cdf" urlPath="CAMP/3322-A1H.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.916668 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.986443 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-09 21:00:00 </start>
+<end> 1989-02-22 19:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3322-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104421200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-332"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3322-A1H.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3322-A1H.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:53" />
+<attribute name="start_time" value="1988-12-09 21:00:00Z" />
+<attribute name="stop_time" value="1989-02-22 19:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3322TCT-A.cdf" ID="CAMP/3322TCT-A.cdf" urlPath="CAMP/3322TCT-A.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 34.916668 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.986443 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1988-12-09 20:31:52 </start>
+<end> 1989-02-22 19:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/CAMP/3322TCT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4104419512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-332"</values>
+ </variable>
+<variable name="C_50">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="CAMP/3322TCT-A.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3322TCT-A.cdf - California Area Monitoring Program (CAMP)" />
+<attribute name="summary" value="A four-year multi-disciplinary field and laboratory study to investigate the sediment transport regime in the vicinity of production drilling rigs in the Santa Barbara Basin" />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:31:54" />
+<attribute name="start_time" value="1988-12-09 20:31:52Z" />
+<attribute name="stop_time" value="1989-02-22 19:28:07Z" />
+</netcdf>
+</dataset>
+ </dataset>
+</catalog>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="THREDDS Server Default Catalog : You must change this to fit your server!"
+        xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/" />
+  
+  <!-- The datasetRoot is a convenience, used by the "Test Gomoos Data" dataset below -->
+  <datasetRoot path="cfdir" location="c:/rps/cf"/>
+
+  <dataset name="Test Gomoos Data" ID="testDataset" serviceName="ncdods"
+    urlPath="cfdir/gomoos/gomoos.20050511.cdf"/>
+
+  <datasetScan name="RPS Stuff" ID="rpsstuff"
+    path="rps/data" location="c:/rps/data">
+    
+    <metadata inherited="true">
+      <serviceName>ncdods</serviceName>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc"/>
+      <include wildcard="*.cdf"/>
+    </filter>
+    
+    
+     </datasetScan>
+
+  <catalogRef xlink:title="Hydrologic Modeling Catalog" xlink:href="hydrologic_catalog.xml" name=""/>
+  <!--  <catalogRef xlink:title="IOOS Catalog" xlink:href="ioos_catalog.xml" name=""/>
+  <catalogRef xlink:title="PacIOOS ROMS FMRC test" xlink:href="pacioos_roms.xml" name=""/>
+  <catalogRef xlink:title="Albers test" xlink:href="albers.xml" name=""/>
+  <catalogRef xlink:title="SCB Catalog" xlink:href="scb2_catalog.xml" name=""/>
+  <catalogRef xlink:title="OCOS Catalog" xlink:href="OCOS_catalog.xml" name=""/>-->
+</catalog>

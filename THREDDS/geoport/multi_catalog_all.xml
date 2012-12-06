@@ -1,0 +1,99 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.1">
+ <service name="all" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+
+ <dataset name="NOAA-WW3" ID="waves">
+  <metadata inherited="true">
+   <serviceName>all</serviceName>
+   <documentation xlink:href="http://www.ncep.noaa.gov" xlink:title="NCEP"/>
+  </metadata>
+  <dataset name="NCEP WaveWatch III:  Atlantic (4 min grid)" ID="waves/ww3_multi/at_4m_all"
+   urlPath="waves/ww3_multi/at_4m_all">
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation type="union">
+
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="time" type="joinExisting" timeUnitsChange="true">
+       <scan location="/usgs/data1/rsignell/models/ncep/history/fix/4m"
+        regExp=".*multi_1.at_4m.hs.[0-9]{6}\.grb2$"/>
+      </aggregation>
+      <variable name="Significant_height_of_combined_wind_waves_and_swell">
+       <attribute name="long_name" value="Significant_height_of_combined_wind_waves_and_swell"/>
+      </variable>
+     </netcdf>
+
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="time" type="joinExisting" timeUnitsChange="true">
+       <scan location="/usgs/data1/rsignell/models/ncep/history/fix/4m"
+        regExp=".*multi_1.at_4m.tp.[0-9]{6}\.grb2$"/>
+      </aggregation>
+      <variable name="Primary_wave_mean_period">
+       <attribute name="long_name" value="Primary_wave_mean_period"/>
+      </variable>
+
+     </netcdf>
+
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="time" type="joinExisting" timeUnitsChange="true">
+       <scan location="/usgs/data1/rsignell/models/ncep/history/fix/4m"
+        regExp=".*multi_1.at_4m.dp.[0-9]{6}\.grb2$"/>
+      </aggregation>
+      <variable name="Primary_wave_direction">
+       <attribute name="long_name" value="Primary_wave_direction"/>
+      </variable>
+     </netcdf>
+
+    </aggregation>
+   </netcdf>
+
+  </dataset>
+
+  <dataset name="NCEP WaveWatch III:  Atlantic (10 min grid)" ID="waves/ww3_multi/at_10m_all"
+   urlPath="waves/ww3_multi/at_10m_all">
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation type="union">
+
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="time" type="joinExisting" timeUnitsChange="true">
+       <scan location="/usgs/data1/rsignell/models/ncep/history/fix/10m"
+        regExp=".*multi_1.at_10m.hs.[0-9]{6}\.grb2$"/>
+      </aggregation>
+      <variable name="Significant_height_of_combined_wind_waves_and_swell">
+       <attribute name="long_name" value="Significant_height_of_combined_wind_waves_and_swell"/>
+      </variable>
+
+     </netcdf>
+
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="time" type="joinExisting" timeUnitsChange="true">
+       <scan location="/usgs/data1/rsignell/models/ncep/history/fix/10m"
+        regExp=".*multi_1.at_10m.tp.[0-9]{6}\.grb2$"/>
+      </aggregation>
+      <variable name="Primary_wave_mean_period">
+       <attribute name="long_name" value="Primary_wave_mean_period"/>
+      </variable>
+     </netcdf>
+
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="time" type="joinExisting" timeUnitsChange="true">
+       <scan location="/usgs/data1/rsignell/models/ncep/history/fix/10m"
+        regExp=".*multi_1.at_10m.dp.[0-9]{6}\.grb2$"/>
+      </aggregation>
+      <variable name="Primary_wave_direction">
+       <attribute name="long_name" value="Primary_wave_direction"/>
+      </variable>
+     </netcdf>
+
+    </aggregation>
+   </netcdf>
+  </dataset>
+ </dataset>
+</catalog>

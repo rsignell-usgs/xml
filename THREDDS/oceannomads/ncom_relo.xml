@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+ </service>
+ 
+ <dataset name="NCOM Relocatable Runs" ID="NCOM">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+  </metadata>
+
+  <dataset name="Fukushima" ID="ncom_relo/fukushima" urlPath="ncom_relo/fukushima">
+
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <remove type="attribute" name="field"/>
+    <aggregation dimName="time" type="joinExisting">
+     <scan location="/usgs/data1/rsignell/models/ncep/ncom_relo" regExp=".*ncom_relo_fuku.*\.nc$"/>
+    </aggregation>
+    <variable name="water_u">
+     <attribute name="standard_name" value="eastward_seawater_velocity"/>
+    </variable>
+    <variable name="water_v">
+     <attribute name="standard_name" value="northward_seawater_velocity"/>
+    </variable>
+   </netcdf>
+  </dataset>
+ </dataset>
+</catalog>

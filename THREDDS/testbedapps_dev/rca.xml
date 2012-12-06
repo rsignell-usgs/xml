@@ -1,0 +1,337 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="RCA Catalog">
+ 
+ <service name="all" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+ 
+ <service name="agg" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+ 
+ <service name="points" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="sos" serviceType="SOS" base="/thredds/sos/"/>
+ </service>
+ 
+ 
+<dataset name="RCA test 2000" ID="rca.test.2000" urlPath="rca/test/2000"> 
+<serviceName>all</serviceName>
+
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+ <aggregation type="union">
+  <netcdf
+   location="/data/ftp/upload/rsignell/rca/Y2000_eutr_0203.nc">
+   <remove type="variable" name="LON"/>
+   <remove type="variable" name="LAT"/>
+   <variable name="x_r" shape="NX" type="float">
+    <remove type="attribute" name="coordinates"/>
+   </variable>
+   <variable name="y_r" shape="NY" type="float">
+    <remove type="attribute" name="coordinates"/>
+   </variable>
+   <variable name="s_r" shape="NZ" type="float">
+    <attribute name="long_name" value="sigma layers"/>
+    <attribute name="units" value="1"/>
+    <values start="-0.025" increment="-0.050"/>
+    <attribute name="standard_name" type="String" value="ocean_sigma_coordinate"/>
+    <attribute name="formula_terms" type="String" value="sigma: s_r eta: ETA depth: H"/>
+    <attribute name="positive" type="String" value="up"/>
+    <remove type="attribute" name="coordinates"/>
+    <attribute name="units" type="String" value="1"/>
+   </variable>
+   <variable name="s_w" shape="NZZ" type="float">
+    <attribute name="long_name" value="sigma levels"/>
+    <attribute name="standard_name" type="String" value="ocean_sigma_coordinate"/>
+    <attribute name="formula_terms" type="String" value="sigma: s_w eta: ETA depth: H"/>
+    <attribute name="positive" type="String" value="up"/>
+    <attribute name="units" value="1"/>
+    <values start="-0.000" increment="-0.050"/>
+    <remove type="attribute" name="coordinates"/>
+   </variable>
+   <variable name="group" shape="group" type="float">
+    <remove type="attribute" name="coordinates"/>
+    </variable>
+   <variable name="FSM" shape="NY NX" type="float">
+    <attribute name="long_name" value="land mask, 1=water, 0=land, -1=river BC, -2=ocean BC"/>
+    <attribute name="units" value="nondimensional"/>
+    <attribute name="field" value="mask, scalar, series"/>
+    <attribute name="time" value="null"/>
+    <attribute name="coordinates" value="LON LAT"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="H" shape="NY NX" type="float">
+    <attribute name="coordinates" value="LON LAT"/>
+   </variable>
+   <variable name="DX" shape="NY NX" type="float">
+    <attribute name="coordinates" value="LON LAT"/>
+   </variable>
+   <variable name="DY" shape="NY NX" type="float">
+    <attribute name="coordinates" value="LON LAT"/>
+   </variable>
+   <variable name="TIME" shape="TIME" type="float">
+    <attribute name="units" value="days since 2000-01-01"/>
+    <remove type="attribute" name="coordinates"/>
+   </variable>
+   <variable name="ITOTSF_time" shape="TIME" type="float">
+    <attribute name="long_name" value="time of total daily solar radiation"/>
+    <attribute name="units" value="DAYS"/>
+    <attribute name="field" value="time, scalar, series"/>
+    <attribute name="time" value="ITOTSF_time"/>
+    <remove type="attribute" name="coordinates"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="ETA" shape="TIME NY NX" type="float">
+    <attribute name="long_name" value="sea level"/>
+    <attribute name="units" value="meter"/>
+    <attribute name="coordinates" value="LON LAT TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="SAL" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="salinity"/>
+    <attribute name="units" value="0.001"/>
+    <attribute name="field" value="salinity, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="PHYT1" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="winter diatoms"/>
+    <attribute name="units" value="MG C/L"/>
+    <attribute name="field" value="phytoplankton, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="PHYT2" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="summer assemblage"/>
+    <attribute name="units" value="MG C/L"/>
+    <attribute name="field" value="phytoplankton, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="PHYT3" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="fall assemblage"/>
+    <attribute name="units" value="MG C/L"/>
+    <attribute name="field" value="phytoplankton, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="TPOP" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="total particulate organic phosphorus"/>
+    <attribute name="units" value="MG P/L"/>
+    <attribute name="field" value="POP, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="TDOP" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="total dissolved organic phosphorus"/>
+    <attribute name="units" value="MG P/L"/>
+    <attribute name="field" value="DOP, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="DPO4" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="dissolved PO4"/>
+    <attribute name="units" value="MG P/L"/>
+    <attribute name="field" value="DPO4, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="TPON" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="total particulate organic nitrogen"/>
+    <attribute name="units" value="MG N/L"/>
+    <attribute name="field" value="PON, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="TDON" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="total dissolved organic nitrogen"/>
+    <attribute name="units" value="MG N/L"/>
+    <attribute name="field" value="DON, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="DNH4" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="dissolved ammonia"/>
+    <attribute name="units" value="MG N/L"/>
+    <attribute name="field" value="NH4, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="NO23" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="nitrite and nitrate"/>
+    <attribute name="units" value="MG N/L"/>
+    <attribute name="field" value="NO23, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="TPSI" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="total particulate silica"/>
+    <attribute name="units" value="MG SI/L"/>
+    <attribute name="field" value="PSI, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="DSI" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="total dissolved silica"/>
+    <attribute name="units" value="MG SI/L"/>
+    <attribute name="field" value="DSI, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="TPOC" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="total particulate organic carbon"/>
+    <attribute name="units" value="MG C/L"/>
+    <attribute name="field" value="POC, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="TDOC" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="total dissolved organic carbon"/>
+    <attribute name="units" value="MG C/L"/>
+    <attribute name="field" value="DOC, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="O2EQ" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="AQUEOUS SOD"/>
+    <attribute name="units" value="MG O2/L"/>
+    <attribute name="field" value="O2EQ, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="DOAVEG" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="averaged DO"/>
+    <attribute name="units" value="MG O2/L"/>
+    <attribute name="field" value="DO, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="DOMING" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="minimum DO"/>
+    <attribute name="units" value="MG O2/L"/>
+    <attribute name="field" value="DO, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="DOMAXG" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="maximum DO"/>
+    <attribute name="units" value="MG O2/L"/>
+    <attribute name="field" value="DO, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="HYDSAL" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="hydrodynamic model computed salinity"/>
+    <attribute name="units" value="nondimensional"/>
+    <attribute name="field" value="salinity, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="CHLAVEG" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="averaged CHLa"/>
+    <attribute name="units" value="MG CHL/L"/>
+    <attribute name="field" value="CHLa, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="CHLMING" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="minimum CHLa"/>
+    <attribute name="units" value="MG CHL/L"/>
+    <attribute name="field" value="CHLa, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="CHLMAXG" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="maximum CHLa"/>
+    <attribute name="units" value="MG CHL/L"/>
+    <attribute name="field" value="CHLa, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="TGPP" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="total gross PP integrated to 1% light level"/>
+    <attribute name="units" value="MG C/M^2/DAY"/>
+    <attribute name="field" value="production, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="TNPP" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="total net PP integrated to 1% light level"/>
+    <attribute name="units" value="MG C/M^2/DAY"/>
+    <attribute name="field" value="production, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="TRESP" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="total respiration"/>
+    <attribute name="units" value="MG C/M^3/DAY"/>
+    <attribute name="field" value="respiration, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="HYDTEMP" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="hydrodynamic model computered temperature"/>
+    <attribute name="units" value="CELSIUS"/>
+    <attribute name="field" value="temperature, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+   <variable name="SKE" shape="TIME NZ NY NX" type="float">
+    <attribute name="long_name" value="extinction coefficient"/>
+    <attribute name="units" value="1/M"/>
+    <attribute name="field" value="extinction coefficient, scalar, series"/>
+    <attribute name="time" value="TIME"/>
+    <attribute name="coordinates" value="LON LAT s_r TIME"/>
+    <attribute name="_FillValue" type="float" value="1.0E37"/>
+   </variable>
+  </netcdf>
+  <netcdf location="/data/ftp/upload/rsignell/rca/rca_lonlat.nc"/>
+ </aggregation>
+
+</netcdf>
+</dataset>
+</catalog>

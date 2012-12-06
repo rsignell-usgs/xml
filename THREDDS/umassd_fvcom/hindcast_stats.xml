@@ -1,0 +1,207 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <!--
+  <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
+   -->
+ </service>
+ <dataset name="GOM3 33 year hindcast (1978-2010)">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <dataType>Grid</dataType>
+   <dataFormat>NetCDF</dataFormat>
+   <creator>
+    <name vocabulary="DIF">SMAST/UMASSD</name>
+    <contact url="http://fvcom.smast.umassd.edu/FVCOM/index.html" email="c1chen@umassd.edu"/>
+   </creator>
+   <documentation xlink:href="http://fvcom.smast.umassd.edu/FVCOM/index.html"/>
+ 
+   <documentation type="Summary">This 33 year hindcast was commissioned to support the Massachusetts
+    State Ocean Plan. It was driven at the boundaries with open boundary conditions from a global
+    FVCOM simulation especially designed to better represent the inflow of fresh water from the Gulf
+    of Saint Lawrence. Data assimilated include remotely-sensed sea surface height and temperature,
+    in situ measurements of salinity and temperature. No velocity data was assimilated. Tides were
+    forced on the boundary using 8 constituents from the Oregon State TPXO 7.2 tidal model. </documentation>
+   </metadata>
+   <documentation type="Rights">Dr. Changsheng Chen (c1chen@umassd.edu) should be informed of intent
+    for scientific use and appropriate acknowledgment given in any publications arising therefrom.
+    The data is provided free of charge, without warranty of any kind. </documentation>
+  </metadata>
+  <dataset name="Monthly means" ID="fvcom/hindcasts/30yr_gom3/mean"
+   urlPath="fvcom/hindcasts/30yr_gom3/mean">
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <variable name="z0b" shape="nele" type="float">
+       <attribute name="coordinates" value="latc lonc"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="face"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="siglay" shape="siglay node" type="float">
+       <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+       <attribute name="positive" value="up"/>
+       <attribute name="formula_terms" value="sigma: siglay eta: zeta depth: h"/>
+      </variable>
+      <variable name="h" shape="node" type="float">
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="coordinates" value="lat lon"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="positive"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="nv" shape="three nele" type="int">
+       <attribute name="standard_name" value="face_node_connectivity"/>
+       <attribute name="start_index" type="int" value="1"/>
+      </variable>
+      <!--    <variable name="time">
+     <attribute name="units" value="hours since 1978-01-01 00:00:00"/>
+     <values start="1" increment="1"/> 
+     <remove type="attribute" name="calendar"/>
+    </variable>
+	-->
+      <variable name="fvcom_mesh" shape="" type="int">
+       <attribute name="standard_name" value="mesh_topology"/>
+       <attribute name="dimension" type="int" value="2"/>
+       <attribute name="node_coordinates" value="lon lat"/>
+       <attribute name="face_coordinates" value="lonc latc"/>
+       <attribute name="face_node_connectivity" value="nv"/>
+      </variable>
+      <variable name="zeta" shape="time node" type="float">
+       <attribute name="coordinates" value="time lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="positive"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="u" shape="time siglay nele" type="float">
+       <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+       <attribute name="coordinates" value="time siglay latc lonc"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="face"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="v" shape="time siglay nele" type="float">
+       <attribute name="standard_name" value="northward_sea_water_velocity"/>
+       <attribute name="coordinates" value="time siglay latc lonc"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="face"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="ua" shape="time nele" type="float">
+       <attribute name="standard_name" value="barotropic_eastward_sea_water_velocity"/>
+       <attribute name="coordinates" value="time latc lonc"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="face"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="va" shape="time nele" type="float">
+       <attribute name="standard_name" value="barotropic_northward_sea_water_velocity"/>
+       <attribute name="coordinates" value="time latc lonc"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="face"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="kh" shape="time siglev node" type="float">
+       <attribute name="coordinates" value="time siglev lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="km" shape="time siglev node" type="float">
+       <attribute name="coordinates" value="time siglev lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="kq" shape="time siglev node" type="float">
+       <attribute name="coordinates" value="time siglev lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="l" shape="time siglev node" type="float">
+       <attribute name="coordinates" value="time siglev lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="omega" shape="time siglev node" type="float">
+       <attribute name="coordinates" value="time siglev lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="ww" shape="time siglay node" type="float">
+       <attribute name="standard_name" value="upward_sea_water_velocity"/>
+       <attribute name="coordinates" value="time siglay lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="q2" shape="time siglev node" type="float">
+       <attribute name="coordinates" value="time siglev lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="q2l" shape="time siglev node" type="float">
+       <attribute name="coordinates" value="time siglev lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="salinity" shape="time siglay node" type="float">
+       <attribute name="standard_name" value="sea_water_salinity"/>
+       <attribute name="coordinates" value="time siglay lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="temp" shape="time siglay node" type="float">
+       <attribute name="standard_name" value="sea_water_temperature"/>
+       <attribute name="coordinates" value="time siglay lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="net_heat_flux" shape="time node" type="float">
+       <attribute name="coordinates" value="time lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="short_wave" shape="time node" type="float">
+       <attribute name="standard_name" value="net_downward_shortwave_flux_at_sea_water_surface"/>
+       <attribute name="coordinates" value="time lat lon"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="node"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="uwind_stress" shape="time nele" type="float">
+       <attribute name="standard_name" value="surface_downward_eastward_stress"/>
+       <attribute name="coordinates" value="time latc lonc"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="face"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="vwind_stress" shape="time nele" type="float">
+       <attribute name="standard_name" value="surface_downward_northward_stress"/>
+       <attribute name="coordinates" value="time latc lonc"/>
+       <attribute name="mesh" value="fvcom_mesh"/>
+       <attribute name="location" value="face"/>
+       <remove type="attribute" name="grid"/>
+      </variable>
+      <aggregation dimName="time" type="joinExisting" recheckEvery="60min">
+       <scan location="/http/www/tomcat/apache-tomcat-7.0.22/data/gom3_hindcast" regExp=".*gom3_mean_[0-9]{6}\.nc$"
+        olderThan="30min"/>
+      </aggregation>
+
+   </netcdf>
+  </dataset>
+  
+ </dataset>
+</catalog>

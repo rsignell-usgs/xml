@@ -1,0 +1,3012 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="Gulf of Farallones Monitoring (May-Oct 1989; Jul-Aug 1990; 11/97-11/98)" ID="faral">
+    <metadata inherited="true">
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>37</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-122.5</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>2500</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/farallones.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="5103-a.nc" ID="FARALLONES/5103-a.nc" urlPath="FARALLONES/5103-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.642780 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.364731 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-12 09:00:00 </start>
+<end> 1998-11-04 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5103-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386042000000" increment="1200000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-510"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5103-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5103-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:13" />
+<attribute name="start_time" value="1997-11-12 09:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5104-a.nc" ID="FARALLONES/5104-a.nc" urlPath="FARALLONES/5104-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.642780 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.364731 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-12 09:00:00 </start>
+<end> 1998-11-04 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5104-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386042000000" increment="1200000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-510"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5104-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5104-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:13" />
+<attribute name="start_time" value="1997-11-12 09:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5105-a.nc" ID="FARALLONES/5105-a.nc" urlPath="FARALLONES/5105-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.642780 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.364731 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-12 09:00:00 </start>
+<end> 1998-11-04 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5105-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386042000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-510"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5105-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5105-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:14" />
+<attribute name="start_time" value="1997-11-12 09:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5106-a.nc" ID="FARALLONES/5106-a.nc" urlPath="FARALLONES/5106-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.642780 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.364731 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-12 09:00:00 </start>
+<end> 1998-11-04 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5106-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386042000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-510"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5106-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5106-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:15" />
+<attribute name="start_time" value="1997-11-12 09:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5107-a.nc" ID="FARALLONES/5107-a.nc" urlPath="FARALLONES/5107-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.642780 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.364731 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-12 09:00:00 </start>
+<end> 1998-11-04 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5107-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386042000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-510"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5107-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5107-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:15" />
+<attribute name="start_time" value="1997-11-12 09:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5108-a.nc" ID="FARALLONES/5108-a.nc" urlPath="FARALLONES/5108-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.642780 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.364731 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-12 09:00:00 </start>
+<end> 1998-11-04 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5108-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386042000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-510"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5108-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5108-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:16" />
+<attribute name="start_time" value="1997-11-12 09:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5112-a.nc" ID="FARALLONES/5112-a.nc" urlPath="FARALLONES/5112-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.619999 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.219330 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-12 18:00:00 </start>
+<end> 1998-11-04 20:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5112-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386074400000" increment="1200000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-511"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5112-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5112-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:17" />
+<attribute name="start_time" value="1997-11-12 18:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5113-a.nc" ID="FARALLONES/5113-a.nc" urlPath="FARALLONES/5113-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.619999 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.219330 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-12 18:00:00 </start>
+<end> 1998-11-04 20:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5113-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386074400000" increment="1200000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-511"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5113-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5113-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:18" />
+<attribute name="start_time" value="1997-11-12 18:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5114-a.nc" ID="FARALLONES/5114-a.nc" urlPath="FARALLONES/5114-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.619999 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.219330 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-12 18:00:00 </start>
+<end> 1998-11-04 20:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5114-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386074400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-511"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5114-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5114-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:19" />
+<attribute name="start_time" value="1997-11-12 18:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5115-a.nc" ID="FARALLONES/5115-a.nc" urlPath="FARALLONES/5115-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.619999 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.219330 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-12 18:00:00 </start>
+<end> 1998-11-04 20:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5115-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386074400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-511"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5115-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5115-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:20" />
+<attribute name="start_time" value="1997-11-12 18:00:00Z" />
+<attribute name="stop_time" value="1998-11-04 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5123-a.nc" ID="FARALLONES/5123-a.nc" urlPath="FARALLONES/5123-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.353832 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.268333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-13 00:00:00 </start>
+<end> 1998-11-05 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5123-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386096000000" increment="1200000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-512"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5123-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5123-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:21" />
+<attribute name="start_time" value="1997-11-13 00:00:00Z" />
+<attribute name="stop_time" value="1998-11-05 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5124-q.nc" ID="FARALLONES/5124-q.nc" urlPath="FARALLONES/5124-q.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.353832 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.268333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-13 00:00:00 </start>
+<end> 1998-11-05 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5124-q.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386096000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-512"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5124-q.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5124-q.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:21" />
+<attribute name="start_time" value="1997-11-13 00:00:00Z" />
+<attribute name="stop_time" value="1998-11-05 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5125-a.nc" ID="FARALLONES/5125-a.nc" urlPath="FARALLONES/5125-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.353832 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.268333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-13 00:00:00 </start>
+<end> 1998-11-05 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5125-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386096000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-512"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5125-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5125-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:22" />
+<attribute name="start_time" value="1997-11-13 00:00:00Z" />
+<attribute name="stop_time" value="1998-11-05 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5126-a.nc" ID="FARALLONES/5126-a.nc" urlPath="FARALLONES/5126-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.353832 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.268333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-13 00:00:00 </start>
+<end> 1998-11-05 14:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/5126-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386096000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-512"</values>
+ </variable>
+<variable name="T_20">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/5126-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="5126-a.nc - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:22" />
+<attribute name="start_time" value="1997-11-13 00:00:00Z" />
+<attribute name="stop_time" value="1998-11-05 14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3341-a.cdf" ID="FARALLONES/3341-a.cdf" urlPath="FARALLONES/3341-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.686333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.796333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-04 23:31:52 </start>
+<end> 1989-10-13 17:31:52 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor_speed" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="rotor_count" vocabulary_name="ROTOR COUNT" units="count       ">ROTOR COUNT</variable>
+<variable name="compass" vocabulary_name="COMPASS" units="ang.deg.    ">COMPASS</variable>
+<variable name="vane" vocabulary_name="VANE" units="ang.deg.    ">VANE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="ang.deg.    ">BEARING</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3341-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117044712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3341-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3341-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:28" />
+<attribute name="start_time" value="1989-05-04 23:31:52Z" />
+<attribute name="stop_time" value="1989-10-13 17:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3341-a1h.cdf" ID="FARALLONES/3341-a1h.cdf" urlPath="FARALLONES/3341-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.686333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.796333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-05 00:00:00 </start>
+<end> 1989-10-13 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor_speed" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3341-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117046400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3341-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3341-a1h.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:29" />
+<attribute name="start_time" value="1989-05-05 00:00:00Z" />
+<attribute name="stop_time" value="1989-10-13 17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3342-a.cdf" ID="FARALLONES/3342-a.cdf" urlPath="FARALLONES/3342-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.686333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.796333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-04 23:31:52 </start>
+<end> 1989-10-11 07:31:52 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor_speed" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="rotor_count" vocabulary_name="ROTOR COUNT" units="count       ">ROTOR COUNT</variable>
+<variable name="compass" vocabulary_name="COMPASS" units="ang.deg.    ">COMPASS</variable>
+<variable name="vane" vocabulary_name="VANE" units="ang.deg.    ">VANE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="ang.deg.    ">BEARING</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="led_trans" vocabulary_name="LED TRANS" units="volts       ">LED TRANS</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117044712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3342-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3342-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:39" />
+<attribute name="start_time" value="1989-05-04 23:31:52Z" />
+<attribute name="stop_time" value="1989-10-11 07:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3342-a1h.cdf" ID="FARALLONES/3342-a1h.cdf" urlPath="FARALLONES/3342-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.686333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.796333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-05 00:00:00 </start>
+<end> 1989-10-11 07:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor_speed" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="led_trans" vocabulary_name="LED TRANS" units="volts       ">LED TRANS</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117046400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3342-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3342-a1h.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:42" />
+<attribute name="start_time" value="1989-05-05 00:00:00Z" />
+<attribute name="stop_time" value="1989-10-11 07:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3342.cdf" ID="FARALLONES/3342.cdf" urlPath="FARALLONES/3342.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.686333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.796333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-02 18:13:07 </start>
+<end> 1989-10-11 08:05:37 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="cassette" vocabulary_name="CASSETTE #" units="unknown">CASSETTE #</variable>
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="v_" vocabulary_name="direction_of_sea_water_velocity" units="deg         ">V  DIRECTION</variable>
+<variable name="vector" vocabulary_name="sea_water_speed" units="cm/s        ">VECTOR SPEED</variable>
+<variable name="rotor" vocabulary_name="ROTOR" units="count       ">ROTOR</variable>
+<variable name="compass" vocabulary_name="COMPASS" units="deg         ">COMPASS</variable>
+<variable name="vane" vocabulary_name="VANE" units="deg         ">VANE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="frtemp" vocabulary_name="sea_water_temperature" units="hz          ">FRTEMP</variable>
+<variable name="led_trans" vocabulary_name="LED TRANS" units="volts       ">LED TRANS</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="depth002" vocabulary_name="Depth" units="m">Depth</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4116852787000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="v_">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="vector">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="frtemp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3342.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3342.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:48" />
+<attribute name="start_time" value="1989-05-02 18:13:07Z" />
+<attribute name="stop_time" value="1989-10-11 08:05:37Z" />
+</netcdf>
+</dataset>
+<dataset name="3342att-a.cdf" ID="FARALLONES/3342att-a.cdf" urlPath="FARALLONES/3342att-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.686333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.796333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-04 23:31:52 </start>
+<end> 1989-10-11 07:31:52 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117044712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3342att-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3342att-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:48" />
+<attribute name="start_time" value="1989-05-04 23:31:52Z" />
+<attribute name="stop_time" value="1989-10-11 07:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3342att-a1h.cdf" ID="FARALLONES/3342att-a1h.cdf" urlPath="FARALLONES/3342att-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.686333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.796333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-05 00:00:00 </start>
+<end> 1989-10-11 07:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117046400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3342att-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3342att-a1h.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:49" />
+<attribute name="start_time" value="1989-05-05 00:00:00Z" />
+<attribute name="stop_time" value="1989-10-11 07:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3342tct-a.cdf" ID="FARALLONES/3342tct-a.cdf" urlPath="FARALLONES/3342tct-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.686333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.796333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-05 23:31:52 </start>
+<end> 1989-09-18 17:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="fr_temp" vocabulary_name="sea_water_temperature" units="celcius     ">FR TEMP</variable>
+<variable name="temp_diff" vocabulary_name="sea_water_temperature" units="celcius     ">TEMP DIFF</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mhos        ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342tct-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117131112000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<variable name="fr_temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="temp_diff">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3342tct-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3342tct-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:50" />
+<attribute name="start_time" value="1989-05-05 23:31:52Z" />
+<attribute name="stop_time" value="1989-09-18 17:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="3342tct-a1h.cdf" ID="FARALLONES/3342tct-a1h.cdf" urlPath="FARALLONES/3342tct-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.686333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.796333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-06 00:00:00 </start>
+<end> 1989-09-18 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="fr_temp" vocabulary_name="sea_water_temperature" units="celcius     ">FR TEMP</variable>
+<variable name="temp_diff" vocabulary_name="sea_water_temperature" units="celcius     ">TEMP DIFF</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mhos        ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342tct-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117132800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<variable name="fr_temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="temp_diff">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3342tct-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3342tct-a1h.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:51" />
+<attribute name="start_time" value="1989-05-06 00:00:00Z" />
+<attribute name="stop_time" value="1989-09-18 17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3342tct-aq.cdf" ID="FARALLONES/3342tct-aq.cdf" urlPath="FARALLONES/3342tct-aq.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.686333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -122.796333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-04 23:31:52 </start>
+<end> 1989-10-11 07:31:52 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="fr_temp" vocabulary_name="sea_water_temperature" units="celcius     ">FR TEMP</variable>
+<variable name="temp_diff" vocabulary_name="sea_water_temperature" units="celcius     ">TEMP DIFF</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mhos        ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3342tct-aq.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117044712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-334"</values>
+ </variable>
+<variable name="fr_temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="temp_diff">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3342tct-aq.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3342tct-aq.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:54" />
+<attribute name="start_time" value="1989-05-04 23:31:52Z" />
+<attribute name="stop_time" value="1989-10-11 07:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3351-a.cdf" ID="FARALLONES/3351-a.cdf" urlPath="FARALLONES/3351-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.783833 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.933334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-05 02:31:52 </start>
+<end> 1989-10-13 20:31:52 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor_speed" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="rotor_count" vocabulary_name="ROTOR COUNT" units="count       ">ROTOR COUNT</variable>
+<variable name="compass" vocabulary_name="COMPASS" units="ang.deg.    ">COMPASS</variable>
+<variable name="vane" vocabulary_name="VANE" units="ang.deg.    ">VANE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="ang.deg.    ">BEARING</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3351-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117055512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3351-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3351-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:36:59" />
+<attribute name="start_time" value="1989-05-05 02:31:52Z" />
+<attribute name="stop_time" value="1989-10-13 20:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3351-a1h.cdf" ID="FARALLONES/3351-a1h.cdf" urlPath="FARALLONES/3351-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.783833 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.933334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-05 03:00:00 </start>
+<end> 1989-10-13 20:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor_speed" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3351-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117057200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3351-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3351-a1h.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:00" />
+<attribute name="start_time" value="1989-05-05 03:00:00Z" />
+<attribute name="stop_time" value="1989-10-13 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3352-a.cdf" ID="FARALLONES/3352-a.cdf" urlPath="FARALLONES/3352-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.783833 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.933334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-05 02:31:52 </start>
+<end> 1989-10-10 01:31:52 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor_speed" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="rotor_count" vocabulary_name="ROTOR COUNT" units="count       ">ROTOR COUNT</variable>
+<variable name="compass" vocabulary_name="COMPASS" units="ang.deg.    ">COMPASS</variable>
+<variable name="vane" vocabulary_name="VANE" units="ang.deg.    ">VANE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="ang.deg.    ">BEARING</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="led_trans" vocabulary_name="LED TRANS" units="volts       ">LED TRANS</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3352-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117055512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3352-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3352-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:10" />
+<attribute name="start_time" value="1989-05-05 02:31:52Z" />
+<attribute name="stop_time" value="1989-10-10 01:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3352-a1h.cdf" ID="FARALLONES/3352-a1h.cdf" urlPath="FARALLONES/3352-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.783833 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.933334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-05 03:00:00 </start>
+<end> 1989-10-10 01:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor_speed" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="led_trans" vocabulary_name="LED TRANS" units="volts       ">LED TRANS</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3352-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117057200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temperature">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3352-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3352-a1h.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:11" />
+<attribute name="start_time" value="1989-05-05 03:00:00Z" />
+<attribute name="stop_time" value="1989-10-10 01:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3352att-a.cdf" ID="FARALLONES/3352att-a.cdf" urlPath="FARALLONES/3352att-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.783833 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.933334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-05 02:31:52 </start>
+<end> 1989-10-10 01:31:52 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3352att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117055512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3352att-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3352att-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:18" />
+<attribute name="start_time" value="1989-05-05 02:31:52Z" />
+<attribute name="stop_time" value="1989-10-10 01:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3352att-a1h.cdf" ID="FARALLONES/3352att-a1h.cdf" urlPath="FARALLONES/3352att-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.783833 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.933334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-05 03:00:00 </start>
+<end> 1989-10-10 01:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3352att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117057200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3352att-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3352att-a1h.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:19" />
+<attribute name="start_time" value="1989-05-05 03:00:00Z" />
+<attribute name="stop_time" value="1989-10-10 01:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3352tct-a.cdf" ID="FARALLONES/3352tct-a.cdf" urlPath="FARALLONES/3352tct-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.783833 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.933334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-05 02:31:52 </start>
+<end> 1989-10-10 01:31:52 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mhos        ">CONDUCTIVITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3352tct-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117055512000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3352tct-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3352tct-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:21" />
+<attribute name="start_time" value="1989-05-05 02:31:52Z" />
+<attribute name="stop_time" value="1989-10-10 01:31:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3352tct-a1h.cdf" ID="FARALLONES/3352tct-a1h.cdf" urlPath="FARALLONES/3352tct-a1h.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.783833 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -120.933334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1989-05-05 03:00:00 </start>
+<end> 1989-10-10 01:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mhos        ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3352tct-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4117057200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-335"</values>
+ </variable>
+<variable name="conductivity">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="salinity">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3352tct-a1h.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3352tct-a1h.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:22" />
+<attribute name="start_time" value="1989-05-05 03:00:00Z" />
+<attribute name="stop_time" value="1989-10-10 01:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="3461-a.cdf" ID="FARALLONES/3461-a.cdf" urlPath="FARALLONES/3461-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.635166 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.351501 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-07-07 05:01:52 </start>
+<end> 1990-08-21 15:01:52 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3461-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4154043712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-346"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3461-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3461-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:22" />
+<attribute name="start_time" value="1990-07-07 05:01:52Z" />
+<attribute name="stop_time" value="1990-08-21 15:01:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3462-a.cdf" ID="FARALLONES/3462-a.cdf" urlPath="FARALLONES/3462-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.635166 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.351501 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-07-07 05:01:52 </start>
+<end> 1990-08-21 15:05:37 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3462-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4154043712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-346"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3462-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3462-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:24" />
+<attribute name="start_time" value="1990-07-07 05:01:52Z" />
+<attribute name="stop_time" value="1990-08-21 15:05:37Z" />
+</netcdf>
+</dataset>
+<dataset name="3463-a.cdf" ID="FARALLONES/3463-a.cdf" urlPath="FARALLONES/3463-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.635166 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.351501 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-07-07 05:01:52 </start>
+<end> 1990-08-21 15:01:52 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3463-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4154043712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-346"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3463-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3463-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:25" />
+<attribute name="start_time" value="1990-07-07 05:01:52Z" />
+<attribute name="stop_time" value="1990-08-21 15:01:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3464-a.cdf" ID="FARALLONES/3464-a.cdf" urlPath="FARALLONES/3464-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.635166 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.351501 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-07-07 17:01:52 </start>
+<end> 1990-08-21 15:01:52 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3464-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4154086912000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-346"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3464-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3464-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:25" />
+<attribute name="start_time" value="1990-07-07 17:01:52Z" />
+<attribute name="stop_time" value="1990-08-21 15:01:52Z" />
+</netcdf>
+</dataset>
+<dataset name="3465-q.cdf" ID="FARALLONES/3465-q.cdf" urlPath="FARALLONES/3465-q.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.635166 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.351501 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-07-07 05:01:52 </start>
+<end> 1990-08-21 15:05:37 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="compass" vocabulary_name="COMPASS" units="deg         ">COMPASS</variable>
+<variable name="vane" vocabulary_name="VANE" units="deg         ">VANE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3465-q.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4154043712000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-346"</values>
+ </variable>
+<variable name="east">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="north">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3465-q.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3465-q.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:27" />
+<attribute name="start_time" value="1990-07-07 05:01:52Z" />
+<attribute name="stop_time" value="1990-08-21 15:05:37Z" />
+</netcdf>
+</dataset>
+<dataset name="3465t-a.cdf" ID="FARALLONES/3465t-a.cdf" urlPath="FARALLONES/3465t-a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 37.635166 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -123.351501 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1990-07-07 14:01:52 </start>
+<end> 1990-08-21 15:05:37 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/FARALLONES/3465t-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4154076112000" increment="225000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-346"</values>
+ </variable>
+<variable name="temp">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="FARALLONES/3465t-a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="3465t-a.cdf - Farallons" />
+<attribute name="summary" value="Program to measure the currents and circulation on the continental slope off San Francisco CA and thus infer the transport of dredged materialat the newly-established deep-water disposal site." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 15:37:27" />
+<attribute name="start_time" value="1990-07-07 14:01:52Z" />
+<attribute name="stop_time" value="1990-08-21 15:05:37Z" />
+</netcdf>
+</dataset>
+ </dataset>
+</catalog>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="HYCOM Consortium Thredds Data Server"
+xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<service name="both" serviceType="Compound" base="">
+<service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/" />
+</service>
+
+<dataset name="Aggregated ROMS Run" ID="BAH02" urlPath="bahamas_02">
+<metadata inherited="true">
+<serviceName>ncdods</serviceName>
+</metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+<aggregation dimName="T" type="joinExisting">
+<netcdf location="/gfs1/ashwanth/laurent/Bahamas/Zfiles/roms_zhis_apr_05.nc"/>
+<netcdf location="/gfs1/ashwanth/laurent/Bahamas/Zfiles/roms_zhis_may_05.nc"/>
+<netcdf location="/gfs1/ashwanth/laurent/Bahamas/Zfiles/roms_zhis_jun_05.nc"/>
+<netcdf location="/gfs1/ashwanth/laurent/Bahamas/Zfiles/roms_zhis_jul_05.nc"/>
+<netcdf location="/gfs1/ashwanth/laurent/Bahamas/Zfiles/roms_zhis_aug_05.nc"/>
+<netcdf location="/gfs1/ashwanth/laurent/Bahamas/Zfiles/roms_zhis_sep_05.nc"/>
+<netcdf location="/gfs1/ashwanth/laurent/Bahamas/Zfiles/roms_zhis_oct_05.nc"/>
+<netcdf location="/gfs1/ashwanth/laurent/Bahamas/Zfiles/roms_zhis_nov_05.nc"/>
+<netcdf location="/gfs1/ashwanth/laurent/Bahamas/Zfiles/roms_zhis_dec_05.nc"/>
+<netcdf location="/gfs1/ashwanth/laurent/Bahamas/Zfiles/roms_zhis_jan_05.nc"/>
+<netcdf location="/gfs1/ashwanth/laurent/Bahamas/Zfiles/roms_zhis_feb_05.nc"/>
+<netcdf location="/gfs1/ashwanth/laurent/Bahamas/Zfiles/roms_zhis_mar_05.nc"/>
+</aggregation>
+</netcdf>
+</dataset>
+
+</catalog>

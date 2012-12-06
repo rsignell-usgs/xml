@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation type="union">
+        <netcdf location="fort.63.nc"/>
+        <netcdf location="fort.64.nc"/>
+    </aggregation>
+    
+    <variable name="lat" orgName="y" />
+    <variable name="lon" orgName="x" />
+    
+    <variable name="Mesh1" type="int">
+        <attribute name="standard_name" value="Topology data of 2D unstructured mesh"/>
+        <attribute name="long_name" value="mesh_topology"/>
+        <attribute name="node_coordinates" value="lat lon"/>
+        <attribute name="face_node_connectivity" value="element"/>
+    </variable>
+    
+    <variable name="element">
+        <attribute name="start_index" type="short" value="1"/>
+        <attribute name="standard_name" value="face_node_connectivity"/>
+        <attribute name="long_name" value="Maps triangular elements to three corner nodes"/>
+     </variable>
+    
+    <variable name="ubar" orgName="u-vel">
+        <attribute name="coordinates" value="time lat lon"/>
+        <attribute name="mesh" value="Mesh1"/>
+        <attribute name="location" value="node"/>
+        <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="vbar" orgName="v-vel">
+        <attribute name="coordinates" value="time lat lon"/>
+        <attribute name="mesh" value="Mesh1"/>
+        <attribute name="location" value="node"/>
+        <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="zeta">
+        <attribute name="coordinates" value="time lat lon"/>
+        <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+        <attribute name="mesh" value="Mesh1"/>
+        <attribute name="location" value="node"/>
+        <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="depth">
+        <attribute name="coordinates" value="lat lon"/>
+        <attribute name="long_name" value="Bathemetry"/>
+        <attribute name="standard_name" value="sea_floor_depth_below_geoid"/>
+        <attribute name="mesh" value="Mesh1"/>
+        <attribute name="location" value="node"/>
+    </variable>
+     
+    <variable name="time">
+        <attribute name="units" value="seconds since 2006-06-01 00:00:00 -04:00"/>
+    </variable>
+    
+    <attribute name="Conventions" value="UGRID-1.0-CF-1.4"/>
+    
+</netcdf>

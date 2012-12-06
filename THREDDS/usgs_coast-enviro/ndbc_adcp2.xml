@@ -1,0 +1,28 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+    xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+    
+    <service name="Compound" serviceType="Compound" base="">
+        <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+        <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+                
+    </service>    
+    
+    <dataset name="Latest GOMOOS Buoy A (20 m)"  ID="gomoos/buoy_a"    serviceName="Compound"  urlPath="gomoos/buoy_a" >
+        <netcdf  xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting">
+            <netcdf   location="http://gyre.umeoce.maine.edu/data/gomoos/buoy/archive/A0120/goes-realtime/A0120.sbe37.goes-realtime.20m.nc" />
+        </aggregation>                                                                                                                           
+        </netcdf>
+    </dataset>
+    
+    <dataset name="Latest GOMOOS Buoy B (50 m)"  ID="gomoos/buoy_b"    serviceName="Compound"  urlPath="gomoos/buoy_b" >
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting">
+            <netcdf location="http://gyre.umeoce.maine.edu/data/gomoos/buoy/archive/B0116/realtime/B0116.sbe37.realtime.50m.nc" />
+        </aggregation>
+            </netcdf>
+    </dataset>
+
+    </catalog>

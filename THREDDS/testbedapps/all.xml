@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ name="THREDDS Catalog" version="1.0.1">
+
+ <service name="all" base="" serviceType="compound">
+ <service name="odap" serviceType="OpenDAP" base="/threddsdev/dodsC/"/>
+ <service name="http" serviceType="HTTPServer" base="/threddsdev/fileServer/"/>
+ <service name="wcs" serviceType="WCS" base="/threddsdev/wcs/"/>
+ <service name="wms" serviceType="WMS" base="/threddsdev/wms/"/>
+ <service name="ncss" serviceType="NetcdfSubset" base="/threddsdev/ncss/"/>
+ <service name="ncml" serviceType="NCML" base="/threddsdev/ncml/"/>
+ <service name="uddc" serviceType="UDDC" base="/threddsdev/uddc/"/>
+ <service name="iso" serviceType="ISO" base="/threddsdev/iso/"/>
+ </service>
+
+ <datasetScan name="All Data" ID="alldata" path="alldata" location="/data/ftp/upload">
+ <metadata inherited="true">
+ <serviceName>all</serviceName>
+ </metadata>
+ <filter>
+<!-- Exclude .svn directories -->
+ <exclude wildcard=".svn" atomic="false" collection="true"/>
+
+ <include wildcard="*.nc"/>
+ <include wildcard="*.nc"/>
+ <include wildcard="*.cdf"/>
+ <include wildcard="*.hdf"/>
+ <include wildcard="*.ncml"/>
+ <include wildcard="*.grib"/>
+ <include wildcard="*.grib2"/>
+ </filter>
+ <sort>
+ <lexigraphicByName increasing="true"/>
+ </sort>
+ <addDatasetSize/>
+ </datasetScan>
+
+</catalog>

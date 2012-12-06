@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+ <aggregation dimName="time" type="joinExisting" >
+  <scan location="/data/ftp/upload/Inundation/vims/selfe_tropical/runs/Ike/3D_varied_roughness_windstress_with_wave/whole_domain/" regExp=".*[0-9]{1}_WaterLevel\.nc$"/>
+ </aggregation>
+ <variable name="time">
+  <attribute name="units" value="seconds since 2008-09-08 00:00:00" />
+  <attribute name="standard_name" value="time" />
+ </variable>
+ <variable name="ele" shape="nface nele" type="int">
+  <attribute name="long_name" value="Horizontal Triangular Element Table" />
+  <attribute name="units" value="" />
+ </variable>
+ <variable name="x" shape="node" type="float">
+  <attribute name="units" value="degrees_east" />
+ </variable>
+ <variable name="y" shape="node" type="float">
+  <attribute name="units" value="degrees_north" />
+ </variable>
+ <variable name="depth" shape="node" type="float">
+  <remove type="attribute" name="positive"/>
+ </variable>
+ <variable name="sigma" shape="sigma" type="float">
+  <attribute name="long_name" value="S coordinates at whole levels" />
+  <attribute name="units" value="non-dimensional" />
+  <attribute name="positive" value="up" />
+ </variable>
+ <variable name="Cs" shape="sigma" type="float">
+  <attribute name="long_name" value="Function C(s) at whole levels" />
+  <attribute name="units" value="non-dimensional" />
+  <attribute name="positive" value="up" />
+ </variable>
+ <variable name="elev" shape="time node" type="float">
+  <attribute name="long_name" value="free_surface_elevation" />
+  <attribute name="missing_value" type="float" value="-9999.00"/>
+ </variable>
+</netcdf>

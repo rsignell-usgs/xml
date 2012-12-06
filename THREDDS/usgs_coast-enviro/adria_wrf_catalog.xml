@@ -1,0 +1,106 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+<dataset name="Adriatic WRF Model Runs" ID="adria/wrf">
+  <metadata inherited="true">
+    <serviceName>gridServices</serviceName>
+    <authority>gov.usgs.er.whsc</authority>
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <creator>
+      <name vocabulary="DIF">IRB/HR</name>
+      <contact url="http://www.irb.hr"
+        email="ivica@irb.hr" />
+    </creator>
+    <publisher>
+      <name vocabulary="DIF">WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="rsignell@usgs.gov" />
+    </publisher>
+    <geospatialCoverage zpositive="up">
+      <northsouth>
+        <start>34.6</start>
+        <size>14.4</size>
+        <units>degrees_north</units>
+      </northsouth>
+      <eastwest>
+        <start>4.0</start>
+        <size>21.2</size>
+        <units>degrees_east</units>
+      </eastwest>
+      <updown>
+        <start>0</start>
+        <size>16000</size>
+        <units>meters</units>
+      </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://stellwagen.er.usgs.gov/rps/pubs/2004_oceanography.pdf" 
+      xlink:title="Adriatic Sea WRF Meteo Modeling"/>
+  </metadata>
+  <dataset name="Run 01: limited domain 3 grid" ID="adria/wrf/r01">
+<dataset name="U10,V10,T2 from Grid1: 20 km" ID="adria/wrf/r01/d01" urlPath="adria/wrf/r01/d01">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation  type="union">
+      <netcdf location="/Volumes/models/adria/wrf/r01/u10_d01.nc" />     
+      <netcdf location="/Volumes/models/adria/wrf/r01/xlatlon_d01.nc" />
+    </aggregation>
+    <variable name="Time" shape="Time" type="double"> 
+      <attribute name="units" type="String" value="hours since 2003-01-20 00:00 UTC" />
+      <values start="0.00" increment="1.0"/>
+    </variable>
+    <attribute name="Conventions" type="String" value="CF-1.0" />
+  </netcdf>
+</dataset>
+  <dataset name="U10,V10,T2 from Grid 2: 5 km" ID="adria/wrf/r01/d02" urlPath="adria/wrf/r01/d02">
+    <serviceName>gridServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation  type="union">
+        <netcdf location="/Volumes/models/adria/wrf/r01/u10_d02.nc" />     
+        <netcdf location="/Volumes/models/adria/wrf/r01/xlatlon_d02.nc" />
+      </aggregation>
+      <variable name="Time" shape="Time" type="double"> 
+        <attribute name="units" type="String" value="hours since 2003-01-20 00:00 UTC" />
+        <values start="0.00" increment="1.0"/>
+      </variable>
+      <attribute name="Conventions" type="String" value="CF-1.0" />
+    </netcdf>
+  </dataset>
+  <dataset name="U10,V10, T2 from Grid 3: 1.25 km" ID="adria/wrf/r01/d03" urlPath="adria/wrf/r01/d03">
+    <serviceName>gridServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation  type="union">
+        <netcdf location="/Volumes/models/adria/wrf/r01/u10_d03.nc" />     
+        <netcdf location="/Volumes/models/adria/wrf/r01/xlatlon_d03.nc" />
+      </aggregation>
+      <variable name="Time" shape="Time" type="double"> 
+        <attribute name="units" type="String" value="hours since 2003-01-20 00:00 UTC" />
+        <values start="0.00" increment="1.0"/>
+      </variable>
+      <attribute name="Conventions" type="String" value="CF-1.0" />
+    </netcdf>
+  </dataset>
+  </dataset>
+  <dataset name="Run 02: expanded domain 3 grid" ID="adria/wrf/r02">
+    <dataset name="U10,V10, T2 from Grid 3: 1.25 km" ID="adria/wrf/r02/d03" urlPath="adria/wrf/r02/d03">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation  type="union">
+          <netcdf location="/Volumes/models/adria/wrf/r02/u10_d03.nc" />     
+          <netcdf location="/Volumes/models/adria/wrf/r02/xlatlon_d03.nc" />
+        </aggregation>
+        <variable name="Time" shape="Time" type="double"> 
+          <attribute name="units" type="String" value="hours since 2003-01-20 00:00 UTC" />
+          <values start="0.00" increment="1.0"/>
+        </variable>
+        <attribute name="Conventions" type="String" value="CF-1.0" />
+      </netcdf>
+    </dataset>
+  </dataset>
+</dataset>
+</catalog>

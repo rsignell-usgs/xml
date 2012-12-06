@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS Catalog for NetCDF Files" version="1.0.1">
+
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+ </service>
+
+ <!-- Note the critical cache="false" used on the following line to specify that 
+ anything on this datasetRoot will not be cached.  This is critical since all these 
+ files are growing, but have the same filename.-->
+ <datasetRoot path="ooi" location="/usgs/data0/rsignell/data/ooi/" cache="false"/>
+
+ <dataset name="AS02CPSM_aquadopp.nc" ID="AS02CPSM_aquadopp" serviceName="allServices"
+  urlPath="ooi/AS02CPSM_aquadopp.nc" dataType="Grid"/>
+
+ <dataset name="AS02CPSM_eco_dfls1.nc" ID="AS02CPSM_eco_dfls1" serviceName="allServices"
+  urlPath="ooi/AS02CPSM_eco_dfls1.nc" dataType="Grid"/>
+
+ <dataset name="AS02CPSM_loadcell.nc" ID="AS02CPSM_loadcell" serviceName="allServices"
+  urlPath="ooi/AS02CPSM_loadcell.nc" dataType="Grid"/>
+
+ <dataset name="AS02CPSM_R_M.nc" ID="AS02CPSM_R_M" serviceName="allServices"
+  urlPath="ooi/AS02CPSM_R_M.nc" dataType="Grid"/>
+
+ <dataset name="AS02CPSM_sbe16.nc" ID="AS02CPSM_sbe16" serviceName="allServices"
+  urlPath="ooi/AS02CPSM_sbe16.nc" dataType="Grid"/>
+
+ <dataset name="AS02CPSM_eco_vsfs3.nc" ID="AS02CPSM_eco_vsfs3" serviceName="allServices"
+  urlPath="ooi/AS02CPSM_eco_vsfs3.nc" dataType="Grid"/>
+
+ <dataset name="AS02CPSM_3dmgx3.nc" ID="AS02CPSM_3dmgx3" serviceName="allServices"
+  urlPath="ooi/AS02CPSM_3dmgx3.nc" dataType="Grid"/>
+
+ <dataset name="AS02CPPM_3dmgx3.nc" ID="AS02CPPM_3dmgx3" serviceName="allServices"
+  urlPath="ooi/AS02CPPM_3dmgx3.nc" dataType="Grid"/>
+
+ <dataset name="AS02CPPM_MC02.nc" ID="AS02CPPM_MC02" serviceName="allServices"
+  urlPath="ooi/AS02CPPM_MC02.nc" dataType="Grid"/>
+
+ <dataset name="ast2_ghpm_spp_ctd.nc" ID="ast2_ghpm_spp_ctd" serviceName="allServices"
+  urlPath="ooi/ast2_ghpm_spp_ctd.nc" dataType="Grid"/>
+
+ <dataset name="ast2_ghpm_wfp_aux.nc" ID="ast2_ghpm_wfp_aux" serviceName="allServices"
+  urlPath="ooi/ast2_ghpm_wfp_aux.nc" dataType="Grid"/>
+
+ <dataset name="ast2_ghpm_wfp_ctd.nc" ID="ast2_ghpm_wfp_ctd" serviceName="allServices"
+  urlPath="ooi/ast2_ghpm_wfp_ctd.nc" dataType="Grid"/>
+
+ <dataset name="ast2_cppm_wfp_ctd.nc" ID="ast2_cppm_wfp_ctd" serviceName="allServices"
+  urlPath="ooi/ast2_cppm_wfp_ctd.nc" dataType="Grid"/>
+
+ <dataset name="ast2_cppm_wfp_aux.nc" ID="ast2_cppm_wfp_aux" serviceName="allServices"
+  urlPath="ooi/ast2_cppm_wfp_aux.nc" dataType="Grid"/>
+
+</catalog>

@@ -1,0 +1,3917 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="Palos Verdes Shelf Monitoring (Feb-Jun 2004)" ID="PVshlf04">
+    <metadata inherited="true">
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>33.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-118.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>250</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/pv_shelf04.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="7573adv1-cal.nc" ID="PV_SHELF04/7573adv1-cal.nc" urlPath="PV_SHELF04/7573adv1-cal.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.709017 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.355167 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 21:30:00 </start>
+<end> 2004-06-25 16:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Mean Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Mean Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Mean Vertical Velocity</variable>
+<variable name="USTD_4097" vocabulary_name="eastward_sea_water_velocity" units="cm s-1">Std. Dev. of east component</variable>
+<variable name="VSTD_4098" vocabulary_name="northward_sea_water_velocity" units="cm s-1">Std. Dev. of north component</variable>
+<variable name="WSTD_4099" vocabulary_name="Std. Dev. of upward component" units="cm s-1">Std. Dev. of upward component</variable>
+<variable name="u_1205min" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Minimum Eastward Velocity</variable>
+<variable name="v_1206min" vocabulary_name="northward_sea_water_velocity" units="cm/s">Minimum Northward Velocity</variable>
+<variable name="w_1204min" vocabulary_name="upward_sea_water_velocity" units="cm/s">Minimum Vertical Velocity</variable>
+<variable name="u_1205max" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Maximum Eastward Velocity</variable>
+<variable name="v_1206max" vocabulary_name="northward_sea_water_velocity" units="cm/s">Maximum Northward Velocity</variable>
+<variable name="w_1204max" vocabulary_name="upward_sea_water_velocity" units="cm/s">Maximum Vertical Velocity</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1">CURRENT SPEED (CM/S)</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="AGC1_1221" vocabulary_name="Mean Echo Intensity (AGC) Beam 1" units="counts">Mean Echo Intensity (AGC) Beam 1</variable>
+<variable name="AGC2_1222" vocabulary_name="Mean Echo Intensity (AGC) Beam 2" units="counts">Mean Echo Intensity (AGC) Beam 2</variable>
+<variable name="AGC3_1223" vocabulary_name="Mean Echo Intensity (AGC) Beam 3" units="counts">Mean Echo Intensity (AGC) Beam 3</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees C">Transducer Temp.</variable>
+<variable name="NEP1_56" vocabulary_name="BACKSCATTER INTENSITY 1" units="v">BACKSCATTER INTENSITY 1</variable>
+<variable name="ATTN2_55" vocabulary_name="ATTENUATION 2" units="m-1">ATTENUATION 2</variable>
+<variable name="tran2_4010" vocabulary_name="TRANSMISSION (VOLTS) #2" units="volts">TRANSMISSION (VOLTS) #2</variable>
+<variable name="vrange" vocabulary_name="Volume Range to Boundary" units="m">Volume Range to Boundary</variable>
+<variable name="brange" vocabulary_name="Sensor Range to Boundary" units="m">Sensor Range to Boundary</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="HSD_1218" vocabulary_name="platform_orientation" units="degrees">Heading Std. Dev.</variable>
+<variable name="PSD_1219" vocabulary_name="platform_pitch_angle" units="degrees">Pitch Std. Dev.</variable>
+<variable name="RSD_1220" vocabulary_name="platform_roll_angle" units="degrees">Roll Std. Dev.</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7573adv1-cal.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583683800000" increment="1800000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-757"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="USTD_4097">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="VSTD_4098">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="u_1205min">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206min">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204min">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="u_1205max">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206max">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204max">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="HSD_1218">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="PSD_1219">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="RSD_1220">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_4023">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7573adv1-cal.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7573adv1-cal.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:40:49" />
+<attribute name="start_time" value="2004-02-16 21:30:00Z" />
+<attribute name="stop_time" value="2004-06-25 16:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7573adv2-cal.nc" ID="PV_SHELF04/7573adv2-cal.nc" urlPath="PV_SHELF04/7573adv2-cal.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.709017 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.355167 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 21:07:35 </start>
+<end> 2004-06-25 16:07:35 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Mean Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Mean Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Mean Vertical Velocity</variable>
+<variable name="USTD_4097" vocabulary_name="eastward_sea_water_velocity" units="cm s-1">Std. Dev. of east component</variable>
+<variable name="VSTD_4098" vocabulary_name="northward_sea_water_velocity" units="cm s-1">Std. Dev. of north component</variable>
+<variable name="WSTD_4099" vocabulary_name="Std. Dev. of upward component" units="cm s-1">Std. Dev. of upward component</variable>
+<variable name="u_1205min" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Minimum Eastward Velocity</variable>
+<variable name="v_1206min" vocabulary_name="northward_sea_water_velocity" units="cm/s">Minimum Northward Velocity</variable>
+<variable name="w_1204min" vocabulary_name="upward_sea_water_velocity" units="cm/s">Minimum Vertical Velocity</variable>
+<variable name="u_1205max" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Maximum Eastward Velocity</variable>
+<variable name="v_1206max" vocabulary_name="northward_sea_water_velocity" units="cm/s">Maximum Northward Velocity</variable>
+<variable name="w_1204max" vocabulary_name="upward_sea_water_velocity" units="cm/s">Maximum Vertical Velocity</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1">CURRENT SPEED (CM/S)</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="AGC1_1221" vocabulary_name="Mean Echo Intensity (AGC) Beam 1" units="counts">Mean Echo Intensity (AGC) Beam 1</variable>
+<variable name="AGC2_1222" vocabulary_name="Mean Echo Intensity (AGC) Beam 2" units="counts">Mean Echo Intensity (AGC) Beam 2</variable>
+<variable name="AGC3_1223" vocabulary_name="Mean Echo Intensity (AGC) Beam 3" units="counts">Mean Echo Intensity (AGC) Beam 3</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees C">Transducer Temp.</variable>
+<variable name="NEP1_56" vocabulary_name="BACKSCATTER INTENSITY 1" units="v">BACKSCATTER INTENSITY 1</variable>
+<variable name="ATTN2_55" vocabulary_name="ATTENUATION 2" units="m-1">ATTENUATION 2</variable>
+<variable name="tran2_4010" vocabulary_name="TRANSMISSION (VOLTS) #2" units="volts">TRANSMISSION (VOLTS) #2</variable>
+<variable name="vrange" vocabulary_name="Volume Range to Boundary" units="m">Volume Range to Boundary</variable>
+<variable name="brange" vocabulary_name="Sensor Range to Boundary" units="m">Sensor Range to Boundary</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="HSD_1218" vocabulary_name="platform_orientation" units="degrees">Heading Std. Dev.</variable>
+<variable name="PSD_1219" vocabulary_name="platform_pitch_angle" units="degrees">Pitch Std. Dev.</variable>
+<variable name="RSD_1220" vocabulary_name="platform_roll_angle" units="degrees">Roll Std. Dev.</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7573adv2-cal.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583682455000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-757"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="USTD_4097">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="VSTD_4098">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="u_1205min">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206min">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204min">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="u_1205max">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206max">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204max">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="HSD_1218">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="PSD_1219">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="RSD_1220">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_4023">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7573adv2-cal.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7573adv2-cal.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:40:50" />
+<attribute name="start_time" value="2004-02-16 21:07:35Z" />
+<attribute name="stop_time" value="2004-06-25 16:07:35Z" />
+</netcdf>
+</dataset>
+<dataset name="7575mc-a.nc" ID="PV_SHELF04/7575mc-a.nc" urlPath="PV_SHELF04/7575mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.709017 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.355167 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 20:09:00 </start>
+<end> 2004-06-25 16:21:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7575mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583678940000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-757"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7575mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7575mc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:40:51" />
+<attribute name="start_time" value="2004-02-16 20:09:00Z" />
+<attribute name="stop_time" value="2004-06-25 16:21:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7581adc-a.nc" ID="PV_SHELF04/7581adc-a.nc" urlPath="PV_SHELF04/7581adc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.682999 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.308998 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 18:33:00 </start>
+<end> 2004-06-10 16:14:33 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+<variable name="P_4" vocabulary_name="sea_water_pressure" units="Pa">PRESSURE (PASCALS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7581adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583673180000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-758"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="P_4">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7581adc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7581adc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:40:55" />
+<attribute name="start_time" value="2004-02-16 18:33:00Z" />
+<attribute name="stop_time" value="2004-06-10 16:14:33Z" />
+</netcdf>
+</dataset>
+<dataset name="7582adv1-cal.nc" ID="PV_SHELF04/7582adv1-cal.nc" urlPath="PV_SHELF04/7582adv1-cal.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683300 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.308899 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 19:00:01 </start>
+<end> 2004-06-10 16:00:01 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Mean Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Mean Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Mean Vertical Velocity</variable>
+<variable name="USTD_4097" vocabulary_name="eastward_sea_water_velocity" units="cm s-1">Std. Dev. of east component</variable>
+<variable name="VSTD_4098" vocabulary_name="northward_sea_water_velocity" units="cm s-1">Std. Dev. of north component</variable>
+<variable name="WSTD_4099" vocabulary_name="Std. Dev. of upward component" units="cm s-1">Std. Dev. of upward component</variable>
+<variable name="u_1205min" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Minimum Eastward Velocity</variable>
+<variable name="v_1206min" vocabulary_name="northward_sea_water_velocity" units="cm/s">Minimum Northward Velocity</variable>
+<variable name="w_1204min" vocabulary_name="upward_sea_water_velocity" units="cm/s">Minimum Vertical Velocity</variable>
+<variable name="u_1205max" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Maximum Eastward Velocity</variable>
+<variable name="v_1206max" vocabulary_name="northward_sea_water_velocity" units="cm/s">Maximum Northward Velocity</variable>
+<variable name="w_1204max" vocabulary_name="upward_sea_water_velocity" units="cm/s">Maximum Vertical Velocity</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1">CURRENT SPEED (CM/S)</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="AGC1_1221" vocabulary_name="Mean Echo Intensity (AGC) Beam 1" units="counts">Mean Echo Intensity (AGC) Beam 1</variable>
+<variable name="AGC2_1222" vocabulary_name="Mean Echo Intensity (AGC) Beam 2" units="counts">Mean Echo Intensity (AGC) Beam 2</variable>
+<variable name="AGC3_1223" vocabulary_name="Mean Echo Intensity (AGC) Beam 3" units="counts">Mean Echo Intensity (AGC) Beam 3</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees C">Transducer Temp.</variable>
+<variable name="ATTN1_55" vocabulary_name="ATTENUATION 1" units="m-1">ATTENUATION 1</variable>
+<variable name="tran1_4010" vocabulary_name="TRANSMISSION (VOLTS) #1" units="volts">TRANSMISSION (VOLTS) #1</variable>
+<variable name="ATTN2_55" vocabulary_name="ATTENUATION 2" units="m-1">ATTENUATION 2</variable>
+<variable name="tran2_4010" vocabulary_name="TRANSMISSION (VOLTS) #2" units="volts">TRANSMISSION (VOLTS) #2</variable>
+<variable name="vrange" vocabulary_name="Volume Range to Boundary" units="m">Volume Range to Boundary</variable>
+<variable name="brange" vocabulary_name="Sensor Range to Boundary" units="m">Sensor Range to Boundary</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="HSD_1218" vocabulary_name="platform_orientation" units="degrees">Heading Std. Dev.</variable>
+<variable name="PSD_1219" vocabulary_name="platform_pitch_angle" units="degrees">Pitch Std. Dev.</variable>
+<variable name="RSD_1220" vocabulary_name="platform_roll_angle" units="degrees">Roll Std. Dev.</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7582adv1-cal.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583674801000" increment="1800000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-758"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="USTD_4097">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="VSTD_4098">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="u_1205min">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206min">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204min">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="u_1205max">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206max">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204max">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="HSD_1218">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="PSD_1219">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="RSD_1220">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_4023">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7582adv1-cal.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7582adv1-cal.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:40:58" />
+<attribute name="start_time" value="2004-02-16 19:00:01Z" />
+<attribute name="stop_time" value="2004-06-10 16:00:01Z" />
+</netcdf>
+</dataset>
+<dataset name="7582adv2-cal.nc" ID="PV_SHELF04/7582adv2-cal.nc" urlPath="PV_SHELF04/7582adv2-cal.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683300 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.308899 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 19:07:36 </start>
+<end> 2004-06-10 16:07:36 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Mean Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Mean Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Mean Vertical Velocity</variable>
+<variable name="USTD_4097" vocabulary_name="eastward_sea_water_velocity" units="cm s-1">Std. Dev. of east component</variable>
+<variable name="VSTD_4098" vocabulary_name="northward_sea_water_velocity" units="cm s-1">Std. Dev. of north component</variable>
+<variable name="WSTD_4099" vocabulary_name="Std. Dev. of upward component" units="cm s-1">Std. Dev. of upward component</variable>
+<variable name="u_1205min" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Minimum Eastward Velocity</variable>
+<variable name="v_1206min" vocabulary_name="northward_sea_water_velocity" units="cm/s">Minimum Northward Velocity</variable>
+<variable name="w_1204min" vocabulary_name="upward_sea_water_velocity" units="cm/s">Minimum Vertical Velocity</variable>
+<variable name="u_1205max" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Maximum Eastward Velocity</variable>
+<variable name="v_1206max" vocabulary_name="northward_sea_water_velocity" units="cm/s">Maximum Northward Velocity</variable>
+<variable name="w_1204max" vocabulary_name="upward_sea_water_velocity" units="cm/s">Maximum Vertical Velocity</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1">CURRENT SPEED (CM/S)</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="AGC1_1221" vocabulary_name="Mean Echo Intensity (AGC) Beam 1" units="counts">Mean Echo Intensity (AGC) Beam 1</variable>
+<variable name="AGC2_1222" vocabulary_name="Mean Echo Intensity (AGC) Beam 2" units="counts">Mean Echo Intensity (AGC) Beam 2</variable>
+<variable name="AGC3_1223" vocabulary_name="Mean Echo Intensity (AGC) Beam 3" units="counts">Mean Echo Intensity (AGC) Beam 3</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees C">Transducer Temp.</variable>
+<variable name="ATTN1_55" vocabulary_name="ATTENUATION 1" units="m-1">ATTENUATION 1</variable>
+<variable name="tran1_4010" vocabulary_name="TRANSMISSION (VOLTS) #1" units="volts">TRANSMISSION (VOLTS) #1</variable>
+<variable name="ATTN2_55" vocabulary_name="ATTENUATION 2" units="m-1">ATTENUATION 2</variable>
+<variable name="tran2_4010" vocabulary_name="TRANSMISSION (VOLTS) #2" units="volts">TRANSMISSION (VOLTS) #2</variable>
+<variable name="vrange" vocabulary_name="Volume Range to Boundary" units="m">Volume Range to Boundary</variable>
+<variable name="brange" vocabulary_name="Sensor Range to Boundary" units="m">Sensor Range to Boundary</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="HSD_1218" vocabulary_name="platform_orientation" units="degrees">Heading Std. Dev.</variable>
+<variable name="PSD_1219" vocabulary_name="platform_pitch_angle" units="degrees">Pitch Std. Dev.</variable>
+<variable name="RSD_1220" vocabulary_name="platform_roll_angle" units="degrees">Roll Std. Dev.</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7582adv2-cal.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583675256000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-758"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="USTD_4097">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="VSTD_4098">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="u_1205min">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206min">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204min">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="u_1205max">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206max">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204max">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="HSD_1218">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="PSD_1219">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="RSD_1220">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="P_4023">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7582adv2-cal.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7582adv2-cal.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:00" />
+<attribute name="start_time" value="2004-02-16 19:07:36Z" />
+<attribute name="stop_time" value="2004-06-10 16:07:36Z" />
+</netcdf>
+</dataset>
+<dataset name="7583pca-cal.nc" ID="PV_SHELF04/7583pca-cal.nc" urlPath="PV_SHELF04/7583pca-cal.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683300 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.308899 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 18:42:00 </start>
+<end> 2004-06-04 07:27:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="brange" vocabulary_name="Sensor Range to Boundary" units="m">Sensor Range to Boundary</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Mean Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Mean Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Mean Vertical Velocity</variable>
+<variable name="USTD_4097" vocabulary_name="eastward_sea_water_velocity" units="cm s-1">Std. Dev. of east component</variable>
+<variable name="VSTD_4098" vocabulary_name="northward_sea_water_velocity" units="cm s-1">Std. Dev. of north component</variable>
+<variable name="WSTD_4099" vocabulary_name="Std. Dev. of upward component" units="cm s-1">Std. Dev. of upward component</variable>
+<variable name="u_1205min" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Minimum Eastward Velocity</variable>
+<variable name="v_1206min" vocabulary_name="northward_sea_water_velocity" units="cm/s">Minimum Northward Velocity</variable>
+<variable name="w_1204min" vocabulary_name="upward_sea_water_velocity" units="cm/s">Minimum Vertical Velocity</variable>
+<variable name="u_1205max" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Maximum Eastward Velocity</variable>
+<variable name="v_1206max" vocabulary_name="northward_sea_water_velocity" units="cm/s">Maximum Northward Velocity</variable>
+<variable name="w_1204max" vocabulary_name="upward_sea_water_velocity" units="cm/s">Maximum Vertical Velocity</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1">CURRENT SPEED (CM/S)</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="ResU" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Mean Resolution VelocityEastward</variable>
+<variable name="ResV" vocabulary_name="northward_sea_water_velocity" units="cm/s">Mean Resolution VelocityNorthward</variable>
+<variable name="ResW" vocabulary_name="upward_sea_water_velocity" units="cm/s">Mean Resolution VelocityVertical</variable>
+<variable name="AGC1_1221" vocabulary_name="Echo Intensity (AGC) Beam 1" units="counts">Echo Intensity (AGC) Beam 1</variable>
+<variable name="AGC2_1222" vocabulary_name="Echo Intensity (AGC) Beam 2" units="counts">Echo Intensity (AGC) Beam 2</variable>
+<variable name="AGC3_1223" vocabulary_name="Echo Intensity (AGC) Beam 3" units="counts">Echo Intensity (AGC) Beam 3</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">Median INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="HSD_1218" vocabulary_name="platform_orientation" units="degrees">Heading Std. Dev.</variable>
+<variable name="PSD_1219" vocabulary_name="platform_pitch_angle" units="degrees">Pitch Std. Dev.</variable>
+<variable name="RSD_1220" vocabulary_name="platform_roll_angle" units="degrees">Roll Std. Dev.</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees C">Transducer Temp.</variable>
+<variable name="NEP1_56" vocabulary_name="BACKSCATTER INTENSITY 1" units="v">BACKSCATTER INTENSITY 1</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7583pca-cal.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583673720000" increment="900000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-758"</values>
+ </variable>
+<variable name="u_1205">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="USTD_4097">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="VSTD_4098">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="u_1205min">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206min">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204min">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="u_1205max">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="v_1206max">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="w_1204max">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="CS_300">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="CD_310">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="ResU">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="ResV">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="ResW">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+</variable>
+<variable name="Hdg_1215">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="Ptch_1216">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="Roll_1217">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="HSD_1218">
+<attribute name="standard_name" value="platform_orientation"/>
+</variable>
+<variable name="PSD_1219">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+</variable>
+<variable name="RSD_1220">
+<attribute name="standard_name" value="platform_roll_angle"/>
+</variable>
+<variable name="Tx_1211">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="P_4023">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7583pca-cal.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7583pca-cal.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:04" />
+<attribute name="start_time" value="2004-02-16 18:42:00Z" />
+<attribute name="stop_time" value="2004-06-04 07:27:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7585mc-a.nc" ID="PV_SHELF04/7585mc-a.nc" urlPath="PV_SHELF04/7585mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.308884 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 18:33:00 </start>
+<end> 2004-06-10 16:18:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7585mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583673180000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-758"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<variable name="P_1">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7585mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7585mc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:07" />
+<attribute name="start_time" value="2004-02-16 18:33:00Z" />
+<attribute name="stop_time" value="2004-06-10 16:18:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7586mc-a.nc" ID="PV_SHELF04/7586mc-a.nc" urlPath="PV_SHELF04/7586mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.308884 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 18:33:00 </start>
+<end> 2004-06-10 16:18:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7586mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583673180000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-758"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7586mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7586mc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:09" />
+<attribute name="start_time" value="2004-02-16 18:33:00Z" />
+<attribute name="stop_time" value="2004-06-10 16:18:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7591bt-a.nc" ID="PV_SHELF04/7591bt-a.nc" urlPath="PV_SHELF04/7591bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310150 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 17:09:00 </start>
+<end> 2004-04-06 14:12:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7591bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583668140000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-759"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7591bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7591bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:10" />
+<attribute name="start_time" value="2004-02-16 17:09:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:12:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7592bt-a.nc" ID="PV_SHELF04/7592bt-a.nc" urlPath="PV_SHELF04/7592bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310150 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 17:09:00 </start>
+<end> 2004-04-06 14:12:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7592bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583668140000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-759"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7592bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7592bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:10" />
+<attribute name="start_time" value="2004-02-16 17:09:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:12:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7593mc-a.nc" ID="PV_SHELF04/7593mc-a.nc" urlPath="PV_SHELF04/7593mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310150 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 17:03:00 </start>
+<end> 2004-04-06 14:21:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3 ">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7593mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583667780000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-759"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7593mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7593mc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:11" />
+<attribute name="start_time" value="2004-02-16 17:03:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:21:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7594mc-a.nc" ID="PV_SHELF04/7594mc-a.nc" urlPath="PV_SHELF04/7594mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310150 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 17:03:00 </start>
+<end> 2004-04-06 14:21:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg/m**3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7594mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583667780000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-759"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7594mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7594mc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:12" />
+<attribute name="start_time" value="2004-02-16 17:03:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:21:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7595bt-a.nc" ID="PV_SHELF04/7595bt-a.nc" urlPath="PV_SHELF04/7595bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310150 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 17:09:00 </start>
+<end> 2004-04-06 14:12:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7595bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583668140000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-759"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7595bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7595bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:12" />
+<attribute name="start_time" value="2004-02-16 17:09:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:12:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7596mc-a.nc" ID="PV_SHELF04/7596mc-a.nc" urlPath="PV_SHELF04/7596mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310150 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 17:00:00 </start>
+<end> 2004-04-06 14:18:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg/m**3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7596mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583667600000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-759"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7596mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7596mc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:13" />
+<attribute name="start_time" value="2004-02-16 17:00:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:18:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7597bt-a.nc" ID="PV_SHELF04/7597bt-a.nc" urlPath="PV_SHELF04/7597bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310150 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 17:09:00 </start>
+<end> 2004-04-06 14:12:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7597bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583668140000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-759"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7597bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7597bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:14" />
+<attribute name="start_time" value="2004-02-16 17:09:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:12:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7598bt-a.nc" ID="PV_SHELF04/7598bt-a.nc" urlPath="PV_SHELF04/7598bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310150 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 17:09:00 </start>
+<end> 2004-04-06 14:12:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7598bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583668140000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-759"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7598bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7598bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:14" />
+<attribute name="start_time" value="2004-02-16 17:09:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:12:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7599sc-a.nc" ID="PV_SHELF04/7599sc-a.nc" urlPath="PV_SHELF04/7599sc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310150 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 16:48:00 </start>
+<end> 2004-04-06 14:21:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3 ">SIGMA-THETA (KG/M**3)</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7599sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583666880000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-759"</values>
+ </variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7599sc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7599sc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:16" />
+<attribute name="start_time" value="2004-02-16 16:48:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:21:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7601Amet-a.nc" ID="PV_SHELF04/7601Amet-a.nc" urlPath="PV_SHELF04/7601Amet-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683331 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.309380 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-15 23:36:00 </start>
+<end> 2004-04-29 17:39:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="WS_401" vocabulary_name="sea_water_speed" units="m s-1">WIND SPEED (M/S)</variable>
+<variable name="WD_410" vocabulary_name="direction_of_sea_water_velocity" units="degrees">WIND DIRECTION</variable>
+<variable name="WDS_415" vocabulary_name="direction_of_sea_water_velocity" units="unknown">WIND DIRECTION STABILITY</variable>
+<variable name="AT_21" vocabulary_name="sea_water_temperature" units="C">AIR TEMPERATURE (C)</variable>
+<variable name="RH_910" vocabulary_name="RELATIVE HUMIDITY (%)" units="%">RELATIVE HUMIDITY (%)</variable>
+<variable name="BP_915" vocabulary_name="sea_water_pressure" units="mbar">BAROMETRIC PRESSURE (MB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7601Amet-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583604960000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-760"</values>
+ </variable>
+<variable name="WS_401">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="WD_410">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="WDS_415">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="AT_21">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="BP_915">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7601Amet-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7601Amet-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:19" />
+<attribute name="start_time" value="2004-02-15 23:36:00Z" />
+<attribute name="stop_time" value="2004-04-29 17:39:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7601Bmet-a.nc" ID="PV_SHELF04/7601Bmet-a.nc" urlPath="PV_SHELF04/7601Bmet-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683331 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.309380 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-05-11 23:24:00 </start>
+<end> 2004-06-10 14:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="WS_401" vocabulary_name="sea_water_speed" units="m s-1">WIND SPEED (M/S)</variable>
+<variable name="WD_410" vocabulary_name="direction_of_sea_water_velocity" units="degrees">WIND DIRECTION</variable>
+<variable name="WDS_415" vocabulary_name="direction_of_sea_water_velocity" units="unknown">WIND DIRECTION STABILITY</variable>
+<variable name="AT_21" vocabulary_name="sea_water_temperature" units="C">AIR TEMPERATURE (C)</variable>
+<variable name="RH_910" vocabulary_name="RELATIVE HUMIDITY (%)" units="%">RELATIVE HUMIDITY (%)</variable>
+<variable name="BP_915" vocabulary_name="sea_water_pressure" units="mbar">BAROMETRIC PRESSURE (MB)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7601Bmet-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4591034640000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-760"</values>
+ </variable>
+<variable name="WS_401">
+<attribute name="standard_name" value="sea_water_speed"/>
+</variable>
+<variable name="WD_410">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="WDS_415">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+</variable>
+<variable name="AT_21">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="BP_915">
+<attribute name="standard_name" value="sea_water_pressure"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7601Bmet-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7601Bmet-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:20" />
+<attribute name="start_time" value="2004-05-11 23:24:00Z" />
+<attribute name="stop_time" value="2004-06-10 14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7602mc-a.nc" ID="PV_SHELF04/7602mc-a.nc" urlPath="PV_SHELF04/7602mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.309380 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-16 15:57:00 </start>
+<end> 2004-06-10 17:03:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7602mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4583663820000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-760"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7602mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7602mc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:20" />
+<attribute name="start_time" value="2004-02-16 15:57:00Z" />
+<attribute name="stop_time" value="2004-06-10 17:03:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7611bt-a.nc" ID="PV_SHELF04/7611bt-a.nc" urlPath="PV_SHELF04/7611bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690384 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.306236 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-25 18:12:00 </start>
+<end> 2004-04-06 14:54:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7611bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4584449520000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-761"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7611bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7611bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:21" />
+<attribute name="start_time" value="2004-02-25 18:12:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:54:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7612bt-a.nc" ID="PV_SHELF04/7612bt-a.nc" urlPath="PV_SHELF04/7612bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690384 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.306236 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-25 18:12:00 </start>
+<end> 2004-04-06 14:54:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7612bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4584449520000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-761"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7612bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7612bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:22" />
+<attribute name="start_time" value="2004-02-25 18:12:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:54:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7613mc-a.nc" ID="PV_SHELF04/7613mc-a.nc" urlPath="PV_SHELF04/7613mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690384 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.306236 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-25 17:57:00 </start>
+<end> 2004-04-06 15:06:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3 ">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7613mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4584448620000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-761"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7613mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7613mc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:25" />
+<attribute name="start_time" value="2004-02-25 17:57:00Z" />
+<attribute name="stop_time" value="2004-04-06 15:06:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7614bt-a.nc" ID="PV_SHELF04/7614bt-a.nc" urlPath="PV_SHELF04/7614bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690384 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.306236 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-25 18:12:00 </start>
+<end> 2004-04-06 14:54:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7614bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4584449520000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-761"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7614bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7614bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:25" />
+<attribute name="start_time" value="2004-02-25 18:12:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:54:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7615bt-a.nc" ID="PV_SHELF04/7615bt-a.nc" urlPath="PV_SHELF04/7615bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690384 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.306236 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-25 18:12:00 </start>
+<end> 2004-04-06 14:54:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7615bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4584449520000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-761"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7615bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7615bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:26" />
+<attribute name="start_time" value="2004-02-25 18:12:00Z" />
+<attribute name="stop_time" value="2004-04-06 14:54:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7616sc-a.nc" ID="PV_SHELF04/7616sc-a.nc" urlPath="PV_SHELF04/7616sc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690384 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.306236 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-02-25 18:00:00 </start>
+<end> 2004-04-06 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="Volts">TRANSMISSION (VOLTS)</variable>
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3 ">SIGMA-THETA (KG/M**3)</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7616sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4584448800000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-761"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7616sc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7616sc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:28" />
+<attribute name="start_time" value="2004-02-25 18:00:00Z" />
+<attribute name="stop_time" value="2004-04-06 15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7631Asc-a.nc" ID="PV_SHELF04/7631Asc-a.nc" urlPath="PV_SHELF04/7631Asc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.675797 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.312393 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-03-05 23:30:00 </start>
+<end> 2004-04-19 19:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="KG/M**3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="Volts">TRANSMISSION (VOLTS)</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7631Asc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4585246200000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-763"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7631Asc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7631Asc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:29" />
+<attribute name="start_time" value="2004-03-05 23:30:00Z" />
+<attribute name="stop_time" value="2004-04-19 19:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7631Bsc-a.nc" ID="PV_SHELF04/7631Bsc-a.nc" urlPath="PV_SHELF04/7631Bsc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.675797 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.312393 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-23 16:48:00 </start>
+<end> 2004-06-03 17:27:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="KG/M**3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="Volts">TRANSMISSION (VOLTS)</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7631Bsc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4589455680000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-763"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7631Bsc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7631Bsc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:31" />
+<attribute name="start_time" value="2004-04-23 16:48:00Z" />
+<attribute name="stop_time" value="2004-06-03 17:27:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7631Csc-a.nc" ID="PV_SHELF04/7631Csc-a.nc" urlPath="PV_SHELF04/7631Csc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.675797 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.312393 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-06-04 19:39:00 </start>
+<end> 2004-07-08 16:39:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="KG/M**3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="Volts">TRANSMISSION (VOLTS)</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7631Csc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4593094740000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-763"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7631Csc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7631Csc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:32" />
+<attribute name="start_time" value="2004-06-04 19:39:00Z" />
+<attribute name="stop_time" value="2004-07-08 16:39:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7641bt-a.nc" ID="PV_SHELF04/7641bt-a.nc" urlPath="PV_SHELF04/7641bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310135 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 16:48:00 </start>
+<end> 2004-06-10 15:09:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7641bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588159680000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-764"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7641bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7641bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:32" />
+<attribute name="start_time" value="2004-04-08 16:48:00Z" />
+<attribute name="stop_time" value="2004-06-10 15:09:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7642bt-a.nc" ID="PV_SHELF04/7642bt-a.nc" urlPath="PV_SHELF04/7642bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310135 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 16:48:00 </start>
+<end> 2004-06-10 15:09:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7642bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588159680000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-764"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7642bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7642bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:33" />
+<attribute name="start_time" value="2004-04-08 16:48:00Z" />
+<attribute name="stop_time" value="2004-06-10 15:09:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7643mc-a.nc" ID="PV_SHELF04/7643mc-a.nc" urlPath="PV_SHELF04/7643mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310135 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 16:30:00 </start>
+<end> 2004-06-10 15:21:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="M/S">SOUND VELOCITY (M/S)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3 ">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7643mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588158600000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-764"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7643mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7643mc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:36" />
+<attribute name="start_time" value="2004-04-08 16:30:00Z" />
+<attribute name="stop_time" value="2004-06-10 15:21:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7644mc-a.nc" ID="PV_SHELF04/7644mc-a.nc" urlPath="PV_SHELF04/7644mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310135 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 16:30:00 </start>
+<end> 2004-06-10 15:21:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="KG/M**3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7644mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588158600000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-764"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7644mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7644mc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:37" />
+<attribute name="start_time" value="2004-04-08 16:30:00Z" />
+<attribute name="stop_time" value="2004-06-10 15:21:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7645bt-a.nc" ID="PV_SHELF04/7645bt-a.nc" urlPath="PV_SHELF04/7645bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310135 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 16:48:00 </start>
+<end> 2004-06-10 15:09:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7645bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588159680000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-764"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7645bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7645bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:37" />
+<attribute name="start_time" value="2004-04-08 16:48:00Z" />
+<attribute name="stop_time" value="2004-06-10 15:09:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7646mc-a.nc" ID="PV_SHELF04/7646mc-a.nc" urlPath="PV_SHELF04/7646mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310135 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 16:30:00 </start>
+<end> 2004-06-10 15:21:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="KG/M**3">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7646mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588158600000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-764"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7646mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7646mc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:38" />
+<attribute name="start_time" value="2004-04-08 16:30:00Z" />
+<attribute name="stop_time" value="2004-06-10 15:21:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7647bt-a.nc" ID="PV_SHELF04/7647bt-a.nc" urlPath="PV_SHELF04/7647bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310135 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 16:48:00 </start>
+<end> 2004-06-10 15:09:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7647bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588159680000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-764"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7647bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7647bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:39" />
+<attribute name="start_time" value="2004-04-08 16:48:00Z" />
+<attribute name="stop_time" value="2004-06-10 15:09:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7648bt-a.nc" ID="PV_SHELF04/7648bt-a.nc" urlPath="PV_SHELF04/7648bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310135 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 16:48:00 </start>
+<end> 2004-06-10 15:09:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7648bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588159680000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-764"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7648bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7648bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:40" />
+<attribute name="start_time" value="2004-04-08 16:48:00Z" />
+<attribute name="stop_time" value="2004-06-10 15:09:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7649sc-a.nc" ID="PV_SHELF04/7649sc-a.nc" urlPath="PV_SHELF04/7649sc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.683815 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.310135 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 16:30:00 </start>
+<end> 2004-06-10 15:21:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="VOLTS">TRANSMISSION (VOLTS)</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3 ">SIGMA-THETA (KG/M**3)</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7649sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588158600000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-764"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7649sc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7649sc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:43" />
+<attribute name="start_time" value="2004-04-08 16:30:00Z" />
+<attribute name="stop_time" value="2004-06-10 15:21:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7651bt-a.nc" ID="PV_SHELF04/7651bt-a.nc" urlPath="PV_SHELF04/7651bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690498 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.305748 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 15:06:00 </start>
+<end> 2004-06-10 12:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7651bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588153560000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-765"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7651bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7651bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:43" />
+<attribute name="start_time" value="2004-04-08 15:06:00Z" />
+<attribute name="stop_time" value="2004-06-10 12:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7652bt-a.nc" ID="PV_SHELF04/7652bt-a.nc" urlPath="PV_SHELF04/7652bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690498 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.305748 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 15:06:00 </start>
+<end> 2004-06-10 12:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7652bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588153560000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-765"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7652bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7652bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:43" />
+<attribute name="start_time" value="2004-04-08 15:06:00Z" />
+<attribute name="stop_time" value="2004-06-10 12:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7653mc-a.nc" ID="PV_SHELF04/7653mc-a.nc" urlPath="PV_SHELF04/7653mc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690498 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.305748 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 14:48:00 </start>
+<end> 2004-06-10 13:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="M/S">SOUND VELOCITY (M/S)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3 ">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7653mc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588152480000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-765"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7653mc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7653mc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:45" />
+<attribute name="start_time" value="2004-04-08 14:48:00Z" />
+<attribute name="stop_time" value="2004-06-10 13:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7654bt-a.nc" ID="PV_SHELF04/7654bt-a.nc" urlPath="PV_SHELF04/7654bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690498 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.305748 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 15:06:00 </start>
+<end> 2004-06-10 12:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7654bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588153560000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-765"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7654bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7654bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:46" />
+<attribute name="start_time" value="2004-04-08 15:06:00Z" />
+<attribute name="stop_time" value="2004-06-10 12:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7655bt-a.nc" ID="PV_SHELF04/7655bt-a.nc" urlPath="PV_SHELF04/7655bt-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690498 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.305748 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 15:06:00 </start>
+<end> 2004-06-10 12:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7655bt-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588153560000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-765"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7655bt-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7655bt-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:47" />
+<attribute name="start_time" value="2004-04-08 15:06:00Z" />
+<attribute name="stop_time" value="2004-06-10 12:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7656att-a.nc" ID="PV_SHELF04/7656att-a.nc" urlPath="PV_SHELF04/7656att-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690498 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.305748 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 15:00:00 </start>
+<end> 2004-06-02 01:48:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="VOLTS">TRANSMISSION (VOLTS)</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7656att-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588153200000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-765"</values>
+ </variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7656att-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7656att-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:47" />
+<attribute name="start_time" value="2004-04-08 15:00:00Z" />
+<attribute name="stop_time" value="2004-06-02 01:48:00Z" />
+</netcdf>
+</dataset>
+<dataset name="7656sc-a.nc" ID="PV_SHELF04/7656sc-a.nc" urlPath="PV_SHELF04/7656sc-a.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 33.690498 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.305748 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>2004-04-08 15:00:00 </start>
+<end> 2004-06-09 08:09:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3 ">SIGMA-THETA (KG/M**3)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/thredds/dodsC/TSdata/PV_SHELF04/7656sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4588153200000" increment="180000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"USGS/CMGP-765"</values>
+ </variable>
+<variable name="T_28">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<variable name="C_51">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+</variable>
+<variable name="S_40">
+<attribute name="standard_name" value="sea_water_salinity"/>
+</variable>
+<variable name="STH_71">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="PV_SHELF04/7656sc-a.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="7656sc-a.nc - Palos Verdes Shelf 2004" />
+<attribute name="summary" value="Additional observations to estimate the quantity and direction of sediment erosion and transport on the shelf near the White Point ocean outfalls." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="20-May-2011 16:41:48" />
+<attribute name="start_time" value="2004-04-08 15:00:00Z" />
+<attribute name="stop_time" value="2004-06-09 08:09:00Z" />
+</netcdf>
+</dataset>
+ </dataset>
+</catalog>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    name="OPeNDAP Data Server" version="1.0.1">
+    
+    <service name="Compound" serviceType="Compound" base="">
+        <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+        <service name="wcs" serviceType="WCS" base="/thredds/wcs/" />
+        <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+        <datasetRoot path="tseries" location="/Volumes/web/web_root/" />
+    </service>
+    
+    <dataset name="USGS Long Term Boston Buoy Test Aggregation"  ID="tseries/test_agg"  serviceName="Compound"  urlPath="tseries/test_agg.nc">
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        
+        <aggregation dimName="time" type="joinExisting">
+            
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/DATAFILES/MBAY_LT/3392-a1h.nc">
+                <variable name="time" shape="time" type="double">
+                    <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+                    <attribute name="long_name" value="Modified Julian Day"/>
+                    <values start="4135604400000" increment="3600000"/>
+                </variable>
+            </netcdf>
+            
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/DATAFILES/MBAY_LT/3412-a1h.nc">
+                <variable name="time" shape="time" type="double">
+                    <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+                    <attribute name="long_name" value="Modified Julian Day"/>
+                    <values start="4145385600000" increment="3600000"/>
+                </variable>
+            </netcdf>
+            
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://stellwagen.er.usgs.gov/DATAFILES/MBAY_LT/3482-a1h.nc">
+                <variable name="time" shape="time" type="double">
+                    <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+                    <attribute name="long_name" value="Modified Julian Day"/>
+                    <values start="4154364000000" increment="3600000"/>
+                </variable>
+            </netcdf>
+            
+        </aggregation>
+        
+        <variable name="depth">
+            <attribute name="positive" value="down"/>
+        </variable>
+        <variable name="T_20">
+            <attribute name="standard_name" value="sea_water_temperature"/>
+        </variable>
+        <variable name="lon">
+            <attribute name="units" value="degrees_east"/>
+        </variable>
+        <variable name="lat">
+            <attribute name="units" value="degrees_north"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0" />
+    </netcdf>
+    </dataset>
+
+
+    </catalog>

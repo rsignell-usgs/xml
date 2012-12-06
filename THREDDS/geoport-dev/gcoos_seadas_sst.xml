@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Creating a time aggregated, CF-compliant dataset from SEADAS HDF4 files in Plate Caree projection
+  Rich Signell (rsignell@usgs.gov)
+-->
+<catalog name="GCOOS Tests"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  
+  
+  <dataset name="GCOOS Plate Caree" ID="gcoos/caree"
+    serviceName="allServices" urlPath="gcoos/caree">
+    
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+<!--  
+  - Create an aggregation along a new time dimension (because these files do not have a dimension)
+  - Scan only files in the "c:/RPS/cf/tamu/" directory that start in "MODIS" and end in "gcoos.seadas_sst.hdf"
+  - Determine the values for the time variable by parsing the file names using dateFormatMark.  We except
+    the "." between the day and hour using single quotes just to be on the safe side.
+-->
+  <aggregation dimName="time" type="joinNew" recheckEvery="5 min">
+    <variableAgg name="seadas_sst"/>
+    <variableAgg name="cloud_mask"/>
+    <variableAgg name="l2_flags"/>
+    <scan location="/usgs/data0/rsignell/gcoos/" regExp=".*MODIS.*\.gcoos.seadas_sst.hdf$"
+      dateFormatMark="MODIS.#yyyyDDD'.'hhmmss" subdirs="false"/>
+  </aggregation>
+
+  <!-- 
+  Change "fakeDim1" to "lon" and "fakeDim0 to "lat".    Not necessary, but I just like my names better.
+-->
+  <dimension name="lon" orgName="fakeDim1"/>
+  <dimension name="lat" orgName="fakeDim0"/>
+
+  <!--
+    Create coordinate variables, required for CF compliance.    These will be recognized as coordinate variables because
+    they are 1D variables that have the same name as dimensions, and also have valid units.   I created these by hand editing
+    after looking at the global attributes.   They could be calculated using proj and either stuffed in here 
+    all on one line using <values> -98.0 -97.991 ... -79 </values>  or they could be written to another file and unioned in
+    using <aggregation type="union">
+  -->
+
+  <variable name="lon" shape="lon" type="double">
+    <attribute name="units" value="degrees_east"/>
+    <values start="-98.0" increment="0.00909"/>
+  </variable>
+
+  <variable name="lat" shape="lat" type="double">
+    <attribute name="units" value="degrees_north"/>
+    <values start="31.0" increment="-0.00909"/>
+  </variable>
+
+  <!--
+    - Change the dimensions of all data variables to be "lat" and "lon"
+    - Add CF standard name for sst
+    - Make units CF compliant
+    - Add scale_factor and add_offset  (determined from "slope" and "origin" attributes).  If the "slope" and "origin" attributes 
+      were floats or doubles in the HDF4 file we could just rename them, but unfortunately they are strings, 
+      so we have to create new attributes with floating point values (could have also used doubles).
+    .-->
+
+  <variable name="seadas_sst" shape="time lat lon" type="short">
+    <attribute name="standard_name" value="sea_surface_temperature"/>
+    <attribute name="units" value="Celcius"/>
+    <attribute name="scale_factor" type="float" value="0.005"/>
+    <attribute name="add_offset" type="float" value="0.0"/>
+  </variable>
+  <variable name="l2_flags" shape="time lat lon" type="int">
+    <attribute name="units" value="1"/>
+  </variable>
+  <variable name="cloud_mask" shape="time lat lon" type="byte">
+    <attribute name="units" value="1"/>
+  </variable>
+</netcdf>
+
+  </dataset>
+  </catalog>

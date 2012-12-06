@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="NOAA IOOS Testbed THREDDS Server"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+
+ <service name="all" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/threddsdev/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/threddsdev/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/threddsdev/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/threddsdev/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/threddsdev/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/threddsdev/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/threddsdev/iso/"/>
+ </service>
+
+ <service name="agg" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/threddsdev/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/threddsdev/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/threddsdev/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/threddsdev/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/threddsdev/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/threddsdev/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/threddsdev/iso/"/>
+ </service>
+ 
+  <service name="points" base="" serviceType="compound">
+    <service name="odap" serviceType="OpenDAP" base="/threddsdev/dodsC/"/>
+    <service name="ncml" serviceType="NCML" base="/threddsdev/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/threddsdev/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/threddsdev/iso/"/>
+    <service name="sos" serviceType="SOS" base="/threddsdev/sos/"/>
+  </service>
+
+ <dataset name="Estuarine Hypoxia Test">
+
+  <dataset name="ChesROMS - Synoptic (Rotated vectors 2)" ID="estuarine_hypoxia/chesroms/vectors2"
+   urlPath="estuarine_hypoxia/chesroms/vectors2.nc">
+   <serviceName>agg</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/var/www/tomcat-threddsdev/content/las/conf/server/data/dynamic/vectors.jnl">
+
+    <remove type="variable" name="LON_RHO_P_0"/>
+    <!--<remove type="variable" name="lon_rho_p"/>-->
+    <remove type="variable" name="LAT_RHO_P_0"/>
+    <!--    <remove type="variable" name="lat_rho_p"/>-->
+    <remove type="variable" name="ANGLE_P_0"/>
+    <remove type="variable" name="ANGLE_P"/>
+    <remove type="variable" name="MASK_P_0"/>
+    <remove type="variable" name="MASK_P"/>
+    <remove type="variable" name="U_P_0"/>
+    <remove type="variable" name="U_P"/>
+    <remove type="variable" name="V_P_0"/>
+    <remove type="variable" name="V_P"/>
+    <remove type="variable" name="UBAR_P_0"/>
+    <remove type="variable" name="UBAR_P"/>
+    <remove type="variable" name="VBAR_P_0"/>
+    <remove type="variable" name="VBAR_P"/>
+
+    <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms" />
+    <attribute name="wms-layer-prefix" value="chesroms-vectors" />
+    <attribute name="title" value="ChesROMS (UMCES) - ROMS-2.2" />
+    <attribute name="id" value="eh.umces.chesroms.synoptic_vectors" />
+    <attribute name="naming_authority" value="noaa.ioos.testbed" />
+    <attribute name="summary" value="Chesapeake Bay Application of ROMS/TOMS 2.2 with rotated vectors and no hypoxic variables" />
+    <attribute name="creator_name" value="Wen Long" />
+    <attribute name="creator_email" value="wenlong@umces.edu" />
+    <attribute name="creator_url" value="http://www.umces.edu/" />
+    <attribute name="cdm_data_type" value="Grid" />
+
+	<!--
+    <variable name="ZETA_P">
+     <attribute name="coordinates" value="OCEAN_TIME LAT_RHO_P LON_RHO_P"/>
+    </variable>
+    <variable name="H_P">
+     <attribute name="coordinates" value="LAT_RHO_P LON_RHO_P"/>
+    </variable>
+    <variable name="UROT">
+     <attribute name="units" value="m/s"/> 
+     <attribute name="coordinates" value="OCEAN_TIME S_RHO LAT_RHO_P LON_RHO_P"/>
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     <attribute name="missing_value" type="float" value="-1.0e34"/>
+     <attribute name="wms-layer" value="chesroms-vectors/sea_water_velocity" />
+    </variable>
+    <variable name="VROT">
+     <attribute name="coordinates" value="OCEAN_TIME S_RHO LAT_RHO_P LON_RHO_P"/>
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     <attribute name="missing_value" type="float" value="-1.0e34"/>
+     <attribute name="units" value="m/s"/>
+     <attribute name="wms-layer" value="chesroms-vectors/sea_water_velocity" />
+    </variable>
+	-->
+    <variable name="UBARROT">
+     <attribute name="coordinates" value="OCEAN_TIME LAT_RHO_P LON_RHO_P"/>
+     <attribute name="missing_value" type="float" value="-1.0e34"/>
+     <attribute name="standard_name" value="barotropic_eastward_sea_water_velocity"/>
+     <attribute name="units" value="m/s"/>
+     <attribute name="wms-layer" value="chesroms-vectors/barotropic_sea_water_velocity" />
+    </variable>
+    <variable name="VBARROT">
+     <attribute name="coordinates" value="OCEAN_TIME LAT_RHO_P LON_RHO_P"/>
+     <attribute name="missing_value" type="float" value="-1.0e34"/>
+     <attribute name="standard_name" value="barotropic_northward_sea_water_velocity"/>
+     <attribute name="units" value="m/s"/>
+     <attribute name="wms-layer" value="chesroms-vectors/barotropic_sea_water_velocity" />
+    </variable>
+    <variable name="S_RHO">
+     <attribute name="formula_terms" value="s: S_RHO eta: ZETA_P depth: H_P a: THETA_S b: THETA_B depth_c: HC"/>
+    </variable>
+    <attribute name="Conventions" value="CF-1.0"/>
+   </netcdf>
+  </dataset>
+  </dataset>
+</catalog>

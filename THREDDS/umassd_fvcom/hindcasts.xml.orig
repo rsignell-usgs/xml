@@ -1,0 +1,76 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <!--
+  <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
+   -->
+</service>
+ <dataset name="FVCOM Hindcasts" ID="fvcom/hindcasts">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <dataType>Grid</dataType>
+   <dataFormat>NetCDF</dataFormat>
+   <creator>
+    <name vocabulary="DIF">SMAST/UMASSD</name>
+    <contact url="http://fvcom.smast.umassd.edu/FVCOM/index.html" email="c1chen@umassd.edu"/>
+   </creator>
+   <documentation xlink:href="http://fvcom.smast.umassd.edu/FVCOM/index.html"/>
+  </metadata>
+  <dataset name="FVCOM Gulf of Maine Hindcast GOM3 grid (1978- )" ID="fvcom/hindcasts/30yr_gom3" urlPath="fvcom/hindcasts/30yr_gom3">
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+ <aggregation type="union">
+  <netcdf location="/http/www/tomcat/apache-tomcat-7.0.22/content/thredds/gom3_lonlat.nc"/>
+  <netcdf location="/http/www/tomcat/apache-tomcat-7.0.22/content/thredds/auxiliary_data.nc"/>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+   <remove type="variable" name="lon"/>
+   <remove type="variable" name="lat"/>
+   <remove type="variable" name="lonc"/>
+   <remove type="variable" name="latc"/>
+   <variable name="uwind_stress">
+      <attribute name="coordinates" value="time latc lonc"/>
+   </variable>
+   <variable name="vwind_stress">
+      <attribute name="coordinates" value="time latc lonc"/>
+   </variable>
+   <variable name="u">
+<!--      <attribute name="coordinates" value="time siglay latc lonc"/> -->
+      <attribute name="coordinates" value="time"/> 
+   </variable>
+   <variable name="h">
+      <attribute name="coordinates" value="lat lon"/>
+   </variable>
+   <variable name="v">
+<!--      <attribute name="coordinates" value="time siglay latc lonc"/> -->
+      <attribute name="coordinates" value="time"/> 
+   </variable>
+   <variable name="temp">
+      <attribute name="coordinates" value="time siglay lat lon"/>
+   </variable>
+   <variable name="salinity">
+      <attribute name="coordinates" value="time siglay lat lon"/>
+   </variable>
+   <variable name="zeta">
+      <attribute name="coordinates" value="time lat lon"/>
+   </variable>
+   <variable name="short_wave">
+      <attribute name="coordinates" value="time lat lon"/>
+   </variable>
+   <variable name="net_heat_flux">
+      <attribute name="coordinates" value="time lat lon"/>
+   </variable>
+
+   <aggregation dimName="time" type="joinExisting" recheckEvery="60min">
+    <scan location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive" regExp=".*gom3_[0-9]{6}\.nc$" olderThan="30min"/>
+   </aggregation>
+  </netcdf>
+ </aggregation>
+</netcdf>
+  </dataset>
+ </dataset>
+</catalog>
+

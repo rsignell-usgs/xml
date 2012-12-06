@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="IOOS THREDDS Data Server Top Level Catalogs">
+  
+  <service name="allservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  
+  <dataset name="Circulation Models including the Gulf of Mexico">
+    <dataset name="Forecast Collections">
+      <dataset name="NAVO" ID="navo_clean">
+        <metadata inherited="true">
+          <documentation xlink:title="NAVO NCOM Model Forecast Collections"
+            xlink:href="http://edac-dap2.northerngulfinstitute.org/ocean_nomads/NCOM_index_map.html"/>
+        </metadata>
+        <catalogRef xlink:title="NAVO:NCOM Region 1 (East Coast, Gulf Coast and Carribean) Forecast Collection"
+          xlink:href="http://edac-dap.northerngulfinstitute.org/thredds/catalog/ncom_reg1_agg/catalog.xml"
+          name=""/>
+        <catalogRef xlink:title="NAVO:NCOM Intra Americas Sea NFS 3D fields Forecast Collection for 2010"
+          xlink:href="http://edac-dap.northerngulfinstitute.org/thredds/catalog/iasnfs_agg_2010/catalog.xml"
+          name=""/>
+        <!--  server problems to:     "Scott Cross" <Scott.Cross@noaa.gov> -->
+      </dataset>
+      <dataset name="NRL" ID="NRL_clean">
+        <metadata inherited="true">
+          <documentation xlink:title="Hycom Data Project Page"
+            xlink:href="http://www.hycom.org/dataserver/goml0pt04/expt-20pt1"/>
+        </metadata>
+        <catalogRef xlink:title="HYCOM + NCODA SE US 1/25 deg"
+          xlink:href="http://tds.hycom.org/thredds/GOMl0.04/expt_20.1.xml"
+          name=""/>        
+        <!--  server problems to:   "Mike McDonald" <mmcdonald@coaps.fsu.edu> -->
+      </dataset>
+
+    <dataset name="USGS" ID="neracoos_clean">
+         <catalogRef
+        xlink:title="USGS COAWST East and Gulf Coast Forecast (current, wave and sediment)"
+        xlink:href="http://geoport.whoi.edu:8081/thredds/COAWST_catalog.xml" name=""/>
+      <!-- server problems to:  Rich Signell <rsignell@usgs.gov> -->
+     </dataset>
+    </dataset>
+    </dataset>
+</catalog>
+
+  
+    
+   

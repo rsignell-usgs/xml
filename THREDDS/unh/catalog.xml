@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="UNH THREDDS Server" version="1.0.1"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+
+  <datasetRoot path="odac/model/" location="/net/nfs/porter/raid1/odac/model/"/>
+
+  <dataset name="UNH Model Data">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>gov.nasa.jpl</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">Dr. Doug Vandemark</name>
+        <contact url="http://www.jcoot.unh.edu/" email="doug.vandemark@unh.edu"/>
+      </creator>
+    </metadata>
+
+    <datasetScan name="mm5/analysis" ID="mm5/analysis" path="mm5/analysis"
+      location="/net/nfs/porter/raid1/odac/model/mm5/analysis">
+      <metadata inherited="true">
+        <documentation type="summary"> MM5 Model Runs</documentation>
+      </metadata>
+      <filter>
+        <include wildcard="*.grib"/>
+      </filter>
+      <addDatasetSize/>
+    </datasetScan>
+
+    <datasetScan name="wrf/analysis" ID="wrf/analysis" path="wrf/analysis"
+      location="/net/nfs/porter/raid1/odac/model/wrf/analysis">
+      <metadata inherited="true">
+        <documentation type="summary"> WRF Model Runs. The WRF is run in a triply-nested two-way
+          interactive domain configuration that focuses on New England (domain 2) and the Gulf of
+          Maine (domain 3). The outermost domain covers the eastern half of the US and extends into
+          Canada, the Atlantic Ocean and Gulf of Mexico. The grid spacing for the inner three
+          domains is 27, 9 and 3 km. </documentation>
+      </metadata>
+      <filter>
+        <include wildcard="*.grib"/>
+      </filter>
+      <addDatasetSize/>
+    </datasetScan>
+
+    <datasetScan name="wrf/48hr_forecast" ID="wrf/48hr_forecast" path="wrf/48hr_forecast"
+      location="/net/nfs/porter/raid1/odac/model/wrf/48hr_forecast">
+      <metadata inherited="true">
+        <documentation xlink:href="http://www.jcoot.unh.edu/forecasts/forecasts.html"
+          xlink:title="WRF Forecast Model Home Page"/>
+        <documentation type="summary"> WRF Model Runs. The WRF is run in a triply-nested two-way
+          interactive domain configuration that focuses on New England (domain 2) and the Gulf of
+          Maine (domain 3). The outermost domain covers the eastern half of the US and extends into
+          Canada, the Atlantic Ocean and Gulf of Mexico. The grid spacing for the inner three
+          domains is 27, 9 and 3 km. </documentation>
+      </metadata>
+      <filter>
+        <include wildcard="*.grib"/>
+      </filter>
+      <addDatasetSize/>
+    </datasetScan>
+
+    <datasetScan name="pWBM_9km" ID="pWBM_9km" path="pWBM_9km"
+      location="/net/nfs/ipswich/raid/jcoot/pWBM_9km/netcdf">
+      <metadata inherited="true">
+        <documentation xlink:href="http://www.jcoot.unh.edu/discharge/discharge.html"
+          xlink:title="UNH Water Balance Model Home Page"/>
+        <documentation type="summary"> Water Balance Model.  </documentation>
+      </metadata>
+      <filter>
+        <include wildcard="*.nc"/>
+      </filter>
+      <addDatasetSize/>
+      <sort>
+        <lexigraphicByName increasing="false"/>
+      </sort>
+    </datasetScan>
+  </dataset>
+
+  <catalogRef xlink:href="wbm_catalog.xml" xlink:title="UNH Water Balance Models" name=""/>
+
+</catalog>

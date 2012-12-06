@@ -1,0 +1,63 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+<dataset name="West Falmouth Harbor Runs" ID="WFH/ROMS">
+  <metadata inherited="true">
+
+    <authority>gov.usgs.er.whsc</authority>
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <creator>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="nganju@usgs.gov" />
+    </creator>
+    <publisher>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="nganju@usgs.gov" />
+    </publisher>
+    <geospatialCoverage zpositive="down">
+      <northsouth>
+        <start>41.5936</start>
+        <size>0.000087437</size>
+        <units>degrees_north</units>
+      </northsouth>
+      <eastwest>
+        <start> -70.652159</start>
+        <size>0.00011516</size>
+        <units>degrees_east</units>
+      </eastwest>
+      <updown>
+        <start>-14.2526</start>
+        <size>6.7658</size>
+        <units>meters</units>
+      </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://www.cstms.org/index.php" 
+      xlink:title="CSTM website"/>
+  </metadata>
+ <dataset name="wfh test case" ID="wfh/sin_test" urlPath="wfh/sin_test">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/wfh/sin_test" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+ <dataset name="wfh test case with salinity distribution" ID="wfh/sin_dsdx" urlPath="wfh/sin_dsdx">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/wfh/sin_dsdx" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+ </dataset>   
+</catalog>

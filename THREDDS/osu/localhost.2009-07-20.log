@@ -1,0 +1,52 @@
+Jul 20, 2009 2:21:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogService'
+Jul 20, 2009 2:21:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'root'
+Jul 20, 2009 2:21:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogGen'
+Jul 20, 2009 2:21:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'cdmRemote'
+Jul 20, 2009 2:21:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'dqc'
+Jul 20, 2009 2:21:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'admin'
+Jul 20, 2009 2:21:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'wms'
+Jul 20, 2009 2:21:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Shutting down log4j
+Jul 20, 2009 2:21:59 PM org.apache.catalina.core.StandardContext listenerStop
+SEVERE: Exception sending context destroyed event to listener instance of class thredds.server.config.TdsConfigContextListener
+java.lang.NoClassDefFoundError: org/apache/log4j/helpers/NullEnumeration
+	at org.apache.log4j.Category.getAllAppenders(Category.java:413)
+	at org.apache.log4j.Category.closeNestedAppenders(Category.java:226)
+	at org.apache.log4j.Hierarchy.shutdown(Hierarchy.java:448)
+	at org.apache.log4j.LogManager.shutdown(LogManager.java:238)
+	at org.springframework.util.Log4jConfigurer.shutdownLogging(Log4jConfigurer.java:117)
+	at org.springframework.web.util.Log4jWebConfigurer.shutdownLogging(Log4jWebConfigurer.java:170)
+	at thredds.server.config.TdsConfigContextListener.contextDestroyed(TdsConfigContextListener.java:103)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:3882)
+	at org.apache.catalina.core.StandardContext.stop(StandardContext.java:4523)
+	at org.apache.catalina.manager.ManagerServlet.stop(ManagerServlet.java:1298)
+	at org.apache.catalina.manager.HTMLManagerServlet.stop(HTMLManagerServlet.java:622)
+	at org.apache.catalina.manager.HTMLManagerServlet.doGet(HTMLManagerServlet.java:131)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:525)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:845)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jul 20, 2009 2:21:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+Jul 20, 2009 2:22:14 PM org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'WMS'
+Jul 20, 2009 2:22:14 PM org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext

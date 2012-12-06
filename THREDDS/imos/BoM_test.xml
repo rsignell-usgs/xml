@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="BoM Catalog" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <service name="allServices" base="" serviceType="compound">
+        <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    </service>
+    <dataset name="FMRC Test">
+        <metadata inherited="true">
+            <serviceName>allServices</serviceName>
+        </metadata>
+        <datasetFmrc name="BoM FMRC test" path="bom/fmrc">
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                <aggregation dimName="runtime" type="forecastModelRunSingleCollection"
+                    timeUnitsChange="false">
+<!--                    <variable name="Time">
+                        <remove type="attribute" name="bounds"/>
+                    </variable>-->
+                    <scanFmrc location="/media/1tb/testdata/BoM/" suffix=".nc"
+                        subdirs="true" runDateMatcher="#/ocean_fc_#yyyyMMdd"
+                        forecastDateMatcher="#/ocean_fc_#yyyyMMdd_HHH"/>
+                </aggregation>
+            </netcdf>
+        </datasetFmrc>
+    </dataset>
+</catalog>

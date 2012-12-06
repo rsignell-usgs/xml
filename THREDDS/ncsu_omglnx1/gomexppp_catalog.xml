@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="gomexppp Catalog"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <service name="allServices" base="" serviceType="compound">
+  <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+ </service>
+ <dataset name="gomex_ppp June 2010 test runs">
+  <metadata inherited="true">
+   <creator>
+    <name vocabulary="DIF">Dr. Ruoying He</name>
+    <contact url="http://www.meas.ncsu.edu/faculty/he/he.html" email="ruoying_he@ncsu.edu"/>
+   </creator>
+   <documentation xlink:href="http://abcmgr.tamu.edu/gomexppp/"
+    xlink:title="Gulf of Mexico Pilot Prediction Project"/>
+   <documentation type="Summary"> SABGOM ROMS Simulation of Gulf of Mexico Hydrodynamics in June
+    2010 [June 1 to July 1]. Model fields are averaged daily at 12Z, and interpolated to a common
+    analysis grid [18 to 31N and 98 to 78W] at 1/20 degree horizontal resolution, and 23 z-levels:
+    0, -20, -40, -60, -80, -100, -150, -200, -250, -300, -400, -500, -600, -700, -800, -900, -1000,
+    -1500, -2000, -2500, -3000, -3500 m, and (for water depths greater than 1000 m) 100 m above the
+    bottom. </documentation>
+   <documentation type="Summary"> Nowcast Specifics: (1) Boundary forcing: Daily 1/12 degree Globle
+    HyCOM NCODA solution; (2)Surface forcing: 3hrly, 32-km NCEP NARR; (3) Rivers: USGS daily flow
+    rates/some used climatlogy; (4) Tides: turned off in this experiment </documentation>
+   <documentation type="Summary"> Forecast Specifics: (1) Boundary forcing: 1/12 degree Globle HyCOM
+    NCODA solution at 12Z June 1, hold fixed for the entire month; (2) Surface forcing: 32-km NCEP
+    NARR at 12Z June 1, hold fixed for the entire month; (3) Rivers: USGS daily flow rates/some used
+    climatlogy; (4) Tides: turned off in this experiment</documentation>
+   <documentation type="Rights"> This model data was generated as part of an academic research
+    project, and the principal investigators: Ruoying He (rhe@ncsu.edu) and Yi Chao
+    (yi.chao@jpl.nasa.gov) ask to be informed of intent for scientific use and appropriate
+    acknowledgment given in any publications arising therefrom. The data is provided free of charge,
+    without warranty of any kind. </documentation>
+  </metadata>
+  <dataset name="Daily Averaged Data">
+   <dataset name="Nowcast " ID="gomexppp/2010_June/avg/N" urlPath="gomexppp/2010_June/avg/N">
+    <serviceName>allServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/mnt/tera2/gomexppp/2010_June/avg/N/" suffix=".nc"/>
+     </aggregation>
+     <dimension orgName="s_rho" name="zs"/>
+     <variable name="xi_rho" shape="xi_rho" type="double">
+      <attribute name="units" value="degrees_east"/>
+      <values start="-98.00000000000000" increment="0.05000000000000"/>
+     </variable>
+     <variable name="eta_rho" shape="eta_rho" type="double">
+      <attribute name="units" value="degrees_north"/>
+      <values start="18.00000000000000" increment="0.05000000000000"/>
+     </variable>
+     <variable name="zs">
+      <attribute name="positive" value="up"/>
+     </variable>
+     <variable name="u">
+      <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+      <attribute name="coordinates" value="ocean_time zs eta_rho xi_rho"/>
+     </variable>
+     <variable name="ubar">
+      <attribute name="standard_name" value="barotropic_eastward_sea_water_velocity"/>
+     </variable>
+     <variable name="v">
+      <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     </variable>
+     <variable name="vbar">
+      <attribute name="standard_name" value="barotropic_northward_sea_water_velocity"/>
+     </variable>
+
+    </netcdf>
+   </dataset>
+   <dataset name="Forecast " ID="gomexppp/2010_June/avg/F/" urlPath="gomexppp/2010_June/avg/F/">
+    <serviceName>allServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <aggregation dimName="time" type="joinExisting">
+      <scan location="/mnt/tera2/gomexppp/2010_June/avg/F/sabgom_avg_std_z_exp_02" suffix=".nc"/>
+     </aggregation>
+     <variable name="xi_rho" shape="xi_rho" type="double">
+      <attribute name="units" value="degrees_east"/>
+      <values start="-98.00000000000000" increment="0.05000000000000"/>
+     </variable>
+     <variable name="eta_rho" shape="eta_rho" type="double">
+      <attribute name="units" value="degrees_north"/>
+      <values start="18.00000000000000" increment="0.05000000000000"/>
+     </variable>
+     <variable name="zs">
+      <attribute name="positive" value="up"/>
+     </variable>
+     <variable name="u">
+      <attribute name="coordinates" value="ocean_time zs eta_rho xi_rho"/>
+      <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     </variable>
+     <variable name="ubar">
+      <attribute name="standard_name" value="barotropic_eastward_sea_water_velocity"/>
+     </variable>
+     <variable name="v">
+      <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     </variable>
+     <variable name="vbar">
+      <attribute name="standard_name" value="barotropic_northward_sea_water_velocity"/>
+     </variable>
+
+    </netcdf>
+   </dataset>
+  </dataset>
+ </dataset>
+</catalog>

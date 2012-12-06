@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name=" Catalog" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+  <dataset name="NCDC Data" harvest="true">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <documentation type="Rights"> This model data was generated as part of an academic research
+        project, and the principal investigators ask to be informed of intent for scientific use and
+        appropriate acknowledgment given in any publications arising therefrom. The data is provided
+        free of charge, without warranty of any kind. </documentation>
+    </metadata>
+    <datasetFmrc name="NCDC NAM aggregation" path="models/ncdc/fmrc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" enhance="true">
+        <aggregation dimName="runtime" type="forecastModelRunSingleCollection" recheckEvery="20min">
+          <scanFmrc location="/usgs/data0/rsignell/models/ncdc/nam" regExp=".*nam_218_.*\.grb$"
+            runDateMatcher="#nam_218_#yyyyMMdd_HH" forecastOffsetMatcher="HHH#.grb#" subdirs="true"
+            olderThan="10 min"/>
+        </aggregation>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </datasetFmrc>
+  </dataset>
+</catalog>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="NECOFS Forecast Catalog"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+  <dataset name="NECOFS Forecast Model Run Collections">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <creator>
+        <name vocabulary="DIF">Dr. Changsheng Chen </name>
+        <contact url="http://fvcom.smast.umassd.edu" email="c1chen@umassd.edu"/>
+      </creator>
+      <documentation xlink:href="http://fvcom.smast.umassd.edu/research_projects/NECOFS/index.html"
+        xlink:title="NECOFS Project Page"/>
+      <documentation type="Summary"> Northeast Coastal Ocean Forecast System (NECOFS) </documentation>
+      <documentation type="Rights"> This model data was generated as part of an academic research
+        project, and the principal investigator, Changsheng Chen (c1chen@umassd.edu), asks to be
+        informed of intent for scientific use and appropriate acknowledgment given in any
+        publications arising therefrom. The data is provided free of charge, without warranty of any
+        kind. </documentation>
+    </metadata>
+    <datasetFmrc name="GOM2 Forecast Model Run Collection" path="fmrc/gom2">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <variable name="siglev">
+          <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+        </variable>
+        <variable name="siglay" shape="siglay" type="float">
+          <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+        </variable>
+        <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min"
+          timeUnitsChange="true">
+          <scan location="/usgs/data0/rsignell/models/fvcom/forecasts/GOM2"
+            regExp=".*GOM2_[0-9]{10}\.nc$" dateFormatMark="GOM2_#yyyyMMddHH" subdirs="true"
+            olderThan="15 min"/>
+        </aggregation>
+
+      </netcdf>
+    </datasetFmrc>
+  </dataset>
+</catalog>

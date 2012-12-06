@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="GLOS Catalog" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+
+  <dataset name="Great Lakes Coastal Forecasting System Forecast">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+
+      <creator>
+        <name vocabulary="DIF">Dr. Dave Schwab</name>
+        <contact url="http://www.glerl.noaa.gov/" email="david.schwab@noaa.gov"/>
+      </creator>
+
+      <documentation xlink:href="http://www.glerl.noaa.gov/res/glcfs/"
+        xlink:title="Great Lakes Coastal Forecasting System"/>
+
+      <documentation type="Summary"> Great Lakes Coastal Forecasting System</documentation>
+
+      <documentation type="Disclaimer"> NOAA GLERL is providing this data "as is," and NOAA GLERL
+        and its partners cannot be held responsible, nor assume any liability for any damages caused
+        by inaccuracies in this data or documentation, or as a result of the failure of the data or
+        software to function in a particular manner. NOAA GLERL and its partners make no warranty,
+        expressed or implied, as to the accuracy, completeness, or utility of this information, nor
+        does the fact of distribution constitute a warranty. Real-time data have not been subjected
+        to quality control or quality assurance procedures. Timely delivery of data and products
+        through the Internet is not guaranteed. Before using information obtained from this server,
+        special attention should be given to the date and time of the data and products being
+        displayed. </documentation>
+    </metadata>
+    <datasetFmrc name="Lake Michigan Forecast Collection 3D" serviceName="allServices" path="glos/glcfs/michigan/ncasf_his3d">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+            <scan location="/var/local/glos/thredds/GLCFS/Forecast" regExp=".*m[0-9]{9}\.out3\.nc$" dateFormatMark="m#yyyyDDDHH" olderThan="5 min"/>
+          <variable name="depth">
+            <attribute name="coordinates" value="lat lon"/>
+          </variable>
+ <!--         <variable name="eta">
+            <attribute name="coordinates" value="time lat lon"/>
+          </variable>-->
+          <variable name="eta" shape="time ny nx" type="float">
+            <attribute name="coordinates" value="time lon lat"/>
+            <attribute name="units" value="m"/>
+            <values start="0.00" increment="0.0"/>
+            </variable>
+          <variable name="temp">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="u">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="v">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="sigma">
+            <attribute name="formula_terms" value="sigma: sigma depth: depth eta: eta"/>
+            <attribute name="axis" value="Z"/>
+            <attribute name="positive" value="up"/>
+            <values start="-.025" increment="-.05"/>
+            <attribute name="units" value="1"/>
+          </variable>      
+        </aggregation>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </datasetFmrc>
+    <datasetFmrc name="Lake Michigan Forecast Collection 2D"   serviceName="allServices" path="glos/glcfs/michigan/ncasf_his2d">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+            <scan location="/var/local/glos/thredds/GLCFS/Forecast" regExp=".*m[0-9]{9}\.out1\.nc$" dateFormatMark="m#yyyyDDDHH" olderThan="5min"/>
+          <variable name="depth">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+          <variable name="wvh">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+        </aggregation>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </datasetFmrc>
+    <datasetFmrc name="Lake Superior Forecast Collection 3D" serviceName="allServices" path="glos/glcfs/superior/ncasf_his3d">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+            <scan location="/var/local/glos/thredds/GLCFS/Forecast" regExp=".*s[0-9]{9}\.out3\.nc$" dateFormatMark="s#yyyyDDDHH" olderThan="5 min"/>
+          <variable name="depth">
+            <attribute name="coordinates" value="lat lon"/>
+          </variable>
+          <!--         <variable name="eta">
+            <attribute name="coordinates" value="time lat lon"/>
+            </variable>-->
+          <variable name="eta" shape="time ny nx" type="float">
+            <attribute name="coordinates" value="time lon lat"/>
+            <attribute name="units" value="m"/>
+            <values start="0.00" increment="0.0"/>
+          </variable>
+          <variable name="temp">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="u">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="v">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="sigma">
+            <attribute name="formula_terms" value="sigma: sigma depth: depth eta: eta"/>
+            <attribute name="axis" value="Z"/>
+            <attribute name="positive" value="up"/>
+            <values start="-.025" increment="-.05"/>
+            <attribute name="units" value="1"/>
+          </variable>      
+        </aggregation>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </datasetFmrc>
+    <datasetFmrc name="Lake Superior Forecast Collection 2D" 
+      serviceName="allServices" path="glos/glcfs/superior/ncasf_his2d">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+            <scan location="/var/local/glos/thredds/GLCFS/Forecast" regExp=".*s[0-9]{9}\.out1\.nc$" dateFormatMark="s#yyyyDDDHH" olderThan="5min"/>
+          <variable name="depth">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+          <variable name="wvh">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+        </aggregation>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </datasetFmrc>
+    <datasetFmrc name="Lake Huron Forecast Collection 3D" 
+      serviceName="allServices" path="glos/glcfs/huron/ncasf_his3d">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+            <scan location="/var/local/glos/thredds/GLCFS/Forecast" regExp=".*h[0-9]{9}\.out3\.nc$" dateFormatMark="h#yyyyDDDHH" olderThan="5 min"/>
+          <variable name="depth">
+            <attribute name="coordinates" value="lat lon"/>
+          </variable>
+          <!--         <variable name="eta">
+            <attribute name="coordinates" value="time lat lon"/>
+            </variable>-->
+          <variable name="eta" shape="time ny nx" type="float">
+            <attribute name="coordinates" value="time lon lat"/>
+            <attribute name="units" value="m"/>
+            <values start="0.00" increment="0.0"/>
+          </variable>
+          <variable name="temp">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="u">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="v">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="sigma">
+            <attribute name="formula_terms" value="sigma: sigma depth: depth eta: eta"/>
+            <attribute name="axis" value="Z"/>
+            <attribute name="positive" value="up"/>
+            <values start="-.025" increment="-.05"/>
+            <attribute name="units" value="1"/>
+          </variable>      
+        </aggregation>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </datasetFmrc>
+    <datasetFmrc name="Lake Huron Forecast Collection 2D" 
+      serviceName="allServices" path="glos/glcfs/huron/ncasf_his2d">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+            <scan location="/var/local/glos/thredds/GLCFS/Forecast" regExp=".*h[0-9]{9}\.out1\.nc$" dateFormatMark="h#yyyyDDDHH"  olderThan="5min"/>
+          <variable name="depth">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+          <variable name="wvh">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+        </aggregation>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </datasetFmrc>
+    <datasetFmrc name="Lake Erie Forecast Collection 3D" 
+      serviceName="allServices" path="glos/glcfs/erie/ncasf_his3d">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+            <scan location="/var/local/glos/thredds/GLCFS/Forecast" regExp=".*e[0-9]{9}\.out3\.nc$" dateFormatMark="e#yyyyDDDHH" olderThan="5 min"/>
+          <variable name="depth">
+            <attribute name="coordinates" value="lat lon"/>
+          </variable>
+          <!--         <variable name="eta">
+            <attribute name="coordinates" value="time lat lon"/>
+            </variable>-->
+          <variable name="eta" shape="time ny nx" type="float">
+            <attribute name="coordinates" value="time lon lat"/>
+            <attribute name="units" value="m"/>
+            <values start="0.00" increment="0.0"/>
+          </variable>
+          <variable name="temp">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="u">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="v">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="sigma">
+            <attribute name="formula_terms" value="sigma: sigma depth: depth eta: eta"/>
+            <attribute name="axis" value="Z"/>
+            <attribute name="positive" value="up"/>
+            <values start="-.025" increment="-.05"/>
+            <attribute name="units" value="1"/>
+          </variable>      
+        </aggregation>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </datasetFmrc>
+    <datasetFmrc name="Lake Erie Forecast Collection 2D" 
+      serviceName="allServices" path="glos/glcfs/erie/ncasf_his2d">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+            <scan location="/var/local/glos/thredds/GLCFS/Forecast" regExp=".*e[0-9]{9}\.out1\.nc$" dateFormatMark="e#yyyyDDDHH" olderThan="5min"/>
+          <variable name="depth">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+          <variable name="wvh">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+        </aggregation>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </datasetFmrc>
+    <datasetFmrc name="Lake Ontario Forecast Collection 3D" 
+      serviceName="allServices" path="glos/glcfs/ontario/ncasf_his3d">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+            <scan location="/var/local/glos/thredds/GLCFS/Forecast" regExp=".*o[0-9]{9}\.out3\.nc$" dateFormatMark="o#yyyyDDDHH" olderThan="5 min"/>
+          <variable name="depth">
+            <attribute name="coordinates" value="lat lon"/>
+          </variable>
+          <!--         <variable name="eta">
+            <attribute name="coordinates" value="time lat lon"/>
+            </variable>-->
+          <variable name="eta" shape="time ny nx" type="float">
+            <attribute name="coordinates" value="time lon lat"/>
+            <attribute name="units" value="m"/>
+            <values start="0.00" increment="0.0"/>
+          </variable>
+          <variable name="temp">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="u">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="v">
+            <attribute name="coordinates" value="time sigma lat lon"/>
+          </variable>
+          <variable name="sigma">
+            <attribute name="formula_terms" value="sigma: sigma depth: depth eta: eta"/>
+            <attribute name="axis" value="Z"/>
+            <attribute name="positive" value="up"/>
+            <values start="-.025" increment="-.05"/>
+            <attribute name="units" value="1"/>
+          </variable>      
+        </aggregation>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </datasetFmrc>
+    <datasetFmrc name="Lake Ontario Forecast Collection 2D" 
+      serviceName="allServices" path="glos/glcfs/ontario/ncasf_his2d">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+            <scan location="/var/local/glos/thredds/GLCFS/Forecast" regExp=".*o[0-9]{9}\.out1\.nc$" dateFormatMark="o#yyyyDDDHH" olderThan="5min"/>
+          <variable name="depth">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+          <variable name="wvh">
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+        </aggregation>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </datasetFmrc>
+  </dataset>
+</catalog>

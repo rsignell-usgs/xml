@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<catalog name="GCOOS Tests" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
+    <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
+  </service>
+  
+  <datasetScan name="MCH Inputs" ID="MCH Inputs" serviceName="allServices"
+               path="mch_inputs" location="/d4/mch_inputs">
+
+  </datasetScan>
+
+  <datasetScan name="MCH Outputs" ID="MCH Outputs" serviceName="allServices"
+               path="mch_outputs" location="/d4/mch_outputs">
+
+  </datasetScan>
+
+</catalog>

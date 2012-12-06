@@ -1,0 +1,79 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.1">
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+
+  <dataset name="Skagit Models" ID="skagit">
+    <dataset name="FVCOM:WHOI June 2008" ID="skagit/fvcom/june2008" urlPath="skagit/fvcom/june2008">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation type="union">
+          <netcdf location="/Volumes/models/skagit/fvcom/skg_lonlat.nc"/>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="time" type="joinExisting">
+              <netcdf location="/Volumes/models/skagit/fvcom/june2008/skg_0001a.nc"/>
+              <netcdf location="/Volumes/models/skagit/fvcom/june2008/skg_0001b.nc"/>
+            </aggregation>
+            <remove type="variable" name="lon"/>
+            <remove type="variable" name="lat"/>
+            <variable name="siglay">
+              <attribute name="formula_terms" type="String" value="sigma: siglay eta: zeta depth: h"  />
+            </variable>
+            <variable name="siglev">
+              <attribute name="formula_terms" type="String" value="sigma: siglev eta: zeta depth: h" />
+            </variable>
+            <variable name="h">
+              <attribute name="coordinates" type="String" value="lat lon"/>
+            </variable>
+            <variable name="zeta">
+              <attribute name="coordinates" type="String" value="time lat lon"/>
+            </variable>
+            <variable name="salinity">
+              <attribute name="coordinates" type="String" value="time siglay lat lon"/>
+            </variable>
+            <variable name="time">
+              <attribute name="units" type="String" value="seconds since 2008-06-11 00:00 UTC"/>
+            </variable>
+            <attribute name="Conventions" value="CF-1.0"/>
+          </netcdf>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="FVCOM:WHOI Sept 2008" ID="skagit/fvcom/sept2008" urlPath="skagit/fvcom/sept2008">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation type="union">
+          <netcdf location="/Volumes/models/skagit/fvcom/skg_lonlat.nc"/>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="time" type="joinExisting">
+              <netcdf location="/Volumes/models/skagit/fvcom/sept2008/skg_0001a.nc"/>
+              <netcdf location="/Volumes/models/skagit/fvcom/sept2008/skg_0001b.nc"/>
+            </aggregation>
+            <remove type="variable" name="lon"/>
+            <remove type="variable" name="lat"/>
+            <variable name="siglay">
+              <attribute name="formula_terms" type="String" value="sigma: siglay eta: zeta depth: h"  />
+            </variable>
+            <variable name="siglev">
+              <attribute name="formula_terms" type="String" value="sigma: siglev eta: zeta depth: h" />
+            </variable>
+            <variable name="h">
+              <attribute name="coordinates" type="String" value="lat lon"/>
+            </variable>
+            <variable name="zeta">
+              <attribute name="coordinates" type="String" value="time lat lon"/>
+            </variable>
+            <variable name="salinity">
+              <attribute name="coordinates" type="String" value="time siglay lat lon"/>
+            </variable>
+            <variable name="time">
+              <attribute name="units" type="String" value="seconds since 2008-09-12 00:00 UTC"/>
+            </variable>
+            <attribute name="Conventions" value="CF-1.0"/>
+          </netcdf>
+        </aggregation>
+      </netcdf>
+    </dataset>
+  </dataset>
+</catalog>

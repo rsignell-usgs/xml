@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="UCONN HF Radar Catalog"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+  <dataset name="HF Radar Data">
+
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <creator>
+        <name vocabulary="DIF">Dr. James O'Donnell</name>
+        <contact url="http://www.marinesciences.uconn.edu/faculty/faculty.php?users=jao02004"
+          email="james.odonnell@uconn.edu"/>
+      </creator>
+      <geospatialCoverage>
+        <timeCoverage>
+          <start>2009-01-01 11:00:00 UTC</start>
+          <end>present</end>
+          <resolution>0.0417 days</resolution>
+        </timeCoverage>
+        <northsouth>
+          <start>35.01</start>
+          <size> 7.65</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-75.99</start>
+          <size> 9.06</size>
+          <units>degrees_east</units>
+        </eastwest>
+      </geospatialCoverage>
+
+
+      <documentation xlink:href="http://cordc.ucsd.edu/projects/mapping/"
+        xlink:title="HF-Radar Network"/>
+      <documentation type="Summary"> HF-Radar data </documentation>
+      <documentation type="Rights"> This data was generated as part of an academic research project,
+        and the principal investigator: Jim O'Donnell (james.odonnell@uconn.edu) asks to be informed
+        of intent for scientific use and appropriate acknowledgment given in any publications
+        arising therefrom. The data is provided free of charge, without warranty of any kind.
+      </documentation>
+    </metadata>
+
+    <dataset name="Macoora 6km Latest STPS - Short Term Prediction System"
+      ID="STPS/Macoora/6KM_LATEST_2" urlPath="STPS/Macoora/6KM_LATEST_2">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting" recheckEvery="10 min">
+          <scan location="/d2/STPS/MACOORA6km_LATEST" suffix=".nc" olderThan="1 min"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+  </dataset>
+</catalog>

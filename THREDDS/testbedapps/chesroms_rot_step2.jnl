@@ -1,0 +1,32 @@
+ ! NOAA/PMEL TMAP
+ ! FERRET v6.65  
+ ! Linux(gfortran) 2.6.9-89.0.20.ELsmp - 11/30/10
+ ! 14-Jan-11 16:19     
+
+use "http://testbedapps.sura.org/thredds/dodsC/estuarine_hypoxia/chesroms/chesroms_rot_step1.ncml"
+show/all
+define axis/x=1:98:1 xrho
+define axis/y=1:148:1 yrho
+show xrho
+list xrho
+show all
+show/all
+let/d=1/units="`lon_rho,return=units`" lon_rho_p_0 = lon_rho[i=@shf:+1, j=@shf:+1]
+list lon_rho
+list/d=1 lon_rho
+list lon_rho
+show/all
+list/I=1,3/J=1,3 lon_rho
+list/I=1:3/J=1:3 lon_rho
+let/d=1/units="`lon_rho,return=units`" lon_rho_p = lon_rho_p_0[gx=xrho@asn,gy=yrho@asn]
+list/I=1:3/J=1:3 lon_rho_p_0
+list/I=1,4/J=1,4 lon_rho
+list/I=1:4/J=1:4 lon_rho
+list/I=1:4/J=1:4 lon_rho_p_0
+list/I=2:5/J=2:5 lon_rho
+list/I=1:4/J=1:4 lon_rho_p
+list/I=1:4/J=1:4 lon_rho_p_0
+show/all
+list lon_rho_p_0
+list lon_rho_p
+list lon_rho_p

@@ -1,0 +1,1466 @@
+12-mag-2010 9.36.37 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'WMS'
+12-mag-2010 9.36.37 org.apache.catalina.core.ApplicationContext log
+GRAVE: StandardWrapper.Throwable
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'config' defined in ServletContext resource [/WEB-INF/WMS-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:396)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:127)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	... 30 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	... 31 more
+Caused by: org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	... 72 more
+12-mag-2010 9.36.37 org.apache.catalina.core.StandardWrapperValve invoke
+GRAVE: Allocate exception for servlet WMS
+org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+12-mag-2010 9.36.40 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'WMS'
+12-mag-2010 9.36.40 org.apache.catalina.core.ApplicationContext log
+GRAVE: StandardWrapper.Throwable
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'config' defined in ServletContext resource [/WEB-INF/WMS-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:396)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:127)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	... 30 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	... 31 more
+Caused by: org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	... 72 more
+12-mag-2010 9.36.40 org.apache.catalina.core.StandardWrapperValve invoke
+GRAVE: Allocate exception for servlet WMS
+org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+12-mag-2010 9.45.07 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+12-mag-2010 9.45.07 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+12-mag-2010 9.45.07 org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+12-mag-2010 9.45.07 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogService'
+12-mag-2010 9.45.07 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'root'
+12-mag-2010 9.45.07 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogGen'
+12-mag-2010 9.45.07 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 9.45.07 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'dqc'
+12-mag-2010 9.45.07 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'admin'
+12-mag-2010 9.45.07 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'wms'
+12-mag-2010 9.45.07 org.apache.catalina.core.ApplicationContext log
+INFO: Shutting down log4j
+12-mag-2010 9.45.07 org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+12-mag-2010 9.45.11 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+12-mag-2010 9.45.12 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+12-mag-2010 9.45.12 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing log4j from [/usr/local/tomcat/webapps/thredds/WEB-INF/log4j.xml]
+12-mag-2010 9.45.13 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'root'
+12-mag-2010 9.45.13 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogService'
+12-mag-2010 9.45.13 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogGen'
+12-mag-2010 9.45.13 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'dqc'
+12-mag-2010 9.45.13 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 9.45.13 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'admin'
+12-mag-2010 9.45.13 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'wms'
+12-mag-2010 9.45.14 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+12-mag-2010 9.45.14 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+12-mag-2010 9.45.40 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'WMS'
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'WMS'
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogService'
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'root'
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogGen'
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'dqc'
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'admin'
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'wms'
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: Shutting down log4j
+12-mag-2010 9.47.20 org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+12-mag-2010 9.47.27 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+12-mag-2010 9.47.28 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+12-mag-2010 9.47.28 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing log4j from [/usr/local/tomcat/webapps/thredds/WEB-INF/log4j.xml]
+12-mag-2010 9.47.29 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'root'
+12-mag-2010 9.47.29 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogService'
+12-mag-2010 9.47.29 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogGen'
+12-mag-2010 9.47.29 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'dqc'
+12-mag-2010 9.47.29 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 9.47.29 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'admin'
+12-mag-2010 9.47.29 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'wms'
+12-mag-2010 9.47.30 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+12-mag-2010 9.47.30 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+12-mag-2010 9.48.31 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'WMS'
+12-mag-2010 14.25.01 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+12-mag-2010 14.25.01 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+12-mag-2010 14.25.01 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'WMS'
+12-mag-2010 14.25.01 org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+12-mag-2010 14.25.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogService'
+12-mag-2010 14.25.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'root'
+12-mag-2010 14.25.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogGen'
+12-mag-2010 14.25.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 14.25.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'dqc'
+12-mag-2010 14.25.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'admin'
+12-mag-2010 14.25.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'wms'
+12-mag-2010 14.25.03 org.apache.catalina.core.ApplicationContext log
+INFO: Shutting down log4j
+12-mag-2010 14.25.03 org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+12-mag-2010 14.25.09 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+12-mag-2010 14.25.10 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+12-mag-2010 14.25.11 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing log4j from [/usr/local/tomcat/webapps/thredds/WEB-INF/log4j.xml]
+12-mag-2010 14.25.12 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'root'
+12-mag-2010 14.25.12 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogService'
+12-mag-2010 14.25.12 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogGen'
+12-mag-2010 14.25.12 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'dqc'
+12-mag-2010 14.25.12 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 14.25.12 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'admin'
+12-mag-2010 14.25.12 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'wms'
+12-mag-2010 14.25.12 org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+12-mag-2010 14.25.12 org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+12-mag-2010 15.00.00 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogService'
+12-mag-2010 15.00.00 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'root'
+12-mag-2010 15.00.00 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogGen'
+12-mag-2010 15.00.00 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 15.00.00 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'dqc'
+12-mag-2010 15.00.00 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'admin'
+12-mag-2010 15.00.00 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'wms'
+12-mag-2010 15.00.00 org.apache.catalina.core.ApplicationContext log
+INFO: Shutting down log4j
+12-mag-2010 15.00.00 org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+12-mag-2010 15.00.01 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+12-mag-2010 15.00.01 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing log4j from [/usr/local/tomcat/webapps/thredds/WEB-INF/log4j.xml]
+12-mag-2010 15.00.02 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'root'
+12-mag-2010 15.00.02 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogService'
+12-mag-2010 15.00.02 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogGen'
+12-mag-2010 15.00.02 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'dqc'
+12-mag-2010 15.00.02 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 15.00.02 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'admin'
+12-mag-2010 15.00.02 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'wms'
+12-mag-2010 15.03.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogService'
+12-mag-2010 15.03.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'root'
+12-mag-2010 15.03.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogGen'
+12-mag-2010 15.03.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 15.03.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'dqc'
+12-mag-2010 15.03.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'admin'
+12-mag-2010 15.03.03 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'wms'
+12-mag-2010 15.03.03 org.apache.catalina.core.ApplicationContext log
+INFO: Shutting down log4j
+12-mag-2010 15.03.03 org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+12-mag-2010 15.03.04 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+12-mag-2010 15.03.04 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing log4j from [/usr/local/tomcat/webapps/thredds/WEB-INF/log4j.xml]
+12-mag-2010 15.03.05 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'root'
+12-mag-2010 15.03.05 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogService'
+12-mag-2010 15.03.05 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogGen'
+12-mag-2010 15.03.05 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'dqc'
+12-mag-2010 15.03.05 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 15.03.05 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'admin'
+12-mag-2010 15.03.05 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'wms'
+12-mag-2010 15.04.49 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogService'
+12-mag-2010 15.04.49 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'root'
+12-mag-2010 15.04.49 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogGen'
+12-mag-2010 15.04.49 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 15.04.49 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'dqc'
+12-mag-2010 15.04.49 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'admin'
+12-mag-2010 15.04.49 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'wms'
+12-mag-2010 15.04.49 org.apache.catalina.core.ApplicationContext log
+INFO: Shutting down log4j
+12-mag-2010 15.04.49 org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+12-mag-2010 15.04.49 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+12-mag-2010 15.04.50 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing log4j from [/usr/local/tomcat/webapps/thredds/WEB-INF/log4j.xml]
+12-mag-2010 15.04.50 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'root'
+12-mag-2010 15.04.50 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogService'
+12-mag-2010 15.04.50 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogGen'
+12-mag-2010 15.04.50 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'dqc'
+12-mag-2010 15.04.50 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 15.04.50 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'admin'
+12-mag-2010 15.04.50 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'wms'
+12-mag-2010 15.09.29 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogService'
+12-mag-2010 15.09.29 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'root'
+12-mag-2010 15.09.29 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogGen'
+12-mag-2010 15.09.29 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 15.09.29 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'dqc'
+12-mag-2010 15.09.29 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'admin'
+12-mag-2010 15.09.29 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'wms'
+12-mag-2010 15.09.29 org.apache.catalina.core.ApplicationContext log
+INFO: Shutting down log4j
+12-mag-2010 15.09.29 org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+12-mag-2010 15.09.30 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+12-mag-2010 15.09.30 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing log4j from [/usr/local/tomcat/webapps/thredds/WEB-INF/log4j.xml]
+12-mag-2010 15.09.30 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'root'
+12-mag-2010 15.09.30 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogService'
+12-mag-2010 15.09.30 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogGen'
+12-mag-2010 15.09.30 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'dqc'
+12-mag-2010 15.09.31 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 15.09.31 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'admin'
+12-mag-2010 15.09.31 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'wms'
+12-mag-2010 15.15.44 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogService'
+12-mag-2010 15.15.44 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'root'
+12-mag-2010 15.15.44 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'catalogGen'
+12-mag-2010 15.15.44 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 15.15.44 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'dqc'
+12-mag-2010 15.15.44 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'admin'
+12-mag-2010 15.15.44 org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'wms'
+12-mag-2010 15.15.44 org.apache.catalina.core.ApplicationContext log
+INFO: Shutting down log4j
+12-mag-2010 15.15.44 org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+12-mag-2010 15.15.45 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+12-mag-2010 15.15.45 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing log4j from [/usr/local/tomcat/webapps/thredds/WEB-INF/log4j.xml]
+12-mag-2010 15.15.46 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'root'
+12-mag-2010 15.15.46 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogService'
+12-mag-2010 15.15.46 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'catalogGen'
+12-mag-2010 15.15.46 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'dqc'
+12-mag-2010 15.15.46 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cdmRemote'
+12-mag-2010 15.15.46 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'admin'
+12-mag-2010 15.15.46 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'wms'
+12-mag-2010 15.44.36 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'WMS'
+12-mag-2010 15.44.36 org.apache.catalina.core.ApplicationContext log
+GRAVE: StandardWrapper.Throwable
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'config' defined in ServletContext resource [/WEB-INF/WMS-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:396)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:127)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	... 30 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	... 31 more
+Caused by: org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	... 72 more
+12-mag-2010 15.44.36 org.apache.catalina.core.StandardWrapperValve invoke
+GRAVE: Allocate exception for servlet WMS
+org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+12-mag-2010 15.45.03 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'WMS'
+12-mag-2010 15.45.03 org.apache.catalina.core.ApplicationContext log
+GRAVE: StandardWrapper.Throwable
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'config' defined in ServletContext resource [/WEB-INF/WMS-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:396)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:127)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	... 30 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	... 31 more
+Caused by: org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	... 72 more
+12-mag-2010 15.45.03 org.apache.catalina.core.StandardWrapperValve invoke
+GRAVE: Allocate exception for servlet WMS
+org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+12-mag-2010 15.45.04 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'WMS'
+12-mag-2010 15.45.05 org.apache.catalina.core.ApplicationContext log
+GRAVE: StandardWrapper.Throwable
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'config' defined in ServletContext resource [/WEB-INF/WMS-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:396)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:127)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	... 30 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	... 31 more
+Caused by: org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	... 72 more
+12-mag-2010 15.45.05 org.apache.catalina.core.StandardWrapperValve invoke
+GRAVE: Allocate exception for servlet WMS
+org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+12-mag-2010 15.45.05 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'WMS'
+12-mag-2010 15.45.05 org.apache.catalina.core.ApplicationContext log
+GRAVE: StandardWrapper.Throwable
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'config' defined in ServletContext resource [/WEB-INF/WMS-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:396)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:127)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	... 30 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	... 31 more
+Caused by: org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	... 72 more
+12-mag-2010 15.45.05 org.apache.catalina.core.StandardWrapperValve invoke
+GRAVE: Allocate exception for servlet WMS
+org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+12-mag-2010 15.45.05 org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'WMS'
+12-mag-2010 15.45.05 org.apache.catalina.core.ApplicationContext log
+GRAVE: StandardWrapper.Throwable
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'config' defined in ServletContext resource [/WEB-INF/WMS-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:396)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Factory method [public static uk.ac.rdg.resc.ncwms.config.Config uk.ac.rdg.resc.ncwms.config.Config.readConfig(java.io.File) throws java.lang.Exception] threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:127)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	... 30 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	... 31 more
+Caused by: org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	... 72 more
+12-mag-2010 15.45.05 org.apache.catalina.core.StandardWrapperValve invoke
+GRAVE: Allocate exception for servlet WMS
+org.simpleframework.xml.load.PersistenceException: Invalid colorScaleRange attribute for variable vbar
+	at uk.ac.rdg.resc.ncwms.config.Variable.validate(Variable.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.simpleframework.xml.load.Conduit.invoke(Conduit.java:222)
+	at org.simpleframework.xml.load.Conduit.validate(Conduit.java:160)
+	at org.simpleframework.xml.load.Schema.validate(Schema.java:175)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:135)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:134)
+	at org.simpleframework.xml.load.CompositeList.read(CompositeList.java:108)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:345)
+	at org.simpleframework.xml.load.Composite.readElement(Composite.java:324)
+	at org.simpleframework.xml.load.Composite.readElements(Composite.java:244)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:188)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:134)
+	at org.simpleframework.xml.load.Composite.read(Composite.java:110)
+	at org.simpleframework.xml.load.Traverser.read(Traverser.java:72)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:392)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:374)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:355)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:337)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:319)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:300)
+	at org.simpleframework.xml.load.Persister.read(Persister.java:279)
+	at uk.ac.rdg.resc.ncwms.config.Config.readConfig(Config.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:115)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:936)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:851)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:485)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:251)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:169)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:248)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:170)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:413)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:735)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:369)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:332)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:266)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:236)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:126)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:809)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)

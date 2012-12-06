@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+ name="Unidata THREDDS-IDD NetCDF-OpenDAP Server" version="1.0.1">
+
+ <service name="latest" serviceType="Resolver" base="" />
+ <service name="both" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/" />
+  <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/" />
+<service name="wcs" serviceType="WCS" base="/thredds/wcs/"  />
+<!--service name="ftp" serviceType="FTP" base="/thredds/fileServerFTP/"/-->
+<service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" />
+
+<!--service name="wcsServer" serviceType="WCS" base="/thredds/wcs/"/-->
+ </service>
+
+ <dataset name="HOPS ">
+  <metadata inherited="true">
+    <serviceName>both</serviceName>
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <documentation type="rights">Freely available</documentation>
+  </metadata>
+
+  <datasetScan name="HOPS" ID="testHOPS"
+               path="testHOPS" location="/blackburn/usgs/rsignell/"
+               harvest="true">
+    <metadata inherited="true">
+      <documentation type="summary">HOPS model output.</documentation>
+    </metadata>
+    <!--filter>
+      <include wildcard="*.nc" />
+    </filter-->
+    <addID/>
+    <sort>
+      <lexigraphicByName increasing="false"/>
+    </sort>
+    <addLatest/>
+    <addDatasetSize/>
+  </datasetScan>
+ </dataset>
+
+</catalog>

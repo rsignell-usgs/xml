@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.2.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="Creus Catalog">
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+  <dataset name="Creus Simulations">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <creator>
+        <name vocabulary="DIF">Dr. Andrea Bergamasco</name>
+        <contact
+          url="http://www.ismar.cnr.it/personale/bergamasco-andrea/tt_cv_breve_view?idRicercatore=bergamasco-andrea"
+          email="Andea.Bergamasco@ve.ismar.cnr.it"/>
+      </creator>
+      <documentation
+        xlink:href="http://www.ismar.cnr.it/personale/bergamasco-andrea/tt_cv_breve_view?idRicercatore=bergamasco-andrea"
+        xlink:title="Creus Project Web Page"/>
+      <documentation type="Summary"> Hydrodynamic Simulations at Creus</documentation>
+      <documentation type="Rights"> This model data was generated as part of an research project,
+        and the principal investigator Andrea Bergamasco (Andrea.Bergamasco@ve.ismar.cnr.it) asks to
+        be informed of intent for scientific use and appropriate acknowledgment given in any
+        publications arising therefrom. The data is provided free of charge, without warranty of any
+        kind. </documentation>
+    </metadata>
+    <!--    <dataset name="Tide-Averaged Data">
+      <dataset name="Creus Run5" ID="creus/run5/avg" urlPath="creus/run5/avg">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="ocean_time" type="joinExisting">
+            <scan location="/home/carniel/model/roms/creus/run5" regExp=".*creus5_avg_[0-9]{4}\.nc$" />
+          </aggregation>
+        </netcdf>
+      </dataset>
+    </dataset>-->
+    <dataset name="History Data">
+      <dataset name="Creus Run 5" ID="creus/run5/his" urlPath="creus/run5/his">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <variable name="Nbed" shape="Nbed" type="double">
+            <attribute name="long_name" value="S-coordinate at sedbed-points"/>
+            <attribute name="standard_name" value="ocean_s_coordinate_g1"/>
+            <attribute name="formula_terms" value="s: Nbed C: Cs_r eta: zeta depth: h depth_c: hc"/>
+            <values start="-1.0" increment="-0.1"/>
+          </variable>
+          <aggregation dimName="ocean_time" type="joinExisting">
+            <scan location="/home/carniel/model/roms/creus/run5" regExp=".*creus5_his_[0-9]{4}\.nc$"
+            />
+          </aggregation>
+        </netcdf>
+      </dataset>
+    </dataset>
+  </dataset>
+</catalog>

@@ -1,0 +1,72 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    name="OPeNDAP Data Server" version="1.0.1">
+    
+    <service name="Compound" serviceType="Compound" base="">
+        <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+        <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+        <service name="wcs" serviceType="WCS" base="/thredds/wcs/" />
+        <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+        <datasetRoot path="bathy" location="/Volumes/models/bathy/" />
+    </service>
+    
+    <dataset name="NOAA Coastal Relief Model (3 arc sec), Vol. 1 (Atlantic Northeast)" 
+        ID="bathy_test/crm_vol1.nc" 
+        serviceName="Compound" 
+        urlPath="bathy_test/crm_vol1.nc">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/Volumes/models/bathy/crm_vol1.nc" >
+            <variable name="lon" shape="lon" type="double">
+                <attribute name="units" value="degrees_east"/>
+                <values start="-80.00" increment="0.0008333333333333333"/>
+            </variable>
+            <variable name="lat" shape="lat" type="double">
+                <attribute name="units" value="degrees_north"/>
+                <values start="48.00" increment="-0.0008333333333333333"/>
+            </variable>
+            <variable name="topo">
+                <attribute name="units" value="meters"/>
+                <attribute name="long_name" value="Topography"/>
+            </variable>
+            <attribute name="Conventions" value="CF-1.0" />
+        </netcdf>
+        <metadata inherited="true">
+            <serviceName>gridServices</serviceName>
+            <authority>gov.usgs.er.whsc</authority>
+            <dataType>Grid</dataType>
+            <dataFormat>NetCDF</dataFormat>
+            <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/coastal/coastal.html"   xlink:title="NOAA Coastal Relief Model"/>
+                <documentation type="summary">NOAA Coastal Relief Model, Volume 1, covering US Northeast.   
+                       Digital sounding data was gridded using the GMT Surface routine in 1x1 degree tiles at 3 arc second resolution</documentation>
+                <documentation type="rights">Freely available</documentation>
+                <documentation type="history"> Transfered from NOAA CRM DVD to Arc Binary Grid format </documentation> 
+               <documentation type="history"> Assembled into single NetCDF file using FWTOOLS "gdal_merge" routine. </documentation>
+             <creator>
+                <name vocabulary="DIF">NGDC/NOAA/GOV</name>
+                <contact url="http://www.ngdc.noaa.gov"   email="Barry.Eakins@noaa.gov" />
+            </creator>
+            <publisher>
+                <name vocabulary="DIF">WHSC/USGS/GOV</name>
+                <contact url="http://www.usgs.gov/"       email="rsignell@usgs.gov" />
+            </publisher>
+            <geospatialCoverage zpositive="up">
+                <northsouth>
+                    <start>40.0</start>
+                    <size>8.0</size>
+                    <units>degrees_north</units>
+                </northsouth>
+                <eastwest>
+                    <start>-80.0</start>
+                    <size>15.0</size>
+                    <units>degrees_east</units>
+                </eastwest>
+                <updown>
+                    <start>-5000</start>
+                    <size>8000</size>
+                    <units>meters</units>
+                </updown>
+            </geospatialCoverage>
+     
+        </metadata> 
+    </dataset>
+    
+    </catalog>

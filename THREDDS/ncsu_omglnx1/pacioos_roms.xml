@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="HI-ROMS Catalog"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+
+  <dataset name="HI-ROMS Nowcast/Forecast">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <creator>
+        <name vocabulary="DIF">Dr. Brian Powell</name>
+        <contact url="http://www.soest.hawaii.edu/oceanography/faculty.html"
+          email="powellb@hawaii.edu"/>
+        <name vocabulary="DIF">Dr. Jim Potemra</name>
+        <contact url="http://www.hioos.org" email="jimp@hawaii.edu"/>
+      </creator>
+
+      <documentation xlink:href="http://www.hioos.org"
+        xlink:title="Hawaii Nowcast/Forecast System Project Page"/>
+
+      <documentation type="Summary"> Blah, blah, blah.... </documentation>
+
+      <documentation type="Rights"> This model data was generated as part of an academic research
+        project, and the principal investigator, Brian Powell (powellb@hawaii.edu), asks to be
+        informed of intent for scientific use and appropriate acknowledgment given in any
+        publications arising therefrom. The data is provided free of charge, without warranty of any
+        kind. </documentation>
+
+    </metadata>
+
+    <datasetFmrc name="HI-ROMS Forecast Model Run Collection" path="hioos/roms">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min">
+          <scan location="/media/1tb/testdata/pacioos" suffix=".nc" dateFormatMark="hiig_#yyyyMMdd"
+          subdirs="false" olderThan="5 min"/>
+        </aggregation>
+        <remove type="variable" name="lon_rho"/>
+        <remove type="variable" name="lat_rho"/>
+        <remove type="variable" name="lon_u"/>
+        <remove type="variable" name="lat_u"/>
+        <remove type="variable" name="lon_v"/>
+        <remove type="variable" name="lat_v"/>
+        <remove type="variable" name="lon_psi"/>
+        <remove type="variable" name="lat_psi"/>
+        <variable name="xi_rho" shape="xi_rho" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-158.54175170076093" increment="0.03860544217710"/>
+        </variable>
+        <variable name="eta_rho" shape="eta_rho" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="20.12430529161883" increment="0.03594464588489"/>
+        </variable>
+        <variable name="xi_u" shape="xi_u" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-158.52244897967239" increment="0.03860544217710"/>
+        </variable>
+        <variable name="eta_u" shape="eta_u" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="20.12430529161883" increment="0.03594464588489"/>
+        </variable>
+        <variable name="xi_v" shape="xi_v" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-158.54175170076093" increment="0.03860544217710"/>
+        </variable>
+        <variable name="eta_v" shape="eta_v" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="20.14227761456127" increment="0.03594464588489"/>
+        </variable>
+        <variable name="xi_psi" shape="xi_psi" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-158.52244897967239" increment="0.03860544217710"/>
+        </variable>
+        <variable name="eta_psi" shape="eta_psi" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="20.14227761456127" increment="0.03594464588489"/>
+        </variable>
+
+
+        <variable name="AKs">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="AKt">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="AKv">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="DU_avg1">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="DU_avg2">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="DV_avg1">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="DV_avg2">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="omega">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="salt">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="temp">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="u">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="ubar">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="v">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="vbar">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="w">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="zeta">
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+
+      </netcdf>
+    </datasetFmrc>
+
+  </dataset>
+</catalog>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  name="THREDDS catalog for all GLOS netcdf files" version="1.0.1">
+ 
+  
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+  <!-- If you want to have THREDDS automatically scan some directory tree for NetCDF files, here 
+  is how to do it:-->
+ <datasetScan name="GLOS NetCDF Files" ID="glos/all" path="glos/all"  location="/var/local/glos">
+   <metadata inherited="true">
+     <serviceName>allServices</serviceName>
+   </metadata>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+   <sort>
+     <lexigraphicByName increasing="true"/>
+   </sort>
+   <addDatasetSize/>
+  </datasetScan>
+
+</catalog>

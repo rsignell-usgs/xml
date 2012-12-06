@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  name="THREDDS catalog for all rsignell netcdf files" version="1.0.1">
+  <service name="multiple" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  
+  <!-- It's pretty handy to have one catalog like this that allows you to access any NetCDF file on your system via OpenDAP without 
+     you doing a thing.   The catalogs are dynamically generated as you enter each directory, so they are always up-to-date  -->
+ <datasetScan name="rsignell netcdf files" ID="rsignell" path="rsignell"
+     location="/usgs/data0/rsignell">
+   <metadata inherited="true">
+     <serviceName>multiple</serviceName>
+     <dataType>Grid</dataType>
+     <creator>
+       <name vocabulary="DIF">USGS/WHCMSC/Dr. Richard P. Signell</name>
+       <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+       </creator>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc"/>  
+      <include wildcard="*.cdf"/>
+      <include wildcard="*.hdf"/>
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="false"/>
+    </sort>
+    <addDatasetSize/>
+  </datasetScan>   
+</catalog>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ROMS Operational Models"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="rectilinear_services" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+  <service name="curvilinear_services" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  </service>
+  <dataset name="ROMS Nowcast/Forecast Models">
+    <dataset name="Rectilinear Models">
+      <dataset name="IRD:EEZ of New Caledonia">
+        <metadata inherited="true">
+          <authority>gov.usgs.er.whsc</authority>
+          <dataType>Grid</dataType>
+          <dataFormat>NetCDF</dataFormat>
+          <creator>
+            <name vocabulary="DIF">NC/IRD/NOUMEA/Dr. Patrick Marchesiello</name>
+            <contact url="http://www.ird.nc" email="Patrick.Marchesiello@noumea.ird.nc"/>
+          </creator>
+          <geospatialCoverage zpositive="up">
+            <northsouth>
+              <start>-30.0</start>
+              <size>22.0</size>
+              <units>degrees_north</units>
+            </northsouth>
+            <eastwest>
+              <start>143.0</start>
+              <size>47.0</size>
+              <units>degrees_east</units>
+            </eastwest>
+            <updown>
+              <start>-4600.0</start>
+              <size>4600.0</size>
+              <units>meters</units>
+            </updown>
+          </geospatialCoverage>
+          <documentation xlink:href="http://www.ird.nc/UR65/Marchesiello/roms_forecast_eeznc.html"
+            xlink:title="Experimental Forecast Homepage at IRD"/>
+        </metadata>
+        <dataset name="Forecast" ID="roms/rect/ird/forecast" urlPath="roms/rect/ird/forecast">
+          <serviceName>rectilinear_services</serviceName>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="time" type="joinExisting">
+              <netcdf location="http://www.ird.nc/UR65/Marchesiello/latest_forecast.nc"/>
+            </aggregation>
+            <variable name="theta_s" shape="" type="double">
+              <values>6.0</values>
+            </variable>
+            <variable name="theta_b" shape="" type="double">
+              <values>0.0</values>
+            </variable>
+            <variable name="Tcline" shape="" type="double">
+              <values>5.0</values>
+            </variable>
+            <variable name="s_rho" shape="s_rho" type="double">
+              <values> -0.98571426 -0.95714283 -0.9285714 -0.9 -0.87142855 -0.8428571 -0.8142857
+                -0.78571427 -0.75714284 -0.7285714 -0.7 -0.67142856 -0.64285713 -0.6142857
+                -0.5857143 -0.55714285 -0.5285714 -0.5 -0.47142857 -0.44285715 -0.41428572
+                -0.3857143 -0.35714287 -0.32857144 -0.3 -0.27142859 -0.24285714 -0.21428572
+                -0.18571429 -0.15714286 -0.12857144 -0.1 -0.071428575 -0.042857144 -0.014285714 </values>
+              <attribute name="standard_name" value="ocean_s_coordinate"/>
+              <attribute name="formula_terms"
+                value="s: s_rho eta: zeta depth: h a: theta_s b: theta_b depth_c: Tcline"/>
+            </variable>
+            <variable name="temp">
+              <attribute name="coordinates" type="String"
+                value="scrum_time s_rho lat_rho_1d lon_rho_1d"/>
+            </variable>
+            <variable name="zeta">
+              <attribute name="coordinates" type="String" value="scrum_time  lat_rho_1d lon_rho_1d"
+              />
+            </variable>
+            <variable name="scrum_time">
+              <attribute name="units" type="String" value="seconds since 1900-01-01 00:00 UTC"/>
+            </variable>
+            <variable name="lat_rho_1d" shape="eta_rho" type="double">
+              <attribute name="units" value="degrees_north"/>
+              <values> -30.000000 -29.913397 -29.826719 -29.739965 -29.653137 -29.566235 -29.479256
+                -29.392202 -29.305075 -29.217871 -29.130594 -29.043243 -28.955818 -28.868319
+                -28.780745 -28.693098 -28.605377 -28.517584 -28.429716 -28.341778 -28.253763
+                -28.165678 -28.077518 -27.989288 -27.900984 -27.812609 -27.724161 -27.635641
+                -27.547050 -27.458385 -27.369652 -27.280846 -27.191969 -27.103022 -27.014002
+                -26.924911 -26.835752 -26.746521 -26.657221 -26.567850 -26.478411 -26.388901
+                -26.299320 -26.209671 -26.119953 -26.030165 -25.940310 -25.850384 -25.760389
+                -25.670328 -25.580198 -25.490000 -25.399734 -25.309401 -25.218998 -25.128531
+                -25.037994 -24.947392 -24.856722 -24.765985 -24.675184 -24.584314 -24.493380
+                -24.402378 -24.311312 -24.220181 -24.128983 -24.037720 -23.946392 -23.855000
+                -23.763542 -23.672020 -23.580435 -23.488785 -23.397070 -23.305294 -23.213451
+                -23.121548 -23.029581 -22.937550 -22.845457 -22.753302 -22.661083 -22.568804
+                -22.476461 -22.384058 -22.291594 -22.199066 -22.106480 -22.013830 -21.921122
+                -21.828350 -21.735521 -21.642630 -21.549681 -21.456671 -21.363602 -21.270472
+                -21.177284 -21.084038 -20.990732 -20.897367 -20.803946 -20.710466 -20.616928
+                -20.523333 -20.429680 -20.335970 -20.242203 -20.148378 -20.054499 -19.960562
+                -19.866570 -19.772520 -19.678415 -19.584255 -19.490042 -19.395771 -19.301447
+                -19.207067 -19.112633 -19.018147 -18.923605 -18.829010 -18.734360 -18.639658
+                -18.544905 -18.450096 -18.355236 -18.260324 -18.165359 -18.070345 -17.975277
+                -17.880157 -17.784986 -17.689766 -17.594496 -17.499172 -17.403801 -17.308378
+                -17.212908 -17.117386 -17.021816 -16.926195 -16.830528 -16.734812 -16.639048
+                -16.543234 -16.447374 -16.351465 -16.255510 -16.159508 -16.063459 -15.967363
+                -15.871222 -15.775033 -15.678800 -15.582520 -15.486197 -15.389827 -15.293412
+                -15.196954 -15.100451 -15.003903 -14.907312 -14.810678 -14.714001 -14.617280
+                -14.520517 -14.423711 -14.326863 -14.229973 -14.133041 -14.036068 -13.939054
+                -13.841999 -13.744903 -13.647766 -13.550591 -13.453374 -13.356118 -13.258822
+                -13.161489 -13.064115 -12.966703 -12.869253 -12.771765 -12.674239 -12.576675
+                -12.479075 -12.381437 -12.283764 -12.186053 -12.088306 -11.990523 -11.892705
+                -11.794852 -11.696963 -11.599040 -11.501082 -11.403090 -11.305064 -11.207005
+                -11.108912 -11.010785 -10.912625 -10.814434 -10.716210 -10.617954 -10.519666
+                -10.421347 -10.322996 -10.224615 -10.126204 -10.027761 -9.929289 -9.830787 -9.732255
+                -9.633694 -9.535104 -9.436486 -9.337839 -9.239164 -9.140462 -9.041731 -8.942974
+                -8.844190 -8.745378 -8.646542 -8.547678 -8.448789 -8.349874 -8.250934 -8.151969
+                -8.052979 -7.953965 </values>
+            </variable>
+            <variable name="lon_rho_1d" shape="xi_rho" type="double">
+              <attribute name="units" value="degrees_east"/>
+              <values start="143.0" increment="0.1"/>
+            </variable>
+            <attribute name="Conventions" type="String" value="CF-1.0"/>
+          </netcdf>
+        </dataset>
+      </dataset>
+      <dataset name="JPL:SCB Forecast">
+        <metadata inherited="true">
+          <authority>gov.usgs.er.whsc</authority>
+          <dataType>Grid</dataType>
+          <dataFormat>NetCDF</dataFormat>
+          <creator>
+            <name vocabulary="DIF">GOV/NASA/JPL/Dr. Yi Chao</name>
+            <contact url="http://www.jpl.nasa.gov" email="Yi.Chao@jpl.nasa.gov"/>
+          </creator>
+          <geospatialCoverage zpositive="up">
+            <northsouth>
+              <start>32.45</start>
+              <size>2.3116</size>
+              <units>degrees_north</units>
+            </northsouth>
+            <eastwest>
+              <start>-121.2</start>
+              <size>4.2152</size>
+              <units>degrees_east</units>
+            </eastwest>
+            <updown>
+              <start>-3924.3</start>
+              <size>3924.3</size>
+              <units>meters</units>
+            </updown>
+          </geospatialCoverage>
+          <documentation xlink:href="http://www.sccoos.org/data/roms"
+            xlink:title="SCCOOS ROMS Model Output Home Page"/>
+        </metadata>
+        <dataset name="Forecast" ID="roms/rect/jpl/scb/fcst" urlPath="roms/rect/jpl/scb/fcst">
+          <serviceName>rectilinear_services</serviceName>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="time" type="joinExisting">
+              <netcdf   location="http://ourocean.jpl.nasa.gov:8080/thredds/dodsC/las/SCBfcst/scb_latest_fcst_roms.nc"   />
+            </aggregation>
+            <variable name="theta_s" shape="" type="double">
+              <values>5.0</values>
+            </variable>
+            <variable name="theta_b" shape="" type="double">
+              <values>0.0</values>
+            </variable>
+            <variable name="Tcline" shape="" type="double">
+              <values>10.0</values>
+            </variable>
+            <variable name="s_rho" shape="s_rho" type="double">
+              <values start="-0.9875" increment="0.025"/>
+              <attribute name="positive" value="up"/>
+              <attribute name="standard_name" value="ocean_s_coordinate"/>
+              <attribute name="formula_terms"
+                value="s: s_rho eta: zeta depth: h a: theta_s b: theta_b depth_c: Tcline"/>
+            </variable>
+            <variable name="s_w" shape="s_w" type="double">
+              <values start="-1" increment="0.025"/>
+              <attribute name="standard_name" value="ocean_s_coordinate"/>
+              <attribute name="positive" value="up"/>
+              <attribute name="formula_terms"
+                value="s: s_w eta: zeta depth: h a: theta_s b: theta_b depth_c: Tcline"/>
+            </variable>
+            <variable name="temp">
+              <attribute name="coordinates" value="scrum_time s_rho lat_rho_1d lon_rho_1d"/>
+            </variable>
+            <variable name="u">
+              <attribute name="coordinates" value="scrum_time s_rho lat_rho_1d lon_u_1d"/>
+            </variable>
+            <variable name="ubar">
+              <attribute name="coordinates" value="scrum_time  lat_rho_1d lon_u_1d"/>
+            </variable>
+            <variable name="v">
+              <attribute name="coordinates" value="scrum_time s_rho lat_v_1d lon_rho_1d"/>
+            </variable>
+            <variable name="omega">
+              <attribute name="coordinates" value="scrum_time s_w lat_rho_1d lon_rho_1d"/>
+            </variable>
+            <variable name="AKv">
+              <attribute name="coordinates" value="scrum_time s_w lat_rho_1d lon_rho_1d"/>
+            </variable>
+            <variable name="vbar">
+              <attribute name="coordinates" value="scrum_time  lat_v_1d lon_rho_1d"/>
+            </variable>
+            <variable name="zeta">
+              <attribute name="coordinates" value="scrum_time  lat_rho_1d lon_rho_1d"/>
+            </variable>
+            <variable name="scrum_time">
+              <attribute name="units" value="seconds since 2002-01-01 00:00 UTC"/>
+            </variable>
+            <variable name="lat_rho_1d" shape="eta_rho" type="double">
+              <attribute name="units" value="degrees_north"/>
+              <values start="32.45" increment="0.0089946"/>
+            </variable>
+            <variable name="lat_v_1d" shape="eta_v" type="double">
+              <attribute name="units" value="degrees_north"/>
+              <values start="32.5044973" increment="0.0089946"/>
+            </variable>
+            <variable name="lon_rho_1d" shape="xi_rho" type="double">
+              <attribute name="units" value="degrees_east"/>
+              <values start="-121.2" increment="0.0106589"/>
+            </variable>
+            <variable name="lon_u_1d" shape="xi_u" type="double">
+              <attribute name="units" value="degrees_east"/>
+              <values start="-121.1194671" increment="0.0106589"/>
+            </variable>
+            <attribute name="Conventions" type="String" value="CF-1.0"/>
+          </netcdf>
+        </dataset>
+      </dataset>
+
+    </dataset>
+    <dataset name="Curvilinear Models">
+
+      <dataset name="UMCES/NOAA:ChesROMS">
+        <metadata inherited="true">
+          <authority>gov.usgs.er.whsc</authority>
+          <dataType>Grid</dataType>
+          <dataFormat>NetCDF</dataFormat>
+          <creator>
+            <name vocabulary="DIF">EDU/UMCES/HPL/Dr. Wen Long</name>
+            <contact url="http://www.umces.edu" email="wenlong@hpl.umces.edu"/>
+          </creator>
+          <geospatialCoverage zpositive="up">
+            <northsouth>
+              <start>36.06</start>
+              <size>3.91</size>
+              <units>degrees_north</units>
+            </northsouth>
+            <eastwest>
+              <start>-77.15</start>
+              <size>2.03</size>
+              <units>degrees_east</units>
+            </eastwest>
+            <updown>
+              <start>-40.0</start>
+              <size>40.0</size>
+              <units>meters</units>
+            </updown>
+          </geospatialCoverage>
+          <documentation xlink:href="http://ches.communitymodeling.org/models/ChesROMS/index.php"
+            xlink:title="ChesROMS Home Page at CCMP"/>
+        </metadata>
+        <dataset name="Forecast" ID="roms/curv/ChesROMS/forecast" urlPath="roms/curv/ChesROMS">
+          <serviceName>curvilinear_services</serviceName>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+            location="http://155.206.18.162/ChesROMS/ChesROMS_his_forecast.nc"/>
+        </dataset>
+      </dataset>
+
+      <dataset name="NCSU:SAB_GOM">
+        <metadata inherited="true">
+          <authority>gov.usgs.er.whsc</authority>
+          <dataType>Grid</dataType>
+          <dataFormat>NetCDF</dataFormat>
+          <creator>
+            <name vocabulary="DIF">EDU/NCSU/MEAS/Dr. Ruoying He</name>
+            <contact url="http://www.meas.ncsu.edu" email="rhe@ncsu.edu"/>
+          </creator>
+          <geospatialCoverage zpositive="up">
+            <northsouth>
+              <start>13.2</start>
+              <size>39.34</size>
+              <units>degrees_north</units>
+            </northsouth>
+            <eastwest>
+              <start>-77.15</start>
+              <size>2.03</size>
+              <units>degrees_east</units>
+            </eastwest>
+            <updown>
+              <start>-5620</start>
+              <size>5620</size>
+              <units>meters</units>
+            </updown>
+          </geospatialCoverage>
+          <documentation xlink:href="http://omglnx1.meas.ncsu.edu/sabgom_nfcast"
+            xlink:title="Coastal Circulation Nowcast/Forecast System for the South Atlantic Bight and Gulf of Mexico Home Page at NCSU"
+          />
+        </metadata>
+        <dataset name="Forecast" ID="roms/curv/ncsu/sabgom/fcst"     urlPath="roms/curv/ncsu/sabgom/fcst">
+          <serviceName>curvilinear_services</serviceName>
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="ocean_time" type="joinExisting">
+              <netcdf location="http://omglnx1.meas.ncsu.edu/sabgom_nfcast/Data/latest_forecast_001.nc" ncoords="15"/>
+              <netcdf location="http://omglnx1.meas.ncsu.edu/sabgom_nfcast/Data/latest_forecast_002.nc" nccords="14"/>
+            </aggregation>
+          </netcdf>
+        </dataset>
+      </dataset>
+    </dataset>
+  </dataset>
+</catalog>

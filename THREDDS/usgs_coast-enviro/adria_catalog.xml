@@ -1,0 +1,192 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+<dataset name="Adriatic Model Runs" ID="adria/roms_sed">
+  <metadata inherited="true">
+    <serviceName>gridServices</serviceName>
+    <authority>gov.usgs.er.whsc</authority>
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <creator>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="rsignell@usgs.gov" />
+    </creator>
+    <publisher>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="rsignell@usgs.gov" />
+    </publisher>
+    <geospatialCoverage zpositive="down">
+      <northsouth>
+        <start>40.0</start>
+        <size>6.0</size>
+        <units>degrees_north</units>
+      </northsouth>
+      <eastwest>
+        <start>12.0</start>
+        <size>8.0</size>
+        <units>degrees_east</units>
+      </eastwest>
+      <updown>
+        <start>0</start>
+        <size>2000</size>
+        <units>meters</units>
+      </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://stellwagen.er.usgs.gov/rps/pubs/2004_oceanography.pdf" 
+      xlink:title="Adriatic Sea Sediment Transport Modeling"/>
+  </metadata>
+<dataset name="sed038: COAMPS forcing,SWAN w/ Erick Rogers mod for dissipation" ID="adria/roms_sed/sed038" urlPath="adria/roms_sed/sed038">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/Volumes/models/adria/roms_sed/sed038/his/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed040: LAMI forcing, SWAN w/def dissipation" ID="adria/roms_sed/sed040" urlPath="adria/roms_sed/sed040">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/Volumes/models/adria/roms_sed/sed040/his/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed041: LAMI forcing, SWAN w/default dissipation, Taylor-Yelland wave parameterization" ID="adria/roms_sed/sed041" urlPath="adria/roms_sed/sed041">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/Volumes/models/adria/roms_sed/sed041/his/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed042: LAMI forcing, SWAN w/default dissipation, grid4b" ID="adria/roms_sed/sed042" urlPath="adria/roms_sed/sed042">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="ocean_time" type="joinExisting">
+        <scan location="/Volumes/models/adria/roms_sed/sed042/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed043: COAMPS forcing, SWAN w/default dissipation, grid4b" ID="adria/roms_sed/sed043" urlPath="adria/roms_sed/sed043">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/adria/roms_sed/sed043/" suffix=".nc"/>
+      </aggregation>
+   </netcdf>
+</dataset>
+<dataset name="sed045: COAMPS forcing, SWAN w/default dissipation, grid4c" ID="adria/roms_sed/sed045" urlPath="adria/roms_sed/sed045">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+            <scan location="/Volumes/models/adria/roms_sed/sed045/" suffix=".nc"/>
+      </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed046: COAMPS forcing, SWAN w/default dissipation, grid4c, sed037 code" ID="adria/roms_sed/sed046" urlPath="adria/roms_sed/sed046">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="ocean_time" type="joinExisting">
+              <scan location="/Volumes/models/adria/roms_sed/sed046/" suffix=".nc"/>
+         </aggregation>
+   </netcdf>
+</dataset>
+<dataset name="sed047: COAMPS forcing,SWAN w/ default dissipation, grid4c, jan06 code" ID="adria/roms_sed/sed047" urlPath="adria/roms_sed/sed047">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="ocean_time" type="joinExisting">
+                <scan location="/Volumes/models/adria/roms_sed/sed046/" suffix=".nc"/>
+         </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed047a_avg: COAMPS forcing,SWAN w/ default dissipation, grid4c, jan06 code" ID="adria/roms_sed/sed047a_avg" urlPath="adria/roms_sed/sed047a_avg">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/Volumes/models/adria/roms_sed/sed047a/avg/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed047a_his: COAMPS forcing,SWAN w/ default dissipation, grid4c, jan06 code" ID="adria/roms_sed/sed047a_his" urlPath="adria/roms_sed/sed047a_his">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/Volumes/models/adria/roms_sed/sed047a/his/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed047b_avg: COAMPS forcing,SWAN w/ default dissipation, grid4c, jan06 code" ID="adria/roms_sed/sed047b_avg" urlPath="adria/roms_sed/sed047b_avg">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/Volumes/models/adria/roms_sed/sed047b/avg/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed047b_his: COAMPS forcing,SWAN w/ default dissipation, grid4c, jan06 code" ID="adria/roms_sed/sed047b_his" urlPath="adria/roms_sed/sed047b_his">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/Volumes/models/adria/roms_sed/sed047b/his/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed048_his: COAMPS forcing,SWAN w/ default dissipation, grid4d, 30jan06 code" ID="adria/roms_sed/sed048_his" urlPath="adria/roms_sed/sed048_his">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="ocean_time" type="joinExisting">
+        <scan location="/Volumes/models/adria/roms_sed/sed048/his/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed048_dia: COAMPS forcing,SWAN w/ default dissipation, grid4d, 30jan06 code" ID="adria/roms_sed/sed048_dia" urlPath="adria/roms_sed/sed048_dia">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/adria/roms_sed/sed048/dia/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed049: COAMPS forcing,SWAN w/ default dissipation, grid4d, 30jan06 code, sed049_sed.in" ID="adria/roms_sed/sed049" urlPath="adria/roms_sed/sed049">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="ocean_time" type="joinExisting">
+            <scan location="/Volumes/models/adria/roms_sed/sed049/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="sed047c: COAMPS forcing,SWAN w/ default dissipation, grid4d, 30jan06 code, sed047c_sed.in" ID="adria/roms_sed/sed047c" urlPath="adria/roms_sed/sed047c">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+            <aggregation dimName="ocean_time" type="joinExisting">
+              <scan location="/Volumes/models/adria/roms_sed/sed047c/" suffix=".nc"/>
+    </aggregation>
+ </netcdf>
+</dataset>
+<dataset name="sed047c: COAMPS forcing,SWAN w/ default dissipation, grid4d, 30jan06 code, sed047c_sed.in" ID="adria/roms_sed/sed047c_pikmin" urlPath="adria/roms_sed/sed047c_pikmin">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+              <aggregation dimName="ocean_time" type="joinExisting">
+                <scan location="/Volumes/models/adria/roms_sed/sed047c_pikmin/" suffix=".nc"/>
+    </aggregation>
+   </netcdf>
+</dataset>
+<dataset name="sed051 diagnostics: COAMPS forcing,SWAN w/ default dissipation, grid4d, 30jan06 code" ID="adria/roms_sed/sed051dia" urlPath="adria/roms_sed/sed051dia">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                <aggregation dimName="ocean_time" type="joinExisting">
+                  <scan location="/Volumes/models/adria/roms_sed/sed051/dia/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+
+ <!-- insert new data sets above this line -->
+</dataset>
+</catalog>

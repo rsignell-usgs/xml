@@ -1,0 +1,85 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+<dataset name="Island Wake Runs" ID="wake">
+<dataset name="ucla001:   stratified" ID="wake/ucla/run001" urlPath="wake/ucla/run001">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="time" type="joinExisting">
+      <scan location="/Volumes/models/wake/ucla/run001/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="ucla002: non-stratified, pre may 2007 code" ID="wake/ucla/run002" urlPath="wake/ucla/run002">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="time" type="joinExisting">
+      <scan location="/Volumes/models/wake/ucla/run002/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="ucla003: non-stratified, may 2007 code" ID="wake/ucla/run003" urlPath="wake/ucla/run003">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="time" type="joinExisting">
+      <scan location="/Volumes/models/wake/ucla/run003/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="ucla004: non-stratified, 5 km island" ID="wake/ucla/run004" urlPath="wake/ucla/run004">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="time" type="joinExisting">
+      <scan location="/Volumes/models/wake/ucla/run004/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="rutg007: non-stratified, splines" ID="wake/rutgers/run007" urlPath="wake/rutgers/run007">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/Volumes/models/wake/rutgers/run007/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+<dataset name="rutg011: non-stratified, no splines" ID="wake/rutgers/run011" urlPath="wake/rutgers/run011">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/Volumes/models/wake/rutgers/run011/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+  <dataset name="rutg016: no rotation, A_v=1.0 m/s2" ID="wake/rutgers/run016" urlPath="wake/rutgers/run016">
+    <serviceName>gridServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="ocean_time" type="joinExisting">
+        <scan location="/Volumes/models/wake/rutgers/run016/" suffix=".nc"/>
+      </aggregation>
+    </netcdf>
+  </dataset>
+  <dataset name="rutg017: no rotation, A_v=100 m/s2" ID="wake/rutgers/run017" urlPath="wake/rutgers/run017">
+    <serviceName>gridServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="ocean_time" type="joinExisting">
+        <scan location="/Volumes/models/wake/rutgers/run017/" suffix=".nc"/>
+      </aggregation>
+    </netcdf>
+  </dataset>
+  <dataset name="rutg018: no rotation, A_v=50 m/s2" ID="wake/rutgers/run018" urlPath="wake/rutgers/run018">
+    <serviceName>gridServices</serviceName>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="ocean_time" type="joinExisting">
+        <scan location="/Volumes/models/wake/rutgers/run018/" suffix=".nc"/>
+      </aggregation>
+    </netcdf>
+  </dataset>
+</dataset>
+
+</catalog>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="magnetic anomaly catalog"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+  <dataset name="State Magnetic Anomaly Data">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <dataType>Grid</dataType>
+      <dataFormatType>NetCDF</dataFormatType>
+      <authority>usgs.gov</authority>
+      <creator>
+        <name vocabulary="DIF">Robert P. Kucks and Patricia L. Hill</name>
+        <contact url="http://www.usgs.gov" email="kucks@usgs.gov"/>
+      </creator>
+
+      <documentation type="Rights">Freely available. No copyright: US Government
+        Data</documentation>
+
+    </metadata>
+
+
+    <dataset name="Wyoming" ID="mag/WY" urlPath="mag/WY">
+      <metadata inherited="true">
+        <documentation xlink:href="http://pubs.usgs.gov/of/2000/ofr-00-0198/html/wyoming.htm"
+          xlink:title="USGS Open-File Report 00-0198"/>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/usgs/data0/rsignell/mag_anom/WY/magfinal.nc">
+        <attribute name="Conventions" value="CF-1.0"/>
+        <variable name="Lambert" shape="" type="char">
+          <attribute name="grid_mapping_name" value="lambert_conformal_conic"/>
+          <attribute name="standard_parallel" type="float" value="33.0 45.0"/>
+          <attribute name="longitude_of_central_meridian" type="float" value="-107.50000"/>
+          <attribute name="latitude_of_projection_origin" type="float" value="41.00000"/>
+          <attribute name="false_easting" type="float" value="0.0"/>
+          <attribute name="false_northing" type="float" value="0.0"/>
+          <attribute name="semi_major_axis" type="double" value="6378206.40"/>
+          <attribute name="semi_minor_axis" type="double" value="6356583.80"/>
+        </variable>
+
+        <variable name="mag_anom" orgName="Band1" shape="y x" type="float">
+          <attribute name="_FillValue" type="float" value="1.0E20"/>
+          <attribute name="units" value="nT"/>
+          <attribute name="grid_mapping" value="Lambert"/>
+          <attribute name="long_name" value="Merged Aeromagnetic Anomaly at 1000ft AG"/>
+        </variable>
+
+        <variable name="x" shape="x" type="double">
+          <attribute name="_CoordinateAxisType" value="GeoX"/>
+          <attribute name="axis" value="X"/>
+          <attribute name="long_name" value="x coordinate of projection"/>
+          <attribute name="units" value="m"/>
+          <values start="-301000.00000000" increment="500.0"/>
+        </variable>
+
+        <variable name="y" shape="y" type="double">
+          <attribute name="_CoordinateAxisType" value="GeoY"/>
+          <attribute name="axis" value="Y"/>
+          <attribute name="long_name" value="y coordinate of projection"/>
+          <attribute name="units" value="m"/>
+          <values start="465000.0000000000" increment="-500.0"/>
+        </variable>
+
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+
+    </dataset>
+
+
+    <dataset name="South Dakota" ID="mag/SD" urlPath="mag/SD">
+      <metadata inherited="true">
+        <documentation xlink:href="http://pubs.usgs.gov/of/2002/ofr-02-0341"
+          xlink:title="USGS Open-File-Report 02-341"/>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/usgs/data0/rsignell/mag_anom/SD/magsd.nc">
+        <dimension name="x" length="629"/>
+        <dimension name="y" length="398"/>
+        <attribute name="Conventions" value="CF-1.0"/>
+        <variable name="Lambert" shape="" type="char">
+          <attribute name="Northernmost_Northing" type="double" value="341500.0"/>
+          <attribute name="Southernmost_Northing" type="double" value="-56500.0"/>
+          <attribute name="Easternmost_Easting" type="double" value="296500.0"/>
+          <attribute name="Westernmost_Easting" type="double" value="-332500.0"/>
+          <attribute name="spatial_ref"
+            value="PROJCS[&quot;NAD27 / *lcc_sd&quot;,GEOGCS[&quot;NAD27&quot;,DATUM[&quot;NAD27&quot;,SPHEROID[&quot;NAD27&quot;,6378206.4,294.978698235482]],PRIMEM[&quot;unnamed&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433]],PROJECTION[&quot;Lambert_Conformal_Conic_2SP&quot;],PARAMETER[&quot;standard_parallel_1&quot;,33],PARAMETER[&quot;standard_parallel_2&quot;,45],PARAMETER[&quot;latitude_of_origin&quot;,43],PARAMETER[&quot;central_meridian&quot;,-100],PARAMETER[&quot;false_easting&quot;,0],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;m&quot;,1]]"/>
+          <attribute name="GeoTransform" value="-332500 1000 0 341500 0 -1000 "/>
+          <attribute name="grid_mapping_name" value="lambert_conformal_conic"/>
+          <attribute name="latitude_of_projection_origin" type="float" value="43.0"/>
+          <attribute name="standard_parallel" type="float" value="33.0 45.0"/>
+          <attribute name="longitude_of_central_meridian" type="float" value="-100.0000"/>
+          <attribute name="false_easting" type="float" value="0.0"/>
+          <attribute name="false_northing" type="float" value="0.0"/>
+          <attribute name="semi_major_axis" type="double" value="6378206.40"/>
+          <attribute name="semi_minor_axis" type="double" value="6356583.80"/>
+        </variable>
+        <variable name="mag_anom" orgName="Band1" shape="y x" type="float">
+          <attribute name="_FillValue" type="float" value="-1.0E32"/>
+          <attribute name="units" value="nT"/>
+          <attribute name="grid_mapping" value="Lambert"/>
+          <attribute name="long_name" value="Merged Aeromagnetic Anomaly at 1000ft AG"/>
+        </variable>
+        <variable name="x" shape="x" type="double">
+          <attribute name="_CoordinateAxisType" value="GeoX"/>
+          <attribute name="axis" value="X"/>
+          <attribute name="long_name" value="x coordinate of projection"/>
+          <attribute name="units" value="m"/>
+          <values start="-332500.00000000" increment="1000.0"/>
+        </variable>
+
+        <variable name="y" shape="y" type="double">
+          <attribute name="_CoordinateAxisType" value="GeoY"/>
+          <attribute name="axis" value="Y"/>
+          <attribute name="long_name" value="y coordinate of projection"/>
+          <attribute name="units" value="m"/>
+          <values start="-56500.0" increment="1000.0"/>
+        </variable>
+
+      </netcdf>
+    </dataset>
+  </dataset>
+</catalog>

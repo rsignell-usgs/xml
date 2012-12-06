@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.1">
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="thisHTTP" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  <dataset name="RTOFS Nowcast/Forecast">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">Dr. Avichal Mehra</name>
+        <contact email="Avichal.Mehra@noaa.gov"/>
+      </creator>
+      <documentation xlink:href="http://polar.ncep.noaa.gov/ofs/"
+        xlink:title="RTOFS Real-Time Ocean Forecast System (Atlantic) Project Page"/>
+      <documentation type="Summary"> Real-Time Ocean Forecast System (Atlantic)</documentation>
+      <documentation type="Rights"> The data is provided free of charge, without warranty of any
+        kind. </documentation>
+    </metadata>
+    
+    <datasetFmrc name="RTOFS Forecast Model Run Collection" path="fmrc/rtofs">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="runtime" type="forecastModelRunSingleCollection"
+          timeUnitsChange="true" recheckEvery="10min">
+          <variable name="lat_rho" orgName="Latitude_of_Pressure_Point">
+            <attribute name="units" value="degrees_north"/>
+          </variable>
+          <variable name="lat_u" orgName="Latitude_of_U_Wind_Component_of_Velocity">
+            <attribute name="units" value="degrees_north"/>
+          </variable>
+          <variable name="lat_v" orgName="Latitude_of_V_Wind_Component_of_Velocity">
+            <attribute name="units" value="degrees_north"/>
+          </variable>
+          <variable name="lon_rho" orgName="Longitude_of_Pressure_Point">
+            <attribute name="units" value="degrees_east"/>
+          </variable>
+          <variable name="lon_u" orgName="Longitude_of_U_Wind_Component_of_Velocity">
+            <attribute name="units" value="degrees_east"/>
+          </variable>
+          <variable name="lon_v" orgName="Longitude_of_V_Wind_Component_of_Velocity">
+            <attribute name="units" value="degrees_east"/>
+          </variable>
+          <variable name="mixed_layer_depth">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+            <attribute name="long_name" value="Mixed layer depth"/>
+            <attribute name="units" value="m"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <variable name="zeta" orgName="Sea_Surface_Height_Relative_to_Geoid">
+            <attribute name="coordinates" value="lat_rho lon_rho"/>
+            <attribute name="long_name" value="Sea_Surface_Height_Relative_to_Geoid @ surface"/>
+            <attribute name="units" value="m"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <variable name="salt" orgName="Three-D_Salinity">
+            <attribute name="coordinates" value="lat_rho lon_rho"/>
+            <attribute name="long_name" value="Salinity"/>
+            <attribute name="units" value="1"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <variable name="temp" orgName="Three-D_Temperature">
+            <attribute name="coordinates" value="lat_rho lon_rho"/>
+            <attribute name="long_name" value="Temperature"/>
+            <attribute name="units" value="Celcius"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <variable name="u" orgName="U-component_of_current">
+            <attribute name="coordinates" value="lat_u lon_u"/>
+            <attribute name="long_name" value="U component of current"/>
+            <attribute name="units" value="m s-1"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <attribute name="grid_mapping" value="Curvilinear_Orthogonal_Grid"/>
+          </variable>
+          <variable name="v" orgName="V-component_of_current">
+            <attribute name="coordinates" value="lat_v lon_v"/>
+            <attribute name="long_name" value="V component of current"/>
+            <attribute name="units" value="m s-1"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <variable name="Vertical_velocity_geometric">
+            <attribute name="coordinates" value="lat_rho lon_rho"/>
+            <attribute name="long_name" value="Vertical velocity geometric"/>
+            <attribute name="units" value="m s-1"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <scanFmrc location="/var/www/html/ocean_nomads/RTOFS/fullvol" regExp=".*ofs_atl.*\.grib2$"
+            runDateMatcher="#ofs.#yyyyMMdd" forecastOffsetMatcher="HHH#.grb.grib2#" subdirs="true"
+            olderThan="10 min"/>
+        </aggregation>
+      </netcdf>
+    </datasetFmrc>
+    <datasetFmrc name="RTOFS Forecast Model Run Collection from NetCDF X" path="fmrc/rtofs_nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="runtime" type="forecastModelRunSingleCollection"
+          timeUnitsChange="true" recheckEvery="10min">
+          <variable name="lat_rho" orgName="LOPP">
+            <attribute name="units" value="degrees_north"/>
+          </variable>
+          <variable name="lat_u" orgName="LAUV">
+            <attribute name="units" value="degrees_north"/>
+          </variable>
+          <variable name="lat_v" orgName="LAVV">
+            <attribute name="units" value="degrees_north"/>
+          </variable>
+          <variable name="lon_rho" orgName="LOPP">
+            <attribute name="units" value="degrees_east"/>
+          </variable>
+          <variable name="lon_u" orgName="LOUV">
+            <attribute name="units" value="degrees_east"/>
+          </variable>
+          <variable name="lon_v" orgName="LOVV">
+            <attribute name="units" value="degrees_east"/>
+          </variable>
+          <variable name="mixed_layer_depth" orgName="MIXHT">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+            <attribute name="long_name" value="Mixed layer depth"/>
+            <attribute name="units" value="m"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <variable name="zeta" orgName="SSHG">
+            <attribute name="coordinates" value="lat_rho lon_rho"/>
+            <attribute name="long_name" value="Sea_Surface_Height_Relative_to_Geoid @ surface"/>
+            <attribute name="units" value="m"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <variable name="salt" orgName="SALIN">
+            <attribute name="coordinates" value="lat_rho lon_rho"/>
+            <attribute name="long_name" value="Salinity"/>
+            <attribute name="units" value="1"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <variable name="temp" orgName="WTMPC">
+            <attribute name="coordinates" value="lat_rho lon_rho"/>
+            <attribute name="long_name" value="Temperature"/>
+            <attribute name="units" value="Celcius"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <variable name="u" orgName="UOGRD">
+            <attribute name="coordinates" value="lat_u lon_u"/>
+            <attribute name="long_name" value="U component of current"/>
+            <attribute name="units" value="m s-1"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <variable name="v" orgName="VOGRD">
+            <attribute name="coordinates" value="lat_v lon_v"/>
+            <attribute name="long_name" value="V component of current"/>
+            <attribute name="units" value="m s-1"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <variable name="DZDT">
+            <attribute name="coordinates" value="lat_rho lon_rho"/>
+            <attribute name="long_name" value="Vertical velocity geometric"/>
+            <attribute name="units" value="m s-1"/>
+            <attribute name="missing_value" type="float" value="NaN"/>
+            <remove type="attribute" name="grid_mapping"/>
+          </variable>
+          <scanFmrc location="/var/www/html/ocean_nomads/RTOFS/fullvol_nc"
+            regExp=".*ofs_atl.*\.grb.nc$" runDateMatcher="#ofs.#yyyyMMdd"
+            forecastOffsetMatcher="HHH#.grb.nc#" subdirs="true" olderThan="10 min"/>
+        </aggregation>
+      </netcdf>
+    </datasetFmrc>
+  </dataset>
+</catalog>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="SABGOM Catalog">
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+  <dataset name="SABGOM LTRANS" >
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <creator>
+        <name vocabulary="DIF">Dr. Ruoying He</name>
+        <contact url="http://www.meas.ncsu.edu/faculty/he/he.html" email="ruoying_he@ncsu.edu"/>
+      </creator>
+      <documentation xlink:href="http://omglnx6.meas.ncsu.edu/sabgom_nfcast/"
+        xlink:title="SABGOM Nowcast/Forecast System Project Page"/>
+      <documentation type="Summary"> Coastal Circulation Nowcast/Forecast System for the South
+        Atlantic Bight and Gulf of Mexico</documentation>
+      <documentation type="Rights"> This model data was generated as part of an academic research
+        project, and the principal investigator Ruoying He (rhe@ncsu.edu) asks to be informed of
+        intent for scientific use and appropriate acknowledgment given in any publications arising
+        therefrom. The data is provided free of charge, without warranty of any kind.
+      </documentation>
+    </metadata>
+    <datasetFmrc name="SABGOM LTRANS FMRC" path="fmrc/sblt">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+          <variable name="temp">
+            <attribute name="_FillValue" type="float" value="0.0"/>
+          </variable>
+          <variable name="salt">
+            <attribute name="_FillValue" type="float" value="0.0"/>
+          </variable>
+          <variable name="zeta">
+            <attribute name="_FillValue" type="float" value="0.0"/>
+          </variable>
+          <scan location="/usgs/data0/rsignell/models/ltrans/subset/" regExp=".*his_[0-9]{8}_ltrans_subset\.nc$" dateFormatMark="his_#yyyyMMdd"
+            subdirs="true" olderThan="15 min"/>
+        </aggregation>
+      </netcdf>
+    </datasetFmrc>
+  </dataset>
+</catalog>

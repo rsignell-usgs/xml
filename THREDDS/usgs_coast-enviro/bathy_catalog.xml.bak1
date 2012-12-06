@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="Digital Terrain Models"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="Compound" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+
+  <dataset name="Bathymetry">
+
+    <dataset name="USGS Vineyard Sound Relief Model (1 arc sec)" ID="bathy/vs_1sec_20070725.nc"
+      serviceName="Compound" urlPath="bathy/vs_1sec_20070725.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/grids/vs_1sec_20070725.nc"/>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>41.0</start>
+            <size>1.4</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-71.2</start>
+            <size>0.5</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-277.25</start>
+            <size>459.6</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://stellwagen.er.usgs.gov/models/grids/CGSherwo.doc"
+          xlink:title="USGS Vineyard Sound Coastal Relief Model (1 arc second)"/>
+      </metadata>
+    </dataset>
+    <dataset name="Adriatic Sea Relief Model (15 arc sec)" ID="bathy/adria15" serviceName="Compound"
+      urlPath="bathy/adria15">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/adria15_v09.nc"/>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>39.0</start>
+            <size>7.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>12.0</start>
+            <size>8.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>10000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://pubs.usgs.gov/of/1998/of98-801"
+          xlink:title="Adriatic Sea Relief Model (15 arc seconds) "/>
+      </metadata>
+    </dataset>
+    <dataset name="USGS Gulf of Maine Relief Model (15 arc sec)" ID="bathy/gom15"
+      serviceName="Compound" urlPath="bathy/gom15">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/gom15.nc"/>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>39.5</start>
+            <size>6.5</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-71.5</start>
+            <size>8.5</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>10000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://pubs.usgs.gov/of/1998/of98-801"
+          xlink:title="USGS Gulf of Maine Bathymetry (15 arc seconds) "/>
+      </metadata>
+    </dataset>
+
+    <dataset name="USGS Gulf of Maine Bathy (3 arc sec), alpha01 " ID="bathy/gom03_v01"
+      serviceName="Compound" urlPath="bathy/gom03_v01">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/GOM_091808_3sec.grd">
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <variable name="lon">
+          <attribute name="units" value="degrees_east"/>
+          <attribute name="long_name" value="Longitude"/>
+        </variable>
+        <variable name="lat">
+          <attribute name="units" value="degrees_north"/>
+          <attribute name="long_name" value="Latitude"/>
+        </variable>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>39.5</start>
+            <size>6.5</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-71.5</start>
+            <size>8.5</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>10000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation type="summary"> (alpha v.01) Gulf of Maine bathymetry grid at 3 s resolution.
+          This release is under revision and has not been approved for publication. Please report
+          problems to Rich Signell (rsignell@usgs.gov) . This grid was created using all NOAA
+          digital soundings from the NGDC GEODAS data base (downloaded in May 2008), the NWATL Tiled
+          Database v0.9 from the Canadian Hydrographic Service, swath bathymetry in Massachusetts
+          Bay collected by the USGS in cooperation with the Massachusetts Coastal Zone Management,
+          and the Smith and Sandwell v9.1 worldwide digital elevation and bathymetry model used for
+          offshore waters deeper than 400 m. Data was converted to a horizontal datum of NAD83 and
+          approximate vertical datum of MSL by using the MLW and MLLW water values from the NOAA
+          VDATUM project. Data gaps producing seams were filled with a 5 km bathymetric grid from
+          David Greenberg, Bedford Institute of Oceanography. More complete documentation is under
+          development.</documentation>
+      </metadata>
+    </dataset>
+    <dataset name="USGS Gulf of Maine Bathy (3 arc sec), alpha02" ID="bathy/gom03_v02"
+      serviceName="Compound" urlPath="bathy/gom03_v02">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/GOM_092208_3sec.grd">
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <variable name="lon">
+          <attribute name="units" value="degrees_east"/>
+          <attribute name="long_name" value="Longitude"/>
+        </variable>
+        <variable name="lat">
+          <attribute name="units" value="degrees_north"/>
+          <attribute name="long_name" value="Latitude"/>
+        </variable>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>39.5</start>
+            <size>6.5</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-71.5</start>
+            <size>8.5</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>10000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation type="summary"> (alpha v.02) Gulf of Maine bathymetry grid at 3 s resolution.
+          This release is under revision and has not been approved for publication. Please report
+          problems to Rich Signell (rsignell@usgs.gov) . This grid was created using all NOAA
+          digital soundings from the NGDC GEODAS data base (downloaded in May 2008), the NWATL Tiled
+          Database v0.9 from the Canadian Hydrographic Service, swath bathymetry in Massachusetts
+          Bay collected by the USGS in cooperation with the Massachusetts Coastal Zone Management,
+          and the Smith and Sandwell v9.1 worldwide digital elevation and bathymetry model used for
+          offshore waters deeper than 400 m. Data was converted to a horizontal datum of NAD83 and
+          approximate vertical datum of MSL by using the MLW and MLLW water values from the NOAA
+          VDATUM project. Data gaps producing seams were filled with the Smith and Sandwell v9.1
+          data. More complete documentation is under development.</documentation>
+      </metadata>
+    </dataset>
+    <!--<dataset name="USGS Carolina Capes Relief Model (3 arc sec)" ID="bathy/carolina_capes.nc"
+      serviceName="Compound" urlPath="bathy/carolina_capes.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/carolina_capes.nc"/>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>32.0</start>
+            <size>4.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-80.0</start>
+            <size>6.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>5040</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://pubs.usgs.gov/of/1998/of98-801"
+          xlink:title="USGS Carolina Capes (3 arc seconds) "/>
+      </metadata>
+    </dataset>-->
+    <dataset name="ETOPO2  Version  2c  (2 arc minute - Worldwide)" ID="bathy/etopo2_v2c.nc"
+      serviceName="Compound" urlPath="bathy/etopo2_v2c.nc">
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">UCSD</name>
+          <contact url="http://www.ngdc.noaa.gov/mgg/global/global.html"
+            email="jjbecker@ucsd.edu, dsandwell@ucsd.edu"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>-90</start>
+            <size>180</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-180</start>
+            <size>360</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-10923</start>
+            <size>19773</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/global/global.html"
+          xlink:title="ETOPO2  2 arc minute Global Topography from NGDC (v2c)"/>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/ETOPO2v2c_i2.nc">
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+      </netcdf>
+    </dataset>
+
+    <dataset name="SRTM30+  Version 1.0  (30 arc second - Worldwide)" ID="bathy/srtm30plus_v1.nc"
+      serviceName="Compound" urlPath="bathy/srtm30plus_v1.nc">
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">UCSD</name>
+          <contact url="http://www.ucsd.edu" email="jjbecker@ucsd.edu, dsandwell@ucsd.edu"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>-90</start>
+            <size>180</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-180</start>
+            <size>360</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-10923</start>
+            <size>19773</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://topex.ucsd.edu/WWW_html/srtm30_plus.html"
+          xlink:title="SRTM30+  30 sec Global Topography from UCSD (v1.0)"/>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/srtm30plus_v1.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-180.00" increment="0.008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="90.00" increment="-0.008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+
+    </dataset>
+    <dataset name="SRTM30+  Version 3.0  (30 arc second - Worldwide)" ID="bathy/srtm30plus_v3.nc"
+      serviceName="Compound" urlPath="bathy/srtm30plus_v3.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/srtm30plus_v3.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-180.00" increment="0.008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="90.00" increment="-0.008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">UCSD</name>
+          <contact url="http://www.ucsd.edu" email="jjbecker@ucsd.edu, dsandwell@ucsd.edu"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>-90</start>
+            <size>180</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-180</start>
+            <size>360</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-10923</start>
+            <size>19773</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://topex.ucsd.edu/WWW_html/srtm30_plus.html"
+          xlink:title="SRTM30+  30 sec Global Topography from UCSD (v3.0)"/>
+      </metadata>
+    </dataset>
+    <dataset name="SRTM30+  Version 4.0  (30 arc second - Worldwide)" ID="bathy/srtm30plus_v4.nc"
+      serviceName="Compound" urlPath="bathy/srtm30plus_v4.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/srtm30plus_v4.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-180.00" increment="0.008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="90.00" increment="-0.008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">UCSD</name>
+          <contact url="http://www.ucsd.edu" email="jjbecker@ucsd.edu, dsandwell@ucsd.edu"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>-90</start>
+            <size>180</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-180</start>
+            <size>360</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-10923</start>
+            <size>19773</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://topex.ucsd.edu/WWW_html/srtm30_plus.html"
+          xlink:title="SRTM30+  30 sec Global Topography from UCSD (v3.0)"/>
+      </metadata>
+    </dataset>
+    <dataset name="Smith and Sandwell v9.1  (~ 60 arc second - Worldwide)"
+      ID="bathy/smith_sandwell_v9.1.nc" serviceName="Compound"
+      urlPath="bathy/smith_sandwell_v9.1.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/smith_sandwell_v9.1.nc"/>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">UCSD</name>
+          <contact url="http://www.ucsd.edu" email="jjbecker@ucsd.edu, dsandwell@ucsd.edu"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>80.738</start>
+            <size>161.476</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-180</start>
+            <size>360</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-11000</start>
+            <size>20000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="ftp://topex.ucsd.edu/pub/global_topo_1min"
+          xlink:title="Smith and Sandwell  60 s Global Topography from UCSD (v9.1)"/>
+      </metadata>
+    </dataset>
+    <dataset name="NOAA Coastal Relief Model (3 arc sec), Vol. 1 (Atlantic Northeast)"
+      ID="bathy/crm_vol1.nc" serviceName="Compound" urlPath="bathy/crm_vol1.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/crm_vol1.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-80.00" increment="0.0008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="48.00" increment="-0.0008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">NGDC/NOAA/GOV</name>
+          <contact url="http://www.ngdc.noaa.gov" email="Barry.Eakins@noaa.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>40.0</start>
+            <size>8.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-80.0</start>
+            <size>15.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>8000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/coastal/coastal.html"
+          xlink:title="NOAA Coastal Relief Model"/>
+      </metadata>
+    </dataset>
+    <dataset name="NOAA Coastal Relief Model (3 arc sec), Vol. 2 (Atlantic Southeast)"
+      ID="bathy/crm_vol2.nc" serviceName="Compound" urlPath="bathy/crm_vol2.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/crm_vol2.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-85.00" increment="0.0008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="40.00" increment="-0.0008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">NGDC/NOAA/GOV</name>
+          <contact url="http://www.ngdc.noaa.gov" email="Barry.Eakins@noaa.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>31.0</start>
+            <size>9.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-85.0</start>
+            <size>17.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>8000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/coastal/coastal.html"
+          xlink:title="NOAA Coastal Relief Model"/>
+      </metadata>
+    </dataset>
+    <dataset name="NOAA Coastal Relief Model (3 arc sec), Vol. 3 (Florida)" ID="bathy/crm_vol3.nc"
+      serviceName="Compound" urlPath="bathy/crm_vol3.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/crm_vol3.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-87.00" increment="0.0008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="35.00" increment="-0.0008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">NGDC/NOAA/GOV</name>
+          <contact url="http://www.ngdc.noaa.gov" email="Barry.Eakins@noaa.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>31.0</start>
+            <size>9.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-85.0</start>
+            <size>17.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>8000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/coastal/coastal.html"
+          xlink:title="NOAA Coastal Relief Model"/>
+      </metadata>
+    </dataset>
+    <dataset name="NOAA Coastal Relief Model (3 arc sec), Vol. 4 (Central Gulf of Mexico)"
+      ID="bathy/crm_vol4.nc" serviceName="Compound" urlPath="bathy/crm_vol4.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/crm_vol4.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-94.00" increment="0.0008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="35.00" increment="-0.0008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">NGDC/NOAA/GOV</name>
+          <contact url="http://www.ngdc.noaa.gov" email="Barry.Eakins@noaa.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>24.0</start>
+            <size>11.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-94.0</start>
+            <size>15.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>8000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/coastal/coastal.html"
+          xlink:title="NOAA Coastal Relief Model"/>
+      </metadata>
+    </dataset>
+    <dataset name="NOAA Coastal Relief Model (3 arc sec), Vol. 5 (Western Gulf of Mexico)"
+      ID="bathy/crm_vol5.nc" serviceName="Compound" urlPath="bathy/crm_vol5.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/crm_vol5.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-107.00" increment="0.0008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="37.00" increment="-0.0008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">NGDC/NOAA/GOV</name>
+          <contact url="http://www.ngdc.noaa.gov" email="Barry.Eakins@noaa.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>25.0</start>
+            <size>12.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-107.0</start>
+            <size>15.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>8000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/coastal/coastal.html"
+          xlink:title="NOAA Coastal Relief Model"/>
+      </metadata>
+    </dataset>
+    <dataset name="NOAA Coastal Relief Model (3 arc sec), Vol. 6 (Southern California)"
+      ID="bathy/crm_vol6.nc" serviceName="Compound" urlPath="bathy/crm_vol6.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/crm_vol6.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-124.00" increment="0.0008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="37.00" increment="-0.0008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">NGDC/NOAA/GOV</name>
+          <contact url="http://www.ngdc.noaa.gov" email="Barry.Eakins@noaa.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>32.0</start>
+            <size>5.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-124.0</start>
+            <size>15.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>8000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/coastal/coastal.html"
+          xlink:title="NOAA Coastal Relief Model"/>
+      </metadata>
+    </dataset>
+    <dataset
+      name="NOAA Coastal Relief Model (3 arc sec), Vol. 7 (Northern California/Southern Oregon)"
+      ID="bathy/crm_vol7.nc" serviceName="Compound" urlPath="bathy/crm_vol7.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/crm_vol7.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-127.00" increment="0.0008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="44.00" increment="-0.0008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">NGDC/NOAA/GOV</name>
+          <contact url="http://www.ngdc.noaa.gov" email="Barry.Eakins@noaa.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>37.0</start>
+            <size>7.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-127.0</start>
+            <size>15.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>8000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/coastal/coastal.html"
+          xlink:title="NOAA Coastal Relief Model"/>
+      </metadata>
+    </dataset>
+    <dataset name="NOAA Coastal Relief Model (3 arc sec), Vol. 8 (Pacific Northwest)"
+      ID="bathy/crm_vol8.nc" serviceName="Compound" urlPath="bathy/crm_vol8.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/crm_vol8.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-127.00" increment="0.0008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="49.00" increment="-0.0008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">NGDC/NOAA/GOV</name>
+          <contact url="http://www.ngdc.noaa.gov" email="Barry.Eakins@noaa.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>44.0</start>
+            <size>5.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-127.0</start>
+            <size>11.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>8000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/coastal/coastal.html"
+          xlink:title="NOAA Coastal Relief Model"/>
+      </metadata>
+    </dataset>
+    <dataset name="NOAA Coastal Relief Model (3 arc sec), Vol. 9 (Puerto Rico)"
+      ID="bathy/crm_vol9.nc" serviceName="Compound" urlPath="bathy/crm_vol9.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/crm_vol9.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-68.00" increment="0.0008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="19.00" increment="-0.0008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">NGDC/NOAA/GOV</name>
+          <contact url="http://www.ngdc.noaa.gov" email="Barry.Eakins@noaa.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>17.0</start>
+            <size>2.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-68.0</start>
+            <size>15.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>8000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/coastal/coastal.html"
+          xlink:title="NOAA Coastal Relief Model"/>
+      </metadata>
+    </dataset>
+    <dataset name="NOAA Coastal Relief Model (3 arc sec), Vol. 10 (Hawaii)" ID="bathy/crm_vol10.nc"
+      serviceName="Compound" urlPath="bathy/crm_vol10.nc">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/crm_vol10.nc">
+        <variable name="lon" shape="lon" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-161.00" increment="0.0008333333333333333"/>
+        </variable>
+        <variable name="lat" shape="lat" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="23.00" increment="-0.0008333333333333333"/>
+        </variable>
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <creator>
+          <name vocabulary="DIF">NGDC/NOAA/GOV</name>
+          <contact url="http://www.ngdc.noaa.gov" email="Barry.Eakins@noaa.gov"/>
+        </creator>
+        <publisher>
+          <name vocabulary="DIF">WHSC/USGS</name>
+          <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+        </publisher>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>18.0</start>
+            <size>5.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-161.0</start>
+            <size>15.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-5000</start>
+            <size>8000</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/coastal/coastal.html"
+          xlink:title="NOAA Coastal Relief Model"/>
+      </metadata>
+    </dataset>
+    <dataset name="Puget Sound DEM:2005 " ID="bathy/psdem_2005" serviceName="Compound"
+      urlPath="bathy/psdem_2005">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/Volumes/models/bathy/psdem_2005_geo.grd">
+        <variable name="topo">
+          <attribute name="units" value="meters"/>
+          <attribute name="long_name" value="Topography"/>
+        </variable>
+        <variable name="lon">
+          <attribute name="units" value="degrees_east"/>
+          <attribute name="long_name" value="Longitude"/>
+        </variable>
+        <variable name="lat">
+          <attribute name="units" value="degrees_north"/>
+          <attribute name="long_name" value="Latitude"/>
+        </variable>
+      </netcdf>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>47.0</start>
+            <size>1.5</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-124.0</start>
+            <size>2.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+          <updown>
+            <start>-295.0</start>
+            <size>3893.0</size>
+            <units>meters</units>
+          </updown>
+        </geospatialCoverage>
+        <documentation type="summary"> 30 ft resolution DEM data from David Finlayson was downloaded
+          in ARC ASCII Grid format from
+          http://www.ocean.washington.edu/data/pugetsound/psdem2005.html and converted from State
+          Plane coordinates (Washington North, NAD83) in feet with 30 ft resolution to geographic
+          coordinates (lon,lat) with 0.0001 arc degree resolution using bilinear interpolation.
+          Heights relative to NAVD88 were converted from units of feet to meters. License for Use:
+          This digital elevation model (DEM) is Copyright © 2005 David Finlayson. This work is
+          licensed under a Creative Commons License (see
+          http://creativecommons.org/licenses/by/2.0/) To fully comply with the terms of this
+          license you must include the following citation wherever the dataset is used (including in
+          derivative works): Finlayson D.P. (2005) Combined bathymetry and topography of the Puget
+          Lowland, Washington State. University of Washington,
+          (http://www.ocean.washington.edu/data/pugetsound/) </documentation>
+      </metadata>
+    </dataset>
+  </dataset>
+</catalog>

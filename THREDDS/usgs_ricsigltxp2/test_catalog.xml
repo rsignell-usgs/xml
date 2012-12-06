@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ROMS Operational Models"
+   xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+
+   <service name="rectilinear_services" serviceType="Compound" base="">
+      <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+      <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+      <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+   </service>
+   <service name="curvilinear_services" serviceType="Compound" base="">
+      <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+   </service>
+
+
+   <dataset name="Coastwatch Test" ID="coastwatch/test" urlPath="coastwatch/test">
+      <serviceName>curvilinear_services</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+         <aggregation type="union">
+            <netcdf
+               location="http://coast-enviro.er.usgs.gov/models/gom_interop/coastwatch_northeast_lonlat.nc"/>
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+               <variable name="time" shape="time" type="double">
+                  <attribute name="units" value="seconds since 1970-01-01 00:00:00 UTC"/>
+                  <attribute name="_CoordinateAxisType" value="Time"/>
+                  <values>1208616253 </values>
+               </variable>
+               <aggregation dimName="time" type="joinNew">
+                  <variableAgg name="Rrs_667"/>
+
+<!--                  <netcdf location="c:\rps\cf\coastwatch\2009_009_1710_aqua_ex1_Rrs667.hdf"/>-->
+                  <netcdf location="c:/rps/cf/coastwatch/2009_009_1710_aqua_ex1_Rrs667.hdf"/>
+               </aggregation>
+            </netcdf>
+         </aggregation>
+         <variable name="Rrs_667">
+            <attribute name="coordinates" value="lon lat"/>
+         </variable>
+         <attribute name="Conventions" value="CF-1.0"/>
+      </netcdf>
+   </dataset>
+   <dataset name="Coastwatch Test2" ID="coastwatch/test2" urlPath="coastwatch/test2">
+      <serviceName>rectilinear_services</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+         location="C:/RPS/cf/ocolor/MODSCW_P2009042_C3_1750_1930_1935_GM03_closest_chlora.hdf"/>
+   </dataset>
+</catalog>

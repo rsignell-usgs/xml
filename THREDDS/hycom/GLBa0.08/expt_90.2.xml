@@ -1,0 +1,1646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="THREDDS Catalog"
+         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="all" serviceType="Compound" base="">
+    <service name="ncdods" 
+             serviceType="OpenDAP"
+             base="http://tds.hycom.org/thredds/dodsC/" />
+    <service name="ncss" 
+             serviceType="NetcdfSubset" 
+             base="http://tds.hycom.org/thredds/ncss/grid/" />
+    <service name="wms" 
+             serviceType="WMS" 
+             base="http://tds.hycom.org/thredds/wms/" />
+    <service name="ftp"
+             serviceType="FTP"
+             base="ftp://ftp.hycom.org/datasets/" />
+    <service name="ncdods"
+             serviceType="Legacy OpenDAP"
+             base="http://tds.hycom.org/opendap/nph-dods/datasets/hycom/" />
+  </service>
+<dataset name="HYCOM + NCODA Global 1/12 Degree Analysis">
+<dataset name="GLBa0.08/expt_90.2">
+  <dataset name="Jan-2007 to Apr-2007" ID="GLBa0.08/expt_90.2/2007" urlPath="GLBa0.08/expt_90.2/2007">
+    <serviceName>all</serviceName>
+    <metadata inherited="true">
+      <authority>edu.ucar.unidata</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation type="rights"> Freely available </documentation>
+      <documentation xlink:href="http://www.hycom.org/dataserver/glb-analysis/expt-90pt2" 
+                     xlink:title="GLBa0.08/expt_90.2 Documentation" />
+      <creator>
+        <name vocabulary="DIF">NRL</name>
+        <contact url="http://www.hycom.org/" email="" />
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">COAPS/FSU</name>
+        <contact url="http://www.coaps.fsu.edu" email="hycomdata@coaps.fsu.edu" />
+      </publisher>
+    </metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+  <variable name="salinity">
+    <remove type="attribute" name="valid_range"/>
+  </variable>
+  <variable name="v">
+    <remove type="attribute" name="valid_range"/>
+  </variable>
+  <variable name="temperature">
+    <remove type="attribute" name="valid_range"/>
+  </variable>
+  <variable name="u">
+    <remove type="attribute" name="valid_range"/>
+  </variable>
+  <variable name="ssh">
+    <remove type="attribute" name="valid_range"/>
+  </variable>
+  <aggregation dimName="MT" type="joinExisting">
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_001_00_3zs.nc" 
+              ncoords="1" coordValue="39082"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_001_00_3zv.nc" 
+              ncoords="1" coordValue="39082"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_001_00_3zt.nc" 
+              ncoords="1" coordValue="39082"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_001_00_3zu.nc" 
+              ncoords="1" coordValue="39082"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_001_00_2d.nc" 
+              ncoords="1" coordValue="39082"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_002_00_3zs.nc" 
+              ncoords="1" coordValue="39083"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_002_00_3zv.nc" 
+              ncoords="1" coordValue="39083"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_002_00_3zt.nc" 
+              ncoords="1" coordValue="39083"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_002_00_3zu.nc" 
+              ncoords="1" coordValue="39083"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_002_00_2d.nc" 
+              ncoords="1" coordValue="39083"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_003_00_3zs.nc" 
+              ncoords="1" coordValue="39084"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_003_00_3zv.nc" 
+              ncoords="1" coordValue="39084"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_003_00_3zt.nc" 
+              ncoords="1" coordValue="39084"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_003_00_3zu.nc" 
+              ncoords="1" coordValue="39084"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_003_00_2d.nc" 
+              ncoords="1" coordValue="39084"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_004_00_3zs.nc" 
+              ncoords="1" coordValue="39085"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_004_00_3zv.nc" 
+              ncoords="1" coordValue="39085"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_004_00_3zt.nc" 
+              ncoords="1" coordValue="39085"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_004_00_3zu.nc" 
+              ncoords="1" coordValue="39085"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_004_00_2d.nc" 
+              ncoords="1" coordValue="39085"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_005_00_3zs.nc" 
+              ncoords="1" coordValue="39086"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_005_00_3zv.nc" 
+              ncoords="1" coordValue="39086"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_005_00_3zt.nc" 
+              ncoords="1" coordValue="39086"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_005_00_3zu.nc" 
+              ncoords="1" coordValue="39086"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_005_00_2d.nc" 
+              ncoords="1" coordValue="39086"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_006_00_3zs.nc" 
+              ncoords="1" coordValue="39087"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_006_00_3zv.nc" 
+              ncoords="1" coordValue="39087"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_006_00_3zt.nc" 
+              ncoords="1" coordValue="39087"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_006_00_3zu.nc" 
+              ncoords="1" coordValue="39087"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_006_00_2d.nc" 
+              ncoords="1" coordValue="39087"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_007_00_3zs.nc" 
+              ncoords="1" coordValue="39088"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_007_00_3zv.nc" 
+              ncoords="1" coordValue="39088"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_007_00_3zt.nc" 
+              ncoords="1" coordValue="39088"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_007_00_3zu.nc" 
+              ncoords="1" coordValue="39088"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_007_00_2d.nc" 
+              ncoords="1" coordValue="39088"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_008_00_3zs.nc" 
+              ncoords="1" coordValue="39089"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_008_00_3zv.nc" 
+              ncoords="1" coordValue="39089"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_008_00_3zt.nc" 
+              ncoords="1" coordValue="39089"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_008_00_3zu.nc" 
+              ncoords="1" coordValue="39089"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_008_00_2d.nc" 
+              ncoords="1" coordValue="39089"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_009_00_3zs.nc" 
+              ncoords="1" coordValue="39090"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_009_00_3zv.nc" 
+              ncoords="1" coordValue="39090"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_009_00_3zt.nc" 
+              ncoords="1" coordValue="39090"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_009_00_3zu.nc" 
+              ncoords="1" coordValue="39090"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_009_00_2d.nc" 
+              ncoords="1" coordValue="39090"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_010_00_3zs.nc" 
+              ncoords="1" coordValue="39091"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_010_00_3zv.nc" 
+              ncoords="1" coordValue="39091"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_010_00_3zt.nc" 
+              ncoords="1" coordValue="39091"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_010_00_3zu.nc" 
+              ncoords="1" coordValue="39091"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_010_00_2d.nc" 
+              ncoords="1" coordValue="39091"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_011_00_3zs.nc" 
+              ncoords="1" coordValue="39092"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_011_00_3zv.nc" 
+              ncoords="1" coordValue="39092"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_011_00_3zt.nc" 
+              ncoords="1" coordValue="39092"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_011_00_3zu.nc" 
+              ncoords="1" coordValue="39092"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_011_00_2d.nc" 
+              ncoords="1" coordValue="39092"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_012_00_3zs.nc" 
+              ncoords="1" coordValue="39093"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_012_00_3zv.nc" 
+              ncoords="1" coordValue="39093"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_012_00_3zt.nc" 
+              ncoords="1" coordValue="39093"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_012_00_3zu.nc" 
+              ncoords="1" coordValue="39093"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_012_00_2d.nc" 
+              ncoords="1" coordValue="39093"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_013_00_3zs.nc" 
+              ncoords="1" coordValue="39094"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_013_00_3zv.nc" 
+              ncoords="1" coordValue="39094"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_013_00_3zt.nc" 
+              ncoords="1" coordValue="39094"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_013_00_3zu.nc" 
+              ncoords="1" coordValue="39094"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_013_00_2d.nc" 
+              ncoords="1" coordValue="39094"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_014_00_3zs.nc" 
+              ncoords="1" coordValue="39095"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_014_00_3zv.nc" 
+              ncoords="1" coordValue="39095"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_014_00_3zt.nc" 
+              ncoords="1" coordValue="39095"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_014_00_3zu.nc" 
+              ncoords="1" coordValue="39095"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_014_00_2d.nc" 
+              ncoords="1" coordValue="39095"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_015_00_3zs.nc" 
+              ncoords="1" coordValue="39096"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_015_00_3zv.nc" 
+              ncoords="1" coordValue="39096"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_015_00_3zt.nc" 
+              ncoords="1" coordValue="39096"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_015_00_3zu.nc" 
+              ncoords="1" coordValue="39096"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_015_00_2d.nc" 
+              ncoords="1" coordValue="39096"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_016_00_3zs.nc" 
+              ncoords="1" coordValue="39097"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_016_00_3zv.nc" 
+              ncoords="1" coordValue="39097"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_016_00_3zt.nc" 
+              ncoords="1" coordValue="39097"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_016_00_3zu.nc" 
+              ncoords="1" coordValue="39097"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_016_00_2d.nc" 
+              ncoords="1" coordValue="39097"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_017_00_3zs.nc" 
+              ncoords="1" coordValue="39098"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_017_00_3zv.nc" 
+              ncoords="1" coordValue="39098"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_017_00_3zt.nc" 
+              ncoords="1" coordValue="39098"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_017_00_3zu.nc" 
+              ncoords="1" coordValue="39098"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_017_00_2d.nc" 
+              ncoords="1" coordValue="39098"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_018_00_3zs.nc" 
+              ncoords="1" coordValue="39099"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_018_00_3zv.nc" 
+              ncoords="1" coordValue="39099"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_018_00_3zt.nc" 
+              ncoords="1" coordValue="39099"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_018_00_3zu.nc" 
+              ncoords="1" coordValue="39099"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_018_00_2d.nc" 
+              ncoords="1" coordValue="39099"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_019_00_3zs.nc" 
+              ncoords="1" coordValue="39100"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_019_00_3zv.nc" 
+              ncoords="1" coordValue="39100"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_019_00_3zt.nc" 
+              ncoords="1" coordValue="39100"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_019_00_3zu.nc" 
+              ncoords="1" coordValue="39100"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_019_00_2d.nc" 
+              ncoords="1" coordValue="39100"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_020_00_3zs.nc" 
+              ncoords="1" coordValue="39101"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_020_00_3zv.nc" 
+              ncoords="1" coordValue="39101"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_020_00_3zt.nc" 
+              ncoords="1" coordValue="39101"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_020_00_3zu.nc" 
+              ncoords="1" coordValue="39101"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_020_00_2d.nc" 
+              ncoords="1" coordValue="39101"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_021_00_3zs.nc" 
+              ncoords="1" coordValue="39102"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_021_00_3zv.nc" 
+              ncoords="1" coordValue="39102"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_021_00_3zt.nc" 
+              ncoords="1" coordValue="39102"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_021_00_3zu.nc" 
+              ncoords="1" coordValue="39102"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_021_00_2d.nc" 
+              ncoords="1" coordValue="39102"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_022_00_3zs.nc" 
+              ncoords="1" coordValue="39103"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_022_00_3zv.nc" 
+              ncoords="1" coordValue="39103"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_022_00_3zt.nc" 
+              ncoords="1" coordValue="39103"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_022_00_3zu.nc" 
+              ncoords="1" coordValue="39103"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_022_00_2d.nc" 
+              ncoords="1" coordValue="39103"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_023_00_3zs.nc" 
+              ncoords="1" coordValue="39104"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_023_00_3zv.nc" 
+              ncoords="1" coordValue="39104"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_023_00_3zt.nc" 
+              ncoords="1" coordValue="39104"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_023_00_3zu.nc" 
+              ncoords="1" coordValue="39104"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_023_00_2d.nc" 
+              ncoords="1" coordValue="39104"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_024_00_3zs.nc" 
+              ncoords="1" coordValue="39105"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_024_00_3zv.nc" 
+              ncoords="1" coordValue="39105"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_024_00_3zt.nc" 
+              ncoords="1" coordValue="39105"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_024_00_3zu.nc" 
+              ncoords="1" coordValue="39105"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_024_00_2d.nc" 
+              ncoords="1" coordValue="39105"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_025_00_3zs.nc" 
+              ncoords="1" coordValue="39106"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_025_00_3zv.nc" 
+              ncoords="1" coordValue="39106"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_025_00_3zt.nc" 
+              ncoords="1" coordValue="39106"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_025_00_3zu.nc" 
+              ncoords="1" coordValue="39106"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_025_00_2d.nc" 
+              ncoords="1" coordValue="39106"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_026_00_3zs.nc" 
+              ncoords="1" coordValue="39107"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_026_00_3zv.nc" 
+              ncoords="1" coordValue="39107"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_026_00_3zt.nc" 
+              ncoords="1" coordValue="39107"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_026_00_3zu.nc" 
+              ncoords="1" coordValue="39107"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_026_00_2d.nc" 
+              ncoords="1" coordValue="39107"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_027_00_3zs.nc" 
+              ncoords="1" coordValue="39108"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_027_00_3zv.nc" 
+              ncoords="1" coordValue="39108"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_027_00_3zt.nc" 
+              ncoords="1" coordValue="39108"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_027_00_3zu.nc" 
+              ncoords="1" coordValue="39108"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_027_00_2d.nc" 
+              ncoords="1" coordValue="39108"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_028_00_3zs.nc" 
+              ncoords="1" coordValue="39109"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_028_00_3zv.nc" 
+              ncoords="1" coordValue="39109"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_028_00_3zt.nc" 
+              ncoords="1" coordValue="39109"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_028_00_3zu.nc" 
+              ncoords="1" coordValue="39109"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_028_00_2d.nc" 
+              ncoords="1" coordValue="39109"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_029_00_3zs.nc" 
+              ncoords="1" coordValue="39110"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_029_00_3zv.nc" 
+              ncoords="1" coordValue="39110"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_029_00_3zt.nc" 
+              ncoords="1" coordValue="39110"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_029_00_3zu.nc" 
+              ncoords="1" coordValue="39110"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_029_00_2d.nc" 
+              ncoords="1" coordValue="39110"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_030_00_3zs.nc" 
+              ncoords="1" coordValue="39111"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_030_00_3zv.nc" 
+              ncoords="1" coordValue="39111"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_030_00_3zt.nc" 
+              ncoords="1" coordValue="39111"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_030_00_3zu.nc" 
+              ncoords="1" coordValue="39111"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_030_00_2d.nc" 
+              ncoords="1" coordValue="39111"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_031_00_3zs.nc" 
+              ncoords="1" coordValue="39112"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_031_00_3zv.nc" 
+              ncoords="1" coordValue="39112"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_031_00_3zt.nc" 
+              ncoords="1" coordValue="39112"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_031_00_3zu.nc" 
+              ncoords="1" coordValue="39112"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_031_00_2d.nc" 
+              ncoords="1" coordValue="39112"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_032_00_3zs.nc" 
+              ncoords="1" coordValue="39113"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_032_00_3zv.nc" 
+              ncoords="1" coordValue="39113"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_032_00_3zt.nc" 
+              ncoords="1" coordValue="39113"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_032_00_3zu.nc" 
+              ncoords="1" coordValue="39113"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_032_00_2d.nc" 
+              ncoords="1" coordValue="39113"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_033_00_3zs.nc" 
+              ncoords="1" coordValue="39114"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_033_00_3zv.nc" 
+              ncoords="1" coordValue="39114"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_033_00_3zt.nc" 
+              ncoords="1" coordValue="39114"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_033_00_3zu.nc" 
+              ncoords="1" coordValue="39114"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_033_00_2d.nc" 
+              ncoords="1" coordValue="39114"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_034_00_3zs.nc" 
+              ncoords="1" coordValue="39115"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_034_00_3zv.nc" 
+              ncoords="1" coordValue="39115"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_034_00_3zt.nc" 
+              ncoords="1" coordValue="39115"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_034_00_3zu.nc" 
+              ncoords="1" coordValue="39115"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_034_00_2d.nc" 
+              ncoords="1" coordValue="39115"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_035_00_3zs.nc" 
+              ncoords="1" coordValue="39116"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_035_00_3zv.nc" 
+              ncoords="1" coordValue="39116"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_035_00_3zt.nc" 
+              ncoords="1" coordValue="39116"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_035_00_3zu.nc" 
+              ncoords="1" coordValue="39116"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_035_00_2d.nc" 
+              ncoords="1" coordValue="39116"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_036_00_3zs.nc" 
+              ncoords="1" coordValue="39117"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_036_00_3zv.nc" 
+              ncoords="1" coordValue="39117"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_036_00_3zt.nc" 
+              ncoords="1" coordValue="39117"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_036_00_3zu.nc" 
+              ncoords="1" coordValue="39117"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_036_00_2d.nc" 
+              ncoords="1" coordValue="39117"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_037_00_3zs.nc" 
+              ncoords="1" coordValue="39118"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_037_00_3zv.nc" 
+              ncoords="1" coordValue="39118"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_037_00_3zt.nc" 
+              ncoords="1" coordValue="39118"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_037_00_3zu.nc" 
+              ncoords="1" coordValue="39118"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_037_00_2d.nc" 
+              ncoords="1" coordValue="39118"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_038_00_3zs.nc" 
+              ncoords="1" coordValue="39119"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_038_00_3zv.nc" 
+              ncoords="1" coordValue="39119"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_038_00_3zt.nc" 
+              ncoords="1" coordValue="39119"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_038_00_3zu.nc" 
+              ncoords="1" coordValue="39119"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_038_00_2d.nc" 
+              ncoords="1" coordValue="39119"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_039_00_3zs.nc" 
+              ncoords="1" coordValue="39120"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_039_00_3zv.nc" 
+              ncoords="1" coordValue="39120"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_039_00_3zt.nc" 
+              ncoords="1" coordValue="39120"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_039_00_3zu.nc" 
+              ncoords="1" coordValue="39120"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_039_00_2d.nc" 
+              ncoords="1" coordValue="39120"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_040_00_3zs.nc" 
+              ncoords="1" coordValue="39121"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_040_00_3zv.nc" 
+              ncoords="1" coordValue="39121"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_040_00_3zt.nc" 
+              ncoords="1" coordValue="39121"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_040_00_3zu.nc" 
+              ncoords="1" coordValue="39121"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_040_00_2d.nc" 
+              ncoords="1" coordValue="39121"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_041_00_3zs.nc" 
+              ncoords="1" coordValue="39122"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_041_00_3zv.nc" 
+              ncoords="1" coordValue="39122"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_041_00_3zt.nc" 
+              ncoords="1" coordValue="39122"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_041_00_3zu.nc" 
+              ncoords="1" coordValue="39122"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_041_00_2d.nc" 
+              ncoords="1" coordValue="39122"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_042_00_3zs.nc" 
+              ncoords="1" coordValue="39123"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_042_00_3zv.nc" 
+              ncoords="1" coordValue="39123"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_042_00_3zt.nc" 
+              ncoords="1" coordValue="39123"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_042_00_3zu.nc" 
+              ncoords="1" coordValue="39123"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_042_00_2d.nc" 
+              ncoords="1" coordValue="39123"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_043_00_3zs.nc" 
+              ncoords="1" coordValue="39124"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_043_00_3zv.nc" 
+              ncoords="1" coordValue="39124"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_043_00_3zt.nc" 
+              ncoords="1" coordValue="39124"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_043_00_3zu.nc" 
+              ncoords="1" coordValue="39124"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_043_00_2d.nc" 
+              ncoords="1" coordValue="39124"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_044_00_3zs.nc" 
+              ncoords="1" coordValue="39125"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_044_00_3zv.nc" 
+              ncoords="1" coordValue="39125"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_044_00_3zt.nc" 
+              ncoords="1" coordValue="39125"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_044_00_3zu.nc" 
+              ncoords="1" coordValue="39125"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_044_00_2d.nc" 
+              ncoords="1" coordValue="39125"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_045_00_3zs.nc" 
+              ncoords="1" coordValue="39126"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_045_00_3zv.nc" 
+              ncoords="1" coordValue="39126"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_045_00_3zt.nc" 
+              ncoords="1" coordValue="39126"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_045_00_3zu.nc" 
+              ncoords="1" coordValue="39126"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_045_00_2d.nc" 
+              ncoords="1" coordValue="39126"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_046_00_3zs.nc" 
+              ncoords="1" coordValue="39127"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_046_00_3zv.nc" 
+              ncoords="1" coordValue="39127"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_046_00_3zt.nc" 
+              ncoords="1" coordValue="39127"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_046_00_3zu.nc" 
+              ncoords="1" coordValue="39127"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_046_00_2d.nc" 
+              ncoords="1" coordValue="39127"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_047_00_3zs.nc" 
+              ncoords="1" coordValue="39128"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_047_00_3zv.nc" 
+              ncoords="1" coordValue="39128"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_047_00_3zt.nc" 
+              ncoords="1" coordValue="39128"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_047_00_3zu.nc" 
+              ncoords="1" coordValue="39128"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_047_00_2d.nc" 
+              ncoords="1" coordValue="39128"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_048_00_3zs.nc" 
+              ncoords="1" coordValue="39129"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_048_00_3zv.nc" 
+              ncoords="1" coordValue="39129"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_048_00_3zt.nc" 
+              ncoords="1" coordValue="39129"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_048_00_3zu.nc" 
+              ncoords="1" coordValue="39129"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_048_00_2d.nc" 
+              ncoords="1" coordValue="39129"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_049_00_3zs.nc" 
+              ncoords="1" coordValue="39130"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_049_00_3zv.nc" 
+              ncoords="1" coordValue="39130"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_049_00_3zt.nc" 
+              ncoords="1" coordValue="39130"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_049_00_3zu.nc" 
+              ncoords="1" coordValue="39130"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_049_00_2d.nc" 
+              ncoords="1" coordValue="39130"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_050_00_3zs.nc" 
+              ncoords="1" coordValue="39131"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_050_00_3zv.nc" 
+              ncoords="1" coordValue="39131"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_050_00_3zt.nc" 
+              ncoords="1" coordValue="39131"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_050_00_3zu.nc" 
+              ncoords="1" coordValue="39131"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_050_00_2d.nc" 
+              ncoords="1" coordValue="39131"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_051_00_3zs.nc" 
+              ncoords="1" coordValue="39132"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_051_00_3zv.nc" 
+              ncoords="1" coordValue="39132"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_051_00_3zt.nc" 
+              ncoords="1" coordValue="39132"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_051_00_3zu.nc" 
+              ncoords="1" coordValue="39132"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_051_00_2d.nc" 
+              ncoords="1" coordValue="39132"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_052_00_3zs.nc" 
+              ncoords="1" coordValue="39133"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_052_00_3zv.nc" 
+              ncoords="1" coordValue="39133"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_052_00_3zt.nc" 
+              ncoords="1" coordValue="39133"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_052_00_3zu.nc" 
+              ncoords="1" coordValue="39133"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_052_00_2d.nc" 
+              ncoords="1" coordValue="39133"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_053_00_3zs.nc" 
+              ncoords="1" coordValue="39134"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_053_00_3zv.nc" 
+              ncoords="1" coordValue="39134"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_053_00_3zt.nc" 
+              ncoords="1" coordValue="39134"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_053_00_3zu.nc" 
+              ncoords="1" coordValue="39134"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_053_00_2d.nc" 
+              ncoords="1" coordValue="39134"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_054_00_3zs.nc" 
+              ncoords="1" coordValue="39135"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_054_00_3zv.nc" 
+              ncoords="1" coordValue="39135"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_054_00_3zt.nc" 
+              ncoords="1" coordValue="39135"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_054_00_3zu.nc" 
+              ncoords="1" coordValue="39135"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_054_00_2d.nc" 
+              ncoords="1" coordValue="39135"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_055_00_3zs.nc" 
+              ncoords="1" coordValue="39136"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_055_00_3zv.nc" 
+              ncoords="1" coordValue="39136"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_055_00_3zt.nc" 
+              ncoords="1" coordValue="39136"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_055_00_3zu.nc" 
+              ncoords="1" coordValue="39136"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_055_00_2d.nc" 
+              ncoords="1" coordValue="39136"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_056_00_3zs.nc" 
+              ncoords="1" coordValue="39137"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_056_00_3zv.nc" 
+              ncoords="1" coordValue="39137"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_056_00_3zt.nc" 
+              ncoords="1" coordValue="39137"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_056_00_3zu.nc" 
+              ncoords="1" coordValue="39137"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_056_00_2d.nc" 
+              ncoords="1" coordValue="39137"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_057_00_3zs.nc" 
+              ncoords="1" coordValue="39138"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_057_00_3zv.nc" 
+              ncoords="1" coordValue="39138"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_057_00_3zt.nc" 
+              ncoords="1" coordValue="39138"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_057_00_3zu.nc" 
+              ncoords="1" coordValue="39138"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_057_00_2d.nc" 
+              ncoords="1" coordValue="39138"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_058_00_3zs.nc" 
+              ncoords="1" coordValue="39139"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_058_00_3zv.nc" 
+              ncoords="1" coordValue="39139"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_058_00_3zt.nc" 
+              ncoords="1" coordValue="39139"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_058_00_3zu.nc" 
+              ncoords="1" coordValue="39139"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_058_00_2d.nc" 
+              ncoords="1" coordValue="39139"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_059_00_3zs.nc" 
+              ncoords="1" coordValue="39140"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_059_00_3zv.nc" 
+              ncoords="1" coordValue="39140"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_059_00_3zt.nc" 
+              ncoords="1" coordValue="39140"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_059_00_3zu.nc" 
+              ncoords="1" coordValue="39140"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_059_00_2d.nc" 
+              ncoords="1" coordValue="39140"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_060_00_3zs.nc" 
+              ncoords="1" coordValue="39141"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_060_00_3zv.nc" 
+              ncoords="1" coordValue="39141"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_060_00_3zt.nc" 
+              ncoords="1" coordValue="39141"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_060_00_3zu.nc" 
+              ncoords="1" coordValue="39141"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_060_00_2d.nc" 
+              ncoords="1" coordValue="39141"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_061_00_3zs.nc" 
+              ncoords="1" coordValue="39142"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_061_00_3zv.nc" 
+              ncoords="1" coordValue="39142"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_061_00_3zt.nc" 
+              ncoords="1" coordValue="39142"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_061_00_3zu.nc" 
+              ncoords="1" coordValue="39142"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_061_00_2d.nc" 
+              ncoords="1" coordValue="39142"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_062_00_3zs.nc" 
+              ncoords="1" coordValue="39143"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_062_00_3zv.nc" 
+              ncoords="1" coordValue="39143"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_062_00_3zt.nc" 
+              ncoords="1" coordValue="39143"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_062_00_3zu.nc" 
+              ncoords="1" coordValue="39143"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_062_00_2d.nc" 
+              ncoords="1" coordValue="39143"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_063_00_3zs.nc" 
+              ncoords="1" coordValue="39144"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_063_00_3zv.nc" 
+              ncoords="1" coordValue="39144"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_063_00_3zt.nc" 
+              ncoords="1" coordValue="39144"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_063_00_3zu.nc" 
+              ncoords="1" coordValue="39144"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_063_00_2d.nc" 
+              ncoords="1" coordValue="39144"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_064_00_3zs.nc" 
+              ncoords="1" coordValue="39145"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_064_00_3zv.nc" 
+              ncoords="1" coordValue="39145"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_064_00_3zt.nc" 
+              ncoords="1" coordValue="39145"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_064_00_3zu.nc" 
+              ncoords="1" coordValue="39145"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_064_00_2d.nc" 
+              ncoords="1" coordValue="39145"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_065_00_3zs.nc" 
+              ncoords="1" coordValue="39146"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_065_00_3zv.nc" 
+              ncoords="1" coordValue="39146"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_065_00_3zt.nc" 
+              ncoords="1" coordValue="39146"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_065_00_3zu.nc" 
+              ncoords="1" coordValue="39146"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_065_00_2d.nc" 
+              ncoords="1" coordValue="39146"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_066_00_3zs.nc" 
+              ncoords="1" coordValue="39147"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_066_00_3zv.nc" 
+              ncoords="1" coordValue="39147"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_066_00_3zt.nc" 
+              ncoords="1" coordValue="39147"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_066_00_3zu.nc" 
+              ncoords="1" coordValue="39147"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_066_00_2d.nc" 
+              ncoords="1" coordValue="39147"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_067_00_3zs.nc" 
+              ncoords="1" coordValue="39148"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_067_00_3zv.nc" 
+              ncoords="1" coordValue="39148"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_067_00_3zt.nc" 
+              ncoords="1" coordValue="39148"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_067_00_3zu.nc" 
+              ncoords="1" coordValue="39148"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_067_00_2d.nc" 
+              ncoords="1" coordValue="39148"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_068_00_3zs.nc" 
+              ncoords="1" coordValue="39149"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_068_00_3zv.nc" 
+              ncoords="1" coordValue="39149"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_068_00_3zt.nc" 
+              ncoords="1" coordValue="39149"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_068_00_3zu.nc" 
+              ncoords="1" coordValue="39149"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_068_00_2d.nc" 
+              ncoords="1" coordValue="39149"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_069_00_3zs.nc" 
+              ncoords="1" coordValue="39150"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_069_00_3zv.nc" 
+              ncoords="1" coordValue="39150"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_069_00_3zt.nc" 
+              ncoords="1" coordValue="39150"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_069_00_3zu.nc" 
+              ncoords="1" coordValue="39150"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_069_00_2d.nc" 
+              ncoords="1" coordValue="39150"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_070_00_3zs.nc" 
+              ncoords="1" coordValue="39151"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_070_00_3zv.nc" 
+              ncoords="1" coordValue="39151"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_070_00_3zt.nc" 
+              ncoords="1" coordValue="39151"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_070_00_3zu.nc" 
+              ncoords="1" coordValue="39151"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_070_00_2d.nc" 
+              ncoords="1" coordValue="39151"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_071_00_3zs.nc" 
+              ncoords="1" coordValue="39152"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_071_00_3zv.nc" 
+              ncoords="1" coordValue="39152"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_071_00_3zt.nc" 
+              ncoords="1" coordValue="39152"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_071_00_3zu.nc" 
+              ncoords="1" coordValue="39152"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_071_00_2d.nc" 
+              ncoords="1" coordValue="39152"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_072_00_3zs.nc" 
+              ncoords="1" coordValue="39153"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_072_00_3zv.nc" 
+              ncoords="1" coordValue="39153"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_072_00_3zt.nc" 
+              ncoords="1" coordValue="39153"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_072_00_3zu.nc" 
+              ncoords="1" coordValue="39153"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_072_00_2d.nc" 
+              ncoords="1" coordValue="39153"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_075_00_3zs.nc" 
+              ncoords="1" coordValue="39156"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_075_00_3zv.nc" 
+              ncoords="1" coordValue="39156"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_075_00_3zt.nc" 
+              ncoords="1" coordValue="39156"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_075_00_3zu.nc" 
+              ncoords="1" coordValue="39156"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_075_00_2d.nc" 
+              ncoords="1" coordValue="39156"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_076_00_3zs.nc" 
+              ncoords="1" coordValue="39157"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_076_00_3zv.nc" 
+              ncoords="1" coordValue="39157"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_076_00_3zt.nc" 
+              ncoords="1" coordValue="39157"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_076_00_3zu.nc" 
+              ncoords="1" coordValue="39157"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_076_00_2d.nc" 
+              ncoords="1" coordValue="39157"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_077_00_3zs.nc" 
+              ncoords="1" coordValue="39158"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_077_00_3zv.nc" 
+              ncoords="1" coordValue="39158"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_077_00_3zt.nc" 
+              ncoords="1" coordValue="39158"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_077_00_3zu.nc" 
+              ncoords="1" coordValue="39158"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_077_00_2d.nc" 
+              ncoords="1" coordValue="39158"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_078_00_3zs.nc" 
+              ncoords="1" coordValue="39159"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_078_00_3zv.nc" 
+              ncoords="1" coordValue="39159"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_078_00_3zt.nc" 
+              ncoords="1" coordValue="39159"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_078_00_3zu.nc" 
+              ncoords="1" coordValue="39159"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_078_00_2d.nc" 
+              ncoords="1" coordValue="39159"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_079_00_3zs.nc" 
+              ncoords="1" coordValue="39160"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_079_00_3zv.nc" 
+              ncoords="1" coordValue="39160"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_079_00_3zt.nc" 
+              ncoords="1" coordValue="39160"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_079_00_3zu.nc" 
+              ncoords="1" coordValue="39160"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_079_00_2d.nc" 
+              ncoords="1" coordValue="39160"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_080_00_3zs.nc" 
+              ncoords="1" coordValue="39161"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_080_00_3zv.nc" 
+              ncoords="1" coordValue="39161"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_080_00_3zt.nc" 
+              ncoords="1" coordValue="39161"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_080_00_3zu.nc" 
+              ncoords="1" coordValue="39161"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_080_00_2d.nc" 
+              ncoords="1" coordValue="39161"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_081_00_3zs.nc" 
+              ncoords="1" coordValue="39162"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_081_00_3zv.nc" 
+              ncoords="1" coordValue="39162"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_081_00_3zt.nc" 
+              ncoords="1" coordValue="39162"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_081_00_3zu.nc" 
+              ncoords="1" coordValue="39162"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_081_00_2d.nc" 
+              ncoords="1" coordValue="39162"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_082_00_3zs.nc" 
+              ncoords="1" coordValue="39163"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_082_00_3zv.nc" 
+              ncoords="1" coordValue="39163"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_082_00_3zt.nc" 
+              ncoords="1" coordValue="39163"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_082_00_3zu.nc" 
+              ncoords="1" coordValue="39163"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_082_00_2d.nc" 
+              ncoords="1" coordValue="39163"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_083_00_3zs.nc" 
+              ncoords="1" coordValue="39164"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_083_00_3zv.nc" 
+              ncoords="1" coordValue="39164"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_083_00_3zt.nc" 
+              ncoords="1" coordValue="39164"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_083_00_3zu.nc" 
+              ncoords="1" coordValue="39164"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_083_00_2d.nc" 
+              ncoords="1" coordValue="39164"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_084_00_3zs.nc" 
+              ncoords="1" coordValue="39165"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_084_00_3zv.nc" 
+              ncoords="1" coordValue="39165"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_084_00_3zt.nc" 
+              ncoords="1" coordValue="39165"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_084_00_3zu.nc" 
+              ncoords="1" coordValue="39165"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_084_00_2d.nc" 
+              ncoords="1" coordValue="39165"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_085_00_3zs.nc" 
+              ncoords="1" coordValue="39166"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_085_00_3zv.nc" 
+              ncoords="1" coordValue="39166"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_085_00_3zt.nc" 
+              ncoords="1" coordValue="39166"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_085_00_3zu.nc" 
+              ncoords="1" coordValue="39166"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_085_00_2d.nc" 
+              ncoords="1" coordValue="39166"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_086_00_3zs.nc" 
+              ncoords="1" coordValue="39167"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_086_00_3zv.nc" 
+              ncoords="1" coordValue="39167"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_086_00_3zt.nc" 
+              ncoords="1" coordValue="39167"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_086_00_3zu.nc" 
+              ncoords="1" coordValue="39167"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_086_00_2d.nc" 
+              ncoords="1" coordValue="39167"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_087_00_3zs.nc" 
+              ncoords="1" coordValue="39168"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_087_00_3zv.nc" 
+              ncoords="1" coordValue="39168"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_087_00_3zt.nc" 
+              ncoords="1" coordValue="39168"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_087_00_3zu.nc" 
+              ncoords="1" coordValue="39168"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_087_00_2d.nc" 
+              ncoords="1" coordValue="39168"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_088_00_3zs.nc" 
+              ncoords="1" coordValue="39169"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_088_00_3zv.nc" 
+              ncoords="1" coordValue="39169"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_088_00_3zt.nc" 
+              ncoords="1" coordValue="39169"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_088_00_3zu.nc" 
+              ncoords="1" coordValue="39169"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_088_00_2d.nc" 
+              ncoords="1" coordValue="39169"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_090_00_3zs.nc" 
+              ncoords="1" coordValue="39171"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_090_00_3zv.nc" 
+              ncoords="1" coordValue="39171"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_090_00_3zt.nc" 
+              ncoords="1" coordValue="39171"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_090_00_3zu.nc" 
+              ncoords="1" coordValue="39171"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_090_00_2d.nc" 
+              ncoords="1" coordValue="39171"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_091_00_3zs.nc" 
+              ncoords="1" coordValue="39172"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_091_00_3zv.nc" 
+              ncoords="1" coordValue="39172"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_091_00_3zt.nc" 
+              ncoords="1" coordValue="39172"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_091_00_3zu.nc" 
+              ncoords="1" coordValue="39172"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_091_00_2d.nc" 
+              ncoords="1" coordValue="39172"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_092_00_3zs.nc" 
+              ncoords="1" coordValue="39173"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_092_00_3zv.nc" 
+              ncoords="1" coordValue="39173"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_092_00_3zt.nc" 
+              ncoords="1" coordValue="39173"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_092_00_3zu.nc" 
+              ncoords="1" coordValue="39173"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_092_00_2d.nc" 
+              ncoords="1" coordValue="39173"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_093_00_3zs.nc" 
+              ncoords="1" coordValue="39174"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_093_00_3zv.nc" 
+              ncoords="1" coordValue="39174"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_093_00_3zt.nc" 
+              ncoords="1" coordValue="39174"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_093_00_3zu.nc" 
+              ncoords="1" coordValue="39174"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_093_00_2d.nc" 
+              ncoords="1" coordValue="39174"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_094_00_3zs.nc" 
+              ncoords="1" coordValue="39175"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_094_00_3zv.nc" 
+              ncoords="1" coordValue="39175"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_094_00_3zt.nc" 
+              ncoords="1" coordValue="39175"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_094_00_3zu.nc" 
+              ncoords="1" coordValue="39175"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_094_00_2d.nc" 
+              ncoords="1" coordValue="39175"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_095_00_3zs.nc" 
+              ncoords="1" coordValue="39176"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_095_00_3zv.nc" 
+              ncoords="1" coordValue="39176"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_095_00_3zt.nc" 
+              ncoords="1" coordValue="39176"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_095_00_3zu.nc" 
+              ncoords="1" coordValue="39176"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_095_00_2d.nc" 
+              ncoords="1" coordValue="39176"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_096_00_3zs.nc" 
+              ncoords="1" coordValue="39177"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_096_00_3zv.nc" 
+              ncoords="1" coordValue="39177"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_096_00_3zt.nc" 
+              ncoords="1" coordValue="39177"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_096_00_3zu.nc" 
+              ncoords="1" coordValue="39177"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_096_00_2d.nc" 
+              ncoords="1" coordValue="39177"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_097_00_3zs.nc" 
+              ncoords="1" coordValue="39178"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_097_00_3zv.nc" 
+              ncoords="1" coordValue="39178"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_097_00_3zt.nc" 
+              ncoords="1" coordValue="39178"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_097_00_3zu.nc" 
+              ncoords="1" coordValue="39178"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_097_00_2d.nc" 
+              ncoords="1" coordValue="39178"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_098_00_3zs.nc" 
+              ncoords="1" coordValue="39179"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_098_00_3zv.nc" 
+              ncoords="1" coordValue="39179"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_098_00_3zt.nc" 
+              ncoords="1" coordValue="39179"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_098_00_3zu.nc" 
+              ncoords="1" coordValue="39179"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_098_00_2d.nc" 
+              ncoords="1" coordValue="39179"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_099_00_3zs.nc" 
+              ncoords="1" coordValue="39180"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_099_00_3zv.nc" 
+              ncoords="1" coordValue="39180"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_099_00_3zt.nc" 
+              ncoords="1" coordValue="39180"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_099_00_3zu.nc" 
+              ncoords="1" coordValue="39180"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_099_00_2d.nc" 
+              ncoords="1" coordValue="39180"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_100_00_3zs.nc" 
+              ncoords="1" coordValue="39181"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_100_00_3zv.nc" 
+              ncoords="1" coordValue="39181"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_100_00_3zt.nc" 
+              ncoords="1" coordValue="39181"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_100_00_3zu.nc" 
+              ncoords="1" coordValue="39181"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_100_00_2d.nc" 
+              ncoords="1" coordValue="39181"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_101_00_3zs.nc" 
+              ncoords="1" coordValue="39182"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_101_00_3zv.nc" 
+              ncoords="1" coordValue="39182"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_101_00_3zt.nc" 
+              ncoords="1" coordValue="39182"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_101_00_3zu.nc" 
+              ncoords="1" coordValue="39182"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_101_00_2d.nc" 
+              ncoords="1" coordValue="39182"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_102_00_3zs.nc" 
+              ncoords="1" coordValue="39183"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_102_00_3zv.nc" 
+              ncoords="1" coordValue="39183"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_102_00_3zt.nc" 
+              ncoords="1" coordValue="39183"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_102_00_3zu.nc" 
+              ncoords="1" coordValue="39183"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_102_00_2d.nc" 
+              ncoords="1" coordValue="39183"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_103_00_3zs.nc" 
+              ncoords="1" coordValue="39184"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_103_00_3zv.nc" 
+              ncoords="1" coordValue="39184"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_103_00_3zt.nc" 
+              ncoords="1" coordValue="39184"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_103_00_3zu.nc" 
+              ncoords="1" coordValue="39184"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_103_00_2d.nc" 
+              ncoords="1" coordValue="39184"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_104_00_3zs.nc" 
+              ncoords="1" coordValue="39185"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_104_00_3zv.nc" 
+              ncoords="1" coordValue="39185"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_104_00_3zt.nc" 
+              ncoords="1" coordValue="39185"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_104_00_3zu.nc" 
+              ncoords="1" coordValue="39185"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_104_00_2d.nc" 
+              ncoords="1" coordValue="39185"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_105_00_3zs.nc" 
+              ncoords="1" coordValue="39186"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_105_00_3zv.nc" 
+              ncoords="1" coordValue="39186"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_105_00_3zt.nc" 
+              ncoords="1" coordValue="39186"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_105_00_3zu.nc" 
+              ncoords="1" coordValue="39186"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_105_00_2d.nc" 
+              ncoords="1" coordValue="39186"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_106_00_3zs.nc" 
+              ncoords="1" coordValue="39187"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_106_00_3zv.nc" 
+              ncoords="1" coordValue="39187"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_106_00_3zt.nc" 
+              ncoords="1" coordValue="39187"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_106_00_3zu.nc" 
+              ncoords="1" coordValue="39187"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_106_00_2d.nc" 
+              ncoords="1" coordValue="39187"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_107_00_3zs.nc" 
+              ncoords="1" coordValue="39188"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_107_00_3zv.nc" 
+              ncoords="1" coordValue="39188"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_107_00_3zt.nc" 
+              ncoords="1" coordValue="39188"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_107_00_3zu.nc" 
+              ncoords="1" coordValue="39188"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_107_00_2d.nc" 
+              ncoords="1" coordValue="39188"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_108_00_3zs.nc" 
+              ncoords="1" coordValue="39189"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_108_00_3zv.nc" 
+              ncoords="1" coordValue="39189"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_108_00_3zt.nc" 
+              ncoords="1" coordValue="39189"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_108_00_3zu.nc" 
+              ncoords="1" coordValue="39189"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_108_00_2d.nc" 
+              ncoords="1" coordValue="39189"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_109_00_3zs.nc" 
+              ncoords="1" coordValue="39190"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_109_00_3zv.nc" 
+              ncoords="1" coordValue="39190"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_109_00_3zt.nc" 
+              ncoords="1" coordValue="39190"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_109_00_3zu.nc" 
+              ncoords="1" coordValue="39190"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_109_00_2d.nc" 
+              ncoords="1" coordValue="39190"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_110_00_3zs.nc" 
+              ncoords="1" coordValue="39191"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_110_00_3zv.nc" 
+              ncoords="1" coordValue="39191"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_110_00_3zt.nc" 
+              ncoords="1" coordValue="39191"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_110_00_3zu.nc" 
+              ncoords="1" coordValue="39191"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_110_00_2d.nc" 
+              ncoords="1" coordValue="39191"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_111_00_3zs.nc" 
+              ncoords="1" coordValue="39192"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_111_00_3zv.nc" 
+              ncoords="1" coordValue="39192"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_111_00_3zt.nc" 
+              ncoords="1" coordValue="39192"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_111_00_3zu.nc" 
+              ncoords="1" coordValue="39192"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_111_00_2d.nc" 
+              ncoords="1" coordValue="39192"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_112_00_3zs.nc" 
+              ncoords="1" coordValue="39193"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_112_00_3zv.nc" 
+              ncoords="1" coordValue="39193"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_112_00_3zt.nc" 
+              ncoords="1" coordValue="39193"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_112_00_3zu.nc" 
+              ncoords="1" coordValue="39193"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_112_00_2d.nc" 
+              ncoords="1" coordValue="39193"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_113_00_3zs.nc" 
+              ncoords="1" coordValue="39194"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_113_00_3zv.nc" 
+              ncoords="1" coordValue="39194"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_113_00_3zt.nc" 
+              ncoords="1" coordValue="39194"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_113_00_3zu.nc" 
+              ncoords="1" coordValue="39194"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_113_00_2d.nc" 
+              ncoords="1" coordValue="39194"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_114_00_3zs.nc" 
+              ncoords="1" coordValue="39195"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_114_00_3zv.nc" 
+              ncoords="1" coordValue="39195"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_114_00_3zt.nc" 
+              ncoords="1" coordValue="39195"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_114_00_3zu.nc" 
+              ncoords="1" coordValue="39195"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_114_00_2d.nc" 
+              ncoords="1" coordValue="39195"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_115_00_3zs.nc" 
+              ncoords="1" coordValue="39196"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_115_00_3zv.nc" 
+              ncoords="1" coordValue="39196"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_115_00_3zt.nc" 
+              ncoords="1" coordValue="39196"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_115_00_3zu.nc" 
+              ncoords="1" coordValue="39196"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_115_00_2d.nc" 
+              ncoords="1" coordValue="39196"/>
+      </aggregation>
+    </netcdf>
+    <netcdf>
+      <aggregation type="union">
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/salt/archv.2007_116_00_3zs.nc" 
+              ncoords="1" coordValue="39197"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/vvel/archv.2007_116_00_3zv.nc" 
+              ncoords="1" coordValue="39197"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/temp/archv.2007_116_00_3zt.nc" 
+              ncoords="1" coordValue="39197"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/uvel/archv.2007_116_00_3zu.nc" 
+              ncoords="1" coordValue="39197"/>
+      <netcdf location="/gfs1/hycom/GLBa0.08/expt_90.2/2007/2d/archv.2007_116_00_2d.nc" 
+              ncoords="1" coordValue="39197"/>
+      </aggregation>
+    </netcdf>
+  </aggregation>
+</netcdf>
+</dataset>
+</dataset>
+</dataset>
+</catalog>

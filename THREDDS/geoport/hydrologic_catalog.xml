@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="Hydrologic Modeling Portal"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="Compound" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/" />
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+  <dataset name="Hydrologic Modeling Data">
+
+    <dataset name="National Water Balance Model (4km)"  ID="hydro/national/4km"
+      serviceName="Compound" urlPath="hydro/national/4km">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+        location="/usgs/data0/rsignell/wbm/conus_runoff.nc"/>
+      <metadata>
+        <serviceName>Compound</serviceName>
+        <authority>gov.usgs.er.whsc</authority>
+        <dataType>Grid</dataType>
+        <dataFormat>NetCDF</dataFormat>
+      
+        <geospatialCoverage zpositive="up">
+          <northsouth>
+            <start>49.438</start>
+            <size>-24.917</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>-124.812</start>
+            <size>57.833</size>
+            <units>degrees_east</units>
+          </eastwest>
+        </geospatialCoverage>
+      
+      </metadata>
+    </dataset>
+    
+    
+  </dataset>
+</catalog>

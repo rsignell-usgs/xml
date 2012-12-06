@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  name="All Local Files" version="1.0.1">
+
+<service name="gsodServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+</service>
+
+ <datasetScan name="GSOD" ID="gsod" path="gsod"
+    location="/mnt/thredds/gsod">
+   <metadata inherited="true">
+     <serviceName>gsodServices</serviceName>
+     <dataType>Station</dataType>
+   </metadata>
+   <addDatasetSize/>
+ </datasetScan>
+
+</catalog>

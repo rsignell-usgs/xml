@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+  location="elcircfem.nc">
+
+    <variable name="Mesh1" type="int">
+        <attribute name="standard_name" value="topology_description"/>
+        <attribute name="long_name" value="Topology data of 2D unstructured mesh (Mesh1)"/>
+        <attribute name="node_coordinates" value="lat lon"/>
+        <attribute name="node_connectivity" value="connectivity"/>
+        <attribute name="locations" value="node" />
+    </variable>
+
+    <variable name="connectivity" orgName="ele">
+        <attribute name="index_origin" type="short" value="1"/>
+        <attribute name="cell_type" value="tri_ccw"/>
+        <attribute name="standard_name" value="connectivity_array"/>
+        <attribute name="long_name" value="Maps every triangular element to its three corner vertices"/>
+    </variable>
+
+    <variable name="zeta">
+        <attribute name="coordinates" value="time lat lon"/>
+        <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+        <attribute name="location" value="node"/>
+        <attribute name="mesh" value="Mesh1"/>
+        <remove type="attribute" name="grid"/>
+    </variable>
+
+    <variable name="depth">
+        <attribute name="coordinates" value="lat lon"/>
+        <attribute name="standard_name" value="sea_floor_depth_below_geoid"/>
+        <attribute name="location" value="node"/>
+        <attribute name="mesh" value="Mesh1"/>
+        <remove type="attribute" name="grid"/>
+    </variable>
+
+    <variable name="u">
+        <attribute name="coordinates" value="time sigma lat lon"/>
+        <attribute name="location" value="node"/>
+        <attribute name="mesh" value="Mesh1"/>
+        <remove type="attribute" name="grid"/>
+    </variable>
+
+    <variable name="v">
+        <attribute name="coordinates" value="time sigma lat lon"/>
+        <attribute name="location" value="node"/>
+        <attribute name="mesh" value="Mesh1"/>
+        <remove type="attribute" name="grid"/>
+    </variable>
+
+    <variable name="temp">
+        <attribute name="coordinates" value="time sigma lat lon"/>
+        <attribute name="location" value="node"/>
+        <attribute name="mesh" value="Mesh1"/>
+        <remove type="attribute" name="grid"/>
+        <remove type="attribute" name="grid_location"/>
+    </variable>
+
+    <variable name="salt">
+        <attribute name="coordinates" value="time sigma lat lon"/>
+        <attribute name="location" value="node"/>
+        <attribute name="mesh" value="Mesh1"/>
+        <remove type="attribute" name="grid"/>
+    </variable>
+
+    <attribute name="Conventions" value="UGRID-1.0-CF-1.4"/>
+
+</netcdf>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<catalog name="TGLO Catalog" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
+    <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
+  </service>
+  <dataset name="TGLO ROMS History Files" ID="models/tglo/roms/his" serviceName="allServices" urlPath="models/tglo/roms/his">
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="ocean_time" type="joinExisting" recheckEvery="15min">
+        
+<!--        Steve, in the scan element below, specify the full path to the directory that contains your ROMS history files-->
+        
+        <scan location="/data1/TGLO/HIS" regExp=".*TGLO-his-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}\.nc$" olderThan="5 min"/>
+        <variable name="zeta">
+          <attribute name="coordinates" value="ocean_time lat_rho lon_rho"/>
+        </variable>
+      </aggregation>
+      <attribute name="Conventions" type="String" value="CF-1.0"/>
+    </netcdf>
+  </dataset>
+</catalog>

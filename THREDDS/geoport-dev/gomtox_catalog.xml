@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="GOMTOX Catalog"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+  <dataset name="GOMTOX Runs">
+    <metadata inherited="true">
+      <creator>
+        <name vocabulary="DIF">Dr. Ruoying He</name>
+        <contact url="http://www.meas.ncsu.edu/faculty/he/he.html" email="ruoying_he@ncsu.edu"/>
+        <name vocabulary="DIF">Dr. Dennis McGillicuddy</name>
+        <contact url="http://www.whoi.edu/hpb/Site.do?id=933" email="dmcgillicuddy@whoi.edu"/>
+      </creator>
+
+      <documentation xlink:href="http://www4.ncsu.edu/~rhe/project_files/noaa.htm"
+        xlink:title="Dynamics of Alexandrium fundyense Project Page"/>
+      <documentation type="Summary"> Hydrodynamic simulations to support Alexandrium fundyense
+        research in the Gulf of Maine </documentation>
+      <documentation type="Rights"> This model data was generated as part of an academic research
+        project, and the principal investigators: Ruoying He (rhe@ncsu.edu) and Dennis McGillicuddy
+        (dmcgillicuddy@whoi.edu) ask to be informed of intent for scientific use and appropriate
+        acknowledgment given in any publications arising therefrom. The data is provided free of
+        charge, without warranty of any kind. </documentation>
+    </metadata>
+    <dataset name="Tide-Averaged Data">
+      
+      <dataset name="2005 " ID="gomtox/2005/avg" urlPath="gomtox/2005/avg">
+        <serviceName>allServices</serviceName>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <aggregation dimName="ocean_time" type="joinExisting">
+            <scan location="/usgs/data1/rsignell/gomtox/ex1" regExp=".*gom_avg_[0-9]{4}\.nc$"/>
+          </aggregation>
+   <!--       <variable name="zeta">
+            <attribute name="_FillValue" type="float" value="0.0"/>
+            <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+          </variable>
+          <variable name="temp">
+            <attribute name="_FillValue" type="float" value="0.0"/>
+          </variable>
+          <variable name="salt">
+            <attribute name="_FillValue" type="float" value="0.0"/>
+          </variable>-->
+        </netcdf>
+      </dataset>
+      
+      
+      
+    </dataset>
+    
+  </dataset>
+</catalog>

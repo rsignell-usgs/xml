@@ -1,0 +1,78 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+ </service>
+ <dataset name="COAWST" ID="coawst">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <authority>gov.usgs.er.whsc</authority>
+   <dataType>Grid</dataType>
+   <dataFormat>NetCDF</dataFormat>
+   <creator>
+    <name vocabulary="DIF">OM/WHSC/USGS</name>
+    <contact url="http://www.usgs.gov/" email="jcwarner@usgs.gov"/>
+   </creator>
+   <publisher>
+    <name vocabulary="DIF">OM/WHSC/USGS</name>
+    <contact url="http://www.usgs.gov/" email="jcwarner@usgs.gov"/>
+   </publisher>
+   <documentation xlink:href="http://woodshole.er.usgs.gov/project-pages/cccp/index.html"
+    xlink:title="Carolinas Coastal Change Program"/>
+   <documentation xlink:href="http://geoport.whoi.edu:8081/ReadMeCOAWST.html"
+    xlink:title="ReadMe.txt"/>
+  </metadata>
+  <dataset name="COAWST Nowcast/Forecast Runs">
+   <featureCollection name="coawst2" featureType="FMRC" harvest="true" path="coawst2/fmrc">
+    <metadata inherited="true">
+     <documentation type="summary">ROMS Output from COAWST</documentation>
+     <serviceName>allServices</serviceName>
+    </metadata>
+    <!--   <collection spec="/usgs/vault0/coawst/coawst_2/Output/coawst_us_#yyyyMMdd_HH#.nc$"-->
+    <collection spec="/usgs/vault0/coawst/coawst_2/Output/coawst_us_#yyyyMMdd_HH#.nc$"
+     olderThan="10 min"/>
+    <update startup="true" rescan="0 5 7 * * ? *" trigger="allow"/>
+    <fmrcConfig regularize="false" datasetTypes="Best"/>
+    <!-- 
+     Inside the featureCollection, but outside the protoDataset, we define the NcML that happens
+     before the aggregation.  To get aggregated, we must have grids, so we turn the bed params
+     into grids by giving them a psuedo coordinate in Z.  If we don't do this, they will not be 
+     aggregated. 
+    -->
+
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <variable name="Nbed" shape="Nbed" type="double">
+      <values start="-1.0" increment="-0.01"/>
+      <attribute name="long_name" value="pseudo coordinate at seabed points"/>
+      <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+      <attribute name="positive" value="up"/>
+      <attribute name="formula_terms" value="sigma: Nbed eta: zeta depth: h"/>
+     </variable>
+     <attribute name="Conventions" value="CF-1.0"/>
+    </netcdf>
+
+    <protoDataset choice="Penultimate">
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <variable name="temp">
+       <attribute name="_FillValue" type="float" value="0.0"/>
+      </variable>
+      <variable name="salt">
+       <attribute name="_FillValue" type="float" value="0.0"/>
+      </variable>
+      <variable name="Hwave">
+       <attribute name="_FillValue" type="float" value="0.0"/>
+      </variable>
+      <variable name="zeta">
+       <attribute name="_FillValue" type="float" value="0.0"/>
+      </variable>
+     </netcdf>
+    </protoDataset>
+
+   </featureCollection>
+  </dataset>
+ </dataset>
+</catalog>

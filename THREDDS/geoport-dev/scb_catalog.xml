@@ -1,0 +1,59 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+<dataset name="UCLA SCB" ID="UCLA/SCB">
+  <metadata inherited="true">
+
+    <authority>gov.usgs.er.whsc</authority>
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <creator>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="nganju@usgs.gov" />
+    </creator>
+    <publisher>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="nganju@usgs.gov" />
+    </publisher>
+    <geospatialCoverage zpositive="down">
+      <northsouth>
+        <start>30.96</start>
+        <size>4.293</size>
+        <units>degrees_north</units>
+      </northsouth>
+      <eastwest>
+        <start> -122.2701</start>
+        <size>5.83762</size>
+        <units>degrees_east</units>
+      </eastwest>
+      <updown>
+        <start>0</start>
+        <size>4138</size>
+        <units>meters</units>
+      </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://www.cstms.org/index.php/Applications" 
+      xlink:title="PV ROMS model"/>
+  </metadata>
+<dataset name="UCLA SCB Runs" ID="scb/output_SCB" urlPath="scb/output_SCB">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/scb/output_SCB/" suffix=".nc"/>
+          <dimension name="ocean_time" orgName="time"/>
+          <variable name="ocean_time">
+            <attribute name="units" value="seconds since 2009-01-01"/>
+          </variable>
+        </aggregation>
+      </netcdf>
+    </dataset>
+  </dataset>   
+</catalog>

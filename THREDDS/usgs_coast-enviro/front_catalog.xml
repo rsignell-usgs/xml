@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="Front Probability Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+
+   <dataset name="URI:1km SST Front Probability" serviceName="gridServices" ID="fronts/uri/sst1km" urlPath="fronts/uri/sst1km">
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/Volumes/models/gom_interop/front_prob_1985-2000_pct.nc"/>
+
+    <metadata inherited="true">
+      <documentation xlink:href="http://www.po.gso.uri.edu/~dave/"
+        xlink:title="Dave Ullman's Research Homepage "/>
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">GSO/URI/EDU</name>
+        <contact url="http://www.po.gso.uri.edu/~dave/" email="d.ullman@gso.uri.edu"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">GSO/URI/EDU</name>
+        <contact url="http://www.po.gso.uri.edu/~dave/" email="d.ullman@gso.uri.edu"/>
+      </publisher>
+      <geospatialCoverage>
+        <northsouth>
+          <start>34.67</start>
+          <size>11.05</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-77.54</start>
+          <size>14.48</size>
+          <units>degrees_east</units>
+        </eastwest>
+      </geospatialCoverage>
+      <timeCoverage>
+        <start>1985-01-01T00:00:00</start>
+        <end>2000-01-01T00:00:00</end>
+      </timeCoverage>
+    </metadata>
+ 
+  </dataset>
+</catalog>

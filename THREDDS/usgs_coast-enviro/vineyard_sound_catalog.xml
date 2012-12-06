@@ -1,0 +1,152 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+<dataset name="Vineyard Sound ROMS Model Runs" ID="VS/ROMS">
+  <metadata inherited="true">
+    <serviceName>gridServices</serviceName>
+    <authority>gov.usgs.er.whsc</authority>
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <creator>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="rsignell@usgs.gov" />
+    </creator>
+    <publisher>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="rsignell@usgs.gov" />
+    </publisher>
+    <geospatialCoverage zpositive="down">
+      <northsouth>
+        <start>41.2806</start>
+        <size>0.2725</size>
+        <units>degrees_north</units>
+      </northsouth>
+      <eastwest>
+        <start> -70.9807</start>
+        <size>0.4793</size>
+        <units>degrees_east</units>
+      </eastwest>
+      <updown>
+        <start>0</start>
+        <size>50</size>
+        <units>meters</units>
+      </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://stellwagen.er.usgs.gov/rps/talks/2007-12-04_CenterMeeting.ppt" 
+      xlink:title="Vineyard Sound/Middle Ground Sediment Transport Modeling"/>
+  </metadata>
+    <dataset name="vs001: Middle Ground, 25-Sep-2006 3 day run" ID="vs/vs001/his" urlPath="vs/vs001/his">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs001/his/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="vs002: Middle Ground, 25-Sep-2006 Spring/Neap run HIS" ID="vs/vs002/his" urlPath="vs/vs002/his">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs002/his/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="vs002: Middle Ground, 25-Sep-2006 Spring/Neap run AVG" ID="vs/vs002/avg" urlPath="vs/vs002/avg">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs002/avg/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="vs004: Middle Ground, 10-Jul-2007 run HIS" ID="vs/vs004/his" urlPath="vs/vs004/his">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs004/his/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="vs003b: Middle Ground, 17-Jul-2007 run HIS" ID="vs/vs003b/his" urlPath="vs/vs003b/his">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs003b/his/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="vs003b: Middle Ground, 17-Jul-2007 run AVG" ID="vs/vs003b/avg" urlPath="vs/vs003b/avg">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs003b/avg/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="vs005: Middle Ground, 7-Aug-2007 run HIS" ID="vs/vs005/his" urlPath="vs/vs005/his">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs005/his/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="vs006: Middle Ground, 1-Jun-2001 run HIS" ID="vs/vs006/his" urlPath="vs/vs006/his">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs006/his/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="vs008: 800 micron, morfac=100, 5 m initial thickness" ID="vs/vs008/his" urlPath="vs/vs008/his">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs008/his/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="vs009: 4 seds (200,400,600,800), 1 m initial thickness" ID="vs/vs009/his" urlPath="vs/vs009/his">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs009/his/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="vs010: 5 seds (50,100,200,400,800), 1 m initial thickness" ID="vs/vs010/his" urlPath="vs/vs010/his">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs010/his/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="vs011: 5 seds (50,100,200,400,800), 1 m initial thickness only on middle ground" ID="vs/vs011/his" urlPath="vs/vs011/his">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs011/his/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="vs012: 2 seds (350,700), initial sand above 20 m on middle ground, morfac=100" ID="vs/vs012/his" urlPath="vs/vs012/his">
+      <serviceName>ncdods</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/Volumes/models/vs/vs012/his/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+</dataset>
+
+</catalog>

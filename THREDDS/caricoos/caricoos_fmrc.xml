@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="Caricoos FMRC Test"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="all_services" serviceType="Compound" base="">
+    <service name="dap" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  </service>
+  <dataset name="FMRC test">
+    <metadata inherited="true">
+      <serviceName>all_services</serviceName>
+    </metadata>
+
+    <datasetFmrc name="FMRC test" path="wrf/fmrc_test">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min">
+          <scan location="file:C:/RPS/cf/caricoos" regExp=".*wrfout_d01.*\.nc$"  subdirs="false"
+            dateFormatMark="wrfout_d01_#yyyy-MM-dd_hh" olderThan="5 min"/>
+        </aggregation>   
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </datasetFmrc>
+  </dataset>
+</catalog>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.2.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="GOMEX Catalog">
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+  <dataset name="GOMEX Runs">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <creator>
+        <name vocabulary="DIF">Dr. Leo Oey</name>
+        <contact url="http://www.meas.ncsu.edu/faculty/he/he.html" email="ruoying_he@ncsu.edu"/>
+      </creator>
+      <documentation xlink:href="http://www4.ncsu.edu/~rhe/project_files/muri.htm"
+        xlink:title="GOMEX Circulation"/>
+      <documentation type="Summary"> Hydrodynamic simulations for the Gulf of Mexico </documentation>
+      <documentation type="Rights"> This model data was generated as part of an academic research
+        project, and the principal investigators: Leo Oey (leo@princeton.edu) asks to be informed of
+        intent for scientific use and appropriate acknowledgment given in any publications arising
+        therefrom. The data is provided free of charge, without warranty of any kind.
+      </documentation>
+    </metadata>
+    <dataset name="Oey GOM Data">
+      <dataset name="Oey Surface Data" ID="oey/run27/surf0" urlPath="oey/run27/surf0">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <variable name="lon" shape="y x" type="float">
+            <attribute name="units" value="degrees_east"/>
+          </variable>
+          <variable name="lat" shape="y x" type="float">
+            <attribute name="units" value="degrees_north"/>
+          </variable>
+          <variable name="water_u" shape="time y x" type="float">
+            <attribute name="missing_value" type="float" value="0.0"/>
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+          <variable name="water_v" shape="time y x" type="float">
+            <attribute name="missing_value" type="float" value="0.0"/>
+            <attribute name="coordinates" value="lon lat"/>
+          </variable>
+          <attribute name="Conventions" value="CF-1.0"/>
+          <aggregation dimName="time" type="joinExisting">
+            <scan location="/usgs/data0/rsignell/models/oey/nc_Gom_2003"
+              regExp=".*_SURF_GOM27_[0-9]{2}\.nc$"/>
+          </aggregation>
+        </netcdf>
+      </dataset>
+    </dataset>
+  </dataset>
+</catalog>

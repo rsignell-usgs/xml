@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<!--remove name="P06M_NONE" type="variable" />
+	<remove name="Total_column_ozone_concentration" type="variable" />
+	<remove name="time1" type="dimension" />
+	<variable name="Total_precipitation" orgName="P01M_NONE" /-->
+	<aggregation dimName="time" type="joinExisting" timeUnitsChange="true" recheckEvery="5 min">
+		<scan location="archive/ncrfc" suffix=".ncml" />
+		<!--<scan location="archive/ncrfc" suffix=".157" />
+		<scan location="archive/ncrfc" suffix=".nc" />-->
+	</aggregation>
+</netcdf>

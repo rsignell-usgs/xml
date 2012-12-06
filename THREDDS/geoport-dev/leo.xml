@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.2.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="GOMEX Catalog">
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+  <dataset name="Princeton POM: Gulf of Mexico Hindcast Simulations">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <creator>
+        <name vocabulary="DIF">Dr. Leo Oey</name>
+        <contact email="lyo@princeton.edu"/>
+      </creator>
+      <documentation
+        xlink:href="http://www.nj.com/mercer/index.ssf/2010/06/gulf_view_not_a_pretty_picture.html"
+        xlink:title="Article on Leo Oey's Spill Simulations"/>
+      <documentation type="Rights"> This model data was generated as part of an academic research
+        project, and the principal investigators: Leo Oey (lyo@princeton.edu) asks to be informed of
+        intent for scientific use and appropriate acknowledgment given in any publications arising
+        therefrom. The data is provided free of charge, without warranty of any kind.
+      </documentation>
+    </metadata>
+    <dataset name="Surface Velocity (5 km): 1993-1999" ID="oey/run27/surf0"
+      urlPath="oey/run27/surf0">
+      <metadata inherited="true">
+        <documentation type="Summary"> Hydrodynamic simulation for the Gulf of Mexico, curvilinear
+          orthogonal grid, approximately 5 km resolution in central GOM, 1993-1999. </documentation>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <variable name="lon" shape="y x" type="float">
+          <attribute name="units" value="degrees_east"/>
+        </variable>
+        <variable name="lat" shape="y x" type="float">
+          <attribute name="units" value="degrees_north"/>
+        </variable>
+        <variable name="water_u" shape="time y x" type="float">
+          <attribute name="missing_value" type="float" value="0.0"/>
+          <attribute name="coordinates" value="lon lat"/>
+        </variable>
+        <variable name="water_v" shape="time y x" type="float">
+          <attribute name="missing_value" type="float" value="0.0"/>
+          <attribute name="coordinates" value="lon lat"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+        <aggregation dimName="time" type="joinExisting">
+          <scan location="/usgs/data0/rsignell/models/oey/nc_Gom_2003"
+            regExp=".*_SURF_GOM27_[0-9]{2}\.nc$"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Surface Velocity (2 km): 1999-2008" ID="oey/run27/surf" urlPath="oey/run27/surf">
+      <metadata inherited="true">
+        <documentation type="Summary"> 3-hourly surface velocity from hydrodynamic simulation for
+          the Gulf of Mexico, curvilinear orthogonal grid, approximately 2 km resolution in central
+          GOM, 1999-2008. </documentation>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <variable name="lon" shape="y x" type="float">
+          <attribute name="units" value="degrees_east"/>
+        </variable>
+        <variable name="lat" shape="y x" type="float">
+          <attribute name="units" value="degrees_north"/>
+        </variable>
+        <variable name="water_u" shape="time y x" type="float">
+          <attribute name="missing_value" type="float" value="0.0"/>
+          <attribute name="coordinates" value="lon lat"/>
+        </variable>
+        <variable name="water_v" shape="time y x" type="float">
+          <attribute name="missing_value" type="float" value="0.0"/>
+          <attribute name="coordinates" value="lon lat"/>
+        </variable>
+        <attribute name="Conventions" value="CF-1.0"/>
+        <aggregation dimName="time" type="joinExisting">
+          <scan location="/usgs/data0/rsignell/models/oey/nc_Gom_2009"
+            regExp=".*_SURF_GOM27_[0-9]{2}_[0-9]{2}\.nc$"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="Daily 3D Fields (2 km): 1999-2008" ID="oey/run27/3d" urlPath="oey/run27/3d">
+      <metadata inherited="true">
+        <documentation type="Summary"> Daily 3D fields from hydrodynamic simulation for the Gulf of
+          Mexico, curvilinear orthogonal grid, approximately 2 km resolution in central GOM,
+          1999-2008. </documentation>
+      </metadata>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="conventions" value="CF-1.0"/>
+        <variable name="time">
+          <attribute name="units" value="days since 1992-01-01"/>
+        </variable>
+        <variable name="z">
+          <attribute name="long_name" value="sigma level"/>
+          <attribute name="positive" type="String" value="up"/>
+          <attribute name="units" type="String" value="1"/>
+          <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+          <attribute name="formula_terms" value="sigma: z eta: elb depth: h"/>
+        </variable>
+        <variable name="zz" shape="z" type="float">
+          <attribute name="long_name" value="sigma of cell centre"/>
+          <attribute name="positive" type="String" value="up"/>
+          <attribute name="units" type="String" value="1"/>
+          <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+          <attribute name="formula_terms" value="sigma: zz eta: elb depth: h"/>
+        </variable>
+        <variable name="dx" shape="y x" type="float">
+          <attribute name="long_name" value="grid increment in x"/>
+          <attribute name="units" value="meter"/>
+          <attribute name="coordinates" value="alon alat"/>
+        </variable>
+        <variable name="dy" shape="y x" type="float">
+          <attribute name="long_name" value="grid increment in y"/>
+          <attribute name="units" value="meter"/>
+          <attribute name="coordinates" value="alon alat"/>
+        </variable>
+        <variable name="alon" shape="y x" type="float">
+          <attribute name="long_name" value="longitude"/>
+          <attribute name="units" value="degrees_east"/>
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="alat" shape="y x" type="float">
+          <attribute name="long_name" value="latitude"/>
+          <attribute name="units" value="degrees_north"/>
+          <remove type="attribute" name="coordinates"/>
+        </variable>
+        <variable name="h" shape="y x" type="float">
+          <attribute name="long_name" value="water depth"/>
+          <attribute name="missing_value" type="float" value="0.01"/>
+          <attribute name="units" value="m"/>
+          <attribute name="coordinates" value="alon alat"/>
+        </variable>
+        <variable name="fsm" shape="y x" type="float">
+          <attribute name="long_name" value="free surface mask"/>
+          <attribute name="units" value="1"/>
+          <attribute name="coordinates" value="alon alat"/>
+        </variable>
+        <variable name="dum" shape="y x" type="float">
+          <attribute name="long_name" value="u-velocity mask"/>
+          <attribute name="units" value="dimensionless"/>
+          <attribute name="coordinates" value="alon alat"/>
+        </variable>
+        <variable name="dvm" shape="y x" type="float">
+          <attribute name="long_name" value="v-velocity mask"/>
+          <attribute name="units" value="dimensionless"/>
+          <attribute name="coordinates" value="alon alat"/>
+        </variable>
+        <variable name="uab" shape="time y x" type="float">
+          <attribute name="long_name" value="depth-averaged u"/>
+          <attribute name="units" value="m/s"/>
+          <attribute name="coordinates" value="alat alon"/>
+        </variable>
+        <variable name="vab" shape="time y x" type="float">
+          <attribute name="long_name" value="depth-averaged v"/>
+          <attribute name="units" value="m/s"/>
+          <attribute name="missing_value" type="float" value="0.0"/>
+          <attribute name="coordinates" value="alon alat"/>
+        </variable>
+        <variable name="ealt" shape="time y x" type="float">
+          <attribute name="long_name" value="observed elevation"/>
+          <attribute name="units" value="m"/>
+          <attribute name="coordinates" value="alon alat"/>
+        </variable>
+        <variable name="elb" shape="time y x" type="float">
+          <attribute name="long_name" value="surface elevation"/>
+          <attribute name="units" value="m"/>
+          <attribute name="coordinates" value="alon alat"/>
+        </variable>
+        <variable name="u" shape="time z y x" type="float">
+          <attribute name="long_name" value="x-velocity"/>
+          <attribute name="units" value="m/s"/>
+          <attribute name="missing_value" type="float" value="0.0"/>
+          <attribute name="coordinates" value="alon alat zz"/>
+        </variable>
+        <variable name="v" shape="time z y x" type="float">
+          <attribute name="long_name" value="y-velocity"/>
+          <attribute name="units" value="m/s"/>
+          <attribute name="missing_value" type="float" value="0.0"/>
+          <attribute name="coordinates" value="alon alat zz"/>
+        </variable>
+        <variable name="w" shape="time z y x" type="float">
+          <attribute name="long_name" value="z-velocity"/>
+          <attribute name="units" value="meter/sec"/>
+          <attribute name="coordinates" value="alon alat z"/>
+        </variable>
+        <variable name="temp" orgName="t" shape="time z y x" type="float">
+          <attribute name="long_name" value="potential temperature"/>
+          <attribute name="missing_value" type="float" value="0.0"/>
+          <attribute name="units" value="Celcius"/>
+          <attribute name="coordinates" value="alon alat zz time"/>
+        </variable>
+        <variable name="salt" orgName="s" shape="time z y x" type="float">
+          <attribute name="long_name" value="salinity x rho / rhoref"/>
+          <attribute name="units" value="0.001"/>
+          <attribute name="missing_value" type="float" value="0.0"/>
+          <attribute name="coordinates" value="alon alat zz time"/>
+        </variable>
+        <variable name="rho" shape="time z y x" type="float">
+          <attribute name="long_name" value="(density-1000)/rhoref"/>
+          <attribute name="units" value="1"/>
+          <attribute name="coordinates" value="alon alat zz"/>
+        </variable>
+        <aggregation dimName="time" type="joinExisting">
+          <scan location="/usgs/data0/rsignell/models/oey/Oey_GOM_2009/NETCDF_OUTPUT"
+            regExp=".*OUTPUT_[0-9]{2}_[0-9]{2}\.nc$"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+  </dataset>
+</catalog>

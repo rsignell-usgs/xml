@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="NYHOPS Bight Apex Forecast Catalog"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+
+  <dataset name="NYHOPS New York Bight Apex Subdomain">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+
+      <creator>
+        <name vocabulary="DIF">Dr. Alan F. Blumberg, Nickitas Georgas</name>
+        <contact url="http://www.stevens.edu/ses/about_soe/faculty/faculty_profile.php?faculty_id=84"
+                      email="alan.blumberg@stevens.edu,       nickitas.georgas@stevens.edu"/>
+      </creator>
+
+      <documentation xlink:href="http://www.stevens.edu/maritimeforecast/"
+        xlink:title="NYHOPS System Website"/>
+
+      <documentation type="Summary"> 3D Marine Nowcast/Forecast System for the New York Bight Apex NYHOPS subdomain.
+        Currents, waves, surface meteorology, and water conditions.</documentation>
+
+      <documentation type="Rights"> The NYHOPS model, presently at its 3rd generation,  has been the culmination of a multiyear Stevens Institute
+        of Technology project funded by multiple federal and local agencies. Please contact the people referenced below if you
+        are planning to use this data for any purpose. The data is provided without warranty of any kind. </documentation>
+
+    </metadata>
+
+    <datasetFmrc name="NYHOPS Forecast Collection for the New York Bight Apex" path="fmrc/NYBightApex">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+         <aggregation dimName="runtime" type="forecastModelRunCollection" timeUnitsChange="true" recheckEvery="10min">
+
+           <scan location="/usgs/data0/rsignell/models/nyhops/Apex/" suffix=".nc"  dateFormatMark="Run_#yyyyMMdd_HH"
+             subdirs="false" olderThan="5 min"/>
+        </aggregation>    
+      </netcdf>
+    </datasetFmrc>
+    
+
+  </dataset>
+</catalog>

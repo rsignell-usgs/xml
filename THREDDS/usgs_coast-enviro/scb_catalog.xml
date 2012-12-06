@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ROMS  Simulations"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="rectilinear_services" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+
+  <dataset name="SCB Forecasts">
+    <metadata inherited="true">
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">GOV/NASA/JPL/Dr. Yi Chao</name>
+        <contact url="http://www.jpl.nasa.gov" email="Yi.Chao@jpl.nasa.gov"/>
+      </creator>
+      <geospatialCoverage zpositive="up">
+        <northsouth>
+          <start>32.45</start>
+          <size>2.3116</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-121.2</start>
+          <size>4.2152</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>-3924.3</start>
+          <size>3924.3</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://www.sccoos.org/data/roms"
+        xlink:title="SCCOOS ROMS Model Output Home Page"/>
+    </metadata>
+    <dataset name="JPL:SCB Forecast (Native non-CF Conventions)" ID="scb/fcst/native"
+      urlPath="scb/fcst/native">
+      <serviceName>rectilinear_services</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting">
+          <netcdf
+            location="http://ourocean.jpl.nasa.gov:8080/thredds/dodsC/las/SCBfcst/scb_latest_fcst_roms.nc"
+          />
+        </aggregation>
+      </netcdf>
+    </dataset>
+    <dataset name="JPL:SCB Forecast (CF w/2D coord vars)" ID="scb/fcst/CF_2DCoordVars"
+      urlPath="scb/fcst/CF_2DCoordVars">
+      <serviceName>rectilinear_services</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting">
+          <netcdf
+            location="http://ourocean.jpl.nasa.gov:8080/thredds/dodsC/las/SCBfcst/scb_latest_fcst_roms.nc"
+          />
+        </aggregation>
+        <variable name="theta_s" shape="" type="double">
+          <values>5.0</values>
+        </variable>
+        <variable name="theta_b" shape="" type="double">
+          <values>0.0</values>
+        </variable>
+        <variable name="Tcline" shape="" type="double">
+          <values>10.0</values>
+        </variable>
+        <variable name="s_rho" shape="s_rho" type="double">
+          <values start="-0.9875" increment="0.025"/>
+          <attribute name="positive" value="up"/>
+          <attribute name="standard_name" value="ocean_s_coordinate"/>
+          <attribute name="formula_terms"
+            value="s: s_rho eta: zeta depth: h a: theta_s b: theta_b depth_c: Tcline"/>
+        </variable>
+        <variable name="s_w" shape="s_w" type="double">
+          <values start="-1" increment="0.025"/>
+          <attribute name="standard_name" value="ocean_s_coordinate"/>
+          <attribute name="positive" value="up"/>
+          <attribute name="formula_terms"
+            value="s: s_w eta: zeta depth: h a: theta_s b: theta_b depth_c: Tcline"/>
+        </variable>
+        <variable name="temp">
+          <attribute name="coordinates" value="time s_rho lat_rho lon_rho"/>
+        </variable>
+        <variable name="u">
+          <attribute name="coordinates" value="time s_rho lat_rho lon_u"/>
+        </variable>
+        <variable name="ubar">
+          <attribute name="coordinates" value="time  lat_rho lon_u"/>
+        </variable>
+        <variable name="v">
+          <attribute name="coordinates" value="time s_rho lat_v lon_rho"/>
+        </variable>
+        <variable name="omega">
+          <attribute name="coordinates" value="time s_w lat_rho lon_rho"/>
+        </variable>
+        <variable name="AKv">
+          <attribute name="coordinates" value="time s_w lat_rho lon_rho"/>
+        </variable>
+        <variable name="vbar">
+          <attribute name="coordinates" value="time  lat_v lon_rho"/>
+        </variable>
+        <variable name="zeta">
+          <attribute name="coordinates" value="time  lat_rho lon_rho"/>
+        </variable>
+        <variable name="time" orgName="scrum_time">
+          <attribute name="units" value="seconds since 2002-01-01 00:00 UTC"/>
+        </variable>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </dataset>
+
+    <dataset name="JPL:SCB Forecast (CF w/1D coord vars)" ID="scb/fcst/CF_1DCoordVars"
+      urlPath="scb/fcst/CF_1DCoordVars">
+      <serviceName>rectilinear_services</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting">
+          <netcdf
+            location="http://ourocean.jpl.nasa.gov:8080/thredds/dodsC/las/SCBfcst/scb_latest_fcst_roms.nc"
+          />
+        </aggregation>
+        <variable name="theta_s" shape="" type="double">
+          <values>5.0</values>
+        </variable>
+        <variable name="theta_b" shape="" type="double">
+          <values>0.0</values>
+        </variable>
+        <variable name="Tcline" shape="" type="double">
+          <values>10.0</values>
+        </variable>
+        <variable name="s_rho" shape="s_rho" type="double">
+          <values start="-0.9875" increment="0.025"/>
+          <attribute name="positive" value="up"/>
+          <attribute name="standard_name" value="ocean_s_coordinate"/>
+          <attribute name="formula_terms"
+            value="s: s_rho eta: zeta depth: h a: theta_s b: theta_b depth_c: Tcline"/>
+        </variable>
+        <variable name="s_w" shape="s_w" type="double">
+          <values start="-1" increment="0.025"/>
+          <attribute name="standard_name" value="ocean_s_coordinate"/>
+          <attribute name="positive" value="up"/>
+          <attribute name="formula_terms"
+            value="s: s_w eta: zeta depth: h a: theta_s b: theta_b depth_c: Tcline"/>
+        </variable>
+        <variable name="time" orgName="scrum_time">
+          <attribute name="units" value="seconds since 2002-01-01 00:00 UTC"/>
+        </variable>
+        <variable name="temp">
+          <attribute name="coordinates" value="time s_rho eta_rho xi_rho"/>
+        </variable>
+        <variable name="u">
+          <attribute name="coordinates" value="time s_rho eta_rho xi_u"/>
+        </variable>
+        <variable name="ubar">
+          <attribute name="coordinates" value="time  eta_rho xi_u"/>
+        </variable>
+        <variable name="v">
+          <attribute name="coordinates" value="time s_rho eta_v xi_rho"/>
+        </variable>
+        <variable name="omega">
+          <attribute name="coordinates" value="time s_w eta_rho xi_rho"/>
+        </variable>
+        <variable name="AKv">
+          <attribute name="coordinates" value="time s_w eta_rho xi_rho"/>
+        </variable>
+        <variable name="vbar">
+          <attribute name="coordinates" value="time  eta_v xi_rho"/>
+        </variable>
+        <variable name="zeta">
+          <attribute name="coordinates" value="time  eta_rho xi_rho"/>
+        </variable>
+
+        <variable name="eta_rho" shape="eta_rho" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="32.45" increment="0.0089946"/>
+        </variable>
+        <variable name="eta_v" shape="eta_v" type="double">
+          <attribute name="units" value="degrees_north"/>
+          <values start="32.5044973" increment="0.0089946"/>
+        </variable>
+        <variable name="xi_rho" shape="xi_rho" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-121.2" increment="0.0106589"/>
+        </variable>
+        <variable name="xi_u" shape="xi_u" type="double">
+          <attribute name="units" value="degrees_east"/>
+          <values start="-121.1194671" increment="0.0106589"/>
+        </variable>
+        <attribute name="Conventions" type="String" value="CF-1.0"/>
+      </netcdf>
+    </dataset>
+
+  </dataset>
+</catalog>

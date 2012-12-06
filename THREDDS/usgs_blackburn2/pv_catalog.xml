@@ -1,0 +1,80 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+<dataset name="PV 2002 Runs" ID="VS/ROMS">
+  <metadata inherited="true">
+
+    <authority>gov.usgs.er.whsc</authority>
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <creator>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="nganju@usgs.gov" />
+    </creator>
+    <publisher>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="nganju@usgs.gov" />
+    </publisher>
+    <geospatialCoverage zpositive="down">
+      <northsouth>
+        <start>33.607</start>
+        <size>0.16888</size>
+        <units>degrees_north</units>
+      </northsouth>
+      <eastwest>
+        <start> -118.48026</start>
+        <size>0.2314</size>
+        <units>degrees_east</units>
+      </eastwest>
+      <updown>
+        <start>0</start>
+        <size>838</size>
+        <units>meters</units>
+      </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://www.cstms.org/index.php/Applications" 
+      xlink:title="PV ROMS model"/>
+  </metadata>
+
+ <dataset name="PV 2002 Runs with UCLA forcing, with waves" ID="pv/output_waves" urlPath="pv/output_waves">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/pv/output_waves/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+ <dataset name="PV 2002 Runs with UCLA forcing and swan waves" ID="pv/output_newwaves" urlPath="pv/output_newwaves">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/pv/output_newwaves/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+ <dataset name="PV 2002 Runs with UCLA forcing and swan waves and one sed class" ID="pv/output_sed1" urlPath="pv/output_sed1">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/pv/output_sed1/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+ <dataset name="PV 2002 Runs with UCLA forcing and swan waves and eight sed classes" ID="pv/output_8sed" urlPath="pv/output_8sed">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/pv/output_8sed/" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+  </dataset>   
+</catalog>

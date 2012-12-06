@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  name="THREDDS catalog for all CNR-ISMAR gridded data files" version="1.0.1">
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  <datasetScan name="CNR-ISMAR gridded data files" ID="ismar/carniel/model"
+    path="ismar/carniel/model" location="/home/carniel/model">
+    <metadata inherited="true">
+      <creator>
+        <name vocabulary="DIF">CNR</name>
+        <contact
+          url="http://www.ismar.cnr.it"
+          email="webmaster@ve.ismar.cnr.it"/>
+      </creator>
+      <documentation
+        xlink:href="http://www.ismar.cnr.it/personale/bergamasco-andrea/tt_cv_breve_view?idRicercatore=bergamasco-andrea"
+        xlink:title="Creus Project Web Page"/>
+      <documentation type="Summary"> Gridded data sets at CNR </documentation>
+    
+      <serviceName>allServices</serviceName>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc"/>
+      <include wildcard="*.cdf"/>
+      <include wildcard="*.grib"/>
+      <include wildcard="*.grib2"/>
+      <include wildcard="*_00_00"/>
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true"/>
+    </sort>
+    <addDatasetSize/>
+  </datasetScan>
+</catalog>

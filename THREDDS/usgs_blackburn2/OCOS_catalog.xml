@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="allServices" base="" serviceType="compound">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="wms" serviceType="WMS" base="/usr/local/tomcat/content/ncWMS"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+  <dataset name="OCOS Runs">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">Dr. Alexander Kurapov</name>
+        <contact url="http://www.coast.oregonstate.edu/faculty/kurapov.html"
+          email="kurapov@coas.oregonstate.edu"/>
+      </creator>
+      <geospatialCoverage zpositive="up">
+        <northsouth>
+          <start>40.5833</start>
+          <size>6.9167</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-129.0</start>
+          <size>5.2734</size>
+          <units>degrees_east</units>
+        </eastwest>
+      </geospatialCoverage>
+
+      <documentation xlink:href="http://agate.coas.oregonstate.edu/ocs_index.html"
+        xlink:title="Oregon Coastal Ocean Simulation"/>
+      <documentation type="Summary"> Experimental nowcast and forecast fields showing Oregon coastal
+        ocean circulation </documentation>
+
+      <documentation type="Rights"> This model data was generated as part of an academic research
+        project, and the principal investigators: Dr. Alexander Kurapov
+        (kurapov@coas.oregonstate.edu) asks to be informed of intent for scientific use and
+        appropriate acknowledgment given in any publications arising therefrom. The data is provided
+        free of charge, without warranty of any kind. </documentation>
+
+    </metadata>
+    
+    <dataset name="Forecast Archive with Climatology OBC" ID="models/OCOS2" urlPath="model/OCOS2">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+
+  <aggregation dimName="ocean_time" type="joinExisting" recheckEvery="10min" timeUnitsChange="true">
+ <!--   <scan location="/data/archive_data/ocos_thredds/climatology_driven" regExp=".*ocean_his_[0-9]{4}_a\.nc$" olderThan="5min"/>-->
+       <!--<scan location="/usgs/data0/rsignell/models/osu" regExp=".*ocean_his_[0-9]{4}_a\.nc$" olderThan="5min"/>-->
+    <scan location="/usgs/data0/rsignell/models/osu" regExp=".*ocean_his_[0-9]{4}.*\.nc$" olderThan="5min"/>
+    <dimension name="ocean_time" orgName="time"/>
+    <remove type="variable" name="lon_rho"/>
+    <remove type="variable" name="lat_rho"/>
+    <remove type="variable" name="dstart"/>
+  <variable name="temp">
+    <attribute name="_FillValue" type="float" value="0.0"/>
+  </variable>
+   <variable name="shflux">
+    <remove type="attribute" name="positive"/> 
+   </variable> 
+    <variable name="latent">
+      <remove type="attribute" name="positive"/> 
+    </variable> 
+    <variable name="sensible">
+      <remove type="attribute" name="positive"/> 
+    </variable> 
+    <variable name="lwrad">
+      <remove type="attribute" name="positive"/> 
+    </variable> 
+    <variable name="swrad">
+      <remove type="attribute" name="positive"/> 
+    </variable> 
+     <variable name="salt">
+    <attribute name="_FillValue" type="float" value="0.0"/>
+  </variable>
+  <variable name="s_rho" orgName="sc_r">
+     <attribute name="positive" value="up"/>
+    <attribute name="standard_name" value="ocean_s_coordinate_g1"/>
+    <attribute name="formula_terms"   value="s: s_rho C: Cs_r eta: zeta depth: h depth_c: hc"/>
+  </variable>
+  <variable name="s_w" orgName="sc_w">
+    <attribute name="positive" value="up"/>
+    <attribute name="standard_name" value="ocean_s_coordinate_g1"/>
+    <attribute name="formula_terms"   value="s: s_w C: Cs_w eta: zeta depth: h depth_c: hc"/>
+  </variable>
+  <variable name="ocean_time" >
+    <attribute name="units" value="seconds since 2005-01-01 00:00:00" />
+  </variable>
+  <variable name="xi_rho" shape="xi_rho" type="double">
+    <attribute name="units" value="degrees_east"/>
+    <values start="-129.00000000000000" increment="0.03906250000000"/>
+  </variable>
+  <variable name="eta_rho" shape="eta_rho" type="double">
+    <attribute name="units" value="degrees_north"/>
+    <values start="40.58332845433661" increment="0.02777776845316"/>
+  </variable>
+  <variable name="xi_u" shape="xi_u" type="double">
+    <attribute name="units" value="degrees_east"/>
+    <values start="-128.98046875000000" increment="0.03906250000000"/>
+  </variable>
+  <variable name="eta_u" shape="eta_u" type="double">
+    <attribute name="units" value="degrees_north"/>
+    <values start="40.58332845433661" increment="0.02777776845316"/>
+  </variable>
+  <variable name="xi_v" shape="xi_v" type="double">
+    <attribute name="units" value="degrees_east"/>
+    <values start="-129.00000000000000" increment="0.03906250000000"/>
+  </variable>
+  <variable name="eta_v" shape="eta_v" type="double">
+    <attribute name="units" value="degrees_north"/>
+    <values start="40.59721733856319" increment="0.02777776845316"/>
+  </variable>
+  <variable name="xi_psi" shape="xi_psi" type="double">
+    <attribute name="units" value="degrees_east"/>
+    <values start="-128.98046875000000" increment="0.03906250000000"/>
+  </variable>
+  <variable name="eta_psi" shape="eta_psi" type="double">
+    <attribute name="units" value="degrees_north"/>
+    <values start="40.59721733856319" increment="0.02777776845316"/>
+  </variable>
+  </aggregation>
+
+      </netcdf> </dataset>
+  </dataset>
+</catalog>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  name="THREDDS Catalog for NetCDF Files" version="1.0.1">
+   <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+
+ 
+ <datasetScan name="FVCOM" ID="models/mean" path="models/fvcom/mean"
+    location="/http/www/tomcat/apache-tomcat-7.0.22/data">
+   <metadata inherited="true">
+     <serviceName>allServices</serviceName>
+     <publisher>
+       <name vocabulary="DIF">EDU/UMASSD/SMAST/Dr. Changsheng Chen</name>
+       <contact url="http://fvcom.smast.umassd.edu" email="c1chen@umassd.edu"/>
+     </publisher>
+   </metadata>
+    <filter>
+      <include wildcard="*.nc"/>
+      <include wildcard="*.cdf"/>
+      <include wildcard="*.hdf"/>
+      <include wildcard="*.grib"/>
+      <include wildcard="*.grib2"/>
+      <include wildcard="*.grb"/>
+      <include wildcard="*.grb2"/>
+      <include wildcard="*.ncml"/>
+    </filter>
+   <sort>
+     <lexigraphicByName increasing="true"/>
+   </sort>
+   <addDatasetSize/>
+  </datasetScan>
+
+</catalog>
+

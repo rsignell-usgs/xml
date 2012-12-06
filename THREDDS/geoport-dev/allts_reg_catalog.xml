@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog   name="CMGP Oceanographic Time Series Data"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <service name="manyservices" serviceType="Compound" base="">
+        <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+        <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+        <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+        <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    </service>
+<dataset name="USGS Coastal Marine Geology Program Oceanographic time-series observations- by region">
+  <catalogRef xlink:href="./GOM_reg.xml"
+  xlink:title="Experiments with observations from the Gulf of Maine" name="GOM_reg"/>
+  <catalogRef xlink:href="./MAcoast_reg.xml"
+    xlink:title="Experiments with observations in coastal Massachusetts" name="MAcoast_reg"/>
+  <catalogRef xlink:href="./MidAtlantic_reg.xml"
+    xlink:title="Experiments with observations from the Mid-Atlantic Bight" name="MidAtlantic_reg"/>
+  <catalogRef xlink:href="./SAtlantic_reg.xml"
+    xlink:title="Experiments with observations in South Atlantic Bight" name="SAtlantic_reg"/>
+  <catalogRef xlink:href="./GMex_reg.xml"
+    xlink:title="Observations in the Gulf of Mexico" name="GMex_reg"/>
+  <catalogRef xlink:href="./SoCal_reg.xml"
+    xlink:title="Observations in Southern California Coastal Waters" name="SoCal_reg"/>
+  <catalogRef xlink:href="./Hawaii_reg.xml"
+    xlink:title="Observations near Hawaii" name="GMex_reg"/>
+  <catalogRef xlink:href="./Europe_reg.xml"
+    xlink:title="Observations in the Adriatic" name="Europe_reg"/>
+  
+    <metadata inherited="true">
+    <serviceName>manyservices</serviceName>
+    <authority>edu.ucar.unidata</authority>
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <documentation type="rights">Freely available</documentation>
+    <documentation xlink:href="http://stellwagen.er.usgs.gov/index.html" xlink:title="Oceanographic time series data documentation"></documentation>
+    <creator>
+      <name vocabulary="DIF">DOI/USGS/CMGP/WHSC</name>
+      <contact url="http://woodshole.er.usgs.gov" />
+    </creator>
+    <publisher>
+      <name vocabulary="DIF">UCAR/UNIDATA</name>
+      <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu" />
+    </publisher>
+    <timeCoverage>
+      <start>1975</start>
+      <end>present</end>
+      <duration>35 years</duration>
+    </timeCoverage>
+    </metadata>
+  </dataset>
+  </catalog>
+  
+       

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<catalog name="GCOOS Tests" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
+    <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
+  </service>
+  
+  <dataset name="GCOOS SeaDAS SST" ID="gcoos/seadas_sst" serviceName="allServices" urlPath="gcoos/seadas_sst">
+    
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+      <aggregation dimName="time" type="joinNew" recheckEvery="5 min">
+        <variableAgg name="seadas_sst"/>
+        <variableAgg name="cloud_mask"/>
+        <variableAgg name="l2_flags"/>
+        <scan location="/d3/thredds/seadas_sst" regExp=".*MODIS.*\.gcoos.seadas_sst.hdf$" dateFormatMark="MODIS.#yyyyDDD'.'hhmmss" subdirs="false"/>
+      </aggregation>
+
+      <dimension name="lon" orgName="fakeDim1"/>
+      <dimension name="lat" orgName="fakeDim0"/>
+
+      <variable name="lon" shape="lon" type="double">
+        <attribute name="units" value="degrees_east"/>
+        <values start="-98.0" increment="0.00909"/>
+      </variable>
+
+      <variable name="lat" shape="lat" type="double">
+        <attribute name="units" value="degrees_north"/>
+        <values start="31.0" increment="-0.00909"/>
+      </variable>
+
+      <variable name="seadas_sst" shape="time lat lon" type="double">
+        <attribute name="standard_name" value="sea_surface_temperature"/>
+        <attribute name="units" value="Celsius"/>
+        <attribute name="scale_factor" type="float" value="0.005"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="l2_flags" shape="time lat lon" type="int">
+        <attribute name="units" value="1"/>
+      </variable>
+      <variable name="cloud_mask" shape="time lat lon" type="byte">
+        <attribute name="units" value="1"/>
+      </variable> 
+    </netcdf>
+
+  </dataset>
+
+  <dataset name="GCOOS SeaDAS" ID="gcoos/seadas" serviceName="allServices" urlPath="gcoos/seadas">
+
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+      <aggregation dimName="time" type="joinNew" recheckEvery="5 min">
+        <variableAgg name="senz"/>
+        <variableAgg name="nLw_443"/>
+        <variableAgg name="aph_443_qaa"/>
+        <variableAgg name="flh"/>
+        <variableAgg name="seadas_K_490"/>
+        <variableAgg name="chl_carder"/>
+        <variableAgg name="nLw_531"/>
+        <variableAgg name="nLw_412"/>
+        <variableAgg name="taua_551"/>
+        <variableAgg name="nLw_488"/>
+        <variableAgg name="taua_869"/>
+        <variableAgg name="Kd_488_lee"/>
+        <variableAgg name="l2_flags"/>
+        <variableAgg name="chlor_a"/>
+        <variableAgg name="nLw_869"/>
+        <variableAgg name="adg_443_carder"/>
+        <variableAgg name="nLw_748"/>
+        <variableAgg name="adg_443_qaa"/>
+        <variableAgg name="nLw_551"/>
+        <variableAgg name="cfe"/>
+        <variableAgg name="sena"/>
+        <variableAgg name="nLw_678"/>
+        <variableAgg name="angstrom_551"/>
+        <variableAgg name="nLw_667"/>
+        <variableAgg name="tsm_clark"/>
+        <variableAgg name="bbp_551_qaa"/>
+        <variableAgg name="eps_78"/>
+        <scan location="/d3/thredds/seadas" regExp=".*MODIS.*\.gcoos.seadas.hdf$" dateFormatMark="MODIS.#yyyyDDD'.'hhmmss" subdirs="false"/>
+      </aggregation>
+
+      <dimension name="lon" orgName="fakeDim1"/>
+      <dimension name="lat" orgName="fakeDim0"/>
+
+      <variable name="lon" shape="lon" type="double">
+        <attribute name="units" value="degrees_east"/>
+        <values start="-98.0" increment="0.00909"/>
+      </variable>
+
+      <variable name="lat" shape="lat" type="double">
+        <attribute name="units" value="degrees_north"/>
+        <values start="31.0" increment="-0.00909"/>
+      </variable>
+
+      <variable name="senz" shape="time lat lon" type="short">
+        <attribute name="standard_name" value="zenith_angle"/>
+        <attribute name="units" value="degree"/>
+        <attribute name="scale_factor" type="float" value="0.00277778"/>
+        <attribute name="add_offset" type="float" value="90.0"/>
+      </variable>
+      <variable name="nLw_443" shape="time lat lon" type="short"> 
+        <attribute name="units" value="mW cm-2 um-1 sr-1"/>
+        <attribute name="scale_factor" type="float" value="0.001"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="aph_443_qaa" shape="time lat lon" type="short">
+        <attribute name="units" value="m-1"/>
+        <attribute name="scale_factor" type="float" value="0.0001"/>
+        <attribute name="add_offset" type="float" value="2.5"/>
+      </variable>
+      <variable name="flh" shape="time lat lon" type="short">
+        <attribute name="units" value="mW cm-2 um-1 sr-1"/>
+        <attribute name="scale_factor" type="float" value="1.0"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="seadas_K_490" shape="time lat lon" type="short">
+        <attribute name="units" value="m-1"/>
+        <attribute name="scale_factor" type="float" value="0.0002"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="chl_carder" shape="time lat lon" type="short">
+        <attribute name="units" value="mg m-3"/>
+        <attribute name="scale_factor" type="float" value="1.0"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="nLw_531" shape="time lat lon" type="short">
+        <attribute name="units" value="mW cm-2 um-1 sr-1"/>
+        <attribute name="scale_factor" type="float" value="0.001"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="nLw_412" shape="time lat lon" type="short">
+        <attribute name="units" value="mW cm-2 um-1 sr-1"/>
+        <attribute name="scale_factor" type="float" value="0.001"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="taua_551" shape="time lat lon" type="short">
+        <attribute name="scale_factor" type="float" value="0.0001"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="nLw_488" shape="time lat lon" type="short">
+        <attribute name="units" value="mW cm-2 um-1 sr-1"/>
+        <attribute name="scale_factor" type="float" value="0.001"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="taua_869" shape="time lat lon" type="short">
+        <attribute name="scale_factor" type="float" value="0.0001"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="Kd_488_lee" shape="time lat lon" type="short">
+        <attribute name="units" value="m-1"/>
+        <attribute name="scale_factor" type="float" value="0.0002"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="l2_flags" shape="time lat lon" type="int">
+        <attribute name="units" value="1"/>
+      </variable>
+      <variable name="chlor_a" shape="time lat lon" type="short">
+        <attribute name="units" value="mg m-3"/>
+        <attribute name="scale_factor" type="float" value="1.0"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="nLw_869" shape="time lat lon" type="short">
+        <attribute name="units" value="mW cm-2 um-1 sr-1"/>
+        <attribute name="scale_factor" type="float" value="0.0001"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="adg_443_carder" shape="time lat lon" type="short">
+        <attribute name="units" value="m-1"/>
+        <attribute name="scale_factor" type="float" value="0.0001"/>
+        <attribute name="add_offset" type="float" value="2.5"/>
+      </variable>
+      <variable name="nLw_748" shape="time lat lon" type="short">
+        <attribute name="units" value="mW cm-2 um-1 sr-1"/>
+        <attribute name="scale_factor" type="float" value="0.0001"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="adg_443_qaa" shape="time lat lon" type="short">
+        <attribute name="units" value="m-1"/>
+        <attribute name="scale_factor" type="float" value="0.0001"/>
+        <attribute name="add_offset" type="float" value="2.5"/>
+      </variable>
+      <variable name="nLw_551" shape="time lat lon" type="short">
+        <attribute name="units" value="mW cm-2 um-1 sr-1"/>
+        <attribute name="scale_factor" type="float" value="0.0001"/>
+        <attribute name="add_offset" type="float" value="2.5"/>
+      </variable>
+      <variable name="cfe" shape="time lat lon" type="short">
+        <attribute name="scale_factor" type="float" value="1.0"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="sena" shape="time lat lon" type="short">
+        <attribute name="units" value="degree"/>
+        <attribute name="scale_factor" type="float" value="0.0001"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="nLw_678" shape="time lat lon" type="short">
+        <attribute name="units" value="mW cm-2 um-1 sr-1"/>
+        <attribute name="scale_factor" type="float" value="0.0001"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="angstrom_551" shape="time lat lon" type="short">
+        <attribute name="scale_factor" type="float" value="0.0002"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="nLw_667" shape="time lat lon" type="short">
+        <attribute name="units" value="mW cm-2 um-1 sr-1"/>
+        <attribute name="scale_factor" type="float" value="0.0001"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="tsm_clark" shape="time lat lon" type="short">
+        <attribute name="units" value="mg-1"/>
+        <attribute name="scale_factor" type="float" value="1.0"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+      <variable name="bbp_551_qaa" shape="time lat lon" type="short">
+        <attribute name="units" value="m-1"/>
+        <attribute name="scale_factor" type="float" value="0.000005"/>
+        <attribute name="add_offset" type="float" value="0.16"/>
+      </variable>
+      <variable name="eps_78" shape="time lat lon" type="short">
+        <attribute name="scale_factor" type="float" value="0.01"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+
+ </netcdf>
+
+  </dataset>
+
+  </catalog>

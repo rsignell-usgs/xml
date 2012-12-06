@@ -1,0 +1,478 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="NOAA IOOS Testbed THREDDS Server">
+
+ <service name="all" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+
+ <service name="agg" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+
+ <service name="points" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="sos" serviceType="SOS" base="/thredds/sos/"/>
+ </service>
+
+ <dataset name="Estuarine Hypoxia">
+
+  <dataset name="CH3D - Alex 1 month test" ID="estuarine_hypoxia/ch3d/test1"
+   urlPath="estuarine_hypoxia/ch3d/test1">
+   <serviceName>agg</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/data/ftp/upload/acrosby/CH3D_2005-1.nc">
+    <remove type="dimension" name="time"/>
+    <dimension name="time" orgName="time2"/>
+    <variable name="time" shape="time"/> 
+   </netcdf>
+  </dataset>
+
+
+  <dataset name="CH3D - Synoptic - Agg" ID="estuarine_hypoxia/ch3d/agg"
+   urlPath="estuarine_hypoxia/ch3d/agg.nc">
+   <serviceName>agg</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation type="union">
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+      location="/data/ftp/upload/Estuarine_Hypoxia/usace/ch3d/synoptic/ch3d_agg_rounded_time.nc">
+      <variable name="time">
+       <attribute name="units" value="hours since 1985-01-01"/>
+      </variable>
+     </netcdf>
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+      <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+      <attribute name="wms-layer-prefix" value="ch3d"/>
+      <attribute name="title" value="CH3D (USACE)"/>
+      <attribute name="id" value="eh.usace.ch3d.synoptic"/>
+      <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+      <attribute name="summary"
+       value="Chesapeake Bay application of CH3D (Curvilinear Hydrodynamics in 3-Dimensions)"/>
+      <attribute name="creator_name" value="Lewis Linker"/>
+      <attribute name="creator_email" value=""/>
+      <attribute name="creator_url" value="http://www.chesapeakebay.net"/>
+      <attribute name="cdm_data_type" value="Grid"/>
+
+      <remove type="variable" name="time"/>
+      <variable name="level">
+       <attribute name="positive" value="up"/>
+       <values> -28.1940 -26.6700 -25.1460 -23.6220 -22.0980 -20.5740 -19.0500 -17.5260 -16.0020
+        -14.4780 -12.9540 -11.4300 -9.9060 -8.3820 -6.8580 -5.3340 -3.8100 -2.2860 -0.7620 </values>
+      </variable>
+
+      <variable name="u">
+       <attribute name="wms-layer" value="ch3d/sea_water_velocity"/>
+       <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+       <attribute name="coordinates" value="level lat lon"/>
+      </variable>
+      <variable name="v">
+       <attribute name="wms-layer" value="ch3d/sea_water_velocity"/>
+       <attribute name="standard_name" value="northward_sea_water_velocity"/>
+       <attribute name="coordinates" value="level lat lon"/>
+      </variable>
+      <variable name="salinity">
+       <attribute name="wms-layer" value="ch3d/salinity"/>
+       <attribute name="standard_name" value="sea_water_salinity"/>
+       <attribute name="coordinates" value="level lat lon"/>
+      </variable>
+      <variable name="temperature">
+       <attribute name="wms-layer" value="ch3d/temperature"/>
+       <attribute name="standard_name" value="sea_water_temperature"/>
+       <attribute name="coordinates" value="level lat lon"/>
+      </variable>
+      <variable name="wave_period">
+       <attribute name="wms-layer" value="ch3d/wave_period"/>
+       <attribute name="standard_name" value="sea_surface_wind_wave_period"/>
+      </variable>
+      <variable name="wave_height">
+       <attribute name="wms-layer" value="ch3d/wave_height"/>
+       <attribute name="standard_name" value="sea_surface_wind_wave_significant_height"/>
+      </variable>
+
+      <aggregation dimName="time" type="joinExisting" timeUnitsChange="true">
+       <scan location="/data/ftp/upload/Estuarine_Hypoxia/usace/ch3d/synoptic/"
+        regExp=".*CH3D[0-9]{4}\.nc$" subdirs="false"/>
+      </aggregation>
+     </netcdf>
+    </aggregation>
+   </netcdf>
+  </dataset>
+
+
+  <dataset name="CH3D-ICM - 2004_and_2005" ID="estuarine_hypoxia/ch3d-icm/2004_and_2005"
+   urlPath="estuarine_hypoxia/ch3d-icm/2004_and_2005.nc">
+   <serviceName>all</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+    <attribute name="wms-layer-prefix" value="ch3d_icm_2004_and_2005"/>
+    <attribute name="title" value="CH3D-ICM (USACE)"/>
+    <attribute name="id" value="eh.usace.ch3d-icm.2004_and_2005"/>
+    <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+    <attribute name="summary" value="Chesapeake Bay application of CH3D-ICM"/>
+    <attribute name="creator_name" value="Ping Wang and Aaron Bever"/>
+    <attribute name="creator_email" value="pwang@chesapeakebay.net and abever@vims.edu"/>
+    <attribute name="creator_url" value="http://www.chesapeakebay.net"/>
+    <attribute name="cdm_data_type" value="Grid"/>
+    <attribute name="history" value="ASA rewrite into NetCDF: 2011-03-01"/>
+
+    <variable name="level">
+     <attribute name="positive" value="up"/>
+     <values> -28.1940 -26.6700 -25.1460 -23.6220 -22.0980 -20.5740 -19.0500 -17.5260 -16.0020
+      -14.4780 -12.9540 -11.4300 -9.9060 -8.3820 -6.8580 -5.3340 -3.8100 -2.2860 -0.7620 </values>
+
+    </variable>
+    <variable name="do">
+     <attribute name="wms-layer" value="ch3d_icm_2004_and_2005/do"/>
+     <attribute name="standard_name" value="mass_concentration_of_dissolved_oxygen_in_sea_water"/>
+     <attribute name="coordinates" value="level lon lat"/>
+    </variable>
+    <variable name="do_bottom">
+     <attribute name="wms-layer" value="ch3d_icm_2004_and_2005/do_bottom"/>
+     <attribute name="standard_name" value="mass_concentration_of_dissolved_oxygen_in_sea_water"/>
+    </variable>
+    <aggregation dimName="time" type="joinExisting" timeUnitsChange="true">
+     <scan location="/data/ftp/upload/Estuarine_Hypoxia/usace/ch3d-icm/2004_and_2005/netcdf/"
+      suffix=".nc" subdirs="false"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+
+
+  <dataset name="CBOFS2 - Synoptic - Agg" ID="estuarine_hypoxia/cbofs2/agg"
+   urlPath="estuarine_hypoxia/cbofs2/agg.nc">
+   <serviceName>agg</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+    <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+    <attribute name="wms-layer-prefix" value="cbofs2"/>
+    <attribute name="title" value="CBOFS2 (NOAA) - ROMS-3.0"/>
+    <attribute name="id" value="eh.noaa.cbofs2.synoptic"/>
+    <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+    <attribute name="summary" value="Chesapeake Bay Operational Forecast System - 2"/>
+    <attribute name="creator_name" value="Lyon Lanerolle"/>
+    <attribute name="creator_email" value=""/>
+    <attribute name="creator_url" value="http://tidesandcurrents.noaa.gov/ofs/cbofs/cbofs.html"/>
+    <attribute name="cdm_data_type" value="Grid"/>
+
+    <variable name="u">
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     <attribute name="wms-layer" value="cbofs2/sea_water_velocity"/>
+    </variable>
+    <variable name="v">
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     <attribute name="wms-layer" value="cbofs2/sea_water_velocity"/>
+    </variable>
+    <variable name="temp">
+     <attribute name="wms-layer" value="cbofs2/temp"/>
+     <attribute name="standard_name" value="sea_water_temperature"/>
+     <!--attribute name="missing_value" type="float" value="-0.0"/-->
+    </variable>
+    <variable name="salt">
+     <attribute name="wms-layer" value="cbofs2/salt"/>
+     <attribute name="standard_name" value="sea_water_salinity"/>
+     <!--attribute name="missing_value" type="float" value="0.0"/-->
+    </variable>
+    <aggregation dimName="ocean_time" type="joinExisting" timeUnitsChange="true">
+     <scan location="/data/ftp/upload/Estuarine_Hypoxia/noaa/cbofs2/synoptic/Output_Avg/"
+      suffix=".nc" subdirs="false"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+
+  <dataset name="CBOFS2-1TDO - 2004_only - Agg" ID="estuarine_hypoxia/cbofs2-1tdo/agg"
+   urlPath="estuarine_hypoxia/cbofs2-1tdo/agg.nc">
+   <serviceName>agg</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+    <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+    <attribute name="wms-layer-prefix" value="cbofs2-1tdo"/>
+    <attribute name="title" value="CBOFS2-1TDO (NOAA) - ROMS-3.0"/>
+    <attribute name="id" value="eh.noaa.cbofs2-1tdo.2004_only"/>
+    <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+    <attribute name="summary" value="Chesapeake Bay Operational Forecast System - 2 with 1-term DO"/>
+    <attribute name="creator_name" value="Lyon Lanerolle"/>
+    <attribute name="creator_email" value=""/>
+    <attribute name="creator_url" value="http://tidesandcurrents.noaa.gov/ofs/cbofs/cbofs.html"/>
+    <attribute name="cdm_data_type" value="Grid"/>
+
+    <variable name="u">
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     <attribute name="wms-layer" value="cbofs2-1tdo/sea_water_velocity"/>
+    </variable>
+    <variable name="v">
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     <attribute name="wms-layer" value="cbofs2-1tdo/sea_water_velocity"/>
+    </variable>
+    <variable name="temp">
+     <attribute name="wms-layer" value="cbofs2-1tdo/temp"/>
+     <attribute name="standard_name" value="sea_water_temperature"/>
+    </variable>
+    <variable name="salt">
+     <attribute name="wms-layer" value="cbofs2-1tdo/salt"/>
+     <attribute name="standard_name" value="sea_water_salinity"/>
+    </variable>
+    <variable name="dye_01">
+     <attribute name="wms-layer" value="cbofs2-1tdo/dye_01"/>
+     <attribute name="standard_name" value="mass_concentration_of_dye_in_sea_water"/>
+    </variable>
+    <aggregation dimName="ocean_time" type="joinExisting" timeUnitsChange="true">
+     <scan location="/data/ftp/upload/Estuarine_Hypoxia/noaa/cbofs2-1tdo/2004_only/history_output/"
+      suffix=".nc" subdirs="false"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+
+  <dataset name="UMCES ROMS - Case01_Y2004 - Agg" ID="estuarine_hypoxia/roms1/agg"
+   urlPath="estuarine_hypoxia/roms1/agg.nc">
+   <serviceName>agg</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+    <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+    <attribute name="wms-layer-prefix" value="umces-roms-1"/>
+    <attribute name="title" value="UMCESRoms (UMCES) - ROMS"/>
+    <attribute name="id" value="eh.umces.umcesroms.Case01_Y2004"/>
+    <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+    <attribute name="summary"
+     value="Chesapeake Bay Application of ROMS/TOMS with no hypoxic variables"/>
+    <attribute name="creator_name" value="Ming Li"/>
+    <attribute name="creator_email" value=""/>
+    <attribute name="creator_url" value="http://www.umces.edu/"/>
+    <attribute name="cdm_data_type" value="Grid"/>
+
+    <variable name="salt">
+     <attribute name="coordinates" value="ocean_time s_rho lat_rho lon_rho"/>
+     <attribute name="wms-layer" value="umces-roms-1/salt"/>
+     <attribute name="standard_name" value="sea_water_salinity"/>
+    </variable>
+    <variable name="temp">
+     <attribute name="coordinates" value="ocean_time s_rho lat_rho lon_rho"/>
+     <attribute name="wms-layer" value="umces-roms-1/temp"/>
+     <attribute name="standard_name" value="sea_water_temperature"/>
+    </variable>
+    <variable name="u">
+     <attribute name="coordinates" value="ocean_time s_rho lat_u lon_u"/>
+    </variable>
+    <variable name="v">
+     <attribute name="coordinates" value="ocean_time s_rho lat_v lon_v"/>
+    </variable>
+    <variable name="ubar">
+     <attribute name="coordinates" value="ocean_time lat_u lon_u"/>
+    </variable>
+    <variable name="vbar">
+     <attribute name="coordinates" value="ocean_time lat_v lon_v"/>
+    </variable>
+    <aggregation dimName="ocean_time" type="joinExisting" timeUnitsChange="false">
+     <scan location="/data/ftp/upload/Estuarine_Hypoxia/umces/roms/Case01_Y2004/Output/history/"
+      suffix=".nc" subdirs="true"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+
+  <dataset name="UMCES ROMS - Case02_Y2004 - Agg" ID="estuarine_hypoxia/roms2/agg"
+   urlPath="estuarine_hypoxia/roms2/agg.nc">
+   <serviceName>agg</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+    <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+    <attribute name="wms-layer-prefix" value="umces-roms-2"/>
+    <attribute name="title" value="UMCESRoms (UMCES) - ROMS"/>
+    <attribute name="id" value="eh.umces.umcesroms.Case02_Y2004"/>
+    <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+    <attribute name="summary"
+     value="Chesapeake Bay Application of ROMS/TOMS with no hypoxic variables"/>
+    <attribute name="creator_name" value="Ming Li"/>
+    <attribute name="creator_email" value=""/>
+    <attribute name="creator_url" value="http://www.umces.edu/"/>
+    <attribute name="cdm_data_type" value="Grid"/>
+
+    <variable name="salt">
+     <attribute name="coordinates" value="ocean_time s_rho lat_rho lon_rho"/>
+     <attribute name="wms-layer" value="umces-roms-2/salt"/>
+     <attribute name="standard_name" value="sea_water_salinity"/>
+    </variable>
+    <variable name="temp">
+     <attribute name="coordinates" value="ocean_time s_rho lat_rho lon_rho"/>
+     <attribute name="wms-layer" value="umces-roms-2/temp"/>
+     <attribute name="standard_name" value="sea_water_temperature"/>
+    </variable>
+    <variable name="u">
+     <attribute name="coordinates" value="ocean_time s_rho lat_u lon_u"/>
+    </variable>
+    <variable name="v">
+     <attribute name="coordinates" value="ocean_time s_rho lat_v lon_v"/>
+    </variable>
+    <variable name="ubar">
+     <attribute name="coordinates" value="ocean_time lat_u lon_u"/>
+    </variable>
+    <variable name="vbar">
+     <attribute name="coordinates" value="ocean_time lat_v lon_v"/>
+    </variable>
+    <aggregation dimName="ocean_time" type="joinExisting" timeUnitsChange="false">
+     <scan location="/data/ftp/upload/Estuarine_Hypoxia/umces/roms/Case02_Y2004/Output/history/"
+      suffix=".nc" subdirs="true"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+
+
+  <dataset name="ChesROMS-1TDO - Synoptic - Agg (2004-2005)"
+   ID="estuarine_hypoxia/chesroms_1tdo/agg" urlPath="estuarine_hypoxia/chesroms_1tdo/agg.nc">
+   <serviceName>agg</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+    <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+    <attribute name="wms-layer-prefix" value="chesroms_1tdo"/>
+    <attribute name="title" value="ChesROMS-1TDO (ODU) - ROMS-2.2"/>
+    <attribute name="id" value="eh.odu.chesroms-1tdo.synoptic"/>
+    <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+    <attribute name="summary" value="Chesapeake Bay Application of ROMS/TOMS 2.2 with 1 term DO"/>
+    <attribute name="creator_name" value="Malcolm Scully"/>
+    <attribute name="creator_email" value="mscully@odu.edu"/>
+    <attribute name="creator_url" value="http://odu.edu/"/>
+    <attribute name="cdm_data_type" value="Grid"/>
+
+    <variable name="salt">
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="wms-layer" value="chesroms_1tdo/salt"/>
+     <attribute name="standard_name" value="sea_water_salinity"/>
+    </variable>
+    <variable name="temp">
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="wms-layer" value="chesroms_1tdo/temp"/>
+     <attribute name="standard_name" value="sea_water_temperature"/>
+    </variable>
+    <variable name="u">
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     <attribute name="wms-layer" value="chesroms_1tdo/sea_water_velocity"/>
+    </variable>
+    <variable name="v">
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     <attribute name="wms-layer" value="chesroms_1tdo/sea_water_velocity"/>
+    </variable>
+    <variable name="dye_01">
+     <attribute name="standard_name" value="mass_concentration_of_dye_in_sea_water"/>
+     <attribute name="wms-layer" value="chesroms_1tdo/dye_01"/>
+    </variable>
+    <aggregation dimName="ocean_time" type="joinExisting" timeUnitsChange="true">
+     <scan location="/data/ftp/upload/Estuarine_Hypoxia/odu/chesroms_1TDO/synoptic/history_output/"
+      suffix=".nc" subdirs="true"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+
+
+  <dataset name="ChesROMS - Synoptic - Agg" ID="estuarine_hypoxia/chesroms/agg"
+   urlPath="estuarine_hypoxia/chesroms/agg.nc">
+   <serviceName>agg</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+    <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+    <attribute name="wms-layer-prefix" value="chesroms"/>
+    <attribute name="title" value="ChesROMS (UMCES) - ROMS-2.2"/>
+    <attribute name="id" value="eh.umces.chesroms.synoptic"/>
+    <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+    <attribute name="summary"
+     value="Chesapeake Bay Application of ROMS/TOMS 2.2 with no hypoxic variables"/>
+    <attribute name="creator_name" value="Wen Long"/>
+    <attribute name="creator_email" value="wenlong@umces.edu"/>
+    <attribute name="creator_url" value="http://www.umces.edu/"/>
+    <attribute name="cdm_data_type" value="Grid"/>
+    <variable name="salt">
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="wms-layer" value="chesroms/salt"/>
+     <attribute name="standard_name" value="sea_water_salinity"/>
+    </variable>
+    <variable name="temp">
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="wms-layer" value="chesroms/temp"/>
+     <attribute name="standard_name" value="sea_water_temperature"/>
+    </variable>
+    <variable name="u">
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     <attribute name="wms-layer" value="chesroms/sea_water_velocity"/>
+    </variable>
+    <variable name="v">
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     <attribute name="wms-layer" value="chesroms/sea_water_velocity"/>
+    </variable>
+    <aggregation dimName="ocean_time" type="joinExisting" timeUnitsChange="true">
+     <scan
+      location="/data/ftp/upload/Estuarine_Hypoxia/umces/chesroms/synoptic/output/history_output/"
+      suffix=".nc" subdirs="true"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+
+  <dataset name="ChesROMS Agg 1991" ID="estuarine_hypoxia/chesroms/agg-1991"
+   urlPath="estuarine_hypoxia/chesroms/agg-1991.nc">
+   <serviceName>agg</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+    <attribute name="wms-link" value="http://testbedapps.sura.org/ncWMS/wms"/>
+    <attribute name="wms-layer-prefix" value="chesroms"/>
+    <attribute name="title" value="ChesROMS (UMCES) - ROMS-2.2"/>
+    <attribute name="id" value="eh.chesroms.umces"/>
+    <attribute name="naming_authority" value="noaa.ioos.testbed"/>
+    <attribute name="summary"
+     value="Chesapeake Bay Application of ROMS/TOMS 2.2 with no hypoxic variables"/>
+    <attribute name="creator_name" value="Wen Long"/>
+    <attribute name="creator_email" value="wenlong@umces.edu"/>
+    <attribute name="creator_url" value="http://www.umces.edu/"/>
+    <attribute name="cdm_data_type" value="Grid"/>
+
+    <variable name="salt">
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="wms-layer" value="chesroms/salt"/>
+     <attribute name="standard_name" value="sea_water_salinity"/>
+    </variable>
+    <variable name="temp">
+     <attribute name="missing_value" type="float" value="0.0"/>
+     <attribute name="wms-layer" value="chesroms/temp"/>
+     <attribute name="standard_name" value="sea_water_temperature"/>
+    </variable>
+    <aggregation dimName="ocean_time" type="joinExisting" timeUnitsChange="true">
+     <scan
+      location="/data/ftp/upload/Estuarine_Hypoxia/umces/chesroms/synoptic/output/history_output/1991/"
+      suffix=".nc" subdirs="true"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
+
+  <dataset name="Observations">
+   <datasetScan name="Chesapeake CBP Sampling" path="estuarine_hypoxia/observations/cbp"
+    location="/data/ftp/upload/Estuarine_Hypoxia/Observations/CBP/NetCDF/latest">
+    <serviceName>points</serviceName>
+    <filter>
+     <include wildcard="*.nc"/>
+    </filter>
+    <addDatasetSize/>
+   </datasetScan>
+
+<!--   <featureCollection name="Chesapeake CBP Sampling Aggregation" featureType="STATION_PROFILE"
+    harvest="true" path="estuarine_hypoxia/observations/cbp_agg">
+    <documentation type="summary">Aggregate of stations</documentation>
+    <collection spec="/data/ftp/upload/Estuarine_Hypoxia/Observations/CBP/NetCDF/1.1/**/.*\.nc"
+     olderThan="5 min"/>
+   </featureCollection>-->
+  </dataset>
+
+ </dataset>
+
+</catalog>

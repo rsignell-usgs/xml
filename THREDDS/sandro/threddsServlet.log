@@ -1,0 +1,114 @@
+2010-05-11T15:02:01.427 +0200 [      9556][      11] INFO  - thredds.server.catalogservice.RemoteCatalogServiceController - Remote host: 150.178.42.250 - Request: "GET /thredds/remoteCatalogService?catalog=http://geoport.whoi.edu/thredds/catalog.xml HTTP/1.1"
+2010-05-11T15:02:03.292 +0200 [     11421][      11] INFO  - thredds.server.catalogservice.RemoteCatalogServiceController - Request Completed - 200 - 4290 - 1865
+2010-05-11T15:02:03.329 +0200 [     11458][      12] INFO  - thredds.server.root.RootController - handleRequestInternal(): Remote host: 150.178.42.250 - Request: "GET /thredds/tdsCat.css HTTP/1.1"
+2010-05-11T15:02:03.330 +0200 [     11459][      12] INFO  - thredds.util.RequestForwardUtils - forwardRequest() Forwarding request to "tdsCat.css": Request Completed - 1001 - -1 - 1
+2010-05-11T15:02:03.335 +0200 [     11464][      13] INFO  - thredds.server.root.RootController - handleRequestInternal(): Remote host: 150.178.42.250 - Request: "GET /thredds/folder.gif HTTP/1.1"
+2010-05-11T15:02:03.335 +0200 [     11464][      13] INFO  - thredds.util.RequestForwardUtils - forwardRequest() Forwarding request to "folder.gif": Request Completed - 1001 - -1 - 0
+2010-05-11T15:04:03.949 +0200 [    132078][      14] INFO  - thredds.server.catalogservice.LocalCatalogServiceController - handleRequestInternal(): Remote host: 150.178.42.250 - Request: "GET /thredds/catalog.xml HTTP/1.1"
+2010-05-11T15:04:03.973 +0200 [    132102][      14] INFO  - thredds.server.views.InvCatalogXmlView - renderMergedOutputModel(): Request Completed - 200 - -1 - 24
+2010-05-11T15:04:04.056 +0200 [    132185][      15] INFO  - thredds.server.catalogservice.LocalCatalogServiceController - handleRequestInternal(): Remote host: 150.178.42.250 - Request: "GET /thredds/all.xml HTTP/1.1"
+2010-05-11T15:04:04.080 +0200 [    132209][      15] INFO  - thredds.server.views.InvCatalogXmlView - renderMergedOutputModel(): Request Completed - 200 - -1 - 24
+2010-05-11T15:04:04.080 +0200 [    132209][      16] INFO  - thredds.server.catalogservice.LocalCatalogServiceController - handleRequestInternal(): Remote host: 150.178.42.250 - Request: "GET /thredds/bevano.xml HTTP/1.1"
+2010-05-11T15:04:04.081 +0200 [    132210][      16] INFO  - thredds.server.views.InvCatalogXmlView - renderMergedOutputModel(): Request Completed - 200 - -1 - 1
+2010-05-11T15:04:04.082 +0200 [    132211][      17] INFO  - thredds.server.catalogservice.LocalCatalogServiceController - handleRequestInternal(): Remote host: 150.178.42.250 - Request: "GET /thredds/creus.xml HTTP/1.1"
+2010-05-11T15:04:04.082 +0200 [    132211][      17] INFO  - thredds.server.views.InvCatalogXmlView - renderMergedOutputModel(): Request Completed - 200 - -1 - 0
+2010-05-11T15:04:22.226 +0200 [    150355][      18] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dds HTTP/1.1"
+2010-05-11T15:04:22.250 +0200 [    150379][      18] ERROR - net.sf.ehcache.store.DiskStore - directoriesCache: Could not read disk store element for key /home/carniel/model/roms/creus/run5. Error was invalid stream header: 00156265
+java.io.StreamCorruptedException: invalid stream header: 00156265
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:783)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:280)
+	at net.sf.ehcache.store.DiskStore$1.<init>(DiskStore.java:290)
+	at net.sf.ehcache.store.DiskStore.loadElementFromDiskElement(DiskStore.java:285)
+	at net.sf.ehcache.store.DiskStore.get(DiskStore.java:256)
+	at net.sf.ehcache.Cache.searchInDiskStore(Cache.java:1171)
+	at net.sf.ehcache.Cache.get(Cache.java:781)
+	at net.sf.ehcache.Cache.get(Cache.java:755)
+	at thredds.filesystem.CacheManager.get(CacheManager.java:133)
+	at thredds.filesystem.ControllerCaching.getInventory(ControllerCaching.java:91)
+	at thredds.filesystem.ControllerCaching.getInventory(ControllerCaching.java:76)
+	at thredds.inventory.DatasetCollectionManager.scan(DatasetCollectionManager.java:251)
+	at thredds.inventory.DatasetCollectionManager.scan(DatasetCollectionManager.java:134)
+	at ucar.nc2.ncml.Aggregation.finish(Aggregation.java:293)
+	at ucar.nc2.ncml.NcMLReader.readNetcdf(NcMLReader.java:468)
+	at ucar.nc2.ncml.NcMLReader.readNcML(NcMLReader.java:414)
+	at ucar.nc2.ncml.NcMLReader.readNcML(NcMLReader.java:333)
+	at thredds.servlet.DatasetHandler$NcmlFileFactory.open(DatasetHandler.java:229)
+	at thredds.servlet.DatasetHandler$NcmlFileFactory.open(DatasetHandler.java:220)
+	at ucar.nc2.util.cache.FileCache.acquire(FileCache.java:223)
+	at ucar.nc2.dataset.NetcdfDataset.openOrAcquireFile(NetcdfDataset.java:686)
+	at ucar.nc2.dataset.NetcdfDataset.acquireFile(NetcdfDataset.java:632)
+	at thredds.servlet.DatasetHandler.getNetcdfFile(DatasetHandler.java:161)
+	at thredds.server.opendap.OpendapServlet.getDataset(OpendapServlet.java:811)
+	at thredds.server.opendap.OpendapServlet.doGetDDS(OpendapServlet.java:361)
+	at thredds.server.opendap.OpendapServlet.doGet(OpendapServlet.java:215)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at thredds.servlet.filter.CookieFilter.doFilter(CookieFilter.java:54)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at thredds.servlet.filter.RequestQueryFilter.doFilter(RequestQueryFilter.java:121)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at thredds.servlet.filter.RequestPathFilter.doFilter(RequestPathFilter.java:105)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:465)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:619)
+2010-05-11T15:04:22.584 +0200 [    150713][      18] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 358
+2010-05-11T15:04:23.382 +0200 [    151511][      19] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.das HTTP/1.1"
+2010-05-11T15:04:23.411 +0200 [    151540][      19] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 29
+2010-05-11T15:04:24.072 +0200 [    152201][      20] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?ntimes,ndtfast,dt,dtfast,dstart,nHIS,ndefHIS,nRST,ntsAVG,nAVG,ndefAVG,Falpha,Fbeta,Fgamma,Akt_bak,Akv_bak,Akk_bak,Akp_bak,rdrg,rdrg2,Zob,Zos,gls_p,gls_m,gls_n,gls_cmu0,gls_c1,gls_c2,gls_c3m,gls_c3p,gls_sigk,gls_sigp,gls_Kmin,gls_Pmin,Charnok_alpha,Zos_hsig_alpha,sz_alpha,CrgBan_cw,Znudg,M2nudg,M3nudg,Tnudg,FSobc_in,FSobc_out,M2obc_in,M2obc_out,Tobc_in,Tobc_out,M3obc_in,M3obc_out,rho0,R0,Tcoef,Scoef,gamma2,spherical,xl,el,Vtransform,Vstretching,theta_s,theta_b,Tcline,hc,s_rho,s_w,Cs_r,Cs_w,ocean_time,Nbed HTTP/1.1"
+2010-05-11T15:04:24.111 +0200 [    152240][      20] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 39
+2010-05-11T15:04:24.750 +0200 [    152879][      21] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?lon_rho%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:04:24.906 +0200 [    153035][      21] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 156
+2010-05-11T15:04:25.140 +0200 [    153269][      22] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?lat_rho%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:04:25.202 +0200 [    153331][      22] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 62
+2010-05-11T15:04:25.562 +0200 [    153691][      23] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?lon_u%5B0:1:209%5D%5B0:1:212%5D HTTP/1.1"
+2010-05-11T15:04:25.579 +0200 [    153708][      23] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 17
+2010-05-11T15:04:25.911 +0200 [    154040][      24] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?lat_u%5B0:1:209%5D%5B0:1:212%5D HTTP/1.1"
+2010-05-11T15:04:25.933 +0200 [    154062][      24] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 22
+2010-05-11T15:04:26.269 +0200 [    154398][      25] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?lon_v%5B0:1:208%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:04:26.286 +0200 [    154415][      25] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 17
+2010-05-11T15:04:26.618 +0200 [    154747][      26] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?lat_v%5B0:1:208%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:04:26.635 +0200 [    154764][      26] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 17
+2010-05-11T15:04:26.966 +0200 [    155095][      27] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?lon_psi%5B0:1:208%5D%5B0:1:212%5D HTTP/1.1"
+2010-05-11T15:04:26.983 +0200 [    155112][      27] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 17
+2010-05-11T15:04:27.305 +0200 [    155434][      28] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?lat_psi%5B0:1:208%5D%5B0:1:212%5D HTTP/1.1"
+2010-05-11T15:04:27.322 +0200 [    155451][      28] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 17
+2010-05-11T15:05:54.077 +0200 [    242206][      29] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?lon_rho%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:05:54.204 +0200 [    242333][      29] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 127
+2010-05-11T15:05:54.427 +0200 [    242556][      30] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?lat_rho%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:05:54.473 +0200 [    242602][      30] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 46
+2010-05-11T15:05:54.844 +0200 [    242973][      31] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?lon_rho%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:05:54.897 +0200 [    243026][      31] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 53
+2010-05-11T15:05:55.229 +0200 [    243358][      32] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?lat_rho%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:05:55.246 +0200 [    243375][      32] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 17
+2010-05-11T15:05:55.611 +0200 [    243740][      33] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?zeta%5B29:1:29%5D%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:05:55.673 +0200 [    243802][      33] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 62
+2010-05-11T15:05:55.845 +0200 [    243974][      34] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?h%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:05:55.877 +0200 [    244006][      34] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 32
+2010-05-11T15:05:56.666 +0200 [    244795][      35] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?zeta%5B35:1:35%5D%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:05:56.671 +0200 [    244800][      36] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?mud_02%5B29:1:29%5D%5B0:1:0%5D%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:05:56.748 +0200 [    244877][      35] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 82
+2010-05-11T15:05:56.923 +0200 [    245052][      37] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?h%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:05:56.938 +0200 [    245067][      37] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 15
+2010-05-11T15:05:57.251 +0200 [    245380][      36] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 580
+2010-05-11T15:05:57.770 +0200 [    245899][      38] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?zeta%5B23:1:23%5D%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:05:57.832 +0200 [    245961][      38] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 62
+2010-05-11T15:05:57.955 +0200 [    246084][      39] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?h%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:05:58.047 +0200 [    246176][      39] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 92
+2010-05-11T15:06:01.946 +0200 [    250075][      40] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?mud_02%5B23:1:23%5D%5B0:1:0%5D%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:06:01.958 +0200 [    250087][      40] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 12
+2010-05-11T15:06:02.789 +0200 [    250918][      41] INFO  - thredds.server.opendap.OpendapServlet - doGet(): Remote host: 150.178.42.250 - Request: "GET /thredds/dodsC/creus/run5/his.dods?mud_02%5B35:1:35%5D%5B0:1:0%5D%5B0:1:209%5D%5B0:1:213%5D HTTP/1.1"
+2010-05-11T15:06:02.818 +0200 [    250947][      41] INFO  - thredds.server.opendap.OpendapServlet - Request Completed - 200 - -1 - 29

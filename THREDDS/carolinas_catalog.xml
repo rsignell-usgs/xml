@@ -1,0 +1,2303 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ name="OPeNDAP Data Server"
+ version="1.0.1">
+
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <dataset name="Carolinas Coastal Change Project" ID="carolinas">
+        <metadata inherited="true">
+            <serviceName>ncdods</serviceName>
+            <authority>gov.usgs.er.whsc</authority>
+            <dataType>Grid</dataType>
+            <dataFormat>NetCDF</dataFormat>
+            <creator>
+                <name vocabulary="DIF">OM/WHSC/USGS</name>
+                <contact url="http://www.usgs.gov/" email="jcwarner@usgs.gov"/>
+            </creator>
+            <publisher>
+                <name vocabulary="DIF">OM/WHSC/USGS</name>
+                <contact url="http://www.usgs.gov/" email="jcwarner@usgs.gov"/>
+            </publisher>
+            <documentation xlink:href="http://woodshole.er.usgs.gov/project-pages/cccp/index.html"
+                xlink:title="Carolinas Coastal Change Program"/>
+        </metadata>
+
+        <dataset name="COAWST Nowcast/Forecast Runs">
+
+            <datasetFmrc name="coawst_2" path="coawst/fmrc">
+                <metadata inherited="true">
+                    <documentation type="summary">ROMS Output from Coawst_2</documentation>
+                </metadata>
+                <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                    <aggregation dimName="runtime" type="forecastModelRunCollection"
+                        recheckEvery="5min" timeUnitsChange="true">
+                        <variable name="temp">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="salt">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="Hwave">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="zeta">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                      <variable name="Nbed" shape="Nbed" type="double">
+                        <attribute name="long_name" value="S-coordinate at sedbed-points" />
+                        <attribute name="standard_name" value="ocean_s_coordinate" />
+                        <attribute name="formula_terms" value="s: Nbed eta: zeta depth: h a: theta_s b: theta_b depth_c: hc" />
+                        <values start="-1.0" increment="-0.1"/>
+                        </variable>
+                        <scan location="/usgs/data0/barmstrong/coawst/coawst_2/Output"
+                            regExp=".*coawst.*\.nc$" dateFormatMark="coawst_us_#yyyyMMdd_HH"
+                            subdirs="false" olderThan="5 min"/>
+                    </aggregation>
+                </netcdf>
+            </datasetFmrc>
+
+            <datasetFmrc name="coawst_2_1" path="coawst_2_1/fmrc">
+                <metadata inherited="true">
+                    <documentation type="summary">ROMS Output from Coawst_2_1</documentation>
+                </metadata>
+                <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                    <aggregation dimName="runtime" type="forecastModelRunCollection"
+                        recheckEvery="5min" timeUnitsChange="true">
+                        <variable name="temp">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="salt">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="Hwave">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="zeta">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <scan location="/usgs/data0/barmstrong/coawst/coawst_2_1/Output"
+                            regExp=".*coawst.*\.nc$" dateFormatMark="coawst_us_#yyyyMMdd_HH"
+                            subdirs="false" olderThan="5 min"/>
+                    </aggregation>
+                </netcdf>
+            </datasetFmrc>
+
+            <datasetFmrc name="coawst_2_2" path="coawst_2_2/fmrc">
+                <metadata inherited="true">
+                    <documentation type="summary">ROMS Output from Coawst_2_2</documentation>
+                </metadata>
+                <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                    <aggregation dimName="runtime" type="forecastModelRunCollection"
+                        recheckEvery="5min" timeUnitsChange="true">
+                        <variable name="temp">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="salt">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="Hwave">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="zeta">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                      <variable name="Nbed" shape="Nbed" type="double">
+                        <attribute name="long_name" value="S-coordinate at sedbed-points" />
+                        <attribute name="standard_name" value="ocean_s_coordinate" />
+                        <attribute name="formula_terms" value="s: Nbed eta: zeta depth: h a: theta_s b: theta_b depth_c: hc" />
+                        <values start="-1.0" increment="-0.1"/>
+                      </variable>
+                        <scan location="/usgs/data0/barmstrong/coawst/coawst_2_2/Output"
+                            regExp=".*coawst.*\.nc$" dateFormatMark="coawst_us_#yyyyMMdd_HH"
+                            subdirs="false" olderThan="5 min"/>
+                    </aggregation>
+                </netcdf>
+            </datasetFmrc>
+
+            <datasetFmrc name="coawst_2_test" path="coawst/fmrc/test">
+                <metadata inherited="true">
+                    <documentation type="summary">Coawst_2 Test</documentation>
+                </metadata>
+                <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                    <aggregation dimName="runtime" type="forecastModelRunCollection"
+                        recheckEvery="10min">
+                        <scan location="/usgs/data0/barmstrong/coawst/coawst_2/Test"
+                            regExp=".*coawst_us_20090830.*\.nc$" dateFormatMark="coawst_us_#yyyyMMdd_HH"
+                            subdirs="false" olderThan="1 min"/>
+                    </aggregation>
+                </netcdf>
+            </datasetFmrc>
+        </dataset>
+
+        <dataset name="Isabel Coupled runs">
+
+            <dataset name="Run 117">
+                <dataset name="roms" ID="Carolinas/Isabel/run117"
+                    urlPath="Carolinas/Isabel/run117/roms">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Run117</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run117"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/Isabel/r117/wrf"
+                    urlPath="Carolinas/Isabel/run117/wrf">
+                    <metadata inherited="true">
+                        <documentation type="summary">WRF output from Run117</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run117" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-15_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-16_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-16_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-17_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-17_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-18_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-18_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run117/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+
+            <dataset name="Run 120">
+                <dataset name="roms" ID="Carolinas/Isabel/run120"
+                    urlPath="Carolinas/Isabel/run120/roms">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run120</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run120"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/Isabel/r120/wrf"
+                    urlPath="Carolinas/Isabel/run120/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from Run120</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run117" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-13_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-13_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-14_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-14_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-20_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run120/wrfout_d01_2003-09-21_00_00_00"
+                                enhance="true"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+
+            <dataset name="Run 126">
+                <dataset name="roms" ID="Carolinas/Isabel/run126"
+                    urlPath="Carolinas/Isabel/run126/roms">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run126, even though
+                            individual roms files named 120</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run126"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/Isabel/r126/wrf"
+                    urlPath="Carolinas/Isabel/run126/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from Run126</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run117" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-13_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-13_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-13_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-13_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-14_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-14_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-14_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-14_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-15_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-15_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-16_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-16_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-17_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-17_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-18_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-18_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-19_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-19_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-20_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-20_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-20_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run126/wrfout_d01_2003-09-21_00_00_00"
+                                enhance="true"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+
+
+            <dataset name="Run 127">
+                <dataset name="roms" ID="Carolinas/Isabel/run127"
+                    urlPath="Carolinas/Isabel/run127/roms">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run127, even though
+                            individual roms files named 120</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run127"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/Isabel/r127/wrf"
+                    urlPath="Carolinas/Isabel/run127/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from Run127</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run117" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-13_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-13_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-13_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-13_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-14_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-14_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-14_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-14_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-15_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-15_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-16_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-16_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-17_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-17_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-18_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-18_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-19_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-19_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-20_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-20_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-20_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run127/wrfout_d01_2003-09-21_00_00_00"
+                                enhance="true"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+
+
+            <dataset name="Run 128">
+                <dataset name="outbnks" ID="Carolinas/Isabel/run128/outbnks"
+                    urlPath="Carolinas/Isabel/run128/outbnks">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run128</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run128"
+                                regExp=".*outbnks_his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="useast" ID="Carolinas/Isabel/run128/useast"
+                    urlPath="Carolinas/Isabel/run128/useast">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run128</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run128"
+                                regExp=".*useast_his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+
+
+
+            <dataset name="Run 122">
+                <dataset name="outbnks" ID="Carolinas/Isabel/run122/outbnks"
+                    urlPath="Carolinas/Isabel/run122/outbnks">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run122</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run122"
+                                regExp=".*outbnks_his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="useast" ID="Carolinas/Isabel/run122/useast"
+                    urlPath="Carolinas/Isabel/run122/useast">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run122</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run122"
+                                regExp=".*useast_his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 123">
+                <dataset name="outbnks" ID="Carolinas/Isabel/run123/outbnks"
+                    urlPath="Carolinas/Isabel/run123/outbnks">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run123</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run123"
+                                regExp=".*outbnks_his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="useast" ID="Carolinas/Isabel/run123/useast"
+                    urlPath="Carolinas/Isabel/run123/useast">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run123</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run123"
+                                regExp=".*useast_his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            
+            <dataset name="Run 133">
+                <dataset name="roms" ID="Carolinas/Isabel/run133/roms"
+                    urlPath="Carolinas/Isabel/run133/roms">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run133</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run133"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/Isabel/r133/wrf"
+                    urlPath="Carolinas/Isabel/run133/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run133</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-20_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run133/wrfout_d01_2003-09-21_00_00_00"
+                                enhance="true"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 134">
+                <dataset name="roms" ID="Carolinas/Isabel/run134/roms"
+                    urlPath="Carolinas/Isabel/run134/roms">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run134</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run134"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/Isabel/r134/wrf"
+                    urlPath="Carolinas/Isabel/run134/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run134</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-20_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run134/wrfout_d01_2003-09-21_00_00_00"
+                                enhance="true"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 135">
+                <dataset name="roms" ID="Carolinas/Isabel/run135/roms"
+                    urlPath="Carolinas/Isabel/run135/roms">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run135</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run135"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/Isabel/r135/wrf"
+                    urlPath="Carolinas/Isabel/run135/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run135</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run135/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run135/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run135/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run135/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run135/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run135/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run135/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run135/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run135/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run135/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run135/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run135/wrfout_d01_2003-09-20_12_00_00"
+                                enhance="true"/>
+                            
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 137">
+                <dataset name="roms" ID="Carolinas/Isabel/run137/roms"
+                    urlPath="Carolinas/Isabel/run137/roms">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run137</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run137"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/Isabel/r137/wrf"
+                    urlPath="Carolinas/Isabel/run137/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run137</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run137/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run137/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run137/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run137/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run137/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run137/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run137/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run137/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run137/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run137/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run137/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>                            
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 139">
+                <dataset name="roms" ID="Carolinas/Isabel/run139/roms"
+                    urlPath="Carolinas/Isabel/run139/roms">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run139</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run139"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/Isabel/r139/wrf"
+                    urlPath="Carolinas/Isabel/run139/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run139</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run139/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run139/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run139/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run139/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run139/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run139/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run139/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run139/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run139/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run139/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run139/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>                            
+                        </aggregation>
+                    </netcdf>
+                </dataset>               
+            </dataset>
+            
+            <dataset name="Run 140">
+                <dataset name="roms" ID="Carolinas/Isabel/run140/roms"
+                    urlPath="Carolinas/Isabel/run140/roms">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run140</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run140"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/Isabel/r140/wrf"
+                    urlPath="Carolinas/Isabel/run140/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run140</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run140/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run140/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run140/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run140/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run140/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run140/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run140/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run140/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run140/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run140/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run140/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>                            
+                        </aggregation>
+                    </netcdf>
+                </dataset>                             
+            </dataset>
+            
+            <dataset name="Run 143">
+                <dataset name="roms" ID="Carolinas/Isabel/run143/roms"
+                    urlPath="Carolinas/Isabel/run143/roms">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run143</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run143"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/Isabel/r143/wrf"
+                    urlPath="Carolinas/Isabel/run143/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run143</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run143/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run143/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run143/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run143/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run143/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run143/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run143/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run143/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run143/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run143/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run143/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>                            
+                        </aggregation>
+                    </netcdf>
+                </dataset>                             
+            </dataset>
+            
+            <dataset name="Run 144">
+                <dataset name="roms" ID="Carolinas/Isabel/run144/roms"
+                    urlPath="Carolinas/Isabel/run144/roms">
+                    <metadata>
+                        <documentation type="summary">ROMS output from Run144</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Isabel/run144"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/Isabel/r144/wrf"
+                    urlPath="Carolinas/Isabel/run144/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run144</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>                 
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run144/wrfout_d01_2003-09-20_12_00_00"
+                                enhance="true"/>         
+                        </aggregation>
+                    </netcdf>
+                </dataset>                             
+            </dataset>
+            
+        </dataset>
+
+        <dataset name="Isabel WRF runs">
+            <dataset name="Run run121">
+                <dataset name="wrf" ID="carolinas/Isabel/r121/wrf"
+                    urlPath="Carolinas/Isabel/run121/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run121</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-13_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-13_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-14_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-14_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-14_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-14_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-15_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-15_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-16_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-16_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-17_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-17_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-18_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-18_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-19_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-19_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-20_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-20_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-20_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run121/wrfout_d01_2003-09-21_00_00_00"
+                                enhance="true"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run run125">
+                <dataset name="wrf" ID="carolinas/Isabel/r125/wrf"
+                    urlPath="Carolinas/Isabel/run125/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run125</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-13_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-13_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-13_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-13_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-14_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-14_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-14_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-14_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-15_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-15_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-16_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-16_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-17_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-17_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-18_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-18_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-19_06_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-19_18_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-20_06_00_00"
+                                enhance="true"/>
+                            <!--<netcdf location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-20_12_00_00" enhance="true"/>
+                            <netcdf location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-20_18_00_00" enhance="true"/>
+                            <netcdf location="/usgs/data0/Carolinas/Isabel/run125/wrfout_d01_2003-09-21_00_00_00" enhance="true"/>-->
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+
+            <dataset name="Run 130">
+                <dataset name="wrf" ID="carolinas/Isabel/r130/wrf"
+                    urlPath="Carolinas/Isabel/run130/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run130</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-11_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-11_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-12_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-12_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-13_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-13_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-14_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-14_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-20_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run130/wrfout_d01_2003-09-21_00_00_00"
+                                enhance="true"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 132">
+                <dataset name="wrf" ID="carolinas/Isabel/r132/wrf"
+                    urlPath="Carolinas/Isabel/run132/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run132</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-20_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run132/wrfout_d01_2003-09-21_00_00_00"
+                                enhance="true"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 136">
+                <dataset name="wrf" ID="carolinas/Isabel/r136/wrf"
+                    urlPath="Carolinas/Isabel/run136/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from run136</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-15_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-16_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-17_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-18_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-19_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-19_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-20_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-20_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/Isabel/run136/wrfout_d01_2003-09-21_00_00_00"
+                                enhance="true"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+
+        </dataset>
+        
+        <dataset name="Run 141">
+            <dataset name="wrf" ID="carolinas/Isabel/r141/wrf"
+                urlPath="Carolinas/Isabel/run141/wrf">
+                <metadata>
+                    <documentation type="summary">WRF output from run141</documentation>
+                </metadata>
+                <serviceName>ncdods</serviceName>
+                <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                    <aggregation dimName="Time" type="joinExisting">
+                        <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-15_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-15_12_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-16_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-16_12_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-17_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-17_12_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-18_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-18_12_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-19_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-19_12_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-20_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-20_12_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/Isabel/run141/wrfout_d01_2003-09-21_00_00_00"
+                            enhance="true"/>
+                    </aggregation>
+                </netcdf>
+            </dataset>
+        </dataset> 
+        
+        <dataset name="South Carolina runs">
+        <dataset name="Run 81">
+            <dataset name="roms" ID="Carolinas/SouthCar/run81/roms"
+                urlPath="Carolinas/SouthCar/run81/roms">
+                <metadata>
+                    <documentation type="summary">ROMS output from sim81</documentation>
+                </metadata>
+                <serviceName>ncdods</serviceName>
+                <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                    <aggregation dimName="ocean_time" type="joinExisting">
+                        <scan location="/usgs/data0/Carolinas/SouthCar/run81/roms"
+                            regExp=".*his.*\.nc$"/>
+                    </aggregation>
+                </netcdf>
+            </dataset>
+            <dataset name="wrf" ID="carolinas/SouthCar/r81/wrf"
+                urlPath="Carolinas/SouthCar/run81/wrf">
+                <metadata>
+                    <documentation type="summary">WRF output from sim81</documentation>
+                </metadata>
+                <serviceName>ncdods</serviceName>
+                <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                    <aggregation dimName="Time" type="joinExisting">
+                        <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-01_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-01_12_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-02_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-02_12_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-03_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-03_12_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-04_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-04_12_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-05_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-05_12_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-06_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-06_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-07_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-07_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-08_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-08_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-09_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-09_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-10_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-10_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-11_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-11_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-12_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-12_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-13_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-13_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-14_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-14_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-15_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-15_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-16_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-16_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-17_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-17_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-18_00_00_00"
+                            enhance="true"/>
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-18_12_00_00"
+                            enhance="true"/>  
+                        <netcdf
+                            location="/usgs/data0/Carolinas/SouthCar/run81/wrf/wrfout_d01_2003-12-19_00_00_00"
+                            enhance="true"/>
+                    </aggregation>
+                </netcdf>
+            </dataset>
+        </dataset>
+            
+            <dataset name="Run 82">
+                <dataset name="roms_useast" ID="Carolinas/SouthCar/run82/roms_useast"
+                    urlPath="Carolinas/SouthCar/run82/roms_useast">
+                    <metadata>
+                        <documentation type="summary">ROMS output from sim82</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/SouthCar/run82/roms_useast"
+                                regExp=".*useast.*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="roms_car" ID="Carolinas/SouthCar/run82/roms_car"
+                    urlPath="Carolinas/SouthCar/run82/roms_car">
+                    <metadata>
+                        <documentation type="summary">ROMS output from sim82</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/SouthCar/run82/roms_car"
+                                regExp=".*car.*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/SouthCar/r82/wrf"
+                    urlPath="Carolinas/SouthCar/run82/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from sim82</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-01_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-01_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-02_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-02_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-03_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-03_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-04_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-04_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-05_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-05_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-06_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-06_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-07_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-07_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-08_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-08_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-09_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-09_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-10_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-10_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-11_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-11_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-12_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-12_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-13_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-13_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-14_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-14_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-15_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-15_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-16_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-16_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-17_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-17_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-18_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-18_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run82/wrf/wrfout_d01_2003-12-19_00_00_00"
+                                enhance="true"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 83">
+                <dataset name="roms_useast" ID="Carolinas/SouthCar/run83/roms_useast"
+                    urlPath="Carolinas/SouthCar/run83/roms_useast">
+                    <metadata>
+                        <documentation type="summary">ROMS output from sim83</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/SouthCar/run83/roms_useast"
+                                regExp=".*use.*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="roms_car" ID="Carolinas/SouthCar/run83/roms_car"
+                    urlPath="Carolinas/SouthCar/run83/roms_car">
+                    <metadata>
+                        <documentation type="summary">ROMS output from sim83</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/SouthCar/run83/roms_car"
+                                regExp=".*car.*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+                <dataset name="wrf" ID="carolinas/SouthCar/r83/wrf"
+                    urlPath="Carolinas/SouthCar/run83/wrf">
+                    <metadata>
+                        <documentation type="summary">WRF output from sim83</documentation>
+                    </metadata>
+                    <serviceName>ncdods</serviceName>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="Time" type="joinExisting">
+                            <!--       <scan location="/usgs/data0/Carolinas/Isabel/run121" enhance="true"  regExp=".*wrfout_d01.*"/> -->
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-01_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-01_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-02_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-02_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-03_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-03_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-04_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-04_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-05_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-05_12_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-06_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-06_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-07_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-07_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-08_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-08_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-09_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-09_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-10_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-10_12_00_00"
+                                enhance="true"/>  
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-11_00_00_00"
+                                enhance="true"/>
+                            <netcdf
+                                location="/usgs/data0/Carolinas/SouthCar/run83/wrf/wrfout_d01_2003-12-11_12_00_00"
+                                enhance="true"/>  
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+    </dataset>
+        
+        
+        <dataset name="Ida runs">
+            <dataset name="Run 1">
+                <dataset name="roms" ID="Carolinas/Ida/run1"
+                    urlPath="Carolinas/Ida/run1">
+                <metadata inherited="true">
+                    <documentation type="summary">ROMS output from Ida Run1</documentation>
+                </metadata>
+                <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                    <aggregation dimName="ocean_time" type="joinExisting">
+                        <scan location="/usgs/data0/Carolinas/Ida/run1"
+                            regExp=".*his.*\.nc$"/>
+                    </aggregation>
+                </netcdf>
+                </dataset>
+            </dataset>
+            <dataset name="Run 2">
+                <dataset name="roms" ID="Carolinas/Ida/run2"
+                    urlPath="Carolinas/Ida/run2">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run2</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run2"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            <dataset name="Run 3">
+                <dataset name="roms" ID="Carolinas/Ida/run3"
+                    urlPath="Carolinas/Ida/run3">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run3</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run3"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 4">
+                <dataset name="roms" ID="Carolinas/Ida/run4"
+                    urlPath="Carolinas/Ida/run4">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run4</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run4"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 5">
+                <dataset name="roms" ID="Carolinas/Ida/run5"
+                    urlPath="Carolinas/Ida/run5">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run5</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run5"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 6">
+                <dataset name="roms" ID="Carolinas/Ida/run6"
+                    urlPath="Carolinas/Ida/run6">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run6</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run6"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 7">
+                <dataset name="roms" ID="Carolinas/Ida/run7"
+                    urlPath="Carolinas/Ida/run7">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run7</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run7"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 8">
+                <dataset name="roms" ID="Carolinas/Ida/run8"
+                    urlPath="Carolinas/Ida/run8">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run8</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run8"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 9">
+                <dataset name="roms" ID="Carolinas/Ida/run9"
+                    urlPath="Carolinas/Ida/run9">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run9</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run9"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 10">
+                <dataset name="roms" ID="Carolinas/Ida/run10"
+                    urlPath="Carolinas/Ida/run10">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run10</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run10"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 11">
+                <dataset name="roms" ID="Carolinas/Ida/run11"
+                    urlPath="Carolinas/Ida/run11">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run11</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run11"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 12">
+                <dataset name="roms" ID="Carolinas/Ida/run12"
+                    urlPath="Carolinas/Ida/run12">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run12</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run12"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 13">
+                <dataset name="roms" ID="Carolinas/Ida/run13"
+                    urlPath="Carolinas/Ida/run13">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run13</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run13"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 14">
+                <dataset name="roms" ID="Carolinas/Ida/run14"
+                    urlPath="Carolinas/Ida/run14">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run14</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run14"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 15">
+                <dataset name="roms" ID="Carolinas/Ida/run15"
+                    urlPath="Carolinas/Ida/run15">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run15</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run15"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 16">
+                <dataset name="roms" ID="Carolinas/Ida/run16"
+                    urlPath="Carolinas/Ida/run16">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run16</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run16"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 17">
+                <dataset name="roms" ID="Carolinas/Ida/run17"
+                    urlPath="Carolinas/Ida/run17">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run17</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run17"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 18">
+                <dataset name="roms" ID="Carolinas/Ida/run18"
+                    urlPath="Carolinas/Ida/run18">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run18</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run18"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 19">
+                <dataset name="roms" ID="Carolinas/Ida/run19"
+                    urlPath="Carolinas/Ida/run19">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run19</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run19"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+            <dataset name="Run 20">
+                <dataset name="roms" ID="Carolinas/Ida/run20"
+                    urlPath="Carolinas/Ida/run20">
+                    <metadata inherited="true">
+                        <documentation type="summary">ROMS output from Ida Run20</documentation>
+                    </metadata>
+                    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                        <aggregation dimName="ocean_time" type="joinExisting">
+                            <scan location="/usgs/data0/Carolinas/Ida/run20"
+                                regExp=".*his.*\.nc$"/>
+                        </aggregation>
+                    </netcdf>
+                </dataset>
+            </dataset>
+            
+        </dataset>
+        
+    </dataset>
+</catalog>

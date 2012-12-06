@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="Digital Terrain Models"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/" />
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/" />
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+    
+  <dataset name="GEBCO v1.02 Global Relief Model (60 arc second)" 
+    ID="bathy/gebco_v1.02.nc" 
+    serviceName="gridServices" 
+    urlPath="bathy/vs_1sec_20070725.nc">
+    <metadata >
+      <serviceName>gridServices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">BODC/AC/UK</name>
+        <contact url="http://www.bodc.ac.uk"
+          email="enquiries@bodc.ac.uk" />
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/"
+          email="rsignell@usgs.gov" />
+      </publisher>
+      <geospatialCoverage zpositive="up">
+        <northsouth>
+          <start>-90.0</start>
+          <size>180.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-180.0</start>
+          <size>360.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>-11000</start>
+          <size>20000</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://www.bodc.ac.uk/data/online_delivery/gebco/" 
+        xlink:title="GEBCO 60 s Global Topography Grid from BODC (v1.02)"/>
+    </metadata>
+
+ 
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/Volumes/models/bathy/GridOne.nc">
+    <variable name="lon" shape="lon" type="double">
+      <attribute name="units" value="degrees_east"/>
+      <values start="-180.00" increment="0.016666666666666667"/>
+    </variable>
+    <variable name="lat" shape="lat" type="double">
+      <attribute name="units" value="degrees_north"/>
+      <values start="-90.00" increment="0.0166666666666666667"/>
+    </variable>
+    </netcdf>
+  </dataset>
+  </catalog>

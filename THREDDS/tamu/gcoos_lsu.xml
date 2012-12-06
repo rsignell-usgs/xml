@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<catalog name="GCOOS Tests" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
+    <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
+  </service>
+  
+  <dataset name="LSU ESL POES SST - cloudmask" ID="gcoos/lsu_sst" serviceName="allServices" urlPath="gcoos/lsu_sst">
+    
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+      <aggregation dimName="time" type="joinNew" recheckEvery="5 min">
+        <variableAgg name="mcsst"/>
+        <scan location="/d3/thredds/lsu_sst" regExp=".*.cloudmask.hdf$" dateFormatMark="n...#yyMMdd'.'hhmm" subdirs="false"/>
+      </aggregation>
+
+      <dimension name="lon" orgName="sample"/>
+      <dimension name="lat" orgName="line"/>
+
+      <variable name="lon" shape="lon" type="double">
+        <attribute name="units" value="degrees_east"/>
+        <values start="-98.89417" increment="0.00909"/>
+      </variable>
+
+      <variable name="lat" shape="lat" type="double">
+        <attribute name="units" value="degrees_north"/>
+        <values start="32.18652" increment="-0.00909"/>
+      </variable>
+
+      <variable name="mcsst" shape="time lat lon" type="double">
+        <attribute name="standard_name" value="sea_surface_temperature"/>
+        <attribute name="units" value="Celsius"/>
+        <attribute name="scale_factor" type="float" value="1.0"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+    </netcdf>
+
+  </dataset>
+
+  <dataset name="GCOOS LSU SST - no cloudmask" ID="gcoos/lsu_sst_no" serviceName="allServices" urlPath="gcoos/lsu_sst_no">
+
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+      <aggregation dimName="time" type="joinNew" recheckEvery="5 min">
+        <variableAgg name="mcsst_no_cloudmask"/>
+        <scan location="/d3/thredds/lsu_sst_no" regExp=".*.cloudmask.hdf$" dateFormatMark="n...#yyMMdd'.'hhmm" subdirs="false"/>
+      </aggregation>
+
+      <dimension name="lon" orgName="sample"/>
+      <dimension name="lat" orgName="line"/>
+
+      <variable name="lon" shape="lon" type="double">
+        <attribute name="units" value="degrees_east"/>
+        <values start="-98.89417" increment="0.00909"/>
+      </variable>
+
+      <variable name="lat" shape="lat" type="double">
+        <attribute name="units" value="degrees_north"/>
+        <values start="32.18652" increment="-0.00909"/>
+      </variable>
+
+      <variable name="mcsst_no_cloudmask" shape="time lat lon" type="double">
+        <attribute name="standard_name" value="sea_surface_temperature"/>
+        <attribute name="units" value="Celsius"/>
+        <attribute name="scale_factor" type="float" value="1.0"/>
+        <attribute name="add_offset" type="float" value="0.0"/>
+      </variable>
+    </netcdf>
+
+  </dataset>
+
+</catalog>

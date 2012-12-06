@@ -1,0 +1,56 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  </service>
+
+<dataset name="South Carolina Model Runs" ID="south_car">
+  <metadata inherited="true">
+    <serviceName>gridServices</serviceName>
+    <authority>gov.usgs.er.whsc</authority>
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <creator>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="jcwarner@usgs.gov" />
+    </creator>
+    <publisher>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="jcwarner@usgs.gov" />
+    </publisher>
+    <geospatialCoverage zpositive="down">
+      <northsouth>
+        <start>32.1383</start>
+        <size>2.4567</size>
+        <units>degrees_north</units>
+      </northsouth>
+      <eastwest>
+        <start>-80.0</start>
+        <size>3.4423</size>
+        <units>degrees_east</units>
+      </eastwest>
+      <updown>
+        <start>0</start>
+        <size>250</size>
+        <units>meters</units>
+      </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://woodshole.er.usgs.gov/project-pages/scarolina/html/po.htm" 
+      xlink:title="South Carolina Coastal Erosion Study"/>
+  </metadata>
+<dataset name="sc62: Latest Greatest Run" ID="south_car/sc62/his" urlPath="south_car/sc62/his">
+  <serviceName>gridServices</serviceName>
+  <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <aggregation dimName="ocean_time" type="joinExisting">
+      <scan location="/Volumes/models/south_car/sc62/his/" suffix=".nc"/>
+    </aggregation>
+  </netcdf>
+</dataset>
+</dataset>
+
+</catalog>

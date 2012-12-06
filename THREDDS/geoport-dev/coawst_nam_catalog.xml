@@ -1,0 +1,29 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.1">
+ <service name="all" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+
+ <dataset name="NOAA-NCEP Climate Forecasts" ID="clforecast">
+  <metadata inherited="true">
+   <serviceName>all</serviceName>
+   <documentation xlink:href="http://www.ncep.noaa.gov" xlink:title="NCEP"/>
+  </metadata>
+  <dataset name="NOAA-NCEP North American Mesoscale (NAM); variables cut for COAWST east coast forecast" ID="clforecast/nam"
+   urlPath="clforecast/name">
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+					<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+						<aggregation dimName="time" type="joinExisting">
+							<scan location="/usgs/data2/sdalyander/EC30Day/nam" regExp=".*nam_218.*\.grb$"/><!--  the location is the actual location of the data files, the regExp will find all the files with the expressed pattern for aggregation    -->
+						</aggregation>
+					</netcdf>
+   </netcdf>
+  </dataset>
+ </dataset>
+</catalog>

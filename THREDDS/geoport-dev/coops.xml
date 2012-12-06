@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ name="NOAA COOPS Catalog">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+
+ <dataset name="NOAA COOPS " harvest="true">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <dataType>Grid</dataType>
+   <dataFormatType>NetCDF</dataFormatType>
+   <authority>usgs.gov</authority>
+   <creator>
+    <name vocabulary="DIF">NOAA COOPS</name>
+    <contact url="http://www.prism.oregonstate.edu/" email="gibson@nacse.org"/>
+   </creator>
+
+   <documentation xlink:href="http://www.prism.oregonstate.edu/"
+    xlink:title="PRISM Climate Group home page"/>
+
+   <documentation type="Summary"> PRISM is a unique knowledge-based system that uses point
+    measurements of precipitation, temperature, and other climatic factors to produce continuous,
+    digital grid estimates of monthly, yearly, and event-based climatic parameters. Continuously
+    updated, this unique analytical tool incorporates point data, a digital elevation model, and
+    expert knowledge of complex climatic extremes, including rain shadows, coastal effects, and
+    temperature inversions. PRISM data sets are recognized world-wide as the highest-quality spatial
+    climate data sets currently available. PRISM is the USDA's official climatological data. 
+   </documentation>
+
+   <documentation type="Rights"> Data may be freely reproduced and distributed for non-commercial
+    purposes. When referring to the data, the source must be clearly and prominently stated, and
+    include at a minimum, our name, URL, and data of data creation, for example: “PRISM Climate
+    Group, Oregon State University, http://prism.oregonstate.edu, created 4 Feb 2004.” Sale or other
+    commercial use of the data must be arranged by contacting the PRISM Climate Group. Copyright and
+    Ownership. All of the data and information presented in this web site are protected by United
+    States copyright laws and applicable international copyright treaties. The PRISM Climate Group,
+    Oregon State University retains rights to ownership of the data and information. No Warranty.
+    All content on this web site is provided “as is,” without warranty of any kind, either express
+    or implied. 
+   </documentation>
+
+  </metadata>
+
+  <dataset name="ngofs" ID="ngofs/forecast" urlPath="ngofs/forecast">
+   
+   <netcdf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+    xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data1/rsignell/models/ngofs/nos.ngofs.fields.forecast.20120105.t00z.nc">
+    <variable name="siglay" shape="siglay node" type="float">
+     <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+     <attribute name="positive" value="up"/>
+     <attribute name="formula_terms" value="sigma: siglay eta: zeta depth: h"/>
+    </variable>
+    <variable name="siglev" shape="siglev node" type="float">
+     <attribute name="long_name" value="Sigma Levels"/>
+     <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+     <attribute name="positive" value="up"/>
+     <attribute name="formula_terms" value="sigma: siglev eta: zeta depth: h"/>
+    </variable>
+    <variable name="h" shape="node" type="float">
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="coordinates" value="lat lon"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="positive"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="nv" shape="three nele" type="int">
+     <attribute name="standard_name" value="face_node_connectivity"/>
+     <attribute name="start_index" type="int" value="1"/>
+    </variable>
+    <variable name="iint" shape="time" type="int">
+     <attribute name="long_name" value="internal mode iteration number"/>
+    </variable>
+    <variable name="time" shape="time" type="float">
+     <attribute name="long_name" value="time"/>
+     <attribute name="units" value="days since 1858-11-17 00:00:00"/>
+     <attribute name="format" value="modified julian day (MJD)"/>
+     <attribute name="time_zone" value="UTC"/>
+    </variable>
+    <variable name="Itime" shape="time" type="int">
+     <attribute name="units" value="days since 1858-11-17 00:00:00"/>
+     <attribute name="format" value="modified julian day (MJD)"/>
+     <attribute name="time_zone" value="UTC"/>
+    </variable>
+    <variable name="Itime2" shape="time" type="int">
+     <attribute name="units" value="msec since 00:00:00"/>
+     <attribute name="time_zone" value="UTC"/>
+    </variable>
+    <variable name="Times" shape="time DateStrLen" type="char">
+     <attribute name="time_zone" value="UTC"/>
+    </variable>
+    <variable name="fvcom_mesh" shape="" type="int">
+     <attribute name="standard_name" value="mesh_topology"/>
+     <attribute name="dimension" type="int" value="2"/>
+     <attribute name="node_coordinates" value="lon lat"/>
+     <attribute name="face_coordinates" value="lonc latc"/>
+     <attribute name="face_node_connectivity" value="nv"/>
+    </variable>
+    <variable name="zeta" shape="time node" type="float">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="positive"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="u" shape="time siglay nele" type="float">
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="v" shape="time siglay nele" type="float">
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="tauc" shape="time nele" type="float">
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="temp" shape="time siglay node" type="float">
+     <attribute name="coordinates" value="time siglay lat lon"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="salinity" shape="time siglay node" type="float">
+     <attribute name="coordinates" value="time siglay lat lon"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="short_wave" shape="time node" type="float">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="net_heat_flux" shape="time node" type="float">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="uwind_speed" shape="time nele" type="float">
+     <attribute name="standard_name" value="eastward_wind"/>
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="vwind_speed" shape="time nele" type="float">
+     <attribute name="standard_name" value="northward_wind"/>
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="uwind_stress" shape="time nele" type="float">
+     <attribute name="standard_name" value="surface_downward_eastward_stress"/>
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="vwind_stress" shape="time nele" type="float">
+     <attribute name="standard_name" value="surface_downward_northward_stress"/>
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="wet_nodes" shape="time node" type="int">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="wet_cells" shape="time nele" type="int">
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="wet_nodes_prev_int" shape="time node" type="int">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="wet_cells_prev_int" shape="time nele" type="int">
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="wet_cells_prev_ext" shape="time nele" type="int">
+     <attribute name="coordinates" value="time latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+   </netcdf>
+   
+  </dataset>
+ </dataset>
+</catalog>

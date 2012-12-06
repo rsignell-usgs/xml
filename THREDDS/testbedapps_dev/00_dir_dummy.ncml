@@ -1,0 +1,60 @@
+<!--Intended to be NCML for use with UGRID extensions per http://bit.ly/ugrid_cf -->
+<!--This file is intended to be testbedapps.sura.org:/data/ftp/upload/Inundation/vims/selfe_tropical/runs/Ike/3D_varied_roughness_windstress/whole_domain/00_dir.ncml and aggregate its directory for the testbed server--> 
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <variable name="selfe_mesh" shape="" type="int">
+      <attribute name="standard_name" value="mesh_topology"/>
+      <attribute name="dimension" type="int" value="2"/>
+      <attribute name="node_coordinates" value="x y"/>
+      <attribute name="face_node_connectivity" value="ele"/>
+     </variable>
+     <variable name="time">
+      <attribute name="units" value="seconds since 2008-09-08 00:00:00"/>
+      <attribute name="standard_name" value="time"/>
+     </variable>
+     <variable name="ele" shape="nface nele" type="int">
+      <attribute name="standard_name" value="face_node_connectivity"/>
+      <attribute name="start_index" type="short" value="1"/>
+     </variable>
+     <variable name="x" shape="node" type="float">
+      <attribute name="units" value="degrees_east"/>
+     </variable>
+     <variable name="y" shape="node" type="float">
+      <attribute name="units" value="degrees_north"/>
+     </variable>
+     <variable name="depth" shape="node" type="float">
+      <attribute name="mesh" value="selfe_mesh"/>
+      <attribute name="location" value="node"/>
+      <attribute name="coordinates" value="y x"/>
+      <attribute name="units" value="m"/>
+      <attribute name="standard_name" value="depth_below_geoid"/>
+      <remove type="attribute" name="positive"/>
+     </variable>
+     <variable name="sigma" shape="sigma" type="float">
+      <attribute name="long_name" value="S coordinates at whole levels"/>
+      <attribute name="units" value="non-dimensional"/>
+      <attribute name="positive" value="up"/>
+     </variable>
+     <variable name="Cs" shape="sigma" type="float">
+      <attribute name="long_name" value="Function C(s) at whole levels"/>
+      <attribute name="units" value="non-dimensional"/>
+      <attribute name="positive" value="up"/>
+     </variable>
+     <variable name="elev" shape="time node" type="float">
+      <attribute name="long_name" value="free_surface_elevation"/>
+      <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+      <attribute name="missing_value" type="float" value="-9999.00"/>
+      <attribute name="mesh" value="selfe_mesh"/>
+      <attribute name="location" value="node"/>
+      <attribute name="coordinates" value="y x"/>
+      <attribute name="units" value="m"/>
+     </variable>
+     <aggregation type="union">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+       <aggregation dimName="time" type="joinExisting">
+        <scan
+         location="/data/ftp/upload/Inundation/vims/selfe_tropical/runs/Ike/3D_varied_roughness_windstress/whole_domain/"
+         regExp=".*[0-9]{1}_WaterLevel\.nc$"/>
+       </aggregation>
+      </netcdf>
+     </aggregation>
+    </netcdf>
