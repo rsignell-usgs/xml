@@ -5,6 +5,8 @@
   <service name="gridServices" serviceType="Compound" base="">
     <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
     <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/" />
   </service>
 
 <dataset name="West Falmouth Harbor Runs" ID="WFH/ROMS">
@@ -43,21 +45,53 @@
     <documentation xlink:href="http://www.cstms.org/index.php" 
       xlink:title="CSTM website"/>
   </metadata>
- <dataset name="wfh test case" ID="wfh/sin_test" urlPath="wfh/sin_test">
+<dataset name="wfh real forcing, 0.19 m3/s Qr, U3H advection, theta=0,0" ID="wfh/real_19" urlPath="wfh/real_19">
       <serviceName>gridServices</serviceName>
       <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
         <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/wfh/sin_test" suffix=".nc"/>
+          <scan location="/usgs/data0/wfh/real_19" suffix=".nc"/>
         </aggregation>
       </netcdf>
-    </dataset>
- <dataset name="wfh test case with salinity distribution" ID="wfh/sin_dsdx" urlPath="wfh/sin_dsdx">
+    </dataset> 
+<dataset name="wfh real forcing, 0.19 m3/s Qr with rms signal, U3H advection, theta=0,0" ID="wfh/real_19_rms" urlPath="wfh/real_19_rms">
       <serviceName>gridServices</serviceName>
       <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
         <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/wfh/sin_dsdx" suffix=".nc"/>
+          <scan location="/usgs/data0/wfh/real_19_rms" suffix=".nc"/>
         </aggregation>
       </netcdf>
     </dataset>
- </dataset>   
+<dataset name="wfh real forcing, ana_vmix=0.025, 0.19 m3/s, U3H advection, theta=0,0" ID="wfh/real_19_vmix025" urlPath="wfh/real_19_vmix025">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/wfh/real_19_vmix025" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset> 
+<dataset name="wfh real forcing, ana_vmix=0.0001, 0.19 m3/s, U3H advection, theta=0,0" ID="wfh/real_19_vmix0001" urlPath="wfh/real_19_vmix0001">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/wfh/real_19_vmix0001" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset> 
+<dataset name="wfh real forcing, ana_vmix=0.00001, 0.19 m3/s, U3H advection, theta=0,0" ID="wfh/real_19_vmix00001" urlPath="wfh/real_19_vmix00001">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/wfh/real_19_vmix00001" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>    
+<dataset name="wfh real forcing, 0.19 m3/s Qr, U3H advection, theta=0,0, wind stress = 0.035 Pa (5 m/s)" ID="wfh/real_19_wind" urlPath="wfh/real_19_wind">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/wfh/real_19_wind" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset> 
+</dataset>   
 </catalog>

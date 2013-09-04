@@ -1,44 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wmsConfig SYSTEM "http://www.unidata.ucar.edu/schemas/thredds/dtd/ncwms/wmsConfig.dtd">
 <!--
 Detailed configuration of the WMS service.  This config file can be used to
-set default styling parameters for each dataset/variable, and to enable or disable
+set default styling parameters for each dataset/variable, and to enable or disab
+le
 the GetFeatureInfo operation.
 
-See http://www.resc.reading.ac.uk/trac/myocean-tools/wiki/WmsDetailedConfiguration
+See http://www.resc.reading.ac.uk/trac/myocean-tools/wiki/WmsDetailedConfigurati
+on
 for more information.
 -->
-<!DOCTYPE wmsConfig [
 
-<!ELEMENT wmsConfig (global, overrides?)>
-
-<!ELEMENT global (defaults, standardNames?)>
-
-<!ELEMENT defaults (allowFeatureInfo, defaultColorScaleRange, defaultPaletteName, defaultNumColorBands, logScaling)>
-
-<!ELEMENT standardNames (standardName*)>
-
-<!ELEMENT standardName (defaultColorScaleRange?, defaultPaletteName?, defaultNumColorBands?, logScaling?)>
-<!ATTLIST standardName name CDATA #REQUIRED>
-<!ATTLIST standardName units CDATA #REQUIRED>
-
-<!ELEMENT overrides (datasetPath*)>
-
-<!ELEMENT datasetPath (pathDefaults?, variables?)>
-<!ATTLIST datasetPath pathSpec CDATA #REQUIRED>
-
-<!ELEMENT pathDefaults (allowFeatureInfo?, defaultColorScaleRange?, defaultPaletteName?, defaultNumColorBands?, logScaling?)>
-
-<!ELEMENT variables (variable*)>
-
-<!ELEMENT variable (defaultColorScaleRange?, defaultPaletteName?, defaultNumColorBands?, logScaling?)>
-<!ATTLIST variable id CDATA #REQUIRED>
-
-<!ELEMENT allowFeatureInfo (#PCDATA)>
-<!ELEMENT defaultColorScaleRange (#PCDATA)>
-<!ELEMENT defaultPaletteName (#PCDATA)>
-<!ELEMENT defaultNumColorBands (#PCDATA)>
-<!ELEMENT logScaling (#PCDATA)>
-]>
 <wmsConfig>
 
  <global>
@@ -51,27 +23,28 @@ for more information.
    <defaultPaletteName>rainbow</defaultPaletteName>
    <defaultNumColorBands>64</defaultNumColorBands>
    <logScaling>false</logScaling>
+   <intervalTime>true</intervalTime>
   </defaults>
 
   <standardNames>
    <!-- Use this section to set defaults per standard name -->
    <!-- Units must come from the UDUNITS vocabulary -->
 
-  
+   <standardName name="air_temperature" units="degC">
+    <defaultColorScaleRange>-10 40</defaultColorScaleRange>
+   </standardName>
+   <standardName name="lwe_precipitation_rate" units="mm/month">
+    <defaultColorScaleRange>0.1 800</defaultColorScaleRange>
+    <logScaling>true</logScaling>
+   </standardName>
    <standardName name="eastward_sea_water_velocity" units="m/s">
     <defaultColorScaleRange>-0.5 0.5</defaultColorScaleRange>
-   </standardName>
-   <standardName name="eastward_wind" units="m/s">
-    <defaultColorScaleRange>-10 10</defaultColorScaleRange>
    </standardName>
      <standardName name="mass_concentration_of_chlorophyll_in_sea_water" units="kg m-3">
     <logScaling>true</logScaling>
    </standardName>
    <standardName name="northward_sea_water_velocity" units="m/s">
     <defaultColorScaleRange>-0.5 0.5</defaultColorScaleRange>
-   </standardName>
-   <standardName name="northward_wind" units="m/s">
-    <defaultColorScaleRange>-10 10</defaultColorScaleRange>
    </standardName>
    <standardName name="sea_water_velocity" units="m/s">
     <defaultColorScaleRange>0 1</defaultColorScaleRange>
@@ -122,6 +95,16 @@ for more information.
     <variable id="temp">
      <defaultColorScaleRange>10 30</defaultColorScaleRange>
     </variable>
+    <variable id="temp_min">
+     <defaultColorScaleRange>-10 40</defaultColorScaleRange>
+    </variable>
+    <variable id="temp_max">
+     <defaultColorScaleRange>-10 40</defaultColorScaleRange>
+    </variable>
+    <variable id="precip_mean">
+     <defaultColorScaleRange>0.1 1000</defaultColorScaleRange>
+     <logScaling>true</logScaling>
+    </variable>
     <variable id="Temperature">
      <defaultColorScaleRange>10 30</defaultColorScaleRange>
     </variable>
@@ -155,16 +138,13 @@ for more information.
     <variable id="zeta">
      <defaultColorScaleRange>-1 1</defaultColorScaleRange>
     </variable>
-    <variable id="etamax">
-     <defaultColorScaleRange>-2 4</defaultColorScaleRange>
-    </variable>
-    <variable id="eta">
-     <defaultColorScaleRange>-2 4</defaultColorScaleRange>
-    </variable>
     <variable id="surf_el">
      <defaultColorScaleRange>-1 1</defaultColorScaleRange>
     </variable>
     <variable id="Significant_height_of_combined_wind_waves_and_swell">
+     <defaultColorScaleRange>0 3</defaultColorScaleRange>
+    </variable>
+    <variable id="Hwave">
      <defaultColorScaleRange>0 3</defaultColorScaleRange>
     </variable>
     <variable id="Primary_wave_direction">

@@ -5,8 +5,6 @@
   <service name="gridServices" serviceType="Compound" base="">
     <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
     <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
-  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
-  <service name="iso" serviceType="ISO" base="/thredds/iso/" />
   </service>
 
 <dataset name="MVCO ROMS-SWAN Model Runs" ID="VS/ROMS">
@@ -207,14 +205,6 @@
         </aggregation>
       </netcdf>
     </dataset>
-<dataset name="mvco 200m all forcings, repeat, no met" ID="mvco_output/mvco_200m_repeatnomet" urlPath="mvco_output/mvco_200m_repeatnomet">
-      <serviceName>gridServices</serviceName>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/mvco_200m_repeatnomet/" suffix=".nc"/>
-        </aggregation>
-      </netcdf>
-    </dataset>
 <dataset name="mvco 1000m tidal, high-res to 200 m" ID="mvco_output/tidal_cblasthr" urlPath="mvco_output/tidal_cblasthr">
       <serviceName>gridServices</serviceName>
       <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
@@ -223,11 +213,11 @@
         </aggregation>
       </netcdf>
     </dataset>
-<dataset name="mvco 200m all forcings, model-res to 40 m" ID="mvco_output/cblast200hr_fine2b" urlPath="mvco_output/cblast200hr_fine2b">
+<dataset name="mvco 200m all forcings, model-res to 40 m" ID="mvco_output/cblast200hr_fine2" urlPath="mvco_output/cblast200hr_fine2">
       <serviceName>gridServices</serviceName>
       <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
         <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/cblast200hr_fine2b/" suffix=".nc"/>
+          <scan location="/usgs/data0/mvco_output/cblast200hr_fine2/" suffix=".nc"/>
         </aggregation>
       </netcdf>
     </dataset>
@@ -236,94 +226,6 @@
       <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
         <aggregation dimName="ocean_time" type="joinExisting">
           <scan location="/usgs/data0/mvco_output/cblast200hr_fine2_40m/" suffix=".nc"/>
-        </aggregation>
-      </netcdf>
-    </dataset>
-<dataset name="mvco 40m repeat, no met" ID="mvco_output/mvco_40m_repeatnomet" urlPath="mvco_output/mvco_40m_repeatnomet">
-      <serviceName>gridServices</serviceName>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/mvco_40m_repeatnomet/" suffix=".nc"/>
-        </aggregation>
-      </netcdf>
-    </dataset>
-<dataset name="mvco 1000m coupled, 8 sed classes" ID="mvco_output/mvco_1000m_8sed" urlPath="mvco_output/mvco_1000m_8sed">
-      <serviceName>gridServices</serviceName>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/mvco_1000m_8sed/" suffix=".nc"/>
-        </aggregation>
-      </netcdf>
-    </dataset>
-<dataset name="mvco 1000m coupled, 8 sed classes, with Akv" ID="mvco_output/mvco_1000m_8sed_akv" urlPath="mvco_output/mvco_1000m_8sed_akv">
-      <serviceName>gridServices</serviceName>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/mvco_1000m_8sed_akv/" suffix=".nc"/>
-        </aggregation>
-      </netcdf>
-    </dataset>
-<dataset name="mvco 1000m forced by coawst" ID="mvco_output/mvco_1000m_coawst" urlPath="mvco_output/mvco_1000m_coawst">
-      <serviceName>gridServices</serviceName>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/mvco_1000m_coawst/" suffix=".nc"/>
-        </aggregation>
-      </netcdf>
-    </dataset>
-<dataset name="mvco 40m tidal, original zo, diagnostics" ID="mvco_output/tidal_40m_dianew" urlPath="mvco_output/tidal_40m_dianew">
-      <serviceName>gridServices</serviceName>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/tidal_40m_dianew/" suffix=".nc"/>
-        </aggregation>
-      </netcdf>
-    </dataset>
-<dataset name="mvco 200m swan repeat for 3D" ID="mvco_output/mvco_200m_swanrepeat" urlPath="mvco_output/mvco_200m_swanrepeat">
-      <serviceName>gridServices</serviceName>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/mvco_200m_swanrepeat/" suffix=".nc"/>
-        </aggregation>
-      </netcdf>
-    </dataset>
-<dataset name="mvco wec test, 1m waves" ID="mvco_output/wec_1m" urlPath="mvco_output/wec_1m">
-      <serviceName>gridServices</serviceName>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/wec_1m/" suffix=".nc"/>
-        </aggregation>
-      </netcdf>
-    </dataset>
-<dataset name="mvco wec test, 1m waves, alongshore uniform" ID="mvco_output/wec_1m_uniform" urlPath="mvco_output/wec_1m_uniform">
-      <serviceName>gridServices</serviceName>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/wec_1m_uniform/" suffix=".nc"/>
-        </aggregation>
-      </netcdf>
-    </dataset>
-<dataset name="mvco wec test, 2m waves, alongshore uniform" ID="mvco_output/wec_2m_uniform" urlPath="mvco_output/wec_2m_uniform">
-      <serviceName>gridServices</serviceName>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/wec_2m_uniform/" suffix=".nc"/>
-        </aggregation>
-      </netcdf>
-    </dataset>
-<dataset name="mvco wec test, 3m waves, alongshore uniform" ID="mvco_output/wec_3m_uniform" urlPath="mvco_output/wec_3m_uniform">
-      <serviceName>gridServices</serviceName>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/wec_3m_uniform/" suffix=".nc"/>
-        </aggregation>
-      </netcdf>
-    </dataset>
-<dataset name="mvco wec test, 3m waves, EW periodic" ID="mvco_output/wec_3m_EW" urlPath="mvco_output/wec_3m_EW">
-      <serviceName>gridServices</serviceName>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="ocean_time" type="joinExisting">
-          <scan location="/usgs/data0/mvco_output/wec_3m_EW/" suffix=".nc"/>
         </aggregation>
       </netcdf>
     </dataset>

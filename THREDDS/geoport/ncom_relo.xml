@@ -11,111 +11,56 @@
   <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
   <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
  </service>
-
+ 
  <dataset name="NCOM Relocatable Runs" ID="NCOM">
   <metadata inherited="true">
    <serviceName>allServices</serviceName>
-   <creator>
+
+<creator>
     <name vocabulary="DIF">NAVO/NAVY/MIL/US</name>
     <contact url="http://www.navy.mil" email="frank.bub@navy.mil"/>
    </creator>
-   <documentation
-    xlink:href="ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional/ReadMe_Japan.txt"
-    xlink:title="ReadMe.txt"/>
+   <documentation xlink:href="ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional/ReadMe_Japan.txt" xlink:title="ReadMe.txt"/>
+
   </metadata>
 
   <dataset name="Fukushima" ID="ncom_relo/fukushima" urlPath="ncom_relo/fukushima">
-   <metadata inherited="true">
-    <documentation type="Summary"> Preliminary NCOM Relocatable 1km forecast model for Fukushima
-     Region. The data here was obtained from the site
-     (ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional), untarred, unzipped, converted to
-     NetCDF4 to save space, and then aggregated to facilitate access by Rich Signell
-     (rsignell@usgs.gov) in the hopes that this will make the forecast data more accessible to
-     scientists who are trying to adaptively sample the plume. </documentation>
-   </metadata>
+  <metadata inherited="true">
+ <documentation type="Summary"> Preliminary NCOM Relocatable 1km forecast model for Fukushima Region.  The data here was obtained from the site (ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional), untarred, unzipped, converted to NetCDF4 to save space, and then aggregated to facilitate access by Rich Signell (rsignell@usgs.gov) in the hopes that this will make the forecast data more accessible to scientists who are trying to adaptively sample the plume. </documentation>
+  </metadata>
    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <remove type="attribute" name="field"/>
+    <aggregation dimName="time" type="joinExisting" recheckEvery="1 hour">
+     <scan location="/usgs/data1/rsignell/models/navo/fukushima/latest" regExp=".*ncom_relo_fuku.*\.nc$" olderThan="5 min"/>
+    </aggregation>
     <attribute name="title" value="NAVO NCOM Relocatable Model: Fukushima Regional Forecast"/>
-    <attribute name="summary"
-     value="Preliminary NCOM Relocatable 1km forecast model for Fukushima Region.  The data here was obtained from the site (ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional), untarred, unzipped, converted to NetCDF4 to save space, and then aggregated to facilitate access by Rich Signell (rsignell@usgs.gov) in the hopes that this will make the forecast data more accessible to scientists who are trying to adaptively sample the plume."/>
+ <attribute name="summary" value="Preliminary NCOM Relocatable 1km forecast model for Fukushima Region.  The data here was obtained from the site (ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional), untarred, unzipped, converted to NetCDF4 to save space, and then aggregated to facilitate access by Rich Signell (rsignell@usgs.gov) in the hopes that this will make the forecast data more accessible to scientists who are trying to adaptively sample the plume." /> 
     <variable name="water_u">
      <attribute name="standard_name" value="eastward_sea_water_velocity"/>
     </variable>
     <variable name="water_v">
      <attribute name="standard_name" value="northward_sea_water_velocity"/>
     </variable>
-    <remove type="attribute" name="field"/>
-    <aggregation dimName="time" type="joinExisting" recheckEvery="1 hour">
-     <scan location="/usgs/data1/rsignell/models/navo/fukushima/latest"
-      regExp=".*ncom_relo_fuku.*\.nc$" olderThan="5 min"/>
-    </aggregation>
    </netcdf>
   </dataset>
-  
-  <dataset name="Fukushima FMRC" ID="ncom_relo_fmrc">
-   <featureCollection name="ncom_relo/fukushima/fmrc" featureType="FMRC" harvest="true" path="ncom_relo/fukushima/fmrc">
-    <metadata inherited="true">
-     <documentation type="summary">Fukushima FMRC</documentation>
-     <serviceName>allServices</serviceName>
-    </metadata>
-    <!--   <collection spec="/usgs/vault0/coawst/coawst_2/Output/coawst_us_#yyyyMMdd_HH#.nc$"-->
-    <collection spec="/usgs/data1/rsignell/models/navo/fukushima/**/ncom_relo_fukushima.*\.nc$"
-     recheckAfter="1 hour" olderThan="10 min"/>
-    <update startup="true" rescan="0 30 6 * * ? *" trigger="allow"/>
-    <fmrcConfig regularize="false" datasetTypes="Best"/>
-    <!-- 
-     Inside the featureCollection, but outside the protoDataset, we define the NcML that happens
-     before the aggregation.  To get aggregated, we must have grids, so we turn the bed params
-     into grids by giving them a psuedo coordinate in Z.  If we don't do this, they will not be 
-     aggregated. 
-    -->
-    
-    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-     <remove type="attribute" name="field"/>
-    </netcdf>
-    
-    <protoDataset choice="Penultimate">
-     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-      <attribute name="title" value="NAVO NCOM Relocatable Model: Fukushima Regional Forecast"/>
-      <attribute name="summary"
-       value="Preliminary NCOM Relocatable 1km forecast model for Fukushima Region.  The data here was obtained from the site (ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional), untarred, unzipped, converted to NetCDF4 to save space, and then aggregated to facilitate access by Rich Signell (rsignell@usgs.gov) in the hopes that this will make the forecast data more accessible to scientists who are trying to adaptively sample the plume."/>
-      <variable name="water_u">
-       <attribute name="standard_name" value="eastward_sea_water_velocity"/>
-      </variable>
-      <variable name="water_v">
-       <attribute name="standard_name" value="northward_sea_water_velocity"/>
-      </variable>
-      </netcdf>
-    </protoDataset>
-    
-   </featureCollection>
-  
-
   <dataset name="Sendai" ID="ncom_relo/sendai" urlPath="ncom_relo/sendai">
-   <metadata inherited="true">
-    <documentation type="Summary"> Preliminary NCOM Relocatable forecast model for Sendai Region.
-     The data here was obtained from the site
-     (ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional), untarred, unzipped, converted to
-     NetCDF4 to save space, and then aggregated to facilitate access by Rich Signell
-     (rsignell@usgs.gov) in the hopes that this will make the forecast data more accessible to
-     scientists who are trying to adaptively sample the plume. </documentation>
-   </metadata>
+  <metadata inherited="true">
+ <documentation type="Summary"> Preliminary NCOM Relocatable forecast model for Sendai Region.  The data here was obtained from the site (ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional), untarred, unzipped, converted to NetCDF4 to save space, and then aggregated to facilitate access by Rich Signell (rsignell@usgs.gov) in the hopes that this will make the forecast data more accessible to scientists who are trying to adaptively sample the plume. </documentation>
+  </metadata>
    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-    <attribute name="title" value="NAVO NCOM Relocatable Model: Sendai Regional Forecast"/>
-    <attribute name="summary"
-     value="Preliminary NCOM Relocatable 1km forecast model for Sendai Region.  The data here was obtained from the site (ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional), untarred, unzipped, converted to NetCDF4 to save space, and then aggregated to facilitate access by Rich Signell (rsignell@usgs.gov) in the hopes that this will make the forecast data more accessible to scientists who are trying to adaptively sample the plume."/>
     <remove type="attribute" name="field"/>
+    <aggregation dimName="time" type="joinExisting" recheckEvery="1 hour">
+     <scan location="/usgs/data1/rsignell/models/navo/sendai/latest" regExp=".*ncom_relo_sendai.*\.nc$" olderThan="5 min"/>
+    </aggregation>
     <variable name="water_u">
      <attribute name="standard_name" value="eastward_sea_water_velocity"/>
     </variable>
     <variable name="water_v">
      <attribute name="standard_name" value="northward_sea_water_velocity"/>
     </variable>
-    <aggregation dimName="time" type="joinExisting" recheckEvery="1 hour">
-     <scan location="/usgs/data1/rsignell/models/navo/sendai/latest"
-      regExp=".*ncom_relo_sendai.*\.nc$" olderThan="5 min"/>
-    </aggregation>
+    <attribute name="title" value="NAVO NCOM Relocatable Model: Sendai Regional Forecast"/>
+ <attribute name="summary" value="Preliminary NCOM Relocatable 1km forecast model for Sendai Region.  The data here was obtained from the site (ftp://ftp.opc.ncep.noaa.gov/grids/operational/NCOM/regional), untarred, unzipped, converted to NetCDF4 to save space, and then aggregated to facilitate access by Rich Signell (rsignell@usgs.gov) in the hopes that this will make the forecast data more accessible to scientists who are trying to adaptively sample the plume." /> 
    </netcdf>
   </dataset>
-
- </dataset>
+</dataset>
 </catalog>

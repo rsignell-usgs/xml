@@ -6,6 +6,11 @@
     <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
     <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
   </service> 
   
  <datasetScan name="USGS NetCDF files on data0" ID="usgs/data0" path="usgs/data0"
@@ -14,11 +19,16 @@
      <serviceName>allServices</serviceName>
     </metadata>
     <filter>
+      <include wildcard="*.tif"/>  
+      <include wildcard="*.tiff"/>  
+      <include wildcard="*.ncml"/>  
+      <include wildcard="*.grd"/>  
       <include wildcard="*.nc"/>  
       <include wildcard="*.nc.gz"/>  
       <include wildcard="*.cdf"/>
       <include wildcard="*.grib"/>
       <include wildcard="*.grb"/>
+      <include wildcard="*.grb2"/>
       <include wildcard="*.grib2"/>
       <include wildcard="*_00_00"/>
     </filter>
@@ -27,5 +37,6 @@
     </sort>
     <addDatasetSize/>
   </datasetScan>
+
 
 </catalog>

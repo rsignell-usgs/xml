@@ -6,6 +6,10 @@
     <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
     <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
   </service> 
   
  <datasetScan name="USGS NetCDF files on data1" ID="usgs/data1" path="usgs/data1"
@@ -14,13 +18,22 @@
      <serviceName>allServices</serviceName>
     </metadata>
     <filter>
+      <include wildcard="*.tif"/>  
+      <include wildcard="*.tiff"/>  
+      <include wildcard="*.ncml"/>  
+      <include wildcard="*.grd"/>  
       <include wildcard="*.nc"/>  
       <include wildcard="*.nc.gz"/>  
       <include wildcard="*.cdf"/>
       <include wildcard="*.grib"/>
+      <include wildcard="*.js"/>
       <include wildcard="*.grb"/>
+      <include wildcard="*.txt"/>
+      <include wildcard="*.hdf"/>
+      <include wildcard="*.grb2"/>
       <include wildcard="*.grib2"/>
       <include wildcard="*_00_00"/>
+      <include wildcard="*.bz2"/>
     </filter>
     <sort>
       <lexigraphicByName increasing="true"/>

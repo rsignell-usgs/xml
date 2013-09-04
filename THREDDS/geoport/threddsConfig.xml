@@ -1,84 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <threddsConfig>
-
   <!-- all options are commented out in standard install - meaning use default values -->
   <!-- see http://www.unidata.ucar.edu/projects/THREDDS/tech/reference/ThreddsConfigXMLFile.html -->
-
   <!--
   The <catalogRoot> element:
   For catalogs you don't want visible from the /thredds/catalog.xml chain
   of catalogs, you can use catalogRoot elements. Each catalog root config
   catalog is crawled and used in configuring the TDS.-->
- <catalogRoot>multi_ts.xml</catalogRoot>
+  <catalogRoot>coops.xml</catalogRoot>
+  <catalogRoot>oceansites.xml</catalogRoot>
+  <catalogRoot>multi_ts.xml</catalogRoot>
+  <catalogRoot>multi_hs.xml</catalogRoot>
+  <catalogRoot>ncom_relo.xml</catalogRoot>
   <catalogRoot>usgs_all.xml</catalogRoot>
   <catalogRoot>vault0.xml</catalogRoot>
   <catalogRoot>data0.xml</catalogRoot>
   <catalogRoot>data1.xml</catalogRoot>
-    <catalogRoot>leo.xml</catalogRoot>
+  <catalogRoot>leo.xml</catalogRoot>
   <catalogRoot>sabgom_ltrans.xml</catalogRoot>
   <catalogRoot>ncdc.xml</catalogRoot>
   <catalogRoot>fvcom_fmrc.xml</catalogRoot>
   <catalogRoot>fvcom_2006_catalog.xml</catalogRoot>
-<!--  <catalogRoot>umb_massbay.xml</catalogRoot> -->
+  <!--  <catalogRoot>umb_massbay.xml</catalogRoot> -->
   <catalogRoot>rtofs.xml</catalogRoot>
   <catalogRoot>mag_anom.xml</catalogRoot>
-     <catalogRoot>mag_anom2.xml</catalogRoot>
-    <catalogRoot>fine.xml</catalogRoot>
-  <catalogRoot>prism.xml</catalogRoot>
-    <catalogRoot>prism2.xml</catalogRoot>
-    <catalogRoot>prism3.xml</catalogRoot>
- <catalogRoot>hydrologic_catalog.xml</catalogRoot>
-
-<catalogRoot>apex_dailyrun_fmrc.xml</catalogRoot>
+  <catalogRoot>mag_anom2.xml</catalogRoot>
+  <catalogRoot>fine.xml</catalogRoot>
+  <catalogRoot>hydrologic_catalog.xml</catalogRoot>
+  <catalogRoot>apex_dailyrun_fmrc.xml</catalogRoot>
   <catalogRoot>ncom_fmrc.xml</catalogRoot>
   <catalogRoot>carolinas_catalog.xml</catalogRoot>
-   <catalogRoot>carolinas_wrf.xml</catalogRoot> 
+  <catalogRoot>carolinas_wrf.xml</catalogRoot>
   <catalogRoot>multi_catalog_all.xml</catalogRoot>
   <catalogRoot>gcoos_seadas_sst.xml</catalogRoot>
   <catalogRoot>magfinal.xml</catalogRoot>
   <catalogRoot>albers.xml</catalogRoot>
   <catalogRoot>albers_remote.xml</catalogRoot>
-  <!--
-   * Setup for generated HTML pages.
-   *
-   * NOTE: URLs may be absolute or relative, relative URLs must be relative
-   * to the webapp URL, i.e., http://server:port/thredds/.
-    -->
-  <htmlSetup>
-    <!--
-     * CSS documents used in generated HTML pages.
-     * The CSS document given in the "catalogCssUrl" element is used for all pages
-     * that are HTML catalog views. The CSS document given in the "standardCssUrl"
-     * element is used in all other generated HTML pages.
-     * -->
-    <standardCssUrl>tds.css</standardCssUrl>
-    <catalogCssUrl>tdsCat.css</catalogCssUrl>
 
-    <!--
-     * The URLs (relative to "/thredds/") and alternate text for both
-     * folder and dataset icons used in HTML catalog views.
-     * -->
-    <folderIconUrl>folder.gif</folderIconUrl>
-    <folderIconAlt>Folder</folderIconAlt>
-    <datasetIconUrl>dataset.gif</datasetIconUrl>
-    <datasetIconAlt>Dataset</datasetIconAlt>
-
-    <!--
-     * Name and logo for this installation.
-     * -->
-    <installName>WHCMSC Sediment Transport Group</installName>
-    <installLogoUrl>header_graphic_usgsIdentifier_white.jpg</installLogoUrl>
-    <installLogoAlt>USGS</installLogoAlt>
-
-    <!--
-     * Name, URL, and logo for the institution hosting this installation.
-     * -->
-    <hostInstName>USGS/WHCMSC</hostInstName>
-    <hostInstUrl>http://woodshole.er.usgs.gov/</hostInstUrl>
-    <hostInstLogoUrl>myGroup.gif</hostInstLogoUrl>
-    <hostInstLogoAlt>USGS Woods Hole</hostInstLogoAlt>
-  </htmlSetup>
-
+  <serverInformation>
+    <name>WHCMSC Sediment Transport Group</name>
+    <logoUrl>header_graphic_usgsIdentifier_white.jpg</logoUrl>
+    <logoAltText>USGS</logoAltText>
+    
+    <abstract>Scientific Data</abstract>
+    <keywords>meteorology, atmosphere, climate, ocean, earth science</keywords>
+    
+    <contact>
+      <name>Rich Signell</name>
+      <organization>USGS</organization>
+      <email>rsignell@usgs.gov</email>
+      <phone>508-457-2229</phone>
+    </contact>
+    <hostInstitution>
+      <name>USGS/WHCMSC</name>
+      <webSite>http://woodshole.er.usgs.gov/</webSite>
+      <logoUrl>header_graphic_usgsIdentifier_white.jpg</logoUrl>
+      <logoAltText>USGS Woods Hole</logoAltText>
+    </hostInstitution>
+  </serverInformation>  
   <!--
    The <CatalogServices> element:
    - Services on local TDS served catalogs are always on.
@@ -88,7 +67,6 @@
   <CatalogServices>
     <allowRemote>true</allowRemote>
   </CatalogServices>
-
   <!--
   Configuring the CDM (netcdf-java library)
   see http://www.unidata.ucar.edu/software/netcdf-java/reference/RuntimeLoading.html
@@ -102,48 +80,42 @@
     <table type="GRIB2" filename="/home/rkambic/grib/tables/grib2userparameters"/>
   </nj22Config>
   -->
-
   <!--
   CDM uses the DiskCache directory to store temporary files, like uncompressed files.
+  -->
   <DiskCache>
-    <alwaysUse>false</alwaysUse>
-    <dir>/data/tmp/thredds/cache/</dir>
+    <alwaysUse>true</alwaysUse>
     <scour>1 hour</scour>
     <maxSize>1 Gb</maxSize>
   </DiskCache>
-  -->
-
   <!--
   Caching open NetcdfFile objects.
   default is to allow 200 - 400 open files, cleanup every 10 minutes 
   -->
- <NetcdfFileCache>
-    <minFiles>200</minFiles> 
+  <NetcdfFileCache>
+    <minFiles>200</minFiles>
     <maxFiles>400</maxFiles>
     <scour>10 min</scour>
   </NetcdfFileCache>
-
   <!--
   Caching open NetcdfDataset objects.
    default allow 100 - 200 open datasets, cleanup every 10 minutes
   -->
   <NetcdfDatasetCache>
-    <minFiles>100</minFiles> 
+    <minFiles>100</minFiles>
     <maxFiles>400</maxFiles>
     <scour>5 min</scour>
   </NetcdfDatasetCache>
-
   <!--
   The <HTTPFileCache> element:
   allow 20 - 40 open datasets, cleanup every 10 minutes
   used by HTTP Range requests.
   -->
   <HTTPFileCache>
-    <minFiles>20</minFiles>   
+    <minFiles>20</minFiles>
     <maxFiles>40</maxFiles>
     <scour>10 min</scour>
   </HTTPFileCache>
-
   <!--
   Writing GRIB indexes.
   <GribIndexing>
@@ -151,88 +123,72 @@
     <alwaysUseCache>false</alwaysUseCache>
   </GribIndexing>
   -->
-
   <!--
   Persist joinNew aggregations to named directory. scour every 24 hours, delete stuff older than 30 days
-  <AggregationCache>
-    <dir>/data/tmp/thredds/aggcache/</dir>
-    <scour>24 hours</scour>
-    <maxAge>30 days</maxAge>
-  </AggregationCache>
   -->
-
+  <AggregationCache>
+    <!--  <dir>/data/tmp/thredds/aggcache/</dir> -->
+    <!-- -1 hours means never scour the aggregation of joinExisting datasets -->
+    <scour>-1 hours</scour>
+    <!--  <maxAge>30 days</maxAge> -->
+  </AggregationCache>
+  <FeatureCollection>
+    <maxSize> 100 Mb</maxSize>
+    <!-- jvmPercent is not used if maxSize is present -->
+    <!--       <jvmPercent> 2</jvmPercent>  -->
+  </FeatureCollection>
   <!--
   How to choose the template dataset for an aggregation. latest, random, or penultimate
-  <Aggregation>
-    <typicalDataset>random</typicalDataset>
-  </Aggregation>
   -->
-
-  
- <!-- The Netcdf Subset Service is off by default.-->
+  <Aggregation>
+    <typicalDataset>penultimate</typicalDataset>
+  </Aggregation>
+  <!-- The Netcdf Subset Service is off by default.-->
   <NetcdfSubsetService>
     <allow>true</allow>
-    <dir>/usgs/data0/tmp/thredds/ncSubsetCache/</dir>
     <scour>10 min</scour>
     <maxAge>-1 min</maxAge>
-    <metarDataDir>/opt/tomcat/content/thredds/public/stn/</metarDataDir>
-    <metarRawDir>/data/ldm/pub/decoded/netcdf/surface/metar/</metarRawDir>
   </NetcdfSubsetService>
-  
-
-  
-<!--  The WCS Service is off by default.
+  <!--  The WCS Service is off by default.
   Also, off by default (and encouraged) is operating on a remote dataset.-->
   <WCS>
     <allow>true</allow>
     <allowRemote>false</allowRemote>
-    <dir>/usgs/data0/tmp/thredds/wcsCache/</dir>
     <scour>15 min</scour>
     <maxAge>30 min</maxAge>
   </WCS>
-  
   <WMS>
     <allow>true</allow>
-<!--    <paletteLocationDir>override-default-pallete-dir</paletteLocationDir>  -->
+    <!--    <paletteLocationDir>override-default-pallete-dir</paletteLocationDir>  -->
+    <scour>15 min</scour>
+    <maxAge>30 min</maxAge>
   </WMS>
-
   <!-- CatalogGen service is off by default.   -->
   <CatalogGen>
     <allow>true</allow>
   </CatalogGen>
-
-
   <!-- DLwriter service is off by default.
        As is support for operating on remote catalogs. -->
   <DLwriter>
     <allow>true</allow>
     <allowRemote>true</allowRemote>
-  </DLwriter>
-   -->
-
-  <!-- DqcService is off by default.
+  </DLwriter> --> <!-- DqcService is off by default.
   <DqcService>
     <allow>false</allow>
   </DqcService>
    -->
-
   <!--
    Link to a Viewer application on the HTML page:
    <Viewer>my.package.MyViewer</Viewer>
    -->
-
-   <!--
+  <!--
    Add a DataSource - essentially an IOSP with access to Servlet request parameters
    <DatsetSource>my.package.DatsetSourceImpl</DatsetSource>
    -->
-
-  
   <!--Forecast Model Run Collection Inventory-->
   <FmrcInventory>
     <openType>XML_ONLY</openType>
   </FmrcInventory>
-  
-
   <!--
   Modify Logging parameters. Normally use log4j.xml
   <Logging>
@@ -241,10 +197,9 @@
     <MaxFiles></MaxFiles>
   </Logging>
   -->
-
-<Opendap>
-   <ascLimit>50</ascLimit>
-   <binLimit>1500</binLimit>
-</Opendap>
-
+  <NCISO>
+    <ncmlAllow>true</ncmlAllow>
+    <uddcAllow>true</uddcAllow>
+    <isoAllow>true</isoAllow>
+  </NCISO>
 </threddsConfig>

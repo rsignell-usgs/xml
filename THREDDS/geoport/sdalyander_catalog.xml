@@ -1,0 +1,168 @@
+
+<catalog xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd" name="OPeNDAP Data Server" version="1.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+	<dataset name="East Coast Hindcast" ID="psdhindcast">
+		<metadata inherited="true">
+			<serviceName>ncdods</serviceName>
+			<authority>gov.usgs.er.whsc</authority>
+			<dataType>Grid</dataType>
+			<dataFormat>NetCDF</dataFormat>
+			<creator>
+				<name vocabulary="DIF">OM/WHSC/USGS</name>
+				<contact url="http://www.usgs.gov/" email="sdalyander@usgs.gov"/>
+			</creator>
+			<publisher>
+				<name vocabulary="DIF">OM/WHSC/USGS</name>
+				<contact url="http://www.usgs.gov/" email="sdalyander@usgs.gov"/>
+			</publisher>
+			<documentation xlink:href="http://woodshole.er.usgs.gov/project-pages/cccp/index.html" xlink:title="Carolinas Coastal Change Program"/>
+		</metadata>
+		
+		<dataset name="30 Day Hindcast"><!--  This will be the name of the "folder" holding the runs in the catalog      -->
+		
+				<dataset name="run101" ID="sdalyander/EC30Day/run101" urlPath="sdalyander/EC30Day/run101"><!--  each data set should have a unique dataset name, ID and urlPath, 
+                        this will be used to make the thredds url  and is not the actual location of the data though the name may reflect the location of the data   -->
+					<metadata>
+						<documentation type="summary">COAWST output, run 101 (tides only, 30 days, starts 10/1/2010)</documentation><!--  put notes, explanations, etc. here     -->
+					</metadata>
+					<serviceName>ncdods</serviceName>
+					<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+						<aggregation dimName="ocean_time" type="joinExisting">
+							<scan location="/usgs/data1/sdalyander/EC30Day/run101" regExp=".*sandbox_his.*\.nc$"/><!--  the location is the actual location of the data files, the regExp will find all the files with the expressed pattern for aggregation    -->
+						</aggregation>
+					</netcdf>
+				</dataset>
+				<dataset name="run102TPX" ID="sdalyander/EC30Day/run102_tpx" urlPath="sdalyander/EC30Day/run102_tpx"><!--  each data set should have a unique dataset name, ID and urlPath, 
+                        this will be used to make the thredds url  and is not the actual location of the data though the name may reflect the location of the data   -->
+					<metadata>
+						<documentation type="summary">COAWST output, run 102 (tides only, 30 days w/10 day ramp, starts 10/1/2010)</documentation><!--  put notes, explanations, etc. here     -->
+					</metadata>
+					<serviceName>ncdods</serviceName>
+					<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+						<aggregation dimName="ocean_time" type="joinExisting">
+							<scan location="/usgs/data1/sdalyander/EC30Day/run102_tpx" regExp=".*ec102_his.*\.nc$"/><!--  the location is the actual location of the data files, the regExp will find all the files with the expressed pattern for aggregation    -->
+						</aggregation>
+					</netcdf>
+				</dataset>
+								<dataset name="run102RPS" ID="sdalyander/EC30Day/run102_rps" urlPath="sdalyander/EC30Day/run102_rps"><!--  each data set should have a unique dataset name, ID and urlPath, 
+                        this will be used to make the thredds url  and is not the actual location of the data though the name may reflect the location of the data   -->
+					<metadata>
+						<documentation type="summary">COAWST output, run 102 (tides only, 30 days w/10 day ramp, starts 10/1/2010), RPS Forcing</documentation><!--  put notes, explanations, etc. here     -->
+					</metadata>
+					<serviceName>ncdods</serviceName>
+					<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+						<aggregation dimName="ocean_time" type="joinExisting">
+							<scan location="/usgs/data1/sdalyander/EC30Day/run102_rps" regExp=".*ec102_his.*\.nc$"/><!--  the location is the actual location of the data files, the regExp will find all the files with the expressed pattern for aggregation    -->
+						</aggregation>
+					</netcdf>
+				</dataset>
+				
+				<dataset name="run104" ID="sdalyander/EC30Day/run104" urlPath="sdalyander/EC30Day/run104"><!--  each data set should have a unique dataset name, ID and urlPath, 
+                        this will be used to make the thredds url  and is not the actual location of the data though the name may reflect the location of the data   -->
+					<metadata>
+						<documentation type="summary">COAWST output, run 104 (M2 tide only, 30 days w/10 day ramp, starts 10/1/2010), OTPS Forcing file</documentation><!--  put notes, explanations, etc. here     -->
+					</metadata>
+					<serviceName>ncdods</serviceName>
+					<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+						<aggregation dimName="ocean_time" type="joinExisting">
+							<scan location="/usgs/data1/sdalyander/EC30Day/run104" regExp=".*ec104_his.*\.nc$"/><!--  the location is the actual location of the data files, the regExp will find all the files with the expressed pattern for aggregation    -->
+						</aggregation>
+					</netcdf>
+				</dataset>
+				
+								<dataset name="run105" ID="sdalyander/EC30Day/run105" urlPath="sdalyander/EC30Day/run105"><!--  each data set should have a unique dataset name, ID and urlPath, 
+                        this will be used to make the thredds url  and is not the actual location of the data though the name may reflect the location of the data   -->
+					<metadata>
+						<documentation type="summary">COAWST output, run 105 (Z=0.002, 30 days w/10 day ramp, starts 10/1/2010), OTPS Forcing file</documentation><!--  put notes, explanations, etc. here     -->
+					</metadata>
+					<serviceName>ncdods</serviceName>
+					<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+						<aggregation dimName="ocean_time" type="joinExisting">
+							<scan location="/usgs/data1/sdalyander/EC30Day/run105" regExp=".*ec105_his.*\.nc$"/><!--  the location is the actual location of the data files, the regExp will find all the files with the expressed pattern for aggregation    -->
+						</aggregation>
+					</netcdf>
+				</dataset>
+				
+												<dataset name="run106" ID="sdalyander/EC30Day/run106" urlPath="sdalyander/EC30Day/run106"><!--  each data set should have a unique dataset name, ID and urlPath, 
+                        this will be used to make the thredds url  and is not the actual location of the data though the name may reflect the location of the data   -->
+					<metadata>
+						<documentation type="summary">COAWST output, run 106 (Z=0.2, 30 days w/10 day ramp, starts 10/1/2010), OTPS Forcing file</documentation><!--  put notes, explanations, etc. here     -->
+					</metadata>
+					<serviceName>ncdods</serviceName>
+					<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+						<aggregation dimName="ocean_time" type="joinExisting">
+							<scan location="/usgs/data1/sdalyander/EC30Day/run106" regExp=".*ec106_his.*\.nc$"/><!--  the location is the actual location of the data files, the regExp will find all the files with the expressed pattern for aggregation    -->
+						</aggregation>
+					</netcdf>
+				</dataset>
+				
+				
+								<dataset name="run001b" ID="sdalyander/EC30Day/run001b" urlPath="sdalyander/EC30Day/run001b"><!--  each data set should have a unique dataset name, ID and urlPath, 
+                        this will be used to make the thredds url  and is not the actual location of the data though the name may reflect the location of the data   -->
+					<metadata>
+						<documentation type="summary">COAWST output, run 001 (bathtub, 30 days w/10 day ramp, starts 10/1/2010), OTPS Forcing file</documentation><!--  put notes, explanations, etc. here     -->
+					</metadata>
+					<serviceName>ncdods</serviceName>
+					<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+						<aggregation dimName="ocean_time" type="joinExisting">
+							<scan location="/usgs/data1/sdalyander/EC30Day/run001b" regExp=".*ec001_his.*\.nc$"/><!--  the location is the actual location of the data files, the regExp will find all the files with the expressed pattern for aggregation    -->
+						</aggregation>
+					</netcdf>
+				</dataset>
+				
+				
+				<dataset name="run003" ID="sdalyander/EC30Day/run003" urlPath="sdalyander/EC30Day/run003"><!--  each data set should have a unique dataset name, ID and urlPath, 
+                        this will be used to make the thredds url  and is not the actual location of the data though the name may reflect the location of the data   -->
+					<metadata>
+						<documentation type="summary">COAWST output, run 003 (bathtub, PSD grid 2, 30 days w/10 day ramp, starts 10/1/2010), OTPS Forcing file</documentation><!--  put notes, explanations, etc. here     -->
+					</metadata>
+					<serviceName>ncdods</serviceName>
+					<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+						<aggregation dimName="ocean_time" type="joinExisting">
+							<scan location="/usgs/data1/sdalyander/EC30Day/run003" regExp=".*ec003_his.*\.nc$"/><!--  the location is the actual location of the data files, the regExp will find all the files with the expressed pattern for aggregation    -->
+						</aggregation>
+					</netcdf>
+				</dataset>
+				
+				<dataset name="run004" ID="sdalyander/EC30Day/run004" urlPath="sdalyander/EC30Day/run004"><!--  each data set should have a unique dataset name, ID and urlPath, 
+                        this will be used to make the thredds url  and is not the actual location of the data though the name may reflect the location of the data   -->
+					<metadata>
+						<documentation type="summary">COAWST output, run 004 (bathtub, PSD grid, 30 days w/10 day ramp, starts 10/1/2010), OTPS Forcing file</documentation><!--  put notes, explanations, etc. here     -->
+					</metadata>
+					<serviceName>ncdods</serviceName>
+					<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+						<aggregation dimName="ocean_time" type="joinExisting">
+							<scan location="/usgs/data1/sdalyander/EC30Day/run004" regExp=".*ec004_his.*\.nc$"/><!--  the location is the actual location of the data files, the regExp will find all the files with the expressed pattern for aggregation    -->
+						</aggregation>
+					</netcdf>
+				</dataset>
+				
+								<dataset name="run006" ID="sdalyander/EC30Day/run006" urlPath="sdalyander/EC30Day/run006"><!--  each data set should have a unique dataset name, ID and urlPath, 
+                        this will be used to make the thredds url  and is not the actual location of the data though the name may reflect the location of the data   -->
+					<metadata>
+						<documentation type="summary">COAWST output, run 006 (bathtub, PSD2 grid, 30 days w/10 day ramp, starts 10/1/2010), OTPS Forcing file</documentation><!--  put notes, explanations, etc. here     -->
+					</metadata>
+					<serviceName>ncdods</serviceName>
+					<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+						<aggregation dimName="ocean_time" type="joinExisting">
+							<scan location="/usgs/data1/sdalyander/EC30Day/run006" regExp=".*ec006_his.*\.nc$"/><!--  the location is the actual location of the data files, the regExp will find all the files with the expressed pattern for aggregation    -->
+						</aggregation>
+					</netcdf>
+				</dataset>
+				
+				<dataset name="run012" ID="sdalyander/EC30Day/run012" urlPath="sdalyander/EC30Day/run012"><!--  each data set should have a unique dataset name, ID and urlPath, 
+                        this will be used to make the thredds url  and is not the actual location of the data though the name may reflect the location of the data   -->
+					<metadata>
+						<documentation type="summary">COAWST output, run 002 (bathtub, PSD2 grid, 30 days w/10 day ramp, starts 10/1/2010, Z=0.002), OTPS Forcing file</documentation><!--  put notes, explanations, etc. here     -->
+					</metadata>
+					<serviceName>ncdods</serviceName>
+					<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+						<aggregation dimName="ocean_time" type="joinExisting">
+							<scan location="/usgs/data1/sdalyander/EC30Day/run012" regExp=".*ec012_his.*\.nc$"/><!--  the location is the actual location of the data files, the regExp will find all the files with the expressed pattern for aggregation    -->
+						</aggregation>
+					</netcdf>
+				</dataset>
+				
+		</dataset>
+	</dataset>
+</catalog>

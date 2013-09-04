@@ -31,79 +31,40 @@
         the highest-quality spatial climate data sets currently available. PRISM is the USDA's
         official climatological data. </documentation>
 
-      <documentation type="Rights"> Data are provided as a public service for a limited time. If you
-        find them valuable, please consider doing your part to support the PRISM Climate Group </documentation>
+      <documentation type="Rights">
+Data may be freely reproduced and distributed for non-commercial purposes. When referring to the data, the source must be clearly and prominently stated, and include at a minimum, our name, URL, and data of data creation, for example:
+
+    “PRISM Climate Group, Oregon State University, http://prism.oregonstate.edu, created 4 Feb 2004.”
+
+Sale or other commercial use of the data must be arranged by contacting the PRISM Climate Group.
+
+Copyright and Ownership. All of the data and information presented in this web site are protected by United States copyright laws and applicable international copyright treaties. The PRISM Climate Group, Oregon State University retains rights to ownership of the data and information.
+
+No Warranty. All content on this web site is provided “as is,” without warranty of any kind, either express or implied.        
+
+ </documentation>
 
     </metadata>
 
-    <dataset name="PRISM Monthly Stats" ID="prism3/monthly" urlPath="prism3/monthly">
-<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-  <aggregation type="union">
-    <netcdf location="/usgs/data0/prism/prism_time2.nc"/>
+    <dataset name="PRISM Monthly Stats (4km grid)" ID="prism3/monthly" urlPath="prism3/monthly">
 
-    <!--Time aggregate min temp-->
-    <netcdf>
-      <aggregation dimName="time" type="joinNew">
-        <variableAgg name="temp_min"/>
-        <scan location="/usgs/data0/prism/mintemp/" regExp=".*tmn[0-9]{6}\.nc$" subdirs="true"/>
-        <variable name="temp_min" orgName="Band1">
-          <attribute name="units" value="Celsius"/>
-          <attribute name="long_name" value="Minimum monthly temperature"/>
-          <attribute name="scale_factor" type="float" value="0.01"/>
-          <attribute name="add_offset" type="float" value="0.00"/>
-        </variable>
-      </aggregation>
-    </netcdf>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+   <variable name="temp_min" orgName="tmn">
+<!--       <attribute name="standard_name" value="air_temperature"/> -->
+    </variable>
+    <variable name="temp_max" orgName="tmx">
+<!--       <attribute name="standard_name" value="air_temperature"/>  -->
+    </variable>
+    <variable name="precip_mean" orgName="ppt">
+<!--       <attribute name="standard_name" value="lwe_precipitation_rate"/> -->
+    </variable>
 
-    <!--Time aggregate max temp-->
-    <netcdf>
-      <aggregation dimName="time" type="joinNew">
-        <variableAgg name="temp_max"/>
-        <scan location="/usgs/data0/prism/maxtemp/" regExp=".*tmx[0-9]{6}\.nc$" subdirs="true"/>
-        <variable name="temp_max" orgName="Band1">
-          <attribute name="units" value="Celsius"/>
-          <attribute name="scale_factor" type="float" value="0.01"/>
-          <attribute name="add_offset" type="float" value="0.00"/>
-          <attribute name="long_name" value="Maximum monthly temperature"/>
-        </variable>
-      </aggregation>
-    </netcdf>
+    <aggregation dimName="time" type="joinExisting" recheckEvery="60min">
+     <scan location="/usgs/data0/prism/chunk/" regExp=".*prism_[0-9]{4}-[0-9]{4}\.nc$"/>
+    </aggregation>
+   </netcdf>
 
-    <!--Time aggregate mean precip-->
-    <netcdf>
-      <aggregation dimName="time" type="joinNew">
-        <variableAgg name="precip_mean"/>
-        <scan location="/usgs/data0/prism/precip/" regExp=".*ppt[0-9]{6}\.nc$" subdirs="true"/>
-        <variable name="precip_mean" orgName="Band1">
-          <attribute name="units" value="mm/month"/>
-          <attribute name="long_name" value="Mean monthly precipitation"/>
-          <attribute name="scale_factor" type="float" value="0.01"/>
-          <attribute name="add_offset" type="float" value="0.00"/>
-        </variable>
-      </aggregation>
-    </netcdf>
-
-  </aggregation>
-
-  <!-- Rename dimensions to "lon", "lat" and create lon and lat variables-->
-  <dimension name="lon" orgName="x"/>
-  <dimension name="lat" orgName="y"/>
-
-  <variable name="lon" shape="lon" type="double">
-    <attribute name="units" value="degrees_east"/>
-    <values start="-125.021" increment="0.0416666667"/>
-  </variable>
-
-  <variable name="lat" shape="lat" type="double">
-    <attribute name="units" value="degrees_north"/>
-    <values start="49.9375" increment="-0.0416666667"/>
-  </variable>
-
-  <remove type="variable" name="GDAL_Geographics"/>
-  <attribute name="Conventions" value="CF-1.0"/>
-</netcdf>
-
-
+ 
     </dataset>
   </dataset>
 </catalog>

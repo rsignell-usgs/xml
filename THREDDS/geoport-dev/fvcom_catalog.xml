@@ -27,7 +27,7 @@
       <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
         <aggregation type="union">
           <netcdf
-            location="/usgs/data1/rsignell/models/fvcom/GOM2_2006/FVCOM_results/fvcom_lonlat.nc"/>
+            location="/usgs/data0/rsignell/models/fvcom/GOM2_2006/FVCOM_results/fvcom_lonlat.nc"/>
           <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
             <remove type="variable" name="lon"/>
             <remove type="variable" name="lat"/>
@@ -46,7 +46,7 @@
               <attribute name="units" value="seconds since 2006-01-01 00:00"/>
             </variable>
             <aggregation dimName="time" type="joinExisting">
-              <scan location="/usgs/data1/rsignell/models/fvcom/GOM2_2006" regExp=".*gom_0001\.nc$"
+              <scan location="/usgs/data0/rsignell/models/fvcom/GOM2_2006" regExp=".*gom_0001\.nc$"
                 subdirs="true" olderThan="15 min"/>
             </aggregation>
           </netcdf>
@@ -63,7 +63,7 @@
           <attribute name="standard_name" value="ocean_sigma_coordinate"/>
         </variable>
         <aggregation dimName="time" type="joinExisting">
-          <scan location="/usgs/data1/rsignell/models/fvcom/GOM2_2008" regExp=".*gom2_.*\.nc$"
+          <scan location="/usgs/data0/rsignell/models/fvcom/GOM2_2008" regExp=".*gom2_.*\.nc$"
             subdirs="false" olderThan="15 min"/>
         </aggregation>
       </netcdf>

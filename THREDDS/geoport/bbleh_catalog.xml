@@ -1,0 +1,83 @@
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+  </service>
+
+<dataset name="Barnegat Bay-Little Egg Harbor Hydrodynamic Model" ID="BBLEH/ROMS">
+  <metadata inherited="true">
+
+    <authority>gov.usgs.er.whsc</authority>
+    <dataType>Grid</dataType>
+    <dataFormat>NetCDF</dataFormat>
+    <creator>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="nganju@usgs.gov" />
+    </creator>
+    <publisher>
+      <name vocabulary="DIF">OM/WHSC/USGS</name>
+      <contact url="http://www.usgs.gov/"
+        email="nganju@usgs.gov" />
+    </publisher>
+    <geospatialCoverage zpositive="down">
+      <northsouth>
+        <start>39.35660549</start>
+        <size>0.00081517</size>
+        <units>degrees_north</units>
+      </northsouth>
+      <eastwest>
+        <start> -74.45862439</start>
+        <size>0.0011022</size>
+        <units>degrees_east</units>
+      </eastwest>
+      <updown>
+        <start>0</start>
+        <size>23.97</size>
+        <units>meters</units>
+      </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://www.cstms.org/index.php" 
+      xlink:title="CSTM website"/>
+  </metadata>
+<dataset name="BBLEH preliminary model, with ADCIRC tidal forcing" ID="bbleh/adcirc_1" urlPath="bbleh/adcirc_1">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/bbleh/adcirc_1" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="BBLEH ADCIRC,Real rivers,Plume,Lowpass Espresso bdry,NAM,new bathy" ID="bbleh/bbleh_temp/run027m" urlPath="bbleh/bbleh_temp/run027m">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/bbleh/bbleh_temp/run027m" suffix="his*.nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+
+<dataset name="BBLEH ADCIRC,Real rivers,Plume,Lowpass Espresso bdry,NAM,new bathy,Float" ID="bbleh/bbleh_temp/run028m" urlPath="bbleh/bbleh_temp/run028m">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/bbleh/bbleh_temp/run028m" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+<dataset name="BBLEH Spring 2012" ID="bbleh/spring2012" urlPath="bbleh/spring2012">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/bbleh/spring2012" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+</dataset>   
+</catalog>

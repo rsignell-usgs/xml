@@ -1,0 +1,4148 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ name="THREDDS Data Server"
+ version="1.0.3">
+ 
+ <service name="manyservices" base="" serviceType="compound">
+  <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+ </service>
+ <dataset name="NOAA NMFS Time Series Data" ID="NMFS_01">
+  <metadata inherited="true">
+   <serviceName>manyservices</serviceName>
+   <authority>gov.usgs.er.whsc</authority>
+   <dataType>Grid</dataType>
+   <dataFormat>NetCDF</dataFormat>
+   <creator>
+    <name vocabulary="DIF">OM/WHSC/USGS</name>
+    <contact url="http://www.noaa.gov/"
+     email="james.manning@noaa.gov" />
+   </creator>
+   <publisher>
+    <name vocabulary="DIF">OM/WHSC/USGS</name>
+    <contact url="http://www.usgs.gov/"
+     email="emontgomery@usgs.gov" />
+   </publisher>
+   <geospatialCoverage zpositive="down">
+    <northsouth>
+     <start>60.0</start>
+     <size>120.0</size>
+     <units>degrees_north</units>
+    </northsouth>
+    <eastwest>
+     <start>-180</start>
+     <size>360.0</size>
+     <units>degrees_east</units>
+    </eastwest>
+    <updown>
+     <start>0</start>
+     <size>5000</size>
+     <units>meters</units>
+    </updown>
+   </geospatialCoverage>
+   <documentation xlink:href="http://www.nefsc.noaa.gov/epd/ocean/MainPage/foi/Currents.html"
+    xlink:title="NOAA NMFS Current Meter Projects Page"/>
+  </metadata>
+  <dataset name="m11.cdf" ID="moor/m11.cdf" urlPath="moor/m11.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.833332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.316666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-04-24 01:45:00 </start>
+<end> 1985-05-01 02:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m11.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3989871900000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m11"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m11.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m11.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:36" />
+<attribute name="start_time" value="1985-04-24 01:45:00Z" />
+<attribute name="stop_time" value="1985-05-01 02:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m21a.cdf" ID="moor/m21a.cdf" urlPath="moor/m21a.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.849998 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.166664 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-04-24 03:00:00 </start>
+<end> 1985-07-21 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m21a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3989876400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m21"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m21a.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m21a.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:36" />
+<attribute name="start_time" value="1985-04-24 03:00:00Z" />
+<attribute name="stop_time" value="1985-07-21 17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m21b.cdf" ID="moor/m21b.cdf" urlPath="moor/m21b.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.833332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.166664 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-08-27 15:15:00 </start>
+<end> 1985-11-08 01:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m21b.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4000720500000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m21"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m21b.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m21b.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:36" />
+<attribute name="start_time" value="1985-08-27 15:15:00Z" />
+<attribute name="stop_time" value="1985-11-08 01:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m21b1.cdf" ID="moor/m21b1.cdf" urlPath="moor/m21b1.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.833332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.166664 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-08-27 15:15:00 </start>
+<end> 1985-09-27 23:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m21b1.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4000720500000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m21"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m21b1.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m21b1.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:37" />
+<attribute name="start_time" value="1985-08-27 15:15:00Z" />
+<attribute name="stop_time" value="1985-09-27 23:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m21b2.cdf" ID="moor/m21b2.cdf" urlPath="moor/m21b2.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.833332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.166664 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-10-04 21:00:00 </start>
+<end> 1985-11-08 01:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m21b2.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4004024400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m21"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m21b2.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m21b2.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:37" />
+<attribute name="start_time" value="1985-10-04 21:00:00Z" />
+<attribute name="stop_time" value="1985-11-08 01:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m22.cdf" ID="moor/m22.cdf" urlPath="moor/m22.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.849998 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.166664 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-08-27 17:45:00 </start>
+<end> 1985-11-19 12:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m22.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4000729500000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m22"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m22.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m22.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:37" />
+<attribute name="start_time" value="1985-08-27 17:45:00Z" />
+<attribute name="stop_time" value="1985-11-19 12:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m23.cdf" ID="moor/m23.cdf" urlPath="moor/m23.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.849998 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.166664 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-04-24 19:00:00 </start>
+<end> 1985-06-14 01:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m23.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3989934000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m23"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m23.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m23.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:37" />
+<attribute name="start_time" value="1985-04-24 19:00:00Z" />
+<attribute name="stop_time" value="1985-06-14 01:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m31.cdf" ID="moor/m31.cdf" urlPath="moor/m31.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.861668 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.773331 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-04-24 12:45:00 </start>
+<end> 1985-11-22 00:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m31.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3989911500000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m31"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m31.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m31.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:37" />
+<attribute name="start_time" value="1985-04-24 12:45:00Z" />
+<attribute name="stop_time" value="1985-11-22 00:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m3186.cdf" ID="moor/m3186.cdf" urlPath="moor/m3186.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.873333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.766670 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1986-04-29 19:45:00 </start>
+<end> 1986-11-17 11:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m3186.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4021904700000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m31"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m3186.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m3186.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:38" />
+<attribute name="start_time" value="1986-04-29 19:45:00Z" />
+<attribute name="stop_time" value="1986-11-17 11:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m32.cdf" ID="moor/m32.cdf" urlPath="moor/m32.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.866665 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.783333 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-04-24 14:30:00 </start>
+<end> 1985-05-09 19:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m32.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3989917800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m32"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m32.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m32.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:38" />
+<attribute name="start_time" value="1985-04-24 14:30:00Z" />
+<attribute name="stop_time" value="1985-05-09 19:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m411.cdf" ID="moor/m411.cdf" urlPath="moor/m411.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.883335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.516670 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-04-24 16:30:00 </start>
+<end> 1985-05-22 13:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m411.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3989925000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m41"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m411.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m411.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:38" />
+<attribute name="start_time" value="1985-04-24 16:30:00Z" />
+<attribute name="stop_time" value="1985-05-22 13:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m412.cdf" ID="moor/m412.cdf" urlPath="moor/m412.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.883335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.516670 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-07-26 10:00:00 </start>
+<end> 1985-11-20 01:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m412.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3997936800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m41"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m412.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m412.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:38" />
+<attribute name="start_time" value="1985-07-26 10:00:00Z" />
+<attribute name="stop_time" value="1985-11-20 01:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m51c.cdf" ID="moor/m51c.cdf" urlPath="moor/m51c.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.733334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.466667 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-04-24 18:30:00 </start>
+<end> 1985-11-19 22:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m51c.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3989932200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m51"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m51c.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m51c.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:38" />
+<attribute name="start_time" value="1985-04-24 18:30:00Z" />
+<attribute name="stop_time" value="1985-11-19 22:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m52c.cdf" ID="moor/m52c.cdf" urlPath="moor/m52c.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.733334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.466667 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-04-24 19:45:00 </start>
+<end> 1985-11-19 19:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m52c.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3989936700000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m52"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m52c.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m52c.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:42" />
+<attribute name="start_time" value="1985-04-24 19:45:00Z" />
+<attribute name="stop_time" value="1985-11-19 19:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m53c.cdf" ID="moor/m53c.cdf" urlPath="moor/m53c.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.733334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.466667 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-04-24 20:00:00 </start>
+<end> 1985-11-19 20:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m53c.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3989937600000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m53"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m53c.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m53c.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:42" />
+<attribute name="start_time" value="1985-04-24 20:00:00Z" />
+<attribute name="stop_time" value="1985-11-19 20:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m61.cdf" ID="moor/m61.cdf" urlPath="moor/m61.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.483334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.348335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1986-04-29 12:15:00 </start>
+<end> 1986-11-16 16:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m61.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4021877700000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m61"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m61.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m61.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:45" />
+<attribute name="start_time" value="1986-04-29 12:15:00Z" />
+<attribute name="stop_time" value="1986-11-16 16:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m62c.cdf" ID="moor/m62c.cdf" urlPath="moor/m62c.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.483334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.349998 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-04-25 01:15:00 </start>
+<end> 1985-11-20 18:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m62c.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3989956500000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m62"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m62c.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m62c.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:45" />
+<attribute name="start_time" value="1985-04-25 01:15:00Z" />
+<attribute name="stop_time" value="1985-11-20 18:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m63c.cdf" ID="moor/m63c.cdf" urlPath="moor/m63c.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.483334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.349998 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-04-25 01:15:00 </start>
+<end> 1985-09-14 04:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m63c.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3989956500000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m63"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m63c.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m63c.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:45" />
+<attribute name="start_time" value="1985-04-25 01:15:00Z" />
+<attribute name="stop_time" value="1985-09-14 04:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="m64c.cdf" ID="moor/m64c.cdf" urlPath="moor/m64c.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.483334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.349998 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1985-04-25 01:30:00 </start>
+<end> 1985-11-20 17:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEG C  ">TEMP_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/m64c.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3989957400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-m64"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/m64c.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="m64c.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:45" />
+<attribute name="start_time" value="1985-04-25 01:30:00Z" />
+<attribute name="stop_time" value="1985-11-20 17:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="mm1.cdf" ID="moor/mm1.cdf" urlPath="moor/mm1.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.846668 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.808334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-09-29 06:00:00 </start>
+<end> 1979-03-19 14:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CMS/SEC">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CMS/SEC">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/mm1.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3782613600000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-mm1"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/mm1.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="mm1.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:46" />
+<attribute name="start_time" value="1978-09-29 06:00:00Z" />
+<attribute name="stop_time" value="1979-03-19 14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="mm2.cdf" ID="moor/mm2.cdf" urlPath="moor/mm2.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.845001 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.796669 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-09-29 07:00:00 </start>
+<end> 1979-01-31 06:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CMS/SEC">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CMS/SEC">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELCIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/mm2.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3782617200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-mm2"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/mm2.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="mm2.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:46" />
+<attribute name="start_time" value="1978-09-29 07:00:00Z" />
+<attribute name="stop_time" value="1979-01-31 06:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="mn1.cdf" ID="moor/mn1.cdf" urlPath="moor/mn1.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.846668 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.016670 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-08-31 18:00:00 </start>
+<end> 1978-12-19 03:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/mn1.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3780151200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-mn1"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/mn1.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="mn1.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:49" />
+<attribute name="start_time" value="1978-08-31 18:00:00Z" />
+<attribute name="stop_time" value="1978-12-19 03:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="mn2.cdf" ID="moor/mn2.cdf" urlPath="moor/mn2.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.846668 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.016670 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-08-31 18:00:00 </start>
+<end> 1979-01-30 18:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/mn2.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3780151200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-mn2"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/mn2.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="mn2.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:49" />
+<attribute name="start_time" value="1978-08-31 18:00:00Z" />
+<attribute name="stop_time" value="1979-01-30 18:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="mna.cdf" ID="moor/mna.cdf" urlPath="moor/mna.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.816666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.000000 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1976-03-30 20:00:00 </start>
+<end> 1976-07-10 18:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CMS/SEC">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CMS/SEC">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="DEGREES">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/mna.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3703780800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-mna"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/mna.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="mna.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:50" />
+<attribute name="start_time" value="1976-03-30 20:00:00Z" />
+<attribute name="stop_time" value="1976-07-10 18:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="mnb.cdf" ID="moor/mnb.cdf" urlPath="moor/mnb.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.854000 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.019501 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1979-12-14 21:00:00 </start>
+<end> 1980-05-27 13:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="CMS/SEC">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="CMS/SEC">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/mnb.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3820770000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-mnb"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/mnb.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="mnb.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:50" />
+<attribute name="start_time" value="1979-12-14 21:00:00Z" />
+<attribute name="stop_time" value="1980-05-27 13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="mo2.cdf" ID="moor/mo2.cdf" urlPath="moor/mo2.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.866665 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.183334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-09-02 16:45:00 </start>
+<end> 1979-01-29 19:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/mo2.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3780319500000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-mo2"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/mo2.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="mo2.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:50" />
+<attribute name="start_time" value="1978-09-02 16:45:00Z" />
+<attribute name="stop_time" value="1979-01-29 19:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="mo3.cdf" ID="moor/mo3.cdf" urlPath="moor/mo3.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 40.866665 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.183334 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-09-02 16:45:00 </start>
+<end> 1979-01-29 19:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/SEC ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/SEC ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/mo3.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3780319500000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-mo3"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/mo3.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="mo3.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:50" />
+<attribute name="start_time" value="1978-09-02 16:45:00Z" />
+<attribute name="stop_time" value="1979-01-29 19:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec111.cdf" ID="moor/nec111.cdf" urlPath="moor/nec111.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.328335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.906670 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1976-09-23 20:00:00 </start>
+<end> 1977-04-16 00:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec111.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3719073600000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec111.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec111.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:50" />
+<attribute name="start_time" value="1976-09-23 20:00:00Z" />
+<attribute name="stop_time" value="1977-04-16 00:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec112.cdf" ID="moor/nec112.cdf" urlPath="moor/nec112.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.328335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.906670 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1976-09-23 20:00:00 </start>
+<end> 1977-04-16 00:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec112.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3719073600000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec112.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec112.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:50" />
+<attribute name="start_time" value="1976-09-23 20:00:00Z" />
+<attribute name="stop_time" value="1977-04-16 00:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec113.cdf" ID="moor/nec113.cdf" urlPath="moor/nec113.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.328335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.906670 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1976-09-23 20:08:05 </start>
+<end> 1977-04-16 00:08:05 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec113.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3719074085000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec113.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec113.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:51" />
+<attribute name="start_time" value="1976-09-23 20:08:05Z" />
+<attribute name="stop_time" value="1977-04-16 00:08:05Z" />
+</netcdf>
+</dataset>
+<dataset name="nec121.cdf" ID="moor/nec121.cdf" urlPath="moor/nec121.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.279999 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.949997 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1976-09-23 22:00:00 </start>
+<end> 1977-04-22 00:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec121.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3719080800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec121.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec121.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:51" />
+<attribute name="start_time" value="1976-09-23 22:00:00Z" />
+<attribute name="stop_time" value="1977-04-22 00:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec123.cdf" ID="moor/nec123.cdf" urlPath="moor/nec123.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.279999 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.949997 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1976-09-23 22:00:00 </start>
+<end> 1977-04-22 00:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec123.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3719080800000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec123.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec123.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:51" />
+<attribute name="start_time" value="1976-09-23 22:00:00Z" />
+<attribute name="stop_time" value="1977-04-22 00:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec211.cdf" ID="moor/nec211.cdf" urlPath="moor/nec211.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.369999 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.943336 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-06-13 04:00:00 </start>
+<end> 1977-09-22 18:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec211.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3741739200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec211.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec211.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:55" />
+<attribute name="start_time" value="1977-06-13 04:00:00Z" />
+<attribute name="stop_time" value="1977-09-22 18:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec212.cdf" ID="moor/nec212.cdf" urlPath="moor/nec212.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.369999 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.943336 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-06-13 04:00:00 </start>
+<end> 1977-09-22 18:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec212.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3741739200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec212.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec212.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:55" />
+<attribute name="start_time" value="1977-06-13 04:00:00Z" />
+<attribute name="stop_time" value="1977-09-22 18:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec213.cdf" ID="moor/nec213.cdf" urlPath="moor/nec213.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.369999 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.943336 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-06-13 04:00:00 </start>
+<end> 1977-09-22 18:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec213.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3741739200000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec213.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec213.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:55" />
+<attribute name="start_time" value="1977-06-13 04:00:00Z" />
+<attribute name="stop_time" value="1977-09-22 18:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec222.cdf" ID="moor/nec222.cdf" urlPath="moor/nec222.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.296665 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.970001 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-06-08 21:00:00 </start>
+<end> 1977-09-22 22:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec222.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3741368400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec222.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec222.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:55" />
+<attribute name="start_time" value="1977-06-08 21:00:00Z" />
+<attribute name="stop_time" value="1977-09-22 22:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec223.cdf" ID="moor/nec223.cdf" urlPath="moor/nec223.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.296665 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.970001 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-06-08 21:00:00 </start>
+<end> 1977-08-26 19:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec223.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3741368400000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec223.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec223.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:55" />
+<attribute name="start_time" value="1977-06-08 21:00:00Z" />
+<attribute name="stop_time" value="1977-08-26 19:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec231.cdf" ID="moor/nec231.cdf" urlPath="moor/nec231.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.176666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -66.029999 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-06-13 07:00:00 </start>
+<end> 1977-09-23 02:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec231.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3741750000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec231.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec231.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:56" />
+<attribute name="start_time" value="1977-06-13 07:00:00Z" />
+<attribute name="stop_time" value="1977-09-23 02:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec232.cdf" ID="moor/nec232.cdf" urlPath="moor/nec232.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.176666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -66.029999 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-06-13 07:00:00 </start>
+<end> 1977-09-23 02:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec232.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3741750000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec232.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec232.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:56" />
+<attribute name="start_time" value="1977-06-13 07:00:00Z" />
+<attribute name="stop_time" value="1977-09-23 02:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec233.cdf" ID="moor/nec233.cdf" urlPath="moor/nec233.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.176666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -66.029999 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-06-13 07:00:00 </start>
+<end> 1977-09-23 02:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec233.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3741750000000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec233.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec233.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:56" />
+<attribute name="start_time" value="1977-06-13 07:00:00Z" />
+<attribute name="stop_time" value="1977-09-23 02:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec311.cdf" ID="moor/nec311.cdf" urlPath="moor/nec311.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.393333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.974998 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-09-22 23:15:00 </start>
+<end> 1977-12-02 13:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec311.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3750534900000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec311.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec311.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:56" />
+<attribute name="start_time" value="1977-09-22 23:15:00Z" />
+<attribute name="stop_time" value="1977-12-02 13:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec312.cdf" ID="moor/nec312.cdf" urlPath="moor/nec312.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.393333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.974998 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-09-22 23:15:00 </start>
+<end> 1978-03-12 15:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec312.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3750534900000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec312.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec312.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:56" />
+<attribute name="start_time" value="1977-09-22 23:15:00Z" />
+<attribute name="stop_time" value="1978-03-12 15:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec313.cdf" ID="moor/nec313.cdf" urlPath="moor/nec313.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.393333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.974998 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-09-22 23:15:00 </start>
+<end> 1978-01-15 15:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec313.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3750534900000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec313.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec313.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:54:59" />
+<attribute name="start_time" value="1977-09-22 23:15:00Z" />
+<attribute name="stop_time" value="1978-01-15 15:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec322.cdf" ID="moor/nec322.cdf" urlPath="moor/nec322.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.964996 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-09-23 03:15:00 </start>
+<end> 1978-03-12 19:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELCIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec322.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3750549300000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec322.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec322.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:55:00" />
+<attribute name="start_time" value="1977-09-23 03:15:00Z" />
+<attribute name="stop_time" value="1978-03-12 19:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec331.cdf" ID="moor/nec331.cdf" urlPath="moor/nec331.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.166668 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -66.029999 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-09-23 07:15:00 </start>
+<end> 1977-10-31 21:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec331.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00 -05:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3750563700000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec331.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec331.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:55:00" />
+<attribute name="start_time" value="1977-09-23 07:15:00Z" />
+<attribute name="stop_time" value="1977-10-31 21:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec333.cdf" ID="moor/nec333.cdf" urlPath="moor/nec333.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.166668 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -66.029999 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-09-23 06:15:00 </start>
+<end> 1978-03-12 23:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec333.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3750560100000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec333.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec333.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:55:00" />
+<attribute name="start_time" value="1977-09-23 06:15:00Z" />
+<attribute name="stop_time" value="1978-03-12 23:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec411.cdf" ID="moor/nec411.cdf" urlPath="moor/nec411.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.368332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.941666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-03-12 19:45:00 </start>
+<end> 1978-09-15 13:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec411.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3765296700000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec411.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec411.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:55:00" />
+<attribute name="start_time" value="1978-03-12 19:45:00Z" />
+<attribute name="stop_time" value="1978-09-15 13:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec412.cdf" ID="moor/nec412.cdf" urlPath="moor/nec412.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.368332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.941666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-03-12 19:45:00 </start>
+<end> 1978-09-15 13:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec412.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3765296700000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec412.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec412.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:55:00" />
+<attribute name="start_time" value="1978-03-12 19:45:00Z" />
+<attribute name="stop_time" value="1978-09-15 13:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec413.cdf" ID="moor/nec413.cdf" urlPath="moor/nec413.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.368332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.941666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-03-12 19:45:00 </start>
+<end> 1978-09-15 13:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec413.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3765296700000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec413.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec413.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:55:04" />
+<attribute name="start_time" value="1978-03-12 19:45:00Z" />
+<attribute name="stop_time" value="1978-09-15 13:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec421.cdf" ID="moor/nec421.cdf" urlPath="moor/nec421.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.303333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.966667 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-03-12 23:45:00 </start>
+<end> 1978-09-15 11:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec421.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3765311100000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec421.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec421.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:55:04" />
+<attribute name="start_time" value="1978-03-12 23:45:00Z" />
+<attribute name="stop_time" value="1978-09-15 11:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec422.cdf" ID="moor/nec422.cdf" urlPath="moor/nec422.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.303333 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.966667 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-03-12 23:45:00 </start>
+<end> 1978-09-15 11:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec422.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3765311100000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec422.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec422.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:55:04" />
+<attribute name="start_time" value="1978-03-12 23:45:00Z" />
+<attribute name="stop_time" value="1978-09-15 11:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec433.cdf" ID="moor/nec433.cdf" urlPath="moor/nec433.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.176666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -66.029999 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-03-13 02:45:00 </start>
+<end> 1978-09-15 09:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+<variable name="TEMP" vocabulary_name="sea_water_temperature" units="CELSIUS">TEMPERATURE_9</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec433.cdf">
+<variable name="time" shape="time" type="double">
+ <attribute name="units" value="milliseconds since 1858-11-17 00:00:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3765321900000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<variable name="TEMP">
+<attribute name="standard_name" value="sea_water_temperature"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec433.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec433.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:55:04" />
+<attribute name="start_time" value="1978-03-13 02:45:00Z" />
+<attribute name="stop_time" value="1978-09-15 09:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec441.cdf" ID="moor/nec441.cdf" urlPath="moor/nec441.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.349998 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.973335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-03-13 04:45:00 </start>
+<end> 1978-05-15 07:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec441.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3765329100000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec441.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec441.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:55:04" />
+<attribute name="start_time" value="1978-03-13 04:45:00Z" />
+<attribute name="stop_time" value="1978-05-15 07:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="nec442.cdf" ID="moor/nec442.cdf" urlPath="moor/nec442.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="false">
+<geospatialCoverage>
+<northsouth>
+<start> 42.349998 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -65.973335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+</geospatialCoverage>
+<timeCoverage>
+<start>1978-03-13 04:45:00 </start>
+<end> 1978-04-03 04:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.4">
+<variable name="EAST" vocabulary_name="eastward_sea_water_velocity" units="MM/S   ">EAST_2</variable>
+<variable name="NORTH" vocabulary_name="northward_sea_water_velocity" units="MM/S   ">NORTH_5</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://geoport.whoi.edu/thredds/dodsC/usgs/vault0/data/nmfs/moor/nec442.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="milliseconds since 1858-11-17 00:00:00"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3765329100000" increment="3600000"/>
+</variable>
+<remove type="variable" name="time2" />
+<variable name="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="" type="String">
+<attribute name="standard_name" value="station_id"/>
+ <values>"NOAA/NMFS-nec"</values>
+ </variable>
+<variable name="EAST">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+</variable>
+<variable name="NORTH">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+</variable>
+<attribute name="Conventions" value="CF-1.4" />
+<attribute name="id" value="moor/nec442.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="NOAA NMFS scientists" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="title" value="nec442.cdf - NOAA NMFS Buoy Group Moorings" />
+<attribute name="summary" value="All the Physical Oceanographic observations collected by NOAA NMFS Moorings." />
+<attribute name="standard_name_vocabulary" value="CF-1.4" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_created" value="03-Jun-2011 16:55:04" />
+<attribute name="start_time" value="1978-03-13 04:45:00Z" />
+<attribute name="stop_time" value="1978-04-03 04:45:00Z" />
+</netcdf>
+</dataset>
+ </dataset>
+</catalog>

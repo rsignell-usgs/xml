@@ -1,5 +1,5 @@
-<<<<<<< .mine
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wmsConfig SYSTEM "http://www.unidata.ucar.edu/schemas/thredds/dtd/ncwms/wmsConfig.dtd">
 <!--
 Detailed configuration of the WMS service.  This config file can be used to
 set default styling parameters for each dataset/variable, and to enable or disable
@@ -8,329 +8,73 @@ the GetFeatureInfo operation.
 See http://www.resc.reading.ac.uk/trac/myocean-tools/wiki/WmsDetailedConfiguration
 for more information.
 -->
-<!DOCTYPE wmsConfig [
-
-<!ELEMENT wmsConfig (global, overrides?)>
-
-<!ELEMENT global (defaults, standardNames?)>
-
-<!ELEMENT defaults (allowFeatureInfo, defaultColorScaleRange, defaultPaletteName, defaultNumColorBands, logScaling)>
-
-<!ELEMENT standardNames (standardName*)>
-
-<!ELEMENT standardName (defaultColorScaleRange?, defaultPaletteName?, defaultNumColorBands?, logScaling?)>
-<!ATTLIST standardName name CDATA #REQUIRED>
-<!ATTLIST standardName units CDATA #REQUIRED>
-
-<!ELEMENT overrides (datasetPath*)>
-
-<!ELEMENT datasetPath (pathDefaults?, variables?)>
-<!ATTLIST datasetPath pathSpec CDATA #REQUIRED>
-
-<!ELEMENT pathDefaults (allowFeatureInfo?, defaultColorScaleRange?, defaultPaletteName?, defaultNumColorBands?, logScaling?)>
-
-<!ELEMENT variables (variable*)>
-
-<!ELEMENT variable (defaultColorScaleRange?, defaultPaletteName?, defaultNumColorBands?, logScaling?)>
-<!ATTLIST variable id CDATA #REQUIRED>
-
-<!ELEMENT allowFeatureInfo (#PCDATA)>
-<!ELEMENT defaultColorScaleRange (#PCDATA)>
-<!ELEMENT defaultPaletteName (#PCDATA)>
-<!ELEMENT defaultNumColorBands (#PCDATA)>
-<!ELEMENT logScaling (#PCDATA)>
-]>
 <wmsConfig>
 
- <global>
-  <!-- These settings apply to all datasets unless overridden below -->
+    <global>
+        <!-- These settings apply to all datasets unless overridden below -->
 
-  <defaults>
-   <!-- The global defaults. All elements are mandatory -->
-   <allowFeatureInfo>true</allowFeatureInfo>
-   <defaultColorScaleRange>-50 50</defaultColorScaleRange>
-   <defaultPaletteName>rainbow</defaultPaletteName>
-   <defaultNumColorBands>64</defaultNumColorBands>
-   <logScaling>false</logScaling>
-  </defaults>
+        <defaults>
+            <!-- The global defaults. All elements are mandatory -->
+            <allowFeatureInfo>true</allowFeatureInfo>
+            <defaultColorScaleRange>0 40</defaultColorScaleRange>
+            <defaultPaletteName>rainbow</defaultPaletteName>
+            <defaultNumColorBands>32</defaultNumColorBands>
+            <logScaling>false</logScaling>
+            <intervalTime>true</intervalTime>
+        </defaults>
 
-  <standardNames>
-   <!-- Use this section to set defaults per standard name -->
-   <!-- Units must come from the UDUNITS vocabulary -->
-
-   <standardName name="air_temperature" units="degC">
-    <defaultColorScaleRange>-10 40</defaultColorScaleRange>
-   </standardName>
-   <standardName name="lwe_precipitation_rate" units="mm/month">
-    <defaultColorScaleRange>0.1 800</defaultColorScaleRange>
-    <logScaling>true</logScaling>
-   </standardName>
-   <standardName name="eastward_sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>-0.5 0.5</defaultColorScaleRange>
-   </standardName>
-     <standardName name="mass_concentration_of_chlorophyll_in_sea_water" units="kg m-3">
-    <logScaling>true</logScaling>
-   </standardName>
-   <standardName name="northward_sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>-0.5 0.5</defaultColorScaleRange>
-   </standardName>
-   <standardName name="sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>0 1</defaultColorScaleRange>
-   </standardName>
-   <standardName name="ocean_mixed_layer_thickness" units="m">
-    <defaultColorScaleRange>0 200</defaultColorScaleRange>
-   </standardName>
-   <standardName name="sea_surface_elevation" units="m">
-    <defaultColorScaleRange>-0.5 0.5</defaultColorScaleRange>
-   </standardName>
-   <standardName name="sea_water_potential_temperature" units="degC">
-    <defaultColorScaleRange>10 34</defaultColorScaleRange>
-   </standardName>
-   <standardName name="sea_water_salinity" units="0.001">
-    <defaultColorScaleRange>30 38</defaultColorScaleRange>
-   </standardName>
-   <standardName name="sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>0 0.5</defaultColorScaleRange>
-   </standardName>
-   <standardName name="surface_downward_heat_flux_in_air" units="w/m2">
-    <defaultColorScaleRange>-500 500</defaultColorScaleRange>
-   </standardName>  
-   <standardName name="surface_eastward_sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>-0.5 0.5</defaultColorScaleRange>
-   </standardName>
-   <standardName name="surface_northward_sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>-0.5 0.5</defaultColorScaleRange>
-   </standardName>
-   <standardName name="surface_sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>0 0.5</defaultColorScaleRange>
-   </standardName>
-
-   <!-- TODO: how about allowing "*fraction" to map to 0:1? -->
-   <!-- TODO: how about allowing multiple standard names to map to the same settings,
+        <standardNames>
+            <!-- Use this section to set defaults per standard name -->
+            <!-- Units must come from the UDUNITS vocabulary -->
+            <standardName name="sea_water_potential_temperature" units="Celsius">
+                <defaultColorScaleRange>11.5 28</defaultColorScaleRange>
+            </standardName>
+            <standardName name="sea_water_temperature" units="Celsius">
+                <defaultColorScaleRange>11.5 28</defaultColorScaleRange>
+            </standardName>
+            <standardName name="sea_surface_height_above_sea_level" units="meter">
+                <defaultColorScaleRange>-0.2 0.2</defaultColorScaleRange>
+            </standardName>
+            <standardName name="sea_water_salinity" units="">
+                <defaultColorScaleRange>35.8 38.5</defaultColorScaleRange>
+            </standardName>
+            <standardName name="sea_water_potential_density" units="kg m-3">
+                <defaultColorScaleRange>1025 1029</defaultColorScaleRange>
+            </standardName>
+            <standardName name="sea_water_velocity" units="meter second-1">
+                <defaultColorScaleRange>0 1</defaultColorScaleRange>
+            </standardName>
+            <standardName name="barotropic_sea_water_velocity" units="meter second-1">
+                <defaultColorScaleRange>0 0.5</defaultColorScaleRange>
+            </standardName>
+            <standardName name="mass_concentration_of_chlorophyll_in_sea_water" units="kg m-3">
+                <logScaling>true</logScaling>
+            </standardName>
+            <!-- TODO: how about allowing "*fraction" to map to 0:1? -->
+            <!-- TODO: how about allowing multiple standard names to map to the same settings,
                  either through a glob expression or through a list? -->
-  </standardNames>
- </global>
+        </standardNames>
+    </global>
 
- <overrides>
+    <overrides>
+        
+        <datasetPath pathSpec="testAll/*eta_211.nc">
+            <!-- Will apply to all paths that match the path spec above -->
+            <pathDefaults>
+                <!-- These will apply to all variables in this path unless overridden below -->
+                <allowFeatureInfo>false</allowFeatureInfo>
+                <defaultPaletteName>occam</defaultPaletteName>
+            </pathDefaults>
 
-  <datasetPath pathSpec="*">
-   <!-- Will apply to all paths that match the path spec above -->
-   <pathDefaults> </pathDefaults>
-
-   <variables>
-    <!-- Configure variables individually according to their internal ID.
+            <variables>
+                <!-- Configure variables individually according to their internal ID.
                      This is the most specific setting and will override any others -->
-    <variable id="temp">
-     <defaultColorScaleRange>10 30</defaultColorScaleRange>
-    </variable>
-    <variable id="temp_min">
-     <defaultColorScaleRange>-10 40</defaultColorScaleRange>
-    </variable>
-    <variable id="temp_max">
-     <defaultColorScaleRange>-10 40</defaultColorScaleRange>
-    </variable>
-    <variable id="precip_mean">
-     <defaultColorScaleRange>0.1 1000</defaultColorScaleRange>
-     <logScaling>true</logScaling>
-    </variable>
-    <variable id="Temperature">
-     <defaultColorScaleRange>10 30</defaultColorScaleRange>
-    </variable>
-    <variable id="water_temp">
-     <defaultColorScaleRange>10 30</defaultColorScaleRange>
-    </variable>
-    <variable id="u">
-     <defaultColorScaleRange>-1 1</defaultColorScaleRange>
-    </variable>
-    <variable id="v">
-     <defaultColorScaleRange>-1 1</defaultColorScaleRange>
-    </variable>
-    <variable id="ubar">
-     <defaultColorScaleRange>-1 1</defaultColorScaleRange>
-    </variable>
-    <variable id="vbar">
-     <defaultColorScaleRange>-1 1</defaultColorScaleRange>
-    </variable>
-    <variable id="sea_water_velocity">
-     <defaultColorScaleRange>0 1</defaultColorScaleRange>
-    </variable>
-    <variable id="salt">
-     <defaultColorScaleRange>30 35</defaultColorScaleRange>
-    </variable>
-    <variable id="salinity">
-     <defaultColorScaleRange>30 35</defaultColorScaleRange>
-    </variable>
-    <variable id="Salinity">
-     <defaultColorScaleRange>30 35</defaultColorScaleRange>
-    </variable>
-    <variable id="zeta">
-     <defaultColorScaleRange>-1 1</defaultColorScaleRange>
-    </variable>
-    <variable id="surf_el">
-     <defaultColorScaleRange>-1 1</defaultColorScaleRange>
-    </variable>
-    <variable id="Significant_height_of_combined_wind_waves_and_swell">
-     <defaultColorScaleRange>0 3</defaultColorScaleRange>
-    </variable>
-    <variable id="Primary_wave_direction">
-     <defaultColorScaleRange>0 360</defaultColorScaleRange>
-    </variable>
-    <variable id="Primary_wave_mean_period">
-     <defaultColorScaleRange>0 20</defaultColorScaleRange>
-    </variable>
-   </variables>
-  </datasetPath>
-
- </overrides>
+                <variable id="Z_sfc">
+                    <defaultColorScaleRange>10 20</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+        
+    </overrides>
 
 </wmsConfig>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-Detailed configuration of the WMS service.  This config file can be used to
-set default styling parameters for each dataset/variable, and to enable or disable
-the GetFeatureInfo operation.
-
-See http://www.resc.reading.ac.uk/trac/myocean-tools/wiki/WmsDetailedConfiguration
-for more information.
--->
-<!DOCTYPE wmsConfig [
-
-<!ELEMENT wmsConfig (global, overrides?)>
-
-<!ELEMENT global (defaults, standardNames?)>
-
-<!ELEMENT defaults (allowFeatureInfo, defaultColorScaleRange, defaultPaletteName, defaultNumColorBands, logScaling)>
-
-<!ELEMENT standardNames (standardName*)>
-
-<!ELEMENT standardName (defaultColorScaleRange?, defaultPaletteName?, defaultNumColorBands?, logScaling?)>
-<!ATTLIST standardName name CDATA #REQUIRED>
-<!ATTLIST standardName units CDATA #REQUIRED>
-
-<!ELEMENT overrides (datasetPath*)>
-
-<!ELEMENT datasetPath (pathDefaults?, variables?)>
-<!ATTLIST datasetPath pathSpec CDATA #REQUIRED>
-
-<!ELEMENT pathDefaults (allowFeatureInfo?, defaultColorScaleRange?, defaultPaletteName?, defaultNumColorBands?, logScaling?)>
-
-<!ELEMENT variables (variable*)>
-
-<!ELEMENT variable (defaultColorScaleRange?, defaultPaletteName?, defaultNumColorBands?, logScaling?)>
-<!ATTLIST variable id CDATA #REQUIRED>
-
-<!ELEMENT allowFeatureInfo (#PCDATA)>
-<!ELEMENT defaultColorScaleRange (#PCDATA)>
-<!ELEMENT defaultPaletteName (#PCDATA)>
-<!ELEMENT defaultNumColorBands (#PCDATA)>
-<!ELEMENT logScaling (#PCDATA)>
-]>
-<wmsConfig>
-
- <global>
-  <!-- These settings apply to all datasets unless overridden below -->
-
-  <defaults>
-   <!-- The global defaults. All elements are mandatory -->
-   <allowFeatureInfo>true</allowFeatureInfo>
-   <defaultColorScaleRange>-50 50</defaultColorScaleRange>
-   <defaultPaletteName>rainbow</defaultPaletteName>
-   <defaultNumColorBands>64</defaultNumColorBands>
-   <logScaling>false</logScaling>
-  </defaults>
-
-  <standardNames>
-   <!-- Use this section to set defaults per standard name -->
-   <!-- Units must come from the UDUNITS vocabulary -->
-
-  
-   <standardName name="eastward_sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>-0.5 0.5</defaultColorScaleRange>
-   </standardName>
-     <standardName name="mass_concentration_of_chlorophyll_in_sea_water" units="kg m-3">
-    <logScaling>true</logScaling>
-   </standardName>
-   <standardName name="northward_sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>-0.5 0.5</defaultColorScaleRange>
-   </standardName>
-   <standardName name="ocean_mixed_layer_thickness" units="m">
-    <defaultColorScaleRange>0 200</defaultColorScaleRange>
-   </standardName>
-   <standardName name="sea_surface_elevation" units="m">
-    <defaultColorScaleRange>-0.5 0.5</defaultColorScaleRange>
-   </standardName>
-   <standardName name="sea_water_potential_temperature" units="degC">
-    <defaultColorScaleRange>10 34</defaultColorScaleRange>
-   </standardName>
-   <standardName name="sea_water_salinity" units="0.001">
-    <defaultColorScaleRange>30 38</defaultColorScaleRange>
-   </standardName>
-   <standardName name="sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>0 0.5</defaultColorScaleRange>
-   </standardName>
-   <standardName name="surface_downward_heat_flux_in_air" units="w/m2">
-    <defaultColorScaleRange>-500 500</defaultColorScaleRange>
-   </standardName>  
-   <standardName name="surface_eastward_sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>-0.5 0.5</defaultColorScaleRange>
-   </standardName>
-   <standardName name="surface_northward_sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>-0.5 0.5</defaultColorScaleRange>
-   </standardName>
-   <standardName name="surface_sea_water_velocity" units="m/s">
-    <defaultColorScaleRange>0 0.5</defaultColorScaleRange>
-   </standardName>
-
-   <!-- TODO: how about allowing "*fraction" to map to 0:1? -->
-   <!-- TODO: how about allowing multiple standard names to map to the same settings,
-                 either through a glob expression or through a list? -->
-  </standardNames>
- </global>
-
- <overrides>
-
-  <datasetPath pathSpec="*">
-   <!-- Will apply to all paths that match the path spec above -->
-   <pathDefaults> </pathDefaults>
-
-   <variables>
-    <!-- Configure variables individually according to their internal ID.
-                     This is the most specific setting and will override any others -->
-    <variable id="temp">
-     <defaultColorScaleRange>10 30</defaultColorScaleRange>
-    </variable>
-    <variable id="u">
-     <defaultColorScaleRange>-1 1</defaultColorScaleRange>
-    </variable>
-    <variable id="v">
-     <defaultColorScaleRange>-1 1</defaultColorScaleRange>
-    </variable>
-    <variable id="ubar">
-     <defaultColorScaleRange>-1 1</defaultColorScaleRange>
-    </variable>
-    <variable id="vbar">
-     <defaultColorScaleRange>-1 1</defaultColorScaleRange>
-    </variable>
-    <variable id="salt">
-     <defaultColorScaleRange>30 35</defaultColorScaleRange>
-    </variable>
-    <variable id="zeta">
-     <defaultColorScaleRange>-1 1</defaultColorScaleRange>
-    </variable>
-    <variable id="Significant_height_of_combined_wind_waves_and_swell">
-     <defaultColorScaleRange>0 3</defaultColorScaleRange>
-    </variable>
-    <variable id="Primary_wave_direction">
-     <defaultColorScaleRange>0 360</defaultColorScaleRange>
-    </variable>
-    <variable id="Primary_wave_mean_period">
-     <defaultColorScaleRange>0 20</defaultColorScaleRange>
-    </variable>
-   </variables>
-  </datasetPath>
-
- </overrides>
-
-</wmsConfig>
->>>>>>> .r153

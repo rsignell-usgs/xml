@@ -1,0 +1,48 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.5.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ name="OPeNDAP Data Server"
+ version="1.0.1">
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+
+
+  <dataset name="NOAA-WW3-CFSR">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <documentation xlink:href="http://www.ncep.noaa.gov" xlink:title="NCEP"/>
+    </metadata>
+
+    <featureCollection name="ncep-ww3-cfsr-ecg_10m" featureType="GRIB" path="fmrc/NCEP/ww3/cfsr/10m">
+      <metadata inherited="true">
+        <dataFormat>GRIB-2</dataFormat>
+        <documentation type="summary">NCEP WaveWatch 3 Model: 10 min grid, 30 year hindcast with
+          CFSR winds. </documentation>
+      </metadata>
+      <collection spec="/usgs/data2/rsignell/models/ncep/wave/cfsr_30yr/10m/multi_reanal.ecg_10m.*grb2$"/>
+      <update startup="true" rescan="0 40 5 * * ? *" trigger="allow"/>
+      <gribConfig datasetTypes="Best" />
+    </featureCollection>
+
+    <featureCollection name="ncep-ww3-cfsr-ecg_4m" featureType="GRIB" path="fmrc/NCEP/ww3/cfsr/4m">
+      <metadata inherited="true">
+        <dataFormat>GRIB-2</dataFormat>
+        <documentation type="summary">NCEP WaveWatch 3 Model: 4 min grid, 30 year hindcast with
+          CFSR winds. </documentation>
+      </metadata>
+      <collection spec="/usgs/data2/rsignell/models/ncep/wave/cfsr_30yr/4m/multi_reanal.ecg_4m.*grb2$"/>
+      <update startup="true" rescan="0 40 6 * * ? *" trigger="allow"/>
+      <gribConfig datasetTypes="Best" />
+    </featureCollection>
+
+  </dataset>
+</catalog>
