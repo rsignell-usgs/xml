@@ -53,30 +53,34 @@
 
       <fmrcConfig regularize="false" datasetTypes="Best"/>
     </featureCollection>
-
-    <datasetFmrc name="WaveWatch III Forecast last 3 days (Gulf of Maine)" path="bio/ww3/fmrc3">
+    
+    <featureCollection featureType="FMRC" name="WaveWatch III Forecast last 3 days (Gulf of Maine)"
+      harvest="true" path="bio/ww3/fmrc3">
       <metadata inherited="true">
         <documentation xlink:href="http://scoop.sura.org/Catalog/details.pl?collectionid=sbioww3f"
           xlink:title="SCOOP Catalog Details"/>
       </metadata>
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" enhance="true">
-        <variable name="hs">
-          <attribute name="_FillValue" type="float" value="-999."/>
-        </variable>
-        <variable name="swp">
-          <attribute name="_FillValue" type="float" value="-999."/>
-        </variable>
-        <variable name="dir">
-          <attribute name="_FillValue" type="float" value="-999."/>
-        </variable>
-        <aggregation dimName="runtime" type="forecastModelRunCollection" timeUnitsChange="true"
-          recheckEvery="20min">
-          <scan location="/usgs/data0/rsignell/models/bio_ww3/efine_nc_latest" suffix=".nc"
-            dateFormatMark="#yyyyMMddHH" subdirs="false" olderThan="5 min" enhance="true"/>
-        </aggregation>
-      </netcdf>
+      <collection spec="/usgs/data0/rsignell/models/bio_ww3/efine_nc_latest/#yyyyMMddHH#.nc"
+        olderThan="1 min"/>
+      <update startup="true" rescan="0 30 8/20 * * ? *" trigger="allow"/>
+      
+      <protoDataset choice="First">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <variable name="hs">
+            <attribute name="_FillValue" type="float" value="-999."/>
+          </variable>
+          <variable name="swp">
+            <attribute name="_FillValue" type="float" value="-999."/>
+          </variable>
+          <variable name="dir">
+            <attribute name="_FillValue" type="float" value="-999."/>
+          </variable>
+        </netcdf>
+      </protoDataset>
+      
+      <fmrcConfig regularize="false" datasetTypes="Best"/>
+    </featureCollection>
 
-    </datasetFmrc>
 
     <dataset name="WaveWatch III Forecast latest forecast (Gulf of Maine)" ID="ww3/fine"
       urlPath="WW3/fine.nc" dataType="Grid"/>
