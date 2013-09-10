@@ -1,0 +1,2850 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  name="CMGP Oceanographic Time Series Data">
+  
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name=" Chandeleur Islands Oceanographic Measurements (July - Nov.  2010)" ID="CIberm">
+    <metadata inherited="true">
+      <serviceName>manyservices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Station</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>29.5</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-89.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>3000</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/CI.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="8891wh-a_1d.nc" ID="CHANDELEUR/8891wh-a_1d.nc" urlPath="CHANDELEUR/8891wh-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.843901 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.516800 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -24.908953 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-10 14:14:59 </start>
+<end> 2010-09-11 19:19:27 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="sea_water_pressure" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8891wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4785488099" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="Rec" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 28.159 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-889</values>
+ </variable>
+<variable name="brange" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="27.0166 30.9845"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="18.95 27.55"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1516 1537"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="235.78 357.03"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-3.94 4.32"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-2.85 10.31"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_1294" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="27041 28327"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="400 2310"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="CHANDELEUR/8891wh-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8891wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:57:53" />
+<attribute name="date_issued" value="2013-06-24T12:57:53" />
+<attribute name="date_created" value="2010-12-09T13:03:38" />
+<attribute name="start_time" value="2010-07-10T14:14:59Z" />
+<attribute name="stop_time" value="2010-09-11T19:19:27Z" />
+</netcdf>
+</dataset>
+<dataset name="8891wh-a_2d.nc" ID="CHANDELEUR/8891wh-a_2d.nc" urlPath="CHANDELEUR/8891wh-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.843901 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.516800 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -24.908953 </start>
+<size> 28.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-10 14:14:59 </start>
+<end> 2010-09-11 19:19:27 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8891wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4785488099" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="brange" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="SV_80" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="P_1294" />
+<remove type="variable" name="SDP_850" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-889</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="3.25 31.25"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="Rec" shape="time depth station">
+<attribute name="actual_range" type="float" value="455 18670"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-171.1175 155.3023"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-164.7962 161.7834"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-43.6328 30.4804"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-37.8756 37.0241"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="72 228"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="12 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="CHANDELEUR/8891wh-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8891wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:57:53" />
+<attribute name="date_issued" value="2013-06-24T12:57:53" />
+<attribute name="date_created" value="2010-12-09T13:03:38" />
+<attribute name="start_time" value="2010-07-10T14:14:59Z" />
+<attribute name="stop_time" value="2010-09-11T19:19:27Z" />
+</netcdf>
+</dataset>
+<dataset name="8901wh-a_1d.nc" ID="CHANDELEUR/8901wh-a_1d.nc" urlPath="CHANDELEUR/8901wh-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.969801 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.760696 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -11.910734 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-10 15:50:00 </start>
+<end> 2010-09-13 18:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="sea_water_pressure" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8901wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4785493800" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="Rec" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 13.5307 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-890</values>
+ </variable>
+<variable name="brange" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="11.5633 14.1853"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="20.32 30.2"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1519 1543"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="105.49 213.74"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-2.96 4.57"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-2.3 7.67"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_1294" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="12706 13746"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="150 2560"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="CHANDELEUR/8901wh-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8901wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:57:56" />
+<attribute name="date_issued" value="2013-06-24T12:57:56" />
+<attribute name="date_created" value="2010-12-09T13:41:21" />
+<attribute name="start_time" value="2010-07-10T15:50:00Z" />
+<attribute name="stop_time" value="2010-09-13T18:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8901wh-a_2d.nc" ID="CHANDELEUR/8901wh-a_2d.nc" urlPath="CHANDELEUR/8901wh-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.969801 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.760696 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -11.910734 </start>
+<size> 13.500000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-10 15:50:00 </start>
+<end> 2010-09-13 18:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8901wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4785493800" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="brange" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="SV_80" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="P_1294" />
+<remove type="variable" name="SDP_850" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-890</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="1.62 15.12"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="Rec" shape="time depth station">
+<attribute name="actual_range" type="float" value="477 19231"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-96.676 100.9462"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-113.1085 116.0313"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-13.4287 15.959"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-22.9246 18.144"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="73.25 231.5"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="24.75 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="CHANDELEUR/8901wh-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8901wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:57:56" />
+<attribute name="date_issued" value="2013-06-24T12:57:56" />
+<attribute name="date_created" value="2010-12-09T13:41:21" />
+<attribute name="start_time" value="2010-07-10T15:50:00Z" />
+<attribute name="stop_time" value="2010-09-13T18:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8911wh-part1-a_1d.nc" ID="CHANDELEUR/8911wh-part1-a_1d.nc" urlPath="CHANDELEUR/8911wh-part1-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.739100 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.776299 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -10.348040 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-10 11:20:00 </start>
+<end> 2010-07-18 22:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="sea_water_pressure" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8911wh-part1-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4785477600" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="Rec" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 11.968 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-891</values>
+ </variable>
+<variable name="brange" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="11.1597 12.4957"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="20.37 28.79"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1519 1540"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="266.25 267.24"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-1.11 -0.82"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-0.08 0.18"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_1294" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="6917 15953"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="850 2300"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="CHANDELEUR/8911wh-part1-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8911wh-part1-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:57:58" />
+<attribute name="date_issued" value="2013-06-24T12:57:58" />
+<attribute name="date_created" value="2010-12-06T15:41:09" />
+<attribute name="start_time" value="2010-07-10T11:20:00Z" />
+<attribute name="stop_time" value="2010-07-18T22:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8911wh-part1-a_2d.nc" ID="CHANDELEUR/8911wh-part1-a_2d.nc" urlPath="CHANDELEUR/8911wh-part1-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.739100 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.776299 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -10.348040 </start>
+<size> 12.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-10 11:20:00 </start>
+<end> 2010-07-18 22:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8911wh-part1-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4785477600" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="brange" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="SV_80" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="P_1294" />
+<remove type="variable" name="SDP_850" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-891</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="1.62 13.62"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="Rec" shape="time depth station">
+<attribute name="actual_range" type="float" value="425 2860"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-59.1186 95.213"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-80.7111 76.4996"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-9.7354 9.3546"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-12.9502 15.7514"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="94.5 217"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="23.5 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="CHANDELEUR/8911wh-part1-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8911wh-part1-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:57:58" />
+<attribute name="date_issued" value="2013-06-24T12:57:58" />
+<attribute name="date_created" value="2010-12-06T15:41:09" />
+<attribute name="start_time" value="2010-07-10T11:20:00Z" />
+<attribute name="stop_time" value="2010-07-18T22:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8911wh-part2-a_1d.nc" ID="CHANDELEUR/8911wh-part2-a_1d.nc" urlPath="CHANDELEUR/8911wh-part2-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.739100 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.776299 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -10.460997 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-18 23:07:58 </start>
+<end> 2010-07-27 07:27:58 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="sea_water_pressure" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8911wh-part2-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4786211278" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="Rec" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 12.071 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-891</values>
+ </variable>
+<variable name="brange" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="11.1488 12.6356"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="21.35 30.24"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1522 1543"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="266.07 266.73"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-1.11 -0.71"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-0.61 0.02"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_1294" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="8094 15200"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="950 5290"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="CHANDELEUR/8911wh-part2-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8911wh-part2-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:00" />
+<attribute name="date_issued" value="2013-06-24T12:58:00" />
+<attribute name="date_created" value="2010-12-06T15:56:42" />
+<attribute name="start_time" value="2010-07-18T23:07:58Z" />
+<attribute name="stop_time" value="2010-07-27T07:27:58Z" />
+</netcdf>
+</dataset>
+<dataset name="8911wh-part2-a_2d.nc" ID="CHANDELEUR/8911wh-part2-a_2d.nc" urlPath="CHANDELEUR/8911wh-part2-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.739100 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.776299 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -10.460997 </start>
+<size> 12.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-18 23:07:58 </start>
+<end> 2010-07-27 07:27:58 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8911wh-part2-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4786211278" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="brange" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="SV_80" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="P_1294" />
+<remove type="variable" name="SDP_850" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-891</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="1.61 13.61"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="Rec" shape="time depth station">
+<attribute name="actual_range" type="float" value="1 2405"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-110.9913 84.7031"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-130.1356 82.6851"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-9.9136 8.948"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-15.1508 18.1511"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="96 214.75"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="37.25 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="CHANDELEUR/8911wh-part2-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8911wh-part2-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:00" />
+<attribute name="date_issued" value="2013-06-24T12:58:00" />
+<attribute name="date_created" value="2010-12-06T15:56:42" />
+<attribute name="start_time" value="2010-07-18T23:07:58Z" />
+<attribute name="stop_time" value="2010-07-27T07:27:58Z" />
+</netcdf>
+</dataset>
+<dataset name="8911wh-part3-a_1d.nc" ID="CHANDELEUR/8911wh-part3-a_1d.nc" urlPath="CHANDELEUR/8911wh-part3-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.739100 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.776299 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -10.499068 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-30 01:43:35 </start>
+<end> 2010-08-14 06:03:35 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="sea_water_pressure" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8911wh-part3-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4787171015" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="Rec" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 12.1191 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-891</values>
+ </variable>
+<variable name="brange" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="11.0319 12.7198"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="24.43 29.35"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1530 1541"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="264.75 266.06"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-1.72 -0.77"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-8.23 0.22"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_1294" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="9037 13775"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="830 3250"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="CHANDELEUR/8911wh-part3-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8911wh-part3-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:02" />
+<attribute name="date_issued" value="2013-06-24T12:58:02" />
+<attribute name="date_created" value="2010-12-06T16:35:07" />
+<attribute name="start_time" value="2010-07-30T01:43:35Z" />
+<attribute name="stop_time" value="2010-08-14T06:03:35Z" />
+</netcdf>
+</dataset>
+<dataset name="8911wh-part3-a_2d.nc" ID="CHANDELEUR/8911wh-part3-a_2d.nc" urlPath="CHANDELEUR/8911wh-part3-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.739100 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.776299 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -10.499068 </start>
+<size> 12.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-30 01:43:35 </start>
+<end> 2010-08-14 06:03:35 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8911wh-part3-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4787171015" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="brange" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="SV_80" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="P_1294" />
+<remove type="variable" name="SDP_850" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-891</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="1.62 13.62"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="Rec" shape="time depth station">
+<attribute name="actual_range" type="float" value="1 4373"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-108.626 116.3817"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-103.2384 108.0894"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-28.3477 10.4515"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-16.149 26.1011"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="96 217.5"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="17.75 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="CHANDELEUR/8911wh-part3-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8911wh-part3-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:02" />
+<attribute name="date_issued" value="2013-06-24T12:58:02" />
+<attribute name="date_created" value="2010-12-06T16:35:07" />
+<attribute name="start_time" value="2010-07-30T01:43:35Z" />
+<attribute name="stop_time" value="2010-08-14T06:03:35Z" />
+</netcdf>
+</dataset>
+<dataset name="8921wh-a_1d.nc" ID="CHANDELEUR/8921wh-a_1d.nc" urlPath="CHANDELEUR/8921wh-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.958500 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.860901 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -2.493757 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-10 17:40:00 </start>
+<end> 2010-09-12 21:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="sea_water_pressure" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8921wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4785500400" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="Rec" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 3.5538 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-892</values>
+ </variable>
+<variable name="brange" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="6.2336 8.4641"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="26.66 33.36"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1535 1549"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="128.07 141.13"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-2.06 1.56"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-2.84 -0.68"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_1294" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="2849 3978"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="120 1120"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="CHANDELEUR/8921wh-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8921wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:04" />
+<attribute name="date_issued" value="2013-06-24T12:58:04" />
+<attribute name="date_created" value="2010-12-02T16:01:50" />
+<attribute name="start_time" value="2010-07-10T17:40:00Z" />
+<attribute name="stop_time" value="2010-09-12T21:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8921wh-a_2d.nc" ID="CHANDELEUR/8921wh-a_2d.nc" urlPath="CHANDELEUR/8921wh-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.958500 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.860901 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -2.493757 </start>
+<size> 2.500000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-07-10 17:40:00 </start>
+<end> 2010-09-12 21:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8921wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4785500400" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="brange" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="SV_80" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="P_1294" />
+<remove type="variable" name="SDP_850" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-892</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="1.06 3.56"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="Rec" shape="time depth station">
+<attribute name="actual_range" type="float" value="501 18979"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-58.9475 52.321"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-72.4792 76.3653"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-7.6076 6.6481"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-9.1498 11.9504"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="124.75 240.25"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="77 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="CHANDELEUR/8921wh-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8921wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:04" />
+<attribute name="date_issued" value="2013-06-24T12:58:04" />
+<attribute name="date_created" value="2010-12-02T16:01:50" />
+<attribute name="start_time" value="2010-07-10T17:40:00Z" />
+<attribute name="stop_time" value="2010-09-12T21:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8931wh-a_1d.nc" ID="CHANDELEUR/8931wh-a_1d.nc" urlPath="CHANDELEUR/8931wh-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.842199 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.514603 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -25.309942 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-09-12 15:25:00 </start>
+<end> 2010-11-07 15:54:46 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="sea_water_pressure" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8931wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4791021900" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="Rec" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 28.5399 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-893</values>
+ </variable>
+<variable name="brange" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="26.6912 30.0997"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="20.2 32.5"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1519 1548"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="201.4 202.54"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="0.48 16.43"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-2.67 -0.2"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_1294" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="27517 28615"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="380 2060"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="CHANDELEUR/8931wh-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8931wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:06" />
+<attribute name="date_issued" value="2013-06-24T12:58:06" />
+<attribute name="date_created" value="2010-11-08T11:36:08" />
+<attribute name="start_time" value="2010-09-12T15:25:00Z" />
+<attribute name="stop_time" value="2010-11-07T15:54:46Z" />
+</netcdf>
+</dataset>
+<dataset name="8931wh-a_2d.nc" ID="CHANDELEUR/8931wh-a_2d.nc" urlPath="CHANDELEUR/8931wh-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.842199 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.514603 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -25.309942 </start>
+<size> 28.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-09-12 15:25:00 </start>
+<end> 2010-11-07 15:54:46 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8931wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4791021900" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="brange" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="SV_80" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="P_1294" />
+<remove type="variable" name="SDP_850" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-893</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="3.23 31.23"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="Rec" shape="time depth station">
+<attribute name="actual_range" type="float" value="186 16320"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-183.7356 154.818"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-166.4619 169.9243"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-30.1583 34.7506"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-45.7807 42.3731"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="82.5 227.75"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="17.5 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="CHANDELEUR/8931wh-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8931wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:06" />
+<attribute name="date_issued" value="2013-06-24T12:58:06" />
+<attribute name="date_created" value="2010-11-08T11:36:08" />
+<attribute name="start_time" value="2010-09-12T15:25:00Z" />
+<attribute name="stop_time" value="2010-11-07T15:54:46Z" />
+</netcdf>
+</dataset>
+<dataset name="8951wh-a_1d.nc" ID="CHANDELEUR/8951wh-a_1d.nc" urlPath="CHANDELEUR/8951wh-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.969700 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.760696 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -11.997011 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-09-14 18:10:00 </start>
+<end> 2010-11-08 13:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="sea_water_pressure" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8951wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4791204600" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="Rec" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 13.617 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-895</values>
+ </variable>
+<variable name="brange" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="12.3205 14.5"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="21.22 29.42"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1522 1541"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="143.33 145.19"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-1.2 4.6"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-5.63 0.62"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_1294" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="12914 13777"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="140 2720"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="CHANDELEUR/8951wh-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8951wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:08" />
+<attribute name="date_issued" value="2013-06-24T12:58:08" />
+<attribute name="date_created" value="2010-12-09T13:53:22" />
+<attribute name="start_time" value="2010-09-14T18:10:00Z" />
+<attribute name="stop_time" value="2010-11-08T13:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8951wh-a_2d.nc" ID="CHANDELEUR/8951wh-a_2d.nc" urlPath="CHANDELEUR/8951wh-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.969700 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.760696 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -11.997011 </start>
+<size> 13.500000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-09-14 18:10:00 </start>
+<end> 2010-11-08 13:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8951wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4791204600" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="brange" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="SV_80" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="P_1294" />
+<remove type="variable" name="SDP_850" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-895</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="1.62 15.12"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="Rec" shape="time depth station">
+<attribute name="actual_range" type="float" value="253 16036"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-95.3018 89.8597"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-123.4516 120.833"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-18.0247 14.535"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-21.8057 21.2898"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="81.75 233.25"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="33.5 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="CHANDELEUR/8951wh-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8951wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:08" />
+<attribute name="date_issued" value="2013-06-24T12:58:08" />
+<attribute name="date_created" value="2010-12-09T13:53:22" />
+<attribute name="start_time" value="2010-09-14T18:10:00Z" />
+<attribute name="stop_time" value="2010-11-08T13:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8971wh-a_1d.nc" ID="CHANDELEUR/8971wh-a_1d.nc" urlPath="CHANDELEUR/8971wh-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.739799 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.777802 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -10.728616 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-09-12 13:30:00 </start>
+<end> 2010-11-07 12:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="sea_water_pressure" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8971wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4791015000" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="Rec" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 12.3486 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-897</values>
+ </variable>
+<variable name="brange" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="11.2015 12.9688"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="21.49 29.7"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1522 1542"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="49.79 51.52"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-2.66 0.78"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-12.8 -1.02"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_1294" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="12174 24149"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="830 4450"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="CHANDELEUR/8971wh-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8971wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:10" />
+<attribute name="date_issued" value="2013-06-24T12:58:10" />
+<attribute name="date_created" value="2010-12-09T14:18:52" />
+<attribute name="start_time" value="2010-09-12T13:30:00Z" />
+<attribute name="stop_time" value="2010-11-07T12:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8971wh-a_2d.nc" ID="CHANDELEUR/8971wh-a_2d.nc" urlPath="CHANDELEUR/8971wh-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.739799 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.777802 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -10.728616 </start>
+<size> 12.500000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-09-12 13:30:00 </start>
+<end> 2010-11-07 12:15:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8971wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4791015000" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="brange" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="SV_80" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="P_1294" />
+<remove type="variable" name="SDP_850" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-897</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="1.62 14.12"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="Rec" shape="time depth station">
+<attribute name="actual_range" type="float" value="7 16122"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-89.9653 95.3943"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-115.7583 113.1882"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-25.938 17.7484"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-28.0469 20.5984"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="94 216"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="32.25 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="CHANDELEUR/8971wh-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8971wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:10" />
+<attribute name="date_issued" value="2013-06-24T12:58:10" />
+<attribute name="date_created" value="2010-12-09T14:18:52" />
+<attribute name="start_time" value="2010-09-12T13:30:00Z" />
+<attribute name="stop_time" value="2010-11-07T12:15:00Z" />
+</netcdf>
+</dataset>
+<dataset name="8991wh-a_1d.nc" ID="CHANDELEUR/8991wh-a_1d.nc" urlPath="CHANDELEUR/8991wh-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.958200 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.860497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -2.508808 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-09-13 00:40:06 </start>
+<end> 2010-11-06 01:00:05 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="sea_water_pressure" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8991wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4791055206" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="Rec" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 3.5688 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-899</values>
+ </variable>
+<variable name="brange" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="6.185 8.1802"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="19.13 29.75"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1516 1542"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="339.31 351.82"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-0.64 1.31"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-3.44 -0.93"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_1294" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="3052 3952"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="110 1850"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="CHANDELEUR/8991wh-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8991wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:12" />
+<attribute name="date_issued" value="2013-06-24T12:58:12" />
+<attribute name="date_created" value="2010-12-01T13:32:57" />
+<attribute name="start_time" value="2010-09-13T00:40:06Z" />
+<attribute name="stop_time" value="2010-11-06T01:00:05Z" />
+</netcdf>
+</dataset>
+<dataset name="8991wh-a_2d.nc" ID="CHANDELEUR/8991wh-a_2d.nc" urlPath="CHANDELEUR/8991wh-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 29.958200 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -88.860497 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -2.508808 </start>
+<size> 3.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2010-09-13 00:40:06 </start>
+<end> 2010-11-06 01:00:05 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/CHANDELEUR/8991wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4791055206" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="brange" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="SV_80" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="P_1294" />
+<remove type="variable" name="SDP_850" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-899</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="1.06 4.06"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="Rec" shape="time depth station">
+<attribute name="actual_range" type="float" value="9 15565"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-58.1608 50.5122"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-85.288 80.2032"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-12.3524 9.5615"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-13.9992 12.4498"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="120 243"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="10 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="CHANDELEUR/8991wh-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="8991wh-a.nc - Chandeleur Islands Oceanographic Measurements" />
+<attribute name="summary" value="A program to measure waves water levels and currents near the Chandeleur Islands Louisiana and adjacent berm construction site." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:58:12" />
+<attribute name="date_issued" value="2013-06-24T12:58:12" />
+<attribute name="date_created" value="2010-12-01T13:32:57" />
+<attribute name="start_time" value="2010-09-13T00:40:06Z" />
+<attribute name="stop_time" value="2010-11-06T01:00:05Z" />
+</netcdf>
+</dataset>
+</dataset>
+</catalog>

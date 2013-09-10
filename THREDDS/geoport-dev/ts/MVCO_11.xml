@@ -1,0 +1,1875 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  name="CMGP Oceanographic Time Series Data">
+  
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="OASIS project 2011 observations at MVCO" ID="mvco_11">
+    <metadata inherited="true">
+      <serviceName>manyservices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Station</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>41.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-71.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>30</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/mvco2011.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="9102sc-a_1d.nc" ID="MVCO_11/9102sc-a_1d.nc" urlPath="MVCO_11/9102sc-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.336475 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.556625 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -8.840000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-09-17 14:06:17 </start>
+<end> 2011-10-18 01:01:17 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_41" vocabulary_name="sea_water_salinity" units="PSU">SALINITY (PSU)</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m/s">SOUND VELOCITY (M/S)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MVCO_11/9102sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4822985177" increment="60"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-910</values>
+ </variable>
+<variable name="T_28" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="16.5335 19.3268"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="C_51" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.889 4.3058"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="S_41" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="28.7235 31.9262"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1507.8361 1515.683"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MVCO_11/9102sc-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="9102sc-a.nc - OASIS MVCO 2011" />
+<attribute name="summary" value="Near-seabed Oceanographic Observations made as part of the 2011 OASIS Project at the MVCO." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:14:59" />
+<attribute name="date_issued" value="2013-06-24T13:14:59" />
+<attribute name="date_created" value="2012-04-30T15:36:11" />
+<attribute name="start_time" value="2011-09-17T14:06:17Z" />
+<attribute name="stop_time" value="2011-10-18T01:01:17Z" />
+</netcdf>
+</dataset>
+<dataset name="9103HRaqds-cal_1d.cdf" ID="MVCO_11/9103HRaqds-cal_1d.cdf" urlPath="MVCO_11/9103HRaqds-cal_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.336475 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.556625 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -11.189000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-09-17 15:49:30 </start>
+<end> 2011-10-20 23:49:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MVCO_11/9103HRaqds-cal.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4822991370" increment="7200"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="CS_300" />
+<remove type="variable" name="CD_310" />
+<remove type="variable" name="AGC1_1221" />
+<remove type="variable" name="AGC2_1222" />
+<remove type="variable" name="AGC3_1223" />
+<remove type="variable" name="cor1_1285" />
+<remove type="variable" name="cor2_1286" />
+<remove type="variable" name="cor3_1287" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 10.92 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-910</values>
+ </variable>
+<variable name="P_1" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="11.2899 12.8129"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="16.5189 19.2033"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="81.95 146.1264"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-1.5071 1.1816"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-0.20256 3.0324"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1511.3997 1519.1852"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MVCO_11/9103HRaqds-cal_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="9103HRaqds-cal.cdf - OASIS MVCO 2011" />
+<attribute name="summary" value="Near-seabed Oceanographic Observations made as part of the 2011 OASIS Project at the MVCO." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:02" />
+<attribute name="date_issued" value="2013-06-24T13:15:02" />
+<attribute name="date_created" value="2012-06-04T22:13:33" />
+<attribute name="start_time" value="2011-09-17T15:49:30Z" />
+<attribute name="stop_time" value="2011-10-20T23:49:30Z" />
+</netcdf>
+</dataset>
+<dataset name="9103HRaqds-cal_2d.cdf" ID="MVCO_11/9103HRaqds-cal_2d.cdf" urlPath="MVCO_11/9103HRaqds-cal_2d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.336475 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.556625 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -11.189000 </start>
+<size> -0.974999 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-09-17 15:49:30 </start>
+<end> 2011-10-20 23:49:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1">CURRENT SPEED (CM/S)</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="AGC1_1221" vocabulary_name="Echo Intensity Beam 1" units="counts">Echo Intensity Beam 1</variable>
+<variable name="AGC2_1222" vocabulary_name="Echo Intensity Beam 2" units="counts">Echo Intensity Beam 2</variable>
+<variable name="AGC3_1223" vocabulary_name="Echo Intensity Beam 3" units="counts">Echo Intensity Beam 3</variable>
+<variable name="cor1_1285" vocabulary_name="Beam 1 Correlation" units="percent">Beam 1 Correlation</variable>
+<variable name="cor2_1286" vocabulary_name="Beam 2 Correlation" units="percent">Beam 2 Correlation</variable>
+<variable name="cor3_1287" vocabulary_name="Beam 3 Correlation" units="percent">Beam 3 Correlation</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MVCO_11/9103HRaqds-cal.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4822991370" increment="7200"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="P_1" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="SV_80" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-910</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="0.269 1.244"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-38.4491 23.9906"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-15.6119 18.8819"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-8.5093 6.4153"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time depth station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="0.00063911 38.7806"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time depth station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.00086616 359.9489"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC1_1221" shape="time depth station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="11.2899 12.8129"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC2_1222" shape="time depth station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="16.5189 19.2033"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC3_1223" shape="time depth station">
+<attribute name="actual_range" type="float" value="119.8978 194.8272"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="cor1_1285" shape="time depth station">
+<attribute name="actual_range" type="float" value="118.9022 195.0005"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="cor2_1286" shape="time depth station">
+<attribute name="actual_range" type="float" value="119.1589 194.8567"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="cor3_1287" shape="time depth station">
+<attribute name="actual_range" type="float" value="19.7856 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="MVCO_11/9103HRaqds-cal_2d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="9103HRaqds-cal.cdf - OASIS MVCO 2011" />
+<attribute name="summary" value="Near-seabed Oceanographic Observations made as part of the 2011 OASIS Project at the MVCO." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:02" />
+<attribute name="date_issued" value="2013-06-24T13:15:02" />
+<attribute name="date_created" value="2012-06-04T22:13:33" />
+<attribute name="start_time" value="2011-09-17T15:49:30Z" />
+<attribute name="stop_time" value="2011-10-20T23:49:30Z" />
+</netcdf>
+</dataset>
+<dataset name="9104pcs-cal_1d.cdf" ID="MVCO_11/9104pcs-cal_1d.cdf" urlPath="MVCO_11/9104pcs-cal_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.336475 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.556625 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -11.306494 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-09-17 16:00:01 </start>
+<end> 2011-10-21 00:00:01 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="ResU" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Mean Resolution VelocityEastward</variable>
+<variable name="ResV" vocabulary_name="northward_sea_water_velocity" units="cm/s">Mean Resolution VelocityNorthward</variable>
+<variable name="ResW" vocabulary_name="upward_sea_water_velocity" units="cm/s">Mean Resolution VelocityVertical</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">Median INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="HSD_1218" vocabulary_name="platform_orientation" units="degrees">Heading Std. Dev.</variable>
+<variable name="PSD_1219" vocabulary_name="platform_pitch_angle" units="degrees">Pitch Std. Dev.</variable>
+<variable name="RSD_1220" vocabulary_name="platform_roll_angle" units="degrees">Roll Std. Dev.</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees C">Transducer Temp.</variable>
+<variable name="ATTN1_55" vocabulary_name="ATTENUATION 1" units="m-1">ATTENUATION 1</variable>
+<variable name="tran1_4010" vocabulary_name="TRANSMISSION (VOLTS) #1" units="volts">TRANSMISSION (VOLTS) #1</variable>
+<variable name="rBack2_978" vocabulary_name="raw Backscattering 2" units="v">raw Backscattering 2</variable>
+<variable name="NEP2_56" vocabulary_name="BACKSCATTER INTENSITY 2" units="NTU">BACKSCATTER INTENSITY 2</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MVCO_11/9104pcs-cal.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4822992001" increment="7200"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="USTD_4097" />
+<remove type="variable" name="VSTD_4098" />
+<remove type="variable" name="WSTD_4099" />
+<remove type="variable" name="u_1205min" />
+<remove type="variable" name="v_1206min" />
+<remove type="variable" name="w_1204min" />
+<remove type="variable" name="u_1205max" />
+<remove type="variable" name="v_1206max" />
+<remove type="variable" name="w_1204max" />
+<remove type="variable" name="CS_300" />
+<remove type="variable" name="CD_310" />
+<remove type="variable" name="AGC1_1221" />
+<remove type="variable" name="AGC2_1222" />
+<remove type="variable" name="AGC3_1223" />
+<remove type="variable" name="cor1_1285" />
+<remove type="variable" name="cor2_1286" />
+<remove type="variable" name="cor3_1287" />
+<remove type="variable" name="brange" />
+<remove type="variable" name="bindist" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 10.97 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-910</values>
+ </variable>
+<variable name="ResU" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-23.6785 16.4536"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ResV" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-10.9715 9.9759"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ResW" shape="time station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-3.9383 1.8969"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="144.45 205.45"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-1.2 2.7"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-1.7 1.2"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="HSD_1218" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="0 0"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PSD_1219" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="0 0"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="RSD_1220" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="0 0"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="16.3242 18.9713"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ATTN1_55" shape="time station">
+<attribute name="actual_range" type="float" value="0.57865 22.714"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="tran1_4010" shape="time station">
+<attribute name="actual_range" type="float" value="0.030836 3.8272"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="rBack2_978" shape="time station">
+<attribute name="actual_range" type="float" value="0.0010908 1.4531"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="NEP2_56" shape="time station">
+<attribute name="actual_range" type="float" value="0.98224 167.4662"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MVCO_11/9104pcs-cal_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="9104pcs-cal.cdf - OASIS MVCO 2011" />
+<attribute name="summary" value="Near-seabed Oceanographic Observations made as part of the 2011 OASIS Project at the MVCO." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:10" />
+<attribute name="date_issued" value="2013-06-24T13:15:10" />
+<attribute name="date_created" value="2011-12-02T13:25:11" />
+<attribute name="start_time" value="2011-09-17T16:00:01Z" />
+<attribute name="stop_time" value="2011-10-21T00:00:01Z" />
+</netcdf>
+</dataset>
+<dataset name="9104pcs-cal_2d.cdf" ID="MVCO_11/9104pcs-cal_2d.cdf" urlPath="MVCO_11/9104pcs-cal_2d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.336475 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.556625 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -11.306494 </start>
+<size> -1.344000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-09-17 16:00:01 </start>
+<end> 2011-10-21 00:00:01 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Mean Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Mean Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Mean Vertical Velocity</variable>
+<variable name="USTD_4097" vocabulary_name="eastward_sea_water_velocity" units="cm s-1">Std. Dev. of east component</variable>
+<variable name="VSTD_4098" vocabulary_name="northward_sea_water_velocity" units="cm s-1">Std. Dev. of north component</variable>
+<variable name="WSTD_4099" vocabulary_name="Std. Dev. of upward component" units="cm s-1">Std. Dev. of upward component</variable>
+<variable name="u_1205min" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Minimum Eastward Velocity</variable>
+<variable name="v_1206min" vocabulary_name="northward_sea_water_velocity" units="cm/s">Minimum Northward Velocity</variable>
+<variable name="w_1204min" vocabulary_name="upward_sea_water_velocity" units="cm/s">Minimum Vertical Velocity</variable>
+<variable name="u_1205max" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Maximum Eastward Velocity</variable>
+<variable name="v_1206max" vocabulary_name="northward_sea_water_velocity" units="cm/s">Maximum Northward Velocity</variable>
+<variable name="w_1204max" vocabulary_name="upward_sea_water_velocity" units="cm/s">Maximum Vertical Velocity</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1">CURRENT SPEED (CM/S)</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="AGC1_1221" vocabulary_name="Echo Intensity (AGC) Beam 1" units="counts">Echo Intensity (AGC) Beam 1</variable>
+<variable name="AGC2_1222" vocabulary_name="Echo Intensity (AGC) Beam 2" units="counts">Echo Intensity (AGC) Beam 2</variable>
+<variable name="AGC3_1223" vocabulary_name="Echo Intensity (AGC) Beam 3" units="counts">Echo Intensity (AGC) Beam 3</variable>
+<variable name="cor1_1285" vocabulary_name=" Beam 1 Correlation" units="percent"> Beam 1 Correlation</variable>
+<variable name="cor2_1286" vocabulary_name=" Beam 2 Correlation" units="percent"> Beam 2 Correlation</variable>
+<variable name="cor3_1287" vocabulary_name=" Beam 3 Correlation" units="percent"> Beam 3 Correlation</variable>
+<variable name="brange" vocabulary_name="Sensor Range to Boundary" units="m">Sensor Range to Boundary</variable>
+<variable name="bindist" vocabulary_name="platform_orientation" units="m">Distance from transducer head to bin center</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MVCO_11/9104pcs-cal.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4822992001" increment="7200"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="ResU" />
+<remove type="variable" name="ResV" />
+<remove type="variable" name="ResW" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="HSD_1218" />
+<remove type="variable" name="PSD_1219" />
+<remove type="variable" name="RSD_1220" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="ATTN1_55" />
+<remove type="variable" name="tran1_4010" />
+<remove type="variable" name="rBack2_978" />
+<remove type="variable" name="NEP2_56" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-910</values>
+ </variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-24.9351 16.6877"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-7.5667 6.9951"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-6.619 2.1215"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="USTD_4097" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.029169 78.9777"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="VSTD_4098" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.029997 72.5382"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="WSTD_4099" shape="time depth station">
+<attribute name="actual_range" type="float" value="0.0062591 15.8841"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="u_1205min" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-269.145 -0.12819"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206min" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-278.9236 -0.15389"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204min" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-103.4895 -0.040005"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="u_1205max" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.1254 262.4924"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206max" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.15451 283.0093"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204max" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.02334 30.2003"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time depth station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="0.00049732 24.9665"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time depth station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.32581 359.9742"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC1_1221" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-23.6785 16.4536"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC2_1222" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-10.9715 9.9759"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC3_1223" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-3.9383 1.8969"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="cor1_1285" shape="time depth station">
+<attribute name="actual_range" type="float" value="38.7352 154.3"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="cor2_1286" shape="time depth station">
+<attribute name="actual_range" type="float" value="40.4954 153.5042"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="cor3_1287" shape="time depth station">
+<attribute name="actual_range" type="float" value="34.5927 150.1429"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="brange" shape="time depth station">
+<attribute name="actual_range" type="float" value="17.8244 96.6008"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="18.0912 93.5775"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="MVCO_11/9104pcs-cal_2d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="9104pcs-cal.cdf - OASIS MVCO 2011" />
+<attribute name="summary" value="Near-seabed Oceanographic Observations made as part of the 2011 OASIS Project at the MVCO." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:10" />
+<attribute name="date_issued" value="2013-06-24T13:15:10" />
+<attribute name="date_created" value="2011-12-02T13:25:11" />
+<attribute name="start_time" value="2011-09-17T16:00:01Z" />
+<attribute name="stop_time" value="2011-10-21T00:00:01Z" />
+</netcdf>
+</dataset>
+<dataset name="9105advs-cal_1d.cdf" ID="MVCO_11/9105advs-cal_1d.cdf" urlPath="MVCO_11/9105advs-cal_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.336475 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.556625 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -11.813656 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-09-17 15:29:01 </start>
+<end> 2011-10-21 00:29:12 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Mean Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Mean Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Mean Vertical Velocity</variable>
+<variable name="USTD_4097" vocabulary_name="eastward_sea_water_velocity" units="cm s-1">Std. Dev. of east component</variable>
+<variable name="VSTD_4098" vocabulary_name="northward_sea_water_velocity" units="cm s-1">Std. Dev. of north component</variable>
+<variable name="WSTD_4099" vocabulary_name="Std. Dev. of upward component" units="cm s-1">Std. Dev. of upward component</variable>
+<variable name="u_1205min" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Minimum Eastward Velocity</variable>
+<variable name="v_1206min" vocabulary_name="northward_sea_water_velocity" units="cm/s">Minimum Northward Velocity</variable>
+<variable name="w_1204min" vocabulary_name="upward_sea_water_velocity" units="cm/s">Minimum Vertical Velocity</variable>
+<variable name="u_1205max" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Maximum Eastward Velocity</variable>
+<variable name="v_1206max" vocabulary_name="northward_sea_water_velocity" units="cm/s">Maximum Northward Velocity</variable>
+<variable name="w_1204max" vocabulary_name="upward_sea_water_velocity" units="cm/s">Maximum Vertical Velocity</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1">CURRENT SPEED (CM/S)</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="AGC1_1221" vocabulary_name="Mean Echo Intensity (AGC) Beam 1" units="counts">Mean Echo Intensity (AGC) Beam 1</variable>
+<variable name="AGC2_1222" vocabulary_name="Mean Echo Intensity (AGC) Beam 2" units="counts">Mean Echo Intensity (AGC) Beam 2</variable>
+<variable name="AGC3_1223" vocabulary_name="Mean Echo Intensity (AGC) Beam 3" units="counts">Mean Echo Intensity (AGC) Beam 3</variable>
+<variable name="cor1_1285" vocabulary_name=" Beam 1 Correlation" units="percent"> Beam 1 Correlation</variable>
+<variable name="cor2_1286" vocabulary_name=" Beam 2 Correlation" units="percent"> Beam 2 Correlation</variable>
+<variable name="cor3_1287" vocabulary_name=" Beam 3 Correlation" units="percent"> Beam 3 Correlation</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees C">Transducer Temp.</variable>
+<variable name="ATTN1_55" vocabulary_name="ATTENUATION 1" units="m-1">ATTENUATION 1</variable>
+<variable name="tran1_4010" vocabulary_name="TRANSMISSION (VOLTS) #1" units="volts">TRANSMISSION (VOLTS) #1</variable>
+<variable name="rBack2_978" vocabulary_name="raw Backscattering 2" units="v">raw Backscattering 2</variable>
+<variable name="NEP2_56" vocabulary_name="BACKSCATTER INTENSITY 2" units="NTU">BACKSCATTER INTENSITY 2</variable>
+<variable name="vrange" vocabulary_name="Volume Range to Boundary" units="m">Volume Range to Boundary</variable>
+<variable name="brange" vocabulary_name="Sensor Range to Boundary" units="m">Sensor Range to Boundary</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="HSD_1218" vocabulary_name="platform_orientation" units="degrees">Heading Std. Dev.</variable>
+<variable name="PSD_1219" vocabulary_name="platform_pitch_angle" units="degrees">Pitch Std. Dev.</variable>
+<variable name="RSD_1220" vocabulary_name="platform_roll_angle" units="degrees">Roll Std. Dev.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MVCO_11/9105advs-cal.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4822990141" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-910</values>
+ </variable>
+<variable name="u_1205" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-22.8094 20.1161"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-5.5567 6.716"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-3.7137 2.3449"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="USTD_4097" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="2.0595 34.1355"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="VSTD_4098" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="3.2709 59.846"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="WSTD_4099" shape="time station">
+<attribute name="actual_range" type="float" value="0.51958 12.7961"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="u_1205min" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-251.1071 3.2281"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206min" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-215.037 -7.6251"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204min" shape="time station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-53.8779 -2.8661"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="u_1205max" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-2.5269 236.7224"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206max" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="10.5582 218.7649"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204max" shape="time station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="1.4255 58.4652"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="0.11688 22.8395"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="4.8892 358.5175"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC1_1221" shape="time station">
+<attribute name="actual_range" type="float" value="74.8437 214.979"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC2_1222" shape="time station">
+<attribute name="actual_range" type="float" value="76.822 215.1192"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC3_1223" shape="time station">
+<attribute name="actual_range" type="float" value="81.21 212.602"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="cor1_1285" shape="time station">
+<attribute name="actual_range" type="float" value="75.2538 98.9754"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="cor2_1286" shape="time station">
+<attribute name="actual_range" type="float" value="67.3926 98.9024"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="cor3_1287" shape="time station">
+<attribute name="actual_range" type="float" value="63.4636 98.9304"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_4023" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="2067.1499 2219.5125"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="0.80968 65.4497"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="16.3777 19.0609"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ATTN1_55" shape="time station">
+<attribute name="actual_range" type="float" value="0.92124 38.5672"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="tran1_4010" shape="time station">
+<attribute name="actual_range" type="float" value="0.70855 4.0951"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="rBack2_978" shape="time station">
+<attribute name="actual_range" type="float" value="0.0020762 3.6015"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="NEP2_56" shape="time station">
+<attribute name="actual_range" type="float" value="0.91092 396.5946"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="vrange" shape="time station">
+<attribute name="actual_range" type="float" value="-0.0001 0.255"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="brange" shape="time station">
+<attribute name="actual_range" type="float" value="0.1699 100000003318135351409612647563264"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="136.45 210.85"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-1 1.9"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-2 0.5"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="HSD_1218" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="0.070301 15.352"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PSD_1219" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="0.0062201 8.2881"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="RSD_1220" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="0 12.586"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MVCO_11/9105advs-cal_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="9105advs-cal.cdf - OASIS MVCO 2011" />
+<attribute name="summary" value="Near-seabed Oceanographic Observations made as part of the 2011 OASIS Project at the MVCO." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:14" />
+<attribute name="date_issued" value="2013-06-24T13:15:14" />
+<attribute name="date_created" value="2012-06-04T15:35:32" />
+<attribute name="start_time" value="2011-09-17T15:29:01Z" />
+<attribute name="stop_time" value="2011-10-21T00:29:12Z" />
+</netcdf>
+</dataset>
+<dataset name="9106advs-cal_1d.cdf" ID="MVCO_11/9106advs-cal_1d.cdf" urlPath="MVCO_11/9106advs-cal_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.336475 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.556625 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -11.802267 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-09-17 15:29:02 </start>
+<end> 2011-10-21 00:29:01 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Mean Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Mean Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Mean Vertical Velocity</variable>
+<variable name="USTD_4097" vocabulary_name="eastward_sea_water_velocity" units="cm s-1">Std. Dev. of east component</variable>
+<variable name="VSTD_4098" vocabulary_name="northward_sea_water_velocity" units="cm s-1">Std. Dev. of north component</variable>
+<variable name="WSTD_4099" vocabulary_name="Std. Dev. of upward component" units="cm s-1">Std. Dev. of upward component</variable>
+<variable name="u_1205min" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Minimum Eastward Velocity</variable>
+<variable name="v_1206min" vocabulary_name="northward_sea_water_velocity" units="cm/s">Minimum Northward Velocity</variable>
+<variable name="w_1204min" vocabulary_name="upward_sea_water_velocity" units="cm/s">Minimum Vertical Velocity</variable>
+<variable name="u_1205max" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Maximum Eastward Velocity</variable>
+<variable name="v_1206max" vocabulary_name="northward_sea_water_velocity" units="cm/s">Maximum Northward Velocity</variable>
+<variable name="w_1204max" vocabulary_name="upward_sea_water_velocity" units="cm/s">Maximum Vertical Velocity</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1">CURRENT SPEED (CM/S)</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="AGC1_1221" vocabulary_name="Mean Echo Intensity (AGC) Beam 1" units="counts">Mean Echo Intensity (AGC) Beam 1</variable>
+<variable name="AGC2_1222" vocabulary_name="Mean Echo Intensity (AGC) Beam 2" units="counts">Mean Echo Intensity (AGC) Beam 2</variable>
+<variable name="AGC3_1223" vocabulary_name="Mean Echo Intensity (AGC) Beam 3" units="counts">Mean Echo Intensity (AGC) Beam 3</variable>
+<variable name="cor1_1285" vocabulary_name=" Beam 1 Correlation" units="percent"> Beam 1 Correlation</variable>
+<variable name="cor2_1286" vocabulary_name=" Beam 2 Correlation" units="percent"> Beam 2 Correlation</variable>
+<variable name="cor3_1287" vocabulary_name=" Beam 3 Correlation" units="percent"> Beam 3 Correlation</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees C">Transducer Temp.</variable>
+<variable name="ATTN1_55" vocabulary_name="ATTENUATION 1" units="m-1">ATTENUATION 1</variable>
+<variable name="tran1_4010" vocabulary_name="TRANSMISSION (VOLTS) #1" units="volts">TRANSMISSION (VOLTS) #1</variable>
+<variable name="rBack2_978" vocabulary_name="raw Backscattering 2" units="v">raw Backscattering 2</variable>
+<variable name="NEP2_56" vocabulary_name="BACKSCATTER INTENSITY 2" units="NTU">BACKSCATTER INTENSITY 2</variable>
+<variable name="vrange" vocabulary_name="Volume Range to Boundary" units="m">Volume Range to Boundary</variable>
+<variable name="brange" vocabulary_name="Sensor Range to Boundary" units="m">Sensor Range to Boundary</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="HSD_1218" vocabulary_name="platform_orientation" units="degrees">Heading Std. Dev.</variable>
+<variable name="PSD_1219" vocabulary_name="platform_pitch_angle" units="degrees">Pitch Std. Dev.</variable>
+<variable name="RSD_1220" vocabulary_name="platform_roll_angle" units="degrees">Roll Std. Dev.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MVCO_11/9106advs-cal.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4822990142" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-910</values>
+ </variable>
+<variable name="u_1205" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-23.5092 18.3559"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-6.32 6.595"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-3.9544 1.5468"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="USTD_4097" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="1.9257 27.3746"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="VSTD_4098" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="3.0527 56.9389"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="WSTD_4099" shape="time station">
+<attribute name="actual_range" type="float" value="0.42758 11.8117"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="u_1205min" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-270.6234 0.56442"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206min" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-296.7279 -10.0621"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204min" shape="time station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-56.9686 -2.3921"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="u_1205max" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-2.5416 255.0325"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206max" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="9.5536 245.4211"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204max" shape="time station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="1.3779 53.7705"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="0.23799 23.5106"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.30412 348.4419"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC1_1221" shape="time station">
+<attribute name="actual_range" type="float" value="44.2522 207.0033"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC2_1222" shape="time station">
+<attribute name="actual_range" type="float" value="45.874 203.1222"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC3_1223" shape="time station">
+<attribute name="actual_range" type="float" value="43.9247 205.1524"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="cor1_1285" shape="time station">
+<attribute name="actual_range" type="float" value="18.4754 98.9457"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="cor2_1286" shape="time station">
+<attribute name="actual_range" type="float" value="20.8017 98.907"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="cor3_1287" shape="time station">
+<attribute name="actual_range" type="float" value="22.2407 98.8393"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_4023" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="2069.5356 2221.8154"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="3.808 71.5421"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="16.5598 19.2542"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ATTN1_55" shape="time station">
+<attribute name="actual_range" type="float" value="1.2872 39.6729"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="tran1_4010" shape="time station">
+<attribute name="actual_range" type="float" value="0.66305 3.8202"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="rBack2_978" shape="time station">
+<attribute name="actual_range" type="float" value="0.025884 2.537"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="NEP2_56" shape="time station">
+<attribute name="actual_range" type="float" value="0.96656 290.46"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="vrange" shape="time station">
+<attribute name="actual_range" type="float" value="-0.0001 0.275"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="brange" shape="time station">
+<attribute name="actual_range" type="float" value="0.1644 100000003318135351409612647563264"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="131.75 198.65"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-1.8 1.3"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-1.5 1"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="HSD_1218" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="0.073508 13.1811"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PSD_1219" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="0.013143 9.459"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="RSD_1220" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="0.007266 12.4531"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MVCO_11/9106advs-cal_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="9106advs-cal.cdf - OASIS MVCO 2011" />
+<attribute name="summary" value="Near-seabed Oceanographic Observations made as part of the 2011 OASIS Project at the MVCO." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:18" />
+<attribute name="date_issued" value="2013-06-24T13:15:18" />
+<attribute name="date_created" value="2012-06-04T16:02:07" />
+<attribute name="start_time" value="2011-09-17T15:29:02Z" />
+<attribute name="stop_time" value="2011-10-21T00:29:01Z" />
+</netcdf>
+</dataset>
+<dataset name="9107sc-a_1d.nc" ID="MVCO_11/9107sc-a_1d.nc" urlPath="MVCO_11/9107sc-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.336475 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.556625 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -11.600000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-09-17 14:06:02 </start>
+<end> 2011-10-21 00:53:02 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_41" vocabulary_name="sea_water_salinity" units="PSU">SALINITY (PSU)</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m/s">SOUND VELOCITY (M/S)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MVCO_11/9107sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4822985162" increment="60"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-910</values>
+ </variable>
+<variable name="T_28" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="16.4744 19.3181"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="C_51" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.8161 4.3033"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="S_41" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="29.2456 31.919"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1506.046 1515.653"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MVCO_11/9107sc-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="9107sc-a.nc - OASIS MVCO 2011" />
+<attribute name="summary" value="Near-seabed Oceanographic Observations made as part of the 2011 OASIS Project at the MVCO." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:18" />
+<attribute name="date_issued" value="2013-06-24T13:15:18" />
+<attribute name="date_created" value="2012-04-30T17:31:33" />
+<attribute name="start_time" value="2011-09-17T14:06:02Z" />
+<attribute name="stop_time" value="2011-10-21T00:53:02Z" />
+</netcdf>
+</dataset>
+<dataset name="9111aqd-a_1d.nc" ID="MVCO_11/9111aqd-a_1d.nc" urlPath="MVCO_11/9111aqd-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.336365 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.556557 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -12.356801 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-09-17 14:54:30 </start>
+<end> 2011-10-23 19:44:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="P_1" vocabulary_name="sea_water_pressure" units="dbar">PRESSURE (DB)</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MVCO_11/9111aqd-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4822988070" increment="600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="CS_300" />
+<remove type="variable" name="CD_310" />
+<remove type="variable" name="AGC_1202" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 12.8568 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-911</values>
+ </variable>
+<variable name="P_1" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="12.027 13.65"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="15.95 19.23"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="132.25 197.45"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-19.3 -0.9"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-16.5 2"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MVCO_11/9111aqd-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="9111aqd-a.nc - OASIS MVCO 2011" />
+<attribute name="summary" value="Near-seabed Oceanographic Observations made as part of the 2011 OASIS Project at the MVCO." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:21" />
+<attribute name="date_issued" value="2013-06-24T13:15:21" />
+<attribute name="date_created" value="2013-06-24T13:15:21" />
+<attribute name="start_time" value="2011-09-17T14:54:30Z" />
+<attribute name="stop_time" value="2011-10-23T19:44:30Z" />
+</netcdf>
+</dataset>
+<dataset name="9111aqd-a_2d.nc" ID="MVCO_11/9111aqd-a_2d.nc" urlPath="MVCO_11/9111aqd-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.336365 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.556557 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -12.356801 </start>
+<size> 12.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-09-17 14:54:30 </start>
+<end> 2011-10-23 19:44:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="platform_orientation" units="cm/s">Distance of bin off instrument head</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1">CURRENT SPEED (CM/S)</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MVCO_11/9111aqd-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4822988070" increment="600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="P_1" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-911</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="0.7 12.7"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-108.7171 78.2656"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-64.7425 66.5632"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-25.4403 12.0175"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time depth station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="0.056988 109.7021"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time depth station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.0035266 359.9922"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="12.027 13.65"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="MVCO_11/9111aqd-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="C. Sherwood" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="csherwood@usgs.gov" />
+<attribute name="title" value="9111aqd-a.nc - OASIS MVCO 2011" />
+<attribute name="summary" value="Near-seabed Oceanographic Observations made as part of the 2011 OASIS Project at the MVCO." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:21" />
+<attribute name="date_issued" value="2013-06-24T13:15:21" />
+<attribute name="date_created" value="2013-06-24T13:15:21" />
+<attribute name="start_time" value="2011-09-17T14:54:30Z" />
+<attribute name="stop_time" value="2011-10-23T19:44:30Z" />
+</netcdf>
+</dataset>
+</dataset>
+</catalog>

@@ -1,0 +1,1676 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  name="CMGP Oceanographic Time Series Data">
+  
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="Oceanographer Canyon Dynamics Experiment (1/82-7/82)" ID="OC-DE">
+    <metadata inherited="true">
+      <serviceName>manyservices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Station</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>40.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-68.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>3000</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/oceanog_c.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="2481-A1H_1d.cdf" ID="OCEANOG_C/2481-A1H_1d.cdf" urlPath="OCEANOG_C/2481-A1H_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.533779 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.270226 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -104.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-27 20:00:00 </start>
+<end> 1982-03-20 01:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="lowr_4002" vocabulary_name="LOWER ROTOR SPEED" units="counts">LOWER ROTOR SPEED</variable>
+<variable name="lowr_4003" vocabulary_name="LOWER ROTOR SPEED" units="cm/s">LOWER ROTOR SPEED</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="P_4022" vocabulary_name="sea_water_pressure" units="mbar">INTERVAL PRESSURE</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+<variable name="rtrn_4012" vocabulary_name="RAW TRANSMISSOMETER VOLTS" units="counts">RAW TRANSMISSOMETER VOLTS</variable>
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="NEP_56" vocabulary_name="BACKSCATTER INTENSITY" units="v">BACKSCATTER INTENSITY</variable>
+<variable name="V01_1901" vocabulary_name="VARIABLE 1" units="unknown">VARIABLE 1</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2481-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887726400" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-248</values>
+ </variable>
+<variable name="u_1205" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-33.5075 17.7261"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-38.3901 29.9752"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.13046 359.888"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="0.11732 39.653"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="lowr_4002" shape="time station">
+<attribute name="actual_range" type="float" value="0.12306 41.1188"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="lowr_4003" shape="time station">
+<attribute name="actual_range" type="float" value="0.01 36.299"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.9395 11.8574"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_4022" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="11010.7998 11143.2998"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_4023" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="11010.9004 11143.2002"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="0.5576 10.6432"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="rtrn_4012" shape="time station">
+<attribute name="actual_range" type="float" value="0.27056 2.5007"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="V00_1900" shape="time station">
+<attribute name="actual_range" type="float" value="-0.01015 -0.00161"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="NEP_56" shape="time station">
+<attribute name="actual_range" type="float" value="-1.8523 -0.63976"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="V01_1901" shape="time station">
+<attribute name="actual_range" type="float" value="-0.17414 -0.12593"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2481-A1H_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2481-A1H.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:18" />
+<attribute name="date_issued" value="2013-06-24T12:49:18" />
+<attribute name="date_created" value="1997-04-24T15:52:00" />
+<attribute name="start_time" value="1982-01-27T20:00:00Z" />
+<attribute name="stop_time" value="1982-03-20T01:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="2481-AA_1d.cdf" ID="OCEANOG_C/2481-AA_1d.cdf" urlPath="OCEANOG_C/2481-AA_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.533779 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.270226 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -104.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-27 19:33:45 </start>
+<end> 1982-03-20 01:26:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="lowr_4003" vocabulary_name="LOWER ROTOR SPEED" units="cm/s">LOWER ROTOR SPEED</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="P_4022" vocabulary_name="sea_water_pressure" units="mbar">INTERVAL PRESSURE</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+<variable name="rtrn_4012" vocabulary_name="RAW TRANSMISSOMETER VOLTS" units="counts">RAW TRANSMISSOMETER VOLTS</variable>
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="NEP_56" vocabulary_name="BACKSCATTER INTENSITY" units="v">BACKSCATTER INTENSITY</variable>
+<variable name="V01_1901" vocabulary_name="VARIABLE 1" units="unknown">VARIABLE 1</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2481-AA.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887724825" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-248</values>
+ </variable>
+<variable name="u_1205" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-49.9698 20.2671"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-48.2053 36.6136"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.01851 359.944"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="0.00707 52.5017"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="upr_4001" shape="time station">
+<attribute name="actual_range" type="float" value="0.01 48.9697"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="lowr_4003" shape="time station">
+<attribute name="actual_range" type="float" value="0.01 42.5341"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.9395 11.8574"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_4022" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="11009.5996 11145.2002"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_4023" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="11009.5 11145.0996"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="0.25851 16.1355"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="rtrn_4012" shape="time station">
+<attribute name="actual_range" type="float" value="0.13509 2.5322"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="V00_1900" shape="time station">
+<attribute name="actual_range" type="float" value="-0.02114 -0.00161"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="NEP_56" shape="time station">
+<attribute name="actual_range" type="float" value="-2.2905 -0.63549"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="V01_1901" shape="time station">
+<attribute name="actual_range" type="float" value="-0.17658 -0.12288"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2481-AA_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2481-AA.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:20" />
+<attribute name="date_issued" value="2013-06-24T12:49:20" />
+<attribute name="date_created" value="1997-04-25T08:49:00" />
+<attribute name="start_time" value="1982-01-27T19:33:45Z" />
+<attribute name="stop_time" value="1982-03-20T01:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2481ATT-A_1d.cdf" ID="OCEANOG_C/2481ATT-A_1d.cdf" urlPath="OCEANOG_C/2481ATT-A_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.533779 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.270226 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -104.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-27 19:33:45 </start>
+<end> 1982-03-20 02:26:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2481ATT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887724825" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-248</values>
+ </variable>
+<variable name="ATTN_55" shape="time station">
+<attribute name="actual_range" type="float" value="0.30057 3.2315"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2481ATT-A_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2481ATT-A.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:20" />
+<attribute name="date_issued" value="2013-06-24T12:49:20" />
+<attribute name="date_created" value="1997-04-25T08:49:00" />
+<attribute name="start_time" value="1982-01-27T19:33:45Z" />
+<attribute name="stop_time" value="1982-03-20T02:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2481ATT-A1H_1d.cdf" ID="OCEANOG_C/2481ATT-A1H_1d.cdf" urlPath="OCEANOG_C/2481ATT-A1H_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.533779 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.270226 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -104.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-27 20:00:00 </start>
+<end> 1982-03-20 02:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2481ATT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887726400" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-248</values>
+ </variable>
+<variable name="ATTN_55" shape="time station">
+<attribute name="actual_range" type="float" value="0.31309 2.553"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2481ATT-A1H_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2481ATT-A1H.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:21" />
+<attribute name="date_issued" value="2013-06-24T12:49:21" />
+<attribute name="date_created" value="1997-04-24T15:52:00" />
+<attribute name="start_time" value="1982-01-27T20:00:00Z" />
+<attribute name="stop_time" value="1982-03-20T02:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="2492-A_1d.cdf" ID="OCEANOG_C/2492-A_1d.cdf" urlPath="OCEANOG_C/2492-A_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.502888 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.185997 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -223.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-28 16:33:45 </start>
+<end> 1982-07-09 13:26:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="comp_1404" vocabulary_name="COMPASS (m)" units="degreeM">COMPASS (m)</variable>
+<variable name="van_1403" vocabulary_name="VANE ANGLE" units="degrees">VANE ANGLE</variable>
+<variable name="bear_1411" vocabulary_name="bearing (m)" units="degreeM">bearing (m)</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2492-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887800425" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-249</values>
+ </variable>
+<variable name="u_1205" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-69.1625 72.9028"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-46.1776 35.5579"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.01635 359.863"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="0.25295 73.2061"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="upr_4001" shape="time station">
+<attribute name="actual_range" type="float" value="2 73.5151"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="rot_4005" shape="time station">
+<attribute name="actual_range" type="float" value="0 0"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="comp_1404" shape="time station">
+<attribute name="actual_range" type="float" value="0 357.188"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="van_1403" shape="time station">
+<attribute name="actual_range" type="float" value="0 357.188"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="bear_1411" shape="time station">
+<attribute name="actual_range" type="float" value="2.6875 359.875"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="5.8083 12.2937"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2492-A_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2492-A.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:22" />
+<attribute name="date_issued" value="2013-06-24T12:49:22" />
+<attribute name="date_created" value="1997-04-25T08:49:00" />
+<attribute name="start_time" value="1982-01-28T16:33:45Z" />
+<attribute name="stop_time" value="1982-07-09T13:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2492-A1H_1d.cdf" ID="OCEANOG_C/2492-A1H_1d.cdf" urlPath="OCEANOG_C/2492-A1H_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.502888 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.185997 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -223.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-28 17:00:00 </start>
+<end> 1982-07-09 12:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2492-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887802000" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-249</values>
+ </variable>
+<variable name="u_1205" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-53.6372 64.2632"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-33.5748 20.4286"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.37146 359.557"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="0.16978 64.5798"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="upr_4001" shape="time station">
+<attribute name="actual_range" type="float" value="2 64.9101"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="5.8848 12.2188"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2492-A1H_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2492-A1H.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:23" />
+<attribute name="date_issued" value="2013-06-24T12:49:23" />
+<attribute name="date_created" value="1997-04-24T15:52:00" />
+<attribute name="start_time" value="1982-01-28T17:00:00Z" />
+<attribute name="stop_time" value="1982-07-09T12:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="2492ATT-A_1d.cdf" ID="OCEANOG_C/2492ATT-A_1d.cdf" urlPath="OCEANOG_C/2492ATT-A_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.502888 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.185997 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -0.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-28 16:33:45 </start>
+<end> 1982-07-09 13:26:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2492ATT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887800425" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-249</values>
+ </variable>
+<variable name="ATTN_55" shape="time station">
+<attribute name="actual_range" type="float" value="0.00017 5.6687"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2492ATT-A_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2492ATT-A.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:23" />
+<attribute name="date_issued" value="2013-06-24T12:49:23" />
+<attribute name="date_created" value="1997-04-25T08:49:00" />
+<attribute name="start_time" value="1982-01-28T16:33:45Z" />
+<attribute name="stop_time" value="1982-07-09T13:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2492ATT-A1H_1d.cdf" ID="OCEANOG_C/2492ATT-A1H_1d.cdf" urlPath="OCEANOG_C/2492ATT-A1H_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.502888 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.185997 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -223.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-28 17:00:00 </start>
+<end> 1982-07-09 13:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2492ATT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887802000" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-249</values>
+ </variable>
+<variable name="ATTN_55" shape="time station">
+<attribute name="actual_range" type="float" value="0.0016 3.2444"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2492ATT-A1H_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2492ATT-A1H.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:23" />
+<attribute name="date_issued" value="2013-06-24T12:49:23" />
+<attribute name="date_created" value="1997-04-24T15:52:00" />
+<attribute name="start_time" value="1982-01-28T17:00:00Z" />
+<attribute name="stop_time" value="1982-07-09T13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="2492TCT-A_1d.cdf" ID="OCEANOG_C/2492TCT-A_1d.cdf" urlPath="OCEANOG_C/2492TCT-A_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.502888 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.185997 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -223.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-28 16:33:45 </start>
+<end> 1982-07-09 13:26:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2492TCT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887800425" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-249</values>
+ </variable>
+<variable name="V00_1900" shape="time station">
+<attribute name="actual_range" type="float" value="5.835 9999"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="C_50" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="32.9918 40.2974"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="S_40" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.2971 35.9979"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="tran_4010" shape="time station">
+<attribute name="actual_range" type="float" value="1.0864 4.4818"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2492TCT-A_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2492TCT-A.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:24" />
+<attribute name="date_issued" value="2013-06-24T12:49:24" />
+<attribute name="date_created" value="1997-04-25T08:50:00" />
+<attribute name="start_time" value="1982-01-28T16:33:45Z" />
+<attribute name="stop_time" value="1982-07-09T13:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2492TCT-A1H_1d.cdf" ID="OCEANOG_C/2492TCT-A1H_1d.cdf" urlPath="OCEANOG_C/2492TCT-A1H_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.502888 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.185997 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -223.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-28 17:00:00 </start>
+<end> 1982-07-09 12:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2492TCT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887802000" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-249</values>
+ </variable>
+<variable name="V00_1900" shape="time station">
+<attribute name="actual_range" type="float" value="5.8958 9999"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="C_50" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="33.4913 40.0074"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="S_40" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.5696 35.2241"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="tran_4010" shape="time station">
+<attribute name="actual_range" type="float" value="1.998 4.4802"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2492TCT-A1H_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2492TCT-A1H.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:25" />
+<attribute name="date_issued" value="2013-06-24T12:49:25" />
+<attribute name="date_created" value="1997-04-24T15:52:00" />
+<attribute name="start_time" value="1982-01-28T17:00:00Z" />
+<attribute name="stop_time" value="1982-07-09T12:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="2501-A1H_1d.cdf" ID="OCEANOG_C/2501-A1H_1d.cdf" urlPath="OCEANOG_C/2501-A1H_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.441334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.153557 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -554.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-28 02:00:00 </start>
+<end> 1982-07-09 09:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2501-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887748000" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-250</values>
+ </variable>
+<variable name="u_1205" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-33.5386 25.9747"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-89.1953 58.4227"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.00256 359.996"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="0.18466 92.209"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="upr_4001" shape="time station">
+<attribute name="actual_range" type="float" value="2.7997 92.4469"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="4.491 7.5653"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2501-A1H_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2501-A1H.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:26" />
+<attribute name="date_issued" value="2013-06-24T12:49:26" />
+<attribute name="date_created" value="1997-04-24T15:52:00" />
+<attribute name="start_time" value="1982-01-28T02:00:00Z" />
+<attribute name="stop_time" value="1982-07-09T09:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="2501-AA_1d.cdf" ID="OCEANOG_C/2501-AA_1d.cdf" urlPath="OCEANOG_C/2501-AA_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.441334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.153557 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -554.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-28 01:33:45 </start>
+<end> 1982-07-09 11:26:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="rot_4005" vocabulary_name="ROTOR COUNTS" units="counts">ROTOR COUNTS</variable>
+<variable name="comp_1404" vocabulary_name="COMPASS (m)" units="degreeM">COMPASS (m)</variable>
+<variable name="van_1403" vocabulary_name="VANE ANGLE" units="degrees">VANE ANGLE</variable>
+<variable name="bear_1411" vocabulary_name="bearing (m)" units="degreeM">bearing (m)</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2501-AA.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887746425" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-250</values>
+ </variable>
+<variable name="u_1205" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-44.1264 42.1505"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-93.0952 76.726"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.0012 359.997"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="0.27429 96.0372"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="upr_4001" shape="time station">
+<attribute name="actual_range" type="float" value="2 96.317"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="rot_4005" shape="time station">
+<attribute name="actual_range" type="float" value="0 0"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="comp_1404" shape="time station">
+<attribute name="actual_range" type="float" value="0 357.188"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="van_1403" shape="time station">
+<attribute name="actual_range" type="float" value="0 357.188"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="bear_1411" shape="time station">
+<attribute name="actual_range" type="float" value="2.6875 359.875"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="4.4731 7.923"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2501-AA_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2501-AA.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:27" />
+<attribute name="date_issued" value="2013-06-24T12:49:27" />
+<attribute name="date_created" value="1997-04-25T08:50:00" />
+<attribute name="start_time" value="1982-01-28T01:33:45Z" />
+<attribute name="stop_time" value="1982-07-09T11:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2501TCT-A_1d.cdf" ID="OCEANOG_C/2501TCT-A_1d.cdf" urlPath="OCEANOG_C/2501TCT-A_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.441334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.153557 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -554.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-28 01:33:45 </start>
+<end> 1982-07-09 11:26:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2501TCT-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887746425" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-250</values>
+ </variable>
+<variable name="V00_1900" shape="time station">
+<attribute name="actual_range" type="float" value="4.528 8.1325"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="tran_4010" shape="time station">
+<attribute name="actual_range" type="float" value="0.34729 4.4006"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ATTN_55" shape="time station">
+<attribute name="actual_range" type="float" value="0.2462 10.4036"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2501TCT-A_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2501TCT-A.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:27" />
+<attribute name="date_issued" value="2013-06-24T12:49:27" />
+<attribute name="date_created" value="1997-04-25T08:50:00" />
+<attribute name="start_time" value="1982-01-28T01:33:45Z" />
+<attribute name="stop_time" value="1982-07-09T11:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="2501TCT-A1H_1d.cdf" ID="OCEANOG_C/2501TCT-A1H_1d.cdf" urlPath="OCEANOG_C/2501TCT-A1H_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.441334 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -68.153557 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -554.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1982-01-28 02:00:00 </start>
+<end> 1982-07-09 11:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/OCEANOG_C/2501TCT-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3887748000" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-250</values>
+ </variable>
+<variable name="V00_1900" shape="time station">
+<attribute name="actual_range" type="float" value="4.557 7.71"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="tran_4010" shape="time station">
+<attribute name="actual_range" type="float" value="2.2659 4.3967"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ATTN_55" shape="time station">
+<attribute name="actual_range" type="float" value="0.24981 4.1035"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="OCEANOG_C/2501TCT-A1H_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="2501TCT-A1H.cdf - Oceanographer Canyon Dynamics Experiment" />
+<attribute name="summary" value="A field experiment to determine the importance of submarine canyons in sediment transport along and across the continental margin." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:49:28" />
+<attribute name="date_issued" value="2013-06-24T12:49:28" />
+<attribute name="date_created" value="1997-04-24T15:52:00" />
+<attribute name="start_time" value="1982-01-28T02:00:00Z" />
+<attribute name="stop_time" value="1982-07-09T11:00:00Z" />
+</netcdf>
+</dataset>
+</dataset>
+</catalog>

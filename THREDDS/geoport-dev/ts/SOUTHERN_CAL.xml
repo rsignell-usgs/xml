@@ -1,0 +1,3831 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  name="CMGP Oceanographic Time Series Data">
+  
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="Sediment Transport in Southern California (11/97-5/00)" ID="SoCal">
+    <metadata inherited="true">
+      <serviceName>manyservices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Station</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>33.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-118.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>250</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/southern_cal.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="5131sc-a_1d.cdf" ID="SOUTHERN_CAL/5131sc-a_1d.cdf" urlPath="SOUTHERN_CAL/5131sc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.950165 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.503998 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-24 00:35:00 </start>
+<end> 1998-04-14 22:25:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5131sc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4387048500" increment="600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-513</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="13.7798 19.2573"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="4.004 4.5451"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.5009 33.8564"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="23.4809 25.0191"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5131sc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5131sc-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:12" />
+<attribute name="date_issued" value="2013-06-24T12:55:12" />
+<attribute name="date_created" value="2008-05-28T17:48:37" />
+<attribute name="start_time" value="1997-11-24T00:35:00Z" />
+<attribute name="stop_time" value="1998-04-14T22:25:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5132adc-a_1d.nc" ID="SOUTHERN_CAL/5132adc-a_1d.nc" urlPath="SOUTHERN_CAL/5132adc-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.949600 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.504700 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -33.175514 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-22 06:02:30 </start>
+<end> 1998-04-13 23:02:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5132adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386895350" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 37.4355 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-513</values>
+ </variable>
+<variable name="hght_18" shape="time station">
+<attribute name="actual_range" type="float" value="0 38.79"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="11.15 18.81"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5132adc-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5132adc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:13" />
+<attribute name="date_issued" value="2013-06-24T12:55:13" />
+<attribute name="date_created" value="2002-06-11T12:32:20" />
+<attribute name="start_time" value="1997-11-22T06:02:30Z" />
+<attribute name="stop_time" value="1998-04-13T23:02:30Z" />
+</netcdf>
+</dataset>
+<dataset name="5132adc-a_2d.nc" ID="SOUTHERN_CAL/5132adc-a_2d.nc" urlPath="SOUTHERN_CAL/5132adc-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.949600 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.504700 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -33.175514 </start>
+<size> 32.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-22 06:02:30 </start>
+<end> 1998-04-13 23:02:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5132adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386895350" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="hght_18" />
+<remove type="variable" name="Tx_1211" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-513</values>
+ </variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-115.4758 112.3118"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-144.0459 100.5858"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-9.5 15.2"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-35 21.9"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="60 213.75"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="0 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="SOUTHERN_CAL/5132adc-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5132adc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:13" />
+<attribute name="date_issued" value="2013-06-24T12:55:13" />
+<attribute name="date_created" value="2002-06-11T12:32:20" />
+<attribute name="start_time" value="1997-11-22T06:02:30Z" />
+<attribute name="stop_time" value="1998-04-13T23:02:30Z" />
+</netcdf>
+</dataset>
+<dataset name="5132p-a_1d.cdf" ID="SOUTHERN_CAL/5132p-a_1d.cdf" urlPath="SOUTHERN_CAL/5132p-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.949665 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.504669 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -38.599998 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-22 06:33:45 </start>
+<end> 1998-04-14 21:11:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="pressure" vocabulary_name="sea_water_pressure" units="mbars       ">PRESSURE</variable>
+<variable name="psdev" vocabulary_name="PSDEV" units="mbars       ">PSDEV</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5132p-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386897225" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-513</values>
+ </variable>
+<variable name="pressure" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="4807.7388 5057.4712"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="psdev" shape="time station">
+<attribute name="actual_range" type="float" value="1.6675 73.1285"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5132p-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5132p-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:13" />
+<attribute name="date_issued" value="2013-06-24T12:55:13" />
+<attribute name="date_created" value="2008-05-28T17:48:41" />
+<attribute name="start_time" value="1997-11-22T06:33:45Z" />
+<attribute name="stop_time" value="1998-04-14T21:11:15Z" />
+</netcdf>
+</dataset>
+<dataset name="5132tct-a_1d.cdf" ID="SOUTHERN_CAL/5132tct-a_1d.cdf" urlPath="SOUTHERN_CAL/5132tct-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.949665 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.504669 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -39.500000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-22 06:33:45 </start>
+<end> 1998-04-14 21:11:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temp_1" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP 1</variable>
+<variable name="cond_1" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">COND 1</variable>
+<variable name="salinity_1" vocabulary_name="sea_water_salinity" units="psu         ">SALINITY 1</variable>
+<variable name="trans_1" vocabulary_name="TRANS 1" units="volts       ">TRANS 1</variable>
+<variable name="att_1" vocabulary_name="ATT 1" units="1/m         ">ATT 1</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5132tct-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386897225" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-513</values>
+ </variable>
+<variable name="temp_1" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="10.8442 18.8211"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="cond_1" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="37.0301 44.904"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity_1" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.3849 33.6162"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="trans_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.00488 4.331"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="att_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.14733 27.301"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5132tct-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5132tct-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:14" />
+<attribute name="date_issued" value="2013-06-24T12:55:14" />
+<attribute name="date_created" value="2008-05-28T17:48:45" />
+<attribute name="start_time" value="1997-11-22T06:33:45Z" />
+<attribute name="stop_time" value="1998-04-14T21:11:15Z" />
+</netcdf>
+</dataset>
+<dataset name="5132wh_1d.nc" ID="SOUTHERN_CAL/5132wh_1d.nc" urlPath="SOUTHERN_CAL/5132wh_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.949600 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.504700 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -33.175514 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-22 06:02:30 </start>
+<end> 1998-04-13 23:02:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5132wh.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386895350" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 37.4355 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-513</values>
+ </variable>
+<variable name="hght_18" shape="time station">
+<attribute name="actual_range" type="float" value="0 38.79"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="11.15 18.81"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5132wh_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5132wh.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:15" />
+<attribute name="date_issued" value="2013-06-24T12:55:15" />
+<attribute name="date_created" value="2002-06-11T12:32:20" />
+<attribute name="start_time" value="1997-11-22T06:02:30Z" />
+<attribute name="stop_time" value="1998-04-13T23:02:30Z" />
+</netcdf>
+</dataset>
+<dataset name="5132wh_2d.nc" ID="SOUTHERN_CAL/5132wh_2d.nc" urlPath="SOUTHERN_CAL/5132wh_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.949600 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.504700 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -33.175514 </start>
+<size> 32.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1997-11-22 06:02:30 </start>
+<end> 1998-04-13 23:02:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5132wh.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4386895350" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="hght_18" />
+<remove type="variable" name="Tx_1211" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-513</values>
+ </variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-115.4758 112.3118"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-144.0459 100.5858"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-9.5 15.2"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-35 21.9"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="60 213.75"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="0 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="SOUTHERN_CAL/5132wh_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5132wh.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:15" />
+<attribute name="date_issued" value="2013-06-24T12:55:15" />
+<attribute name="date_created" value="2002-06-11T12:32:20" />
+<attribute name="start_time" value="1997-11-22T06:02:30Z" />
+<attribute name="stop_time" value="1998-04-13T23:02:30Z" />
+</netcdf>
+</dataset>
+<dataset name="5441tcp-a_1d.nc" ID="SOUTHERN_CAL/5441tcp-a_1d.nc" urlPath="SOUTHERN_CAL/5441tcp-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.942699 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.494797 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -35.500000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 21:02:30 </start>
+<end> 1999-04-02 21:27:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+<variable name="C_50" vocabulary_name="sea_water_electrical_conductivity" units="mmho/cm">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5441tcp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419522150" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-544</values>
+ </variable>
+<variable name="P_4023" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="4464.1646 4730.146"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="10.4241 14.4471"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="tran_4010" shape="time station">
+<attribute name="actual_range" type="float" value="0.00488 4.0467"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ATTN_55" shape="time station">
+<attribute name="actual_range" type="float" value="0.1296 27.0117"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="C_50" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="36.968 40.5222"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="S_40" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.8878 33.7336"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5441tcp-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5441tcp-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:17" />
+<attribute name="date_issued" value="2013-06-24T12:55:17" />
+<attribute name="date_created" value="1999-05-17T09:04:40" />
+<attribute name="start_time" value="1998-12-04T21:02:30Z" />
+<attribute name="stop_time" value="1999-04-02T21:27:30Z" />
+</netcdf>
+</dataset>
+<dataset name="5442adc-a_1d.nc" ID="SOUTHERN_CAL/5442adc-a_1d.nc" urlPath="SOUTHERN_CAL/5442adc-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.942699 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.494766 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -29.476055 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 20:57:30 </start>
+<end> 1999-04-02 21:17:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5442adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419521850" increment="1200"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 33.7361 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-544</values>
+ </variable>
+<variable name="hght_18" shape="time station">
+<attribute name="actual_range" type="float" value="10 35.43"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="10.53 20.83"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5442adc-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5442adc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:18" />
+<attribute name="date_issued" value="2013-06-24T12:55:18" />
+<attribute name="date_created" value="2002-11-18T10:28:19" />
+<attribute name="start_time" value="1998-12-04T20:57:30Z" />
+<attribute name="stop_time" value="1999-04-02T21:17:30Z" />
+</netcdf>
+</dataset>
+<dataset name="5442adc-a_2d.nc" ID="SOUTHERN_CAL/5442adc-a_2d.nc" urlPath="SOUTHERN_CAL/5442adc-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.942699 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.494766 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -29.476055 </start>
+<size> 30.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 20:57:30 </start>
+<end> 1999-04-02 21:17:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5442adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419521850" increment="1200"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="hght_18" />
+<remove type="variable" name="Tx_1211" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-544</values>
+ </variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-135.86 143.246"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-153.7384 122.9807"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-22.1828 26.678"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-14.3497 16.2454"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="64.5 217"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="0 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="SOUTHERN_CAL/5442adc-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5442adc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:18" />
+<attribute name="date_issued" value="2013-06-24T12:55:18" />
+<attribute name="date_created" value="2002-11-18T10:28:19" />
+<attribute name="start_time" value="1998-12-04T20:57:30Z" />
+<attribute name="stop_time" value="1999-04-02T21:17:30Z" />
+</netcdf>
+</dataset>
+<dataset name="5451sc-a_1d.nc" ID="SOUTHERN_CAL/5451sc-a_1d.nc" urlPath="SOUTHERN_CAL/5451sc-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.945934 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.496201 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -20.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-05 02:35:00 </start>
+<end> 1999-04-02 20:35:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="TRN_107" vocabulary_name="TRANSMISSOMETER VOLTAGE 7" units="volts">TRANSMISSOMETER VOLTAGE 7</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5451sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419542100" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-545</values>
+ </variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="11.2494 15.8258"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="C_51" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.7935 4.2114"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="S_40" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.9915 34.4059"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="STH_71" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.5652 26.2164"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="TRN_107" shape="time station">
+<attribute name="actual_range" type="float" value="0.026 4.018"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ATTN_55" shape="time station">
+<attribute name="actual_range" type="float" value="0.078225 20.24"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5451sc-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5451sc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:19" />
+<attribute name="date_issued" value="2013-06-24T12:55:19" />
+<attribute name="date_created" value="2000-12-15T11:46:20" />
+<attribute name="start_time" value="1998-12-05T02:35:00Z" />
+<attribute name="stop_time" value="1999-04-02T20:35:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5461mc-a_1d.cdf" ID="SOUTHERN_CAL/5461mc-a_1d.cdf" urlPath="SOUTHERN_CAL/5461mc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.944832 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.495331 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 19:30:00 </start>
+<end> 1999-04-02 18:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5461mc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419516600" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-546</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="12.0804 15.7126"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.867 4.1867"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.0103 33.7163"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.3627 25.5236"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5461mc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5461mc-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:20" />
+<attribute name="date_issued" value="2013-06-24T12:55:20" />
+<attribute name="date_created" value="2008-05-28T17:48:50" />
+<attribute name="start_time" value="1998-12-04T19:30:00Z" />
+<attribute name="stop_time" value="1999-04-02T18:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5471mc-a_1d.cdf" ID="SOUTHERN_CAL/5471mc-a_1d.cdf" urlPath="SOUTHERN_CAL/5471mc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.943501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.559669 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -18.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 18:30:00 </start>
+<end> 1999-04-02 17:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5471mc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419513000" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-547</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="10.4958 15.593"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.7317 4.1796"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.0243 34.325"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.5742 26.2167"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5471mc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5471mc-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:21" />
+<attribute name="date_issued" value="2013-06-24T12:55:21" />
+<attribute name="date_created" value="2008-05-28T17:48:54" />
+<attribute name="start_time" value="1998-12-04T18:30:00Z" />
+<attribute name="stop_time" value="1999-04-02T17:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5472mc-a_1d.cdf" ID="SOUTHERN_CAL/5472mc-a_1d.cdf" urlPath="SOUTHERN_CAL/5472mc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.943501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.559669 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -28.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 18:30:00 </start>
+<end> 1999-04-02 17:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5472mc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419513000" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-547</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="9.9716 15.5188"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.6979 4.1718"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.9977 34.1924"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.5588 26.1464"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5472mc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5472mc-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:21" />
+<attribute name="date_issued" value="2013-06-24T12:55:21" />
+<attribute name="date_created" value="2008-05-28T17:48:59" />
+<attribute name="start_time" value="1998-12-04T18:30:00Z" />
+<attribute name="stop_time" value="1999-04-02T17:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5473mc-a_1d.cdf" ID="SOUTHERN_CAL/5473mc-a_1d.cdf" urlPath="SOUTHERN_CAL/5473mc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.943501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.559669 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -38.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 18:30:00 </start>
+<end> 1999-04-02 17:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5473mc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419513000" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-547</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="9.6996 15.0094"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.6811 4.1263"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.7751 34.3138"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.3628 26.2534"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5473mc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5473mc-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:22" />
+<attribute name="date_issued" value="2013-06-24T12:55:22" />
+<attribute name="date_created" value="2008-05-28T17:49:03" />
+<attribute name="start_time" value="1998-12-04T18:30:00Z" />
+<attribute name="stop_time" value="1999-04-02T17:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5474mc-a_1d.cdf" ID="SOUTHERN_CAL/5474mc-a_1d.cdf" urlPath="SOUTHERN_CAL/5474mc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.943501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.559669 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -48.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 18:30:00 </start>
+<end> 1999-04-02 17:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5474mc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419513000" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-547</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="9.4599 14.3675"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.6625 4.0627"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.0592 34.2499"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.6472 26.346"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5474mc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5474mc-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:23" />
+<attribute name="date_issued" value="2013-06-24T12:55:23" />
+<attribute name="date_created" value="2008-05-28T17:49:07" />
+<attribute name="start_time" value="1998-12-04T18:30:00Z" />
+<attribute name="stop_time" value="1999-04-02T17:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5475mc-a_1d.cdf" ID="SOUTHERN_CAL/5475mc-a_1d.cdf" urlPath="SOUTHERN_CAL/5475mc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.943501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.559669 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -58.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 18:30:00 </start>
+<end> 1999-04-02 17:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5475mc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419513000" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-547</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="9.3464 14.146"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.656 4.0477"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.1063 34.3025"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.9257 26.31"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5475mc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5475mc-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:23" />
+<attribute name="date_issued" value="2013-06-24T12:55:23" />
+<attribute name="date_created" value="2008-05-28T17:49:11" />
+<attribute name="start_time" value="1998-12-04T18:30:00Z" />
+<attribute name="stop_time" value="1999-04-02T17:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5476sc-a_1d.cdf" ID="SOUTHERN_CAL/5476sc-a_1d.cdf" urlPath="SOUTHERN_CAL/5476sc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.943501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.559669 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -65.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 18:30:00 </start>
+<end> 1999-03-12 01:45:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5476sc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419513000" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-547</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="9.44 13.9527"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.6625 4.0281"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.0212 34.2224"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.8608 26.3031"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5476sc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5476sc-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:24" />
+<attribute name="date_issued" value="2013-06-24T12:55:24" />
+<attribute name="date_created" value="2008-05-28T17:49:16" />
+<attribute name="start_time" value="1998-12-04T18:30:00Z" />
+<attribute name="stop_time" value="1999-03-12T01:45:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5481sc-a_1d.cdf" ID="SOUTHERN_CAL/5481sc-a_1d.cdf" urlPath="SOUTHERN_CAL/5481sc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.943501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.559669 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 16:30:00 </start>
+<end> 1999-04-02 16:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5481sc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419505800" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-548</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="12.1812 15.7279"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.8715 4.1899"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.2671 33.7089"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.6159 25.4887"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5481sc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5481sc-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:25" />
+<attribute name="date_issued" value="2013-06-24T12:55:25" />
+<attribute name="date_created" value="2008-05-28T17:49:20" />
+<attribute name="start_time" value="1998-12-04T16:30:00Z" />
+<attribute name="stop_time" value="1999-04-02T16:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5482sc-a_1d.cdf" ID="SOUTHERN_CAL/5482sc-a_1d.cdf" urlPath="SOUTHERN_CAL/5482sc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.943501 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.559669 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -12.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 16:30:00 </start>
+<end> 1999-04-02 16:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5482sc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419505800" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-548</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="11.2721 15.6375"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.7948 4.1824"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.2183 33.7218"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.6422 25.6812"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5482sc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5482sc-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:25" />
+<attribute name="date_issued" value="2013-06-24T12:55:25" />
+<attribute name="date_created" value="2008-05-28T17:49:24" />
+<attribute name="start_time" value="1998-12-04T16:30:00Z" />
+<attribute name="stop_time" value="1999-04-02T16:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5491-a_1d.cdf" ID="SOUTHERN_CAL/5491-a_1d.cdf" urlPath="SOUTHERN_CAL/5491-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.927166 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.634666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -383.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-05 01:36:15 </start>
+<end> 1999-04-02 14:43:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5491-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419538575" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-549</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-33.9155 38.2724"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-17.5114 19.5163"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.53479 359.9637"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.7589 39.9072"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 40.082"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="5.917 7.7583"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="2.75 359.9375"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5491-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5491-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:26" />
+<attribute name="date_issued" value="2013-06-24T12:55:26" />
+<attribute name="date_created" value="2008-05-28T17:49:29" />
+<attribute name="start_time" value="1998-12-05T01:36:15Z" />
+<attribute name="stop_time" value="1999-04-02T14:43:45Z" />
+</netcdf>
+</dataset>
+<dataset name="5492-a_1d.cdf" ID="SOUTHERN_CAL/5492-a_1d.cdf" urlPath="SOUTHERN_CAL/5492-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.927166 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.634666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -426.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-05 03:36:15 </start>
+<end> 1999-04-02 14:43:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5492-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419545775" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-549</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.2022 8.0143"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="2.75 359.9375"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5492-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5492-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:27" />
+<attribute name="date_issued" value="2013-06-24T12:55:27" />
+<attribute name="date_created" value="2008-05-28T17:49:34" />
+<attribute name="start_time" value="1998-12-05T03:36:15Z" />
+<attribute name="stop_time" value="1999-04-02T14:43:45Z" />
+</netcdf>
+</dataset>
+<dataset name="5492att-a_1d.cdf" ID="SOUTHERN_CAL/5492att-a_1d.cdf" urlPath="SOUTHERN_CAL/5492att-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.927166 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.634666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -426.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-05 03:36:15 </start>
+<end> 1999-04-02 14:43:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5492att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419545775" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-549</values>
+ </variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="0.001 4.2127"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="1.8597e-05 33.3834"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.2022 8.0143"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5492att-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5492att-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:27" />
+<attribute name="date_issued" value="2013-06-24T12:55:27" />
+<attribute name="date_created" value="2008-05-28T17:49:38" />
+<attribute name="start_time" value="1998-12-05T03:36:15Z" />
+<attribute name="stop_time" value="1999-04-02T14:43:45Z" />
+</netcdf>
+</dataset>
+<dataset name="5501mc-a_1d.cdf" ID="SOUTHERN_CAL/5501mc-a_1d.cdf" urlPath="SOUTHERN_CAL/5501mc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.941833 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.558167 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -69.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 22:30:00 </start>
+<end> 1999-04-02 22:30:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5501mc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419527400" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-550</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="9.1794 13.6164"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.6391 3.9935"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.9361 34.2501"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.9381 26.3382"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5501mc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5501mc-a.cdf - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:28" />
+<attribute name="date_issued" value="2013-06-24T12:55:28" />
+<attribute name="date_created" value="2008-05-28T17:49:42" />
+<attribute name="start_time" value="1998-12-04T22:30:00Z" />
+<attribute name="stop_time" value="1999-04-02T22:30:00Z" />
+</netcdf>
+</dataset>
+<dataset name="5502adc-a_1d.nc" ID="SOUTHERN_CAL/5502adc-a_1d.nc" urlPath="SOUTHERN_CAL/5502adc-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.941818 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.558197 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -63.290997 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 23:57:30 </start>
+<end> 1999-04-02 22:37:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5502adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419532650" increment="1200"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 67.541 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-550</values>
+ </variable>
+<variable name="hght_18" shape="time station">
+<attribute name="actual_range" type="float" value="8.32 69.51"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="9.26 13.75"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/5502adc-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5502adc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:30" />
+<attribute name="date_issued" value="2013-06-24T12:55:30" />
+<attribute name="date_created" value="2002-11-18T10:27:02" />
+<attribute name="start_time" value="1998-12-04T23:57:30Z" />
+<attribute name="stop_time" value="1999-04-02T22:37:30Z" />
+</netcdf>
+</dataset>
+<dataset name="5502adc-a_2d.nc" ID="SOUTHERN_CAL/5502adc-a_2d.nc" urlPath="SOUTHERN_CAL/5502adc-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.941818 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.558197 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -63.290997 </start>
+<size> 63.999996 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1998-12-04 23:57:30 </start>
+<end> 1999-04-02 22:37:30 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/5502adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4419532650" increment="1200"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="hght_18" />
+<remove type="variable" name="Tx_1211" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-550</values>
+ </variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-152.9104 172.8142"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-166.5669 165.7179"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-24.4691 20.2874"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-16.7062 16.7392"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="52.25 203.5"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="0 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="SOUTHERN_CAL/5502adc-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="5502adc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:30" />
+<attribute name="date_issued" value="2013-06-24T12:55:30" />
+<attribute name="date_created" value="2002-11-18T10:27:02" />
+<attribute name="start_time" value="1998-12-04T23:57:30Z" />
+<attribute name="stop_time" value="1999-04-02T22:37:30Z" />
+</netcdf>
+</dataset>
+<dataset name="6051adc-a_1d.nc" ID="SOUTHERN_CAL/6051adc-a_1d.nc" urlPath="SOUTHERN_CAL/6051adc-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 34.006432 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.695816 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -41.577576 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2000-01-12 23:51:00 </start>
+<end> 2000-05-24 18:51:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/6051adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4454437860" increment="1800"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 45.5876 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-605</values>
+ </variable>
+<variable name="hght_18" shape="time station">
+<attribute name="actual_range" type="float" value="6.28 49.83"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="9.73 16.66"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/6051adc-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="6051adc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:31" />
+<attribute name="date_issued" value="2013-06-24T12:55:31" />
+<attribute name="date_created" value="2000-08-04T15:24:12" />
+<attribute name="start_time" value="2000-01-12T23:51:00Z" />
+<attribute name="stop_time" value="2000-05-24T18:51:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6051adc-a_2d.nc" ID="SOUTHERN_CAL/6051adc-a_2d.nc" urlPath="SOUTHERN_CAL/6051adc-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 34.006432 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.695816 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -41.577576 </start>
+<size> 42.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2000-01-12 23:51:00 </start>
+<end> 2000-05-24 18:51:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/6051adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4454437860" increment="1800"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="hght_18" />
+<remove type="variable" name="Tx_1211" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-605</values>
+ </variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-148.7439 141.8211"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-124.7274 118.8744"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-6.2953 14.3532"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-18.2844 12.4781"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="58.5 220.75"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="2.25 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="SOUTHERN_CAL/6051adc-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="6051adc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:31" />
+<attribute name="date_issued" value="2013-06-24T12:55:31" />
+<attribute name="date_created" value="2000-08-04T15:24:12" />
+<attribute name="start_time" value="2000-01-12T23:51:00Z" />
+<attribute name="stop_time" value="2000-05-24T18:51:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6061sc-a_1d.nc" ID="SOUTHERN_CAL/6061sc-a_1d.nc" urlPath="SOUTHERN_CAL/6061sc-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 34.005852 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.696220 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2000-01-12 23:55:00 </start>
+<end> 2000-03-26 17:10:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="TRN_107" vocabulary_name="TRANSMISSOMETER VOLTAGE 7" units="volts">TRANSMISSOMETER VOLTAGE 7</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/6061sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4454438100" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-606</values>
+ </variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="12.8969 15.806"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="C_51" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.9189 4.1804"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="S_40" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.9841 33.7287"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="STH_71" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.3951 25.2222"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="TRN_107" shape="time station">
+<attribute name="actual_range" type="float" value="0.015 4.241"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ATTN_55" shape="time station">
+<attribute name="actual_range" type="float" value="0 22.578"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/6061sc-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="6061sc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:32" />
+<attribute name="date_issued" value="2013-06-24T12:55:32" />
+<attribute name="date_created" value="2000-11-22T14:26:32" />
+<attribute name="start_time" value="2000-01-12T23:55:00Z" />
+<attribute name="stop_time" value="2000-03-26T17:10:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6071adc-a_1d.nc" ID="SOUTHERN_CAL/6071adc-a_1d.nc" urlPath="SOUTHERN_CAL/6071adc-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.951168 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.551651 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -50.143814 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2000-01-12 21:21:00 </start>
+<end> 2000-05-24 15:21:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/6071adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4454428860" increment="1800"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 54.1538 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-607</values>
+ </variable>
+<variable name="hght_18" shape="time station">
+<attribute name="actual_range" type="float" value="10.89 63.24"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="9.39 15.74"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/6071adc-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="6071adc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:34" />
+<attribute name="date_issued" value="2013-06-24T12:55:34" />
+<attribute name="date_created" value="2000-11-22T13:25:37" />
+<attribute name="start_time" value="2000-01-12T21:21:00Z" />
+<attribute name="stop_time" value="2000-05-24T15:21:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6071adc-a_2d.nc" ID="SOUTHERN_CAL/6071adc-a_2d.nc" urlPath="SOUTHERN_CAL/6071adc-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.951168 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.551651 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -50.143814 </start>
+<size> 50.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2000-01-12 21:21:00 </start>
+<end> 2000-05-24 15:21:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/6071adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4454428860" increment="1800"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="hght_18" />
+<remove type="variable" name="Tx_1211" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-607</values>
+ </variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-129.0399 147.7482"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-118.2118 123.5373"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-6.5241 13.7552"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-12.3407 14.1624"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="54 212"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="11 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="SOUTHERN_CAL/6071adc-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="6071adc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:34" />
+<attribute name="date_issued" value="2013-06-24T12:55:34" />
+<attribute name="date_created" value="2000-11-22T13:25:37" />
+<attribute name="start_time" value="2000-01-12T21:21:00Z" />
+<attribute name="stop_time" value="2000-05-24T15:21:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6091adc-a_1d.nc" ID="SOUTHERN_CAL/6091adc-a_1d.nc" urlPath="SOUTHERN_CAL/6091adc-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.881882 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.582314 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -71.067291 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2000-01-12 16:51:00 </start>
+<end> 2000-05-24 12:51:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="hght_18" vocabulary_name="height of sea surface" units="m">height of sea surface</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">ADCP Transducer Temp.</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/6091adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4454412660" increment="1800"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 75.0973 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-609</values>
+ </variable>
+<variable name="hght_18" shape="time station">
+<attribute name="actual_range" type="float" value="39.57 76.8"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="9.06 13.81"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/6091adc-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="6091adc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:35" />
+<attribute name="date_issued" value="2013-06-24T12:55:35" />
+<attribute name="date_created" value="2000-08-07T10:41:08" />
+<attribute name="start_time" value="2000-01-12T16:51:00Z" />
+<attribute name="stop_time" value="2000-05-24T12:51:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6091adc-a_2d.nc" ID="SOUTHERN_CAL/6091adc-a_2d.nc" urlPath="SOUTHERN_CAL/6091adc-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.881882 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.582314 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -71.067291 </start>
+<size> 72.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2000-01-12 16:51:00 </start>
+<end> 2000-05-24 12:51:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="counts">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/6091adc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4454412660" increment="1800"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="hght_18" />
+<remove type="variable" name="Tx_1211" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-609</values>
+ </variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-150.4007 180.5555"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-137.1956 145.5743"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-7.5736 17.8507"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-11.8988 26.5528"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="53 199.25"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="3.25 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="SOUTHERN_CAL/6091adc-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="6091adc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:35" />
+<attribute name="date_issued" value="2013-06-24T12:55:35" />
+<attribute name="date_created" value="2000-08-07T10:41:08" />
+<attribute name="start_time" value="2000-01-12T16:51:00Z" />
+<attribute name="stop_time" value="2000-05-24T12:51:00Z" />
+</netcdf>
+</dataset>
+<dataset name="6092tcp-a_1d.nc" ID="SOUTHERN_CAL/6092tcp-a_1d.nc" urlPath="SOUTHERN_CAL/6092tcp-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.881882 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.582314 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -78.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2000-01-12 17:02:28 </start>
+<end> 2000-05-24 13:12:28 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="volts">TRANSMISSION (VOLTS)</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/6092tcp-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4454413348" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-609</values>
+ </variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="9.1594 11.7452"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_4023" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="8610.4453 8884.1729"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="tran_4010" shape="time station">
+<attribute name="actual_range" type="float" value="0.8235 4.0907"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ATTN_55" shape="time station">
+<attribute name="actual_range" type="float" value="0.2468 6.6584"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/6092tcp-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="6092tcp-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:37" />
+<attribute name="date_issued" value="2013-06-24T12:55:37" />
+<attribute name="date_created" value="2000-11-24T08:29:17" />
+<attribute name="start_time" value="2000-01-12T17:02:28Z" />
+<attribute name="stop_time" value="2000-05-24T13:12:28Z" />
+</netcdf>
+</dataset>
+<dataset name="6101sc-a_1d.nc" ID="SOUTHERN_CAL/6101sc-a_1d.nc" urlPath="SOUTHERN_CAL/6101sc-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 33.882000 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -118.582901 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2000-01-12 16:10:00 </start>
+<end> 2000-03-28 19:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">SALINITY (PPT)</variable>
+<variable name="STH_71" vocabulary_name="sea_water_sigma_theta" units="kg m-3">SIGMA-THETA (KG/M**3)</variable>
+<variable name="TRN_107" vocabulary_name="TRANSMISSOMETER VOLTAGE 7" units="volts">TRANSMISSOMETER VOLTAGE 7</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/SOUTHERN_CAL/6101sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4454410200" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-610</values>
+ </variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="12.9612 15.0011"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="C_51" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.9319 4.1329"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="S_40" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.2913 33.6592"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="STH_71" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.6863 25.2695"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="TRN_107" shape="time station">
+<attribute name="actual_range" type="float" value="0.672 4.462"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ATTN_55" shape="time station">
+<attribute name="actual_range" type="float" value="0.075218 7.6476"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="SOUTHERN_CAL/6101sc-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="M. Noble" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="mnoble@usgs.gov" />
+<attribute name="title" value="6101sc-a.nc - Southern California Project" />
+<attribute name="summary" value="A series of moorings were deployed to understand how coastal ocean processes that move sediments change with location on the shelf." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:55:38" />
+<attribute name="date_issued" value="2013-06-24T12:55:38" />
+<attribute name="date_created" value="2000-11-22T14:22:37" />
+<attribute name="start_time" value="2000-01-12T16:10:00Z" />
+<attribute name="stop_time" value="2000-03-28T19:00:00Z" />
+</netcdf>
+</dataset>
+</dataset>
+</catalog>

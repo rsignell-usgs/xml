@@ -1,0 +1,3839 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  name="CMGP Oceanographic Time Series Data">
+  
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="Stellwagen Bank Observations (2/94-10/95)" ID="MBstel">
+    <metadata inherited="true">
+      <serviceName>manyservices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Station</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>42.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-70.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>3000</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/mbay_stell.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="4321-a_1d.cdf" ID="MBAY_STELL/4321-a_1d.cdf" urlPath="MBAY_STELL/4321-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-02-17 17:31:52 </start>
+<end> 1994-07-11 14:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4321-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268223112" increment="225"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-432</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-82.3378 98.3752"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-61.8061 66.9816"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.22019 359.9454"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.11785 103.7672"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="1.0973 17.7254"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4321-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4321-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:41" />
+<attribute name="date_issued" value="2013-06-24T12:42:41" />
+<attribute name="date_created" value="2008-05-28T16:30:29" />
+<attribute name="start_time" value="1994-02-17T17:31:52Z" />
+<attribute name="stop_time" value="1994-07-11T14:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="4321-a1h_1d.cdf" ID="MBAY_STELL/4321-a1h_1d.cdf" urlPath="MBAY_STELL/4321-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-02-17 18:00:00 </start>
+<end> 1994-07-11 14:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4321-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268224800" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-432</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-69.4379 94.2299"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-59.4616 46.0684"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="1.0723 357.5516"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.31924 95.7403"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="1.64 16.8944"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4321-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4321-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:42" />
+<attribute name="date_issued" value="2013-06-24T12:42:42" />
+<attribute name="date_created" value="2008-05-28T16:30:35" />
+<attribute name="start_time" value="1994-02-17T18:00:00Z" />
+<attribute name="stop_time" value="1994-07-11T14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4321sc-a_1d.cdf" ID="MBAY_STELL/4321sc-a_1d.cdf" urlPath="MBAY_STELL/4321sc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-02-18 00:33:45 </start>
+<end> 1994-07-01 20:18:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4321sc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268248425" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-432</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="1.6129 16.2118"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="2.8058 3.9473"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="29.6115 32.7827"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="22.3483 26.0766"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4321sc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4321sc-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:43" />
+<attribute name="date_issued" value="2013-06-24T12:42:43" />
+<attribute name="date_created" value="2008-05-28T16:30:38" />
+<attribute name="start_time" value="1994-02-18T00:33:45Z" />
+<attribute name="stop_time" value="1994-07-01T20:18:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4321sc-a1h_1d.cdf" ID="MBAY_STELL/4321sc-a1h_1d.cdf" urlPath="MBAY_STELL/4321sc-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-02-18 01:00:00 </start>
+<end> 1994-07-01 19:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4321sc-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268250000" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-432</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="1.6441 15.0213"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="2.8089 3.8757"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="29.958 32.7411"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="22.9433 26.0307"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4321sc-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4321sc-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:43" />
+<attribute name="date_issued" value="2013-06-24T12:42:43" />
+<attribute name="date_created" value="2008-05-28T16:30:42" />
+<attribute name="start_time" value="1994-02-18T01:00:00Z" />
+<attribute name="stop_time" value="1994-07-01T19:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4322-a_1d.cdf" ID="MBAY_STELL/4322-a_1d.cdf" urlPath="MBAY_STELL/4322-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -25.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-02-17 19:33:45 </start>
+<end> 1994-07-11 12:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4322-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268230425" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-432</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-51.8023 75.8254"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-44.3936 24.3282"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.2467 359.9132"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.23303 77.9325"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="4.0757 78.1516"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="1.624 8.7196"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="0.875 358.0625"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4322-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4322-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:44" />
+<attribute name="date_issued" value="2013-06-24T12:42:44" />
+<attribute name="date_created" value="2008-05-28T16:30:46" />
+<attribute name="start_time" value="1994-02-17T19:33:45Z" />
+<attribute name="stop_time" value="1994-07-11T12:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4322-a1h_1d.cdf" ID="MBAY_STELL/4322-a1h_1d.cdf" urlPath="MBAY_STELL/4322-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -25.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-02-17 20:00:00 </start>
+<end> 1994-07-11 11:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4322-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268232000" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-432</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-49.0551 68.7079"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-38.0955 22.9022"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="3.1065 359.4376"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.68808 70.1675"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="1.6371 7.7819"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4322-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4322-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:45" />
+<attribute name="date_issued" value="2013-06-24T12:42:45" />
+<attribute name="date_created" value="2008-05-28T16:30:50" />
+<attribute name="start_time" value="1994-02-17T20:00:00Z" />
+<attribute name="stop_time" value="1994-07-11T11:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4323-a_1d.cdf" ID="MBAY_STELL/4323-a_1d.cdf" urlPath="MBAY_STELL/4323-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -42.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-02-17 18:33:45 </start>
+<end> 1994-07-11 14:56:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4323-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268226825" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-432</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-44.4868 65.1487"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-45.5408 22.9905"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.45146 359.996"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.17391 68.6713"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2.6217 68.6523"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="1.6249 6.0814"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="0.875 358.0625"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4323-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4323-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:52" />
+<attribute name="date_issued" value="2013-06-24T12:42:52" />
+<attribute name="date_created" value="2008-05-28T16:30:54" />
+<attribute name="start_time" value="1994-02-17T18:33:45Z" />
+<attribute name="stop_time" value="1994-07-11T14:56:15Z" />
+</netcdf>
+</dataset>
+<dataset name="4323-a1h_1d.cdf" ID="MBAY_STELL/4323-a1h_1d.cdf" urlPath="MBAY_STELL/4323-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -42.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-02-17 19:00:00 </start>
+<end> 1994-07-11 14:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4323-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268228400" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-432</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-41.1282 54.4342"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-40.5554 20.4695"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="1.9538 358.9618"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.98374 56.4773"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="1.6407 6.0533"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="4.9808 56.6786"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="22.6719 345.0547"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4323-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4323-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:53" />
+<attribute name="date_issued" value="2013-06-24T12:42:53" />
+<attribute name="date_created" value="2008-05-28T16:30:57" />
+<attribute name="start_time" value="1994-02-17T19:00:00Z" />
+<attribute name="stop_time" value="1994-07-11T14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4323att-a_1d.cdf" ID="MBAY_STELL/4323att-a_1d.cdf" urlPath="MBAY_STELL/4323att-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -42.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-02-17 18:33:45 </start>
+<end> 1994-07-11 14:56:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4323att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268226825" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-432</values>
+ </variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="3.6539 4.4058"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.14913 0.89763"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2.6217 68.6523"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="1.6249 6.0814"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4323att-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4323att-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:54" />
+<attribute name="date_issued" value="2013-06-24T12:42:54" />
+<attribute name="date_created" value="2008-05-28T16:31:01" />
+<attribute name="start_time" value="1994-02-17T18:33:45Z" />
+<attribute name="stop_time" value="1994-07-11T14:56:15Z" />
+</netcdf>
+</dataset>
+<dataset name="4323att-a1h_1d.cdf" ID="MBAY_STELL/4323att-a1h_1d.cdf" urlPath="MBAY_STELL/4323att-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -42.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-02-17 19:00:00 </start>
+<end> 1994-07-11 14:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4323att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268228400" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-432</values>
+ </variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.15474 0.64066"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="3.8963 4.3996"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="1.6407 6.0533"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4323att-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4323att-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:54" />
+<attribute name="date_issued" value="2013-06-24T12:42:54" />
+<attribute name="date_created" value="2008-05-28T16:31:05" />
+<attribute name="start_time" value="1994-02-17T19:00:00Z" />
+<attribute name="stop_time" value="1994-07-11T14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4323cs-a_1d.cdf" ID="MBAY_STELL/4323cs-a_1d.cdf" urlPath="MBAY_STELL/4323cs-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -42.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-02-17 18:33:45 </start>
+<end> 1994-07-11 14:56:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4323cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268226825" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-432</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="28.312 31.9864"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="31.6816 33.0535"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4323cs-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4323cs-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:55" />
+<attribute name="date_issued" value="2013-06-24T12:42:55" />
+<attribute name="date_created" value="2008-05-28T16:31:08" />
+<attribute name="start_time" value="1994-02-17T18:33:45Z" />
+<attribute name="stop_time" value="1994-07-11T14:56:15Z" />
+</netcdf>
+</dataset>
+<dataset name="4323cs-a1h_1d.cdf" ID="MBAY_STELL/4323cs-a1h_1d.cdf" urlPath="MBAY_STELL/4323cs-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -42.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-02-17 19:00:00 </start>
+<end> 1994-07-11 14:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4323cs-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4268228400" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-432</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="28.3308 31.9642"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="31.7046 33.0475"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4323cs-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4323cs-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:55" />
+<attribute name="date_issued" value="2013-06-24T12:42:55" />
+<attribute name="date_created" value="2008-05-28T16:31:11" />
+<attribute name="start_time" value="1994-02-17T19:00:00Z" />
+<attribute name="stop_time" value="1994-07-11T14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4391-a_1d.cdf" ID="MBAY_STELL/4391-a_1d.cdf" urlPath="MBAY_STELL/4391-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-07-11 18:31:52 </start>
+<end> 1994-10-25 14:05:37 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4391-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280668312" increment="225"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-439</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-84.4309 89.3281"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-79.7677 36.9084"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.27386 359.9454"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.09317 89.864"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="10.2782 19.7926"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4391-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4391-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:56" />
+<attribute name="date_issued" value="2013-06-24T12:42:56" />
+<attribute name="date_created" value="2008-05-28T16:31:14" />
+<attribute name="start_time" value="1994-07-11T18:31:52Z" />
+<attribute name="stop_time" value="1994-10-25T14:05:37Z" />
+</netcdf>
+</dataset>
+<dataset name="4391-a1h_1d.cdf" ID="MBAY_STELL/4391-a1h_1d.cdf" urlPath="MBAY_STELL/4391-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-07-11 19:00:00 </start>
+<end> 1994-10-25 13:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4391-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280670000" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-439</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-69.2197 85.6835"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-76.0824 26.8189"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="4.65 359.7383"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.36571 85.8579"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="11.6309 19.3643"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4391-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4391-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:57" />
+<attribute name="date_issued" value="2013-06-24T12:42:57" />
+<attribute name="date_created" value="2008-05-28T16:31:18" />
+<attribute name="start_time" value="1994-07-11T19:00:00Z" />
+<attribute name="stop_time" value="1994-10-25T13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4391sc-a_1d.cdf" ID="MBAY_STELL/4391sc-a_1d.cdf" urlPath="MBAY_STELL/4391sc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-07-11 18:33:45 </start>
+<end> 1994-10-25 14:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4391sc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280668425" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-439</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="10.1587 20.222"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.5396 4.3356"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="29.8228 32.9716"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="21.3686 25.008"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4391sc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4391sc-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:57" />
+<attribute name="date_issued" value="2013-06-24T12:42:57" />
+<attribute name="date_created" value="2008-05-28T16:31:22" />
+<attribute name="start_time" value="1994-07-11T18:33:45Z" />
+<attribute name="stop_time" value="1994-10-25T14:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4391sc-a1h_1d.cdf" ID="MBAY_STELL/4391sc-a1h_1d.cdf" urlPath="MBAY_STELL/4391sc-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-07-11 19:00:00 </start>
+<end> 1994-10-25 13:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4391sc-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280670000" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-439</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="11.6388 19.4178"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="3.6784 4.301"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="31.2683 32.8478"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="22.2051 24.9538"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4391sc-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4391sc-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:58" />
+<attribute name="date_issued" value="2013-06-24T12:42:58" />
+<attribute name="date_created" value="2008-05-28T16:31:26" />
+<attribute name="start_time" value="1994-07-11T19:00:00Z" />
+<attribute name="stop_time" value="1994-10-25T13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4392-a_1d.cdf" ID="MBAY_STELL/4392-a_1d.cdf" urlPath="MBAY_STELL/4392-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -25.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-07-11 19:33:45 </start>
+<end> 1994-10-25 14:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4392-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280672025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-439</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-72.9003 72.7018"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-62.6648 34.4246"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.12163 359.8269"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.06964 75.7563"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="4.0557 75.9148"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="5.1378 15.788"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="0.875 358.0625"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4392-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4392-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:42:59" />
+<attribute name="date_issued" value="2013-06-24T12:42:59" />
+<attribute name="date_created" value="2008-05-28T16:31:30" />
+<attribute name="start_time" value="1994-07-11T19:33:45Z" />
+<attribute name="stop_time" value="1994-10-25T14:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4392-a1h_1d.cdf" ID="MBAY_STELL/4392-a1h_1d.cdf" urlPath="MBAY_STELL/4392-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -25.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-07-11 20:00:00 </start>
+<end> 1994-10-25 13:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4392-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280673600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-439</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-51.6045 66.5457"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-45.3198 21.8577"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="1.8495 359.7209"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.66333 69.941"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="5.1706 15.1966"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4392-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4392-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:00" />
+<attribute name="date_issued" value="2013-06-24T12:43:00" />
+<attribute name="date_created" value="2008-05-28T16:31:33" />
+<attribute name="start_time" value="1994-07-11T20:00:00Z" />
+<attribute name="stop_time" value="1994-10-25T13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4393-a_1d.cdf" ID="MBAY_STELL/4393-a_1d.cdf" urlPath="MBAY_STELL/4393-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -42.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-07-11 19:33:45 </start>
+<end> 1994-10-25 14:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4393-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280672025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-439</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-45.4376 57.1164"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-35.4625 22.1516"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.89372 359.8901"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.11443 57.2426"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="3.2334 57.4053"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="5.1182 12.8035"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="0.875 358.0625"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4393-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4393-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:01" />
+<attribute name="date_issued" value="2013-06-24T12:43:01" />
+<attribute name="date_created" value="2008-05-28T16:31:41" />
+<attribute name="start_time" value="1994-07-11T19:33:45Z" />
+<attribute name="stop_time" value="1994-10-25T14:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4393-a1h_1d.cdf" ID="MBAY_STELL/4393-a1h_1d.cdf" urlPath="MBAY_STELL/4393-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -42.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-07-11 20:00:00 </start>
+<end> 1994-10-25 13:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4393-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280673600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-439</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-43.2237 52.8068"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-32.4744 19.6782"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.22574 359.7046"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.45302 53.2201"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="5.1203 12.7871"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="5.353 53.525"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="26.8906 325.3672"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4393-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4393-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:02" />
+<attribute name="date_issued" value="2013-06-24T12:43:02" />
+<attribute name="date_created" value="2008-05-28T16:31:45" />
+<attribute name="start_time" value="1994-07-11T20:00:00Z" />
+<attribute name="stop_time" value="1994-10-25T13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4393att-a_1d.cdf" ID="MBAY_STELL/4393att-a_1d.cdf" urlPath="MBAY_STELL/4393att-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -42.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-07-11 19:33:45 </start>
+<end> 1994-10-25 14:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4393att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280672025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-439</values>
+ </variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="1.834 4.4637"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.00023843 3.5583"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="3.2334 57.4053"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="5.1182 12.8035"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4393att-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4393att-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:02" />
+<attribute name="date_issued" value="2013-06-24T12:43:02" />
+<attribute name="date_created" value="2008-05-28T16:31:49" />
+<attribute name="start_time" value="1994-07-11T19:33:45Z" />
+<attribute name="stop_time" value="1994-10-25T14:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4393att-a1h_1d.cdf" ID="MBAY_STELL/4393att-a1h_1d.cdf" urlPath="MBAY_STELL/4393att-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -42.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-07-11 20:00:00 </start>
+<end> 1994-10-25 13:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4393att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280673600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-439</values>
+ </variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.03981 2.8967"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="2.1756 4.4198"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4393att-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4393att-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:03" />
+<attribute name="date_issued" value="2013-06-24T12:43:03" />
+<attribute name="date_created" value="2008-05-28T16:31:52" />
+<attribute name="start_time" value="1994-07-11T20:00:00Z" />
+<attribute name="stop_time" value="1994-10-25T13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4393cs-a_1d.cdf" ID="MBAY_STELL/4393cs-a_1d.cdf" urlPath="MBAY_STELL/4393cs-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -42.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-07-11 19:33:45 </start>
+<end> 1994-10-25 14:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4393cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280672025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-439</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="31.2386 38.4226"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="31.9504 34.4565"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4393cs-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4393cs-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:03" />
+<attribute name="date_issued" value="2013-06-24T12:43:03" />
+<attribute name="date_created" value="2008-05-28T16:31:56" />
+<attribute name="start_time" value="1994-07-11T19:33:45Z" />
+<attribute name="stop_time" value="1994-10-25T14:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4393cs-a1h_1d.cdf" ID="MBAY_STELL/4393cs-a1h_1d.cdf" urlPath="MBAY_STELL/4393cs-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293335 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182335 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -42.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-07-11 20:00:00 </start>
+<end> 1994-10-25 13:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4393cs-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4280673600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-439</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="31.2449 38.3936"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.0611 33.0316"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4393cs-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4393cs-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:04" />
+<attribute name="date_issued" value="2013-06-24T12:43:04" />
+<attribute name="date_created" value="2008-05-28T16:32:00" />
+<attribute name="start_time" value="1994-07-11T20:00:00Z" />
+<attribute name="stop_time" value="1994-10-25T13:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4481-a_1d.cdf" ID="MBAY_STELL/4481-a_1d.cdf" urlPath="MBAY_STELL/4481-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-10-25 16:31:52 </start>
+<end> 1995-04-10 15:28:07 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4481-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289819512" increment="225"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-448</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-43.7792 102.8096"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-60.1765 41.3695"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.059977 359.8486"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.041667 103.129"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.3083 13.018"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4481-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4481-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:04" />
+<attribute name="date_issued" value="2013-06-24T12:43:04" />
+<attribute name="date_created" value="2008-05-28T16:32:04" />
+<attribute name="start_time" value="1994-10-25T16:31:52Z" />
+<attribute name="stop_time" value="1995-04-10T15:28:07Z" />
+</netcdf>
+</dataset>
+<dataset name="4481-a1h_1d.cdf" ID="MBAY_STELL/4481-a1h_1d.cdf" urlPath="MBAY_STELL/4481-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-10-25 17:00:00 </start>
+<end> 1995-04-10 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4481-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289821200" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-448</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-39.5945 96.1934"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-54.1144 38.2491"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.79438 359.7523"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.066699 96.2598"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.336 12.8807"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4481-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4481-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:05" />
+<attribute name="date_issued" value="2013-06-24T12:43:05" />
+<attribute name="date_created" value="2008-05-28T16:32:09" />
+<attribute name="start_time" value="1994-10-25T17:00:00Z" />
+<attribute name="stop_time" value="1995-04-10T15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4481sc-a_1d.cdf" ID="MBAY_STELL/4481sc-a_1d.cdf" urlPath="MBAY_STELL/4481sc-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-10-27 00:33:45 </start>
+<end> 1995-04-10 15:26:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4481sc-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289934825" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-448</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.3479 13.0476"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="2.9749 3.8109"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.0536 33.2424"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.2546 26.1887"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4481sc-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4481sc-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:06" />
+<attribute name="date_issued" value="2013-06-24T12:43:06" />
+<attribute name="date_created" value="2008-05-28T16:32:12" />
+<attribute name="start_time" value="1994-10-27T00:33:45Z" />
+<attribute name="stop_time" value="1995-04-10T15:26:15Z" />
+</netcdf>
+</dataset>
+<dataset name="4481sc-a1h_1d.cdf" ID="MBAY_STELL/4481sc-a1h_1d.cdf" urlPath="MBAY_STELL/4481sc-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -5.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-10-27 01:00:00 </start>
+<end> 1995-04-10 15:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+<variable name="sigma_theta" vocabulary_name="sea_water_sigma_theta" units="sigma       ">SIGMA THETA</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4481sc-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289936400" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-448</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.3544 12.911"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="2.9767 3.8051"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.0721 33.2357"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="sigma_theta" shape="time station">
+<attribute name="standard_name" value="sea_water_sigma_theta"/>
+<attribute name="actual_range" type="float" value="24.3291 26.1785"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4481sc-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4481sc-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:06" />
+<attribute name="date_issued" value="2013-06-24T12:43:06" />
+<attribute name="date_created" value="2008-05-28T16:32:16" />
+<attribute name="start_time" value="1994-10-27T01:00:00Z" />
+<attribute name="stop_time" value="1995-04-10T15:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4482-a_1d.cdf" ID="MBAY_STELL/4482-a_1d.cdf" urlPath="MBAY_STELL/4482-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -31.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-10-25 18:33:45 </start>
+<end> 1995-04-10 15:18:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4482-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289826825" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-448</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-53.442 57.8735"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-46.1694 41.1357"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.098479 359.9201"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.14722 59.751"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="4.4769 59.8956"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.3581 12.2259"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="0.875 358.0625"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4482-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4482-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:07" />
+<attribute name="date_issued" value="2013-06-24T12:43:07" />
+<attribute name="date_created" value="2008-05-28T16:32:20" />
+<attribute name="start_time" value="1994-10-25T18:33:45Z" />
+<attribute name="stop_time" value="1995-04-10T15:18:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4482-a1h_1d.cdf" ID="MBAY_STELL/4482-a1h_1d.cdf" urlPath="MBAY_STELL/4482-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -31.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-10-25 19:00:00 </start>
+<end> 1995-04-10 14:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temp" vocabulary_name="sea_water_temperature" units="deg c       ">TEMP</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4482-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289828400" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-448</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-52.0731 54.9901"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-44.6448 37.5563"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.7366 359.8354"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.71529 57.0859"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.367 12.2149"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4482-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4482-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:08" />
+<attribute name="date_issued" value="2013-06-24T12:43:08" />
+<attribute name="date_created" value="2008-05-28T16:32:24" />
+<attribute name="start_time" value="1994-10-25T19:00:00Z" />
+<attribute name="stop_time" value="1995-04-10T14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4483-a_1d.cdf" ID="MBAY_STELL/4483-a_1d.cdf" urlPath="MBAY_STELL/4483-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -48.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-10-25 18:33:45 </start>
+<end> 1995-04-10 15:18:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4483-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289826825" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-448</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-44.06 49.2773"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-44.0583 35.5604"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.25626 359.9454"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.15272 56.4906"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="3.6947 56.4997"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.4207 11.8767"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="0.875 358.0625"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4483-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4483-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:09" />
+<attribute name="date_issued" value="2013-06-24T12:43:09" />
+<attribute name="date_created" value="2008-05-28T16:32:28" />
+<attribute name="start_time" value="1994-10-25T18:33:45Z" />
+<attribute name="stop_time" value="1995-04-10T15:18:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4483-a1h_1d.cdf" ID="MBAY_STELL/4483-a1h_1d.cdf" urlPath="MBAY_STELL/4483-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -48.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-10-25 19:00:00 </start>
+<end> 1995-04-10 14:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4483-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289828400" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-448</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-41.061 43.8295"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-40.82 34.0695"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.36864 358.5957"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.27979 50.6669"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.4216 11.8728"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="4.8429 50.8128"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="19.1562 331.6953"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4483-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4483-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:10" />
+<attribute name="date_issued" value="2013-06-24T12:43:10" />
+<attribute name="date_created" value="2008-05-28T16:32:33" />
+<attribute name="start_time" value="1994-10-25T19:00:00Z" />
+<attribute name="stop_time" value="1995-04-10T14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4483att-a_1d.cdf" ID="MBAY_STELL/4483att-a_1d.cdf" urlPath="MBAY_STELL/4483att-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -48.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-10-25 18:33:45 </start>
+<end> 1995-04-10 15:18:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4483att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289826825" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-448</values>
+ </variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="3.1595 4.3124"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.14269 1.387"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="3.6947 56.4997"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.4207 11.8767"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4483att-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4483att-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:11" />
+<attribute name="date_issued" value="2013-06-24T12:43:11" />
+<attribute name="date_created" value="2008-05-28T16:32:36" />
+<attribute name="start_time" value="1994-10-25T18:33:45Z" />
+<attribute name="stop_time" value="1995-04-10T15:18:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4483att-a1h_1d.cdf" ID="MBAY_STELL/4483att-a1h_1d.cdf" urlPath="MBAY_STELL/4483att-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -48.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-10-25 19:00:00 </start>
+<end> 1995-04-10 14:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4483att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289828400" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-448</values>
+ </variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.14814 1.3433"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="3.1942 4.3065"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4483att-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4483att-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:11" />
+<attribute name="date_issued" value="2013-06-24T12:43:11" />
+<attribute name="date_created" value="2008-05-28T16:32:40" />
+<attribute name="start_time" value="1994-10-25T19:00:00Z" />
+<attribute name="stop_time" value="1995-04-10T14:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4483cs-a_1d.cdf" ID="MBAY_STELL/4483cs-a_1d.cdf" urlPath="MBAY_STELL/4483cs-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -48.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-10-25 18:33:45 </start>
+<end> 1995-04-10 15:18:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4483cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289826825" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-448</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="29.7891 37.6308"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.1283 33.3832"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4483cs-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4483cs-a.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:12" />
+<attribute name="date_issued" value="2013-06-24T12:43:12" />
+<attribute name="date_created" value="2008-05-28T16:32:44" />
+<attribute name="start_time" value="1994-10-25T18:33:45Z" />
+<attribute name="stop_time" value="1995-04-10T15:18:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4483cs-a1h_1d.cdf" ID="MBAY_STELL/4483cs-a1h_1d.cdf" urlPath="MBAY_STELL/4483cs-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 42.293499 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.182663 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -48.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1994-10-25 19:00:00 </start>
+<end> 1995-04-10 14:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MBAY_STELL/4483cs-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4289828400" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-448</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="29.7999 37.5059"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.1476 33.3656"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MBAY_STELL/4483cs-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="R. Signell" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="rsignell@usgs.gov" />
+<attribute name="title" value="4483cs-a1h.cdf - Monitoring on Stellwagen Bank" />
+<attribute name="summary" value="A year-long series of current measurements on the eastern flank of Stellwagen Bank to document the currents at the mouth of Massachusetts Bay driven by the Maine Coastal current." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T12:43:12" />
+<attribute name="date_issued" value="2013-06-24T12:43:12" />
+<attribute name="date_created" value="2008-05-28T16:32:47" />
+<attribute name="start_time" value="1994-10-25T19:00:00Z" />
+<attribute name="stop_time" value="1995-04-10T14:00:00Z" />
+</netcdf>
+</dataset>
+</dataset>
+</catalog>

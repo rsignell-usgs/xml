@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  name="CMGP Oceanographic Time Series Data">
+  
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="Observaions in Buzzards Bay during Hurricane Irene" ID="hurrirene_bb">
+    <metadata inherited="true">
+      <serviceName>manyservices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Station</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>41.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-71.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>20</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/hurrIrene_bb.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="9141wh-a_1d.nc" ID="HURRIRENE_BB/9141wh-a_1d.nc" urlPath="HURRIRENE_BB/9141wh-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.530869 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.801224 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -14.398672 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-08-26 13:56:00 </start>
+<end> 2011-09-24 04:16:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="brange" vocabulary_name="platform_orientation" units="m">range from instrument head to boundary</variable>
+<variable name="Tx_1211" vocabulary_name="sea_water_temperature" units="degrees.C">instrument Transducer Temp.</variable>
+<variable name="SV_80" vocabulary_name="SOUND VELOCITY (M/S)" units="m s-1">SOUND VELOCITY (M/S)</variable>
+<variable name="Hdg_1215" vocabulary_name="platform_orientation" units="degrees">INST Heading</variable>
+<variable name="Ptch_1216" vocabulary_name="platform_pitch_angle" units="degrees">INST Pitch</variable>
+<variable name="Roll_1217" vocabulary_name="platform_roll_angle" units="degrees">INST Roll</variable>
+<variable name="P_1294" vocabulary_name="sea_water_pressure" units="deca-pascals">Pressure at Transducer Head</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/HURRIRENE_BB/9141wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4821083760" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="bindist" />
+<remove type="variable" name="Rec" />
+<remove type="variable" name="u_1205" />
+<remove type="variable" name="v_1206" />
+<remove type="variable" name="w_1204" />
+<remove type="variable" name="Werr_1201" />
+<remove type="variable" name="AGC_1202" />
+<remove type="variable" name="PGd_1203" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+  <values> 16.0187 </values>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-914</values>
+ </variable>
+<variable name="brange" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="18.6136 18.6721"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Tx_1211" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="19.01 23.65"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SV_80" shape="time station">
+<attribute name="actual_range" type="float" value="1516 1527"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Hdg_1215" shape="time station">
+<attribute name="standard_name" value="platform_orientation"/>
+<attribute name="actual_range" type="float" value="4.96 16"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Ptch_1216" shape="time station">
+<attribute name="standard_name" value="platform_pitch_angle"/>
+<attribute name="actual_range" type="float" value="-1.22 -0.45"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Roll_1217" shape="time station">
+<attribute name="standard_name" value="platform_roll_angle"/>
+<attribute name="actual_range" type="float" value="-0.49 -0.23"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_1294" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="14650 16659"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="160 2000"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="HURRIRENE_BB/9141wh-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="9141wh-a.nc - Observations in Buzzards Bay during and after a Hurricane" />
+<attribute name="summary" value="Oceanographic data collected in Buzzards Bay MA during Hurricane Irene August 2011." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:23" />
+<attribute name="date_issued" value="2013-06-24T13:15:23" />
+<attribute name="date_created" value="2012-02-24T12:38:10" />
+<attribute name="start_time" value="2011-08-26T13:56:00Z" />
+<attribute name="stop_time" value="2011-09-24T04:16:00Z" />
+</netcdf>
+</dataset>
+<dataset name="9141wh-a_2d.nc" ID="HURRIRENE_BB/9141wh-a_2d.nc" urlPath="HURRIRENE_BB/9141wh-a_2d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.530869 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.801224 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -14.398672 </start>
+<size> 16.000000 </size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-08-26 13:56:00 </start>
+<end> 2011-09-24 04:16:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="bindist" vocabulary_name="bin distance from instrument (m)" units="m">bin distance from instrument (m)</variable>
+<variable name="Rec" vocabulary_name="ensemble number" units="count">ensemble number</variable>
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="w_1204" vocabulary_name="upward_sea_water_velocity" units="cm/s">Vertical Velocity</variable>
+<variable name="Werr_1201" vocabulary_name="Error Velocity" units="cm/s">Error Velocity</variable>
+<variable name="AGC_1202" vocabulary_name="Average Echo Intensity (AGC)" units="counts">Average Echo Intensity (AGC)</variable>
+<variable name="PGd_1203" vocabulary_name="Percent Good Pings" units="percent">Percent Good Pings</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/HURRIRENE_BB/9141wh-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4821083760" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="variable" name="time2" />
+<remove type="variable" name="brange" />
+<remove type="variable" name="Tx_1211" />
+<remove type="variable" name="SV_80" />
+<remove type="variable" name="Hdg_1215" />
+<remove type="variable" name="Ptch_1216" />
+<remove type="variable" name="Roll_1217" />
+<remove type="variable" name="P_1294" />
+<remove type="variable" name="SDP_850" />
+<variable name="depth" shape="depth">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-914</values>
+ </variable>
+<variable name="bindist" shape="time depth station">
+<attribute name="actual_range" type="float" value="1.62 17.62"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="Rec" shape="time depth station">
+<attribute name="actual_range" type="float" value="168 8404"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+</variable>
+<variable name="u_1205" shape="time depth station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-120.3035 123.8902"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time depth station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-112.0922 108.3469"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="w_1204" shape="time depth station">
+<attribute name="standard_name" value="upward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-14.2 20.7"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Werr_1201" shape="time depth station">
+<attribute name="actual_range" type="float" value="-194.4 183"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="AGC_1202" shape="time depth station">
+<attribute name="actual_range" type="float" value="69.5 234.25"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="PGd_1203" shape="time depth station">
+<attribute name="actual_range" type="float" value="0 100"/>
+  <attribute name="coordinates" value="time depth lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeriesProfile" />
+<attribute name="id" value="HURRIRENE_BB/9141wh-a_2d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="9141wh-a.nc - Observations in Buzzards Bay during and after a Hurricane" />
+<attribute name="summary" value="Oceanographic data collected in Buzzards Bay MA during Hurricane Irene August 2011." />
+<attribute name="standard_name_vocabulary" value="CF-1.6" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:23" />
+<attribute name="date_issued" value="2013-06-24T13:15:23" />
+<attribute name="date_created" value="2012-02-24T12:38:10" />
+<attribute name="start_time" value="2011-08-26T13:56:00Z" />
+<attribute name="stop_time" value="2011-09-24T04:16:00Z" />
+</netcdf>
+</dataset>
+<dataset name="9142ysi-a_1d.nc" ID="HURRIRENE_BB/9142ysi-a_1d.nc" urlPath="HURRIRENE_BB/9142ysi-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.530870 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.801223 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -16.718670 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-08-26 14:10:42 </start>
+<end> 2011-09-28 13:35:42 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="time_cf" vocabulary_name="Modified Julian Day" units="days since 1858-11-17 00:00">Modified Julian Day</variable>
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">Temperature</variable>
+<variable name="SpC_48" vocabulary_name="Specific conductance" units="mS/cm">Specific conductance</variable>
+<variable name="S_40" vocabulary_name="sea_water_salinity" units="PPT">Salinity</variable>
+<variable name="Press" vocabulary_name="sea_water_pressure" units="Pounds per square inch absolute">Pressure</variable>
+<variable name="D_3" vocabulary_name="Depth" units="m">Depth</variable>
+<variable name="Turb" vocabulary_name="Turbidity" units="Nephelometric turbity units (NTU)">Turbidity</variable>
+<variable name="OST_62" vocabulary_name="Oxygen percent saturation" units="%">Oxygen percent saturation</variable>
+<variable name="DO" vocabulary_name="Dissolved oxygen" units="mg/L">Dissolved oxygen</variable>
+<variable name="Bat_106" vocabulary_name="Battery voltage (v)" units="V">Battery voltage (v)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/HURRIRENE_BB/9142ysi-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4821084642" increment="300"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-914</values>
+ </variable>
+<variable name="time_cf" shape="time station">
+<attribute name="actual_range" type="float" value="55801 55834"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="T_28" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="18.93 22.82"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SpC_48" shape="time station">
+<attribute name="actual_range" type="float" value="45.93 49.56"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="S_40" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="29.83 32.48"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Press" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="36.535 39.949"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="D_3" shape="time station">
+<attribute name="actual_range" type="float" value="15.042 17.374"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Turb" shape="time station">
+<attribute name="actual_range" type="float" value="1 546.8"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="OST_62" shape="time station">
+<attribute name="actual_range" type="float" value="80.5 103.7"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="DO" shape="time station">
+<attribute name="actual_range" type="float" value="5.97 7.66"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="Bat_106" shape="time station">
+<attribute name="actual_range" type="float" value="10.2 12.7"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="HURRIRENE_BB/9142ysi-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="9142ysi-a.nc - Observations in Buzzards Bay during and after a Hurricane" />
+<attribute name="summary" value="Oceanographic data collected in Buzzards Bay MA during Hurricane Irene August 2011." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:24" />
+<attribute name="date_issued" value="2013-06-24T13:15:24" />
+<attribute name="date_created" value="2012-09-04T11:44:14" />
+<attribute name="start_time" value="2011-08-26T14:10:42Z" />
+<attribute name="stop_time" value="2011-09-28T13:35:42Z" />
+</netcdf>
+</dataset>
+<dataset name="9143sc-a_1d.nc" ID="HURRIRENE_BB/9143sc-a_1d.nc" urlPath="HURRIRENE_BB/9143sc-a_1d.nc">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 41.530869 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -70.801224 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -16.718670 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>2011-08-26 16:35:40 </start>
+<end> 2011-09-28 13:33:20 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="T_28" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="C_51" vocabulary_name="sea_water_electrical_conductivity" units="S/m">CONDUCTIVITY</variable>
+<variable name="tran_4010" vocabulary_name="TRANSMISSION (VOLTS)" units="Volts">TRANSMISSION (VOLTS)</variable>
+<variable name="ATTN_55" vocabulary_name="ATTENUATION" units="m-1">ATTENUATION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/HURRIRENE_BB/9143sc-a.nc">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4821093340" increment="290"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-914</values>
+ </variable>
+<variable name="T_28" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="18.9246 22.8057"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="C_51" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="100000004091847875962975319375216640 100000004091847875962975319375216640"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="tran_4010" shape="time station">
+<attribute name="actual_range" type="float" value="0.0122 3"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="ATTN_55" shape="time station">
+<attribute name="actual_range" type="float" value="1.4167 23.4364"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="HURRIRENE_BB/9143sc-a_1d.nc" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="9143sc-a.nc - Observations in Buzzards Bay during and after a Hurricane" />
+<attribute name="summary" value="Oceanographic data collected in Buzzards Bay MA during Hurricane Irene August 2011." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T13:15:25" />
+<attribute name="date_issued" value="2013-06-24T13:15:25" />
+<attribute name="date_created" value="2012-09-06T11:25:09" />
+<attribute name="start_time" value="2011-08-26T16:35:40Z" />
+<attribute name="stop_time" value="2011-09-28T13:33:20Z" />
+</netcdf>
+</dataset>
+</dataset>
+</catalog>

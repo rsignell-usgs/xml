@@ -1,0 +1,3479 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+  name="CMGP Oceanographic Time Series Data">
+
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="Mamala Bay Experiment (6/96-7/97)" ID="MAMBay">
+    <metadata inherited="true">
+      <serviceName>manyservices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Station</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>21.0</start>
+          <size>1.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-157.0</start>
+          <size>1.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>500</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/mamala_bay.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="4711-a_1d.cdf" ID="MAMALA_BAY/4711-a_1d.cdf" urlPath="MAMALA_BAY/4711-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -370.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 00:33:45 </start>
+<end> 1996-12-10 18:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4711-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342034025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-23.4842 31.013"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-27.8557 23.3363"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.061912 359.9846"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.14506 38.6494"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 38.7418"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="8.3688 12.872"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="1.9625 359.15"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4711-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4711-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:05" />
+<attribute name="date_issued" value="2013-06-24T11:36:05" />
+<attribute name="date_created" value="2008-05-28T15:04:22" />
+<attribute name="start_time" value="1996-06-21T00:33:45Z" />
+<attribute name="stop_time" value="1996-12-10T18:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4711-a1h_1d.cdf" ID="MAMALA_BAY/4711-a1h_1d.cdf" urlPath="MAMALA_BAY/4711-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -370.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 01:00:00 </start>
+<end> 1996-12-10 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4711-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342035600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-21.8218 27.8941"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-21.8255 19.5832"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.10711 359.8631"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.22972 33.3492"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="8.4001 12.8097"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2.2795 34.0867"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="9.3453 351.4156"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4711-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4711-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:05" />
+<attribute name="date_issued" value="2013-06-24T11:36:05" />
+<attribute name="date_created" value="2008-05-28T15:04:27" />
+<attribute name="start_time" value="1996-06-21T01:00:00Z" />
+<attribute name="stop_time" value="1996-12-10T17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4711att-a_1d.cdf" ID="MAMALA_BAY/4711att-a_1d.cdf" urlPath="MAMALA_BAY/4711att-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -370.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 00:33:45 </start>
+<end> 1996-12-10 18:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4711att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342034025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="4.1806 4.421"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="-1.1921e-05 0.22369"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 38.7418"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="8.3688 12.872"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4711att-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4711att-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:06" />
+<attribute name="date_issued" value="2013-06-24T11:36:06" />
+<attribute name="date_created" value="2008-05-28T15:04:30" />
+<attribute name="start_time" value="1996-06-21T00:33:45Z" />
+<attribute name="stop_time" value="1996-12-10T18:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4711att-a1h_1d.cdf" ID="MAMALA_BAY/4711att-a1h_1d.cdf" urlPath="MAMALA_BAY/4711att-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -370.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 01:00:00 </start>
+<end> 1996-12-10 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4711att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342035600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.0014382 0.069945"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="4.3453 4.4194"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4711att-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4711att-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:06" />
+<attribute name="date_issued" value="2013-06-24T11:36:06" />
+<attribute name="date_created" value="2008-05-28T15:04:35" />
+<attribute name="start_time" value="1996-06-21T01:00:00Z" />
+<attribute name="stop_time" value="1996-12-10T17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4711cs-a_1d.cdf" ID="MAMALA_BAY/4711cs-a_1d.cdf" urlPath="MAMALA_BAY/4711cs-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -370.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 00:33:45 </start>
+<end> 1996-12-10 18:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4711cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342034025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="34.1649 40.4455"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="31.6753 34.7071"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4711cs-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4711cs-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:07" />
+<attribute name="date_issued" value="2013-06-24T11:36:07" />
+<attribute name="date_created" value="2008-05-28T15:04:38" />
+<attribute name="start_time" value="1996-06-21T00:33:45Z" />
+<attribute name="stop_time" value="1996-12-10T18:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4711cs-a1h_1d.cdf" ID="MAMALA_BAY/4711cs-a1h_1d.cdf" urlPath="MAMALA_BAY/4711cs-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -370.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 01:00:00 </start>
+<end> 1996-12-10 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4711cs-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342035600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="34.8588 40.387"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="32.341 34.5003"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4711cs-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4711cs-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:07" />
+<attribute name="date_issued" value="2013-06-24T11:36:07" />
+<attribute name="date_created" value="2008-05-28T15:04:43" />
+<attribute name="start_time" value="1996-06-21T01:00:00Z" />
+<attribute name="stop_time" value="1996-12-10T17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4713-a_1d.cdf" ID="MAMALA_BAY/4713-a_1d.cdf" urlPath="MAMALA_BAY/4713-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -440.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 00:33:45 </start>
+<end> 1996-12-10 18:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4713-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342034025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-39.7115 40.7926"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-38.5332 41.6164"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0 359.9749"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0 49.2742"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 49.373"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.7382 10.7593"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="1.9625 359.15"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4713-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4713-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:08" />
+<attribute name="date_issued" value="2013-06-24T11:36:08" />
+<attribute name="date_created" value="2008-05-28T15:04:46" />
+<attribute name="start_time" value="1996-06-21T00:33:45Z" />
+<attribute name="stop_time" value="1996-12-10T18:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4713-a1h_1d.cdf" ID="MAMALA_BAY/4713-a1h_1d.cdf" urlPath="MAMALA_BAY/4713-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -440.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 01:00:00 </start>
+<end> 1996-12-10 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4713-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342035600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-32.1831 38.1112"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-31.064 36.5452"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.10136 359.6802"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.1095 46.0916"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.8184 10.1662"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2.0013 46.19"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="4.0719 355.6344"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4713-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4713-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:09" />
+<attribute name="date_issued" value="2013-06-24T11:36:09" />
+<attribute name="date_created" value="2008-05-28T15:04:51" />
+<attribute name="start_time" value="1996-06-21T01:00:00Z" />
+<attribute name="stop_time" value="1996-12-10T17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4713att-a_1d.cdf" ID="MAMALA_BAY/4713att-a_1d.cdf" urlPath="MAMALA_BAY/4713att-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -440.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 00:33:45 </start>
+<end> 1996-12-10 18:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4713att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342034025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="3.2242 4.493"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.03997 1.3673"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 49.373"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.7382 10.7593"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4713att-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4713att-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:09" />
+<attribute name="date_issued" value="2013-06-24T11:36:09" />
+<attribute name="date_created" value="2008-05-28T15:04:55" />
+<attribute name="start_time" value="1996-06-21T00:33:45Z" />
+<attribute name="stop_time" value="1996-12-10T18:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4713att-a1h_1d.cdf" ID="MAMALA_BAY/4713att-a1h_1d.cdf" urlPath="MAMALA_BAY/4713att-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -440.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 01:00:00 </start>
+<end> 1996-12-10 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4713att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342035600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.040853 0.28357"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="4.2525 4.492"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4713att-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4713att-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:10" />
+<attribute name="date_issued" value="2013-06-24T11:36:10" />
+<attribute name="date_created" value="2008-05-28T15:04:59" />
+<attribute name="start_time" value="1996-06-21T01:00:00Z" />
+<attribute name="stop_time" value="1996-12-10T17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4713cs-a_1d.cdf" ID="MAMALA_BAY/4713cs-a_1d.cdf" urlPath="MAMALA_BAY/4713cs-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -440.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 00:33:45 </start>
+<end> 1996-12-10 18:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4713cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342034025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="34.4446 38.3037"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.661 34.4443"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4713cs-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4713cs-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:10" />
+<attribute name="date_issued" value="2013-06-24T11:36:10" />
+<attribute name="date_created" value="2008-05-28T15:05:03" />
+<attribute name="start_time" value="1996-06-21T00:33:45Z" />
+<attribute name="stop_time" value="1996-12-10T18:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4713cs-a1h_1d.cdf" ID="MAMALA_BAY/4713cs-a1h_1d.cdf" urlPath="MAMALA_BAY/4713cs-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -440.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 01:00:00 </start>
+<end> 1996-12-10 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4713cs-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342035600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="34.5456 37.7683"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.9825 34.3204"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4713cs-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4713cs-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:11" />
+<attribute name="date_issued" value="2013-06-24T11:36:11" />
+<attribute name="date_created" value="2008-05-28T15:05:07" />
+<attribute name="start_time" value="1996-06-21T01:00:00Z" />
+<attribute name="stop_time" value="1996-12-10T17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4714-a_1d.cdf" ID="MAMALA_BAY/4714-a_1d.cdf" urlPath="MAMALA_BAY/4714-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -464.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 00:33:45 </start>
+<end> 1996-12-10 18:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4714-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342034025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-47.1851 52.7973"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-39.5363 34.3853"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.014823 359.9625"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.49649 55.0317"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 55.1867"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.4976 9.5253"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="1.9625 359.15"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4714-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4714-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:12" />
+<attribute name="date_issued" value="2013-06-24T11:36:12" />
+<attribute name="date_created" value="2008-05-28T15:05:11" />
+<attribute name="start_time" value="1996-06-21T00:33:45Z" />
+<attribute name="stop_time" value="1996-12-10T18:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4714-a1h_1d.cdf" ID="MAMALA_BAY/4714-a1h_1d.cdf" urlPath="MAMALA_BAY/4714-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -464.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 01:00:00 </start>
+<end> 1996-12-10 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4714-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342035600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-36.6244 49.1601"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-35.429 27.228"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.43255 359.8667"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.14597 51.2125"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.5114 9.3123"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2.0138 51.4705"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="12.1578 350.7125"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4714-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4714-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:12" />
+<attribute name="date_issued" value="2013-06-24T11:36:12" />
+<attribute name="date_created" value="2008-05-28T15:05:15" />
+<attribute name="start_time" value="1996-06-21T01:00:00Z" />
+<attribute name="stop_time" value="1996-12-10T17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4714att-a_1d.cdf" ID="MAMALA_BAY/4714att-a_1d.cdf" urlPath="MAMALA_BAY/4714att-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -464.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 00:33:45 </start>
+<end> 1996-12-10 18:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4714att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342034025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="3.8955 4.457"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.011408 0.55"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 55.1867"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.4976 9.5253"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4714att-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4714att-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:13" />
+<attribute name="date_issued" value="2013-06-24T11:36:13" />
+<attribute name="date_created" value="2008-05-28T15:05:19" />
+<attribute name="start_time" value="1996-06-21T00:33:45Z" />
+<attribute name="stop_time" value="1996-12-10T18:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4714att-a1h_1d.cdf" ID="MAMALA_BAY/4714att-a1h_1d.cdf" urlPath="MAMALA_BAY/4714att-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -464.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 01:00:00 </start>
+<end> 1996-12-10 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4714att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342035600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.014147 0.11784"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="4.3428 4.454"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4714att-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4714att-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:13" />
+<attribute name="date_issued" value="2013-06-24T11:36:13" />
+<attribute name="date_created" value="2008-05-28T15:05:23" />
+<attribute name="start_time" value="1996-06-21T01:00:00Z" />
+<attribute name="stop_time" value="1996-12-10T17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4714cs-a_1d.cdf" ID="MAMALA_BAY/4714cs-a_1d.cdf" urlPath="MAMALA_BAY/4714cs-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -464.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 00:33:45 </start>
+<end> 1996-12-10 18:03:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4714cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342034025" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="34.257 37.1277"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.5914 34.5664"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4714cs-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4714cs-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:14" />
+<attribute name="date_issued" value="2013-06-24T11:36:14" />
+<attribute name="date_created" value="2008-05-28T15:05:26" />
+<attribute name="start_time" value="1996-06-21T00:33:45Z" />
+<attribute name="stop_time" value="1996-12-10T18:03:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4714cs-a1h_1d.cdf" ID="MAMALA_BAY/4714cs-a1h_1d.cdf" urlPath="MAMALA_BAY/4714cs-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249332 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -464.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-06-21 01:00:00 </start>
+<end> 1996-12-10 17:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4714cs-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4342035600" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-471</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="34.2678 36.8627"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.9651 34.3116"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4714cs-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4714cs-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:14" />
+<attribute name="date_issued" value="2013-06-24T11:36:14" />
+<attribute name="date_created" value="2008-05-28T15:05:30" />
+<attribute name="start_time" value="1996-06-21T01:00:00Z" />
+<attribute name="stop_time" value="1996-12-10T17:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4812-a_1d.cdf" ID="MAMALA_BAY/4812-a_1d.cdf" urlPath="MAMALA_BAY/4812-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -432.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-11 00:33:45 </start>
+<end> 1997-07-10 23:33:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4812-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356981225" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-84.7825 67.9059"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-54.2173 54.9856"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.016506 359.992"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.14887 88.8549"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 89.8876"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.6147 12.0791"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="1.5625 358.75"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4812-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4812-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:15" />
+<attribute name="date_issued" value="2013-06-24T11:36:15" />
+<attribute name="date_created" value="2008-05-28T15:05:33" />
+<attribute name="start_time" value="1996-12-11T00:33:45Z" />
+<attribute name="stop_time" value="1997-07-10T23:33:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4812-a1h_1d.cdf" ID="MAMALA_BAY/4812-a1h_1d.cdf" urlPath="MAMALA_BAY/4812-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -432.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-11 01:00:00 </start>
+<end> 1997-07-10 23:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="vdir_1" vocabulary_name="VDIR 1" units="deg         ">VDIR 1</variable>
+<variable name="vspd_1" vocabulary_name="VSPD 1" units="cm/s        ">VSPD 1</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4812-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356982800" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-45.04 48.4531"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-50.5353 40.0817"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vdir_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.057749 359.7395"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vspd_1" shape="time station">
+<attribute name="actual_range" type="float" value="0.38806 60.2921"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.7457 12.0064"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2.0263 60.646"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="7.8906 354.1797"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4812-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4812-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:16" />
+<attribute name="date_issued" value="2013-06-24T11:36:16" />
+<attribute name="date_created" value="2008-05-28T15:05:38" />
+<attribute name="start_time" value="1996-12-11T01:00:00Z" />
+<attribute name="stop_time" value="1997-07-10T23:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4812_1d.cdf" ID="MAMALA_BAY/4812_1d.cdf" urlPath="MAMALA_BAY/4812_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -0.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-06 22:26:15 </start>
+<end> 1997-07-10 23:33:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="cassette" vocabulary_name="CASSETTE #" units="unknown">CASSETTE #</variable>
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="v_" vocabulary_name="direction_of_sea_water_velocity" units="deg         ">V  DIRECTION</variable>
+<variable name="vector" vocabulary_name="sea_water_speed" units="cm/s        ">VECTOR SPEED</variable>
+<variable name="rotor" vocabulary_name="ROTOR" units="count       ">ROTOR</variable>
+<variable name="compass" vocabulary_name="COMPASS" units="deg         ">COMPASS</variable>
+<variable name="vane" vocabulary_name="VANE" units="deg         ">VANE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="frtemp" vocabulary_name="sea_water_temperature" units="hz          ">FRTEMP</variable>
+<variable name="led_trans" vocabulary_name="LED TRANS" units="volts       ">LED TRANS</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4812.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356627975" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="cassette" shape="time station">
+<attribute name="actual_range" type="float" value="1 41476"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-84.7825 94.2125"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-54.2173 54.9856"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="v_" shape="time station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.016506 359.992"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vector" shape="time station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="0.14887 100.5372"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="0 11152"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="compass" shape="time station">
+<attribute name="actual_range" type="float" value="0 357.1875"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vane" shape="time station">
+<attribute name="actual_range" type="float" value="0 357.1875"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="1.5625 358.75"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.6147 35.5958"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="frtemp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="0 32896"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="led_trans" shape="time station">
+<attribute name="actual_range" type="float" value="2 65535"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="0 65535"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4812_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4812.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:18" />
+<attribute name="date_issued" value="2013-06-24T11:36:18" />
+<attribute name="date_created" value="2008-05-28T15:05:42" />
+<attribute name="start_time" value="1996-12-06T22:26:15Z" />
+<attribute name="stop_time" value="1997-07-10T23:33:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4812att-a_1d.cdf" ID="MAMALA_BAY/4812att-a_1d.cdf" urlPath="MAMALA_BAY/4812att-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -432.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-11 00:33:45 </start>
+<end> 1997-07-10 23:33:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4812att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356981225" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="3.2364 4.4894"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.1146 1.4236"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 89.8876"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.6147 12.0791"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4812att-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4812att-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:18" />
+<attribute name="date_issued" value="2013-06-24T11:36:18" />
+<attribute name="date_created" value="2008-05-28T15:05:48" />
+<attribute name="start_time" value="1996-12-11T00:33:45Z" />
+<attribute name="stop_time" value="1997-07-10T23:33:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4812att-a1h_1d.cdf" ID="MAMALA_BAY/4812att-a1h_1d.cdf" urlPath="MAMALA_BAY/4812att-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -432.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-11 01:00:00 </start>
+<end> 1997-07-10 23:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4812att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356982800" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.11515 0.82718"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="3.7628 4.4888"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4812att-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4812att-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:19" />
+<attribute name="date_issued" value="2013-06-24T11:36:19" />
+<attribute name="date_created" value="2008-05-28T15:05:52" />
+<attribute name="start_time" value="1996-12-11T01:00:00Z" />
+<attribute name="stop_time" value="1997-07-10T23:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4812cs-a_1d.cdf" ID="MAMALA_BAY/4812cs-a_1d.cdf" urlPath="MAMALA_BAY/4812cs-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -432.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-11 00:33:45 </start>
+<end> 1997-07-10 23:33:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4812cs-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356981225" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="34.3229 39.6124"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.0732 34.6445"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4812cs-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4812cs-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:19" />
+<attribute name="date_issued" value="2013-06-24T11:36:19" />
+<attribute name="date_created" value="2008-05-28T15:05:55" />
+<attribute name="start_time" value="1996-12-11T00:33:45Z" />
+<attribute name="stop_time" value="1997-07-10T23:33:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4812cs-a1h_1d.cdf" ID="MAMALA_BAY/4812cs-a1h_1d.cdf" urlPath="MAMALA_BAY/4812cs-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -432.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-11 01:00:00 </start>
+<end> 1997-07-10 23:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4812cs-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356982800" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="34.4488 39.5375"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="33.8889 34.4393"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4812cs-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4812cs-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:20" />
+<attribute name="date_issued" value="2013-06-24T11:36:20" />
+<attribute name="date_created" value="2008-05-28T15:05:59" />
+<attribute name="start_time" value="1996-12-11T01:00:00Z" />
+<attribute name="stop_time" value="1997-07-10T23:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4812cs_1d.cdf" ID="MAMALA_BAY/4812cs_1d.cdf" urlPath="MAMALA_BAY/4812cs_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -432.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-10 21:33:45 </start>
+<end> 1997-07-10 23:33:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="mmhos/cm    ">CONDUCTIVITY</variable>
+<variable name="salinity" vocabulary_name="sea_water_salinity" units="ppt         ">SALINITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4812cs.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356970425" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="34.3229 53.297"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="salinity" shape="time station">
+<attribute name="standard_name" value="sea_water_salinity"/>
+<attribute name="actual_range" type="float" value="29.4143 35.4974"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4812cs_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4812cs.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:20" />
+<attribute name="date_issued" value="2013-06-24T11:36:20" />
+<attribute name="date_created" value="2008-05-28T15:06:03" />
+<attribute name="start_time" value="1996-12-10T21:33:45Z" />
+<attribute name="stop_time" value="1997-07-10T23:33:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4812tct_1d.cdf" ID="MAMALA_BAY/4812tct_1d.cdf" urlPath="MAMALA_BAY/4812tct_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -432.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-10 21:33:45 </start>
+<end> 1997-07-10 23:33:45 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="led_trans" vocabulary_name="LED TRANS" units="volts       ">LED TRANS</variable>
+<variable name="frtemp" vocabulary_name="sea_water_temperature" units="hz          ">FRTEMP</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4812tct.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356970425" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 89.8876"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="led_trans" shape="time station">
+<attribute name="actual_range" type="float" value="3.2364 4.4894"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="frtemp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="0 32896"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.6147 25.9244"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="15763 19251"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4812tct_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4812tct.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:21" />
+<attribute name="date_issued" value="2013-06-24T11:36:21" />
+<attribute name="date_created" value="2008-05-28T15:06:06" />
+<attribute name="start_time" value="1996-12-10T21:33:45Z" />
+<attribute name="stop_time" value="1997-07-10T23:33:45Z" />
+</netcdf>
+</dataset>
+<dataset name="4813-a_1d.cdf" ID="MAMALA_BAY/4813-a_1d.cdf" urlPath="MAMALA_BAY/4813-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -456.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-11 00:33:45 </start>
+<end> 1997-07-19 05:56:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4813-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356981225" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 69.911"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.4495 11.1267"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4813-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4813-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:21" />
+<attribute name="date_issued" value="2013-06-24T11:36:21" />
+<attribute name="date_created" value="2008-05-28T15:06:11" />
+<attribute name="start_time" value="1996-12-11T00:33:45Z" />
+<attribute name="stop_time" value="1997-07-19T05:56:15Z" />
+</netcdf>
+</dataset>
+<dataset name="4813-a1h_1d.cdf" ID="MAMALA_BAY/4813-a1h_1d.cdf" urlPath="MAMALA_BAY/4813-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -456.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-11 01:00:00 </start>
+<end> 1997-07-19 05:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4813-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356982800" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.5133 10.0896"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2.1918 61.9002"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4813-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4813-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:22" />
+<attribute name="date_issued" value="2013-06-24T11:36:22" />
+<attribute name="date_created" value="2008-05-28T15:06:15" />
+<attribute name="start_time" value="1996-12-11T01:00:00Z" />
+<attribute name="stop_time" value="1997-07-19T05:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4813_1d.cdf" ID="MAMALA_BAY/4813_1d.cdf" urlPath="MAMALA_BAY/4813_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -0.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-06 23:18:45 </start>
+<end> 1997-07-19 05:56:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="cassette" vocabulary_name="CASSETTE #" units="unknown">CASSETTE #</variable>
+<variable name="east" vocabulary_name="eastward_sea_water_velocity" units="cm/s        ">EAST</variable>
+<variable name="north" vocabulary_name="northward_sea_water_velocity" units="cm/s        ">NORTH</variable>
+<variable name="v_" vocabulary_name="direction_of_sea_water_velocity" units="deg         ">V  DIRECTION</variable>
+<variable name="vector" vocabulary_name="sea_water_speed" units="cm/s        ">VECTOR SPEED</variable>
+<variable name="rotor" vocabulary_name="ROTOR" units="count       ">ROTOR</variable>
+<variable name="compass" vocabulary_name="COMPASS" units="deg         ">COMPASS</variable>
+<variable name="vane" vocabulary_name="VANE" units="deg         ">VANE</variable>
+<variable name="bearing" vocabulary_name="BEARING" units="deg         ">BEARING</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="frtemp" vocabulary_name="sea_water_temperature" units="hz          ">FRTEMP</variable>
+<variable name="led_trans" vocabulary_name="LED TRANS" units="volts       ">LED TRANS</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4813.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356631125" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="cassette" shape="time station">
+<attribute name="actual_range" type="float" value="1 43060"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="east" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-61.072 58.9928"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="north" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-50.7403 68.7053"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="v_" shape="time station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.0092947 359.9872"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vector" shape="time station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="2 69.4176"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="0 7146"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="compass" shape="time station">
+<attribute name="actual_range" type="float" value="0 357.1875"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="vane" shape="time station">
+<attribute name="actual_range" type="float" value="239.0625 239.0625"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="bearing" shape="time station">
+<attribute name="actual_range" type="float" value="1.5625 358.75"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.4495 27.6637"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="frtemp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="0 136"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="led_trans" shape="time station">
+<attribute name="actual_range" type="float" value="0 39663"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="0 65279"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4813_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4813.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:23" />
+<attribute name="date_issued" value="2013-06-24T11:36:23" />
+<attribute name="date_created" value="2008-05-28T15:06:18" />
+<attribute name="start_time" value="1996-12-06T23:18:45Z" />
+<attribute name="stop_time" value="1997-07-19T05:56:15Z" />
+</netcdf>
+</dataset>
+<dataset name="4813att-a_1d.cdf" ID="MAMALA_BAY/4813att-a_1d.cdf" urlPath="MAMALA_BAY/4813att-a_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -456.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-11 00:33:45 </start>
+<end> 1997-07-19 05:41:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4813att-a.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356981225" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="3.591 4.2953"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.034917 0.75127"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 69.911"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.4495 11.1267"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4813att-a_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4813att-a.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:24" />
+<attribute name="date_issued" value="2013-06-24T11:36:24" />
+<attribute name="date_created" value="2008-05-28T15:06:24" />
+<attribute name="start_time" value="1996-12-11T00:33:45Z" />
+<attribute name="stop_time" value="1997-07-19T05:41:15Z" />
+</netcdf>
+</dataset>
+<dataset name="4813att-a1h_1d.cdf" ID="MAMALA_BAY/4813att-a1h_1d.cdf" urlPath="MAMALA_BAY/4813att-a1h_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -456.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-11 01:00:00 </start>
+<end> 1997-07-19 05:00:00 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="attenuation" vocabulary_name="ATTENUATION" units="1/m         ">ATTENUATION</variable>
+<variable name="transmission" vocabulary_name="TRANSMISSION" units="volts       ">TRANSMISSION</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4813att-a1h.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356982800" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="attenuation" shape="time station">
+<attribute name="actual_range" type="float" value="0.03712 0.39295"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="transmission" shape="time station">
+<attribute name="actual_range" type="float" value="3.9357 4.2929"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4813att-a1h_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4813att-a1h.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:24" />
+<attribute name="date_issued" value="2013-06-24T11:36:24" />
+<attribute name="date_created" value="2008-05-28T15:06:28" />
+<attribute name="start_time" value="1996-12-11T01:00:00Z" />
+<attribute name="stop_time" value="1997-07-19T05:00:00Z" />
+</netcdf>
+</dataset>
+<dataset name="4813tct_1d.cdf" ID="MAMALA_BAY/4813tct_1d.cdf" urlPath="MAMALA_BAY/4813tct_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 21.249666 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -157.876160 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -456.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1996-12-10 22:03:45 </start>
+<end> 1997-07-19 05:56:15 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="rotor" vocabulary_name="ROTOR SPEED" units="cm/s        ">ROTOR SPEED</variable>
+<variable name="led_trans" vocabulary_name="LED TRANS" units="volts       ">LED TRANS</variable>
+<variable name="frtemp" vocabulary_name="sea_water_temperature" units="hz          ">FRTEMP</variable>
+<variable name="temperature" vocabulary_name="sea_water_temperature" units="deg c       ">TEMPERATURE</variable>
+<variable name="conductivity" vocabulary_name="sea_water_electrical_conductivity" units="s/m         ">CONDUCTIVITY</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/MAMALA_BAY/4813tct.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="4356972225" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-481</values>
+ </variable>
+<variable name="rotor" shape="time station">
+<attribute name="actual_range" type="float" value="2 69.911"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="led_trans" shape="time station">
+<attribute name="actual_range" type="float" value="1.6826 24.2063"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="frtemp" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="0 136"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="temperature" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="6.4495 25.4428"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<variable name="conductivity" shape="time station">
+<attribute name="standard_name" value="sea_water_electrical_conductivity"/>
+<attribute name="actual_range" type="float" value="0 63744"/>
+  <attribute name="coordinates" value="time lat lon"/>
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="MAMALA_BAY/4813tct_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="D. Cacchione" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="dcacchione@usgs.gov" />
+<attribute name="title" value="4813tct.cdf - Mamala bay Experiment" />
+<attribute name="summary" value="Current measurements collected at 350-450 meters in Mamala Bay" />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:36:25" />
+<attribute name="date_issued" value="2013-06-24T11:36:25" />
+<attribute name="date_created" value="2008-05-28T15:06:30" />
+<attribute name="start_time" value="1996-12-10T22:03:45Z" />
+<attribute name="stop_time" value="1997-07-19T05:56:15Z" />
+</netcdf>
+</dataset>
+</dataset>
+</catalog>

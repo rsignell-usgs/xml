@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?> <?xsd schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+ name="CMGP Oceanographic Time Series Data">
+
+  <service name="manyservices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  </service>
+  <dataset name="Argo Merchant (Mar-Apr 1977)" ID="ArgoM">
+    <metadata inherited="true">
+      <serviceName>manyservices</serviceName>
+      <authority>gov.usgs.er.whsc</authority>
+      <dataType>Station</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <creator>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">OM/WHSC/USGS</name>
+        <contact url="http://www.usgs.gov/" email="emontgomery@usgs.gov"/>
+      </publisher>
+      <geospatialCoverage zpositive="down">
+        <northsouth>
+          <start>40.0</start>
+          <size>2.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-68.0</start>
+          <size>2.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0</start>
+          <size>3000</size>
+          <units>meters</units>
+        </updown>
+      </geospatialCoverage>
+      <documentation xlink:href="http://stellwagen.er.usgs.gov/argo_merchant.html"
+        xlink:title="USGS Coastal and Marine Program Time Series Data"/>
+    </metadata>
+<dataset name="1211-A1H_1d.cdf" ID="ARGO_MERCHANT/1211-A1H_1d.cdf" urlPath="ARGO_MERCHANT/1211-A1H_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.901112 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.176666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -69.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1976-12-28 21:29:59 </start>
+<end> 1977-01-08 06:29:59 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/ARGO_MERCHANT/1211-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3727373399" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-121</values>
+ </variable>
+<variable name="u_1205" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-44.0116 49.2965"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-50.6539 72.1739"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="1.8683 359.745"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="1.416 79.1717"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="upr_4001" shape="time station">
+<attribute name="actual_range" type="float" value="5.8467 79.9272"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="ARGO_MERCHANT/1211-A1H_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="1211-A1H.cdf - Argo Merchant Experiment" />
+<attribute name="summary" value="A moored array deployed after the ARGO MERCHANT ran aground on Nantucket Shoals designed to help understand the fate of the spilled oil." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:17:10" />
+<attribute name="date_issued" value="2013-06-24T11:17:10" />
+<attribute name="date_created" value="1997-04-24T15:28:00" />
+<attribute name="start_time" value="1976-12-28T21:29:59Z" />
+<attribute name="stop_time" value="1977-01-08T06:29:59Z" />
+</netcdf>
+</dataset>
+<dataset name="1211-AA_1d.cdf" ID="ARGO_MERCHANT/1211-AA_1d.cdf" urlPath="ARGO_MERCHANT/1211-AA_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.901112 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.176666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -69.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1976-12-28 21:03:44 </start>
+<end> 1977-01-08 07:56:14 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="u_1205" vocabulary_name="eastward_sea_water_velocity" units="cm/s">Eastward Velocity</variable>
+<variable name="v_1206" vocabulary_name="northward_sea_water_velocity" units="cm/s">Northward Velocity</variable>
+<variable name="CD_310" vocabulary_name="direction_of_sea_water_velocity" units="degrees">CURRENT DIRECTION (T)</variable>
+<variable name="CS_300" vocabulary_name="sea_water_speed" units="cm s-1 ">CURRENT SPEED (CM/S)</variable>
+<variable name="upr_4001" vocabulary_name="UPPER ROTOR SPEED" units="cm/s">UPPER ROTOR SPEED</variable>
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="V01_1901" vocabulary_name="VARIABLE 1" units="unknown">VARIABLE 1</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/ARGO_MERCHANT/1211-AA.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3727371824" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-121</values>
+ </variable>
+<variable name="u_1205" shape="time station">
+<attribute name="standard_name" value="eastward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-58.1265 63.3364"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="v_1206" shape="time station">
+<attribute name="standard_name" value="northward_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="-61.0677 99.7449"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CD_310" shape="time station">
+<attribute name="standard_name" value="direction_of_sea_water_velocity"/>
+<attribute name="actual_range" type="float" value="0.03731 359.94"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="CS_300" shape="time station">
+<attribute name="standard_name" value="sea_water_speed"/>
+<attribute name="actual_range" type="float" value="1.8378 105.83"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="upr_4001" shape="time station">
+<attribute name="actual_range" type="float" value="3.3606 103.156"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="V00_1900" shape="time station">
+<attribute name="actual_range" type="float" value="0.66403 0.99999"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="V01_1901" shape="time station">
+<attribute name="actual_range" type="float" value="0.59743 1.5327"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="ARGO_MERCHANT/1211-AA_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="1211-AA.cdf - Argo Merchant Experiment" />
+<attribute name="summary" value="A moored array deployed after the ARGO MERCHANT ran aground on Nantucket Shoals designed to help understand the fate of the spilled oil." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:17:11" />
+<attribute name="date_issued" value="2013-06-24T11:17:11" />
+<attribute name="date_created" value="1997-04-24T18:34:00" />
+<attribute name="start_time" value="1976-12-28T21:03:44Z" />
+<attribute name="stop_time" value="1977-01-08T07:56:14Z" />
+</netcdf>
+</dataset>
+<dataset name="1211P-A_1d.cdf" ID="ARGO_MERCHANT/1211P-A_1d.cdf" urlPath="ARGO_MERCHANT/1211P-A_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.901112 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.176666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -69.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-01-08 11:33:44 </start>
+<end> 1977-03-05 10:56:14 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="P_4022" vocabulary_name="sea_water_pressure" units="mbar">INTERVAL PRESSURE</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+<variable name="P_4020" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE RELATIVE PRESSURE</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/ARGO_MERCHANT/1211P-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3728288024" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-121</values>
+ </variable>
+<variable name="P_4022" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="8857.3604 8979.9199"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_4023" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="8857.6797 8983.4404"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_4020" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="-11.3516 12.8086"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="0.00403 71.3504"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="ARGO_MERCHANT/1211P-A_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="1211P-A.cdf - Argo Merchant Experiment" />
+<attribute name="summary" value="A moored array deployed after the ARGO MERCHANT ran aground on Nantucket Shoals designed to help understand the fate of the spilled oil." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:17:12" />
+<attribute name="date_issued" value="2013-06-24T11:17:12" />
+<attribute name="date_created" value="1997-04-24T18:34:00" />
+<attribute name="start_time" value="1977-01-08T11:33:44Z" />
+<attribute name="stop_time" value="1977-03-05T10:56:14Z" />
+</netcdf>
+</dataset>
+<dataset name="1211P-A1H_1d.cdf" ID="ARGO_MERCHANT/1211P-A1H_1d.cdf" urlPath="ARGO_MERCHANT/1211P-A1H_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.901112 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.176666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -69.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1977-01-08 12:29:59 </start>
+<end> 1977-03-05 09:29:59 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="P_4022" vocabulary_name="sea_water_pressure" units="mbar">INTERVAL PRESSURE</variable>
+<variable name="P_4023" vocabulary_name="sea_water_pressure" units="mbar">AVERAGE BURST PRESSURE</variable>
+<variable name="SDP_850" vocabulary_name="STAND. DEV. (PRESS)" units="mbar">STAND. DEV. (PRESS)</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/ARGO_MERCHANT/1211P-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3728291399" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-121</values>
+ </variable>
+<variable name="P_4022" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="8858.0098 8978.6504"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="P_4023" shape="time station">
+<attribute name="standard_name" value="sea_water_pressure"/>
+<attribute name="actual_range" type="float" value="8858.1904 8979.2803"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="SDP_850" shape="time station">
+<attribute name="actual_range" type="float" value="0.87987 45.7275"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="ARGO_MERCHANT/1211P-A1H_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="1211P-A1H.cdf - Argo Merchant Experiment" />
+<attribute name="summary" value="A moored array deployed after the ARGO MERCHANT ran aground on Nantucket Shoals designed to help understand the fate of the spilled oil." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:17:12" />
+<attribute name="date_issued" value="2013-06-24T11:17:12" />
+<attribute name="date_created" value="1997-04-24T15:28:00" />
+<attribute name="start_time" value="1977-01-08T12:29:59Z" />
+<attribute name="stop_time" value="1977-03-05T09:29:59Z" />
+</netcdf>
+</dataset>
+<dataset name="1211TR-A_1d.cdf" ID="ARGO_MERCHANT/1211TR-A_1d.cdf" urlPath="ARGO_MERCHANT/1211TR-A_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.901112 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.176666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -69.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1976-12-28 21:03:44 </start>
+<end> 1977-02-20 04:56:14 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="rtrn_4012" vocabulary_name="RAW TRANSMISSOMETER VOLTS" units="counts">RAW TRANSMISSOMETER VOLTS</variable>
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="NEP_56" vocabulary_name="BACKSCATTER INTENSITY" units="v">BACKSCATTER INTENSITY</variable>
+<variable name="V01_1901" vocabulary_name="VARIABLE 1" units="unknown">VARIABLE 1</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/ARGO_MERCHANT/1211TR-A.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3727371824" increment="450"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-121</values>
+ </variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.6453 7.0566"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="rtrn_4012" shape="time station">
+<attribute name="actual_range" type="float" value="1.236 2.2099"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="V00_1900" shape="time station">
+<attribute name="actual_range" type="float" value="-0.00405 0.00327"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="NEP_56" shape="time station">
+<attribute name="actual_range" type="float" value="-0.58667 2.3352"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="V01_1901" shape="time station">
+<attribute name="actual_range" type="float" value="1.0049 2.2547"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="ARGO_MERCHANT/1211TR-A_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="1211TR-A.cdf - Argo Merchant Experiment" />
+<attribute name="summary" value="A moored array deployed after the ARGO MERCHANT ran aground on Nantucket Shoals designed to help understand the fate of the spilled oil." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:17:13" />
+<attribute name="date_issued" value="2013-06-24T11:17:13" />
+<attribute name="date_created" value="1997-04-24T18:34:00" />
+<attribute name="start_time" value="1976-12-28T21:03:44Z" />
+<attribute name="stop_time" value="1977-02-20T04:56:14Z" />
+</netcdf>
+</dataset>
+<dataset name="1211TR-A1H_1d.cdf" ID="ARGO_MERCHANT/1211TR-A1H_1d.cdf" urlPath="ARGO_MERCHANT/1211TR-A1H_1d.cdf">
+<serviceName>manyservices</serviceName>
+<metadata inherited="true">
+<geospatialCoverage>
+<northsouth>
+<start> 40.901112 </start>
+<size>0</size>
+<units>degrees_north</units>
+</northsouth>
+<eastwest>
+<start> -69.176666 </start>
+<size>0</size>
+<units>degrees_west</units>
+</eastwest>
+<updown>
+<start> -69.000000 </start>
+<size>0</size>
+<units>meters</units>
+</updown>
+</geospatialCoverage>
+<timeCoverage>
+<start>1976-12-28 21:29:59 </start>
+<end> 1977-02-20 03:29:59 </end>
+</timeCoverage>
+<variables vocabulary="CF-1.6">
+<variable name="T_20" vocabulary_name="sea_water_temperature" units="C">TEMPERATURE (C)</variable>
+<variable name="rtrn_4012" vocabulary_name="RAW TRANSMISSOMETER VOLTS" units="counts">RAW TRANSMISSOMETER VOLTS</variable>
+<variable name="V00_1900" vocabulary_name="VARIABLE 0" units="unknown">VARIABLE 0</variable>
+<variable name="NEP_56" vocabulary_name="BACKSCATTER INTENSITY" units="v">BACKSCATTER INTENSITY</variable>
+<variable name="V01_1901" vocabulary_name="VARIABLE 1" units="unknown">VARIABLE 1</variable>
+</variables></metadata>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="/usgs/data2/emontgomery/stellwagen/Data/ARGO_MERCHANT/1211TR-A1H.cdf">
+<variable name="time" shape="time" type="double">
+  <attribute name="units" value="seconds since 1858-11-17 00:00:00 UTC"/>
+  <attribute name="long_name" value="Modified Julian Day"/>
+  <values start="3727373399" increment="3600"/>
+</variable>
+	<dimension name="name_strlen" length="13" />
+	<dimension name="station" length="1"/>
+<remove type="dimension" name="lon" />
+<remove type="dimension" name="lat" />
+<remove type="dimension" name="depth" />
+<remove type="variable" name="time2" />
+<variable name="depth" shape="station">
+  <attribute name="positive" value="down"/>
+  <attribute name="standard_name" value="depth"/>
+</variable>
+<variable name="lon" shape="station">
+  <attribute name="units" value="degree_east"/>
+  <attribute name="standard_name" value="longitude"/>
+</variable>
+<variable name="lat" shape="station">
+  <attribute name="units" value="degree_north"/>
+  <attribute name="standard_name" value="latitude"/>
+</variable>
+<variable name="site" shape="station name_strlen" type="char">
+<attribute name="standard_name" value="station_id"/>
+  <attribute name="cf_role" value="timeseries_id"/>
+ <values>USGS/CMGP-121</values>
+ </variable>
+<variable name="T_20" shape="time station">
+<attribute name="standard_name" value="sea_water_temperature"/>
+<attribute name="actual_range" type="float" value="3.7531 7.0566"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="rtrn_4012" shape="time station">
+<attribute name="actual_range" type="float" value="1.4493 2.1843"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="V00_1900" shape="time station">
+<attribute name="actual_range" type="float" value="0.00022 0.00114"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="NEP_56" shape="time station">
+<attribute name="actual_range" type="float" value="0.69485 1.1776"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<variable name="V01_1901" shape="time station">
+<attribute name="actual_range" type="float" value="1.0049 1.2297"/>
+  <attribute name="coordinates" value="time lat lon"/>
+<remove type="attribute" name="valid_range" />
+</variable>
+<attribute name="Conventions" value="CF-1.6"/>
+<attribute name="featureType" value="timeSeries" />
+<attribute name="id" value="ARGO_MERCHANT/1211TR-A1H_1d.cdf" />
+<attribute name="naming_authority" value="gov.usgs.whsc" />
+<attribute name="institution" value="U.S.Geological Survey, Woods Hole Coastal and Marine Science Center" />
+<attribute name="creator_name" value="Ellyn Montgomery" />
+<attribute name="creator_email" value="emontgomery@usgs.gov" />
+<attribute name="publisher_name" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="publisher_url" value="http://stellwagen.er.usgs.gov" />
+<attribute name="processing_level" value="Best Basic Version" />
+<attribute name="project" value="USGS Coastal Marine Geology Program Sediment Transport group" />
+<attribute name="contributor_name" value="B. Butman" />
+<attribute name="contributor_role" value="Project Investigator" />
+<attribute name="contributor_institution" value="U.S.Geological Survey" />
+<attribute name="contributor_email" value="bbutman@usgs.gov" />
+<attribute name="title" value="1211TR-A1H.cdf - Argo Merchant Experiment" />
+<attribute name="summary" value="A moored array deployed after the ARGO MERCHANT ran aground on Nantucket Shoals designed to help understand the fate of the spilled oil." />
+<attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0" />
+<attribute name="date_modified" value="2013-06-24T11:17:14" />
+<attribute name="date_issued" value="2013-06-24T11:17:14" />
+<attribute name="date_created" value="1997-04-24T15:28:00" />
+<attribute name="start_time" value="1976-12-28T21:29:59Z" />
+<attribute name="stop_time" value="1977-02-20T03:29:59Z" />
+</netcdf>
+</dataset>
+</dataset>
+</catalog>

@@ -1,0 +1,36 @@
+log4j:ERROR setFile(null,true) call failed.
+java.io.FileNotFoundException: ncISO.log (Permission denied)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:212)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:136)
+	at org.apache.log4j.FileAppender.setFile(FileAppender.java:290)
+	at org.apache.log4j.RollingFileAppender.setFile(RollingFileAppender.java:194)
+	at org.apache.log4j.FileAppender.activateOptions(FileAppender.java:164)
+	at org.apache.log4j.config.PropertySetter.activate(PropertySetter.java:257)
+	at org.apache.log4j.config.PropertySetter.setProperties(PropertySetter.java:133)
+	at org.apache.log4j.config.PropertySetter.setProperties(PropertySetter.java:97)
+	at org.apache.log4j.PropertyConfigurator.parseAppender(PropertyConfigurator.java:689)
+	at org.apache.log4j.PropertyConfigurator.parseCategory(PropertyConfigurator.java:647)
+	at org.apache.log4j.PropertyConfigurator.configureRootCategory(PropertyConfigurator.java:544)
+	at org.apache.log4j.PropertyConfigurator.doConfigure(PropertyConfigurator.java:440)
+	at org.apache.log4j.PropertyConfigurator.doConfigure(PropertyConfigurator.java:476)
+	at org.apache.log4j.helpers.OptionConverter.selectAndConfigure(OptionConverter.java:471)
+	at org.apache.log4j.LogManager.<clinit>(LogManager.java:125)
+	at org.apache.log4j.Logger.getLogger(Logger.java:118)
+	at gov.noaa.eds.controller.ServiceController.<clinit>(ServiceController.java:24)
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+java.lang.NullPointerException
+	at gov.noaa.eds.util.FileUtility.writeln(FileUtility.java:80)
+	at gov.noaa.eds.service.WafService.startMetadataLog(WafService.java:42)
+	at gov.noaa.eds.controller.ServiceController.createWaf(ServiceController.java:java.lang.NullPointerException
+	at gov.noaa.eds.util.FileUtility.writeln(FileUtility.java:80)
+	at gov.noaa.eds.service.WafService.startMetadataLog(WafService.java:42)
+	at gov.noaa.eds.controller.ServiceController.createWaf(ServiceController.java:46)
+	at gov.njava.lang.NullPointerException
+	at gov.noaa.eds.util.FileUtility.writeln(FileUtility.java:80)
+	at gov.noaa.eds.service.WafService.startMetadataLog(WafService.java:42)
+	at gov.noaa.eds.controller.ServiceController.createWaf(ServiceController.java:46)
+	at gov.noaa.eds.controller.ServiceController.createWafTds(ServiceController.java:76)
+	at gov.noaa.eds.controller.ServiceController.main(ServiceController.java:185)

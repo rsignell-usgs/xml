@@ -1,0 +1,7 @@
+#!/bin/bash
+for file in *.xml
+do 
+#  sed 's;/home/ellyn/mnts/stellwagen/Data;/usgs/data2/rsignell/data/stellwagen.er.usgs.gov/DATAFILES;' $file > foo
+  sed 's;/usgs/data2/rsignell/data/stellwagen.er.usgs.gov/DATAFILES;/usgs/data2/emontgomery/stellwagen/Data;' $file > foo
+  mv foo $file
+done 
