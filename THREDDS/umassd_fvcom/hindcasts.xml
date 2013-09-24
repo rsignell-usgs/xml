@@ -4,11 +4,8 @@
  xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
  <service name="allServices" serviceType="Compound" base="">
   <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
-  <!--
   <service name="iso" serviceType="ISO" base="/thredds/iso/" />
-  <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
   <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
-   -->
  </service>
  <dataset name="FVCOM Hindcasts">
 
@@ -31,10 +28,10 @@
     <documentation type="Summary">This 33 year hindcast was commissioned to support the
      Massachusetts State Ocean Plan. It was driven at the boundaries with open boundary conditions
      from a global FVCOM simulation especially designed to better represent the inflow of fresh
-     water from the Gulf of Saint Lawrence and include the Gulf Stream. Data assimilated include remotely-sensed sea surface
-     height and temperature, in situ measurements of salinity and temperature. No velocity data was
-     assimilated. Tides were forced on the boundary using 8 constituents modified from the Oregon State TPXO
-     7.2 tidal model. </documentation>
+     water from the Gulf of Saint Lawrence and include the Gulf Stream. Data assimilated include
+     remotely-sensed sea surface height and temperature, in situ measurements of salinity and
+     temperature. No velocity data was assimilated. Tides were forced on the boundary using 8
+     constituents modified from the Oregon State TPXO 7.2 tidal model. </documentation>
    </metadata>
    <dataset name="Hourly values" ID="fvcom/hindcasts/30yr_gom3" urlPath="fvcom/hindcasts/30yr_gom3">
 
@@ -52,7 +49,7 @@
       <remove type="attribute" name="grid"/>
      </variable>
      <variable name="nv" shape="three nele" type="int">
-      <attribute name="standard_name" value="face_node_connectivity"/>
+      <attribute name="cf_role" value="face_node_connectivity"/>
       <attribute name="start_index" type="int" value="1"/>
      </variable>
      <!--    <variable name="time">
@@ -62,8 +59,8 @@
     </variable>
 	-->
      <variable name="fvcom_mesh" shape="" type="int">
-      <attribute name="standard_name" value="mesh_topology"/>
-      <attribute name="dimension" type="int" value="2"/>
+      <attribute name="cf_role" value="mesh_topology"/>
+      <attribute name="topology_dimension" type="int" value="2"/>
       <attribute name="node_coordinates" value="lon lat"/>
       <attribute name="face_coordinates" value="lonc latc"/>
       <attribute name="face_node_connectivity" value="nv"/>
@@ -193,18 +190,19 @@
       <attribute name="location" value="face"/>
       <remove type="attribute" name="grid"/>
      </variable>
-     <aggregation dimName="time" type="joinExisting" recheckEvery="60min">
-      <scan location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive" regExp=".*gom3_[0-9]{6}\.nc$"
-       olderThan="30min"/>
+<!--     The cdm_data_type "any" triggers nciso to not treat this like a grid, which 
+     is essential for calculating the lon/lat bounding box correctly for unstructured grids-->
+     <attribute name="cdm_data_type" value="any"/>
+     <aggregation dimName="time" type="joinExisting" recheckEvery="360min">
+      <scan location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_33_Hindcast" regExp=".*gom3_[0-9]{6}\.nc$"
+       olderThan="90min"/>
      </aggregation>
-
     </netcdf>
    </dataset>
    <dataset name="Monthly mean values" ID="fvcom/hindcasts/30yr_gom3/mean"
     urlPath="fvcom/hindcasts/30yr_gom3/mean">
 
     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-     <attribute name="DODS_EXTRA/Unlimited_Dimension" value="time"/>
      <variable name="z0b" shape="nele" type="float">
       <attribute name="coordinates" value="latc lonc"/>
       <attribute name="mesh" value="fvcom_mesh"/>
@@ -216,6 +214,11 @@
       <attribute name="positive" value="up"/>
       <attribute name="formula_terms" value="sigma: siglay eta: zeta depth: h"/>
      </variable>
+     <variable name="siglev" shape="siglev node" type="float">
+      <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+      <attribute name="positive" value="up"/>
+      <attribute name="formula_terms" value="sigma: siglev eta: zeta depth: h"/>
+     </variable>
      <variable name="h" shape="node" type="float">
       <attribute name="mesh" value="fvcom_mesh"/>
       <attribute name="coordinates" value="lat lon"/>
@@ -224,7 +227,7 @@
       <remove type="attribute" name="grid"/>
      </variable>
      <variable name="nv" shape="three nele" type="int">
-      <attribute name="standard_name" value="face_node_connectivity"/>
+      <attribute name="cf_role" value="face_node_connectivity"/>
       <attribute name="start_index" type="int" value="1"/>
      </variable>
      <!--    <variable name="time">
@@ -234,8 +237,8 @@
       </variable>
      -->
      <variable name="fvcom_mesh" shape="" type="int">
-      <attribute name="standard_name" value="mesh_topology"/>
-      <attribute name="dimension" type="int" value="2"/>
+      <attribute name="cf_role" value="mesh_topology"/>
+      <attribute name="topology_dimension" type="int" value="2"/>
       <attribute name="node_coordinates" value="lon lat"/>
       <attribute name="face_coordinates" value="lonc latc"/>
       <attribute name="face_node_connectivity" value="nv"/>
@@ -365,9 +368,34 @@
       <attribute name="location" value="face"/>
       <remove type="attribute" name="grid"/>
      </variable>
-     <aggregation dimName="time" type="joinExisting" >
+     <!--     The cdm_data_type "any" triggers nciso to not treat this like a grid, which 
+      is essential for calculating the lon/lat bounding box correctly for unstructured grids-->
+     <attribute name="cdm_data_type" value="any"/>
+     <aggregation dimName="time" type="joinExisting">
       <scan location="/http/www/tomcat/apache-tomcat-7.0.22/data/gom3_hindcast"
-       regExp=".*gom3_mean_[0-9]{6}\.nc$" />
+       regExp=".*gom3_mean_[0-9]{6}\.nc$"/>
+     </aggregation>
+
+    </netcdf>
+   </dataset>
+   <dataset name="Monthly mm5 mean and std values (regular grid)" ID="fvcom/hindcasts/30yr_gom3/mm5_month"
+    urlPath="fvcom/hindcasts/30yr_gom3/mm5_month">
+
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <variable name="time" type="double" >
+
+      <attribute name="units" value="days since 1978-01-01 00:00"/>
+      <values start="15.0" increment="30.4375"/>
+     </variable>
+     <aggregation dimName="time" type="joinNew">
+      <variableAgg name="Longwave_mean"/>
+      <variableAgg name="Longwave_std"/>
+      <variableAgg name="Sensible_mean"/>
+      <variableAgg name="Sensible_std"/>
+      <variableAgg name="Latent_mean"/>
+      <variableAgg name="Latent_std"/>     
+      <scan location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_mean_std/meteorology"
+       regExp=".*meteorology_mean_mm5_std[0-9]{6}\.nc$"/>
      </aggregation>
 
     </netcdf>
@@ -375,7 +403,8 @@
   </dataset>
   <dataset name="Northeast US 15 year hindcast on GOM1 grid (1995-2009)">
    <metadata inherited="true">
-    <documentation type="Summary">This is an older 15 year hindcast on the GOM1 grid. </documentation>
+    <documentation type="Summary">This is an older 15 year hindcast on the GOM1 grid.
+    </documentation>
    </metadata>
    <dataset name="Hourly values" ID="fvcom/hindcasts/15yr_gom1" urlPath="fvcom/hindcasts/15yr_gom1">
 
@@ -393,7 +422,7 @@
       <remove type="attribute" name="grid"/>
      </variable>
      <variable name="nv" shape="three nele" type="int">
-      <attribute name="standard_name" value="face_node_connectivity"/>
+      <attribute name="cf_role" value="face_node_connectivity"/>
       <attribute name="start_index" type="int" value="1"/>
      </variable>
      <variable name="time">
@@ -402,8 +431,8 @@
       <remove type="attribute" name="calendar"/>
      </variable>
      <variable name="fvcom_mesh" shape="" type="int">
-      <attribute name="standard_name" value="mesh_topology"/>
-      <attribute name="dimension" type="int" value="2"/>
+      <attribute name="cf_role" value="mesh_topology"/>
+      <attribute name="topology_dimension" type="int" value="2"/>
       <attribute name="node_coordinates" value="lon lat"/>
       <attribute name="face_node_connectivity" value="nv"/>
      </variable>
@@ -442,11 +471,160 @@
       <attribute name="location" value="face"/>
       <remove type="attribute" name="grid"/>
      </variable>
-
+     <!--     The cdm_data_type "any" triggers nciso to not treat this like a grid, which 
+      is essential for calculating the lon/lat bounding box correctly for unstructured grids-->
+     <attribute name="cdm_data_type" value="any"/>
      <aggregation dimName="time" type="joinExisting">
       <scan location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/gom1v10_output" subdirs="true"
        regExp=".*gom[0-9]{2}\.nc$"/>
      </aggregation>
+    </netcdf>
+   </dataset>
+  </dataset>
+  <dataset name="Wave Hindcast GOM3 grid (2010)">
+   <metadata inherited="true">
+    <documentation type="Summary">This is a wave hindcast on the GOM3 grid. </documentation>
+   </metadata>
+   <dataset name="Hourly values" ID="fvcom/hindcasts/wave_gom3" urlPath="fvcom/hindcasts/wave_gom3">
+
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <variable name="h" shape="node" type="float">
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="coordinates" value="lat lon"/>
+      <attribute name="location" value="node"/>
+      <remove type="attribute" name="positive"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="nv" shape="three nele" type="int">
+      <attribute name="cf_role" value="face_node_connectivity"/>
+      <attribute name="start_index" type="int" value="1"/>
+     </variable>
+     <variable name="time">
+      <attribute name="units" value="hours since 2010-01-01 00:00:00"/>
+      <values start="0" increment="1"/>
+     </variable>
+     <variable name="fvcom_mesh" shape="" type="int">
+      <attribute name="cf_role" value="mesh_topology"/>
+      <attribute name="topology_dimension" type="int" value="2"/>
+      <attribute name="node_coordinates" value="lon lat"/>
+      <attribute name="face_node_connectivity" value="nv"/>
+     </variable>
+     <variable name="zeta" shape="time node" type="float">
+      <attribute name="coordinates" value="time lat lon"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="node"/>
+      <remove type="attribute" name="positive"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="hs" shape="time node" type="float">
+      <attribute name="coordinates" value="time lat lon"/>
+      <attribute name="standard_name" value="sea_surface_wave_significant_height"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="node"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="wdir" shape="time node" type="float">
+      <attribute name="coordinates" value="time lat lon"/>
+      <attribute name="standard_name" value="sea_surface_wave_to_direction"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="node"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="tpeak" shape="time node" type="float">
+      <attribute name="coordinates" value="time lat lon"/>
+      <attribute name="standard_name"
+       value="sea_surface_wave_period_at_variance_spectral_density_maximum"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="node"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="wlen" shape="time node" type="float">
+      <attribute name="coordinates" value="time lat lon"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="node"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="qb" shape="time node" type="float">
+      <attribute name="coordinates" value="time lat lon"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="node"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="ubot" shape="time node" type="float">
+      <attribute name="coordinates" value="time lat lon"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="node"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="tmbot" shape="time node" type="float">
+      <attribute name="coordinates" value="time lat lon"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="node"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="dirbot" shape="time node" type="float">
+      <attribute name="coordinates" value="time lat lon"/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="node"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+
+     <variable name="uwind_speed" shape="time  nele" type="float">
+      <attribute name="standard_name" value="eastward_wind"/>
+      <attribute name="coordinates" value="time "/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="face"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <variable name="vwind_speed" shape="time nele" type="float">
+      <attribute name="standard_name" value="northward_wind"/>
+      <attribute name="coordinates" value="time "/>
+      <attribute name="mesh" value="fvcom_mesh"/>
+      <attribute name="location" value="face"/>
+      <remove type="attribute" name="grid"/>
+     </variable>
+     <!--     The cdm_data_type "any" triggers nciso to not treat this like a grid, which 
+      is essential for calculating the lon/lat bounding box correctly for unstructured grids-->
+     <attribute name="cdm_data_type" value="any"/>
+     <aggregation dimName="time" type="joinExisting">
+      <netcdf
+       location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_wave_2010/2010/Jan/gom01_0001.nc"
+       ncoords="744"/>
+      <netcdf
+       location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_wave_2010/2010/Feb/gom01_0001.nc"
+       ncoords="672"/>
+      <netcdf
+       location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_wave_2010/2010/Mar/gom01_0001.nc"
+       ncoords="744"/>
+      <netcdf
+       location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_wave_2010/2010/Apr/gom01_0001.nc"
+       ncoords="720"/>
+      <netcdf
+       location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_wave_2010/2010/May/gom01_0001.nc"
+       ncoords="744"/>
+      <netcdf
+       location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_wave_2010/2010/Jun/gom01_0001.nc"
+       ncoords="720"/>
+      <netcdf
+       location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_wave_2010/2010/Jul/gom01_0001.nc"
+       ncoords="744"/>
+      <netcdf
+       location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_wave_2010/2010/Aug/gom01_0001.nc"
+       ncoords="744"/>
+      <netcdf
+       location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_wave_2010/2010/Sep/gom01_0001.nc"
+       ncoords="720"/>
+      <netcdf
+       location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_wave_2010/2010/Oct/gom01_0001.nc"
+       ncoords="744"/>
+      <netcdf
+       location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_wave_2010/2010/Nov/gom01_0001.nc"
+       ncoords="720"/>
+      <netcdf
+       location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/Seaplan_wave_2010/2010/Dec/gom01_0001.nc"
+       ncoords="744"/>
+     </aggregation>
+
     </netcdf>
    </dataset>
   </dataset>

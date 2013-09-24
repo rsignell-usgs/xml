@@ -5,7 +5,7 @@
   <!-- see http://www.unidata.ucar.edu/projects/THREDDS/tech/reference/ThreddsConfigXMLFile.html -->
   <serverInformation>
     <name>SMAST/MEDM TDS</name>
-    <logoUrl>SMAST_BO.gif</logoUrl>
+    <logoUrl>collage-center.gif</logoUrl>
     <logoAltText>SMAST/FVCOM TDS</logoAltText>
 
     <abstract>Scientific Data</abstract>
@@ -20,7 +20,7 @@
     <hostInstitution>
       <name>Marine Ecosystems Dynamic Modeling</name>
       <webSite>http://fvcom.smast.umassd.edu/</webSite>
-      <logoUrl>SMAST_BO.gif</logoUrl>
+      <logoUrl>collage-center.gif</logoUrl>
       <logoAltText>MEDM/SMAST</logoAltText>
     </hostInstitution>
   </serverInformation>
@@ -136,10 +136,10 @@
   -->
 
   <!--
-  Persist joinNew aggregations to named directory. scour every 24 hours, delete stuff older than 30 days
+  Persist joinNew and joinExisting aggregations to named directory. Never scour the cache directory. 
   -->
   <AggregationCache>
-    <scour>24 hours</scour>
+    <scour>-1 hours</scour>
     <maxAge>300 days</maxAge>
   </AggregationCache>
 
