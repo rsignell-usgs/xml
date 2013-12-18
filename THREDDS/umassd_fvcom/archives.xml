@@ -18,134 +18,133 @@
    </creator>
    <documentation xlink:href="http://fvcom.smast.umassd.edu/FVCOM/index.html"/>
   </metadata>
-  <dataset name="FVCOM GOM3 NECOFS Forecast Archive" ID="fvcom/archives/necofs_gom3"
-   urlPath="fvcom/archives/necofs_gom3">
+  <dataset name="FVCOM GOM3v11 NECOFS Forecast Archive (Apr 2010-Oct 2011)" ID="fvcom/archives/necofs_gom3v11"
+   urlPath="fvcom/archives/necofs_gom3v11">
    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-    <variable name="zeta">
-     <attribute name="coordinates" value="time lat lon"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="node"/>
-     <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
-     <remove type="attribute" name="positive"/>
+    <attribute name="cdm_data_type" value="any"/>
+    <attribute name="title" value="NECOFS GOM3 (FVCOM) - Northeast US - Latest Forecast"/>
+    <attribute name="summary" value="Latest forecast from the FVCOM Northeast Coastal Ocean Forecast System using an newer, higher-resolution GOM3 mesh (GOM2 was the preceding mesh)"/>
+    <variable name="fvcom_mesh" shape="" type="int">
+     <attribute name="cf_role" value="mesh_topology"/>
+     <attribute name="topology_dimension" type="int" value="2"/>
+     <attribute name="node_coordinates" value="lon lat"/>
+     <attribute name="face_coordinates" value="lonc latc"/>
+     <attribute name="face_node_connectivity" value="nv"/>
     </variable>
-    <variable name="uwind_stress">
-     <attribute name="coordinates" value="time latc lonc"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="face"/>
-    </variable>    
-    <variable name="vwind_stress">
-     <attribute name="coordinates" value="time latc lonc"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="face"/>
+    <variable name="siglay" shape="siglay node" type="float">
+     <attribute name="long_name" value="Sigma Layers"/>
+     <attribute name="standard_name" value="ocean_sigma/general_coordinate"/>
+     <attribute name="positive" value="up"/>
+     <attribute name="valid_min" type="double" value="-1.0"/>
+     <attribute name="valid_max" type="double" value="0.0"/>
+     <attribute name="formula_terms" value="sigma: siglay eta: zeta depth: h"/>
     </variable>
-    <variable name="short_wave">
-     <attribute name="coordinates" value="time lat lon"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="node"/>
-    </variable>
-    <variable name="net_heat_flux">
-     <attribute name="coordinates" value="time lat lon"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="node"/>
-    </variable>
-    <variable name="icing_0kts">
-     <attribute name="coordinates" value="time lat lon"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="node"/>
-    </variable>
-    <variable name="icing_10kts">
-     <attribute name="coordinates" value="time lat lon"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="node"/>
-    </variable>
-    <variable name="icing_wndx">
-     <attribute name="coordinates" value="time lat lon"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="node"/>
-    </variable>
-    <variable name="icing_wndy">
-     <attribute name="coordinates" value="time lat lon"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="node"/>
-    </variable>
-    <variable name="icing_satmp">
-     <attribute name="coordinates" value="time lat lon"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="node"/>
-    </variable>
-    <variable name="temp">
-     <attribute name="coordinates" value="time siglay lat lon"/>
-     <attribute name="mesh" value="nv"/>
-    </variable>
-    <variable name="salinity">
-     <attribute name="coordinates" value="time siglay lat lon"/>
-    </variable>
-    <variable name="kh">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-    </variable>
-    <variable name="km">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-    </variable>
-    <variable name="kq">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-    </variable>    
-    <variable name="q2">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-    </variable>
-    <variable name="q2l">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-    </variable>
-    <variable name="l">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-    </variable>
-    <variable name="u">
-     <attribute name="coordinates" value="time siglay latc lonc"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="face"/>
-    </variable>
-    <variable name="v">
-     <attribute name="coordinates" value="time siglay latc lonc"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="face"/>
-    </variable>
-    <variable name="ww">
-     <attribute name="coordinates" value="time siglay latc lonc"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="face"/>
-    </variable>
-    <variable name="omega">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="node"/>
-    </variable>
-    <variable name="ua">
-     <attribute name="coordinates" value="time latc lonc"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="face"/>
-    </variable>
-    <variable name="va">
-     <attribute name="coordinates" value="time latc lonc"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="face"/>
-    </variable>
-    <variable name="h">
-     <attribute name="mesh" value="nv"/>
+    <variable name="h" shape="node" type="float">
+     <attribute name="long_name" value="Bathymetry"/>
+     <attribute name="standard_name" value="sea_floor_depth_below_geoid"/>
+     <attribute name="units" value="m"/>
      <attribute name="coordinates" value="lat lon"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
      <attribute name="location" value="node"/>
-     <attribute name="standard_name" value="depth_below_geoid"/>
-     <remove type="attribute" name="positive"/>
     </variable>
-    <variable name="siglay">
-     <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+    <variable name="nv"  >
+     <attribute name="long_name" value="nodes surrounding element"/>
+     <attribute name="cf_role" value="face_node_connnectivity"/>
+     <attribute name="start_index" type="int" value="1"/>
     </variable>
-    <variable name="siglev">
-     <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+    <variable name="zeta" shape="time node" type="float">
+     <attribute name="long_name" value="Water Surface Elevation"/>
+     <attribute name="units" value="meters"/>
+     <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="type" value="data"/>
+     <attribute name="missing_value" type="double" value="-999.0"/>
+     <attribute name="field" value="elev, scalar"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
     </variable>
-    <variable name="nv" >
-     <attribute name="standard_name" value="mesh_topology"/>
-     <attribute name="long_name" value="Topology of 2D unstructured mesh"/>
-     <attribute name="node_coordinates" value="lat lon"/>
-     <attribute name="start_index" type="short" value="1"/>
+    <variable name="temp" shape="time siglay node" type="float">
+     <attribute name="standard_name" value="sea_water_potential_temperature"/>
+     <attribute name="coordinates" value="time siglay lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="salinity" shape="time siglay node" type="float">
+     <attribute name="standard_name" value="sea_water_salinity"/>
+     <attribute name="units" value="1"/>
+     <attribute name="coordinates" value="time siglay lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="u" shape="time siglay nele" type="float">
+     <attribute name="units" value="meters s-1"/>
+     <attribute name="type" value="data"/>
+     <attribute name="missing_value" type="double" value="-999.0"/>
+     <attribute name="field" value="ua, scalar"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="v" shape="time siglay nele" type="float">
+     <attribute name="units" value="meters s-1"/>
+     <attribute name="type" value="data"/>
+     <attribute name="missing_value" type="double" value="-999.0"/>
+     <attribute name="field" value="va, scalar"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="ua" shape="time nele" type="float">
+     <attribute name="long_name" value="Vertically Averaged x-velocity" />
+     <attribute name="units" value="meters s-1" />
+     <attribute name="type" value="data" />
+     <attribute name="missing_value" type="double" value="-999.0" />
+     <attribute name="field" value="ua, scalar" />
+     <attribute name="coverage_content_type" value="modelResult" />
+     <attribute name="standard_name" value="barotropic_eastward_sea_water_velocity" />
+     <attribute name="coordinates" value="time latc lonc" />
+     <attribute name="mesh" value="fvcom_mesh" />
+     <attribute name="location" value="face" />
+    </variable>
+    <variable name="va" shape="time nele" type="float">
+     <attribute name="long_name" value="Vertically Averaged y-velocity" />
+     <attribute name="units" value="meters s-1" />
+     <attribute name="type" value="data" />
+     <attribute name="missing_value" type="double" value="-999.0" />
+     <attribute name="field" value="va, scalar" />
+     <attribute name="coverage_content_type" value="modelResult" />
+     <attribute name="standard_name" value="barotropic_northward_sea_water_velocity" />
+     <attribute name="coordinates" value="time latc lonc" />
+     <attribute name="mesh" value="fvcom_mesh" />
+     <attribute name="location" value="face" />
+    </variable>
+    <variable name="ww" shape="time siglay nele" type="float">
+     <attribute name="units" value="meters s-1"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="standard_name" value="upward_sea_water_velocity"/>
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="icing_0kts" shape="time node" type="float">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="icing_10kts" shape="time node" type="float">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
     </variable>
     <aggregation dimName="time" type="joinExisting" recheckEvery="60min">
      <scan location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive" regExp=".*gom3v11_[0-9]{6}\.nc$"
@@ -153,90 +152,256 @@
     </aggregation>
    </netcdf>
   </dataset>
-  
+  <dataset name="FVCOM GOM3v12 NECOFS Forecast Archive (Nov 2011-)" ID="fvcom/archives/necofs_gom3v12"
+   urlPath="fvcom/archives/necofs_gom3v12">
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <attribute name="cdm_data_type" value="any"/>
+    <attribute name="title" value="NECOFS GOM3 (FVCOM) - Northeast US - Latest Forecast"/>
+    <attribute name="summary" value="Latest forecast from the FVCOM Northeast Coastal Ocean Forecast System using an newer, higher-resolution GOM3 mesh (GOM2 was the preceding mesh)"/>
+    <variable name="fvcom_mesh" shape="" type="int">
+     <attribute name="cf_role" value="mesh_topology"/>
+     <attribute name="topology_dimension" type="int" value="2"/>
+     <attribute name="node_coordinates" value="lon lat"/>
+     <attribute name="face_coordinates" value="lonc latc"/>
+     <attribute name="face_node_connectivity" value="nv"/>
+    </variable>
+    <variable name="siglay" shape="siglay node" type="float">
+     <attribute name="long_name" value="Sigma Layers"/>
+     <attribute name="standard_name" value="ocean_sigma/general_coordinate"/>
+     <attribute name="positive" value="up"/>
+     <attribute name="valid_min" type="double" value="-1.0"/>
+     <attribute name="valid_max" type="double" value="0.0"/>
+     <attribute name="formula_terms" value="sigma: siglay eta: zeta depth: h"/>
+    </variable>
+    <variable name="h" shape="node" type="float">
+     <attribute name="long_name" value="Bathymetry"/>
+     <attribute name="standard_name" value="sea_floor_depth_below_geoid"/>
+     <attribute name="units" value="m"/>
+     <attribute name="coordinates" value="lat lon"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="nv"  >
+     <attribute name="long_name" value="nodes surrounding element"/>
+     <attribute name="cf_role" value="face_node_connnectivity"/>
+     <attribute name="start_index" type="int" value="1"/>
+    </variable>
+    <variable name="zeta" shape="time node" type="float">
+     <attribute name="long_name" value="Water Surface Elevation"/>
+     <attribute name="units" value="meters"/>
+     <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="type" value="data"/>
+     <attribute name="missing_value" type="double" value="-999.0"/>
+     <attribute name="field" value="elev, scalar"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="temp" shape="time siglay node" type="float">
+     <attribute name="standard_name" value="sea_water_potential_temperature"/>
+     <attribute name="coordinates" value="time siglay lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="salinity" shape="time siglay node" type="float">
+     <attribute name="standard_name" value="sea_water_salinity"/>
+     <attribute name="units" value="1"/>
+     <attribute name="coordinates" value="time siglay lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="u" shape="time siglay nele" type="float">
+     <attribute name="units" value="meters s-1"/>
+     <attribute name="type" value="data"/>
+     <attribute name="missing_value" type="double" value="-999.0"/>
+     <attribute name="field" value="ua, scalar"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="v" shape="time siglay nele" type="float">
+     <attribute name="units" value="meters s-1"/>
+     <attribute name="type" value="data"/>
+     <attribute name="missing_value" type="double" value="-999.0"/>
+     <attribute name="field" value="va, scalar"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="ua" shape="time nele" type="float">
+     <attribute name="long_name" value="Vertically Averaged x-velocity" />
+     <attribute name="units" value="meters s-1" />
+     <attribute name="type" value="data" />
+     <attribute name="missing_value" type="double" value="-999.0" />
+     <attribute name="field" value="ua, scalar" />
+     <attribute name="coverage_content_type" value="modelResult" />
+     <attribute name="standard_name" value="barotropic_eastward_sea_water_velocity" />
+     <attribute name="coordinates" value="time latc lonc" />
+     <attribute name="mesh" value="fvcom_mesh" />
+     <attribute name="location" value="face" />
+    </variable>
+    <variable name="va" shape="time nele" type="float">
+     <attribute name="long_name" value="Vertically Averaged y-velocity" />
+     <attribute name="units" value="meters s-1" />
+     <attribute name="type" value="data" />
+     <attribute name="missing_value" type="double" value="-999.0" />
+     <attribute name="field" value="va, scalar" />
+     <attribute name="coverage_content_type" value="modelResult" />
+     <attribute name="standard_name" value="barotropic_northward_sea_water_velocity" />
+     <attribute name="coordinates" value="time latc lonc" />
+     <attribute name="mesh" value="fvcom_mesh" />
+     <attribute name="location" value="face" />
+    </variable>
+    <variable name="ww" shape="time siglay nele" type="float">
+     <attribute name="units" value="meters s-1"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="standard_name" value="upward_sea_water_velocity"/>
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="icing_0kts" shape="time node" type="float">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="icing_10kts" shape="time node" type="float">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <aggregation dimName="time" type="joinExisting" recheckEvery="60min">
+     <scan location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive" regExp=".*gom3v12_[0-9]{6}\.nc$"
+      olderThan="30min" subdirs="true"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
   <dataset name="FVCOM MASSBAY NECOFS Forecast Archive" ID="fvcom/archives/necofs_mb"
    urlPath="fvcom/archives/necofs_mb">
    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-    <variable name="zeta">
-     <attribute name="coordinates" value="time lat lon"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="node"/>
-     <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
-     <remove type="attribute" name="positive"/>
+    <attribute name="cdm_data_type" value="any"/>
+    <attribute name="title" value="NECOFS Massachusetts (FVCOM) - Massachusetts Coastal - Latest Forecast"/>
+    <attribute name="summary" value="Latest forecast from the FVCOM Northeast Coastal Ocean Forecast System using high-resolution mesh covering the Massachusetts coastal region"/>
+    
+    <variable name="fvcom_mesh" shape="" type="int">
+     <attribute name="cf_role" value="mesh_topology"/>
+     <attribute name="topology_dimension" type="int" value="2"/>
+     <attribute name="node_coordinates" value="lon lat"/>
+     <attribute name="face_coordinates" value="lonc latc"/>
+     <attribute name="face_node_connectivity" value="nv"/>
     </variable>
-     <variable name="temp">
-     <attribute name="coordinates" value="time siglay lat lon"/>
-     <attribute name="mesh" value="nv"/>
+    <variable name="siglay" shape="siglay node" type="float">
+     <attribute name="long_name" value="Sigma Layers"/>
+     <attribute name="standard_name" value="ocean_sigma/general_coordinate"/>
+     <attribute name="positive" value="up"/>
+     <attribute name="valid_min" type="double" value="-1.0"/>
+     <attribute name="valid_max" type="double" value="0.0"/>
+     <attribute name="formula_terms" value="sigma: siglay eta: zeta depth: h"/>
     </variable>
-    <variable name="salinity">
-     <attribute name="coordinates" value="time siglay lat lon"/>
-    </variable>
-    <variable name="kh">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-    </variable>
-    <variable name="km">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-    </variable>
-    <variable name="kq">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-    </variable>    
-    <variable name="q2">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-    </variable>
-    <variable name="q2l">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-    </variable>
-    <variable name="l">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-    </variable>
-    <variable name="u">
-     <attribute name="coordinates" value="time siglay latc lonc"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="face"/>
-    </variable>
-    <variable name="v">
-     <attribute name="coordinates" value="time siglay latc lonc"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="face"/>
-    </variable>
-    <variable name="ww">
-     <attribute name="coordinates" value="time siglay latc lonc"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="face"/>
-    </variable>
-    <variable name="omega">
-     <attribute name="coordinates" value="time siglev lat lon"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="node"/>
-    </variable>
-    <variable name="ua">
-     <attribute name="coordinates" value="time latc lonc"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="face"/>
-    </variable>
-    <variable name="va">
-     <attribute name="coordinates" value="time latc lonc"/>
-     <attribute name="mesh" value="nv"/>
-     <attribute name="location" value="face"/>
-    </variable>
-    <variable name="h">
-     <attribute name="mesh" value="nv"/>
+    <variable name="h" shape="node" type="float">
+     <attribute name="long_name" value="Bathymetry"/>
+     <attribute name="standard_name" value="sea_floor_depth_below_geoid"/>
+     <attribute name="units" value="m"/>
      <attribute name="coordinates" value="lat lon"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
      <attribute name="location" value="node"/>
-     <attribute name="standard_name" value="depth_below_geoid"/>
-     <remove type="attribute" name="positive"/>
-    </variable>
-    <variable name="siglay">
-     <attribute name="standard_name" value="ocean_sigma_coordinate"/>
-    </variable>
-    <variable name="siglev">
-     <attribute name="standard_name" value="ocean_sigma_coordinate"/>
     </variable>
     <variable name="nv" >
-     <attribute name="standard_name" value="mesh_topology"/>
-     <attribute name="long_name" value="Topology of 2D unstructured mesh"/>
-     <attribute name="node_coordinates" value="lat lon"/>
-     <attribute name="start_index" type="short" value="1"/>
+     <attribute name="long_name" value="nodes surrounding element"/>
+     <attribute name="cf_role" value="face_node_connnectivity"/>
+     <attribute name="start_index" type="int" value="1"/>
+    </variable>
+    <variable name="zeta" shape="time node" type="float">
+     <attribute name="long_name" value="Water Surface Elevation"/>
+     <attribute name="units" value="meters"/>
+     <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="type" value="data"/>
+     <attribute name="missing_value" type="double" value="-999.0"/>
+     <attribute name="field" value="elev, scalar"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="temp" shape="time siglay node" type="float">
+     <attribute name="standard_name" value="sea_water_potential_temperature"/>
+     <attribute name="coordinates" value="time siglay lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="salinity" shape="time siglay node" type="float">
+     <attribute name="standard_name" value="sea_water_salinity"/>
+     <attribute name="units" value="1"/>
+     <attribute name="coordinates" value="time siglay lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="u" shape="time siglay nele" type="float">
+     <attribute name="units" value="meters s-1"/>
+     <attribute name="type" value="data"/>
+     <attribute name="missing_value" type="double" value="-999.0"/>
+     <attribute name="field" value="ua, scalar"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="v" shape="time siglay nele" type="float">
+     <attribute name="units" value="meters s-1"/>
+     <attribute name="type" value="data"/>
+     <attribute name="missing_value" type="double" value="-999.0"/>
+     <attribute name="field" value="va, scalar"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="standard_name" value="northward_sea_water_velocity"/>
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
+    </variable>
+    <variable name="ua" shape="time nele" type="float">
+     <attribute name="long_name" value="Vertically Averaged x-velocity" />
+     <attribute name="units" value="meters s-1" />
+     <attribute name="type" value="data" />
+     <attribute name="missing_value" type="double" value="-999.0" />
+     <attribute name="field" value="ua, scalar" />
+     <attribute name="coverage_content_type" value="modelResult" />
+     <attribute name="standard_name" value="barotropic_eastward_sea_water_velocity" />
+     <attribute name="coordinates" value="time latc lonc" />
+     <attribute name="mesh" value="fvcom_mesh" />
+     <attribute name="location" value="face" />
+    </variable>
+    <variable name="va" shape="time nele" type="float">
+     <attribute name="long_name" value="Vertically Averaged y-velocity" />
+     <attribute name="units" value="meters s-1" />
+     <attribute name="type" value="data" />
+     <attribute name="missing_value" type="double" value="-999.0" />
+     <attribute name="field" value="va, scalar" />
+     <attribute name="coverage_content_type" value="modelResult" />
+     <attribute name="standard_name" value="barotropic_northward_sea_water_velocity" />
+     <attribute name="coordinates" value="time latc lonc" />
+     <attribute name="mesh" value="fvcom_mesh" />
+     <attribute name="location" value="face" />
+    </variable>
+    <variable name="ww" shape="time siglay nele" type="float">
+     <attribute name="units" value="meters s-1"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="standard_name" value="upward_sea_water_velocity"/>
+     <attribute name="coordinates" value="time siglay latc lonc"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="face"/>
     </variable>
     <aggregation dimName="time" type="joinExisting" recheckEvery="60min">
      <scan location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive" regExp=".*mbn_[0-9]{6}\.nc$"
