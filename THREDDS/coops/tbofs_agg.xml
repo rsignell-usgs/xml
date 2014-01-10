@@ -1,0 +1,74 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+    <service name="allServices" serviceType="Compound" base="">
+        <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+        <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    </service>
+
+    <dataset name="TBOFS Forecast Aggregation" ID="TBOFS">
+        <metadata inherited="true">
+            <documentation xlink:href="http://tidesandcurrents.noaa.gov/ofs/tbofs/tbofs.html"
+                   xlink:title="Tampa Bay Operational Forecast System Home Page"/>
+            <authority>gov.noaa.nos.co-ops</authority>
+            <serviceName>allServices</serviceName>
+            <dataType>Grid</dataType>
+            <dataFormat>NetCDF</dataFormat>
+        </metadata>
+        <featureCollection name="Aggregated 7 day TBOFS Fields Forecast" featureType="FMRC" harvest="true" path="TBOFS/fmrc">
+    <!-- 
+     Inside the featureCollection, but outside the protoDataset, we define the NcML that happens
+     before the aggregation.  To get aggregated, we must have grids, so we turn the bed params
+     into grids by giving them a psuedo coordinate in Z.  If we don't do this, they will not be 
+     aggregated. 
+    -->
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <!--Change conventions from COARDS to CF-1.6 -->
+                <attribute name="Conventions" value="CF-1.6"/>
+     <!-- Curvilinear grids need "coordinates" attribute for each data variable-->
+     <!--The "positive" attribute is only for the z coordinate variable, so remove it from depth and elevation-->
+                <variable name="zeta">
+                    <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+                    <remove name="positive" type="attribute"/>
+                </variable>
+                <variable name="s_rho">
+                    <attribute name="positive" value="up"/>
+                    <values> -0.9545454545454546 -0.8636363636363636 -0.7727272727272727 -0.6818181818181819 -0.5909090909090909 -0.5 -0.4090909090909091 -0.3181818181818182 -0.2272727272727273 -0.13636363636363635 -0.045454545454545456
+</values>
+                </variable>
+                <variable name="mask_rho">
+                    <attribute name="coordinates" value="lon_rho lat_rho"/>
+                </variable>
+                <variable name="mask_u">
+                    <attribute name="coordinates" value="lon_u lat_u"/>
+                </variable>
+                <variable name="mask_v">
+                    <attribute name="coordinates" value="lon_v lat_v"/>
+                </variable>
+                <variable name="Uwind">
+                    <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+                </variable>
+                <variable name="Vwind">
+                    <attribute name="coordinates" value="lon_rho lat_rho ocean_time"/>
+                </variable>
+                <variable name="temp">
+                    <attribute name="coordinates" value="lon_rho lat_rho s_rho ocean_time"/>
+                </variable>
+                <variable name="salt">
+                    <attribute name="coordinates" value="lon_rho lat_rho s_rho ocean_time"/>
+                </variable>
+                <variable name="u">
+                    <attribute name="coordinates" value="lon_u lat_u s_rho ocean_time"/>
+                </variable>
+                <variable name="v">
+                    <attribute name="coordinates" value="lon_v lat_v s_rho ocean_time"/>
+                </variable>   
+            </netcdf>
+            <collection spec="/path/tbofs/.*nos.tbofs.fields.*\.nc" olderThan="5 min"/>
+            <update startup="true" rescan="0 5 3 * * ? *" trigger="allow"/>
+            <protoDataset choice="Penultimate" change="0 2 3 * * ? *" />
+            <fmrcConfig regularize="true" datasetTypes="Best"/>
+        </featureCollection>
+    </dataset>
+</catalog>

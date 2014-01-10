@@ -1,0 +1,70 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+    <service name="allServices" serviceType="Compound" base="">
+        <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+        <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    </service>
+
+    <dataset name="LSOFS Forecast Aggregation" ID="LSOFS">
+        <metadata inherited="true">
+            <documentation xlink:href="http://tidesandcurrents.noaa.gov/ofs/lsofs/lsofs.html"
+                   xlink:title="Lake Superior Operational Forecast System Home Page"/>
+            <authority>gov.noaa.nos.co-ops</authority>
+            <serviceName>allServices</serviceName>
+            <dataType>Grid</dataType>
+            <dataFormat>NetCDF</dataFormat>
+        </metadata>
+        <featureCollection name="Aggregated 7 day LSOFS Fields Forecast" featureType="FMRC" harvest="true" path="LSOFS/fmrc">
+    <!-- 
+     Inside the featureCollection, but outside the protoDataset, we define the NcML that happens
+     before the aggregation.  To get aggregated, we must have grids, so we turn the bed params
+     into grids by giving them a psuedo coordinate in Z.  If we don't do this, they will not be 
+     aggregated. 
+    -->
+
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <!--Change conventions from COARDS to CF-1.6 -->
+                <attribute name="Conventions" value="CF-1.6"/>
+     <!-- Curvilinear grids need "coordinates" attribute for each data variable-->
+     <!--The "positive" attribute is only for the z coordinate variable, so remove it from depth and elevation-->
+                <variable name="zeta">
+                    <attribute name="coordinates" value="lon lat time"/>
+                    <remove type="attribute" name="positive"/>
+                </variable>
+                <variable name="depth">
+                    <attribute name="coordinates" value="lon lat"/>
+                    <remove type="attribute" name="positive"/>
+                </variable>
+     <!-- Dimensionless vertical coordinates need "positive"=up, and negative sigma values -->
+                <variable name="sigma">
+                    <attribute name="positive" value="up"/>
+                    <values> 0.0 0.0227 0.0454 0.0681 0.0908 0.1135 0.1362 0.1589 0.1816 0.2043 0.227 0.2724 0.3405 0.4313 0.5448 0.681 0.7945 0.8853 0.9534 1.0 </values>
+                </variable>
+                <variable name="mask">
+                    <attribute name="coordinates" value="lon lat"/>
+                </variable>
+                <variable name="air_u">
+                    <attribute name="coordinates" value="lon lat time"/>
+                </variable>
+                <variable name="air_v">
+                    <attribute name="coordinates" value="lon lat time"/>
+                </variable>
+                <variable name="temp">
+                    <attribute name="coordinates" value="lon lat sigma time"/>
+                </variable>
+                <variable name="u">
+                    <attribute name="coordinates" value="lon lat sigma time"/>
+                </variable>
+                <variable name="v">
+                    <attribute name="coordinates" value="lon lat sigma time"/>
+                </variable>
+            </netcdf>
+            <collection spec="/path/lsofs/.*fields.forecast.*\.nc" olderThan="5 min"/>
+            <update startup="true" rescan="0 5 3 * * ? *" trigger="allow"/>
+            <protoDataset choice="Penultimate" change="0 2 3 * * ? *" />
+            <fmrcConfig regularize="true" datasetTypes="Best"/>
+        </featureCollection>
+    </dataset>
+</catalog>
