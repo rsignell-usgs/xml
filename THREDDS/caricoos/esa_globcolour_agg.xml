@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ version="1.0.3">
+    <dataset name="ESA Ocean Imagery Aggregation" >
+        <service name="allServices" serviceType="Compound" base="">
+            <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+            <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+            <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+            <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
+            <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+            <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+            <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+        </service>
+        <metadata inherited="true">
+            <serviceName>allServices</serviceName>
+        </metadata>
+        <dataset name="KD490 Image Aggregation" ID="KD490_agg" urlPath="KD490_agg">
+            
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                <!--  
+                    - Create an aggregation along a new time dimension (because these files do not have a dimension)
+                    - Scan only files in the directory that end in "_KD490_DAY_00.nc"
+                    - Determine the values for the time variable by parsing the file names using dateFormatMark. 
+                -->
+                <aggregation dimName="time" type="joinNew" recheckEvery="15 min">
+                    <variableAgg name="KD490_mean"/>
+                    <variableAgg name="KD490_flags"/>
+                    <variableAgg name="KD490_error"/>
+                    <scan location="/path_to_dir/esa_globcolour/KD490/" regExp=".*_KD490_DAY_00\.nc$"
+                        dateFormatMark="L3m_#yyyyMMdd" subdirs="false"/>
+                </aggregation>
+                
+            </netcdf>
+        </dataset>
+        <dataset name="CHL1 Image Aggregation" ID="CHL1_agg" urlPath="CHL1_agg">
+            
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                <!--  
+                    - Create an aggregation along a new time dimension (because these files do not have a dimension)
+                    - Scan only files in the directory that end in "_KD490_DAY_00.nc"
+                    - Determine the values for the time variable by parsing the file names using dateFormatMark. 
+                -->
+                <aggregation dimName="time" type="joinNew" recheckEvery="15 min">
+                    <variableAgg name="CHL1_mean"/>
+                    <variableAgg name="CHL1_flags"/>
+                    <variableAgg name="CHL1_error"/>
+                    <scan location="/path_to_dir/esa_globcolour/CHL1/" regExp=".*_CHL1_DAY_00\.nc$"
+                        dateFormatMark="L3m_#yyyyMMdd" subdirs="false"/>
+                </aggregation>
+                
+            </netcdf>
+        </dataset>
+        </dataset>
+</catalog>
