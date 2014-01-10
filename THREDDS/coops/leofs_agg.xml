@@ -1,8 +1,8 @@
 
 <catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
-         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
-         xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+    xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+    xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
     <service name="allServices" serviceType="Compound" base="">
         <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
         <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
@@ -11,14 +11,15 @@
     <dataset name="LEOFS Forecast Aggregation" ID="LEOFS">
         <metadata inherited="true">
             <documentation xlink:href="http://tidesandcurrents.noaa.gov/ofs/leofs/leofs.html"
-                           xlink:title="Lake Erie Operational Forecast System Home Page"/>
+                xlink:title="Lake Erie Operational Forecast System Home Page"/>
             <authority>gov.noaa.nos.co-ops</authority>
             <serviceName>allServices</serviceName>
             <dataType>Grid</dataType>
             <dataFormat>NetCDF</dataFormat>
         </metadata>
-        <featureCollection name="Aggregated 7 day LEOFS Fields Forecast" featureType="FMRC" harvest="true" path="LEOFS/fmrc">
-    <!-- 
+        <featureCollection name="Aggregated 7 day LEOFS Fields Forecast" featureType="FMRC"
+            harvest="true" path="LEOFS/fmrc">
+            <!-- 
      Inside the featureCollection, but outside the protoDataset, we define the NcML that happens
      before the aggregation.  To get aggregated, we must have grids, so we turn the bed params
      into grids by giving them a psuedo coordinate in Z.  If we don't do this, they will not be 
@@ -26,10 +27,10 @@
     -->
 
             <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-     <!--Change conventions from COARDS to CF-1.6 -->
+                <!--Change conventions from COARDS to CF-1.6 -->
                 <attribute name="Conventions" value="CF-1.6"/>
-     <!-- Curvilinear grids need "coordinates" attribute for each data variable-->
-     <!--The "positive" attribute is only for the z coordinate variable, so remove it from depth and elevation-->
+                <!-- Curvilinear grids need "coordinates" attribute for each data variable-->
+                <!--The "positive" attribute is only for the z coordinate variable, so remove it from depth and elevation-->
                 <variable name="zeta">
                     <attribute name="coordinates" value="lon lat time"/>
                     <remove type="attribute" name="positive"/>
@@ -38,7 +39,7 @@
                     <attribute name="coordinates" value="lon lat"/>
                     <remove type="attribute" name="positive"/>
                 </variable>
-     <!-- Dimensionless vertical coordinates need "positive"=up, and negative sigma values -->
+                <!-- Dimensionless vertical coordinates need "positive"=up, and negative sigma values -->
                 <variable name="sigma">
                     <attribute name="positive" value="up"/>
                     <values> 0.0 0.05 0.1 0.15 0.25 0.35 0.45 0.55 0.7 0.85 1.0 </values>
@@ -53,7 +54,7 @@
                     <attribute name="coordinates" value="lon lat time"/>
                 </variable>
                 <variable name="temp">
-                    <attribute name="coordinates" value="lon lat sigma time"/>  
+                    <attribute name="coordinates" value="lon lat sigma time"/>
                 </variable>
                 <variable name="u">
                     <attribute name="coordinates" value="lon lat sigma time"/>
@@ -64,7 +65,7 @@
             </netcdf>
             <collection spec="/path/leofs/.*.fields.forecast.*\.nc" olderThan="5 min"/>
             <update startup="true" rescan="0 5 3 * * ? *" trigger="allow"/>
-            <protoDataset choice="Penultimate" change="0 2 3 * * ? *" />
+            <protoDataset choice="Penultimate" change="0 2 3 * * ? *"/>
             <fmrcConfig regularize="true" datasetTypes="Best"/>
         </featureCollection>
     </dataset>

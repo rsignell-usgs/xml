@@ -1,7 +1,7 @@
 <catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
-         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
-         xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+    xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+    xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
     <service name="allServices" serviceType="Compound" base="">
         <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
         <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
@@ -10,31 +10,36 @@
     <dataset name="CREOFS Forecast Aggregation" ID="CREOFS">
         <metadata inherited="true">
             <documentation xlink:href="http://tidesandcurrents.noaa.gov/ofs/creofs/creofs.html"
-                           xlink:title="Columbia River Estuary Operational Forecast System Home Page"/>
+                xlink:title="Columbia River Estuary Operational Forecast System Home Page"/>
             <authority>gov.noaa.nos.co-ops</authority>
             <serviceName>allServices</serviceName>
             <dataType>Grid</dataType>
             <dataFormat>NetCDF</dataFormat>
         </metadata>
-        <featureCollection name="Aggregated 7 days CREOFS Fields Forecast" featureType="FMRC" harvest="true" path="CREOFS/fmrc">
- 
+        <featureCollection name="Aggregated 7 days CREOFS Fields Forecast" featureType="FMRC"
+            harvest="true" path="CREOFS/fmrc">
+
             <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-     <!--Change conventions from COARDS to CF-1.6 -->
+                <!--Change conventions from COARDS to CF-1.6 -->
                 <attribute name="Conventions" value="CF-1.6"/>
-     <!-- Curvilinear grids need "coordinates" attribute for each data variable-->
-     <!--The "positive" attribute is only for the z coordinate variable, so remove it from depth and elevation-->
+                <!-- Curvilinear grids need "coordinates" attribute for each data variable-->
+                <!--The "positive" attribute is only for the z coordinate variable, so remove it from depth and elevation-->
                 <variable name="zeta">
                     <attribute name="coordinates" value="lon lat time"/>
                     <remove type="attribute" name="positive"/>
-                </variable>   
-     <!-- Dimensionless vertical coordinates need "positive"=up, and negative sigma values -->
+                </variable>
+                <!-- Dimensionless vertical coordinates need "positive"=up, and negative sigma values -->
                 <variable name="sigma">
                     <attribute name="positive" value="up"/>
-                    <values> -1.0 -0.972222 -0.944444 -0.916667 -0.888889 -0.861111 -0.833333 -0.805555 -0.777778 -0.75 -0.722222 -0.694444 -0.666667 -0.638889 -0.611111 -0.583333 -0.555555 -0.527778 -0.5 -0.472222 -0.444444 -0.416666 -0.388889 -0.361111 -0.333333 -0.305555 -0.277777 -0.25 -0.222222 -0.194444 -0.166666 -0.138889 -0.111111 -0.083333 -0.055555 -0.027777 0.0 </values>
+                    <values> -1.0 -0.972222 -0.944444 -0.916667 -0.888889 -0.861111 -0.833333
+                        -0.805555 -0.777778 -0.75 -0.722222 -0.694444 -0.666667 -0.638889 -0.611111
+                        -0.583333 -0.555555 -0.527778 -0.5 -0.472222 -0.444444 -0.416666 -0.388889
+                        -0.361111 -0.333333 -0.305555 -0.277777 -0.25 -0.222222 -0.194444 -0.166666
+                        -0.138889 -0.111111 -0.083333 -0.055555 -0.027777 0.0 </values>
                 </variable>
                 <variable name="temp">
                     <attribute name="coordinates" value="lon lat sigma time"/>
-                </variable>               
+                </variable>
                 <variable name="u">
                     <attribute name="coordinates" value="lon lat sigma time"/>
                 </variable>
@@ -44,7 +49,7 @@
             </netcdf>
             <collection spec="/path/creofs/.*nos.creofs.fields.*\.nc" olderThan="5 min"/>
             <update startup="true" rescan="0 5 3 * * ? *" trigger="allow"/>
-            <protoDataset choice="Penultimate" change="0 2 3 * * ? *" />
+            <protoDataset choice="Penultimate" change="0 2 3 * * ? *"/>
             <fmrcConfig regularize="true" datasetTypes="Best"/>
         </featureCollection>
     </dataset>

@@ -1,7 +1,7 @@
 <catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
-         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
-         xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+    xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+    xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
     <service name="allServices" serviceType="Compound" base="">
         <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
         <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
@@ -10,14 +10,15 @@
     <dataset name="SJROFS Forecast Aggregation" ID="SJROFS">
         <metadata inherited="true">
             <documentation xlink:href="http://tidesandcurrents.noaa.gov/ofs/sjofs/sjofs.html"
-                   xlink:title="St. John's River Operational Forecast System Home Page"/>
+                xlink:title="St. John's River Operational Forecast System Home Page"/>
             <authority>gov.noaa.nos.co-ops</authority>
             <serviceName>allServices</serviceName>
             <dataType>Grid</dataType>
             <dataFormat>NetCDF</dataFormat>
         </metadata>
-        <featureCollection name="Aggregated 7 day SJROFS Fields Forecast" featureType="FMRC" harvest="true" path="SJROFS/fmrc">
-    <!-- 
+        <featureCollection name="Aggregated 7 day SJROFS Fields Forecast" featureType="FMRC"
+            harvest="true" path="SJROFS/fmrc">
+            <!-- 
      Inside the featureCollection, but outside the protoDataset, we define the NcML that happens
      before the aggregation.  To get aggregated, we must have grids, so we turn the bed params
      into grids by giving them a psuedo coordinate in Z.  If we don't do this, they will not be 
@@ -25,10 +26,10 @@
     -->
 
             <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-     <!--Change conventions from COARDS to CF-1.6 -->
+                <!--Change conventions from COARDS to CF-1.6 -->
                 <attribute name="Conventions" value="CF-1.6"/>
-     <!-- Curvilinear grids need "coordinates" attribute for each data variable-->
-     <!--The "positive" attribute is only for the z coordinate variable, so remove it from depth and elevation-->
+                <!-- Curvilinear grids need "coordinates" attribute for each data variable-->
+                <!--The "positive" attribute is only for the z coordinate variable, so remove it from depth and elevation-->
                 <variable name="zeta">
                     <attribute name="coordinates" value="lon lat time"/>
                     <remove type="attribute" name="positive"/>
@@ -37,7 +38,7 @@
                     <attribute name="coordinates" value="lon lat"/>
                     <remove type="attribute" name="positive"/>
                 </variable>
-     <!-- Dimensionless vertical coordinates need "positive"=up, and negative sigma values -->
+                <!-- Dimensionless vertical coordinates need "positive"=up, and negative sigma values -->
                 <variable name="sigma">
                     <attribute name="positive" value="up"/>
                     <values> 0.0 0.167 0.334 0.501 0.668 0.833</values>
@@ -66,7 +67,7 @@
             </netcdf>
             <collection spec="/path/sjrofs/.*nos.sjrofs.fields.forecast.*\.nc" olderThan="5 min"/>
             <update startup="true" rescan="0 5 3 * * ? *" trigger="allow"/>
-            <protoDataset choice="Penultimate" change="0 2 3 * * ? *" />
+            <protoDataset choice="Penultimate" change="0 2 3 * * ? *"/>
             <fmrcConfig regularize="true" datasetTypes="Best"/>
         </featureCollection>
     </dataset>
