@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ROMS ESPRESSO"
+         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
+
+   <service name="both" serviceType="Compound" base="">
+      <service name="thisDODS" serviceType="OpenDAP" base="/thredds/dodsC/" />
+      <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
+   </service>
+
+   <service name="all" serviceType="Compound" base="">
+      <service name="thisDODS" serviceType="OpenDAP" base="/thredds/dodsC/" />
+      <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
+      <service name="wms" serviceType="WMS" base="/thredds/wms/" />
+   </service>
+
+   <datasetRoot path="roms/espresso/2013_da"
+                location="/home/om/dods-data/thredds/roms/espresso/2013_da/" />
+
+   <!--Begin catalog listings-->
+             
+   <dataset name="ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 2 (NEW) 2013-present">
+      <metadata inherited="true">
+         <serviceName>both</serviceName>
+         <authority>edu.rutgers.marine</authority>
+         <dataType>Grid</dataType>
+         <dataFormat>NetCDF</dataFormat>
+         <documentation type="rights">Freely available</documentation>
+         <documentation xlink:href="http://www.myroms.org/applications/espresso/" 
+                        xlink:title="ROMS ESPRESSO simulation"/>
+         <creator>
+            <name vocabulary="DIF">Julia Levin</name>
+            <contact url="http://www.myroms.org/" 
+                     email="julia@marine.rutgers.edu" />
+         </creator>
+         <publisher>
+            <name vocabulary="DIF">OM/IMCS</name>
+            <contact url="http://marine.rutgers.edu/po/"
+                     email="wilkin@marine.rutgers.edu" />
+         </publisher>
+
+         <documentation type="summary">
+            operational nowcast/forecast system version 2 for maracoos project (http://maracoos.org). grid
+            configuration and assimilation system the same as for the ~6 km resolution roms espresso
+            experiment. these simulations are forced by ncep nam operational atmospheric forcing, boundary
+            conditions are from hycom-ncoda 1/12 deg model; tides are from adcirc model. assimilated data:
+            sst (avhrr and blended mw+ir), hf radar, along track ssh from jason2.
+         </documentation>
+        </metadata>
+
+      <featureCollection name="ESPRESSO_Real-Time_v2_Averages_Best_Available"
+                         featureType="FMRC"
+                         harvest="true"
+                         path="roms/espresso/2013_da/avg_Best">
+         <metadata inherited="true">
+            <serviceName>all</serviceName>
+            <documentation type="summary">
+               Best available dataset for averages
+            </documentation>
+         </metadata>
+         <collection spec="/home/om/dods-data/thredds/roms/espresso/2013_da/avg/.*_([0-9]{3})([2-9]{1})\.nc$"
+                     name="espresso_2013_da_avg_best"
+                     dateFormatMark="#espresso_avg_#yyyyMMdd_HHmm"
+                     olderThan="3 min" />
+         <update startup="nocheck" trigger="allow" />
+         <protoDataset choice="Penultimate">
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="nc/cldc.mean.nc">
+               <attribute name="title" type="String" value="ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 2 (NEW) 2013-present FMRC Averages (Best)" />
+               <attribute name="summary" type="String" value="Operational nowcast/forecast system version 2 for MARACOOS project (http://maracoos.org). Grid configuration and assimilation system the same as for the ~6 km resolution ROMS Espresso Experiment. These simulations are forced by NCEP NAM operational atmospheric forcing, boundary conditions are from HYCOM-NCODA 1/12 deg model; tides are from ADCIRC model. Assimilated data: SST (AVHRR and blended MW+IR), HF Radar, along track SSH from Jason2." />
+               <remove name="ocean_time" type="variable" />
+               <variable name="h">
+                  <attribute name="standard_name" type="String" value="sea_floor_depth" />
+               </variable>
+               <variable name="zeta">
+                  <attribute name="standard_name" type="String" value="sea_surface_height" />
+               </variable>
+               <variable name="u">
+                  <attribute name="standard_name" type="String" value="eastward_sea_water_velocity" />
+               </variable>
+               <variable name="v">
+                  <attribute name="standard_name" type="String" value="northward_sea_water_velocity" />
+               </variable>
+               <variable name="temp">
+                  <attribute name="standard_name" type="String" value="sea_water_potential_temperature" />
+               </variable>
+               <variable name="salt">
+                  <attribute name="standard_name" type="String" value="sea_water_salinity" />
+               </variable>
+            </netcdf>
+         </protoDataset>
+         <fmrcConfig regularize="false" datasetTypes="Best" />
+      </featureCollection>
+
+      <featureCollection name="ESPRESSO_Real-Time_v2_Averages_Runs_and_Other_Collections"
+                         featureType="FMRC"
+                         harvest="true"
+                         path="roms/espresso/2013_da/avg_roc">
+         <metadata inherited="true">
+            <documentation type="summary">
+               Runs and offset collections for averages
+            </documentation>
+         </metadata>
+         <collection spec="/home/om/dods-data/thredds/roms/espresso/2013_da/avg/.*\.nc$"
+                     name="espresso_2013_da_avg_roc"
+                     dateFormatMark="#espresso_avg_#yyyyMMdd_HHmm"
+                     olderThan="3 min" />
+         <update startup="nocheck" trigger="allow" />
+         <protoDataset choice="Penultimate">
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="nc/cldc.mean.nc">
+               <attribute name="title" type="String" value="ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 2 (NEW) 2013-present FMRC Averages (Runs and Other Collections)" />
+               <attribute name="summary" type="String" value="Operational nowcast/forecast system version 2 for MARACOOS project (http://maracoos.org). Grid configuration and assimilation system the same as for the ~6 km resolution ROMS Espresso Experiment. These simulations are forced by NCEP NAM operational atmospheric forcing, boundary conditions are from HYCOM-NCODA 1/12 deg model; tides are from ADCIRC model. Assimilated data: SST (AVHRR and blended MW+IR), HF Radar, along track SSH from Jason2." />
+               <remove name="ocean_time" type="variable" />
+               <variable name="h">
+                  <attribute name="standard_name" type="String" value="sea_floor_depth" />
+               </variable>
+               <variable name="zeta">
+                  <attribute name="standard_name" type="String" value="sea_surface_height" />
+               </variable>
+               <variable name="u">
+                  <attribute name="standard_name" type="String" value="eastward_sea_water_velocity" />
+               </variable>
+               <variable name="v">
+                  <attribute name="standard_name" type="String" value="northward_sea_water_velocity" />
+               </variable>
+               <variable name="temp">
+                  <attribute name="standard_name" type="String" value="sea_water_potential_temperature" />
+               </variable>
+               <variable name="salt">
+                  <attribute name="standard_name" type="String" value="sea_water_salinity" />
+               </variable>
+            </netcdf>
+         </protoDataset>
+         <fmrcConfig regularize="false" datasetTypes="TwoD Runs ConstantOffsets Files" />
+      </featureCollection>
+
+      <featureCollection name="ESPRESSO_Real-Time_v2_History_Best_Available"
+                         featureType="FMRC"
+                         harvest="true"
+                         path="roms/espresso/2013_da/his_Best">
+         <metadata inherited="true">
+            <documentation type="summary">
+                Best available dataset for history
+            </documentation>
+         </metadata>
+         <collection spec="/home/om/dods-data/thredds/roms/espresso/2013_da/his/.*_([0-9]{3})([2-9]{1})\.nc$"
+                     name="espresso_2013_da_his_best"
+                     dateFormatMark="#espresso_his_#yyyyMMdd_HHmm" 
+                     olderThan="3 min" />
+         <update startup="nocheck" trigger="allow" />
+         <protoDataset choice="Penultimate">
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="nc/cldc.mean.nc">
+               <attribute name="title" type="String" value="ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 2 (NEW) 2013-present FMRC History (Best)" />
+               <attribute name="summary" type="String" value="Operational nowcast/forecast system version 2 for MARACOOS project (http://maracoos.org). Grid configuration and assimilation system the same as for the ~6 km resolution ROMS Espresso Experiment. These simulations are forced by NCEP NAM operational atmospheric forcing, boundary conditions are from HYCOM-NCODA 1/12 deg model; tides are from ADCIRC model. Assimilated data: SST (AVHRR and blended MW+IR), HF Radar, along track SSH from Jason2." />
+               <remove name="ocean_time" type="variable" />
+               <variable name="h">
+                  <attribute name="standard_name" type="String" value="sea_floor_depth" />
+               </variable>
+               <variable name="zeta">
+                  <attribute name="standard_name" type="String" value="sea_surface_height" />
+               </variable>
+               <variable name="u">
+                  <attribute name="standard_name" type="String" value="eastward_sea_water_velocity" />
+               </variable>
+               <variable name="v">
+                  <attribute name="standard_name" type="String" value="northward_sea_water_velocity" />
+               </variable>
+               <variable name="temp">
+                  <attribute name="standard_name" type="String" value="sea_water_potential_temperature" />
+               </variable>
+               <variable name="salt">
+                  <attribute name="standard_name" type="String" value="sea_water_salinity" />
+               </variable>
+            </netcdf>
+         </protoDataset>
+         <fmrcConfig regularize="false" datasetTypes="Best" />
+      </featureCollection>
+
+      <featureCollection name="ESPRESSO_Real-Time_v2_History_Runs_and_Other_Collections"
+                         featureType="FMRC"
+                         harvest="true"
+                         path="roms/espresso/2013_da/his_roc">
+         <metadata inherited="true">
+            <documentation type="summary">
+               Runs and offset collections for history
+            </documentation>
+         </metadata>
+         <collection spec="/home/om/dods-data/thredds/roms/espresso/2013_da/his/.*\.nc$"
+                     name="espresso_2013_da_his_roc"
+                     dateFormatMark="#espresso_his_#yyyyMMdd_HHmm"
+                     olderThan="3 min" />
+         <update startup="nocheck" trigger="allow" />
+         <protoDataset choice="Penultimate">
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="nc/cldc.mean.nc">
+               <attribute name="title" type="String" value="ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 2 (NEW) 2013-present FMRC History (Runs and Other Collections)" />
+               <attribute name="summary" type="String" value="Operational nowcast/forecast system version 2 for MARACOOS project (http://maracoos.org). Grid configuration and assimilation system the same as for the ~6 km resolution ROMS Espresso Experiment. These simulations are forced by NCEP NAM operational atmospheric forcing, boundary conditions are from HYCOM-NCODA 1/12 deg model; tides are from ADCIRC model. Assimilated data: SST (AVHRR and blended MW+IR), HF Radar, along track SSH from Jason2." />
+               <remove name="ocean_time" type="variable" />
+               <variable name="h">
+                  <attribute name="standard_name" type="String" value="sea_floor_depth" />
+               </variable>
+               <variable name="zeta">
+                  <attribute name="standard_name" type="String" value="sea_surface_height" />
+               </variable>
+               <variable name="u">
+                  <attribute name="standard_name" type="String" value="eastward_sea_water_velocity" />
+               </variable>
+               <variable name="v">
+                  <attribute name="standard_name" type="String" value="northward_sea_water_velocity" />
+               </variable>
+               <variable name="temp">
+                  <attribute name="standard_name" type="String" value="sea_water_potential_temperature" />
+               </variable>
+               <variable name="salt">
+                  <attribute name="standard_name" type="String" value="sea_water_salinity" />
+               </variable>
+            </netcdf>
+         </protoDataset>
+         <fmrcConfig regularize="false" datasetTypes="TwoD Runs ConstantOffsets Files" />
+      </featureCollection>
+
+      <datasetScan name="Floats"
+                   ID="espresso_2013_da_flt"
+                   path="floats"
+                   location="/home/om/dods-data/thredds/roms/espresso/2013_da/flt/">
+         <metadata inherited="true">
+            <authority>edu.rutgers.marine</authority>
+            <dataType>Grid</dataType>
+            <dataFormat>NetCDF</dataFormat>
+
+            <documentation type="summary">
+               operational nowcast/forecast system version 2 for maracoos project (http://maracoos.org). grid
+               configuration and assimilation system the same as for the ~6 km resolution roms espresso
+               experiment. these simulations are forced by ncep nam operational atmospheric forcing, boundary
+               conditions are from hycom-ncoda 1/12 deg model; tides are from adcirc model. assimilated data:
+               sst (avhrr and blended mw+ir), hf radar, along track ssh from jason2.
+            </documentation>
+            <geospatialCoverage zpositive="up">
+               <northsouth>
+                  <start>33.79</start>
+                  <size>9.04</size>
+                  <units>degrees_north</units>
+               </northsouth>
+               <eastwest>
+                  <start>280.47</start>
+                  <size>11.77</size>
+                  <units>degrees_east</units>
+               </eastwest>
+               <updown>
+                  <start>0</start>
+                  <size>-3900</size>
+                  <units>m</units>
+               </updown>
+            </geospatialCoverage>
+         </metadata>
+         <filter>
+            <include wildcard="*.nc" />
+         </filter>
+      </datasetScan>
+
+   </dataset> 
+
+</catalog>

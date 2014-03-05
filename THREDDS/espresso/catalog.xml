@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="ROMS ESPRESSO"
+         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
+
+   <service name="both" serviceType="Compound" base="">
+      <service name="thisDODS" serviceType="OpenDAP" base="/thredds/dodsC/" />
+      <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
+   </service>
+
+   <service name="all" serviceType="Compound" base="">
+      <service name="thisDODS" serviceType="OpenDAP" base="/thredds/dodsC/" />
+      <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
+      <service name="wms" serviceType="WMS" base="/thredds/wms/" />
+   </service>
+
+   <datasetRoot path="roms/espresso"
+                location="/home/om/dods-data/thredds/roms/espresso/" />
+
+   <!--Begin catalog listings-->
+
+   <datasetScan name="Input &amp; Forcing Files"
+                ID="roms_espresso_in"
+                path="roms/espresso/in"
+                location="/home/om/dods-data/thredds/roms/espresso/in/">
+
+      <metadata inherited="true">
+         <serviceName>thisDODS</serviceName>
+         <authority>edu.rutgers.marine</authority>
+         <dataType>Grid</dataType>
+         <dataFormat>NetCDF</dataFormat>
+         <documentation type="rights">Freely available</documentation>
+         <documentation xlink:href="http://www.myroms.org/applications/espresso/"
+                        xlink:title="ROMS ESPRESSO Simulation"/>
+         <creator>
+            <name vocabulary="DIF">Julia Levin</name>
+            <contact url="http://rci.rutgers.edu/~levinj/"
+                     email="julia@marine.rutgers.edu" />
+         </creator>
+         <publisher>
+            <name vocabulary="DIF">OM/IMCS</name>
+            <contact url="http://marine.rutgers.edu/po/"
+                     email="wilkin@marine.rutgers.edu" />
+         </publisher>
+
+         <documentation type="summary">
+            Input files for the ESPRESSO simulation
+         </documentation>
+      </metadata>
+
+      <filter>
+         <include wildcard="*" />
+      </filter>
+   </datasetScan>
+             
+   <catalogRef xlink:title="ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 1 (OLD) 2009-2013"
+               xlink:href="2009_da/catalog.xml" name="" />
+
+   <catalogRef xlink:title="ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 2 (NEW) 2013-present"
+               xlink:href="2013_da/catalog.xml" name="" />
+
+   <catalogRef xlink:title="ROMS ESPRESSO 2006-recent IS4DVAR Satellite SSH &amp; SST plus CODAR &amp; in situ T/S Delayed Reanalysis" 
+               xlink:href="2006_da/catalog.xml" name="" />
+
+   <catalogRef xlink:title="ROMS ESPRESSO 2006-recent IS4DVAR Satellite SSH &amp; SST only Delayed Reanalysis"
+               xlink:href="2006-2012_is4dvar/catalog.xml" name="" />
+
+   <catalogRef xlink:title="ROMS ESPRESSO (version June 2012) Forward Nonassimilative 2006-2010"
+               xlink:href="2006-2010/catalog.xml" name="" />
+
+   <catalogRef xlink:title="ROMS ESPRESSO (version June 2012) Forward Nonassimilative 2006-2007"
+               xlink:href="2006-2007/catalog.xml" name="" />
+
+   <catalogRef xlink:title="ROMS ESPRESSO 2009-2012 Nonassimilative"
+               xlink:href="2009-2012_noda/catalog.xml" name="" />
+
+</catalog>
