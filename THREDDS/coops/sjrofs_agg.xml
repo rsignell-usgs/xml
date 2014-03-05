@@ -41,7 +41,7 @@
                 <!-- Dimensionless vertical coordinates need "positive"=up, and negative sigma values -->
                 <variable name="sigma">
                     <attribute name="positive" value="up"/>
-                    <values> 0.0 0.167 0.334 0.501 0.668 0.833</values>
+                    <values> -0.0 -0.167 -0.334 -0.501 -0.668 -0.833</values>
                 </variable>
                 <variable name="mask">
                     <attribute name="coordinates" value="lon lat"/>
@@ -66,7 +66,7 @@
                 </variable>
             </netcdf>
             <collection spec="/path/sjrofs/.*nos.sjrofs.fields.forecast.*\.nc" olderThan="5 min"/>
-            <update startup="true" rescan="0 5 3 * * ? *" trigger="allow"/>
+            <update startup="true" rescan="0 30 0/6 * * ? *" trigger="allow"/>
             <protoDataset choice="Penultimate" change="0 2 3 * * ? *"/>
             <fmrcConfig regularize="true" datasetTypes="Best"/>
         </featureCollection>

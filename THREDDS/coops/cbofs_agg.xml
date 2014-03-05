@@ -11,7 +11,7 @@
         <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
         <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
     </service>
-    
+
     <dataset name="CBOFS Forecast Aggregation" ID="CBOFS">
         <metadata inherited="true">
             <documentation xlink:href="http://tidesandcurrents.noaa.gov/ofs/cbofs/cbofs.html"
@@ -43,12 +43,10 @@
                 <variable name="s_rho">
                     <attribute name="standard_name" value="ocean_s_coordinate_g1"/>
                     <attribute name="positive" value="up"/>
-                    <values start="-0.975" increment="0.05"/>
                 </variable>
                 <variable name="s_w">
                     <attribute name="standard_name" value="ocean_s_coordinate_g1"/>
                     <attribute name="positive" value="up"/>
-                    <values start="-1.000" increment="0.05"/>
                 </variable>
                 <variable name="mask_rho">
                     <attribute name="coordinates" value="lon_rho lat_rho"/>
@@ -110,7 +108,7 @@
                 </variable>
             </netcdf>
             <collection spec="/path/cbofs/.*nos.cbofs.fields.*\.nc" olderThan="5 min"/>
-            <update startup="true" rescan="0 5 3 * * ? *" trigger="allow"/>
+            <update startup="true" rescan="0 10 0/6 * * ? *" trigger="allow"/>
             <protoDataset choice="Penultimate" change="0 2 3 * * ? *"/>
             <fmrcConfig regularize="true" datasetTypes="Best"/>
         </featureCollection>

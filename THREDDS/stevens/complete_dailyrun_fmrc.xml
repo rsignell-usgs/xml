@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog name="NYHOPS Bight Apex Historic OSSE Catalog"
+<catalog name="NYHOPS Complete Forecast Catalog"
   xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -7,7 +7,7 @@
     <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
   </service>
 
-  <dataset name="NYHOPS New York Bight Apex Subdomain">
+  <dataset name="Complete NYHOPS Domain">
     <metadata inherited="true">
       <serviceName>allServices</serviceName>
 
@@ -20,7 +20,7 @@
       <documentation xlink:href="http://www.stevens.edu/maritimeforecast/"
         xlink:title="NYHOPS System Website"/>
 
-      <documentation type="Summary"> 3D Marine Hindcasts for the New York Bight Apex NYHOPS subdomain.
+      <documentation type="Summary"> 3D Marine Nowcast/Forecast System for the entire NYHOPS domain.
         Currents, waves, surface meteorology, and water conditions.</documentation>
 
       <documentation type="Rights"> The NYHOPS model, presently at its 3rd generation,  has been the culmination of a multiyear Stevens Institute
@@ -29,12 +29,23 @@
 
     </metadata>
 
-    <datasetFmrc name="NYHOPS Historic Model Run Collection for the New York Bight Apex" path="fmrc/OSSE_NYBightApex">
+    <datasetFmrc name="NYHOPS Forecast Collection for the entire NYHOPS domain" path="fmrc/Complete">
       <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-         <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min">
+         <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
 
-           <scan location="/netcdf/osse/Apex/" suffix=".nc" dateFormatMark="Run_#yyyyMMdd_HH"
+           <scan location="/netcdf/version3/" suffix=".nc" dateFormatMark="Run_#yyyyMMdd_HH"
              subdirs="false" olderThan="5 min"/>
+        </aggregation>    
+        <remove type="variable" name="date"/>
+      </netcdf>
+    </datasetFmrc>
+    
+    <datasetFmrc name="NYHOPS Forecast Collection for the entire NYHOPS domain: Fall 2009" path="fmrc/Complete/fall2009">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+          
+          <scan location="/netcdf/version3/"   regExp=".*Run_20091[0-9]{1}.*\.nc$" dateFormatMark="Run_#yyyyMMdd_HH"
+            subdirs="false" olderThan="5 min"/>
         </aggregation>    
         <remove type="variable" name="date"/>
       </netcdf>

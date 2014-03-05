@@ -31,14 +31,25 @@
 
     <datasetFmrc name="NYHOPS Forecast Collection for the New York Bight Apex" path="fmrc/NYBightApex">
       <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-         <aggregation dimName="runtime" type="forecastModelRunCollection" timeUnitsChange="true" recheckEvery="10min">
+         <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
 
-           <scan location="/netcdf/Apex/" suffix=".nc"  dateFormatMark="Run_#yyyyMMdd_HH"
+           <scan location="/netcdf/Apex/" suffix=".nc" dateFormatMark="Run_#yyyyMMdd_HH"
              subdirs="false" olderThan="5 min"/>
         </aggregation>    
+        <remove type="variable" name="date"/>
       </netcdf>
     </datasetFmrc>
     
+    <datasetFmrc name="NYHOPS Forecast Collection for the New York Bight Apex: Fall 2009" path="fmrc/NYBightApex/fall2009">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
+          
+          <scan location="/netcdf/Apex/"  regExp=".*Run_20091[0-9]{1}.*\.nc$" dateFormatMark="Run_#yyyyMMdd_HH"
+            subdirs="false" olderThan="5 min"/>
+        </aggregation>    
+        <remove type="variable" name="date"/>
+      </netcdf>
+    </datasetFmrc>
 
   </dataset>
 </catalog>

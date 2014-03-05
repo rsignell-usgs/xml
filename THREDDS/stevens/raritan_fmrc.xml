@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog name="NYHOPS Bight Apex Historic OSSE Catalog"
+<catalog name="NYHOPS Raritan Bay Area Forecast Catalog"
   xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -7,20 +7,20 @@
     <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
   </service>
 
-  <dataset name="NYHOPS New York Bight Apex Subdomain">
+  <dataset name="NYHOPS Raritan Bay Subdomain">
     <metadata inherited="true">
       <serviceName>allServices</serviceName>
 
       <creator>
-        <name vocabulary="DIF">Dr. Alan F. Blumberg, Nickitas Georgas</name>
+        <name vocabulary="DIF">Dr. Nickitas Georgas</name>
         <contact url="http://www.stevens.edu/ses/about_soe/faculty/faculty_profile.php?faculty_id=84"
-                      email="alan.blumberg@stevens.edu,       nickitas.georgas@stevens.edu"/>
+                      email="nickitas.georgas@stevens.edu"/>
       </creator>
 
       <documentation xlink:href="http://www.stevens.edu/maritimeforecast/"
         xlink:title="NYHOPS System Website"/>
 
-      <documentation type="Summary"> 3D Marine Hindcasts for the New York Bight Apex NYHOPS subdomain.
+      <documentation type="Summary"> 3D Marine Nowcast/Forecast System for the Raritan Bay NYHOPS subdomain.
         Currents, waves, surface meteorology, and water conditions.</documentation>
 
       <documentation type="Rights"> The NYHOPS model, presently at its 3rd generation,  has been the culmination of a multiyear Stevens Institute
@@ -29,16 +29,16 @@
 
     </metadata>
 
-    <datasetFmrc name="NYHOPS Historic Model Run Collection for the New York Bight Apex" path="fmrc/OSSE_NYBightApex">
+    <datasetFmrc name="NYHOPS Forecast Collection for the Raritan Bay Area" path="fmrc/raritan">
       <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-         <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min">
+         <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
 
-           <scan location="/netcdf/osse/Apex/" suffix=".nc" dateFormatMark="Run_#yyyyMMdd_HH"
+           <scan location="/netcdf/raritan/" suffix=".nc" dateFormatMark="Run_#yyyyMMdd_HH"
              subdirs="false" olderThan="5 min"/>
         </aggregation>    
         <remove type="variable" name="date"/>
       </netcdf>
     </datasetFmrc>
-
+    
   </dataset>
 </catalog>

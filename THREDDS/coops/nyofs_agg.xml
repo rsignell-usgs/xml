@@ -38,10 +38,13 @@
                     <attribute name="coordinates" value="lon lat"/>
                     <remove type="attribute" name="positive"/>
                 </variable>
+                <variable name="time">
+                    <attribute name="units" value="days since 2008-01-01 00:00:00 00:00"/>
+                </variable>
                 <!-- Dimensionless vertical coordinates need "positive"=up, and negative sigma values -->
                 <variable name="sigma">
                     <attribute name="positive" value="up"/>
-                    <values>0.0 0.1666667 0.3333333 0.5 0.6666667 0.8333333 1.0</values>
+                    <values>-0.0 -0.1666667 -0.3333333 -0.5 -0.6666667 -0.8333333 -1.0</values>
                 </variable>
                 <variable name="mask">
                     <attribute name="coordinates" value="lon lat"/>
@@ -60,7 +63,7 @@
                 </variable>
             </netcdf>
             <collection spec="/path/nyofs/.*nos.nyofs.fields.forecast.*\.nc" olderThan="5 min"/>
-            <update startup="true" rescan="0 5 3 * * ? *" trigger="allow"/>
+            <update startup="true" rescan="0 40 0/6 * * ? *" trigger="allow"/>
             <protoDataset choice="Penultimate" change="0 2 3 * * ? *"/>
             <fmrcConfig regularize="true" datasetTypes="Best"/>
         </featureCollection>

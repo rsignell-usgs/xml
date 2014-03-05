@@ -2,18 +2,18 @@
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   name="NYHOPS Latest Complete Forecast File" version="1.0.1">
-  <service name="none" base="" serviceType="compound">
-    <!--service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/" /-->
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/" />
     <!--service name="httpService" serviceType="HTTPServer" base="/thredds/fileServer/" /-->
     <!--service name="wcsService" serviceType="WCS" base="/thredds/wcs/" /-->
     <!--service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" /-->
   </service>
 
-  <datasetRoot path="latest" location="/netcdf/latest/" />
+  <datasetRoot path="latest" location="/netcdf/latest/" cache="false"/>
 
   <dataset name="NYHOPS Latest Forecast - Complete Grid" ID="complete_latest" urlPath="latest/Complete_gcmplt.nc" >
     <metadata inherited="true">
-      <serviceName>none</serviceName>
+      <serviceName>allServices</serviceName>
 
       <creator>
         <name vocabulary="DIF">Dr. Alan F. Blumberg, Nickitas Georgas</name>

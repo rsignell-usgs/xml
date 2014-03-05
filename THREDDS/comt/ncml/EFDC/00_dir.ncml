@@ -1,0 +1,67 @@
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     
+     <variable name="Latitude" >
+      <remove type="attribute" name="Unit"/>
+      <remove type="attribute" name="Cordinate"/>
+      <attribute name="units" value="degrees_north" />
+     </variable>
+     <variable name="Longitude" orgName="Longtitude">
+      <attribute name="units" value="degrees_east" />
+      <remove type="attribute" name="Unit"/>
+      <remove type="attribute" name="Cordinate"/>
+     </variable>
+     <variable name="Sigma" shape="Layers" type="float">
+      <attribute name="units" value="1" />
+      <attribute name="positive" value="up"/>
+      <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+      <attribute name="formula_terms" value="sigma: Sigma eta: zeta depth: h"/>"
+      <values start="-1.0" increment="0.05"/>
+     </variable>
+     <aggregation type="union">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+       <variable name="DO" shape="Layers ln Time" type="float">
+        <remove type="attribute" name="Unit"/>
+        <attribute name="units" value="mg/L" />
+        <attribute name="coordinates" value="Longitude Latitude Sigma Time"
+       </variable>
+       <aggregation dimName="Time" type="joinExisting">
+        <scan location="Output/" regExp=".*DO3d.*\.nc$"/>
+       </aggregation>
+      </netcdf>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+       <aggregation dimName="Time" type="joinExisting" recheckEvery="1 min">
+        <scan location="Output/" regExp=".*[0-9]_dahv.*\.nc$"/>
+       </aggregation>
+      </netcdf>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+       <aggregation dimName="time" type="joinExisting">
+        <scan location="Output/" regExp=".*[0-9]_wwm_1.*\.nc$"/>
+       </aggregation>
+      </netcdf>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+       <aggregation dimName="time" type="joinExisting">
+        <scan location="Output/" regExp=".*[0-9]_wwm_4.*\.nc$"/>
+       </aggregation>
+      </netcdf>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+       <aggregation dimName="time" type="joinExisting">
+        <scan location="Output/" regExp=".*[0-9]_wwm_7.*\.nc$"/>
+       </aggregation>
+      </netcdf>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+       <aggregation dimName="time" type="joinExisting">
+        <scan location="Output/" regExp=".*[0-9]_wwm_9.*\.nc$"/>
+       </aggregation>
+      </netcdf>
+      <netcdf location="Output/EFDC_ele2d_20040101to_20041225.nc" >
+       <variable name="Water_Level" shape="Layers" type="float">
+        <attribute name="units" value="1" />
+        <attribute name="positive" value="up"/>
+        <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+        <attribute name="formula_terms" value="sigma: Sigma eta: zeta depth: h"/>"
+        <values start="-1.0" increment="0.05"/>
+       </variable>       
+      </netcdf>
+      <netcdf location="Output/coords.nc" /> 
+     </aggregation>
+    </netcdf>

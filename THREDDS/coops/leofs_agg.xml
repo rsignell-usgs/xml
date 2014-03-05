@@ -35,14 +35,20 @@
                     <attribute name="coordinates" value="lon lat time"/>
                     <remove type="attribute" name="positive"/>
                 </variable>
+                <variable name="time">
+                    <attribute name="units" value="days since 2006-01-01 00:00:00 00:00"/>
+                </variable>
+                
                 <variable name="depth">
                     <attribute name="coordinates" value="lon lat"/>
                     <remove type="attribute" name="positive"/>
                 </variable>
+                
                 <!-- Dimensionless vertical coordinates need "positive"=up, and negative sigma values -->
                 <variable name="sigma">
                     <attribute name="positive" value="up"/>
-                    <values> 0.0 0.05 0.1 0.15 0.25 0.35 0.45 0.55 0.7 0.85 1.0 </values>
+                    <values> -0.0 -0.0227 -0.0454 -0.0681 -0.0908 -0.1135 -0.1362 -0.1589 -0.1816 -0.2043
+                        -0.227 -0.2724 -0.3405 -0.4313 -0.5448 -0.681 -0.7945 -0.8853 -0.9534 -1.0</values>
                 </variable>
                 <variable name="mask">
                     <attribute name="coordinates" value="lon lat"/>
@@ -64,7 +70,7 @@
                 </variable>
             </netcdf>
             <collection spec="/path/leofs/.*.fields.forecast.*\.nc" olderThan="5 min"/>
-            <update startup="true" rescan="0 5 3 * * ? *" trigger="allow"/>
+            <update startup="true" rescan="0 47 0/6 * * ? *" trigger="allow"/>
             <protoDataset choice="Penultimate" change="0 2 3 * * ? *"/>
             <fmrcConfig regularize="true" datasetTypes="Best"/>
         </featureCollection>

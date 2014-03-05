@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2
+    http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+    xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <attribute name="title" value="Regional Ocean Modeling System (ROMS): Oregon Coast" />
+    <attribute name="id" value="OCOS_latest_aggregation"/>
+    <attribute name="Conventions" value="Unidata Dataset Discovery v1.0, CF-1.4" />
+    <attribute name="cdm_data_type" value="Grid" />
+    <attribute name="naming_authority" value="org.nanoos" />
+    <attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0, CF-1.4" />
+    <attribute name="summary" value="Regional Ocean Modeling System (ROMS) 3-day, 4-hourly forecast for the Oregon coast at approximately 3-km resolution. While considerable effort has been made to implement all model components in a thorough, correct, and accurate manner, numerous sources of error are possible. As such, please use these data with the caution appropriate for any ocean related activity." />
+    <attribute name="keywords" value="Oceans; Ocean Temperature; Potential Temperature, Oceans; Salinity/Density; Salinity, Oceans; Sea Surface Topography; Sea Surface Height, Oceans; Ocean Circulation; Ocean Currents" />
+    <attribute name="keywords_vocabulary" value="GCMD Science Keywords" />
+    <attribute name="standard_name_vocabulary" value="CF-1.4" />
+    <attribute name="comment" value="Model runs produced by Dr. Alex Kurapov (kurapov@coas.oregonstate.edu)." />
+    <attribute name="creator_email" value="kurapov@coas.oregonstate.edu" />
+    <attribute name="creator_name" value="Alex Kurapov" />
+    <attribute name="creator_url" value="http://ceoas.oregonstate.edu/profile/kurapov/" />
+    <attribute name="institution" value="Oregon State University" />
+    <attribute name="project" value="Northwest Association of Networked Ocean Observing Systems (NANOOS) (http://nanoos.org)" />
+    <attribute name="contributor_name" value="Svetlana Erofeeva" />
+    <attribute name="contributor_role" value="distributor" />
+    <attribute name="publisher_email" value="serofeev@coas.oregonstate.edu" />
+    <attribute name="publisher_name" value="Northwest Association of Networked Ocean Observing Systems (NANOOS) " />
+    <attribute name="publisher_url" value="http://nanoos.org" />
+    <attribute name="license" value="The data may be used and redistributed for free but is not intended for legal use, since it may contain inaccuracies. Neither the data Contributor, Oregon State University, NANOOS, NOAA, State of Oregon nor the United States Government, nor any of their employees or contractors, makes any warranty, express or implied, including warranties of merchantability and fitness for a particular purpose, or assumes any legal liability for the accuracy, completeness, or usefulness, of this information." />
+    <attribute name="acknowledgment" value="Northwest Association of Networked Ocean Observing Systems (NANOOS) receives funding from the National Oceanic and Atmospheric Administration (NOAA) as a Regional Association within the U.S. Integrated Ocean Observing System (IOOS). " />
+    <attribute name="source" value="Regional Ocean Modeling System (ROMS), http://myroms.org" />
+    <attribute name="references" value="http://myroms.org, http://nanoos.org" />
+    <variable name="zeta" >
+        <attribute name="standard_name" value="sea_surface_height" />
+    </variable> 
+    <variable name="salt" >
+        <attribute name="standard_name" value="sea_water_salinity" />
+        <attribute name="units" value="0.001"/>
+    </variable>    
+    <variable name="temp" >
+        <attribute name="standard_name" value="sea_water_potential_temperature" />
+    </variable> 
+    <variable name="u" >
+        <attribute name="standard_name" value="eastward_sea_water_velocity" />
+    </variable>  
+    <variable name="v" >
+        <attribute name="standard_name" value="northward_sea_water_velocity" />
+    </variable>      
+    <variable name="ubar" >
+        <attribute name="standard_name" value="barotropic_eastward_sea_water_velocity" />
+    </variable>  
+    <variable name="vbar" >
+        <attribute name="standard_name" value="barotropic_northward_sea_water_velocity" />
+    </variable>    
+    <aggregation dimName="ocean_time" type="joinExisting">
+        <scan location="/ACTZ/" suffix=".nc"/>
+    </aggregation>
+</netcdf>

@@ -1,0 +1,44 @@
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+ <!--Change conventions from COARDS to CF-1.6 -->
+ <attribute name="Conventions" value="CF-1.6"/>
+ <!-- Curvilinear grids need "coordinates" attribute for each data variable-->
+ <!--The "positive" attribute is only for the z coordinate variable, so remove it from depth and elevation-->
+ <variable name="zeta">
+  <attribute name="coordinates" value="lon lat time"/>
+  <remove type="attribute" name="positive"/>
+ </variable>
+ <variable name="depth">
+  <attribute name="coordinates" value="lon lat"/>
+  <remove type="attribute" name="positive"/>
+ </variable>
+ <!-- Dimensionless vertical coordinates need "positive"=up, and negative sigma values -->
+ <variable name="sigma">
+  <attribute name="positive" value="up"/>
+  <values> 0 -0.0007 -0.0014 -0.0027 -0.0054 -0.0109 -0.0217 -0.0435 -0.0870 -0.1304 -0.1739 -0.2174
+   -0.2609 -0.3043 -0.3478 -0.3913 -0.4348 -0.4783 -0.5217 -0.5652 -0.6087 -0.6522 -0.6957 -0.7391
+   -0.7826 -0.8261 -0.8696 -0.9130 -0.9565 -0.9783 -0.9891 -0.9946 -0.9973 -0.9986 -0.9993 -0.9997
+   -1.0000 </values>
+ </variable>
+ <variable name="mask">
+  <attribute name="coordinates" value="lon lat"/>
+ </variable>
+ <variable name="temp">
+  <attribute name="coordinates" value="lon lat sigma time"/>
+  <attribute name="missing_value" type="double" value="0.0"/>
+ </variable>
+ <variable name="salt">
+  <attribute name="coordinates" value="lon lat sigma time"/>
+  <attribute name="missing_value" type="double" value="0.0"/>
+ </variable>
+ <variable name="u">
+  <attribute name="coordinates" value="lon lat sigma time"/>
+  <attribute name="missing_value" type="double" value="0.0"/>
+ </variable>
+ <variable name="v">
+  <attribute name="coordinates" value="lon lat sigma time"/>
+  <attribute name="missing_value" type="double" value="0.0"/>
+ </variable>
+ <aggregation dimName="time" type="joinExisting">
+  <scan location="Output/" regExp=".*GOMUD.*3D\.nc$" subdirs="false"/>
+ </aggregation>
+</netcdf>

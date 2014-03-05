@@ -34,6 +34,9 @@
      <attribute name="coordinates" value="lon lat time"/>
      <remove type="attribute" name="positive"/>
     </variable>
+    <variable name="time">
+     <attribute name="units" value="days since 2003-01-01 00:00:00 00:00"/>
+    </variable>
     <variable name="depth">
      <attribute name="coordinates" value="lon lat"/>
      <remove type="attribute" name="positive"/>
@@ -66,7 +69,7 @@
     </variable>
    </netcdf>
    <collection spec="/path/gbofs/.*nos.gbofs.fields.forecast.*\.nc" olderThan="5 min"/>
-   <update startup="true" rescan="0 5 3 * * ? *" trigger="allow"/>
+   <update startup="true" rescan="0 25 0/6 * * ? *" trigger="allow"/>
    <protoDataset choice="Penultimate" change="0 2 3 * * ? *"/>
    <fmrcConfig regularize="true" datasetTypes="Best"/>
   </featureCollection>
