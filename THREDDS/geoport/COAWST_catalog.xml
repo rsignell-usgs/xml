@@ -1,7 +1,9 @@
 <catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.4.xsd"
  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
- xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ name="OPeNDAP Data Server"
+ version="1.0.3">
  <service name="allServices" serviceType="Compound" base="">
   <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
   <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
@@ -38,7 +40,6 @@
     </metadata>
     <collection spec="/usgs/vault0/coawst/coawst_2/Output/coawst_us_#yyyyMMdd_HH#.nc$" olderThan="6 min"/>
     <update startup="true" rescan="0 35 3-4 * * ? *" trigger="allow"/>
-
     <protoDataset choice="Penultimate">
      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
       <variable name="temp">
@@ -55,6 +56,7 @@
       </variable>
      </netcdf>
     </protoDataset>
+
     <fmrcConfig regularize="false" datasetTypes="Best"/>
     <!-- 
      Inside the featureCollection, but outside the protoDataset, we define the NcML that happens
@@ -65,16 +67,16 @@
 
     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
      <variable name="Nbed" shape="Nbed" type="double">
-      <values start="-1.0" increment="-0.01"/>
       <attribute name="long_name" value="pseudo coordinate at seabed points"/>
       <attribute name="standard_name" value="ocean_sigma_coordinate"/>
       <attribute name="positive" value="up"/>
       <attribute name="formula_terms" value="sigma: Nbed eta: zeta depth: h"/>
+      <values start="-1.0" increment="-0.01"/>
      </variable>
      <attribute name="Conventions" value="CF-1.0"/>
     </netcdf>
 
-
+ 
    </featureCollection>
    
    <featureCollection name="coawst_3_car" featureType="FMRC" harvest="true" path="coawst_3/car/fmrc">
@@ -111,11 +113,12 @@
     
     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
      <variable name="Nbed" shape="Nbed" type="double">
-      <values start="-1.0" increment="-0.01"/>
+ 
       <attribute name="long_name" value="pseudo coordinate at seabed points"/>
       <attribute name="standard_name" value="ocean_sigma_coordinate"/>
       <attribute name="positive" value="up"/>
       <attribute name="formula_terms" value="sigma: Nbed eta: zeta depth: h"/>
+      <values start="-1.0" increment="-0.01"/>
      </variable>
      <attribute name="Conventions" value="CF-1.0"/>
     </netcdf>
@@ -157,11 +160,12 @@
     
     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
      <variable name="Nbed" shape="Nbed" type="double">
-      <values start="-1.0" increment="-0.01"/>
+      
       <attribute name="long_name" value="pseudo coordinate at seabed points"/>
       <attribute name="standard_name" value="ocean_sigma_coordinate"/>
       <attribute name="positive" value="up"/>
       <attribute name="formula_terms" value="sigma: Nbed eta: zeta depth: h"/>
+      <values start="-1.0" increment="-0.01"/>
      </variable>
      <attribute name="Conventions" value="CF-1.0"/>
     </netcdf>
@@ -203,12 +207,12 @@
     -->
     
     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-     <variable name="Nbed" shape="Nbed" type="double">
-      <values start="-1.0" increment="-0.01"/>
+     <variable name="Nbed" shape="Nbed" type="double">    
       <attribute name="long_name" value="pseudo coordinate at seabed points"/>
       <attribute name="standard_name" value="ocean_sigma_coordinate"/>
       <attribute name="positive" value="up"/>
       <attribute name="formula_terms" value="sigma: Nbed eta: zeta depth: h"/>
+      <values start="-1.0" increment="-0.01"/>
      </variable>
      <attribute name="Conventions" value="CF-1.0"/>
     </netcdf>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog name="NYHOPS Bight Forecast Catalog"
-  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
-  xmlns:xlink="http://www.w3.org/1999/xlink">
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.4.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ name="NYHOPS Bight Forecast Catalog">
 
   <service name="allServices" base="" serviceType="compound">
     <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
@@ -29,27 +31,36 @@
 
     </metadata>
 
-    <datasetFmrc name="NYHOPS Forecast Collection for the New York Bight" path="fmrc/NYBight">
-      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-         <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
-
-           <scan location="/netcdf/Bight/" suffix=".nc" dateFormatMark="Run_#yyyyMMdd_HH"
-             subdirs="false" olderThan="5 min"/>
-        </aggregation>    
+    <featureCollection name="NYHOPS Forecast Collection for the New York Bight" featureType="FMRC" path="fmrc/NYBight">
+      <collection spec="/netcdf/Bight/#Run_#yyyyMMdd_HH" name="nybight" olderThan="6 min"/>
+      <update startup="nocheck" rescan="0 35 3 * * ? *" trigger="allow"/>
+      <protoDataset choice="Penultimate">
+       <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">      
         <remove type="variable" name="date"/>
+       </netcdf>
+      </protoDataset>
+      <fmrcConfig regularize="false" datasetTypes="Best"/>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="Conventions" value="CF-1.6"/>
+        <attribute name="summary" value="3D Marine Nowcast/Forecast System for the New York Bight NYHOPS subdomain.
+          Currents, waves, surface meteorology, and water conditions"/>
       </netcdf>
-    </datasetFmrc>
+    </featureCollection>
     
-    <datasetFmrc name="NYHOPS Forecast Collection for the New York Bight: Fall 2009" path="fmrc/NYBight/fall2009">
+    <featureCollection name="NYHOPS Forecast Collection for the New York Bight: Fall 2009" featureType="FMRC" path="fmrc/NYBight/fall2009">
+      <collection spec="/netcdf/Bight/Run_20091[0-9]{1}.*\.nc$" name="nybight_2009" dateFormatMark="#Run_#yyyyMMdd_HH" olderThan="6 min"/>
+      <protoDataset choice="Penultimate">
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">      
+          <remove type="variable" name="date"/>
+        </netcdf>
+      </protoDataset>
+      <fmrcConfig regularize="false" datasetTypes="Best"/>
       <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-        <aggregation dimName="runtime" type="forecastModelRunCollection" recheckEvery="10min" timeUnitsChange="true">
-          
-          <scan location="/netcdf/Bight/"   regExp=".*Run_20091[0-9]{1}.*\.nc$" dateFormatMark="Run_#yyyyMMdd_HH"
-            subdirs="false" olderThan="5 min"/>
-        </aggregation>    
-        <remove type="variable" name="date"/>
+        <attribute name="Conventions" value="CF-1.6"/>
+        <attribute name="summary" value="Fall 2009 data from 3D Marine Nowcast/Forecast System for the New York Bight NYHOPS subdomain.
+          Currents, waves, surface meteorology, and water conditions"/>
       </netcdf>
-    </datasetFmrc>
+    </featureCollection>
 
   </dataset>
 </catalog>
