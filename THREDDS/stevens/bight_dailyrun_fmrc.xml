@@ -7,6 +7,7 @@
 
   <service name="allServices" base="" serviceType="compound">
     <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+	 <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
   </service>
 
   <dataset name="NYHOPS New York Bight Subdomain">
@@ -32,7 +33,7 @@
     </metadata>
 
     <featureCollection name="NYHOPS Forecast Collection for the New York Bight" featureType="FMRC" path="fmrc/NYBight">
-      <collection spec="/netcdf/Bight/#Run_#yyyyMMdd_HH" name="nybight" olderThan="6 min"/>
+      <collection spec="/netcdf/Bight/Run_#yyyyMMdd_HH#.*\.nc$" name="nybight" olderThan="6 min"/>
       <update startup="nocheck" rescan="0 35 3 * * ? *" trigger="allow"/>
       <protoDataset choice="Penultimate">
        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">      
@@ -44,6 +45,12 @@
         <attribute name="Conventions" value="CF-1.6"/>
         <attribute name="summary" value="3D Marine Nowcast/Forecast System for the New York Bight NYHOPS subdomain.
           Currents, waves, surface meteorology, and water conditions"/>
+		  <variable name="depth">
+			  <remove type="attribute" name="positive"/>
+		  </variable>
+		  <variable name="elev">
+			  <remove type="attribute" name="positive"/>
+		  </variable>
       </netcdf>
     </featureCollection>
     
