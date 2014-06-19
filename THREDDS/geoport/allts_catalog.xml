@@ -4,15 +4,9 @@
   xmlns:xsd="http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
   xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <service name="manyservices" serviceType="Compound" base="">
-        <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
-        <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
-        <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
-        <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
-    </service>
  <dataset name="Observations in the Gulf of Maine Region">
   <catalogRef xlink:href="ts/ARGO_MERCHANT.xml"
-  xlink:title="Argo Merchant data (Mar. - Apr. 1977)" name="ArgoMerch"/>
+  xlink:title="Argo Merchant data (Mar. - Apr. 1977)" name="ArgoM" />
   <catalogRef xlink:href="ts/ECOHAB_I.xml"
     xlink:title="Ecology of Harmful Algal Blooms (3/93-2/95)" name="Ecohab-i"/>
   <catalogRef xlink:href="ts/ECOHAB_II.xml"
@@ -30,14 +24,18 @@
   <catalogRef xlink:href="ts/OCEANOG_C.xml"
     xlink:title="Oceanographer Canyon Dynamics Experiment (1/82-7/82)" name="oceanog_c"/> 
  </dataset>
- <dataset name="Observations in Massachusetts Costal Waters">
+ <dataset name="Observations in Massachusetts Coastal Waters">
     <catalogRef xlink:href="ts/BUZZ_BAY.xml"
     xlink:title="Currents and Transport in Buzzards Bay (7/82-10/85)" name="Buzz_bay"/>
     <catalogRef xlink:href="ts/CAPE_COD_BAY.xml"
       xlink:title="Currents and Transport in Cape Cod Bay (2/86-4/86)" name="CapeCod_bay"/>
+    <catalogRef xlink:href="ts/HURRIRENE_BB.xml"
+      xlink:title="Hurricane Irene Buzzards Bay (Aug-Sep 2011)" name="hurrirenebb"/>
+    <catalogRef xlink:href="ts/MVCO_11.xml"
+      xlink:title="MVCO OASIS project (Sep-Oct 2011)" name="mvco_11"/>
     <catalogRef xlink:href="ts/CC_MISC.xml"
     xlink:title="Early Cape Cod Bay (Jul.-Aug. 1980)" name="CapeCod_misc"/>
-    <dataset name="Long Term Monitoring of Massachusetts Bay (12/89 - 2/06)">
+   <!-- <dataset name="Long Term Monitoring of Massachusetts Bay (12/89 - 2/06)">
       <catalogRef xlink:href="ts/MBAY_LT1.xml"
       xlink:title="Long Term Monitoring- site A (1989-1991)" name="MbayA_1"/>
       <catalogRef xlink:href="ts/MBAY_LT2.xml"
@@ -52,19 +50,25 @@
         xlink:title="Long Term Monitoring- site A (2002-2004)" name="MbayA_6"/>
       <catalogRef xlink:href="ts/MBAY_LT7.xml"
         xlink:title="Long Term Monitoring- site A (2004-2006)" name="MbayA_7"/>
-      <catalogRef xlink:href="ts/MBAY_LTB.xml"
-        xlink:title="Long Term Monitoring- site B (1997-2004)" name="MbayB"/>
-    </dataset>  
+     </dataset> -->
+     <catalogRef xlink:href="ts/MBAY_LT.xml"
+        xlink:title="Long Term Monitoring- site A (1989-2006)" name="Mbay"/>
+     <catalogRef xlink:href="ts/MBAY_LTB.xml"
+        xlink:title="Long Term Monitoring- site B (1997-2003)" name="MbayB"/>
     <catalogRef xlink:href="ts/MBAY_CIRC.xml"
       xlink:title="Massachusetts Bay Circulation Experiment (9/90-6/91)" name="Mbay_circ"/>   
-    <catalogRef xlink:href="ts/MBAY_CIRC.xml"
+    <catalogRef xlink:href="ts/MBAY_IWAVE.xml"
       xlink:title="Massachusetts Bay Internal Wave Experiment (8/98-9/98)" name="Mbay_iwave"/>   
     <catalogRef xlink:href="ts/MBAY_STELL.xml"
       xlink:title="Stellwagen Bank Observations  (2/94-10/95)" name="Mbay_stell"/>   
     <catalogRef xlink:href="ts/MBAY_WEST.xml"
       xlink:title=" Western Massachusetts Bay  (Feb-May 1987)" name="Mbay_iwave"/>   
+    <catalogRef xlink:href="ts/WFAL.xml"
+      xlink:title=" Fluxes in West Falmouth Harbor (summer 2009, 2010)" name="wfal"/>   
   </dataset>
  <dataset name="Observations in the Mid-Atlantic Bight">
+    <catalogRef xlink:href="ts/BW2011.xml"
+      xlink:title="Blackwater National Wildlife Refuge" name="bw2011"/>
     <catalogRef xlink:href="ts/DWDS_106.xml"
       xlink:title="Deep Water Dump Site 105 (9/89-10/90)" name="Dwds_106"/>
      <catalogRef xlink:href="ts/HUDSON_SVALLEY.xml"
@@ -83,6 +87,8 @@
      xlink:title="Currents and Transport at Myrtle Beach (10/03-11/04)" name="MyrtBch"/>    
    <catalogRef xlink:href="ts/HATTERAS09.xml"
      xlink:title="Cape Hatteras- Diamond Shoals (Jan-May 2009)" name="hatt09"/>    
+   <catalogRef xlink:href="ts/NEARSHORE.xml"
+     xlink:title="Cape Hatteras- Nearshore (Feb-Apr 2010)" name="hatt_ns"/>    
  </dataset>
  <dataset name="Observations in the Gulf of Mexico">
    <catalogRef xlink:href="ts/CHANDELEUR.xml"
@@ -127,27 +133,4 @@
       xlink:title="Eurostrataform Pasta Experiment (11/02-2/03)" name="EuroS"/> 
   </dataset>
   
-    <metadata inherited="true">
-    <serviceName>manyservices</serviceName>
-    <authority>edu.ucar.unidata</authority>
-    <dataType>Grid</dataType>
-    <dataFormat>NetCDF</dataFormat>
-    <documentation type="rights">Freely available</documentation>
-    <documentation xlink:href="http://stellwagen.er.usgs.gov/index.html" xlink:title="Oceanographic time seried data  documentation"></documentation>
-    <creator>
-      <name vocabulary="DIF">DOI/USGS/CMGP/WHSC</name>
-      <contact url="http://woodshole.er.usgs.gov" />
-    </creator>
-    <publisher>
-      <name vocabulary="DIF">UCAR/UNIDATA</name>
-      <contact url="http://www.unidata.ucar.edu/" email="support@unidata.ucar.edu" />
-    </publisher>
-    <timeCoverage>
-      <start>1975</start>
-      <end>present</end>
-      <duration>35 years</duration>
-    </timeCoverage>
-  </metadata>
   </catalog>
-  
-       

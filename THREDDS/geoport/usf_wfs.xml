@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.2.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="GOMEX Catalog">
+  <service name="allServices" base="" serviceType="compound">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  </service>
+  <dataset name="USF: West Florida Shelf Simulations">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <creator>
+        <name vocabulary="DIF">Dr. Robert Weisberg</name>
+        <contact   email="weisberg@marine.usf.edu"/>
+      </creator>
+      <documentation
+        xlink:href="http://usfmodelingsite/index.html"
+        xlink:title="USF Modeling Home page"/>
+      <documentation type="Rights"> This model data was generated as part of an academic research
+        project, and the principal investigator Robert Weisberg (weisberg@marine.usf.edu) asks to be informed of
+        intent for scientific use and appropriate acknowledgment given in any publications arising
+        therefrom. The data is provided free of charge, without warranty of any kind.
+      </documentation>
+    </metadata>
+        <dataset name="Surface Velocity (5 km): 1993-1999" ID="usf/roms/surf" urlPath="usf/roms/surf">
+        <metadata inherited="true">
+          <documentation type="Summary"> Hydrodynamic simulation for the Gulf of Mexico, curvilinear
+            orthogonal grid, approximately 5 km resolution in central GOM, 1993-1999.
+          </documentation>
+        </metadata>
+  
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+            location="/data/models/WFS_surf_curr.nc">
+            <variable name="u" shape="ocean_time eta_rho xi_rho" type="double">
+              <attribute name="coordinates" value="lon lat"/>
+              <attribute name="missing_value" value="0.0"/>
+              <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+            </variable>
+            <variable name="v" shape="ocean_time eta_rho xi_rho" type="double">
+              <attribute name="coordinates" value="lon lat"/>
+              <attribute name="missing_value" value="0.0"/>
+              <attribute name="standard_name" value="northward_sea_water_velocity"/>
+            </variable>
+          </netcdf>
+      </dataset>
+      
+    
+  </dataset>
+</catalog>

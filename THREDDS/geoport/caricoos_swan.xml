@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ name="ROMS ESPRESSO">
+
+
+   <service name="all" serviceType="Compound" base="">
+      <service name="thisDODS" serviceType="OpenDAP" base="/thredds/dodsC/" />
+      <service name="wms" serviceType="WMS" base="/thredds/wms/" />
+   </service>
+
+   
+   <!--Begin catalog listings-->
+             
+   <dataset name="CARICOOS SWAN 2013-present">
+      <metadata inherited="true">
+         <serviceName>all</serviceName>
+         <authority>edu.rutgers.marine</authority>
+         <dataType>Grid</dataType>
+         <dataFormat>NetCDF</dataFormat>
+         <documentation type="rights">Freely available</documentation>
+         <documentation xlink:href="http://www.myroms.org/applications/espresso/" 
+                        xlink:title="CARICOOS simulation"/>
+         <creator>
+            <name vocabulary="DIF">Julia Levin</name>
+            <contact url="http://www.myroms.org/" 
+                     email="julia@marine.rutgers.edu" />
+         </creator>
+         <publisher>
+            <name vocabulary="DIF">OM/IMCS</name>
+            <contact url="http://marine.rutgers.edu/po/"
+                     email="wilkin@marine.rutgers.edu" />
+         </publisher>
+
+         <documentation type="summary">
+            SWAN model output from ...
+         </documentation>
+        </metadata>
+
+      <featureCollection name="SWAN_Best_Available"
+                         featureType="FMRC"
+                         harvest="true"
+                         path="swan/version2">
+         <metadata inherited="true">
+            <serviceName>all</serviceName>
+            <documentation type="summary">
+               Best available dataset for averages
+            </documentation>
+         </metadata>
+         <collection spec="/usgs/data2/rsignell/models/caricoos/corrected/#yyyyMMddHHmm#.nc" olderThan="1 min"/>
+         <update startup="true" rescan="0 35 0/12 * * ? *" trigger="allow"/>
+         <protoDataset choice="Penultimate">
+            <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" >
+               <attribute name="summary" type="String" value="SWAN model output from ..." />
+            </netcdf>
+         </protoDataset>
+         <fmrcConfig regularize="false" datasetTypes="Best" />
+      </featureCollection>
+
+    </dataset> 
+
+</catalog>

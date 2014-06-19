@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<catalog name="ROMS ESPRESSO"
-         xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
-         xmlns:xlink="http://www.w3.org/1999/xlink">
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.4.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ name="ROMS ESPRESSO">
 
    <service name="both" serviceType="Compound" base="">
       <service name="thisDODS" serviceType="OpenDAP" base="/thredds/dodsC/" />
@@ -81,10 +83,7 @@
          </metadata>
 
          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"> 
-            <aggregation dimName="ocean_time" type="joinExisting"> 
-               <scan location="/home/om/dods-data/thredds/roms/espresso/2009_da/avg/" 
-                     suffix=".nc" olderThan="2 min" /> 
-            </aggregation>
+
             <attribute name="title" type="String" value="ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 1 (OLD) 2009-2013 Averages" />
             <attribute name="summary" value="Operational nowcast/forecast system for MARACOOS project (http://maracoos.org). Grid configuration and assimilation system the same as for the ~6 km resolution ROMS Espresso Experiment. These simulations are forced by NCEP NAM operational atmospheric forcing, boundary conditions are from HYCOM-NCODA 1/12 deg model; tides are from ADCIRC model. Assimilated data: SST, HF Radar, along track SSH, HF Radar and climatology." />
             <variable name="h">
@@ -105,6 +104,10 @@
             <variable name="salt">
                <attribute name="standard_name" type="String" value="sea_water_salinity" />
             </variable>
+            <aggregation dimName="ocean_time" type="joinExisting"> 
+               <scan location="/home/om/dods-data/thredds/roms/espresso/2009_da/avg/" 
+                  suffix=".nc" olderThan="2 min" /> 
+            </aggregation>
          </netcdf>
       </dataset>
 
@@ -121,10 +124,7 @@
          </metadata>
 
          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"> 
-            <aggregation dimName="ocean_time" type="joinExisting"> 
-               <scan location="/home/om/dods-data/thredds/roms/espresso/2009_da/his/" 
-                     suffix=".nc" olderThan="2 min" /> 
-            </aggregation>
+  
             <attribute name="title" type="String" value="ROMS ESPRESSO Real-Time Operational IS4DVAR Forecast System Version 1 (OLD) 2009-2013 History" />
             <attribute name="summary" type="String" value="Operational nowcast/forecast system for MARACOOS project (http://maracoos.org). Grid configuration and assimilation system the same as for the ~6 km resolution ROMS Espresso Experiment. These simulations are forced by NCEP NAM operational atmospheric forcing, boundary conditions are from HYCOM-NCODA 1/12 deg model; tides are from ADCIRC model. Assimilated data: SST, HF Radar, along track SSH, HF Radar and climatology." />
             <variable name="h">
@@ -145,6 +145,10 @@
             <variable name="salt">
                <attribute name="standard_name" type="String" value="sea_water_salinity" />
             </variable>
+            <aggregation dimName="ocean_time" type="joinExisting"> 
+               <scan location="/home/om/dods-data/thredds/roms/espresso/2009_da/his/" 
+                  suffix=".nc" olderThan="2 min" /> 
+            </aggregation>
          </netcdf>
       </dataset>
 

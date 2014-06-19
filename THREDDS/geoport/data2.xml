@@ -6,9 +6,10 @@
     <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
     <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
-  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
-  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
-  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="sos" serviceType="SOS" base="/thredds/sos/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
     <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
   </service> 
   
@@ -20,7 +21,6 @@
     <filter>
       <include wildcard="*.ncml"/>  
       <include wildcard="*.nc"/>  
-      <include wildcard="*.txt"/>  
       <include wildcard="*.grd"/>  
       <include wildcard="*.nc.gz"/>  
       <include wildcard="*.cdf"/>
@@ -29,6 +29,12 @@
       <include wildcard="*.grb2"/>
       <include wildcard="*.grib2"/>
       <include wildcard="*_00_00"/>
+      <include wildcard="*.tif"/>
+      <include wildcard="*.hdf"/>
+      <include wildcard="*.h5"/>
+      <include wildcard="*.h4"/>
+      <include wildcard="*.hdf5"/>
+      <include wildcard="*.tiff"/>
     </filter>
     <sort>
       <lexigraphicByName increasing="true"/>

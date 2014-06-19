@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  name="THREDDS Top Catalog, points to other THREDDS catalogs" version="1.0.1">
+  <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+  <dataset name="NCSU MEAS THREDDS catalogs">
+    <catalogRef xlink:href="sabgom_catalog.xml"
+      xlink:title="SABGOM (South Atlantic Bight and Gulf of Mexico) Ocean Model" name=""/> 
+    <catalogRef xlink:href="us_east_catalog.xml"
+      xlink:title="US East Ocean Model" name=""/> 
+  </dataset>
+
+  <!-- If you want to have THREDDS automatically scan some directory tree for NetCDF files, here 
+  is how to do it:-->
+ <!-- <datasetScan name="SABGOM Files" ID="sabgom/files" path="sabgom/files"
+    location="/home/khyun/sabgom">
+    <metadata inherited="true">
+      <serviceName>ncdods</serviceName>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc"/>
+      <include wildcard="*.cdf"/>
+    </filter>
+  </datasetScan>-->
+
+</catalog>

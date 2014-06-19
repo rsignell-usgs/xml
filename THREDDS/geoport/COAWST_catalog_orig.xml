@@ -1,0 +1,129 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.1.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ name="OPeNDAP Data Server"
+ version="1.0.1">
+
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <dataset name="COAWST" ID="coawst">
+        <metadata inherited="true">
+            <serviceName>ncdods</serviceName>
+            <authority>gov.usgs.er.whsc</authority>
+            <dataType>Grid</dataType>
+            <dataFormat>NetCDF</dataFormat>
+            <creator>
+                <name vocabulary="DIF">OM/WHSC/USGS</name>
+                <contact url="http://www.usgs.gov/" email="jcwarner@usgs.gov"/>
+            </creator>
+            <publisher>
+                <name vocabulary="DIF">OM/WHSC/USGS</name>
+                <contact url="http://www.usgs.gov/" email="jcwarner@usgs.gov"/>
+            </publisher>
+            <documentation xlink:href="http://woodshole.er.usgs.gov/project-pages/cccp/index.html"
+            xlink:title="Carolinas Coastal Change Program"/>
+            <documentation xlink:href="http://geoport.whoi.edu:8081/ReadMeCOAWST.html"
+                xlink:title="ReadMe.txt"/>
+        </metadata>
+
+        <dataset name="COAWST Nowcast/Forecast Runs">
+
+            <datasetFmrc name="coawst_2" path="coawst/fmrc">
+                <metadata inherited="true">
+                    <documentation type="summary">Coawst_2 starting 8/21/2009</documentation>
+                </metadata>
+                <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                    <aggregation dimName="runtime" type="forecastModelRunCollection"
+                        recheckEvery="5min" timeUnitsChange="true">
+                        <variable name="temp">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="salt">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="Hwave">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="zeta">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                      <variable name="Nbed" shape="Nbed" type="double">
+                        <attribute name="long_name" value="S-coordinate at sedbed-points" />
+                        <attribute name="standard_name" value="ocean_s_coordinate" />
+                        <attribute name="formula_terms" value="s: Nbed eta: zeta depth: h a: theta_s b: theta_b depth_c: hc" />
+                        <values start="-1.0" increment="-0.1"/>
+                        </variable>
+                        <scan location="/usgs/data0/barmstrong/coawst/coawst_2/Output"
+                            regExp=".*coawst.*\.nc$" dateFormatMark="coawst_us_#yyyyMMdd_HH"
+                            subdirs="false" olderThan="5 min"/>
+                    </aggregation>
+                </netcdf>
+            </datasetFmrc>
+
+            <datasetFmrc name="coawst_2_1" path="coawst_2_1/fmrc">
+                <metadata inherited="true">
+                    <documentation type="summary">ROMS Output from Coawst_2_1 starting 11/10/2009</documentation>
+                </metadata>
+                <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                    <aggregation dimName="runtime" type="forecastModelRunCollection"
+                        recheckEvery="5min" timeUnitsChange="true">
+                        <variable name="temp">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="salt">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="Hwave">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="zeta">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                      <variable name="Nbed" shape="Nbed" type="double">
+                        <attribute name="long_name" value="S-coordinate at sedbed-points" />
+                        <attribute name="standard_name" value="ocean_s_coordinate" />
+                        <attribute name="formula_terms" value="s: Nbed eta: zeta depth: h a: theta_s b: theta_b depth_c: hc" />
+                        <values start="-1.0" increment="-0.1"/>
+                        </variable>
+                        <scan location="/usgs/data0/barmstrong/coawst/coawst_2_1/Output"
+                            regExp=".*coawst.*\.nc$" dateFormatMark="coawst_us_#yyyyMMdd_HH"
+                            subdirs="false" olderThan="5 min"/>
+                    </aggregation>
+                </netcdf>
+            </datasetFmrc>
+
+            <datasetFmrc name="coawst_2_2" path="coawst_2_2/fmrc">
+                <metadata inherited="true">
+                    <documentation type="summary">ROMS Output from Coawst_2_2 starting 1/10/06</documentation>
+                </metadata>
+                <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+                    <aggregation dimName="runtime" type="forecastModelRunCollection"
+                        recheckEvery="5min" timeUnitsChange="true">
+                        <variable name="temp">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="salt">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="Hwave">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                        <variable name="zeta">
+                            <attribute name="_FillValue" type="float" value="0.0"/>
+                        </variable>
+                      <variable name="Nbed" shape="Nbed" type="double">
+                        <attribute name="long_name" value="S-coordinate at sedbed-points" />
+                        <attribute name="standard_name" value="ocean_s_coordinate" />
+                        <attribute name="formula_terms" value="s: Nbed eta: zeta depth: h a: theta_s b: theta_b depth_c: hc" />
+                        <values start="-1.0" increment="-0.1"/>
+                      </variable>
+                        <scan location="/usgs/data0/barmstrong/coawst/coawst_2_2/Output"
+                            regExp=".*coawst.*\.nc$" dateFormatMark="coawst_us_#yyyyMMdd_HH"
+                            subdirs="false" olderThan="5 min"/>
+                    </aggregation>
+                </netcdf>
+            </datasetFmrc>
+            
+        </dataset>
+    </dataset>
+</catalog>

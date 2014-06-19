@@ -1,0 +1,288 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.
+1.0.3.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
+  <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+  <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/" />
+ </service>
+
+ <dataset name="SABGOM Nowcast/Forecast">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <creator>
+    <name vocabulary="DIF">Dr. Ruoying He</name>
+    <contact url="http://www.meas.ncsu.edu/faculty/he/he.html" email="ruoying_he@ncsu.edu"/>
+   </creator>
+   <documentation xlink:href="http://omgsrv1.meas.ncsu.edu:8080/ocean-circulation/"
+    xlink:title="SABGOM Nowcast/Forecast System Project Page"/>
+   <documentation type="Summary"> Coastal Circulation Nowcast/Forecast System for the South Atlantic
+    Bight and Gulf of Mexico</documentation>
+   <documentation type="Rights"> This model data was generated as part of an academic research
+    project, and the principal investigator Ruoying He (rhe@ncsu.edu) asks to be informed of intent
+    for scientific use and appropriate acknowledgment given in any publications arising therefrom.
+    The data is provided free of charge, without warranty of any kind. </documentation>
+  </metadata>
+
+  <featureCollection name="SABGOM Forecast Model Run Collection" featureType="FMRC" harvest="true"
+   path="fmrc/sabgom">
+   <metadata inherited="true">
+    <serviceName>allServices</serviceName>
+   </metadata>
+   <!-- <collection spec="/raid0/zxue/SABGOM_NF/**/his_#yyyyMMdd#.*\.nc$" olderThan="10 min"/>
+   -->
+   <collection spec="/current/sabgom/ROMS/his_#yyyyMMdd#.*\.nc$" olderThan="10 min"/>
+   <update startup="true" rescan="0 5 * * * ? *" trigger="allow"/>
+   <fmrcConfig regularize="false" datasetTypes="Best"/>
+
+   <protoDataset choice="Penultimate">
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="standard_name" value="sea_water_potential_temperature"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="standard_name" value="sea_water_salinity"/>
+     </variable>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="standard_name" value="sea_surface_height"/>
+     </variable>
+     <variable name="u">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="standard_name" value="eastward_sea_water_velocity_assuming_no_tide"/>
+     </variable>
+     <variable name="v">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="standard_name" value="northward_sea_water_velocity_assuming_no_tide"/>
+     </variable>
+     <variable name="w">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+      <attribute name="standard_name" value="upward_sea_water_velocity_assuming_no_tide"/>
+     </variable>
+    </netcdf>
+   </protoDataset>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <variable name="h">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="f">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="pm">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="pn">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="angle">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="mask_rho">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+
+    <attribute name="Conventions" value="CF-1.0"/>
+   </netcdf>
+  </featureCollection>
+
+ </dataset>
+
+
+  <datasetScan name="SABGOM Nowcast/Forecast files 2011" path="sabgom_2011" location="/raid0/zxue/SABGOM_NF/2011/his/" >
+    <serviceName>allServices</serviceName>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+  </datasetScan>
+
+  <datasetScan name="SABGOM Nowcast/Forecast files 2012" path="sabgom_2012" location="/raid0/zxue/SABGOM_NF/2012/his/" >
+    <serviceName>allServices</serviceName>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+  </datasetScan>
+
+  <datasetScan name="SABGOM Nowcast/Forecast files 2013" path="sabgom_2013" location="/raid0/zxue/SABGOM_NF/2013/his/" >
+    <serviceName>allServices</serviceName>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+  </datasetScan>
+
+  <datasetScan name="SABGOM Nowcast/Forecast files" path="sabgom" location="/raid0/zxue/SABGOM_NF/2014/his/" >
+    <serviceName>allServices</serviceName>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+  </datasetScan>
+
+
+
+ <dataset name="SABGOM Tracer out1">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <creator>
+    <name vocabulary="DIF">Dr. Ruoying He</name>
+    <contact url="http://www.meas.ncsu.edu/faculty/he/he.html" email="ruoying_he@ncsu.edu"/>
+   </creator>
+   <documentation xlink:href="http://omgsrv1.meas.ncsu.edu:8080/ocean-circulation/"
+    xlink:title="SABGOM Nowcast/Forecast System Project Page"/>
+   <documentation type="Summary"> Coastal Circulation and Tracer Simulation for the South Atlantic
+    Bight and Gulf of Mexico</documentation>
+   <documentation type="Rights"> This model data was generated as part of an academic research
+    project, and the principal investigator Ruoying He (rhe@ncsu.edu) asks to be informed of intent
+    for scientific use and appropriate acknowledgment given in any publications arising therefrom.
+    The data is provided free of charge, without warranty of any kind. </documentation>
+  </metadata>
+
+  <featureCollection name="SABGOM Model Run Collection Tracer out1" featureType="FMRC" harvest="true"
+   path="fmrc/sabgom_tracer_out1">
+   <metadata inherited="true">
+    <serviceName>allServices</serviceName>
+   </metadata>
+   <collection spec="/raid0/zxue/SABGOM_NF/2012_2013/out1/sabgom_bio_his_0#DDD#\.nc$" olderThan="10 min"/>
+   <update startup="true" rescan="0 5 3 * * ? *" trigger="allow"/>
+   <fmrcConfig regularize="false" datasetTypes="Best"/>
+
+   <protoDataset choice="Penultimate">
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </protoDataset>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <variable name="h">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="f">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="pm">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="pn">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="angle">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="mask_rho">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <attribute name="Conventions" value="CF-1.0"/>
+   </netcdf>
+  </featureCollection>
+
+ </dataset>
+
+  <datasetScan name="SABGOM Tracer out1 files" path="sabgom_tracer_out1" location="/raid0/zxue/SABGOM_NF/2012_2013/out1/" >
+    <serviceName>allServices</serviceName>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+  </datasetScan>
+
+ <dataset name="SABGOM Tracer out2">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <creator>
+    <name vocabulary="DIF">Dr. Ruoying He</name>
+    <contact url="http://www.meas.ncsu.edu/faculty/he/he.html" email="ruoying_he@ncsu.edu"/>
+   </creator>
+   <documentation xlink:href="http://omgsrv1.meas.ncsu.edu:8080/ocean-circulation/"
+    xlink:title="SABGOM Nowcast/Forecast System Project Page"/>
+   <documentation type="Summary"> Coastal Circulation and Tracer Simulation for the South Atlantic
+    Bight and Gulf of Mexico</documentation>
+   <documentation type="Rights"> This model data was generated as part of an academic research
+    project, and the principal investigator Ruoying He (rhe@ncsu.edu) asks to be informed of intent
+    for scientific use and appropriate acknowledgment given in any publications arising therefrom.
+    The data is provided free of charge, without warranty of any kind. </documentation>
+  </metadata>
+
+  <featureCollection name="SABGOM Model Run Collection Tracer out2" featureType="FMRC" harvest="true"
+   path="fmrc/sabgom_tracer_out2">
+   <metadata inherited="true">
+    <serviceName>allServices</serviceName>
+   </metadata>
+   <collection spec="/raid0/zxue/SABGOM_NF/2012_2013/out2/sabgom_bio_his_0#DDD#\.nc$" olderThan="10 min"/>
+   <update startup="true" rescan="0 5 3 * * ? *" trigger="allow"/>
+   <fmrcConfig regularize="false" datasetTypes="Best"/>
+
+   <protoDataset choice="Penultimate">
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </protoDataset>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <variable name="h">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="f">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="pm">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="pn">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="angle">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="mask_rho">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <attribute name="Conventions" value="CF-1.0"/>
+   </netcdf>
+  </featureCollection>
+
+ </dataset>
+
+  <datasetScan name="SABGOM Tracer out2 files" path="sabgom_tracer_out2" location="/raid0/zxue/SABGOM_NF/2012_2013/out2/" >
+    <serviceName>allServices</serviceName>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+  </datasetScan>
+
+  <datasetScan name="MABSAB 5-day average" path="mabsab_avg" location="/raid0/ygong/OUT_1/avg/" >
+    <serviceName>allServices</serviceName>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+  </datasetScan>
+
+  <datasetScan name="MABSAB history" path="mabsab_his" location="/raid0/ygong/OUT_1/his/" >
+    <serviceName>allServices</serviceName>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+  </datasetScan>
+
+</catalog>
