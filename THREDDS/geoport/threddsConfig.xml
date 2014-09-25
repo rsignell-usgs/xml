@@ -7,13 +7,11 @@
   For catalogs you don't want visible from the /thredds/catalog.xml chain
   of catalogs, you can use catalogRoot elements. Each catalog root config
   catalog is crawled and used in configuring the TDS.-->
-  <catalogRoot>allts_catalog_flat.xml</catalogRoot>
-  <catalogRoot>estofs_agg.xml</catalogRoot>
-  <catalogRoot>caricoos_swan.xml</catalogRoot>
-  <catalogRoot>examples.xml</catalogRoot>
   <catalogRoot>coops.xml</catalogRoot>
+  <catalogRoot>cmg_portal.xml</catalogRoot>
   <catalogRoot>oceansites.xml</catalogRoot>
-  <catalogRoot>multi_cfsr_all2.xml</catalogRoot>
+  <catalogRoot>multi_ts.xml</catalogRoot>
+  <catalogRoot>multi_hs.xml</catalogRoot>
   <catalogRoot>ncom_relo.xml</catalogRoot>
   <catalogRoot>usgs_all.xml</catalogRoot>
   <catalogRoot>vault0.xml</catalogRoot>
@@ -37,43 +35,30 @@
   <catalogRoot>multi_catalog_all.xml</catalogRoot>
   <catalogRoot>gcoos_seadas_sst.xml</catalogRoot>
   <catalogRoot>magfinal.xml</catalogRoot>
-  <!--
-   * Setup for generated HTML pages.
-   *
-   * NOTE: URLs may be absolute or relative, relative URLs must be relative
-   * to the webapp URL, i.e., http://server:port/thredds/.
-    -->
-  <htmlSetup>
-    <!--
-     * CSS documents used in generated HTML pages.
-     * The CSS document given in the "catalogCssUrl" element is used for all pages
-     * that are HTML catalog views. The CSS document given in the "standardCssUrl"
-     * element is used in all other generated HTML pages.
-     * -->
-    <standardCssUrl>tds.css</standardCssUrl>
-    <catalogCssUrl>tdsCat.css</catalogCssUrl>
-    <!--
-     * The URLs (relative to "/thredds/") and alternate text for both
-     * folder and dataset icons used in HTML catalog views.
-     * -->
-    <folderIconUrl>folder.gif</folderIconUrl>
-    <folderIconAlt>Folder</folderIconAlt>
-    <datasetIconUrl>dataset.gif</datasetIconUrl>
-    <datasetIconAlt>Dataset</datasetIconAlt>
-    <!--
-     * Name and logo for this installation.
-     * -->
-    <installName>WHCMSC Sediment Transport Group</installName>
-    <installLogoUrl>header_graphic_usgsIdentifier_white.jpg</installLogoUrl>
-    <installLogoAlt>USGS</installLogoAlt>
-    <!--
-     * Name, URL, and logo for the institution hosting this installation.
-     * -->
-    <hostInstName>USGS/WHCMSC</hostInstName>
-    <hostInstUrl>http://woodshole.er.usgs.gov/</hostInstUrl>
-    <hostInstLogoUrl>myGroup.gif</hostInstLogoUrl>
-    <hostInstLogoAlt>USGS Woods Hole</hostInstLogoAlt>
-  </htmlSetup>
+  <catalogRoot>albers.xml</catalogRoot>
+  <catalogRoot>albers_remote.xml</catalogRoot>
+
+  <serverInformation>
+    <name>WHCMSC Sediment Transport Group</name>
+    <logoUrl>header_graphic_usgsIdentifier_white.jpg</logoUrl>
+    <logoAltText>USGS</logoAltText>
+    
+    <abstract>Scientific Data</abstract>
+    <keywords>meteorology, atmosphere, climate, ocean, earth science</keywords>
+    
+    <contact>
+      <name>Rich Signell</name>
+      <organization>USGS</organization>
+      <email>rsignell@usgs.gov</email>
+      <phone>508-457-2229</phone>
+    </contact>
+    <hostInstitution>
+      <name>USGS/WHCMSC</name>
+      <webSite>http://woodshole.er.usgs.gov/</webSite>
+      <logoUrl>header_graphic_usgsIdentifier_white.jpg</logoUrl>
+      <logoAltText>USGS Woods Hole</logoAltText>
+    </hostInstitution>
+  </serverInformation>  
   <!--
    The <CatalogServices> element:
    - Services on local TDS served catalogs are always on.

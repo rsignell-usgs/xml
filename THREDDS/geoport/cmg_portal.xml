@@ -1,0 +1,29 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.4.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.1">
+
+  <service name="gridServices" serviceType="Compound" base="">
+    <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    
+  </service>
+
+    <dataset name="wfh real forcing, 0.19 m3/s Qr, U3H advection, theta=0,0" ID="portal/wfh/real_19"
+      urlPath="portal/wfh/real_19">
+      <serviceName>gridServices</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <attribute name="title" value="COAWST simulation of West Falmouth Harbor"/>
+        <attribute name="comment"
+          value="COAWST simulation of West Falmouth Harbor with realistic forcing, 0.19 m3/s Qr, U3H advection, theta=0,0"/>
+        <aggregation dimName="ocean_time" type="joinExisting">
+          <scan location="/usgs/data0/wfh/real_19" suffix=".nc"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+
+</catalog>

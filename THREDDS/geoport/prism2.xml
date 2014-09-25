@@ -48,7 +48,7 @@
               <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
                 <aggregation dimName="time" type="joinNew">
                   <variableAgg name="temp_min"/>
-                  <scan location="/usgs/data0/prism/tmn" regExp=".*tmn[0-9]{6}\.nc$" subdirs="true"/>
+                  <scan location="/usgs/data0/prism/mintemp" regExp=".*tmn[0-9]{6}\.nc$" subdirs="true"/>
                   <variable name="temp_min" orgName="Band1">
                     <attribute name="units" value="Celcius"/>
                     <attribute name="long_name" value="Minimum monthly temperature"/>
@@ -68,7 +68,7 @@
               <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
                 <aggregation dimName="time" type="joinNew">
                   <variableAgg name="temp_max"/>
-                  <scan location="/usgs/data0/prism/tmx" regExp=".*tmx[0-9]{6}\.nc$" subdirs="true"/>
+                  <scan location="/usgs/data0/prism/maxtemp" regExp=".*tmx[0-9]{6}\.nc$" subdirs="true"/>
                   <variable name="temp_max" orgName="Band1">
                     <attribute name="units" value="Celcius"/>
                     <attribute name="scale_factor" type="float" value="0.01"/>
@@ -88,7 +88,7 @@
               <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
                 <aggregation dimName="time" type="joinNew">
                   <variableAgg name="precip_mean"/>
-                  <scan location="/usgs/data0/prism/ppt" regExp=".*ppt[0-9]{6}\.nc$" subdirs="true"/>
+                  <scan location="/usgs/data0/prism/precip" regExp=".*ppt[0-9]{6}\.nc$" subdirs="true"/>
                   <variable name="precip_mean" orgName="Band1">
                     <attribute name="units" value="mm/month"/>
                     <attribute name="long_name" value="Mean monthly precipitation"/>
