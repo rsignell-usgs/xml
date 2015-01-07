@@ -6,13 +6,12 @@
   <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
 
 
-  <dataset name="Mass Bay Hindcast Archive" ID="usgs/mbay/nonc/archive"
-    urlPath="usgs/mbay/nonc/archive">
+  <dataset name="Mass Bay Hindcast Archive" >
     <metadata inherited="true">
       <serviceName>ncdods</serviceName>
       <creator>
         <name vocabulary="DIF">Dr. Richard Signell</name>
-        <contact url="http://alpha.es.umb.edu/faculty/mji/jiang.htm" email="rsignell@usgs.gov"/>
+        <contact url="https://profile.usgs.gov/rsignell" email="rsignell@usgs.gov"/>
       </creator>
       <documentation type="summary"> Hindcast simulations of Massachusetts Bay using ECOM-si for
         siting the Greater Boston Sewage Outfall </documentation>
@@ -22,13 +21,13 @@
         An Evaluation of Relocating Greater Boston’s Sewage Outfall"
       />
     </metadata>
-
+    <dataset name="seasonal averages: boston harbor outfall location" ID="mbay/nonc/deer" urlPath="mbay/nonc/deer">
     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
       <aggregation type="union">
         <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom_lonlat.nc"/>
 
         <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
-          location="/usgs/data2/rsignell/mbay/nonc/win_sum_bb.cdf">
+          location="/usgs/data2/rsignell/mbay/nonc/win_sum_deer.cdf">
           <variable name="time">
             <attribute name="units" type="String" value="days since 1989-10-01 00:00 UTC"/>
           </variable>
@@ -83,5 +82,70 @@
       </aggregation>
 
     </netcdf>
+    </dataset>
+    
+    <dataset name="seasonal averages: Mass Bay outfall location" ID="mbay/nonc/bb" urlPath="mbay/nonc/bb">
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation type="union">
+          <netcdf location="/usgs/data0/rsignell/models/umb_massbay/ecom_lonlat.nc"/>
+          
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+            location="/usgs/data2/rsignell/mbay/nonc/win_sum_bb.cdf">
+            <variable name="time">
+              <attribute name="units" type="String" value="days since 1989-10-01 00:00 UTC"/>
+            </variable>
+            <variable name="elev">
+              <attribute name="standard_name" value="sea_surface_height"/>
+              <attribute name="coordinates" type="String" value="lon lat"/>
+              <attribute name="_FillValue" type="short" value="0"/>
+            </variable>
+            <variable name="heat_flux">
+              <attribute name="coordinates" type="String" value="lon lat"/>
+            </variable>
+            <variable name="cd">
+              <attribute name="coordinates" type="String" value="lon lat"/>
+            </variable>
+            <variable name="depth">
+              <attribute name="coordinates" type="String" value="lon lat"/>
+              <attribute name="_FillValue" type="short" value="-99999"/>
+            </variable>
+            <variable name="temp">
+              <attribute name="coordinates" type="String" value="lon lat zpos"/>
+              <attribute name="_FillValue" type="short" value="-23405"/>
+            </variable>
+            <variable name="salt">
+              <attribute name="coordinates" type="String" value="lon lat zpos"/>
+              <attribute name="_FillValue" type="short" value="-32767"/>
+            </variable>
+            <variable name="conc">
+              <attribute name="coordinates" type="String" value="lon lat zpos"/>
+            </variable>
+            <variable name="u">
+              <attribute name="coordinates" type="String" value="lon lat zpos"/>
+              <attribute name="standard_name" value="x_grid_directed_sea_water_velocity"/>
+              <attribute name="_FillValue" type="short" value="0"/>
+              <remove type="attribute" name="long_name"/>
+            </variable>
+            <variable name="v">
+              <attribute name="coordinates" type="String" value="lon lat zpos"/>
+              <attribute name="standard_name" value="y_grid_directed_sea_water_velocity"/>
+              <attribute name="_FillValue" type="short" value="0"/>
+              <remove type="attribute" name="long_name"/>
+            </variable>
+            <variable name="zpos" orgName="sigma">
+              <attribute name="standard_name" type="String" value="ocean_sigma_coordinate"/>
+              <attribute name="formula_terms" type="String" value="sigma: zpos eta: elev depth: depth"/>
+              <attribute name="positive" type="String" value="up"/>
+              <attribute name="axis" type="String" value="Z"/>
+              <attribute name="units" type="String" value="1"/>
+            </variable>
+            <attribute name="Conventions" type="String" value="CF-1.0"/>
+            
+          </netcdf>
+        </aggregation>
+        
+      </netcdf>
+    </dataset>
+    
   </dataset>
 </catalog>

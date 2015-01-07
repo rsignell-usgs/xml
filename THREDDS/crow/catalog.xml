@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog
+  name="University of South Florida, College of Marine Science, Centralized Remote Observations Website Data Server"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <service name="all" base="" serviceType="compound">
+    <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <!--service name="wcs" serviceType="WCS" base="/thredds/wcs/" /-->
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <!--service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" /-->
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+
+  <dataset name="USF CMS Ocean Circulation Group Model Products">
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+      <authority>edu.ucar.unidata</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation type="rights">Freely available</documentation>
+      <documentation xlink:href="http://ocgweb.marine.usf.edu/models.html"
+        xlink:title="USF CMS OCG  Model documentation"/>
+      <creator>
+        <name vocabulary="DIF">Dr. Robert Weisberg</name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="weisberg@usf.edu"/>
+      </creator>
+      <creator>
+        <name vocabulary="DIF">Dr. Lianyuan Zheng</name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="lzheng@mail.usf.edu"/>
+      </creator>
+      <creator>
+        <name vocabulary="DIF">Dr. Yong Huang</name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="yhuang@mail.usf.edu"/>
+      </creator>
+      <creator>
+        <name vocabulary="DIF">Jeff Donovan </name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="jdonovan@usf.edu"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">USF CMS Ocean Circulation Group Modeling Projects</name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="weisberg@usf.edu"/>
+      </publisher>
+    </metadata>
+
+    <!--
+  <datasetScan name="USF Ocean Circulation Group West Florida Shelf Daily ROMS Nowcast/Forecast Model Data" ID="testDatasetScan"
+               path="WFS_ROMS_NF_model" location="content/WFS_ROMS_NF_model">
+
+      <metadata inherited="true">
+      <serviceName>all</serviceName>
+
+      </metadata>
+
+      <sort>
+        <lexigraphicByName increasing="false" />
+      </sort>
+
+      <filter>
+        <include wildcard="*.nc"/>
+      </filter>
+
+  </datasetScan>
+-->
+
+    <dataset name="ROMS Nowcast_Forecast">
+      <metadata inherited="true">
+        <serviceName>allServices</serviceName>
+      </metadata>
+
+
+      <featureCollection
+        name="USF Ocean Circulation Group West Florida Shelf Daily ROMS Nowcast_Forecast Model Data"
+        featureType="FMRC" harvest="true" path="WFS_ROMS_NF_model">
+        <metadata inherited="true">
+          <serviceName>allServices</serviceName>
+        </metadata>
+        <collection
+          spec="/DATA/WFS_ROMS_Nowcast_Forecast/USF_WFSROMS_Nowcast_Forecast_Model_#yyyyMMdd#.*\.nc$"
+          olderThan="10 min"/>
+        <update startup="true" rescan="0 0 16 * * ? *" trigger="allow"/>
+        <fmrcConfig regularize="false" datasetTypes="Best"/>
+
+        <protoDataset choice="Penultimate">
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+            <variable name="temp">
+              <attribute name="_FillValue" type="float" value="0.0"/>
+            </variable>
+            <variable name="salt">
+              <attribute name="_FillValue" type="float" value="0.0"/>
+            </variable>
+            <variable name="zeta">
+              <attribute name="_FillValue" type="float" value="0.0"/>
+            </variable>
+          </netcdf>
+        </protoDataset>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <variable name="h">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+          </variable>
+          <variable name="f">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+          </variable>
+          <variable name="pm">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+          </variable>
+          <variable name="pn">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+          </variable>
+          <variable name="angle">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+          </variable>
+          <variable name="mask_rho">
+            <attribute name="coordinates" value="lon_rho lat_rho"/>
+          </variable>
+          <attribute name="Conventions" value="CF-1.0"/>
+        </netcdf>
+      </featureCollection>
+
+    </dataset>
+
+    <!--
+  <datasetScan name="USF Ocean Circulation Group West Florida Shelf Daily ROMS Hindcast Model Data" ID="testDatasetScan"
+               path="WFS_ROMS_Hind_model" location="content/WFS_ROMS_Hind_model">
+
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+      </metadata>
+
+      <sort>
+        <lexigraphicByName increasing="false" />
+      </sort>
+
+      <filter>
+        <include wildcard="*.nc"/>
+      </filter>
+
+  </datasetScan>
+-->
+
+    <!--
+ <dataset name="ROMS Hindcast">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+  </metadata>
+
+
+  <featureCollection name="USF Ocean Circulation Group West Florida Shelf Daily ROMS Hindcast Model Data" featureType="FMRC" harvest="true"
+   path="WFS_ROMS_Hind_model">
+   <metadata inherited="true">
+    <serviceName>allServices</serviceName>
+   </metadata>
+   <collection spec="/DATA/WFS_ROMS_Hindcast/USF_WFSROMS_Hindcast_#yyyyMMdd#.*\.nc$" olderThan="10 min"/>
+   <update startup="true" rescan="0 30 10 * * ? *" trigger="allow"/>
+   <fmrcConfig regularize="false" datasetTypes="Best"/>
+
+<protoDataset choice="Penultimate">
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+     <variable name="temp">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="salt">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </protoDataset>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <variable name="h">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="f">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="pm">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="pn">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="angle">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <variable name="mask_rho">
+     <attribute name="coordinates" value="lon_rho lat_rho"/>
+    </variable>
+    <attribute name="Conventions" value="CF-1.0"/>
+   </netcdf>
+  </featureCollection>
+
+ </dataset>
+-->
+
+    <dataset
+      name="USF Ocean Circulation Group West Florida Shelf Daily FVCOM Nowcast_Forecast Model Data">
+      <metadata inherited="true">
+        <serviceName>allServices</serviceName>
+      </metadata>
+
+
+      <dataset name="FVCOM - Aggregation" ID="FVCOM-Nowcast-Agg" urlPath="FVCOM-Nowcast-Agg.nc">
+        <metadata inherited="true">
+          <serviceName>agg</serviceName>
+        </metadata>
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <attribute name="title" value="USF FVCOM - Nowcast Aggregation"/>
+          <attribute name="summary" value="Nowcast Aggregation for USF FVCOM"/>
+          <attribute name="naming_authority" type="String" value="SECOORA"/>
+          <attribute name="Metadata_Conventions" type="String"
+            value="Unidata Dataset Discovery v1.0"/>
+          <attribute name="standard_name_vocabulary" type="String"
+            value="http://www.cgd.ucar.edu/cms/eaton/cf-metadata/standard_name.html"/>
+          <attribute name="cdm_data_type" value="any"/>
+          <variable name="siglay" shape="siglay node" type="float">
+            <attribute name="long_name" value="Sigma Layers"/>
+            <attribute name="standard_name" value="ocean_sigma/general_coordinate"/>
+            <attribute name="positive" value="up"/>
+            <attribute name="valid_min" type="double" value="-1.0"/>
+            <attribute name="valid_max" type="double" value="0.0"/>
+            <attribute name="formula_terms" value="sigma: siglay eta: zeta depth: h"/>
+          </variable>
+          <variable name="h" shape="node" type="float">
+            <attribute name="long_name" value="Bathymetry"/>
+            <attribute name="standard_name" value="sea_floor_depth_below_geoid"/>
+            <attribute name="units" value="m"/>
+            <attribute name="coordinates" value="lat lon"/>
+            <attribute name="mesh" value="fvcom_mesh"/>
+            <attribute name="location" value="node"/>
+          </variable>
+          <variable name="nv" shape="three nele" type="float">
+            <attribute name="long_name" value="nodes surrounding element"/>
+            <attribute name="cf_role" value="face_node_connnectivity"/>
+            <attribute name="start_index" type="int" value="1"/>
+          </variable>
+          <variable name="zeta" shape="time node" type="float">
+            <attribute name="long_name" value="Water Surface Elevation"/>
+            <attribute name="units" value="meters"/>
+            <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
+            <attribute name="coordinates" value="time lat lon"/>
+            <attribute name="type" value="data"/>
+            <attribute name="missing_value" type="double" value="-999.0"/>
+            <attribute name="field" value="elev, scalar"/>
+            <attribute name="coverage_content_type" value="modelResult"/>
+            <attribute name="mesh" value="fvcom_mesh"/>
+            <attribute name="location" value="node"/>
+          </variable>
+          <variable name="u" shape="time siglay nele" type="float">
+            <attribute name="units" value="meters s-1"/>
+            <attribute name="type" value="data"/>
+            <attribute name="missing_value" type="double" value="-999.0"/>
+            <attribute name="field" value="ua, scalar"/>
+            <attribute name="coverage_content_type" value="modelResult"/>
+            <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+            <attribute name="coordinates" value="time siglay latc lonc"/>
+            <attribute name="mesh" value="fvcom_mesh"/>
+            <attribute name="location" value="face"/>
+          </variable>
+          <variable name="v" shape="time siglay nele" type="float">
+            <attribute name="units" value="meters s-1"/>
+            <attribute name="type" value="data"/>
+            <attribute name="missing_value" type="double" value="-999.0"/>
+            <attribute name="field" value="va, scalar"/>
+            <attribute name="coverage_content_type" value="modelResult"/>
+            <attribute name="standard_name" value="northward_sea_water_velocity"/>
+            <attribute name="coordinates" value="time siglay latc lonc"/>
+            <attribute name="mesh" value="fvcom_mesh"/>
+            <attribute name="location" value="face"/>
+          </variable>
+          <aggregation dimName="time" type="joinExisting" recheckEvery="60 min">
+            <scan location="/DATA/WFS_FVCOM_Nowcast_Forecast" suffix=".nc" subdirs="false"/>
+          </aggregation>
+        </netcdf>
+      </dataset>
+
+
+      <datasetScan name="FVCOM - files" ID="FVCOMDatasetScan" path="WFS_FVCOM_NF_model"
+        location="content/WFS_FVCOM_NF_model">
+
+        <metadata inherited="true">
+          <serviceName>all</serviceName>
+        </metadata>
+
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+
+        <filter>
+          <include wildcard="*.nc"/>
+        </filter>
+
+      </datasetScan>
+
+      <!--
+ <dataset name="FVCOM FMRC test">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+  </metadata>
+
+
+  <featureCollection name="FVCOM FMRC test" featureType="FMRC" harvest="true"
+   path="FVCOM_FMRC_test">
+   <metadata inherited="true">
+    <serviceName>allServices</serviceName>
+   </metadata>
+   <collection spec="/DATA/WFS_FVCOM_Nowcast_Forecast/USF_WFCOM_NF_#yyyyMMdd#.*\.nc$" olderThan="10 min"/>
+   <update startup="true" rescan="0 0 16 * * ? *" trigger="allow"/>
+   <fmrcConfig regularize="false" datasetTypes="Best"/>
+
+<protoDataset choice="Penultimate">
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+     <variable name="zeta">
+      <attribute name="_FillValue" type="float" value="0.0"/>
+     </variable>
+    </netcdf>
+   </protoDataset>
+
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <attribute name="Conventions" value="CF-1.0"/>
+   </netcdf>
+
+
+  </featureCollection>
+
+ </dataset>
+-->
+
+    </dataset>
+
+    <dataset name="SWAN Nowcast_Forecast">
+      <metadata inherited="true">
+        <serviceName>allServices</serviceName>
+      </metadata>
+
+
+      <featureCollection
+        name="USF Ocean Circulation Group West Florida Shelf Daily SWAN Nowcast_Forecast Wave Model Data"
+        featureType="FMRC" harvest="true" path="WFS_SWAN_NF_model">
+        <metadata inherited="true">
+          <serviceName>allServices</serviceName>
+        </metadata>
+        <collection
+          spec="/DATA/WFS_SWAN_Nowcast_Forecast/USF_WaveForecast_SWAN_GOM_#yyyyMMdd#.*\.nc$"
+          olderThan="10 min"/>
+        <update startup="true" rescan="0 0 16 * * ? *" trigger="allow"/>
+        <fmrcConfig regularize="false" datasetTypes="Best"/>
+
+        <protoDataset choice="Penultimate">
+          <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+
+            <variable name="swh">
+              <attribute name="_FillValue" type="float" value="0.0"/>
+            </variable>
+          </netcdf>
+        </protoDataset>
+
+        <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+          <attribute name="Conventions" value="CF-1.0"/>
+        </netcdf>
+
+
+      </featureCollection>
+
+    </dataset>
+
+
+    <!--
+  <datasetScan name="files - USF Ocean Circulation Group West Florida Shelf Daily SWAN Nowcast/Forecast Wave Model Data" ID="testDatasetScan"
+               path="files_WFS_SWAN_NF_model" location="content/WFS_SWAN_NF_model">
+
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+      </metadata>
+
+      <sort>
+        <lexigraphicByName increasing="false" />
+      </sort>
+
+      <filter>
+        <include wildcard="*.nc"/>
+      </filter>
+
+  </datasetScan>
+-->
+
+    <datasetScan name="USF Ocean Circulation Group West Florida Shelf Test Model Data"
+      ID="testDatasetScan" path="WFS_Model_Test" location="content/WFS_Model_Test">
+
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+      </metadata>
+
+      <sort>
+        <lexigraphicByName increasing="false"/>
+      </sort>
+
+      <filter>
+        <include wildcard="*.nc"/>
+      </filter>
+
+    </datasetScan>
+
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+
+      <documentation type="summary">USF OCG Model Products</documentation>
+
+      <geospatialCoverage>
+        <northsouth>
+          <start>24.0</start>
+          <size>7.0</size>
+          <units>degrees_north</units>
+        </northsouth>
+        <eastwest>
+          <start>-91.0</start>
+          <size>11.0</size>
+          <units>degrees_east</units>
+        </eastwest>
+        <updown>
+          <start>0.0</start>
+          <size>0.0</size>
+          <units>km</units>
+        </updown>
+      </geospatialCoverage>
+
+    </metadata>
+
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+
+    <sort>
+      <lexigraphicByName increasing="true"/>
+    </sort>
+
+    <addLatest>
+      <simpleLatest name="latest.xml" top="true" serviceName="latest"/>
+    </addLatest>
+
+  </dataset>
+
+  <datasetScan name="testData" ID="testDatasetScan" path="test_data" location="content/testdata">
+
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+    </metadata>
+
+    <sort>
+      <lexigraphicByName increasing="false"/>
+    </sort>
+
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+
+  </datasetScan>
+
+
+  <dataset name="USF HF Radar">
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+      <authority>edu.ucar.unidata</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation type="rights">Freely available</documentation>
+      <documentation xlink:href="http://ocgweb.marine.usf.edu/hfradar/hfr_index.html"
+        xlink:title="USF HF Radar documentation"/>
+      <creator>
+        <name vocabulary="DIF">Dr. Robert Weisberg</name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="weisberg@usf.edu"/>
+      </creator>
+      <creator>
+        <name vocabulary="DIF">Jeff Donovan </name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="jdonovan@usf.edu"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">USF HF Radar</name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="weisberg@usf.edu"/>
+      </publisher>
+    </metadata>
+
+
+    <dataset name="tampa_codar" ID="hfradar_tampa_codar" urlPath="tampa_codar.nc">
+      <serviceName>all</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting" recheckEvery="20 min">
+          <scan location="/home/secoora/radar/tampa/netcdf/"
+            dateFormatMark="seacoos.wfs.wera_hf_radar_#yyyy_MM_dd_HH_mm" suffix="*wfs*.nc"
+            subdirs="false"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+
+    <datasetScan name="tampa_codar_files" ID="tampa_codar_files" path="tampa_codar_files"
+      location="/home/secoora/radar/tampa/netcdf">
+
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+      </metadata>
+
+      <sort>
+        <lexigraphicByName increasing="false"/>
+      </sort>
+
+      <filter>
+        <include wildcard="*.nc"/>
+      </filter>
+
+    </datasetScan>
+
+    <datasetScan name="tampa_codar_shapefiles" ID="tampaCodarShapefiles"
+      path="tampa_codar_shapefiles" location="/home/secoora/radar/shapefiles">
+
+      <metadata inherited="true">
+        <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+      </metadata>
+
+      <sort>
+        <lexigraphicByName increasing="false"/>
+      </sort>
+
+      <filter>
+        <include wildcard="USF_*.zip"/>
+      </filter>
+
+    </datasetScan>
+
+
+
+    <dataset name="tampa_wera" ID="hfradar_tampa_wera" urlPath="tampa_wera.nc">
+      <serviceName>all</serviceName>
+      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+        <aggregation dimName="time" type="joinExisting" recheckEvery="20 min">
+          <scan location="/home/secoora/radar/usf/netcdf/"
+            dateFormatMark="seacoos.usf.wera_hf_radar_#yyyy_MM_dd_HH_mm" suffix="*usf*.nc"
+            subdirs="false"/>
+        </aggregation>
+      </netcdf>
+    </dataset>
+
+    <datasetScan name="tampa_wera_files" ID="tampa_wera_files" path="tampa_wera_files"
+      location="/home/secoora/radar/usf/netcdf">
+
+      <metadata inherited="true">
+        <serviceName>all</serviceName>
+      </metadata>
+
+      <sort>
+        <lexigraphicByName increasing="false"/>
+      </sort>
+
+      <filter>
+        <include wildcard="*.nc"/>
+      </filter>
+
+    </datasetScan>
+
+
+    <datasetScan name="tampa_wera_shapefiles" ID="tampaWeraShapefiles" path="tampa_wera_shapefiles"
+      location="/home/secoora/radar/shapefiles">
+
+      <metadata inherited="true">
+        <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+      </metadata>
+
+      <sort>
+        <lexigraphicByName increasing="false"/>
+      </sort>
+
+      <filter>
+        <include wildcard="USFWERA_*.zip"/>
+      </filter>
+
+    </datasetScan>
+
+
+
+    <datasetScan name="kml_files" ID="kmlFiles" path="kml_files" location="/home/secoora/radar/kml">
+
+      <metadata inherited="true">
+        <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+      </metadata>
+
+      <sort>
+        <lexigraphicByName increasing="false"/>
+      </sort>
+
+      <filter>
+        <include wildcard="*.kmz"/>
+      </filter>
+
+    </datasetScan>
+
+  </dataset>
+
+</catalog>
