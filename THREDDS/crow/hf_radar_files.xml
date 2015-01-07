@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.4.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="HF Radar Files">
+
+  <service name="all" base="" serviceType="compound">
+    <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+
+  <datasetScan name="tampa_codar_files" ID="tampa_codar_files" path="tampa_codar_files"
+    location="/home/secoora/radar/tampa/netcdf">
+
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+      <authority>edu.ucar.unidata</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation type="rights">Freely available</documentation>
+      <documentation xlink:href="http://ocgweb.marine.usf.edu/hfradar/hfr_index.html"
+        xlink:title="USF HF Radar documentation"/>
+      <creator>
+        <name vocabulary="DIF">Dr. Robert Weisberg</name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="weisberg@usf.edu"/>
+      </creator>
+      <creator>
+        <name vocabulary="DIF">Jeff Donovan </name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="jdonovan@usf.edu"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">USF HF Radar</name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="weisberg@usf.edu"/>
+      </publisher>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="false"/>
+    </sort>
+    <addDatasetSize/>
+  </datasetScan>
+
+  <datasetScan name="tampa_codar_shapefiles" ID="tampaCodarShapefiles" path="tampa_codar_shapefiles"
+    location="/home/secoora/radar/shapefiles">
+
+    <metadata inherited="true">
+      <serviceName>http</serviceName>
+    </metadata>
+    <filter>
+      <include wildcard="USF_*.zip"/>
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="false"/>
+    </sort>
+    <addDatasetSize/>
+  </datasetScan>
+
+  <datasetScan name="tampa_wera_files" ID="tampa_wera_files" path="tampa_wera_files"
+    location="/home/secoora/radar/usf/netcdf">
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc"/>
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="false"/>
+    </sort>
+    <addDatasetSize/>
+  </datasetScan>
+
+
+  <datasetScan name="tampa_wera_shapefiles" ID="tampaWeraShapefiles" path="tampa_wera_shapefiles"
+    location="/home/secoora/radar/shapefiles">
+    <metadata inherited="true">
+      <serviceName>http</serviceName>
+    </metadata>
+    <filter>
+      <include wildcard="USFWERA_*.zip"/>
+    </filter>
+
+    <sort>
+      <lexigraphicByName increasing="false"/>
+    </sort>
+    <addDatasetSize/>
+  </datasetScan>
+
+  <datasetScan name="kml_files" ID="kmlFiles" path="kml_files" location="/home/secoora/radar/kml">
+    <metadata inherited="true">
+      <serviceName>http</serviceName>
+    </metadata>
+    <filter>
+      <include wildcard="*.kmz"/>
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="false"/>
+    </sort>
+  </datasetScan>
+</catalog>

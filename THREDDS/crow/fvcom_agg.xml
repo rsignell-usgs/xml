@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.4.xsd"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink" name="fvcom_agg">
+
+  <service name="all" base="" serviceType="compound">
+    <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+
+  <dataset name="FVCOM - Aggregation" ID="FVCOM-Nowcast-Agg" urlPath="FVCOM-Nowcast-Agg.nc">
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+      <authority>edu.ucar.unidata</authority>
+      <dataType>Grid</dataType>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation type="rights">Freely available</documentation>
+      <documentation xlink:href="http://ocgweb.marine.usf.edu/models.html"
+        xlink:title="USF CMS OCG  Model documentation"/>
+      <creator>
+        <name vocabulary="DIF">Dr. Robert Weisberg</name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="weisberg@usf.edu"/>
+      </creator>
+      <creator>
+        <name vocabulary="DIF">Dr. Lianyuan Zheng</name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="lzheng@mail.usf.edu"/>
+      </creator>
+      <creator>
+        <name vocabulary="DIF">Dr. Yong Huang</name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="yhuang@mail.usf.edu"/>
+      </creator>
+      <creator>
+        <name vocabulary="DIF">Jeff Donovan </name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="jdonovan@usf.edu"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">USF CMS Ocean Circulation Group Modeling Projects</name>
+        <contact url="http://ocgweb.marine.usf.edu/" email="weisberg@usf.edu"/>
+      </publisher>
+    </metadata>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <attribute name="title" value="USF FVCOM - Nowcast Aggregation"/>
+      <attribute name="summary" value="Nowcast Aggregation for USF FVCOM"/>
+      <attribute name="naming_authority" type="String" value="SECOORA"/>
+      <attribute name="Metadata_Conventions" type="String" value="Unidata Dataset Discovery v1.0"/>
+      <attribute name="standard_name_vocabulary" type="String"
+        value="http://www.cgd.ucar.edu/cms/eaton/cf-metadata/standard_name.html"/>
+      <attribute name="cdm_data_type" value="any"/>
+      <attribute name="Conventions" value="UGRID-0.9.0"/>
+
+      <variable name="siglay" shape="siglay node">
+        <attribute name="standard_name" value="ocean_sigma_coordinate"/>
+        <attribute name="positive" value="up"/>
+        <attribute name="formula_terms" value="sigma: siglay eta: zeta depth: h"/>
+      </variable>
+
+      <variable name="time">
+        <attribute name="standard_name" value="time"/>
+      </variable>
+
+      <variable name="nv">
+        <attribute name="start_index" type="int" value="1"/>
+      </variable>
+      <variable name="fvcom_mesh" shape="" type="int">
+        <attribute name="cf_role" value="mesh_topology"/>
+        <attribute name="topology_dimension" type="int" value="2"/>
+        <attribute name="node_coordinates" value="lon lat"/>
+        <attribute name="face_coordinates" value="lonc latc"/>
+        <attribute name="face_node_connectivity" value="nv"/>
+      </variable>
+      <variable name="zeta" shape="time node">
+        <attribute name="coordinates" value="time lat lon"/>
+        <attribute name="mesh" value="fvcom_mesh"/>
+        <attribute name="location" value="node"/>
+        <remove type="attribute" name="positive"/>
+        <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="u" shape="time siglay nele">
+        <attribute name="standard_name" value="eastward_sea_water_velocity"/>
+        <attribute name="coordinates" value="time siglay latc lonc"/>
+        <attribute name="mesh" value="fvcom_mesh"/>
+        <attribute name="location" value="face"/>
+        <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="v" shape="time siglay nele">
+        <attribute name="standard_name" value="northward_sea_water_velocity"/>
+        <attribute name="coordinates" value="time siglay latc lonc"/>
+        <attribute name="mesh" value="fvcom_mesh"/>
+        <attribute name="location" value="face"/>
+        <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="salinity" shape="time siglay node">
+        <attribute name="coordinates" value="time siglay lat lon"/>
+        <attribute name="mesh" value="fvcom_mesh"/>
+        <attribute name="units" value="0.001"/>
+        <attribute name="location" value="node"/>
+        <remove type="attribute" name="grid"/>
+      </variable>
+      <variable name="temp" shape="time siglay node">
+        <attribute name="standard_name" value="sea_water_potential_temperature"/>
+        <attribute name="coordinates" value="time siglay lat lon"/>
+        <attribute name="mesh" value="fvcom_mesh"/>
+        <attribute name="location" value="node"/>
+        <remove type="attribute" name="grid"/>
+      </variable>
+      <aggregation dimName="time" type="joinExisting" recheckEvery="60 min">
+        <scan location="/DATA/WFS_FVCOM_Nowcast_Forecast" suffix=".nc" subdirs="false"/>
+      </aggregation>
+    </netcdf>
+  </dataset>
+
+
+
+</catalog>
