@@ -13,101 +13,6 @@
 
   <datasetRoot path="FVCOM" location="/http/www/CODFISH/Data/FVCOM/" cache="false"/>
 
-  <dataset name="NECOFS GOM2 Forecast" ID="gom2_nocache"
-    urlPath="FVCOM/NECOFS/Forecasts/NECOFS_GOM2_FORECAST.nc" dataType="Grid">
-    <serviceName>allServices</serviceName>
-    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
-      location="/http/www/CODFISH/Data/FVCOM/NECOFS/Forecasts/NECOFS_GOM2_FORECAST.nc">
-      <attribute name="cdm_data_type" value="any"/>
-      <attribute name="title" value="NECOFS GOM2 (FVCOM) - Northeast US - Latest Forecast"/>
-      <attribute name="summary" value="Latest forecast from the FVCOM Northeast Coastal Ocean Forecast System using an older, lower-resolution GOM2 mesh (GOM3 is the newer mesh)"/>
-      <variable name="fvcom_mesh" shape="" type="int">
-        <attribute name="cf_role" value="mesh_topology"/>
-        <attribute name="topology_dimension" type="int" value="2"/>
-        <attribute name="node_coordinates" value="lon lat"/>
-        <attribute name="face_coordinates" value="lonc latc"/>
-        <attribute name="face_node_connectivity" value="nv"/>
-      </variable>
-      <variable name="siglay" shape="siglay node" type="float">
-        <attribute name="long_name" value="Sigma Layers"/>
-        <attribute name="standard_name" value="ocean_sigma/general_coordinate"/>
-        <attribute name="positive" value="up"/>
-        <attribute name="valid_min" type="double" value="-1.0"/>
-        <attribute name="valid_max" type="double" value="0.0"/>
-        <attribute name="formula_terms" value="sigma: siglay eta: zeta depth: h"/>
-      </variable>
-      <variable name="h" shape="node" type="float">
-        <attribute name="long_name" value="Bathymetry"/>
-        <attribute name="standard_name" value="sea_floor_depth_below_geoid"/>
-        <attribute name="units" value="m"/>
-        <attribute name="coordinates" value="lat lon"/>
-         <attribute name="mesh" value="fvcom_mesh"/>
-        <attribute name="location" value="node"/>
-      </variable>
-      <variable name="nv" >
-        <attribute name="long_name" value="nodes surrounding element"/>
-        <attribute name="cf_role" value="face_node_connnectivity"/>
-        <attribute name="start_index" type="int" value="1"/>
-      </variable>
-      <variable name="zeta" shape="time node" type="float">
-        <attribute name="long_name" value="Water Surface Elevation"/>
-        <attribute name="units" value="meters"/>
-        <attribute name="standard_name" value="sea_surface_height_above_geoid"/>
-        <attribute name="coordinates" value="time lat lon"/>
-        <attribute name="type" value="data"/>
-        <attribute name="missing_value" type="double" value="-999.0"/>
-        <attribute name="field" value="elev, scalar"/>
-        <attribute name="coverage_content_type" value="modelResult"/>
-        <attribute name="mesh" value="fvcom_mesh"/>
-        <attribute name="location" value="node"/>
-      </variable>
-      <variable name="temp" shape="time siglay node" type="float">
-        <attribute name="standard_name" value="sea_water_potential_temperature"/>
-        <attribute name="coordinates" value="time siglay lat lon"/>
-        <attribute name="coverage_content_type" value="modelResult"/>
-        <attribute name="mesh" value="fvcom_mesh"/>
-        <attribute name="location" value="node"/>
-      </variable>
-      <variable name="salinity" shape="time siglay node" type="float">
-        <attribute name="standard_name" value="sea_water_salinity"/>
-        <attribute name="units" value="1"/>
-        <attribute name="coordinates" value="time siglay lat lon"/>
-        <attribute name="coverage_content_type" value="modelResult"/>
-        <attribute name="mesh" value="fvcom_mesh"/>
-        <attribute name="location" value="node"/>
-      </variable>
-      <variable name="u" shape="time siglay nele" type="float">
-        <attribute name="units" value="meters s-1"/>
-        <attribute name="type" value="data"/>
-        <attribute name="missing_value" type="double" value="-999.0"/>
-        <attribute name="field" value="ua, scalar"/>
-        <attribute name="coverage_content_type" value="modelResult"/>
-        <attribute name="standard_name" value="eastward_sea_water_velocity"/>
-        <attribute name="coordinates" value="time siglay latc lonc"/>
-        <attribute name="mesh" value="fvcom_mesh"/>
-        <attribute name="location" value="face"/>
-      </variable>
-      <variable name="v" shape="time siglay nele" type="float">
-        <attribute name="units" value="meters s-1"/>
-        <attribute name="type" value="data"/>
-        <attribute name="missing_value" type="double" value="-999.0"/>
-        <attribute name="field" value="va, scalar"/>
-        <attribute name="coverage_content_type" value="modelResult"/>
-        <attribute name="standard_name" value="northward_sea_water_velocity"/>
-        <attribute name="coordinates" value="time siglay latc lonc"/>
-        <attribute name="mesh" value="fvcom_mesh"/>
-        <attribute name="location" value="face"/>
-      </variable>
-      <variable name="ww" shape="time siglay nele" type="float">
-        <attribute name="units" value="meters s-1"/>
-        <attribute name="coverage_content_type" value="modelResult"/>
-        <attribute name="standard_name" value="upward_sea_water_velocity"/>
-        <attribute name="coordinates" value="time siglay latc lonc"/>
-        <attribute name="mesh" value="fvcom_mesh"/>
-        <attribute name="location" value="face"/>
-      </variable>
-    </netcdf>
-  </dataset>
 
   <dataset name="NECOFS GOM3 Forecast" ID="gom3_nocache" 
     urlPath="FVCOM/NECOFS/Forecasts/NECOFS_GOM3_FORECAST.nc" dataType="Grid">
@@ -117,6 +22,8 @@
       <attribute name="cdm_data_type" value="any"/>
       <attribute name="title" value="NECOFS GOM3 (FVCOM) - Northeast US - Latest Forecast"/>
       <attribute name="summary" value="Latest forecast from the FVCOM Northeast Coastal Ocean Forecast System using an newer, higher-resolution GOM3 mesh (GOM2 was the preceding mesh)"/>
+      <remove type="variable" name="siglev"/>
+      <remove type="dimension" name="siglev"/>
       <variable name="fvcom_mesh" shape="" type="int">
         <attribute name="cf_role" value="mesh_topology"/>
         <attribute name="topology_dimension" type="int" value="2"/>
@@ -126,7 +33,7 @@
       </variable>
       <variable name="siglay" shape="siglay node" type="float">
         <attribute name="long_name" value="Sigma Layers"/>
-        <attribute name="standard_name" value="ocean_sigma/general_coordinate"/>
+        <attribute name="standard_name" value="ocean_sigma_coordinate"/>
         <attribute name="positive" value="up"/>
         <attribute name="valid_min" type="double" value="-1.0"/>
         <attribute name="valid_max" type="double" value="0.0"/>
@@ -139,6 +46,7 @@
         <attribute name="coordinates" value="lat lon"/>
         <attribute name="mesh" value="fvcom_mesh"/>
         <attribute name="location" value="node"/>
+        <remove type="attribute" name="positive"/>
       </variable>
       <variable name="nv"  >
         <attribute name="long_name" value="nodes surrounding element"/>
@@ -157,6 +65,7 @@
         <attribute name="mesh" value="fvcom_mesh"/>
         <attribute name="location" value="node"/>
         <remove type="attribute" name="grid"/>
+        <remove type="attribute" name="positive"/>
       </variable>
       <variable name="temp" shape="time siglay node" type="float">
         <attribute name="standard_name" value="sea_water_potential_temperature"/>
@@ -353,7 +262,8 @@
     <attribute name="cdm_data_type" value="any"/>
     <attribute name="title" value="NECOFS Massachusetts (FVCOM) - Massachusetts Coastal - Latest Forecast"/>
     <attribute name="summary" value="Latest forecast from the FVCOM Northeast Coastal Ocean Forecast System using high-resolution mesh covering the Massachusetts coastal region"/>
-    
+    <remove type="variable" name="siglev"/>
+    <remove type="dimension" name="siglev"/>    
     <variable name="fvcom_mesh" shape="" type="int">
       <attribute name="cf_role" value="mesh_topology"/>
       <attribute name="topology_dimension" type="int" value="2"/>
@@ -363,7 +273,7 @@
     </variable>
     <variable name="siglay" shape="siglay node" type="float">
       <attribute name="long_name" value="Sigma Layers"/>
-      <attribute name="standard_name" value="ocean_sigma/general_coordinate"/>
+      <attribute name="standard_name" value="ocean_sigma_coordinate"/>
       <attribute name="positive" value="up"/>
       <attribute name="valid_min" type="double" value="-1.0"/>
       <attribute name="valid_max" type="double" value="0.0"/>
@@ -376,6 +286,7 @@
       <attribute name="coordinates" value="lat lon"/>
       <attribute name="mesh" value="fvcom_mesh"/>
       <attribute name="location" value="node"/>
+      <remove type="attribute" name="positive"/>
     </variable>
     <variable name="nv" >
       <attribute name="long_name" value="nodes surrounding element"/>
@@ -394,6 +305,7 @@
       <attribute name="mesh" value="fvcom_mesh"/>
       <attribute name="location" value="node"/>
       <remove type="attribute" name="grid"/>
+      <remove type="attribute" name="positive"/>
     </variable>
     <variable name="temp" shape="time siglay node" type="float">
       <attribute name="standard_name" value="sea_water_potential_temperature"/>

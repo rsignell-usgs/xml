@@ -543,5 +543,84 @@
     </aggregation>
    </netcdf>
   </dataset>
+  <dataset name="NECOFS GOM3 Wave Forecast" ID="fvcom/archives/necofs_gom3_wave"  urlPath="fvcom/archives/necofs_gom3_wave">
+   <serviceName>allServices</serviceName>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+    <attribute name="cdm_data_type" value="any"/>
+    <attribute name="title" value="NECOFS GOM3 Wave - Northeast US - Latest Forecast"/>
+    <attribute name="summary" value="Latest forecast from the FVCOM Northeast Coastal Ocean Forecast System using an unstructured version of the SWAN wave model on the GOM3 mesh"/>    
+    <variable name="fvcom_mesh" shape="" type="int">
+     <attribute name="cf_role" value="mesh_topology"/>
+     <attribute name="topology_dimension" type="int" value="2"/>
+     <attribute name="node_coordinates" value="lon lat"/>
+     <attribute name="face_coordinates" value="lonc latc"/>
+     <attribute name="face_node_connectivity" value="nv"/>
+    </variable>
+    <remove type="variable" name="siglay"/>
+    <remove type="variable" name="siglev"/>
+    <variable name="h" shape="node" type="float">
+     <attribute name="long_name" value="Bathymetry"/>
+     <attribute name="standard_name" value="sea_floor_depth_below_geoid"/>
+     <attribute name="units" value="m"/>
+     <attribute name="coordinates" value="lat lon"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+    </variable>
+    <variable name="nv" >
+     <attribute name="long_name" value="nodes surrounding element"/>
+     <attribute name="cf_role" value="face_node_connnectivity"/>
+     <attribute name="start_index" type="int" value="1"/>
+    </variable>
+    <variable name="uwind_speed" shape="time nele" type="float">
+     <attribute name="coverage_content_type" value="modelResult" />
+     <attribute name="standard_name" value="eastward_wind" />
+     <attribute name="coordinates" value="time latc lonc" />
+     <attribute name="mesh" value="fvcom_mesh" />
+     <attribute name="location" value="face" />
+    </variable>
+    <variable name="vwind_speed" shape="time nele" type="float">
+     <attribute name="coverage_content_type" value="modelResult" />
+     <attribute name="standard_name" value="northward_wind" />
+     <attribute name="coordinates" value="time latc lonc" />
+     <attribute name="mesh" value="fvcom_mesh" />
+     <attribute name="location" value="face" />
+    </variable>
+    <variable name="hs" shape="time node" type="float">
+     <attribute name="standard_name" value="sea_surface_wave_significant_height"/>
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="wdir" shape="time node" type="float">
+     <attribute name="standard_name" value="sea_surface_wave_from_direction"/>
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="tpeak" shape="time node" type="float">
+     <attribute name="standard_name" value="sea_surface_wave_period_at_variance_spectral_density_maximum"/>
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <variable name="wlen" shape="time node" type="float">
+     <attribute name="coordinates" value="time lat lon"/>
+     <attribute name="coverage_content_type" value="modelResult"/>
+     <attribute name="mesh" value="fvcom_mesh"/>
+     <attribute name="location" value="node"/>
+     <remove type="attribute" name="grid"/>
+    </variable>
+    <aggregation dimName="time" type="joinExisting" recheckEvery="1440min">
+     <scan location="/http/www/CODFISH/Data/FVCOM/NECOFS/Archive/gom3_wave_output" regExp=".*gom3v7.*\.nc$"
+      olderThan="30min" subdirs="true"/>
+    </aggregation>
+   </netcdf>
+  </dataset>
  </dataset>
 </catalog>
