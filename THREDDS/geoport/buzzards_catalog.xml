@@ -1,14 +1,13 @@
 <catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
          xmlns:xlink="http://www.w3.org/1999/xlink"
          name="OPeNDAP Data Server" version="1.0.1">
-
   <service name="gridServices" serviceType="Compound" base="">
     <service name="opendap" serviceType="OpenDAP" base="/thredds/dodsC/"/>
     <service name="fileserver" serviceType="HTTPServer" base="/thredds/fileServer/"/>
-  </service>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
   <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
   <service name="iso" serviceType="ISO" base="/thredds/iso/" />
-
+  </service>
 <dataset name="Buzzards Bay Runs" ID="BB/ROMS">
   <metadata inherited="true">
 
