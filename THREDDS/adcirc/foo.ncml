@@ -1,0 +1,31 @@
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+  <attribute name="title" type="string" value="ASGS NCFS Sandy Advisory 31"/>
+  <attribute name="Conventions" value="CF-1.6, UGRID-0.9" />
+  <attribute name="id" value="UND_ADCIRC.ASGS.NCFS.Sandy.31" />
+  <attribute name="cdm_data_type" value="ugrid" />
+  <attribute name="summary" value="The ADCIRC Surge Guidance System Forecast for Hurricane Sandy (2012) Advisory 31 on the nc6b mesh." />
+  
+  <variable name="adcirc_mesh" shape="mesh" type="int">
+    <attribute name="long_name" value="mesh_topology" />
+    <attribute name="node_coordinates" value="x y" />
+    <attribute name="face_node_connectivity" value="element" />
+    <attribute name="cf_role" value="mesh_topology" />
+    <attribute name="topology_dimension" type="int" value="2" />
+  </variable>
+    <variable name="element" >
+      <attribute name="long_name" value="element" />
+      <attribute name="start_index" type="int" value="1" />
+      <attribute name="units" value="1" />
+      <attribute name="cf_role" value="face_node_connectivity" />
+    </variable>
+
+<!--  Brian: Try this out:
+  <aggregation type="union">
+    <scan location="." regExp=".*\.nc$" subdirs="false"/>        
+  </aggregation>
+-->
+  <aggregation type="union">    
+    <netcdf location="http://opendap.renci.org:1935/thredds/dodsC/ASGS/sandy/31/nc6b/blueridge.renci.org/ncfs/nhcConsensus/fort.63.nc"/>
+    <netcdf location="http://opendap.renci.org:1935/thredds/dodsC/ASGS/sandy/31/nc6b/blueridge.renci.org/ncfs/nhcConsensus/swan_TPS.63.nc"/>
+  </aggregation> 
+</netcdf>

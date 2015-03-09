@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" location="http://comt.sura.org/thredds/dodsC/data/comt_1_archive/inundation_tropical/UND_ADCIRC/Hurricane_Ike_2D_final_run_with_waves">
+  <dimension name="time" length="1728" isUnlimited="true" />
+  <dimension name="max_nvdll" length="77" />
+  <dimension name="max_nvell" length="9200" />
+  <dimension name="mesh" length="1" />
+  <dimension name="nbou" length="15" />
+  <dimension name="nele" length="826866" />
+  <dimension name="node" length="417642" />
+  <dimension name="nope" length="2" />
+  <dimension name="nvertex" length="3" />
+  <attribute name="model" value="ADCIRC" />
+  <attribute name="version" value="51.03" />
+  <attribute name="grid_type" value="Triangular" />
+  <attribute name="description" value="TropUL_SURA_Ike_Tides_Winds       ! 32 CHARACTER ALPHANUMERIC RUN DESCRIPTION" />
+  <attribute name="agrid" value="grid" />
+  <attribute name="title" value="Inundation Tropical : UND : ADCIRC : Hurricane Ike 2D final run with waves" />
+  <attribute name="institution" value="University of Notre Dame" />
+  <attribute name="source" value="ADCIRC on ZAS" />
+  <attribute name="history" value="Version 1" />
+  <attribute name="references" value="None" />
+  <attribute name="comments" value="None" />
+  <attribute name="host" value="SURA" />
+  <attribute name="convention" value="None" />
+  <attribute name="contact" value="Rick Luettich, UNC" />
+  <attribute name="creation_date" value="2013-01-26 11:04:58 -05:00" />
+  <attribute name="modification_date" value="2013-01-26 11:09:15 -05:00" />
+  <attribute name="fort.15" value="==== Input File Parameters (below) ====" />
+  <attribute name="dt" type="double" value="4." />
+  <attribute name="ihot" type="int" value="68" />
+  <attribute name="ics" type="int" value="2" />
+  <attribute name="nolibf" type="int" value="1" />
+  <attribute name="nolifa" type="int" value="2" />
+  <attribute name="nolica" type="int" value="1" />
+  <attribute name="nolicat" type="int" value="1" />
+  <attribute name="nwp" type="int" value="8" />
+  <attribute name="ncor" type="int" value="1" />
+  <attribute name="ntip" type="int" value="1" />
+  <attribute name="nws" type="int" value="-12" />
+  <attribute name="nramp" type="int" value="2" />
+  <attribute name="tau0" type="double" value="-3." />
+  <attribute name="statim" type="double" value="0." />
+  <attribute name="reftim" type="double" value="0." />
+  <attribute name="rnday" type="double" value="48." />
+  <attribute name="dramp" type="double" value="12." />
+  <attribute name="a00" type="double" value="0." />
+  <attribute name="b00" type="double" value="1." />
+  <attribute name="c00" type="double" value="0." />
+  <attribute name="h0" type="double" value="0.1" />
+  <attribute name="slam0" type="double" value="265.5" />
+  <attribute name="sfea0" type="double" value="29." />
+  <attribute name="cf" type="double" value="0." />
+  <attribute name="eslm" type="double" value="50." />
+  <attribute name="cori" type="double" value="0." />
+  <attribute name="ntif" type="int" value="8" />
+  <attribute name="nbfr" type="int" value="8" />
+  <attribute name="Conventions" value="CF-1.6, UGRID-0.9" />
+  <attribute name="id" value="inundation_tropical.UND_ADCIRC.Hurricane_Ike_2D_final_run_with_waves" />
+  <attribute name="cdm_data_type" value="ugrid" />
+  <attribute name="summary" value="A 2D hindcast of Hurricane Ike (2008) using SWAN+ADCIRC on the ULLR mesh (includes waves)." />
+  <attribute name="ncmlFile" value="/data/comt_1_archive/inundation_tropical/UND_ADCIRC/Hurricane_Ike_2D_final_run_with_waves/00_dir.ncml" />
+  <attribute name="_DODS_Unlimited_Dimension" value="time" />
+  <variable name="time" shape="time" type="double">
+    <attribute name="long_name" value="model time" />
+    <attribute name="standard_name" value="time" />
+    <attribute name="units" value="seconds since 2008-07-31 12:00:00" />
+    <attribute name="base_date" value="7/31/2008 12:00:00" />
+  </variable>
+  <variable name="x" shape="node" type="double">
+    <attribute name="long_name" value="longitude" />
+    <attribute name="standard_name" value="longitude" />
+    <attribute name="units" value="degrees_east" />
+    <attribute name="positive" value="east" />
+  </variable>
+  <variable name="y" shape="node" type="double">
+    <attribute name="long_name" value="latitude" />
+    <attribute name="standard_name" value="latitude" />
+    <attribute name="units" value="degrees_north" />
+    <attribute name="positive" value="north" />
+  </variable>
+  <variable name="element" shape="nele nvertex" type="int">
+    <attribute name="long_name" value="element" />
+    <attribute name="start_index" type="int" value="1" />
+    <attribute name="units" value="nondimensional" />
+    <attribute name="cf_role" value="face_node_connectivity" />
+  </variable>
+  <variable name="adcirc_mesh" shape="mesh" type="int">
+    <attribute name="long_name" value="mesh_topology" />
+    <attribute name="node_coordinates" value="x y" />
+    <attribute name="face_node_connectivity" value="element" />
+    <attribute name="cf_role" value="mesh_topology" />
+    <attribute name="topology_dimension" type="int" value="2" />
+  </variable>
+  <variable name="neta" type="int">
+    <attribute name="long_name" value="total number of elevation specified boundary nodes" />
+    <attribute name="units" value="nondimensional" />
+  </variable>
+  <variable name="nvdll" shape="nope" type="int">
+    <attribute name="long_name" value="number of nodes in each elevation specified boundary segment" />
+    <attribute name="units" value="nondimensional" />
+  </variable>
+  <variable name="max_nvdll" type="int" />
+  <variable name="ibtypee" shape="nope" type="int">
+    <attribute name="long_name" value="elevation boundary type" />
+    <attribute name="units" value="nondimensional" />
+  </variable>
+  <variable name="nbdv" shape="max_nvdll nope" type="int">
+    <attribute name="long_name" value="node numbers on each elevation specified boundary segment" />
+    <attribute name="units" value="nondimensional" />
+  </variable>
+  <variable name="nvel" type="int">
+    <attribute name="long_name" value="total number of normal flow specified boundary nodes including both the front and back nodes on internal barrier boundaries" />
+    <attribute name="units" value="nondimensional" />
+  </variable>
+  <variable name="nvell" shape="nbou" type="int">
+    <attribute name="long_name" value="number of nodes in each normal flow specified boundary segment" />
+    <attribute name="units" value="nondimensional" />
+  </variable>
+  <variable name="max_nvell" type="int" />
+  <variable name="ibtype" shape="nbou" type="int">
+    <attribute name="long_name" value="type of normal flow (discharge) boundary" />
+    <attribute name="units" value="nondimensional" />
+  </variable>
+  <variable name="nbvv" shape="max_nvell nbou" type="int">
+    <attribute name="long_name" value="node numbers on normal flow boundary segment" />
+    <attribute name="units" value="nondimensional" />
+  </variable>
+  <variable name="depth" shape="node" type="double">
+    <attribute name="long_name" value="distance  below geoid" />
+    <attribute name="standard_name" value="depth below geoid" />
+    <attribute name="coordinates" value="y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+    <attribute name="units" value="m" />
+  </variable>
+  <variable name="zeta" shape="time node" type="double">
+    <attribute name="long_name" value="water surface elevation above geoid" />
+    <attribute name="standard_name" value="sea_surface_height_above_geoid" />
+    <attribute name="coordinates" value="time y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+  </variable>
+  <variable name="u-vel" shape="time node" type="double">
+    <attribute name="long_name" value="water column vertically averaged east/west velocity" />
+    <attribute name="standard_name" value="eastward_sea_water_velocity" />
+    <attribute name="positive" value="east" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="dry_Value" type="double" value="-99999." />
+    <attribute name="coordinates" value="time y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="v-vel" shape="time node" type="double">
+    <attribute name="long_name" value="water column vertically averaged north/south velocity" />
+    <attribute name="standard_name" value="northward_sea_water_velocity" />
+    <attribute name="positive" value="north" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="dry_Value" type="double" value="-99999." />
+    <attribute name="coordinates" value="time y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="pressure" shape="time node" type="double">
+    <attribute name="long_name" value="air pressure at sea level" />
+    <attribute name="standard_name" value="air_pressure_at_sea_level" />
+    <attribute name="units" value="meters of water" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="time y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="windx" shape="time node" type="double">
+    <attribute name="long_name" value="e/w wind velocity" />
+    <attribute name="standard_name" value="eastward_wind" />
+    <attribute name="positive" value="east" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="time y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="windy" shape="time node" type="double">
+    <attribute name="long_name" value="n/s wind velocity" />
+    <attribute name="standard_name" value="northward_wind" />
+    <attribute name="positive" value="north" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="time y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="zeta_max" shape="node" type="double">
+    <attribute name="long_name" value="maximum water surface elevationabove geoid" />
+    <attribute name="standard_name" value="sea_surface_height_above_geoid" />
+    <attribute name="coordinates" value="y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="cell_methods" value="time: maximum" />
+  </variable>
+  <variable name="radstress_max" shape="node" type="double">
+    <attribute name="long_name" value="maximum radiation stress gradient" />
+    <attribute name="standard_name" value="radiation_stress" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="location" value="node" />
+    <attribute name="coordinates" value="y x" />
+    <attribute name="mesh" value="adcirc_mesh" />
+    <attribute name="cell_methods" value="time: maximum" />
+  </variable>
+  <variable name="vel_max" shape="node" type="double">
+    <attribute name="long_name" value="maximum water column vertically averaged velocity" />
+    <attribute name="standard_name" value="sea_water_speed" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="dry_Value" type="double" value="-99999." />
+    <attribute name="coordinates" value="y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+    <attribute name="cell_methods" value="time: maximum" />
+  </variable>
+  <variable name="wind_max" shape="node" type="double">
+    <attribute name="long_name" value="maximum wind velocity" />
+    <attribute name="standard_name" value="wind_speed" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+    <attribute name="cell_methods" value="time: maximum" />
+  </variable>
+  <variable name="pressure_min" shape="node" type="double">
+    <attribute name="long_name" value="minimum air pressure at sea level" />
+    <attribute name="standard_name" value="air_presssure_at_sea_level" />
+    <attribute name="units" value="meters of water" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+    <attribute name="cell_methods" value="time: minimum" />
+  </variable>
+  <variable name="swan_DIR" shape="time node" type="double">
+    <attribute name="long_name" value="mean wave direction" />
+    <attribute name="standard_name" value="sea_surface_wave_to_direction" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="time y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="swan_DIR_max" shape="node" type="double">
+    <attribute name="long_name" value="maximum mean wave direction" />
+    <attribute name="standard_name" value="maximum_sea_surface_wave_to_direction" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="swan_HS" shape="time node" type="double">
+    <attribute name="long_name" value="significant wave height" />
+    <attribute name="standard_name" value="sea_surface_wave_significant_height" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="time y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="swan_HS_max" shape="node" type="double">
+    <attribute name="long_name" value="maximum significant wave height" />
+    <attribute name="standard_name" value="maximum_sea_surface_wave_significant_height" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+    <attribute name="cell_methods" value="time: maximum" />
+  </variable>
+  <variable name="swan_TMM10" shape="time node" type="double">
+    <attribute name="long_name" value="mean absolute wave period" />
+    <attribute name="standard_name" value="sea_surface_wave_mean_period_from_variance_spectral_density_inverse_frequency_moment" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="time y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="swan_TMM10_max" shape="node" type="double">
+    <attribute name="long_name" value="maximum TMM10 mean wave period" />
+    <attribute name="standard_name" value="maximum_sea_surface_wave_mean_period_from_variance_spectral_density_inverse_frequency_moment" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="swan_TPS" shape="time node" type="double">
+    <attribute name="long_name" value="smoothed peak period" />
+    <attribute name="standard_name" value="sea_surface_wave_period_at_variance_spectral_density_maximum" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="time y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="swan_TPS_max" shape="node" type="double">
+    <attribute name="long_name" value="maximum smoothed peak period" />
+    <attribute name="standard_name" value="maximum_sea_surface_wave_period_at_variance_spectral_density_maximum" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="coordinates" value="y x" />
+    <attribute name="location" value="node" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="radstress_x" shape="time node" type="double">
+    <attribute name="long_name" value="radiation stress gradient x component" />
+    <attribute name="standard_name" value="radiation_stress_gradient_x" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="location" value="node" />
+    <attribute name="coordinates" value="time y x" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+  <variable name="radstress_y" shape="time node" type="double">
+    <attribute name="long_name" value="radiation stress gradient y component" />
+    <attribute name="standard_name" value="radiation_stress_gradient_y" />
+    <attribute name="units" value="metric" />
+    <attribute name="_FillValue" type="double" value="-99999." />
+    <attribute name="location" value="node" />
+    <attribute name="coordinates" value="time y x" />
+    <attribute name="mesh" value="adcirc_mesh" />
+  </variable>
+</netcdf>
