@@ -1,16 +1,17 @@
 <catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.3.xsd"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.4.xsd"
  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
  xmlns:xlink="http://www.w3.org/1999/xlink" name="OPeNDAP Data Server" version="1.0.3">
  <service name="allServices" serviceType="Compound" base="">
   <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
   <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
   <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
-  <service name="iso" serviceType="ISO" base="/thredds/iso/" />
-  <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
-  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
- 
-</service>
+  <service name="cdmremote" serviceType="cdmremote" base="/thredds/cdmremote/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+
+ </service>
  <dataset name="COAWST" ID="coawst">
   <metadata inherited="true">
    <serviceName>allServices</serviceName>
@@ -38,11 +39,14 @@
     </metadata>
     <collection spec="/usgs/vault0/coawst/coawst_2/Output/coawst_us_#yyyyMMdd_HH#.nc$"
      olderThan="6 min"/>
-    <update startup="true" rescan="0 30 3 * * ? *" trigger="allow"/>
-
+    <update startup="true" rescan="0 35 3-4 * * ? *" trigger="allow"/>
     <protoDataset choice="Penultimate">
      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-      <variable name="temp">
+      <attribute name="title" type="String"
+       value="COAWST Forecast System : USGS : US East Coast and Gulf of Mexico (Experimental)"/>
+      <attribute name="summary" type="String"
+       value="Experimental forecast model product from the USGS Coupled Ocean Atmosphere Wave Sediment-Transport (COAWST) modeling system. Data required to drive the modeling system include parametric wave parameters derived from Wave Watch III, wind and atmospheric surface inputs derived from the National Centers for Environmental Prediction (NCEP) North American Mesoscale and Global Forecasting System models, and climatology fields obtained from the Florida State University Center for Ocean-Atmospheric Predictions Studies (COAPS)  HYCOM model. The COAWST model above is run on a 5km (336x896) grid which encompasses the US East Coast and the Gulf of Mexico." /> 
+       <variable name="temp">
        <attribute name="_FillValue" type="float" value="0.0"/>
       </variable>
       <variable name="salt">
@@ -51,11 +55,34 @@
       <variable name="Hwave">
        <attribute name="_FillValue" type="float" value="0.0"/>
       </variable>
+      <variable name="u">
+       <attribute name="_FillValue" type="float" value="0.0"/>
+       <attribute name="grid" value="grid" />
+       <attribute name="location" value="edge1" />
+      </variable>
+      <variable name="ubar">
+       <attribute name="_FillValue" type="float" value="0.0"/>
+       <attribute name="grid" value="grid" />
+       <attribute name="location" value="edge1" />
+      </variable>
+      <variable name="v">
+       <attribute name="_FillValue" type="float" value="0.0"/>
+       <attribute name="grid" value="grid" />
+       <attribute name="location" value="edge2" />
+      </variable>
+      <variable name="vbar">
+       <attribute name="_FillValue" type="float" value="0.0"/>
+       <attribute name="grid" value="grid" />
+       <attribute name="location" value="edge2" />
+      </variable>     
       <variable name="zeta">
+       <attribute name="grid" value="grid" />
+       <attribute name="location" value="face" />
        <attribute name="_FillValue" type="float" value="0.0"/>
       </variable>
      </netcdf>
     </protoDataset>
+
     <fmrcConfig regularize="false" datasetTypes="Best"/>
     <!-- 
      Inside the featureCollection, but outside the protoDataset, we define the NcML that happens
@@ -66,26 +93,26 @@
 
     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
      <variable name="Nbed" shape="Nbed" type="double">
-      <values start="-1.0" increment="-0.01"/>
       <attribute name="long_name" value="pseudo coordinate at seabed points"/>
       <attribute name="standard_name" value="ocean_sigma_coordinate"/>
       <attribute name="positive" value="up"/>
       <attribute name="formula_terms" value="sigma: Nbed eta: zeta depth: h"/>
+      <values start="-1.0" increment="-0.01"/>
      </variable>
      <attribute name="Conventions" value="CF-1.0"/>
     </netcdf>
 
 
    </featureCollection>
-   
+
    <featureCollection name="coawst_3_car" featureType="FMRC" harvest="true" path="coawst_3/car/fmrc">
     <metadata inherited="true">
      <documentation type="summary">ROMS Output from COAWST</documentation>
      <serviceName>allServices</serviceName>
     </metadata>
     <collection spec="/usgs/vault0/coawst/coawst_3/Output/car/coawst_car_#yyyyMMdd_HH#.nc$"
-     olderThan="10 min"/>
-    <update startup="true" rescan="0 30 4 * * ? *" trigger="allow"/>
+     olderThan="6 min"/>
+    <update startup="true" rescan="0 35 4-5 * * ? *" trigger="allow"/>
 
     <protoDataset choice="Penultimate">
      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
@@ -110,43 +137,83 @@
      into grids by giving them a psuedo coordinate in Z.  If we don't do this, they will not be 
      aggregated. 
     -->
-    
+
     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
      <variable name="Nbed" shape="Nbed" type="double">
-      <values start="-1.0" increment="-0.01"/>
+
       <attribute name="long_name" value="pseudo coordinate at seabed points"/>
       <attribute name="standard_name" value="ocean_sigma_coordinate"/>
       <attribute name="positive" value="up"/>
       <attribute name="formula_terms" value="sigma: Nbed eta: zeta depth: h"/>
+      <values start="-1.0" increment="-0.01"/>
      </variable>
-     <attribute name="Conventions" value="CF-1.0"/>
+     
     </netcdf>
-    
-    
+
+
    </featureCollection>
 
-<featureCollection name="coawst_4_use" featureType="FMRC" harvest="true" path="coawst_4/use/fmrc">
+   <featureCollection name="coawst_4_use" featureType="FMRC" harvest="true" path="coawst_4/use/fmrc">
     <metadata inherited="true">
      <documentation type="summary">ROMS USE Output from COAWST</documentation>
      <serviceName>allServices</serviceName>
     </metadata>
     <collection spec="/usgs/vault0/coawst/coawst_4/Output/use/coawst_us_#yyyyMMdd_HH#.nc$"
-     olderThan="10 min"/>
-    <update startup="true" rescan="0 30 4 * * ? *" trigger="allow"/>
+     olderThan="6 min"/>
+    <update startup="true" rescan="0 34 4-5 * * ? *" trigger="allow"/>
 
     <protoDataset choice="Penultimate">
      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <attribute name="title" type="String"
+       value="COAWST Forecast System : USGS : US East Coast and Gulf of Mexico (Experimental)"/>
+      <attribute name="summary" type="String"
+       value="Experimental forecast model product from the USGS Coupled Ocean Atmosphere Wave Sediment-Transport (COAWST) modeling system. Data required to drive the modeling system include parametric wave parameters derived from Wave Watch III, wind and atmospheric surface inputs derived from the National Centers for Environmental Prediction (NCEP) North American Mesoscale and Global Forecasting System models, and climatology fields obtained from the Florida State University Center for Ocean-Atmospheric Predictions Studies (COAPS)  HYCOM model. The COAWST model above is run on a 5km (336x896) grid which encompasses the US East Coast and the Gulf of Mexico." /> 
+
+      <variable name="h">
+       <attribute name="standard_name" type="String" value="sea_floor_depth" />
+      </variable>      
       <variable name="temp">
        <attribute name="_FillValue" type="float" value="0.0"/>
+       <attribute name="standard_name" type="String" value="sea_water_potential_temperature" />
       </variable>
       <variable name="salt">
+       <attribute name="standard_name" type="String" value="sea_water_salinity" />
+       <attribute name="units" type="String" value="0.001"/>
        <attribute name="_FillValue" type="float" value="0.0"/>
       </variable>
       <variable name="Hwave">
        <attribute name="_FillValue" type="float" value="0.0"/>
+       <attribute name="standard_name" type="String" value="sea_surface_wave_significant_height" />
+      </variable>
+      <variable name="u">
+       <attribute name="standard_name" type="String" value="x_sea_water_velocity" />
+       <attribute name="_FillValue" type="float" value="0.0"/>
+       <attribute name="grid" value="grid" />
+       <attribute name="location" value="edge1" />
+      </variable>
+      <variable name="v">
+       <attribute name="standard_name" type="String" value="y_sea_water_velocity" />
+       <attribute name="_FillValue" type="float" value="0.0"/>
+       <attribute name="grid" value="grid" />
+       <attribute name="location" value="edge2" />
+      </variable>
+      <variable name="ubar">
+       <attribute name="standard_name" type="String" value="barotropic_x_sea_water_velocity" />
+       <attribute name="_FillValue" type="float" value="0.0"/>
+       <attribute name="grid" value="grid" />
+       <attribute name="location" value="edge1" />
+      </variable>
+      <variable name="vbar">
+       <attribute name="standard_name" type="String" value="barotropic_y_sea_water_velocity" />
+       <attribute name="_FillValue" type="float" value="0.0"/>
+       <attribute name="grid" value="grid" />
+       <attribute name="location" value="edge2" />
       </variable>
       <variable name="zeta">
+       <attribute name="standard_name" type="String" value="water_surface_height_above_reference_datum" />
        <attribute name="_FillValue" type="float" value="0.0"/>
+       <attribute name="grid" value="grid" />
+       <attribute name="location" value="face" />
       </variable>
      </netcdf>
     </protoDataset>
@@ -157,30 +224,47 @@
      into grids by giving them a psuedo coordinate in Z.  If we don't do this, they will not be 
      aggregated. 
     -->
-    
+
     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
      <variable name="Nbed" shape="Nbed" type="double">
-      <values start="-1.0" increment="-0.01"/>
+
       <attribute name="long_name" value="pseudo coordinate at seabed points"/>
       <attribute name="standard_name" value="ocean_sigma_coordinate"/>
       <attribute name="positive" value="up"/>
       <attribute name="formula_terms" value="sigma: Nbed eta: zeta depth: h"/>
+      <values start="-1.0" increment="-0.01"/>
      </variable>
-     <attribute name="Conventions" value="CF-1.0"/>
+     <variable name="grid" type="int">
+      <attribute name="cf_role" value="grid_topology" />
+      <attribute name="topology_dimension" type="int" value="2" />
+      <attribute name="node_dimensions" value="xi_psi eta_psi" />
+      <attribute name="face_dimensions" value="xi_rho: xi_psi (padding: both) eta_rho: eta_psi (padding: both)" />
+      <attribute name="edge1_dimensions" value="xi_u: xi_psi eta_u: eta_psi (padding: both)" />
+      <attribute name="edge2_dimensions" value="xi_v: xi_psi (padding: both) eta_v: eta_psi" />
+      <attribute name="node_coordinates" value="lon_psi lat_psi" />
+      <attribute name="face_coordinates" value="lon_rho lat_rho" />
+      <attribute name="edge1_coordinates" value="lon_u lat_u" />
+      <attribute name="edge2_coordinates" value="lon_v lat_v" />
+      <attribute name="vertical_dimensions" value="s_rho: s_w (padding: none)" />
+     </variable>
+     <attribute name="Conventions" value="CF-1.4, SGRID-0.1"/>
+     <attribute name="project" type="String" value="CMG_Portal"/>
+     <attribute name="id" type="String" value="COAWST.USEAST.Forecast"/>
+     <attribute name="naming_authority" type="String" value="gov.usgs.cmgp"/>
     </netcdf>
-    
-    
-   </featureCollection>
-   
 
- <featureCollection name="coawst_4_gom" featureType="FMRC" harvest="true" path="coawst_4/gom/fmrc">
+
+   </featureCollection>
+
+
+   <featureCollection name="coawst_4_gom" featureType="FMRC" harvest="true" path="coawst_4/gom/fmrc">
     <metadata inherited="true">
      <documentation type="summary">ROMS GOM Output from COAWST</documentation>
      <serviceName>allServices</serviceName>
     </metadata>
     <collection spec="/usgs/vault0/coawst/coawst_4/Output/gom/coawst_gom_#yyyyMMdd_HH#.nc$"
-     olderThan="10 min"/>
-    <update startup="true" rescan="0 30 4 * * ? *" trigger="allow"/>
+     olderThan="6 min"/>
+    <update startup="true" rescan="0 34 4-5 * * ? *" trigger="allow"/>
 
     <protoDataset choice="Penultimate">
      <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
@@ -205,21 +289,35 @@
      into grids by giving them a psuedo coordinate in Z.  If we don't do this, they will not be 
      aggregated. 
     -->
-    
+
     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
      <variable name="Nbed" shape="Nbed" type="double">
-      <values start="-1.0" increment="-0.01"/>
       <attribute name="long_name" value="pseudo coordinate at seabed points"/>
       <attribute name="standard_name" value="ocean_sigma_coordinate"/>
       <attribute name="positive" value="up"/>
       <attribute name="formula_terms" value="sigma: Nbed eta: zeta depth: h"/>
+      <values start="-1.0" increment="-0.01"/>
      </variable>
-     <attribute name="Conventions" value="CF-1.0"/>
+     <variable name="grid" type="int">
+      <attribute name="cf_role" value="grid_topology" />
+      <attribute name="topology_dimension" type="int" value="2" />
+      <attribute name="node_dimensions" value="xi_psi eta_psi" />
+      <attribute name="face_dimensions" value="xi_rho: xi_psi (padding: both) eta_rho: eta_psi (padding: both)" />
+      <attribute name="edge1_dimensions" value="xi_u: xi_psi eta_u: eta_psi (padding: both)" />
+      <attribute name="edge2_dimensions" value="xi_v: xi_psi (padding: both) eta_v: eta_psi" />
+      <attribute name="node_coordinates" value="lon_psi lat_psi" />
+      <attribute name="face_coordinates" value="lon_rho lat_rho" />
+      <attribute name="edge1_coordinates" value="lon_u lat_u" />
+      <attribute name="edge2_coordinates" value="lon_v lat_v" />
+      <attribute name="vertical_dimensions" value="s_rho: s_w (padding: none)" />
+     </variable>
+     
+     <attribute name="Conventions" value="CF-1.0, SGRID-0.1"/>
     </netcdf>
-    
-    
+
+
    </featureCollection>
-   
+
   </dataset>
  </dataset>
 </catalog>

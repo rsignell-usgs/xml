@@ -5,9 +5,9 @@
   xmlns:xlink="http://www.w3.org/1999/xlink" name="CDSL ESTOFS Catalog">
   <service name="allServices" serviceType="Compound" base="">
     <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
- <!--   <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
     <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
-    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>-->
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
   </service>
 
   <dataset name="ESTOFS Surge Model Forecast Aggregations">
@@ -20,25 +20,34 @@
       <documentation xlink:href="http://www.opc.ncep.noaa.gov/estofs/estofs_surge_info.shtml"
         xlink:title="ESTOFS Storm Surge Model Guidance"/>
       
-      <documentation type="Summary"> ESTOFS ATLANTIC V1.0.0 
-        2D Storm Surge Model using the ADCIRC modeling system with 85 hour forecasts updated every 6 hours.  
-        Driven by NAM 12km resolution winds </documentation>
+  
       <documentation type="Rights">  The data is provided free of charge, without warranty of any kind.  Not to be used for navigation.
       </documentation>
     </metadata>
 
     <dataset name="ESTOFS Atlantic" ID="estofs/atlantic" urlPath="estofs/atlantic">
+      <metadata inherited="true">
+        <documentation type="Summary"> NOAA Extratropical Surge and Tide Operational Forecast System (ESTOFS) ATLANTIC V1.0.0 
+        2D Storm Surge Model using the ADCIRC modeling system with 180 hour forecasts updated every 6 hours.  
+      </documentation>
+      </metadata>
       <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
         <attribute name="id" value="estofs/atlantic/1.1.0"/>
-        <!--<attribute name="title" value="ESTOFS Storm Surge Model - ATLANTIC V1.0.0 NCEP - ADCIRC"/>-->
-        <attribute name="title" value="ESTOFS Storm Surge Model - Atlantic - v1.0.0 - NCEP - ADCIRC"/>
-        <attribute name="summary"
-          value="ESTOFS ATLANTIC V1.0.0 2D Storm Surge Model using the ADCIRC modeling system with 85 hour forecasts updated every 6 hours.  Driven by NAM 12km resolution winds"/>
+        <attribute name="title" value="ESTOFS Storm Surge Model - Atlantic - v1.0.0 - NOAA - NCEP - ADCIRC"/>
+        <attribute name="summary" value="NOAA Extratropical Surge and Tide Operational Forecast System (ESTOFS), ATLANTIC V1.0.0,
+          2D Storm Surge Model using the ADCIRC modeling system with 180 hour forecasts updated every 6 hours.  
+          Forced with 0.5 degree GFS winds."/>
         <remove type="attribute" name="convention"/>
-        <attribute name="Conventions" value="UGRID-0.9"/>
+        <attribute name="Conventions" value="CF-1.4, UGRID-0.9"/>
         <attribute name="cdm_data_type" value="ugrid"/>
         <variable name="time" shape="time" type="double">
           <attribute name="units" value="seconds since 2012-12-19 00:00:00 -00:00"/>
+        </variable>
+        <variable name="x">
+          <remove type="attribute" name="positive"/>
+        </variable>
+        <variable name="y">
+          <remove type="attribute" name="positive"/>
         </variable>
         <variable name="adcirc_mesh" shape="" type="int">
           <attribute name="node_coordinates" value="x y"/>

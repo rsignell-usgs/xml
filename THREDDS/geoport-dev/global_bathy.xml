@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.2.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="Digital Terrain Models" version="1.0.1">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+ <dataset name="Global Digital Elevation Models" >
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <authority>gov.usgs.er.whsc</authority>
+   <dataType>Grid</dataType>
+   <dataFormat>NetCDF</dataFormat>
+  </metadata>
+    
+  <dataset name="ETOPO1 (1 arc minute - Worldwide)" ID="bathy/etopo1_bed_g2"
+   urlPath="bathy/etopo1_bed_g2">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">National Geophysical Data Center (NGDC)</name>
+     <contact url="http://www.ngdc.noaa.gov/mgg/global/global.html" email="barry.eakins@noaa.gov"/>
+    </creator>
+    <publisher>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </publisher>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>-90</start>
+      <size>180</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>-180</start>
+      <size>360</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-10923</start>
+      <size>19773</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/global/global.html"
+     xlink:title="ETOPO1  1 arc minute Global Topography from NGDC (v1)"/>
+    <documentation type="Summary">ETOPO1 is a 1 arc-minute global relief model of Earth's surface
+     that integrates land topography and ocean bathymetry. It was built from numerous global and
+     regional data sets. ETOPO1 Bedrock: Grid of Earth's surface that depicts the bedrock underneath
+     the ice sheets. </documentation>
+    <documentation type="Citation"> Amante, C. and B. W. Eakins, ETOPO1 1 Arc-Minute Global Relief
+     Model: Procedures, Data Sources and Analysis, National Geophysical Data Center, NESDIS, NOAA,
+     U.S. Department of Commerce, Boulder, CO, August 2008.</documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/ETOPO1_Bed_g2.grd">
+    <variable name="topo" orgName="z">
+     <attribute name="units" value="meters"/>
+     <attribute name="long_name" value="Topography"/>
+    </variable>
+    <attribute name="title" value="NGDC ETOPO1 Global DEM (1 min)"/>
+   </netcdf>
+  </dataset>
+  <dataset name="ETOPO2  Version  2c  (2 arc minute - Worldwide)" ID="bathy/etopo2_v2c.nc"
+   urlPath="bathy/etopo2_v2c.nc">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">National Geophysical Data Center (NGDC)</name>
+     <contact url="http://www.ngdc.noaa.gov/mgg/global/etopo2.html" email="barry.eakins@noaa.gov"/>
+    </creator>
+    <publisher>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </publisher>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>-90</start>
+      <size>180</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>-180</start>
+      <size>360</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-10923</start>
+      <size>19773</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://www.ngdc.noaa.gov/mgg/global/etopo2.html"
+     xlink:title="ETOPO2  2 arc minute Global Topography from NGDC (v2c)"/>
+    <documentation type="Summary">Two-minute gridded global relief for both ocean and land areas are
+     available in the ETOPO2v2 (2006) database. ETOPO2v2c: Cell Centered (pixel registered, where
+     the cell boundaries are lines of even minutes of latitude and longitude, centered on
+     intersections of lines of odd minutes of latitude and longitude). </documentation>
+    <documentation type="Citation">U.S. Department of Commerce, National Oceanic and Atmospheric
+     Administration, National Geophysical Data Center, 2006. 2-minute Gridded Global Relief Data
+     (ETOPO2v2) http://www.ngdc.noaa.gov/mgg/fliers/06mgg01.html </documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/ETOPO2v2c_i2.nc">
+    <variable name="topo">
+     <attribute name="units" value="meters"/>
+     <attribute name="long_name" value="Topography"/>
+    </variable>
+    <attribute name="title" value="NGDC ETOPO2v2c Global DEM (2 min))"/>
+   </netcdf>
+
+  </dataset>
+  <dataset name="SRTM30+  Version 1.0  (30 arc second - Worldwide)" ID="bathy/srtm30plus_v1.nc"
+   urlPath="bathy/srtm30plus_v1.nc">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">UCSD</name>
+     <contact url="http://www.ucsd.edu" email="jjbecker@ucsd.edu, dsandwell@ucsd.edu"/>
+    </creator>
+    <publisher>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </publisher>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>-90</start>
+      <size>180</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>-180</start>
+      <size>360</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-10923</start>
+      <size>19773</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://topex.ucsd.edu/WWW_html/srtm30_plus.html"
+     xlink:title="SRTM30+  30 sec Global Topography from UCSD (v1.0)"/>
+    <documentation type="Summary">This data consists of 33 files of global topography in the same
+     format as the SRTM30 products distributed by the USGS EROS data center. The grid resolution is
+     30 second which is roughly one kilometer. </documentation>
+    <documentation type="Reference">Becker, J. J., D. T. Sandwell, W. H. F. Smith, J. Braud, B.
+     Binder, J. Depner, D. Fabre, J. Factor, S. Ingalls, S-H. Kim, R. Ladner, K. Marks, S. Nelson,
+     A. Pharaoh, G. Sharman, R. Trimmer, J. vonRosenburg, G. Wallace, P. Weatherall., Global
+     Bathymetry and Elevation Data at 30 Arc Seconds Resolution: SRTM30_PLUS, revised for Marine
+     Geodesy, January 20, 2009 </documentation>
+    <documentation type="Rights"> David T. Sandwell, Walter H. F. Smith, and Joseph J. Becker
+     Copyright 2008. The Regents of the University of California. All Rights Reserved. Permission to
+     copy, modify and distribute any part of this gridded bathymetry at 30 second resolution for
+     educational, research and non-profit purposes, without fee, and without a written agreement is
+     hereby granted, provided that the above copyright notice, this paragraph and the following
+     three paragraphs appear in all copies. Those desiring to incorporate this global bathymetry
+     into commercial products or use for commercial purposes should contact the Technology Transfer
+     and Intellectual Property Services, University of California, San Diego, 9500 Gilman Drive,
+     Mail Code 0910, La Jolla, CA 92093-0910, Ph: (858) 534-5815, FAX: (858) 534-7345,
+     E-MAIL:invent@ucsd.edu. IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY
+     FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS,
+     ARISING OUT OF THE USE OF THIS global bathymetry, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN
+     ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. THE global bathymetry PROVIDED HEREIN IS ON AN "AS
+     IS" BASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT,
+     UPDATES, ENHANCEMENTS, OR MODIFICATIONS. THE UNIVERSITY OF CALIFORNIA MAKES NO REPRESENTATIONS
+     AND EXTENDS NO WARRANTIES OF ANY KIND, EITHER IMPLIED OR EXPRESS, INCLUDING, BUT NOT LIMITED
+     TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR THAT THE
+     USE OF THE global bathymetry WILL NOT INFRINGE ANY PATENT, TRADEMARK OR OTHER RIGHTS.
+    </documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/srtm30plus_v1.nc">
+    <variable name="lon" shape="lon" type="double">
+     <attribute name="units" value="degrees_east"/>
+     <values start="-180.00" increment="0.008333333333333333"/>
+    </variable>
+    <variable name="lat" shape="lat" type="double">
+     <attribute name="units" value="degrees_north"/>
+     <values start="90.00" increment="-0.008333333333333333"/>
+    </variable>
+    <variable name="topo">
+     <attribute name="units" value="meters"/>
+     <attribute name="long_name" value="Topography"/>
+    </variable>
+    <attribute name="Conventions" value="CF-1.0"/>
+    <attribute name="title" value="UCSD SRTM30_v1 Global DEM (30 sec)"/>
+   </netcdf>
+
+  </dataset>
+  <dataset name="SRTM30+  Version 6.0  (30 arc second - Worldwide)" ID="bathy/srtm30plus_v6"
+   urlPath="bathy/srtm30plus_v6">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">UCSD</name>
+     <contact url="http://www.ucsd.edu" email="jjbecker@ucsd.edu, dsandwell@ucsd.edu"/>
+    </creator>
+    <publisher>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </publisher>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>-90</start>
+      <size>180</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>-180</start>
+      <size>360</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-10923</start>
+      <size>19773</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://topex.ucsd.edu/WWW_html/srtm30_plus.html"
+     xlink:title="SRTM30+  30 sec Global Topography from UCSD "/>
+    <documentation type="Summary">This data consists of 33 files of global topography in the same
+     format as the SRTM30 products distributed by the USGS EROS data center. The grid resolution is
+     30 second which is roughly one kilometer.</documentation>
+    <documentation type="Reference">Becker, J. J., D. T. Sandwell, W. H. F. Smith, J. Braud, B.
+     Binder, J. Depner, D. Fabre, J. Factor, S. Ingalls, S-H. Kim, R. Ladner, K. Marks, S. Nelson,
+     A. Pharaoh, G. Sharman, R. Trimmer, J. vonRosenburg, G. Wallace, P. Weatherall., Global
+     Bathymetry and Elevation Data at 30 Arc Seconds Resolution: SRTM30_PLUS, revised for Marine
+     Geodesy, January 20, 2009 </documentation>
+    <documentation type="Rights"> David T. Sandwell, Walter H. F. Smith, and Joseph J. Becker
+     Copyright 2009. The Regents of the University of California. All Rights Reserved. Permission to
+     copy, modify and distribute any part of this gridded bathymetry at 30 second resolution for
+     educational, research and non-profit purposes, without fee, and without a written agreement is
+     hereby granted, provided that the above copyright notice, this paragraph and the following
+     three paragraphs appear in all copies. Those desiring to incorporate this global bathymetry
+     into commercial products or use for commercial purposes should contact the Technology Transfer
+     and Intellectual Property Services, University of California, San Diego, 9500 Gilman Drive,
+     Mail Code 0910, La Jolla, CA 92093-0910, Ph: (858) 534-5815, FAX: (858) 534-7345,
+     E-MAIL:invent@ucsd.edu. IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY
+     FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS,
+     ARISING OUT OF THE USE OF THIS global bathymetry, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN
+     ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. THE global bathymetry PROVIDED HEREIN IS ON AN "AS
+     IS" BASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT,
+     UPDATES, ENHANCEMENTS, OR MODIFICATIONS. THE UNIVERSITY OF CALIFORNIA MAKES NO REPRESENTATIONS
+     AND EXTENDS NO WARRANTIES OF ANY KIND, EITHER IMPLIED OR EXPRESS, INCLUDING, BUT NOT LIMITED
+     TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR THAT THE
+     USE OF THE global bathymetry WILL NOT INFRINGE ANY PATENT, TRADEMARK OR OTHER RIGHTS.
+    </documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/srtm30plus_v6.nc">
+    <dimension name="lon" orgName="x"/>
+    <dimension name="lat" orgName="y"/>
+    <variable name="lon" shape="lon" type="double">
+     <attribute name="units" value="degrees_east"/>
+     <attribute name="long_name" value="Longitude"/>
+     <values start="-180.00" increment="0.008333333333333333"/>
+    </variable>
+    <variable name="lat" shape="lat" type="double">
+     <attribute name="units" value="degrees_north"/>
+     <attribute name="long_name" value="Latitude"/>
+     <values start="90.00" increment="-0.008333333333333333"/>
+    </variable>
+    <variable name="topo" orgName="Band1">
+     <attribute name="units" value="meters"/>
+     <attribute name="long_name" value="Topography"/>
+    </variable>
+    <attribute name="Conventions" value="COARDS"/>
+    <attribute name="title" value="UCSD SRTM30_v6 Global DEM (30 sec)"/>
+   </netcdf>
+  </dataset>
+  <dataset name="Smith and Sandwell v9.1  (~ 60 arc second - Worldwide)"
+   ID="bathy/smith_sandwell_v9.1.nc" urlPath="bathy/smith_sandwell_v9.1.nc">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">UCSD</name>
+     <contact url="http://www.ucsd.edu" email="jjbecker@ucsd.edu, dsandwell@ucsd.edu"/>
+    </creator>
+    <publisher>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </publisher>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>80.738</start>
+      <size>161.476</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>-180</start>
+      <size>360</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-11000</start>
+      <size>20000</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="ftp://topex.ucsd.edu/pub/global_topo_1min"
+     xlink:title="Smith and Sandwell  60 s Global Topography from UCSD (v9.1)"/>
+    <documentation type="Reference">Smith, W. H. F. and D. Sandwell, Global seafloor topography from
+     satellite altimetry and ship depth soundings, Science, 277, p.1956-1962, 1997. </documentation>
+    <documentation type="Rights"> David T. Sandwell, Walter H. F. Smith, and Joseph J. Becker
+     Copyright 2008. The Regents of the University of California. All Rights Reserved. Permission to
+     copy, modify and distribute any part of this gridded bathymetry at 30 second resolution for
+     educational, research and non-profit purposes, without fee, and without a written agreement is
+     hereby granted, provided that the above copyright notice, this paragraph and the following
+     three paragraphs appear in all copies. Those desiring to incorporate this global bathymetry
+     into commercial products or use for commercial purposes should contact the Technology Transfer
+     and Intellectual Property Services, University of California, San Diego, 9500 Gilman Drive,
+     Mail Code 0910, La Jolla, CA 92093-0910, Ph: (858) 534-5815, FAX: (858) 534-7345,
+     E-MAIL:invent@ucsd.edu. IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY
+     FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS,
+     ARISING OUT OF THE USE OF THIS global bathymetry, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN
+     ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. THE global bathymetry PROVIDED HEREIN IS ON AN "AS
+     IS" BASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT,
+     UPDATES, ENHANCEMENTS, OR MODIFICATIONS. THE UNIVERSITY OF CALIFORNIA MAKES NO REPRESENTATIONS
+     AND EXTENDS NO WARRANTIES OF ANY KIND, EITHER IMPLIED OR EXPRESS, INCLUDING, BUT NOT LIMITED
+     TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR THAT THE
+     USE OF THE global bathymetry WILL NOT INFRINGE ANY PATENT, TRADEMARK OR OTHER RIGHTS.
+    </documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/smith_sandwell_v9.1.nc">
+    <attribute name="title" value="Smith and Sandwell v9.1 Global DEM (1 min)"/>
+   </netcdf>
+  </dataset>
+  <dataset name="Smith and Sandwell v11.1  (~ 60 arc second - Worldwide)"
+   ID="bathy/smith_sandwell_v11" urlPath="bathy/smith_sandwell_v11">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">UCSD</name>
+     <contact url="http://www.ucsd.edu" email="jjbecker@ucsd.edu, dsandwell@ucsd.edu"/>
+    </creator>
+    <publisher>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </publisher>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>80.738</start>
+      <size>161.476</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>-180</start>
+      <size>360</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-11000</start>
+      <size>20000</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="ftp://topex.ucsd.edu/pub/global_topo_1min"
+     xlink:title="Smith and Sandwell  60 s Global Topography from UCSD (v11.1)"/>
+    <documentation type="Reference">Smith, W. H. F. and D. Sandwell, Global seafloor topography from
+     satellite altimetry and ship depth soundings, Science, 277, p.1956-1962, 1997. </documentation>
+    <documentation type="Rights"> David T. Sandwell, Walter H. F. Smith, and Joseph J. Becker
+     Copyright 2008. The Regents of the University of California. All Rights Reserved. Permission to
+     copy, modify and distribute any part of this gridded bathymetry at 30 second resolution for
+     educational, research and non-profit purposes, without fee, and without a written agreement is
+     hereby granted, provided that the above copyright notice, this paragraph and the following
+     three paragraphs appear in all copies. Those desiring to incorporate this global bathymetry
+     into commercial products or use for commercial purposes should contact the Technology Transfer
+     and Intellectual Property Services, University of California, San Diego, 9500 Gilman Drive,
+     Mail Code 0910, La Jolla, CA 92093-0910, Ph: (858) 534-5815, FAX: (858) 534-7345,
+     E-MAIL:invent@ucsd.edu. IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY
+     FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS,
+     ARISING OUT OF THE USE OF THIS global bathymetry, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN
+     ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. THE global bathymetry PROVIDED HEREIN IS ON AN "AS
+     IS" BASIS, AND THE UNIVERSITY OF CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT,
+     UPDATES, ENHANCEMENTS, OR MODIFICATIONS. THE UNIVERSITY OF CALIFORNIA MAKES NO REPRESENTATIONS
+     AND EXTENDS NO WARRANTIES OF ANY KIND, EITHER IMPLIED OR EXPRESS, INCLUDING, BUT NOT LIMITED
+     TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR THAT THE
+     USE OF THE global bathymetry WILL NOT INFRINGE ANY PATENT, TRADEMARK OR OTHER RIGHTS.
+    </documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/smith_sandwell_v11.1.nc">
+    <attribute name="title" value="Smith and Sandwell v11.1 Global DEM (1 min)"/>
+   </netcdf>
+  </dataset>
+
+ </dataset>
+</catalog>

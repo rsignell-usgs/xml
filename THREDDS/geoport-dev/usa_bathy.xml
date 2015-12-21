@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.2.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="Digital Terrain Models" version="1.0.1">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+ 
+ <catalogRef xlink:title="NOAA Coastal Relief Model" xlink:href="crm_bathy.xml" name=""/>
+ <dataset name="Other United Stated Digital Elevation Models" >
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <authority>gov.usgs.er.whsc</authority>
+   <dataType>Grid</dataType>
+   <dataFormat>NetCDF</dataFormat>
+  </metadata>
+  
+ 
+  <dataset name="National Geodetic Survey GEOID03 CONUS Geoid model" ID="bathy/geoid03"
+   urlPath="bathy/geoid03">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">NGS/NOAA/GOV</name>
+     <contact url="http://www.ngs.noaa.gov/GEOID/contact.shtml" email="dan.roman@noaa.gov"/>
+    </creator>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>24.0</start>
+      <size>32.0</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>-130.0</start>
+      <size>70.0</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-50.01</start>
+      <size>53.44</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://www.ngs.noaa.gov/GEOID/GEOID03/"
+     xlink:title="NOAA/NGS GEOID03 CONUS geoid model"/>
+    <documentation type="Summary">GEOID03 is a refined model of the geoid in the conterminous United
+     States (CONUS), which supersedes the previous models GEOID90, GEOID93, GEOID96, and GEOID99.
+     For GEOID03 heights range from a low of -50.01 meters (magenta) in the Atlantic Ocean to a high
+     of 3.43 meters (red) in the Labrador Strait. However, these geoid heights are only reliable
+     within CONUS due to the limited extents of the data used to compute it. GEOID03 models will not
+     be created for other regions. Instead, new models will be created for all regions at a later
+     date depending on improvements in data, modeling and techniques. </documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/geoid03.nc">
+    <attribute name="title" value="NOAA/NGS GEOID03 obtained from web site 11/11/2011"/>
+   </netcdf>
+  </dataset>
+  <dataset name="National Geodetic Survey GEOID09 CONUS Geoid model" ID="bathy/geoid09"
+   urlPath="bathy/geoid09">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">NGS/NOAA/GOV</name>
+     <contact url="http://www.ngs.noaa.gov/GEOID/contact.shtml" email="dan.roman@noaa.gov"/>
+    </creator>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>24.0</start>
+      <size>32.0</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>-130.0</start>
+      <size>70.0</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-50.68</start>
+      <size>54.12</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://www.ngs.noaa.gov/GEOID/GEOID09/"
+     xlink:title="NOAA/NGS GEOID09 CONUS geoid model"/>
+    <documentation type="Summary">GEOID09 is a refined hybrid model of the geoid in the United
+     States and other territories, which supersedes the previous models GEOID06, GEOID03, GEOID99,
+     GEOID96, GEOID93, and GEOID90. For GEOID09 in CONUS regions, heights range from a low of -50.68
+     meters (magenta) in the Atlantic Ocean to a high of 3.44 meters (red) in the Labrador Strait.
+     However, these geoid heights are only reliable within CONUS due to the limited extents of the
+     data used to compute it. This model is intended for converting between the NAD83 ellipsoid
+     reference frame and vertical datums NAVD88, GUVD04, ASVD02, NMVD03 and the future vertical
+     datums PRVD02 and VIVD09. See the FAQ page for datum details. </documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/geoid09.nc">
+    <attribute name="title" value="NOAA/NGS GEOID09 obtained from web site 11/14/2011"/>
+   </netcdf>
+  </dataset>
+
+  
+
+  
+ </dataset>
+</catalog>

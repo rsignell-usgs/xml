@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  name="THREDDS catalog for all USGS NetCDF files" version="1.0.1">
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  </service> 
+  
+ <datasetScan name="USGS NetCDF files on Clay/Projects" ID="clay/usgs/Projects" path="clay/usgs/Projects"
+    location="/clay/usgs/Projects">
+   <metadata inherited="true">
+     <serviceName>allServices</serviceName>
+    </metadata>
+    <filter>
+      <include wildcard="*.ncml"/>  
+      <include wildcard="*.nc"/>  
+      <include wildcard="*.txt"/>  
+      <include wildcard="*.zip"/>  
+      <include wildcard="*.grd"/>  
+      <include wildcard="*.nc.gz"/>  
+      <include wildcard="*.cdf"/>
+      <include wildcard="*.grib"/>
+      <include wildcard="*.grb"/>
+      <include wildcard="*.grb2"/>
+      <include wildcard="*.grib2"/>
+      <include wildcard="*_00_00"/>
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true"/>
+    </sort>
+    <addDatasetSize/>
+  </datasetScan>
+
+ <datasetScan name="USGS NetCDF files on Clay/users" ID="clay/usgs/users" path="clay/usgs/users"
+    location="/clay/usgs/users">
+   <metadata inherited="true">
+     <serviceName>allServices</serviceName>
+    </metadata>
+    <filter>
+      <include wildcard="*.ncml"/>  
+      <include wildcard="*.nc"/>  
+      <include wildcard="*.txt"/>  
+      <include wildcard="*.zip"/>  
+      <include wildcard="*.grd"/>  
+      <include wildcard="*.nc.gz"/>  
+      <include wildcard="*.cdf"/>
+      <include wildcard="*.grib"/>
+      <include wildcard="*.grb"/>
+      <include wildcard="*.grb2"/>
+      <include wildcard="*.grib2"/>
+      <include wildcard="*_00_00"/>
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true"/>
+    </sort>
+    <addDatasetSize/>
+  </datasetScan>
+</catalog>

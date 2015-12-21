@@ -5,7 +5,7 @@
   <service name="allServices" serviceType="Compound" base="">
     <service name="ncdods" serviceType="OpenDAP" base="/thredds/dodsC/"/>
     <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
-    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/"/>
 
   <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
   <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
@@ -19,6 +19,8 @@
      <serviceName>allServices</serviceName>
     </metadata>
     <filter>
+      <include wildcard="*.tif"/>
+      <include wildcard="*.tiff"/>
       <include wildcard="*.ncml"/>  
       <include wildcard="*.grd"/>  
       <include wildcard="*.nc"/>  

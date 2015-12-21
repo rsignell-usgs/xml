@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.2.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="Digital Terrain Models" version="1.0.1">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+  <dataset name="Other Regional Digital Elevation Models">
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <authority>gov.usgs.er.whsc</authority>
+   <dataType>Grid</dataType>
+   <dataFormat>NetCDF</dataFormat>
+  </metadata>
+  <dataset name="USGS Vineyard Sound DEM (1 arc sec)" ID="bathy/vs_1sec_20070725.nc"
+   urlPath="bathy/vs_1sec_20070725.nc">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </creator>
+    <publisher>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </publisher>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>41.0</start>
+      <size>1.4</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>-71.2</start>
+      <size>0.5</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-277.25</start>
+      <size>459.6</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://coast-enviro.er.usgs.gov/models/grids/CGSherwo.doc"
+     xlink:title="USGS Vineyard Sound Coastal Relief Model (1 arc second)"/>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/vs_1sec_20070725.nc">
+    <attribute name="title" value="USGS Vineyard Sound DEM (1 sec)"/>
+   </netcdf>
+  </dataset>
+  <dataset name="Adriatic Sea Relief Model (15 arc sec)" ID="bathy/adria15" urlPath="bathy/adria15">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </creator>
+    <publisher>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </publisher>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>39.0</start>
+      <size>7.0</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>12.0</start>
+      <size>8.0</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-5000</start>
+      <size>10000</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://pubs.usgs.gov/of/1998/of98-801"
+     xlink:title="Adriatic Sea Relief Model (15 arc seconds) "/>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/adria15_v09.nc">
+    <attribute name="title" value="Adriatic Sea DEM (15 sec)"/>
+   </netcdf>
+  </dataset>
+
+
+  <dataset name="Puget Sound DEM:2005 " ID="bathy/psdem_2005" urlPath="bathy/psdem_2005">
+   <metadata>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>47.0</start>
+      <size>1.5</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>-124.0</start>
+      <size>2.0</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-295.0</start>
+      <size>3893.0</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://www.ocean.washington.edu/data/pugetsound/psdem2005.html"
+     xlink:title="Puget Sound DEM:2005"/>
+    <documentation type="Summary"> 30 ft resolution DEM data from David Finlayson was downloaded in
+     ARC ASCII Grid format from http://www.ocean.washington.edu/data/pugetsound/psdem2005.html and
+     converted from State Plane coordinates (Washington North, NAD83) in feet with 30 ft resolution
+     to geographic coordinates (lon,lat) with 0.0001 arc degree resolution using bilinear
+     interpolation. Heights relative to NAVD88 were converted from units of feet to meters. </documentation>
+    <documentation type="Rights">License for Use: This digital elevation model (DEM) is Copyright ©
+     2005 David Finlayson. This work is licensed under a Creative Commons License (see
+     http://creativecommons.org/licenses/by/2.0/) To fully comply with the terms of this license you
+     must include the following citation wherever the dataset is used (including in derivative
+     works): Finlayson D.P. (2005) Combined bathymetry and topography of the Puget Lowland,
+     Washington State. University of Washington,
+     (http://www.ocean.washington.edu/data/pugetsound/)</documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/psdem_2005_geo.grd">
+    <variable name="topo">
+     <attribute name="units" value="meters"/>
+     <attribute name="long_name" value="Topography"/>
+    </variable>
+    <variable name="lon">
+     <attribute name="units" value="degrees_east"/>
+     <attribute name="long_name" value="Longitude"/>
+    </variable>
+    <variable name="lat">
+     <attribute name="units" value="degrees_north"/>
+     <attribute name="long_name" value="Latitude"/>
+    </variable>
+    <attribute name="title" value="UWASH Puget Sound DEM (1/3 sec)"/>
+   </netcdf>
+  </dataset>
+  <dataset name="USACE LIDAR Bare Earth Box 061" ID="bathy/lidar/bare/ma_box061"
+   urlPath="bathy/lidar/bare/ma_box061">
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/bare_061_geo.grd">
+    <variable name="topo" orgName="z">
+     <attribute name="units" value="meters"/>
+     <attribute name="long_name" value="Topography"/>
+    </variable>
+    <attribute name="Conventions" value="COARDS"/>
+    <attribute name="title" value="USACE LIDAR Bare Earth MA Box 061 (1/3 sec)"/>
+   </netcdf>
+  </dataset>
+  <dataset name="USACE LIDAR skagit" ID="bathy/lidar/skagit" urlPath="bathy/lidar/skagit">
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/skagit_lidar_msl.grd">
+    <variable name="topo" orgName="z">
+     <attribute name="units" value="meters"/>
+     <attribute name="horizontal_datum" value="WGS84"/>
+     <attribute name="vertical_datum" value="MSL"/>
+     <attribute name="long_name" value="Topography"/>
+    </variable>
+    <attribute name="Conventions" value="COARDS"/>
+    <attribute name="title" value="USACE LIDAR Bare Earth Skagit (1/3 sec)"/>
+   </netcdf>
+  </dataset>
+  <dataset name="USGS Stellwagen 10 meter bathy" ID="bathy/usgs/stell_10m"
+   urlPath="bathy/usgs/stell_10m">
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/mbay10m_geo.grd">
+    <variable name="topo" orgName="z">
+     <attribute name="units" value="meters"/>
+     <attribute name="long_name" value="Topography"/>
+    </variable>
+    <attribute name="title" value="USGS Stellwagen Bank DEM (1/3 sec)"/>
+   </netcdf>
+  </dataset>
+  
+  
+
+  <dataset name="Nantucket Tsunami Grid (1/3 arc minute)" ID="bathy/nantucket"
+   urlPath="bathy/nantucket">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">National Geophysical Data Center (NGDC)</name>
+     <contact url="http://www.ngdc.noaa.gov/mgg/global/global.html" email="barry.eakins@noaa.gov"/>
+    </creator>
+    <publisher>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </publisher>
+    <documentation type="Summary"> The Nantucket 1/3 arc-second MHW Tsunami Inundation DEM spans the
+     coastal region surrounding the town of Nantucket, Massachusetts on Nantucket Island. It spans
+     Nantucket Sound, from Marthas Vineyard on the west to Nantucket Island on the east, and north
+     to Cape Cod, and extends into the Atlantic Ocean. The coordinate boundaries are 69.49 to 70.67W
+     and 40.81 to 41.71N. </documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/ngdc/nantucket_ma.nc">
+    <variable name="topo" orgName="Band1">
+     <attribute name="units" value="m"/>
+     <attribute name="long_name" value="Topography"/>
+    </variable>
+    <dimension name="lon" orgName="x"/>
+    <dimension name="lat" orgName="y"/>
+
+
+    <variable name="lon" shape="lon" type="double">
+     <attribute name="units" value="degrees_east"/>
+     <values start="-70.67" increment="9.25926e-05"/>
+    </variable>
+
+    <variable name="lat" shape="lat" type="double">
+     <attribute name="units" value="degrees_north"/>
+     <values start="41.71" increment="-9.25926e-05"/>
+    </variable>
+
+    <attribute name="Conventions" value="COARDS"/>
+   </netcdf>
+  </dataset>
+
+  <dataset name="Biloxi Tsunami Grid (1/3 arc minute)" ID="bathy/biloxi" urlPath="bathy/biloxi">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">National Geophysical Data Center (NGDC)</name>
+     <contact url="http://www.ngdc.noaa.gov/mgg/global/global.html" email="barry.eakins@noaa.gov"/>
+    </creator>
+    <publisher>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </publisher>
+    <documentation type="Summary"> The combined bathymetric-topographic digital elevation model
+     (DEM) covers the coastal community of Biloxi, Mississippi. It has a cell size of 1/3 arc-second
+     (~10 meter), with coordinate boundaries of 88.3W to 89.3W and 29.7N to 30.6N. </documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/ngdc/biloxi_ms.nc">
+    <variable name="topo" orgName="Band1">
+     <attribute name="units" value="m"/>
+     <attribute name="long_name" value="Topography"/>
+    </variable>
+    <dimension name="lon" orgName="x"/>
+    <dimension name="lat" orgName="y"/>
+
+
+    <variable name="lon" shape="lon" type="double">
+     <attribute name="units" value="degrees_east"/>
+     <values start="-89.30" increment="9.25926e-05"/>
+    </variable>
+
+    <variable name="lat" shape="lat" type="double">
+     <attribute name="units" value="degrees_north"/>
+     <values start="30.60" increment="-9.25926e-05"/>
+    </variable>
+
+    <attribute name="Conventions" value="COARDS"/>
+   </netcdf>
+  </dataset>
+ </dataset>
+</catalog>

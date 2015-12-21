@@ -9,16 +9,15 @@ See http://www.resc.reading.ac.uk/trac/myocean-tools/wiki/WmsDetailedConfigurati
 for more information.
 -->
 <wmsConfig>
-
     <global>
         <!-- These settings apply to all datasets unless overridden below -->
 
         <defaults>
             <!-- The global defaults. All elements are mandatory -->
             <allowFeatureInfo>true</allowFeatureInfo>
-            <defaultColorScaleRange>0 40</defaultColorScaleRange>
+            <defaultColorScaleRange>-50 50</defaultColorScaleRange>
             <defaultPaletteName>rainbow</defaultPaletteName>
-            <defaultNumColorBands>32</defaultNumColorBands>
+            <defaultNumColorBands>20</defaultNumColorBands>
             <logScaling>false</logScaling>
             <intervalTime>true</intervalTime>
         </defaults>
@@ -26,26 +25,11 @@ for more information.
         <standardNames>
             <!-- Use this section to set defaults per standard name -->
             <!-- Units must come from the UDUNITS vocabulary -->
-            <standardName name="sea_water_potential_temperature" units="Celsius">
-                <defaultColorScaleRange>11.5 28</defaultColorScaleRange>
+            <standardName name="sea_water_potential_temperature" units="K">
+                <defaultColorScaleRange>268 308</defaultColorScaleRange>
             </standardName>
-            <standardName name="sea_water_temperature" units="Celsius">
-                <defaultColorScaleRange>11.5 28</defaultColorScaleRange>
-            </standardName>
-            <standardName name="sea_surface_height_above_sea_level" units="meter">
-                <defaultColorScaleRange>-0.2 0.2</defaultColorScaleRange>
-            </standardName>
-            <standardName name="sea_water_salinity" units="">
-                <defaultColorScaleRange>35.8 38.5</defaultColorScaleRange>
-            </standardName>
-            <standardName name="sea_water_potential_density" units="kg m-3">
-                <defaultColorScaleRange>1025 1029</defaultColorScaleRange>
-            </standardName>
-            <standardName name="sea_water_velocity" units="meter second-1">
-                <defaultColorScaleRange>0 1</defaultColorScaleRange>
-            </standardName>
-            <standardName name="barotropic_sea_water_velocity" units="meter second-1">
-                <defaultColorScaleRange>0 0.5</defaultColorScaleRange>
+            <standardName name="sea_water_temperature" units="K">
+                <defaultColorScaleRange>268 308</defaultColorScaleRange>
             </standardName>
             <standardName name="mass_concentration_of_chlorophyll_in_sea_water" units="kg m-3">
                 <logScaling>true</logScaling>

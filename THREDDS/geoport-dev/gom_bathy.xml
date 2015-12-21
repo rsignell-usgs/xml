@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.2.xsd"
+ xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+ xmlns:xlink="http://www.w3.org/1999/xlink" name="Digital Terrain Models" version="1.0.1">
+ <service name="allServices" serviceType="Compound" base="">
+  <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+  <service name="wcs" serviceType="WCS" base="/thredds/wcs/"/>
+  <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/"/>
+  <service name="wms" serviceType="WMS" base="/thredds/wms/"/>
+  <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+  <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+ </service>
+ <dataset name="Gulf of Maine Digital Elevation Models (DEMs)" >
+  <metadata inherited="true">
+   <serviceName>allServices</serviceName>
+   <authority>gov.usgs.er.whsc</authority>
+   <dataType>Grid</dataType>
+   <dataFormat>NetCDF</dataFormat>
+  </metadata>
+  
+  
+
+  <dataset name="USGS Gulf of Maine DEM (15 arc sec)" ID="bathy/gom15"
+   urlPath="bathy/gom15">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </creator>
+    <publisher>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </publisher>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>39.5</start>
+      <size>6.5</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>-71.5</start>
+      <size>8.5</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-5000</start>
+      <size>10000</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation xlink:href="http://pubs.usgs.gov/of/1998/of98-801"
+     xlink:title="USGS Gulf of Maine Bathymetry (15 arc seconds) "/>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/gom15.nc">
+    <attribute name="title" value="USGS Gulf of Maine DEM (15 sec)"/>
+   </netcdf>
+  </dataset>
+
+
+  <dataset name="USGS Gulf of Maine DEM (3 arc sec) V1.0" ID="bathy/gom03_v10"
+   urlPath="bathy/gom03_v10">
+   <metadata>
+    <creator>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </creator>
+    <publisher>
+     <name vocabulary="DIF">WHSC/USGS</name>
+     <contact url="http://www.usgs.gov/" email="rsignell@usgs.gov"/>
+    </publisher>
+    <geospatialCoverage zpositive="up">
+     <northsouth>
+      <start>39.5</start>
+      <size>6.5</size>
+      <units>degrees_north</units>
+     </northsouth>
+     <eastwest>
+      <start>-71.5</start>
+      <size>8.5</size>
+      <units>degrees_east</units>
+     </eastwest>
+     <updown>
+      <start>-5000</start>
+      <size>10000</size>
+      <units>meters</units>
+     </updown>
+    </geospatialCoverage>
+    <documentation type="summary"> 
+(version 1.0) This 3 arc second digital elevation model of the Gulf of Maine was created using a variety of sources: GEODAS digital soundings from NOAA, NWATL Tiled Database v0.9 from the Canadian Hydrographic Service, swath bathymetry from USGS/Massachusetts Coastal Zone Management, The Gulf of Maine Mapping Initiative and UNH, DBDB-V gridded data from NAVOCEANO, Smith and Sandwell v12.1 global elevation/bathymetry data, OLEX system data, digitized data from NOS charts, NED elevation data in the US, and SRTM elevation data in Canada.  All data was converted to the NAD83 horizontal datum and the NAVD88 vertical datum.  Full documentation can be found at: http://pubs.usgs.gov/of/2011/1127/. For more information or to report issues, please contact Rich Signell (rsignell@usgs.gov).
+</documentation>
+   </metadata>
+   <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2"
+    location="/usgs/data0/bathy/GOM_061311_3sec.grd">
+    <dimension name="lon" orgName="x"/>
+    <dimension name="lat" orgName="y"/>
+    <variable name="topo" orgName="z">
+     <attribute name="units" value="meters"/>
+     <attribute name="long_name" value="Topography"/>
+    </variable>
+    <variable name="lon" orgName="x">
+     <attribute name="units" value="degrees_east"/>
+     <attribute name="long_name" value="Longitude"/>
+    </variable>
+    <variable name="lat" orgName="y">
+     <attribute name="units" value="degrees_north"/>
+     <attribute name="long_name" value="Latitude"/>
+    </variable>
+    <attribute name="naming_authority" value="gov.usgs.er"/>
+    <attribute name="Metadata_Conventions" value="Unidata Dataset Discovery v1.0"/>
+    <attribute name="Metadata_Link" value="URL for full metadata record"/>
+    <!-- Text Search -->
+    <attribute name="title" value="USGS Gulf of Maine DEM (3 sec)"/>
+    <attribute name="summary"
+     value="This 3 arc second digital elevation model of the Gulf of Maine was created using a variety of sources: GEODAS digital soundings from NOAA, NWATL Tiled Database v0.9 from the Canadian Hydrographic Service, swath bathymetry from USGS/Massachusetts Coastal Zone Management and UNH, DBDB-V gridded data from NAVOCEANO, Smith and Sandwell v12.1 global elevation/bathymetry data, NED elevation data in the US, and SRTM elevation data in Canada.  All data was converted to the NAD83 horizontal datum and the NAVD88 vertical datum.  Full documentation can be found at: http://pubs.usgs.gov/of/2011/1127/. Please report problems to Rich Signell (rsignell@usgs.gov)."/>
+    <attribute name="standard_name_vocabulary" value="CF-1.0"/>
+    <!--  <attribute name="history" value="NASA GSFC (G. Feldman): 2010-02-22T22:48:46Z NOAA CoastWatch (West Coast Node) and NOAA SFSC ERD"/> -->
+    <!--  <attribute name="comment" value="Text comment"/> -->
+
+    <!-- Extent Search -->
+    <!-- Other Extent Information -->
+    <attribute name="geospatial_lat_units" value="degrees_north"/>
+    <attribute name="geospatial_lat_resolution" value="0.00083333333333" type="double"/>
+    <attribute name="geospatial_lon_units" value="degrees_east"/>
+    <attribute name="geospatial_lon_resolution" value="0.00083333333333" type="double"/>
+    <attribute name="geospatial_vertical_units" value="m"/>
+    <!--  <attribute name="time_coverage_duration" value="P1D"/>
+     <attribute name="time_coverage_resolution" value="PT1M"/>  -->
+    <!-- Creator Search -->
+    <attribute name="acknowledgment" value="USGS, Woods Hole"/>
+    <attribute name="creator_email" value="rsignell@usgs.gov"/>
+    <attribute name="creator_name" value="USGS Coastal and Marine Program, Woods Hole"/>
+    <attribute name="creator_url" value="http://www.usgs.gov"/>
+    <attribute name="institution" value="USGS Coastal and Marine Program, Woods Hole"/>
+    <attribute name="project" value="Habitat"/>
+    <!-- Contributor Search -->
+    <attribute name="contributor_name" value="Richard Signell"/>
+    <attribute name="contributor_role" value="Creator of DEM from various sources"/>
+    <!-- Publisher Search -->
+    <attribute name="publisher_email" value="rsignell@usgs.gov"/>
+    <attribute name="publisher_name" value="USGS Coastal and Marine Program, Woods Hole"/>
+    <attribute name="publisher_url" value="http://www.usgs.gov"/>
+    <!-- Other Attributes -->
+    <attribute name="processing_level" value="3"/>
+    <attribute name="license"
+     value="The data may be used and redistributed for free but is not intended for legal use, since it may contain inaccuracies. Neither the data Contributor, USGS, nor the United States Government, nor any of their employees or contractors, makes any warranty, express or implied, including warranties of merchantability and fitness for a particular purpose, or assumes any legal liability for the accuracy, completeness, or usefulness, of this information."/>
+    <attribute name="cdm_data_type" value="Grid"/>
+
+
+   </netcdf>
+  </dataset>
+  
+ 
+ </dataset>
+</catalog>
